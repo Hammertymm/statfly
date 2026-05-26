@@ -1,0 +1,331 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>StatFly feed test</title>
+<style>
+  :root {
+    --bg: #000;
+    --card: #111114;
+    --ok: #30d158;
+    --warn: #ffd60a;
+    --bad: #ff453a;
+    --text: #fff;
+    --text-2: rgba(235,235,245,0.6);
+    --sep: rgba(255,255,255,0.08);
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { background: var(--bg); color: var(--text); font-family: -apple-system, system-ui, sans-serif; min-height: 100%; }
+  body { padding: 16px; padding-bottom: 80px; font-size: 15px; line-height: 1.4; }
+  h1 { font-size: 22px; font-weight: 700; margin-bottom: 4px; }
+  .sub { color: var(--text-2); font-size: 13px; margin-bottom: 16px; }
+  .controls { display: flex; gap: 8px; margin-bottom: 16px; flex-wrap: wrap; }
+  button {
+    background: var(--card); color: var(--text); border: 1px solid var(--sep);
+    padding: 10px 16px; border-radius: 10px; font-size: 14px; font-weight: 600;
+    font-family: inherit; cursor: pointer; -webkit-tap-highlight-color: transparent;
+  }
+  button:active { opacity: 0.6; }
+  button.primary { background: var(--ok); color: #000; border-color: var(--ok); }
+  .summary {
+    background: var(--card); border-radius: 12px; padding: 12px 14px;
+    margin-bottom: 16px; font-size: 13px; color: var(--text-2);
+    border: 1px solid var(--sep);
+  }
+  .summary b { color: var(--text); }
+  .summary .ok { color: var(--ok); }
+  .summary .warn { color: var(--warn); }
+  .summary .bad { color: var(--bad); }
+  .row {
+    background: var(--card); border-radius: 12px; padding: 12px 14px;
+    margin-bottom: 8px; border: 1px solid var(--sep);
+    border-left-width: 4px;
+  }
+  .row.ok   { border-left-color: var(--ok); }
+  .row.warn { border-left-color: var(--warn); }
+  .row.bad  { border-left-color: var(--bad); }
+  .row.pending { border-left-color: var(--text-2); opacity: 0.7; }
+  .row-head { display: flex; align-items: baseline; gap: 8px; }
+  .label { font-weight: 700; font-size: 15px; }
+  .endpoint { color: var(--text-2); font-size: 12px; font-family: ui-monospace, monospace; }
+  .status { margin-left: auto; font-size: 12px; font-weight: 600; }
+  .status.ok { color: var(--ok); }
+  .status.warn { color: var(--warn); }
+  .status.bad { color: var(--bad); }
+  .meta { color: var(--text-2); font-size: 12px; margin-top: 6px; }
+  .sample { color: var(--text); font-size: 13px; margin-top: 4px; }
+  details { margin-top: 6px; }
+  summary { color: var(--text-2); font-size: 12px; cursor: pointer; padding: 4px 0; }
+  pre {
+    background: #000; border: 1px solid var(--sep); border-radius: 8px;
+    padding: 8px; font-size: 11px; overflow-x: auto; margin-top: 4px;
+    color: var(--text-2); font-family: ui-monospace, monospace;
+    max-height: 300px; overflow-y: auto;
+  }
+</style>
+</head>
+<body>
+  <h1>StatFly feed test</h1>
+  <div class="sub">Hits all 24 ESPN feeds through the same proxy rotation as the app. Green = events returned. Yellow = endpoint OK but 0 events (off-season). Red = no proxy succeeded.</div>
+
+  <div class="controls">
+    <button class="primary" id="run">Run all</button>
+    <button id="rerun-bad">Re-run failures</button>
+  </div>
+
+  <div class="summary" id="summary">Tap Run all to start.</div>
+
+  <div id="rows"></div>
+
+<script>
+// Mirror of app's ESPN_FEEDS - kept in sync manually with index.html
+var FEEDS = [
+  { sport:'basketball', league:'nba',   label:'NBA' },
+  { sport:'football',   league:'nfl',   label:'NFL' },
+  { sport:'baseball',   league:'mlb',   label:'MLB' },
+  { sport:'hockey',     league:'nhl',   label:'NHL' },
+  { sport:'soccer',     league:'usa.1', label:'MLS' },
+  { sport:'soccer',     league:'eng.1', label:'EPL' },
+  { sport:'soccer',     league:'esp.1', label:'La Liga' },
+  { sport:'soccer',     league:'uefa.champions', label:'UCL' },
+  { sport:'soccer',     league:'uefa.europa',    label:'UEL' },
+  { sport:'soccer',     league:'ger.1', label:'Bundesliga' },
+  { sport:'soccer',     league:'ita.1', label:'Serie A' },
+  { sport:'soccer',     league:'fra.1', label:'Ligue 1' },
+  { sport:'australian-football', league:'afl', label:'AFL' },
+  { sport:'cricket',    league:'8048',  label:'IPL' },
+  { sport:'cricket',    league:'23694', label:'Cricket' },
+  { sport:'basketball', league:'wnba',  label:'WNBA' },
+  { sport:'basketball', league:'mens-college-basketball', label:'NCAAM' },
+  { sport:'football',   league:'college-football',        label:'NCAAF' },
+  { sport:'mma',        league:'ufc',   label:'UFC' },
+  { sport:'golf',       league:'pga',   label:'PGA' },
+  { sport:'tennis',     league:'atp',   label:'ATP' },
+  { sport:'tennis',     league:'wta',   label:'WTA' },
+  { sport:'racing',     league:'f1',    label:'F1' },
+  { sport:'racing',     league:'nascar-cup-series', label:'NASCAR' },
+];
+
+function proxyUrls(url) {
+  return [
+    'https://corsproxy.io/?' + encodeURIComponent(url),
+    'https://api.allorigins.win/raw?url=' + encodeURIComponent(url),
+    'https://api.codetabs.com/v1/proxy?quest=' + encodeURIComponent(url),
+    'https://thingproxy.freeboard.io/fetch/' + url,
+    url,
+  ];
+}
+
+function proxyName(u) {
+  if (u.indexOf('corsproxy.io') > -1) return 'corsproxy';
+  if (u.indexOf('allorigins')   > -1) return 'allorigins';
+  if (u.indexOf('codetabs')     > -1) return 'codetabs';
+  if (u.indexOf('thingproxy')   > -1) return 'thingproxy';
+  return 'direct';
+}
+
+// Race all proxies, return first that returns parseable JSON with events array
+function espnFetch(sport, league) {
+  var url = 'https://site.api.espn.com/apis/site/v2/sports/' + sport + '/' + league + '/scoreboard';
+  var proxies = proxyUrls(url);
+  return new Promise(function(resolve) {
+    var done = false;
+    var pending = proxies.length;
+    var errors = [];
+    proxies.forEach(function(proxyUrl) {
+      var ctrl = new AbortController();
+      var timer = setTimeout(function(){ ctrl.abort(); }, 10000);
+      fetch(proxyUrl, { signal: ctrl.signal }).then(function(res) {
+        clearTimeout(timer);
+        if (!res.ok) throw new Error('HTTP ' + res.status);
+        return res.text();
+      }).then(function(text) {
+        var json;
+        try { json = JSON.parse(text); } catch(e) { throw new Error('non-JSON'); }
+        if (json.contents) {
+          try { json = JSON.parse(json.contents); } catch(e) { throw new Error('non-JSON in contents'); }
+        }
+        if (done) return;
+        if (json && typeof json === 'object' && 'events' in json) {
+          done = true;
+          resolve({ ok: true, json: json, proxy: proxyName(proxyUrl), errors: errors });
+        } else {
+          throw new Error('no events key');
+        }
+      }).catch(function(err) {
+        clearTimeout(timer);
+        errors.push(proxyName(proxyUrl) + ': ' + err.message);
+        pending--;
+        if (pending === 0 && !done) {
+          done = true;
+          resolve({ ok: false, errors: errors });
+        }
+      });
+    });
+  });
+}
+
+function classify(result) {
+  if (!result.ok) return 'bad';
+  var events = (result.json && result.json.events) || [];
+  if (events.length === 0) return 'warn';
+  return 'ok';
+}
+
+function describe(result) {
+  if (!result.ok) return { status: 'FAIL', detail: 'all proxies failed' };
+  var events = (result.json && result.json.events) || [];
+  if (events.length === 0) return { status: '0 events', detail: 'endpoint OK, no current events (off-season or between rounds)' };
+  return { status: events.length + ' events', detail: 'first via ' + result.proxy };
+}
+
+function sampleEvent(ev) {
+  if (!ev) return '';
+  var name = ev.name || ev.shortName || '(unnamed event)';
+  var status = ev.status && ev.status.type && (ev.status.type.shortDetail || ev.status.type.description) || '';
+  return name + (status ? '  ' + status : '');
+}
+
+function renderRow(feed, idx) {
+  var row = document.getElementById('row-' + idx);
+  if (row) return row;
+  row = document.createElement('div');
+  row.className = 'row pending';
+  row.id = 'row-' + idx;
+  row.innerHTML =
+    '<div class="row-head">' +
+      '<span class="label">' + feed.label + '</span>' +
+      '<span class="endpoint">' + feed.sport + '/' + feed.league + '</span>' +
+      '<span class="status">...</span>' +
+    '</div>' +
+    '<div class="body"></div>';
+  document.getElementById('rows').appendChild(row);
+  return row;
+}
+
+function updateRow(idx, feed, result) {
+  var row = document.getElementById('row-' + idx);
+  if (!row) return;
+  var cls = classify(result);
+  row.className = 'row ' + cls;
+  var d = describe(result);
+  row.querySelector('.status').className = 'status ' + cls;
+  row.querySelector('.status').textContent = d.status;
+
+  var body = row.querySelector('.body');
+  body.innerHTML = '';
+
+  var meta = document.createElement('div');
+  meta.className = 'meta';
+  meta.textContent = d.detail;
+  body.appendChild(meta);
+
+  if (result.ok) {
+    var events = (result.json && result.json.events) || [];
+    if (events.length > 0) {
+      var sample = document.createElement('div');
+      sample.className = 'sample';
+      sample.textContent = sampleEvent(events[0]);
+      body.appendChild(sample);
+
+      var det = document.createElement('details');
+      var sum = document.createElement('summary');
+      sum.textContent = 'Show first event JSON shape';
+      det.appendChild(sum);
+      var pre = document.createElement('pre');
+      try {
+        var ev = events[0];
+        var shape = {
+          name: ev.name,
+          shortName: ev.shortName,
+          date: ev.date,
+          status: ev.status && ev.status.type && ev.status.type.shortDetail,
+          numCompetitors: ev.competitions && ev.competitions[0] && ev.competitions[0].competitors && ev.competitions[0].competitors.length,
+          competitorKeys: ev.competitions && ev.competitions[0] && ev.competitions[0].competitors && ev.competitions[0].competitors[0] && Object.keys(ev.competitions[0].competitors[0]).slice(0, 12),
+        };
+        pre.textContent = JSON.stringify(shape, null, 2);
+      } catch(e) {
+        pre.textContent = 'shape extraction failed: ' + e.message;
+      }
+      det.appendChild(pre);
+      body.appendChild(det);
+    }
+  } else {
+    var det2 = document.createElement('details');
+    var sum2 = document.createElement('summary');
+    sum2.textContent = 'Show proxy errors (' + result.errors.length + ')';
+    det2.appendChild(sum2);
+    var pre2 = document.createElement('pre');
+    pre2.textContent = result.errors.join('\n');
+    det2.appendChild(pre2);
+    body.appendChild(det2);
+  }
+}
+
+var results = {};
+
+function updateSummary(running) {
+  var ok = 0, warn = 0, bad = 0, pending = 0;
+  for (var i = 0; i < FEEDS.length; i++) {
+    var r = results[i];
+    if (!r) { pending++; continue; }
+    var c = classify(r);
+    if (c === 'ok') ok++;
+    else if (c === 'warn') warn++;
+    else bad++;
+  }
+  var html = (running ? '<b>Running...</b>   ' : '<b>Done.</b>   ') +
+    '<span class="ok">' + ok + ' OK</span>   ' +
+    '<span class="warn">' + warn + ' empty</span>   ' +
+    '<span class="bad">' + bad + ' failed</span>' +
+    (pending > 0 ? '   ' + pending + ' pending' : '');
+  document.getElementById('summary').innerHTML = html;
+}
+
+function runOne(idx) {
+  var feed = FEEDS[idx];
+  renderRow(feed, idx);
+  return espnFetch(feed.sport, feed.league).then(function(result) {
+    results[idx] = result;
+    updateRow(idx, feed, result);
+    updateSummary(true);
+  });
+}
+
+function runAll() {
+  document.getElementById('rows').innerHTML = '';
+  results = {};
+  FEEDS.forEach(function(f, i) { renderRow(f, i); });
+  updateSummary(true);
+  var promises = FEEDS.map(function(_, i) { return runOne(i); });
+  Promise.all(promises).then(function() { updateSummary(false); });
+}
+
+function rerunBad() {
+  var promises = [];
+  for (var i = 0; i < FEEDS.length; i++) {
+    var r = results[i];
+    if (!r || classify(r) !== 'ok') {
+      var row = document.getElementById('row-' + i);
+      if (row) {
+        row.className = 'row pending';
+        row.querySelector('.status').textContent = '...';
+        row.querySelector('.status').className = 'status';
+      }
+      promises.push(runOne(i));
+    }
+  }
+  if (promises.length === 0) {
+    document.getElementById('summary').innerHTML = '<b>Nothing to re-run.</b> All feeds returned events.';
+    return;
+  }
+  updateSummary(true);
+  Promise.all(promises).then(function() { updateSummary(false); });
+}
+
+document.getElementById('run').addEventListener('click', runAll);
+document.getElementById('rerun-bad').addEventListener('click', rerunBad);
+</script>
+</body>
+</html>

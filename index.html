@@ -2004,7 +2004,31 @@ function followSuggested(key){
 }
 
 // - FLY MODE -
-function abbrev(name) {
+// Official AFL TV abbreviations. Matched on a distinctive part of the team name so it
+// works whether ESPN sends "Adelaide Crows" or just "Adelaide". Order matters: the more
+// specific names (Port Adelaide, North Melbourne, Greater Western Sydney, West Coast,
+// Western Bulldogs) are listed BEFORE the names they could be confused with.
+const AFL_TV = [
+  ['greater western sydney','GWS'], ['gws','GWS'],
+  ['north melbourne','NM'],         ['kangaroos','NM'],
+  ['port adelaide','PTA'],          ['port','PTA'],
+  ['west coast','WCE'],
+  ['western bulldogs','WBD'],       ['bulldogs','WBD'],
+  ['adelaide','ADE'], ['brisbane','BRI'], ['carlton','CAR'], ['collingwood','COL'],
+  ['essendon','ESS'], ['fremantle','FRE'], ['geelong','GEE'], ['gold coast','GCS'],
+  ['hawthorn','HAW'], ['melbourne','MEL'], ['richmond','RIC'],
+  ['st kilda','STK'], ['kilda','STK'], ['sydney','SYD'], ['swans','SYD'],
+];
+
+function abbrev(name, sportKey) {
+  // AFL: use the official TV code if we recognise the team.
+  if (sportKey === 'australian-football') {
+    const lower = name.toLowerCase();
+    for (const [key, code] of AFL_TV) {
+      if (lower.includes(key)) return code;
+    }
+  }
+  // Generic fallback (all other sports, or an unrecognised AFL name).
   const words = name.trim().split(/\s+/);
   if (words.length === 1) return words[0].slice(0,3).toUpperCase();
   if (words.length === 2) return (words[0].slice(0,2) + words[1].slice(0,1)).toUpperCase();
@@ -2044,8 +2068,8 @@ function buildFlyModeGrid() {
     const statusCls = mf === 'overtime' ? ' ot' : (mf === 'flytime' ? ' flytime' : '');
     return ''
       + '<div class="flymode-card">'
-      +   '<div class="flymode-team home">' + abbrev(m.home) + '</div>'
-      +   '<div class="flymode-team away">' + abbrev(m.away) + '</div>'
+      +   '<div class="flymode-team home">' + abbrev(m.home, m.sportKey) + '</div>'
+      +   '<div class="flymode-team away">' + abbrev(m.away, m.sportKey) + '</div>'
       +   '<div class="flymode-score home ' + getFlyClass(m.id,'home') + '">' + m.homeScore + '</div>'
       +   '<div class="flymode-status' + statusCls + '">' + badge + '</div>'
       +   '<div class="flymode-score away ' + getFlyClass(m.id,'away') + '">' + m.awayScore + '</div>'

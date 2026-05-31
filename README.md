@@ -23,6 +23,22 @@ Toggle between **My Teams** (just the teams you follow) and **All** on any tab.
 
 -----
 
+## FlyState — momentum at a glance
+
+The score numbers change colour to show what’s *happening* in a game, not just the score:
+
+- **Green** — FlyTime: a close, late finish worth watching
+- **Purple** — a comeback is underway
+- **Red** — a team is on fire (a sustained scoring run)
+- **Orange** — a team is on a run
+- **Yellow** — momentum is building
+- **Blue** — a team has gone cold
+- **White** — even contest
+
+Turn on a team’s bell and StatFly sends you one alert the moment its match enters FlyTime, so you never miss a great finish.
+
+-----
+
 ## Leagues covered
 
 **US / Canada** — NFL, NBA, MLB, NHL, MLS, WNBA, NCAAM, NCAAF
@@ -51,7 +67,7 @@ StatFly is a **PWA** (Progressive Web App) — no App Store needed.
 
 - **Data:** ESPN’s unofficial public scoreboard API. No API key required.
 - **CORS proxies:** Browser fetches rotate through `corsproxy.io`, `allorigins`, `codetabs`, and `thingproxy`. First successful response wins.
-- **Polling:** Scores refresh every 60 seconds while the tab is visible.
+- **Polling:** Scores refresh every 60 seconds while the tab is visible — and faster (every 20 seconds) during a close finish, so FlyTime stays up to date.
 - **Storage:** Followed teams and alert preferences are saved in `localStorage` — nothing leaves your device.
 - **Offline:** The app shell is cached by the service worker so it loads instantly every time.
 

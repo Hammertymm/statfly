@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<title>NRL Feed Research</title>
+<style>
+  *{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
+  body{background:#000;color:#fff;font-family:-apple-system,BlinkMacSystemFont,sans-serif;
+       max-width:430px;margin:0 auto;padding:16px 16px 60px;-webkit-font-smoothing:antialiased;}
+  h1{font-size:20px;font-weight:700;margin-bottom:2px;}
+  .sub{font-size:12px;color:rgba(235,235,245,.4);margin-bottom:16px;}
+  .warn-box{background:rgba(255,159,10,.1);border:1px solid rgba(255,159,10,.35);
+            border-radius:10px;padding:12px;font-size:12px;color:rgba(235,235,245,.8);
+            margin-bottom:20px;line-height:1.65;}
+  .warn-box strong{color:#ff9f0a;}
+  section{margin-bottom:28px;}
+  h2{font-size:11px;font-weight:700;color:rgba(235,235,245,.4);letter-spacing:.5px;
+     text-transform:uppercase;margin:0 0 8px;}
+  button{display:block;width:100%;background:#111114;border:1px solid rgba(255,255,255,.1);
+         border-radius:10px;color:#30d158;font-size:14px;font-weight:600;
+         padding:12px 14px;margin-bottom:8px;cursor:pointer;text-align:left;}
+  button:active{opacity:.65;}
+  .result{background:#0d0d0f;border:1px solid rgba(255,255,255,.08);border-radius:10px;
+          padding:12px;font-size:11px;line-height:1.65;margin-top:2px;display:none;}
+  .lbl{font-size:9px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;
+       color:rgba(235,235,245,.35);margin-bottom:3px;margin-top:10px;}
+  .lbl:first-child{margin-top:0;}
+  .ok{color:#30d158;font-weight:700;}
+  .amber{color:#ff9f0a;font-weight:700;}
+  .bad{color:#ff453a;font-weight:700;}
+  .dim{color:rgba(235,235,245,.5);}
+  .box{background:#000;border-radius:6px;padding:8px;margin-top:4px;
+       font-family:monospace;font-size:11px;color:rgba(235,235,245,.65);}
+  pre{margin:0;white-space:pre-wrap;word-break:break-all;}
+  .divider{height:1px;background:rgba(255,255,255,.07);margin:20px 0;}
+</style>
+</head>
+<body>
+
+<h1>NRL Feed Research</h1>
+<div class="sub">Checking free APIs for NRL live scores &mdash; StatFly</div>
+
+<div class="warn-box">
+  <strong>Heads up:</strong> Squiggle (squiggle.com.au) is primarily an <strong>AFL</strong>
+  predictions site, not NRL. Testing it anyway &mdash; the team names in the result will
+  immediately confirm this. If it returns AFL teams (Richmond, Collingwood&hellip;) it is not
+  usable for NRL and we fall through to TheSportsDB.
+</div>
+
+<!-- ── SQUIGGLE ──────────────────────────────── -->
+<section>
+  <h2>1 &mdash; Squiggle API</h2>
+  <button onclick="sqTeams()">&#9654; Check teams list</button>
+  <div class="result" id="sq-teams"></div>
+  <button onclick="sqGames()">&#9654; Check live / recent games</button>
+  <div class="result" id="sq-games"></div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ── THESPORTSDB ───────────────────────────── -->
+<section>
+  <h2>2 &mdash; TheSportsDB</h2>
+  <button onclick="sdbSearch()">&#9654; Search for NRL league</button>
+  <div class="result" id="sdb-search"></div>
+  <button onclick="sdbGames()">&#9654; Get upcoming NRL games</button>
+  <div class="result" id="sdb-games"></div>
+  <button onclick="sdbLive()">&#9654; Check for live / today's events</button>
+  <div class="result" id="sdb-live"></div>
+</section>
+
+<script>
+/* ── helpers ─────────────────────────────────── */
+function show(id, html) {
+  var el = document.getElementById(id);
+  el.innerHTML = html;
+  el.style.display = 'block';
+}
+function loading(id, msg) {
+  show(id, '<span class="amber">' + (msg || 'Fetching...') + '</span>');
+}
+function lbl(s) { return '<div class="lbl">' + s + '</div>'; }
+function box(s) { return '<div class="box"><pre>' + esc(s) + '</pre></div>'; }
+function esc(s) { return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+
+async function get(url) {
+  var r = await fetch(url);
+  if (!r.ok) throw new Error('HTTP ' + r.status);
+  return r.json();
+}
+
+/* Detect AFL vs NRL from a list of team names */
+var NRL = ['broncos','raiders','bulldogs','sharks','wests tigers','sea eagles','eels',
+  'panthers','storm','knights','rabbitohs','roosters','dragons','warriors','cowboys',
+  'titans','dolphins','nrl'];
+var AFL = ['richmond','carlton','collingwood','geelong','hawthorn','essendon',
+  'north melbourne','western bulldogs','port adelaide','adelaide','fremantle',
+  'brisbane lions','afl','sydney swans','west coast','gold coast suns','greater western'];
+
+function verdict(names) {
+  var low = names.map(function(n){ return n.toLowerCase(); });
+  var nrl = NRL.filter(function(h){ return low.some(function(n){ return n.includes(h); }); }).length;
+  var afl = AFL.filter(function(h){ return low.some(function(n){ return n.includes(h); }); }).length;
+  if (nrl > 0) return '<span class="ok">Looks like NRL data (' + nrl + ' NRL team match' + (nrl>1?'es':'') + ')</span>';
+  if (afl > 0) return '<span class="bad">Looks like AFL data (' + afl + ' AFL match' + (afl>1?'es':'') + ') &mdash; not usable for NRL</span>';
+  return '<span class="amber">Unknown sport &mdash; check team names below</span>';
+}
+
+/* ── SQUIGGLE ──────────────────────────────────────────── */
+async function sqTeams() {
+  loading('sq-teams', 'Fetching teams from Squiggle...');
+  try {
+    var d = await get('https://api.squiggle.com.au/?q=teams');
+    var teams = d.teams || [];
+    var names = teams.map(function(t){ return t.name; });
+    var v = verdict(names);
+    var list = names.slice(0, 12).join(', ') + (names.length > 12 ? '...' : '');
+    show('sq-teams',
+      lbl('Verdict') + v +
+      lbl('Team count') + '<span class="dim">' + teams.length + '</span>' +
+      lbl('Team names') + box(list)
+    );
+  } catch(e) {
+    show('sq-teams', '<span class="bad">Failed: ' + esc(e.message) + '</span><br><span class="dim">Likely CORS block or API is down.</span>');
+  }
+}
+
+async function sqGames() {
+  loading('sq-games', 'Fetching games from Squiggle...');
+  try {
+    /* Try live first, then fall back to recent */
+    var live = await get('https://api.squiggle.com.au/?q=games&live=1');
+    var recent = await get('https://api.squiggle.com.au/?q=games');
+    var games = (live.games && live.games.length) ? live.games : (recent.games || []).slice(0, 5);
+
+    if (!games.length) {
+      show('sq-games', '<span class="amber">0 games returned &mdash; probably off-season or wrong competition</span>');
+      return;
+    }
+
+    var names = games.flatMap(function(g){ return [g.hteam || '', g.ateam || '']; });
+    var v = verdict(names);
+    var hasScores = games[0] && 'hscore' in games[0];
+    var hasTime   = games[0] && ('timestr' in games[0] || 'time' in games[0]);
+
+    var rows = games.slice(0, 5).map(function(g) {
+      return (g.hteam||'?') + ' ' + (g.hscore != null ? g.hscore : '-') +
+             '  vs  ' +
+             (g.ascore != null ? g.ascore : '-') + ' ' + (g.ateam||'?') +
+             '\n  ' + (g.timestr || g.date || 'no time');
+    }).join('\n\n');
+
+    show('sq-games',
+      lbl('Verdict') + v +
+      lbl('Live games') + '<span class="dim">' + (live.games||[]).length + '</span>' +
+      lbl('Has score fields (hscore / ascore)?') + '<span class="' + (hasScores?'ok':'bad') + '">' + (hasScores?'Yes':'No') + '</span>' +
+      lbl('Has time / clock field?') + '<span class="' + (hasTime?'ok':'amber') + '">' + (hasTime?'Yes':'Not obvious') + '</span>' +
+      lbl('Sample games') + box(rows)
+    );
+  } catch(e) {
+    show('sq-games', '<span class="bad">Failed: ' + esc(e.message) + '</span>');
+  }
+}
+
+/* ── THESPORTSDB ──────────────────────────────────────── */
+var sdbId = null;
+
+async function sdbSearch() {
+  loading('sdb-search', 'Searching TheSportsDB for NRL...');
+  var found = null;
+
+  /* Try several endpoint variants - free key is "3" on v1 for some, "1" for others */
+  var endpoints = [
+    'https://www.thesportsdb.com/api/v1/json/3/search_all_leagues.php?c=Australia&s=Rugby%20League',
+    'https://www.thesportsdb.com/api/v1/json/1/search_all_leagues.php?c=Australia&s=Rugby%20League',
+    'https://www.thesportsdb.com/api/v1/json/3/searchleagues.php?l=NRL',
+    'https://www.thesportsdb.com/api/v1/json/1/searchleagues.php?l=NRL'
+  ];
+
+  var tried = [];
+  for (var i = 0; i < endpoints.length; i++) {
+    try {
+      var d = await get(endpoints[i]);
+      var leagues = d.countrys || d.leagues || [];
+      tried.push(endpoints[i] + ' -> ' + leagues.length + ' result(s)');
+      if (leagues.length) { found = leagues; break; }
+    } catch(e) {
+      tried.push(endpoints[i] + ' -> ERROR: ' + e.message);
+    }
+  }
+
+  if (!found || !found.length) {
+    show('sdb-search',
+      '<span class="bad">No NRL leagues found across all tried endpoints.</span>' +
+      lbl('Endpoints tried') + box(tried.join('\n'))
+    );
+    return;
+  }
+
+  sdbId = found[0].idLeague;
+  var rows = found.map(function(l){ return l.strLeague + '  (ID: ' + l.idLeague + ')'; }).join('\n');
+  show('sdb-search',
+    '<span class="ok">Found ' + found.length + ' league(s)</span>' +
+    lbl('Leagues') + box(rows) +
+    lbl('Will use for game fetches') + '<span class="dim">ID ' + sdbId + '</span>' +
+    lbl('Endpoints tried') + box(tried.join('\n'))
+  );
+}
+
+async function sdbGames() {
+  if (!sdbId) {
+    show('sdb-games', '<span class="amber">Run the league search first to get a league ID.</span>');
+    return;
+  }
+  loading('sdb-games', 'Fetching next NRL events (ID ' + sdbId + ')...');
+  try {
+    var d = await get('https://www.thesportsdb.com/api/v1/json/3/eventsnextleague.php?id=' + sdbId);
+    var events = d.events || [];
+    if (!events.length) {
+      /* Try key 1 */
+      var d2 = await get('https://www.thesportsdb.com/api/v1/json/1/eventsnextleague.php?id=' + sdbId);
+      events = d2.events || [];
+    }
+    if (!events.length) {
+      show('sdb-games', '<span class="amber">No upcoming events returned &mdash; may be off-season or API key required.</span>');
+      return;
+    }
+    var e0 = events[0];
+    var hasScore  = e0 && 'intHomeScore' in e0;
+    var hasStatus = e0 && 'strStatus' in e0;
+    var rows = events.slice(0, 5).map(function(e) {
+      return (e.strHomeTeam||'?') + ' vs ' + (e.strAwayTeam||'?') +
+             '\n  ' + (e.dateEvent||'') + ' ' + (e.strTime||'') +
+             '\n  Status: ' + (e.strStatus||'?') +
+             '  Score: ' + (e.intHomeScore != null ? e.intHomeScore : '-') +
+             ' - ' + (e.intAwayScore != null ? e.intAwayScore : '-');
+    }).join('\n\n');
+    show('sdb-games',
+      '<span class="ok">' + events.length + ' upcoming event(s)</span>' +
+      lbl('Has score fields?') + '<span class="' + (hasScore?'ok':'amber') + '">' + (hasScore?'Yes (intHomeScore / intAwayScore)':'Not in upcoming events (normal - check live endpoint)') + '</span>' +
+      lbl('Has status field?') + '<span class="' + (hasStatus?'ok':'bad') + '">' + (hasStatus?'Yes (strStatus)':'No') + '</span>' +
+      lbl('Sample events') + box(rows)
+    );
+  } catch(e) {
+    show('sdb-games', '<span class="bad">Failed: ' + esc(e.message) + '</span>');
+  }
+}
+
+async function sdbLive() {
+  if (!sdbId) {
+    show('sdb-live', '<span class="amber">Run the league search first to get a league ID.</span>');
+    return;
+  }
+  loading('sdb-live', 'Checking for live / today events...');
+  try {
+    /* livescore endpoint - needs Patreon key on TheSportsDB; test it anyway */
+    var today = new Date().toISOString().slice(0,10);
+    var urls = [
+      'https://www.thesportsdb.com/api/v1/json/3/eventslive.php',
+      'https://www.thesportsdb.com/api/v1/json/3/eventsday.php?d=' + today + '&s=Rugby%20League',
+      'https://www.thesportsdb.com/api/v1/json/1/eventsday.php?d=' + today + '&s=Rugby%20League'
+    ];
+    var lines = [];
+    for (var i = 0; i < urls.length; i++) {
+      try {
+        var d = await get(urls[i]);
+        var events = d.events || d.livescore || [];
+        lines.push(urls[i] + '\n  -> ' + events.length + ' event(s)' + (events.length ? '  [' + (events[0].strHomeTeam||'?') + ' vs ' + (events[0].strAwayTeam||'?') + ']' : ''));
+      } catch(e) {
+        lines.push(urls[i] + '\n  -> ERROR: ' + e.message);
+      }
+    }
+    show('sdb-live', lbl('Results') + box(lines.join('\n\n')));
+  } catch(e) {
+    show('sdb-live', '<span class="bad">Failed: ' + esc(e.message) + '</span>');
+  }
+}
+</script>
+</body>
+</html>

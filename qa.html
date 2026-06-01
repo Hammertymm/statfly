@@ -1,0 +1,912 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>StatFly QA</title>
+<meta name="robots" content="noindex,nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap">
+<style>
+  /* StatFly design tokens (kept in sync with index.html) */
+  :root{
+    --bg:#000000; --card:#111114; --card2:#1c1c1e;
+    --live:#30d158; --upcoming:#ffd60a; --result:#ff453a;
+    --text:#fff; --text-2:rgba(235,235,245,.8); --text-3:rgba(235,235,245,.4);
+    --sep:rgba(255,255,255,.08); --blue:#0a84ff;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
+  html,body{
+    background:var(--bg);color:var(--text);
+    font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;
+    max-width:430px;margin:0 auto;min-height:100vh;
+    -webkit-font-smoothing:antialiased;padding:0 16px 70px;
+  }
+  .head{padding:22px 0 6px;}
+  .wordmark{font-size:33px;font-weight:700;letter-spacing:-.6px;line-height:1;}
+  .wordmark span{color:var(--live);}
+  .sub{font-size:12px;font-weight:600;color:var(--text-3);margin-top:6px;letter-spacing:.2px;}
+
+  .btn{
+    width:100%;margin:14px 0 0;padding:16px;border:none;border-radius:14px;
+    font-family:inherit;font-size:16px;font-weight:800;letter-spacing:.4px;cursor:pointer;
+    transition:transform .12s ease,opacity .12s ease;
+  }
+  .btn:active{transform:scale(.985);}
+  .btn:disabled{opacity:.5;cursor:default;}
+  .btn-main{background:var(--live);color:#000;}
+  .btn-feeds{background:transparent;color:var(--live);border:1.5px solid var(--live);}
+  .btn-fly{background:#bf5af2;color:#fff;}
+
+  /* Category summary (FlyMode Tests run) */
+  .flycats{display:none;margin:16px 0 4px;border:1px solid var(--sep);border-radius:14px;overflow:hidden;}
+  .flycats.show{display:block;}
+  .flycats .crow{display:flex;justify-content:space-between;align-items:center;padding:12px 14px;border-bottom:1px solid var(--sep);background:var(--card);font-size:13px;}
+  .flycats .crow:last-child{border-bottom:none;}
+  .flycats .cname{font-weight:600;color:var(--text-2);}
+  .flycats .cval{font-weight:800;letter-spacing:.4px;}
+  .flycats .cval.ok{color:var(--live);}
+  .flycats .cval.bad{color:var(--result);}
+  .flycats .overall{background:var(--card2);}
+  .flycats .overall .cname{color:var(--text);}
+
+  /* Overall score badge */
+  .score{
+    display:none;margin:16px 0 4px;padding:18px;border:1px solid var(--sep);
+    border-radius:16px;background:var(--card);text-align:center;
+  }
+  .score.show{display:block;}
+  .score .pct{font-size:46px;font-weight:800;line-height:1;letter-spacing:-1px;}
+  .score .word{font-size:13px;font-weight:700;letter-spacing:1px;margin-top:6px;text-transform:uppercase;}
+  .score .meta{font-size:12px;color:var(--text-3);margin-top:8px;font-weight:500;}
+
+  /* Results table */
+  .tbl{margin-top:12px;border:1px solid var(--sep);border-radius:14px;overflow:hidden;}
+  .tbl:empty{display:none;}
+  .grp{
+    padding:10px 14px;background:var(--card2);font-size:11px;font-weight:800;
+    letter-spacing:1px;text-transform:uppercase;color:var(--text-2);
+    border-bottom:1px solid var(--sep);
+  }
+  .row{
+    display:flex;align-items:flex-start;gap:10px;padding:13px 14px;
+    border-bottom:1px solid var(--sep);background:var(--card);
+  }
+  .row:last-child{border-bottom:none;}
+  .dot{flex-shrink:0;width:10px;height:10px;border-radius:50%;margin-top:4px;background:var(--text-3);}
+  .dot.pass{background:var(--live);}
+  .dot.fail{background:var(--result);}
+  .dot.skip{background:var(--upcoming);}
+  .rcol{flex:1;min-width:0;}
+  .rname{font-size:14px;font-weight:600;}
+  .rdetail{font-size:11.5px;color:var(--text-3);margin-top:3px;line-height:1.45;word-break:break-word;}
+  .rstat{flex-shrink:0;font-size:11px;font-weight:800;letter-spacing:.5px;margin-top:2px;}
+  .rstat.pass{color:var(--live);}
+  .rstat.fail{color:var(--result);}
+  .rstat.skip{color:var(--upcoming);}
+
+  .seclabel{margin:22px 4px 0;font-size:13px;font-weight:700;color:var(--text-2);letter-spacing:.3px;}
+  .note{font-size:11.5px;color:var(--text-3);line-height:1.6;margin:16px 4px 0;}
+  .note b{color:var(--text-2);}
+
+  /* The app under test loads here, kept off-screen */
+  #probe{position:absolute;width:430px;height:1px;left:-9999px;top:0;border:0;opacity:0;pointer-events:none;}
+</style>
+</head>
+<body>
+
+  <div class="head">
+    <div class="wordmark">Stat<span>Fly</span> QA</div>
+    <div class="sub">INTERNAL TEST HARNESS</div>
+  </div>
+
+  <button class="btn btn-main"  id="runbtn"  onclick="runAll()">RUN FULL TEST SUITE</button>
+  <button class="btn btn-feeds" id="feedbtn" onclick="runFeeds()">CHECK LIVE FEEDS</button>
+  <button class="btn btn-fly"   id="flybtn"  onclick="runFlyTests()">FLYMODE TESTS</button>
+
+  <div class="score" id="score">
+    <div class="pct" id="scorePct">--</div>
+    <div class="word" id="scoreWord">awaiting run</div>
+    <div class="meta" id="scoreMeta"></div>
+  </div>
+
+  <div class="tbl" id="tbl"></div>
+
+  <div class="seclabel" id="feedlabel" style="display:none">Live feed reachability</div>
+  <div class="tbl" id="feedtbl"></div>
+
+  <div class="seclabel" id="flylabel" style="display:none">FlyState / FlyMode engine tests</div>
+  <div class="flycats" id="flycats"></div>
+  <div class="tbl" id="flytbl"></div>
+
+  <div class="note" id="note"></div>
+
+  <!-- Hidden copy of the live app. We read its functions from here. -->
+  <iframe id="probe" src="index.html"></iframe>
+
+<script>
+/* -------------------------------------------------------------------------
+   StatFly QA harness.
+
+   Two buttons:
+   - RUN FULL TEST SUITE : ~29 static + logic checks (no network to ESPN).
+   - CHECK LIVE FEEDS    : races your CORS proxies for all 34 ESPN feeds.
+
+   Two kinds of check inside the suite:
+   1) FILE checks  - download index.html / sw.js / manifest.json as text and
+                     inspect them (structure, unicode safety, PWA wiring...).
+   2) LOGIC checks - read the REAL functions out of the hidden iframe and call
+                     them with test inputs, comparing against expected results.
+
+   IMPORTANT: serve this page from the SAME folder as index.html on a web
+   server (e.g. GitHub Pages) and open it over https. A browser will not let a
+   page read an iframe loaded from a different origin, so opening this file off
+   disk (file://) makes the logic + feed tests SKIP.
+   ------------------------------------------------------------------------- */
+
+// ---- result collection ----------------------------------------------------
+var ROWS = [];     // main suite
+var FEEDROWS = []; // live feeds
+function group(name){ ROWS.push({type:'group', name:name}); }
+function test(name, status, detail){ ROWS.push({type:'test', name:name, status:status, detail:detail||''}); }
+function feedRow(name, status, detail){ FEEDROWS.push({name:name, status:status, detail:detail||''}); }
+
+// All booleans true? (a test passes only if every sub-assertion holds)
+function allTrue(arr){ for(var i=0;i<arr.length;i++){ if(!arr[i]) return false; } return true; }
+
+// Read a numeric constant out of source text, e.g. const MOM_ONFIRE = 70;
+function srcNum(src, name, fallback){
+  var m = src.match(new RegExp(name + '\\s*=\\s*(\\d+)'));
+  return m ? parseInt(m[1],10) : fallback;
+}
+
+// Fetch a same-folder file as plain text. Returns null on failure.
+function fetchText(path){
+  return fetch(path, {cache:'no-store'})
+    .then(function(r){ return r.ok ? r.text() : null; })
+    .catch(function(){ return null; });
+}
+
+// Cached handle to the loaded app window.
+var APP = null;
+
+// Wait until the iframe has loaded and exposed its functions.
+// reload=true forces a fresh load (used by the main suite so FlyState starts clean).
+function waitForApp(reload){
+  var iframe = document.getElementById('probe');
+  if(APP && !reload) return Promise.resolve(APP);
+  return new Promise(function(resolve){
+    var tries = 0;
+    function check(){
+      tries++;
+      var win = null;
+      try { win = iframe.contentWindow; if(win){ void win.location.href; } }
+      catch(e){ resolve({crossOrigin:true}); return; }          // blocked = different origin
+      if(win && typeof win.momTier === 'function'){
+        APP = {win:win, doc:iframe.contentDocument}; resolve(APP); return;
+      }
+      if(tries > 70){ resolve({timeout:true}); return; }        // ~7s ceiling
+      setTimeout(check, 100);
+    }
+    if(reload){ try { APP=null; iframe.src = 'index.html'; } catch(e){} }
+    setTimeout(check, reload ? 350 : 0);
+  });
+}
+
+// ===========================================================================
+// MAIN SUITE
+// ===========================================================================
+function runAll(){
+  var btn = document.getElementById('runbtn');
+  btn.disabled = true; btn.textContent = 'RUNNING...';
+  ROWS = [];
+  document.getElementById('tbl').innerHTML = '';
+  document.getElementById('score').classList.remove('show');
+
+  var idxSrc=null, swSrc=null, manSrc=null;
+
+  Promise.all([ fetchText('index.html'), fetchText('sw.js'), fetchText('manifest.json') ])
+  .then(function(files){
+    idxSrc=files[0]; swSrc=files[1]; manSrc=files[2];
+    runFileChecks(idxSrc, swSrc, manSrc);
+    return waitForApp(true);
+  })
+  .then(function(app){
+    runLogicChecks(app, idxSrc);
+    renderMain();
+    btn.disabled = false; btn.textContent = 'RUN FULL TEST SUITE';
+  });
+}
+
+// ---------------------------------------------------------------------------
+// FILE CHECKS
+// ---------------------------------------------------------------------------
+function runFileChecks(idx, sw, man){
+
+  group('Structure & deployment');
+
+  // Page structure ---------------------------------------------------------
+  if(!idx){ test('Page structure','fail','Could not load index.html (serve from the same folder over https).'); }
+  else {
+    var iHome=idx.indexOf('id="page-home"'), iRes=idx.indexOf('id="page-results"');
+    var iSet=idx.indexOf('id="page-settings"'), iCards=idx.indexOf('id="results-cards"');
+    var ok = iHome>-1 && iRes>-1 && iSet>-1 && iCards>-1 && iHome<iRes && iRes<iSet && iCards>iRes;
+    test('Page structure', ok?'pass':'fail',
+        ok ? 'page-home -> page-results -> page-settings in order; results-cards inside page-results.'
+           : 'Expected three page divs in order with results-cards inside page-results.');
+  }
+
+  // Unicode safety ---------------------------------------------------------
+  if(idx){
+    var forbidden = {0x2014:'em dash',0x2013:'en dash',0x2212:'minus sign',0x00b1:'plus-minus'};
+    var bad=0, sample='';
+    (idx.match(/<script>[\s\S]*?<\/script>/g) || []).forEach(function(block){
+      for(var i=0;i<block.length;i++){
+        var c = block.charCodeAt(i);
+        if(forbidden[c] || (c>=0x2500 && c<=0x257F)){ bad++; if(!sample) sample = forbidden[c] || ('box-drawing U+'+c.toString(16)); }
+      }
+    });
+    test('Unicode safety (script)', bad===0?'pass':'fail',
+        bad===0 ? 'No iOS-Safari-crashing characters inside any <script> block.'
+                : bad+' forbidden char(s) in script, e.g. '+sample+'. Replace with ASCII.');
+  }
+
+  // PWA --------------------------------------------------------------------
+  if(idx){
+    var pwa = [ /rel="manifest"/.test(idx), /name="theme-color"/.test(idx), /apple-mobile-web-app-capable/.test(idx) ];
+    test('PWA', allTrue(pwa)?'pass':'fail',
+        allTrue(pwa) ? 'Manifest link, theme-color and apple-mobile-web-app-capable present.'
+                     : 'Missing manifest link / theme-color / apple-mobile-web-app-capable.');
+  }
+
+  // Service worker ---------------------------------------------------------
+  if(!sw){ test('Service worker','fail','Could not load sw.js.'); }
+  else {
+    var cacheMatch = sw.match(/statfly-v(\d+)/);
+    var swOk = [
+      /serviceWorker\.register\(\s*['"]sw\.js['"]\s*\)/.test(idx||''),
+      !!cacheMatch,
+      /addEventListener\(\s*['"]install['"]/.test(sw),
+      /addEventListener\(\s*['"]activate['"]/.test(sw),
+      /addEventListener\(\s*['"]fetch['"]/.test(sw),
+      /skipWaiting/.test(sw)
+    ];
+    test('Service worker', allTrue(swOk)?'pass':'fail',
+        allTrue(swOk) ? 'Registered as sw.js; cache key '+(cacheMatch?cacheMatch[0]:'?')+'; install/activate/fetch + skipWaiting present.'
+                      : 'Missing register hook, versioned cache key, a lifecycle listener, or skipWaiting.');
+  }
+
+  // Manifest ---------------------------------------------------------------
+  if(!man){ test('Manifest','fail','Could not load manifest.json.'); }
+  else {
+    var ok2=false, why='Invalid JSON.';
+    try {
+      var m = JSON.parse(man);
+      var sizes = (m.icons||[]).map(function(i){return i.sizes;}).join(' ');
+      ok2 = !!m.name && m.display==='standalone' && !!m.start_url && /192x192/.test(sizes) && /512x512/.test(sizes);
+      why = ok2 ? 'name, display:standalone, start_url, and 192+512 icons all present.'
+                : 'Missing name / display:standalone / start_url / 192 / 512 icon.';
+    } catch(e){}
+    test('Manifest', ok2?'pass':'fail', why);
+  }
+
+  group('Storage & persistence');
+
+  // LocalStorage -----------------------------------------------------------
+  var lsOk=false, lsWhy='localStorage not available.';
+  try {
+    localStorage.setItem('__sf_qa__','1');
+    lsOk = localStorage.getItem('__sf_qa__')==='1';
+    localStorage.removeItem('__sf_qa__');
+    lsWhy = lsOk ? 'set / get / remove round-trip works.' : 'Round-trip mismatch.';
+  } catch(e){ lsWhy = 'localStorage threw: '+e.message; }
+  test('LocalStorage', lsOk?'pass':'fail', lsWhy);
+
+  if(idx){
+    // Favourites ----------------------------------------------------------
+    var favOk = /'statfly_favs'/.test(idx) && /function saveFavs/.test(idx);
+    test('Favourites', favOk?'pass':'fail',
+        favOk ? "Persisted under 'statfly_favs' via saveFavs()." : "Missing 'statfly_favs' and/or saveFavs().");
+
+    // Bell states ---------------------------------------------------------
+    var bellOk = /\.alert\b/.test(idx) && /function toggleAlert/.test(idx) && /'statfly_favs'/.test(idx);
+    test('Bell states', bellOk?'pass':'fail',
+        bellOk ? 'Per-team .alert flag toggled by toggleAlert(), stored with favourites.'
+               : 'Missing .alert flag / toggleAlert() / favourites persistence.');
+
+    // FlyTime alert persistence -------------------------------------------
+    var ftKey = /'statfly_flytime'/.test(idx);
+    var ftPat = /JSON\.stringify\(\[\.\.\.flytimeAlerted\]\)/.test(idx);
+    var ftRt=false;
+    try {
+      var s=new Set(); s.add('evt1'); s.add('evt2');
+      localStorage.setItem('__sf_qa_ft__', JSON.stringify(Array.from(s)));
+      var back=new Set(JSON.parse(localStorage.getItem('__sf_qa_ft__')));
+      localStorage.removeItem('__sf_qa_ft__');
+      ftRt = back.has('evt1') && back.has('evt2');
+    } catch(e){}
+    test('FlyTime alert persistence', (ftKey&&ftPat&&ftRt)?'pass':'fail',
+        (ftKey&&ftPat&&ftRt) ? "Alerted-match Set saved to 'statfly_flytime'; Set round-trip verified."
+                             : 'Missing flytime key / serialize pattern, or Set round-trip failed.');
+
+    // Notified + form cache keys ------------------------------------------
+    var ntKey = /'statfly_notified'/.test(idx);
+    var ntPat = /JSON\.stringify\(\[\.\.\.notifiedMatchIds\]\)/.test(idx);
+    var fcKey = /FORM_CACHE_KEY\s*=\s*'statfly_form_cache_v\d+'/.test(idx);
+    test('Notified + form cache', (ntKey&&ntPat&&fcKey)?'pass':'fail',
+        (ntKey&&ntPat&&fcKey) ? "'statfly_notified' Set persisted; versioned form cache key present."
+                              : 'Missing notified key/pattern or versioned form-cache key.');
+
+    // ESPN feed arrays empty (no mock data) -------------------------------
+    var emptyOk = /ALL_LIVE\s*=\s*\[\s*\]/.test(idx) && /ALL_UPCOMING\s*=\s*\[\s*\]/.test(idx) && /ALL_RESULTS\s*=\s*\[\s*\]/.test(idx);
+    test('ESPN feed arrays', emptyOk?'pass':'fail',
+        emptyOk ? 'ALL_LIVE / ALL_UPCOMING / ALL_RESULTS all initialise empty (no mock data).'
+                : 'A match array does not start as an empty literal.');
+  }
+}
+
+// ---------------------------------------------------------------------------
+// LOGIC CHECKS
+// ---------------------------------------------------------------------------
+function runLogicChecks(app, idx){
+  group('FlyState logic');
+
+  if(!app || !app.win){
+    var reason = app && app.crossOrigin
+      ? 'App loaded from a different origin (open this page from the same site over https).'
+      : 'App did not finish loading in time.';
+    ['FlyState functions','FlyTime logic','Momentum logic','Comeback logic','Cold logic',
+     'Momentum engine (2-poll)','Threshold ordering','Tuning completeness'].forEach(function(n){ test(n,'skip',reason); });
+    group('Features');
+    ['Search index','Fly Mode','Rivalry marker','AFL TV labels','Adaptive polling',
+     'Onboarding wiring','espnStatus date sanity','Render smoke test','Regression guard'].forEach(function(n){ test(n,'skip',reason); });
+    return;
+  }
+  var win = app.win, doc = app.doc;
+
+  // FlyState functions present --------------------------------------------
+  var fns = ['momTier','isFlyTime','resolveSide','updateFlyState','getFlyClass','getMatchFly'];
+  var present = fns.filter(function(f){ return typeof win[f]==='function'; });
+  test('FlyState functions', present.length===fns.length?'pass':'fail',
+      present.length+'/'+fns.length+' core functions found.');
+
+  // FlyTime logic ----------------------------------------------------------
+  try {
+    var ft = win.isFlyTime, t=[];
+    t.push(ft({sportKey:'basketball',hInt:100,aInt:98,period:4,clockSec:120})===true);   // close & late
+    t.push(ft({sportKey:'basketball',hInt:100,aInt:80,period:4,clockSec:120})===false);  // blowout
+    t.push(ft({sportKey:'basketball',hInt:100,aInt:98,period:3,clockSec:120})===false);  // too early
+    t.push(ft({sportKey:'football',hInt:21,aInt:17,period:4,clockSec:200})===true);
+    t.push(ft({sportKey:'football',hInt:31,aInt:10,period:4,clockSec:200})===false);
+    t.push(ft({sportKey:'soccer',hInt:1,aInt:1,clockRaw:'85'})===true);
+    t.push(ft({sportKey:'soccer',hInt:1,aInt:1,clockRaw:'60'})===false);
+    t.push(ft({sportKey:'soccer',hInt:3,aInt:1,clockRaw:'85'})===false);
+    t.push(ft({sportKey:'tennis',hInt:6,aInt:5,period:3,clockSec:0})===false);
+    test('FlyTime logic', allTrue(t)?'pass':'fail',
+        allTrue(t) ? 'Basketball, football, soccer windows correct; tennis excluded ('+t.length+' cases).'
+                   : 'A FlyTime case returned the wrong verdict.');
+  } catch(e){ test('FlyTime logic','fail','isFlyTime threw: '+e.message); }
+
+  // Momentum logic (inputs derived from live thresholds) -------------------
+  var WARM=srcNum(idx,'MOM_WARM',16), ONRUN=srcNum(idx,'MOM_ONRUN',40), ONFIRE=srcNum(idx,'MOM_ONFIRE',70), SUST=srcNum(idx,'RED_SUSTAIN',2), COLD=srcNum(idx,'COLD_MOM',12);
+  try {
+    var mt=win.momTier, m=[];
+    m.push(mt(ONFIRE+5, SUST)==='onfire');                       // hot AND sustained
+    if(SUST>=2) m.push(mt(ONFIRE+5, SUST-1)==='onrun');          // hot, not sustained -> orange
+    var midRun=Math.floor((ONRUN+ONFIRE)/2);  if(midRun<ONFIRE) m.push(mt(midRun,0)==='onrun');
+    var midWarm=Math.floor((WARM+ONRUN)/2);    if(midWarm>=WARM&&midWarm<ONRUN) m.push(mt(midWarm,0)==='warming');
+    if(WARM-5>=0) m.push(mt(WARM-5,0)==='');
+    test('Momentum logic', allTrue(m)?'pass':'fail',
+        allTrue(m) ? 'momTier bands correct vs live thresholds ('+WARM+'/'+ONRUN+'/'+ONFIRE+', sustain '+SUST+').'
+                   : 'A momentum tier did not match its threshold band.');
+  } catch(e){ test('Momentum logic','fail','momTier threw: '+e.message); }
+
+  // Comeback logic (resolveSide is pure; we supply the tune) ---------------
+  try {
+    var rs=win.resolveSide, tune={cbMin:10}, c=[];
+    c.push(rs(30, 10, 2, 14, 0, false, tune)==='comeback');      // down 14, clawed to -2, still moving
+    c.push(rs(5, 5, 4, 4, 0, false, tune)==='');                 // swing too small to qualify
+    test('Comeback logic', allTrue(c)?'pass':'fail',
+        allTrue(c) ? 'Flags a real clawed-back deficit; ignores small swings.' : 'Comeback detection unexpected.');
+  } catch(e){ test('Comeback logic','fail','resolveSide threw: '+e.message); }
+
+  // Cold logic -------------------------------------------------------------
+  try {
+    var rs2=win.resolveSide, tune2={cbMin:10}, low=Math.max(0, Math.min(COLD-1, WARM-1)), d=[];
+    d.push(rs2(low, low, 0, 0, 0, true, tune2)==='cold');        // real drought
+    d.push(rs2(low, ONRUN+5, 0, 0, 0, false, tune2)==='cold');   // stalled vs hot opponent
+    d.push(rs2(low, low, 0, 0, 0, false, tune2)==='');           // quiet but symmetric
+    test('Cold logic', allTrue(d)?'pass':'fail',
+        allTrue(d) ? 'Blue fires on a drought and on stalling vs a hot opponent; neutral otherwise.' : 'Cold detection unexpected.');
+  } catch(e){ test('Cold logic','fail','resolveSide threw: '+e.message); }
+
+  // Momentum engine end-to-end (seed on poll 1, activate on poll 2) --------
+  try {
+    var ueId='__QA_ENGINE__';
+    var p1={id:ueId, sportKey:'basketball', hInt:10, aInt:8, period:2, clockSec:600, isOT:false};
+    win.updateFlyState(p1);
+    var seedHome = win.getFlyClass(ueId,'home');   // expect '' (seeded, no momentum)
+    var p2={id:ueId, sportKey:'basketball', hInt:20, aInt:8, period:2, clockSec:600, isOT:false}; // home +10
+    win.updateFlyState(p2);
+    var liveHome = win.getFlyClass(ueId,'home');   // expect non-empty 'fs-...' (momentum activated)
+    var ok3 = seedHome==='' && liveHome!=='' && liveHome.indexOf('fs-')===0;
+    test('Momentum engine (2-poll)', ok3?'pass':'fail',
+        ok3 ? 'Seeds blank on poll 1, then activates the scoring side on poll 2 (home -> "'+liveHome+'").'
+            : 'Poll1 home="'+seedHome+'", Poll2 home="'+liveHome+'" (expected blank then non-empty).');
+  } catch(e){ test('Momentum engine (2-poll)','fail','updateFlyState threw: '+e.message); }
+
+  // Threshold ordering -----------------------------------------------------
+  var ordOk = (WARM<ONRUN) && (ONRUN<ONFIRE) && (COLD<WARM);
+  test('Threshold ordering', ordOk?'pass':'fail',
+      ordOk ? 'COLD('+COLD+') < WARM('+WARM+') < ONRUN('+ONRUN+') < ONFIRE('+ONFIRE+').'
+            : 'Thresholds out of order: COLD '+COLD+', WARM '+WARM+', ONRUN '+ONRUN+', ONFIRE '+ONFIRE+'.');
+
+  // Tuning completeness ----------------------------------------------------
+  if(idx){
+    var ftBlock = (idx.match(/const FLY_TUNING\s*=\s*\{([\s\S]*?)\};/)||[])[1] || '';
+    var sportsNeeded = ['basketball','football','hockey','soccer','baseball','australian-football'];
+    var miss = sportsNeeded.filter(function(s){ return ftBlock.indexOf(s)===-1; });
+    test('Tuning completeness', (ftBlock&&miss.length===0)?'pass':'fail',
+        (ftBlock&&miss.length===0) ? 'FLY_TUNING has all '+sportsNeeded.length+' sports with FlyTime logic.'
+                                   : (ftBlock ? 'FLY_TUNING missing: '+miss.join(', ')+'.' : 'Could not find FLY_TUNING block.'));
+  }
+
+  group('Features');
+
+  // Search index (call buildSearchIndex for real) --------------------------
+  try {
+    var arr=win.buildSearchIndex();
+    var siOk = Array.isArray(arr) && arr.length>0 && arr.some(function(x){return x.type==='league';}) && arr.some(function(x){return x.type==='team';});
+    test('Search index', siOk?'pass':'fail',
+        siOk ? 'buildSearchIndex() returned '+arr.length+' entries incl. leagues and teams.' : 'Index empty or malformed.');
+  } catch(e){ test('Search index','fail','buildSearchIndex() threw: '+e.message); }
+
+  // Fly Mode ---------------------------------------------------------------
+  try {
+    var fmOk = !!(doc && doc.getElementById('flymode-overlay') && doc.getElementById('flymode-grid'))
+            && typeof win.enterFlyMode==='function' && typeof win.exitFlyMode==='function' && typeof win.handleFlyModeTap==='function';
+    test('Fly Mode', fmOk?'pass':'fail', fmOk ? 'Overlay + grid present; enter/exit/tap handlers wired.' : 'Missing overlay/grid or a handler.');
+  } catch(e){ test('Fly Mode','fail','Fly Mode check threw: '+e.message); }
+
+  // Rivalry marker ---------------------------------------------------------
+  try {
+    var ir=win.isRivalry, r=[];
+    r.push(ir({home:'Real Madrid', away:'Barcelona'})===true);          // direct pair
+    r.push(ir({home:'Tottenham Hotspur', away:'Arsenal FC'})===true);   // reversed order
+    r.push(ir({home:'Arsenal', away:'Chelsea'})===false);               // not a listed rivalry
+    test('Rivalry marker', allTrue(r)?'pass':'fail',
+        allTrue(r) ? 'isRivalry matches known pairs in either order, ignores non-rivals.' : 'Rivalry detection unexpected.');
+  } catch(e){ test('Rivalry marker','fail','isRivalry threw: '+e.message); }
+
+  // AFL TV labels (guards the v39 name-ordering footgun) -------------------
+  try {
+    var ab=win.abbrev, a=[];
+    a.push(ab('Port Adelaide Power','australian-football')==='PTA');     // NOT ADE
+    a.push(ab('North Melbourne Kangaroos','australian-football')==='NM');// NOT MEL
+    a.push(ab('Greater Western Sydney Giants','australian-football')==='GWS'); // NOT SYD
+    a.push(ab('Adelaide Crows','australian-football')==='ADE');
+    a.push(ab('Lakers','basketball')==='LAK');                          // generic fallback
+    test('AFL TV labels', allTrue(a)?'pass':'fail',
+        allTrue(a) ? 'Port Adelaide/North Melbourne/GWS resolve to PTA/NM/GWS (not the wrong city code).'
+                   : 'An AFL abbreviation resolved incorrectly.');
+  } catch(e){ test('AFL TV labels','fail','abbrev threw: '+e.message); }
+
+  // Adaptive polling -------------------------------------------------------
+  if(idx){
+    var POLL=srcNum(idx,'POLL_INTERVAL',60000), FLYP=srcNum(idx,'FLY_POLL',20000);
+    test('Adaptive polling', (FLYP<POLL)?'pass':'fail',
+        (FLYP<POLL) ? 'FLY_POLL ('+FLYP+'ms) faster than default POLL_INTERVAL ('+POLL+'ms).'
+                    : 'FLY_POLL ('+FLYP+') should be below POLL_INTERVAL ('+POLL+').');
+  }
+
+  // Onboarding wiring ------------------------------------------------------
+  if(idx){
+    var obOk = /id="onboard-overlay"/.test(idx) && /'statfly_onboarded'/.test(idx);
+    test('Onboarding wiring', obOk?'pass':'fail',
+        obOk ? "Onboarding overlay present and gated by 'statfly_onboarded'." : "Missing onboarding overlay or gate flag.");
+  }
+
+  // espnStatus date sanity (v17 fix) ---------------------------------------
+  try {
+    var es=win.espnStatus, e2=[];
+    e2.push(es({status:{type:{name:'STATUS_IN_PROGRESS'}}, date:'2099-01-01T00:00:00Z'})==='live');
+    e2.push(es({status:{type:{name:'STATUS_FINAL'}},       date:'2099-01-01T00:00:00Z'})==='finished');
+    e2.push(es({status:{type:{name:'STATUS_SCHEDULED'}},   date:'2000-01-01T00:00:00Z'})==='finished'); // past -> finished
+    e2.push(es({status:{type:{name:'STATUS_SCHEDULED'}},   date:'2099-01-01T00:00:00Z'})==='upcoming');
+    test('espnStatus date sanity', allTrue(e2)?'pass':'fail',
+        allTrue(e2) ? 'Live/final correct; a past scheduled match is reclassified as finished.' : 'A status case was wrong.');
+  } catch(e){ test('espnStatus date sanity','fail','espnStatus threw: '+e.message); }
+
+  // Render smoke test ------------------------------------------------------
+  try {
+    win.renderHome(); win.renderResults(); win.renderFavs();
+    test('Render smoke test','pass','renderHome / renderResults / renderFavs ran without throwing.');
+  } catch(e){ test('Render smoke test','fail','A render function threw: '+e.message); }
+
+  // Regression guard (removed features must stay gone) ---------------------
+  if(idx){
+    var banned = ['createWorm','score-worm','expandCard','toggleCard','card-expand'];
+    var found = banned.filter(function(b){ return idx.indexOf(b)!==-1; });
+    var wormFn = /\bworm\s*\(/.test(idx);
+    var gOk = found.length===0 && !wormFn;
+    test('Regression guard', gOk?'pass':'fail',
+        gOk ? 'No score-worm or card expand/collapse remnants (removed in v20).'
+            : 'Found removed-feature markers: '+(found.join(', ')||'worm()')+'.');
+  }
+}
+
+// ===========================================================================
+// LIVE FEEDS (separate button - hits the network through your proxies)
+// ===========================================================================
+function runFeeds(){
+  var btn = document.getElementById('feedbtn');
+  btn.disabled = true; btn.textContent = 'CHECKING FEEDS...';
+  FEEDROWS = [];
+  document.getElementById('feedlabel').style.display='block';
+  document.getElementById('feedtbl').innerHTML = '<div class="row"><span class="dot"></span><div class="rcol"><div class="rname">Loading app and racing proxies...</div><div class="rdetail">This makes real network calls and can take a minute.</div></div></div>';
+
+  var idxSrc=null;
+  fetchText('index.html').then(function(src){
+    idxSrc=src;
+    return waitForApp(false);
+  }).then(function(app){
+    if(!app || !app.win){
+      document.getElementById('feedtbl').innerHTML='';
+      feedRow('Live feeds', 'skip', app && app.crossOrigin
+        ? 'Open this page from the same site over https so it can reach the app.'
+        : 'App did not load in time.');
+      renderFeeds(); btn.disabled=false; btn.textContent='CHECK LIVE FEEDS'; return;
+    }
+    // Parse the ESPN_FEEDS list straight out of the source.
+    var feeds=[], re=/\{\s*sport:'([^']+)',\s*league:'([^']+)',\s*label:'([^']+)'/g, mm;
+    while((mm=re.exec(idxSrc||''))!==null){ feeds.push({sport:mm[1], league:mm[2], label:mm[3]}); }
+    if(!feeds.length){
+      document.getElementById('feedtbl').innerHTML='';
+      feedRow('ESPN_FEEDS','fail','Could not parse the feed list from index.html.');
+      renderFeeds(); btn.disabled=false; btn.textContent='CHECK LIVE FEEDS'; return;
+    }
+    document.getElementById('feedtbl').innerHTML='';
+    probeFeeds(app.win, feeds, btn);
+  });
+}
+
+// Run feeds with a small concurrency cap so we don't fire 170 requests at once.
+function probeFeeds(win, feeds, btn){
+  var i=0, active=0, LIMIT=6, doneCount=0;
+  function next(){
+    while(active<LIMIT && i<feeds.length){
+      (function(feed){
+        active++;
+        var p;
+        try { p = win.espnFetch(feed.sport, feed.league); } catch(e){ p = Promise.resolve(null); }
+        Promise.resolve(p).then(function(json){
+          var events = json && json.events ? json.events.length : null;
+          if(events!==null){
+            feedRow(feed.label+' ('+feed.sport+'/'+feed.league+')', 'pass', 'Reachable - '+events+' event(s) in the 14-day window.');
+          } else {
+            feedRow(feed.label+' ('+feed.sport+'/'+feed.league+')', 'skip', 'No data returned (all proxies failed, or a dead/off-season slug).');
+          }
+        }).catch(function(e){
+          feedRow(feed.label+' ('+feed.sport+'/'+feed.league+')', 'fail', 'Error: '+(e&&e.message||e));
+        }).then(function(){
+          active--; doneCount++; renderFeeds();
+          if(doneCount===feeds.length){ btn.disabled=false; btn.textContent='CHECK LIVE FEEDS'; }
+          else next();
+        });
+      })(feeds[i++]);
+    }
+  }
+  next();
+}
+
+// ===========================================================================
+// RENDER
+// ===========================================================================
+function rowHtml(r){
+  var label = r.status==='pass' ? 'PASS' : (r.status==='fail' ? 'FAIL' : 'SKIP');
+  return '<div class="row"><span class="dot '+r.status+'"></span>'
+    + '<div class="rcol"><div class="rname">'+r.name+'</div><div class="rdetail">'+r.detail+'</div></div>'
+    + '<span class="rstat '+r.status+'">'+label+'</span></div>';
+}
+
+function renderMain(){
+  document.getElementById('tbl').innerHTML = ROWS.map(function(r){
+    if(r.type==='group') return '<div class="grp">'+r.name+'</div>';
+    return rowHtml(r);
+  }).join('');
+
+  var pass=0, fail=0, skip=0;
+  ROWS.forEach(function(r){ if(r.type!=='test') return; if(r.status==='pass')pass++; else if(r.status==='fail')fail++; else skip++; });
+  var applicable=pass+fail, pct=applicable?Math.round(pass/applicable*100):0;
+
+  var word = (fail===0 && skip===0) ? 'all clear' : (fail===0 ? 'passing (some skipped)' : 'attention needed');
+  var color = fail===0 ? 'var(--live)' : 'var(--result)';
+  document.getElementById('scorePct').textContent=pct+'%';
+  document.getElementById('scorePct').style.color=color;
+  document.getElementById('scoreWord').textContent=word;
+  document.getElementById('scoreWord').style.color=color;
+  document.getElementById('scoreMeta').textContent = pass+' passed, '+fail+' failed'+(skip?(', '+skip+' skipped'):'')+'  -  '+new Date().toLocaleString([]);
+  document.getElementById('score').classList.add('show');
+  window.LAST_INFRA = {pass:pass, fail:fail};
+
+  document.getElementById('note').innerHTML =
+    '<b>How it works.</b> File checks download index.html, sw.js and manifest.json and inspect them. '
+    + 'Logic checks load the app invisibly and call its real functions. Skipped logic tests usually mean '
+    + 'this page is not served from the same folder as index.html over https. '
+    + '<b>Check Live Feeds</b> makes real network calls, so a yellow SKIP there often just means off-season '
+    + 'or a known dead slug, not a code bug.';
+}
+
+function renderFeeds(){
+  document.getElementById('feedtbl').innerHTML = FEEDROWS.map(rowHtml).join('');
+  // brief summary line appended to the section label
+  var ok=0, no=0;
+  FEEDROWS.forEach(function(r){ if(r.status==='pass')ok++; else no++; });
+  document.getElementById('feedlabel').textContent = 'Live feed reachability  -  '+ok+'/'+(ok+no)+' returned data';
+}
+
+// ===========================================================================
+// FLYMODE / FLYSTATE ENGINE TESTS  (separate button - feed-independent)
+// Every scenario executes the real engine and compares actual vs expected.
+// ===========================================================================
+var FLYROWS = [];
+function flygroup(t){ FLYROWS.push({type:'group', name:t}); }
+function ftest(cat, name, expected, actual, pass, reason){
+  FLYROWS.push({type:'test', cat:cat, name:name, status: pass?'pass':'fail',
+                expected:String(expected), actual:String(actual), reason: pass?'':(reason||'')});
+}
+function ftestSkip(cat, name, note){
+  FLYROWS.push({type:'test', cat:cat, name:name, status:'skip', expected:'-', actual:'-', reason:note});
+}
+// Map an engine state ('' / fs-onrun / onrun ...) to its FlyState colour name.
+function flyColour(state){
+  var s = (state && state.indexOf('fs-')===0) ? state.slice(3) : (state||'');
+  switch(s){
+    case '':         return 'White (neutral)';
+    case 'warming':  return 'Yellow';
+    case 'onrun':    return 'Orange';
+    case 'onfire':   return 'Red';
+    case 'cold':     return 'Blue';
+    case 'comeback': return 'Purple';
+    case 'flytime':  return 'Green (FlyTime)';
+    default:         return s;
+  }
+}
+
+function runFlyTests(){
+  var btn = document.getElementById('flybtn');
+  btn.disabled = true; btn.textContent = 'RUNNING...';
+  FLYROWS = [];
+  document.getElementById('flylabel').style.display = 'block';
+  document.getElementById('flytbl').innerHTML = '<div class="row"><span class="dot"></span><div class="rcol"><div class="rname">Running engine scenarios...</div></div></div>';
+  document.getElementById('flycats').classList.remove('show');
+
+  var idx=null;
+  fetchText('index.html').then(function(src){ idx=src; return waitForApp(true); })
+  .then(function(app){
+    if(!app || !app.win){
+      FLYROWS=[];
+      ftestSkip('FlyState','Engine tests', app && app.crossOrigin
+        ? 'Open this page from the same site over https so it can reach the app.'
+        : 'App did not finish loading in time.');
+      renderFly(); btn.disabled=false; btn.textContent='FLYMODE TESTS'; return;
+    }
+    return flyRun(app, idx).then(function(){
+      renderFly(); btn.disabled=false; btn.textContent='FLYMODE TESTS';
+    }).catch(function(e){
+      ftest('FlyState','Engine run','completed','threw: '+e.message, false, e.message);
+      renderFly(); btn.disabled=false; btn.textContent='FLYMODE TESTS';
+    });
+  });
+}
+
+async function flyRun(app, idx){
+  var win=app.win, doc=app.doc;
+  var WARM=srcNum(idx,'MOM_WARM',16), ONRUN=srcNum(idx,'MOM_ONRUN',40), ONFIRE=srcNum(idx,'MOM_ONFIRE',70), SUST=srcNum(idx,'RED_SUSTAIN',2);
+
+  // Helper: run one poll of a synthetic match, return the resolved home class.
+  function poll(id, sport, h, a, period, clockSec){
+    win.updateFlyState({ id:id, sportKey:sport, home:'QAH', away:'QAA',
+      hInt:h, aInt:a, period:(period==null?2:period), clockSec:(clockSec==null?600:clockSec),
+      clockRaw:'', isOT:false });
+    return win.getFlyClass(id,'home');
+  }
+
+  // ---- Section 1: FlyTime -------------------------------------------------
+  flygroup('Section 1 - FlyTime validation');
+  var ft=win.isFlyTime;
+  function aflFT(cs,m){ return ft({sportKey:'australian-football', hInt:m, aInt:0, period:4, clockSec:cs}); }
+  ftest('FlyState','AFL 7:59 / margin 12','TRUE', aflFT(479,12), aflFT(479,12)===true, 'Last 8 min within 2 goals should be FlyTime');
+  ftest('FlyState','AFL 8:01 / margin 12','FALSE', aflFT(481,12), aflFT(481,12)===false, 'Outside the last 8 minutes');
+  ftest('FlyState','AFL 4:00 / margin 13','FALSE', aflFT(240,13), aflFT(240,13)===false, 'Margin over 12 (more than 2 goals)');
+  ftest('FlyState','AFL 4:00 / margin 10','TRUE', aflFT(240,10), aflFT(240,10)===true, 'Late and within 2 goals');
+  function socFT(min,m){ return ft({sportKey:'soccer', hInt:m, aInt:0, clockRaw:String(min)}); }
+  ftest('FlyState','Soccer 75 / margin 1','TRUE', socFT(75,1), socFT(75,1)===true, 'From 75 min within 1 goal');
+  ftest('FlyState','Soccer 74 / margin 1','FALSE', socFT(74,1), socFT(74,1)===false, 'Before 75 min');
+  ftest('FlyState','Soccer 89 / margin 2','FALSE', socFT(89,2), socFT(89,2)===false, 'Margin over 1 goal');
+  function bbFT(cs,m){ return ft({sportKey:'basketball', hInt:m, aInt:0, period:4, clockSec:cs}); }
+  ftest('FlyState','Basketball 5:00 / margin 4','TRUE', bbFT(300,4), bbFT(300,4)===true, 'Within the possession window');
+  var c9=300, m9=18, allowed9=(c9/24)*1.5, act9=bbFT(c9,m9), exp9=(m9<=allowed9);
+  ftest('FlyState','Basketball 5:00 / margin 18 (possession model)',
+        'allowed margin '+allowed9.toFixed(2)+', actual 18 -> '+(exp9?'TRUE':'FALSE'),
+        act9, act9===exp9, 'isFlyTime disagrees with the possession formula');
+  ftest('FlyState','Basketball 0:24 / margin 2','FALSE', bbFT(24,2), bbFT(24,2)===false, 'Allowed margin near the buzzer is only ~1.5');
+
+  // ---- Section 2: Momentum ------------------------------------------------
+  flygroup('Section 2 - Momentum engine');
+  poll('__sb__','basketball',0,0); var sb=poll('__sb__','basketball',10,0);
+  ftest('FlyState','Single burst -> Orange max','Orange (onrun), never Red', flyColour(sb), sb==='fs-onrun', sb==='fs-onfire'?'A single poll reached Red (RED_SUSTAIN failed)':'Did not reach Orange');
+  poll('__sr__','basketball',0,0); poll('__sr__','basketball',10,0); poll('__sr__','basketball',20,0); var sr=poll('__sr__','basketball',30,0);
+  ftest('FlyState','Sustained run -> Red','Red (onfire)', flyColour(sr), sr==='fs-onfire', 'Three consecutive bursts did not reach Red');
+  poll('__co__','basketball',0,0); poll('__co__','basketball',10,0); poll('__co__','basketball',20,0);
+  var chain=[]; for(var k=0;k<6;k++){ chain.push(poll('__co__','basketball',20,0)); }
+  var iO=chain.indexOf('fs-onrun'), iY=chain.indexOf('fs-warming'), iW=chain.indexOf('');
+  var coolOk = iO>-1 && iY>iO && iW>iY;
+  ftest('FlyState','Cooling Red -> Orange -> Yellow -> White','passes through Orange then Yellow then White', chain.map(flyColour).join(' -> '), coolOk, 'Decay did not pass through the expected order');
+  poll('__yt__','basketball',0,0); var yt=poll('__yt__','basketball',3,0);
+  ftest('FlyState','Yellow threshold (small burst)','Yellow (warming), not White', flyColour(yt), yt==='fs-warming', yt===''?'Small burst stayed White':'Landed on the wrong tier');
+  poll('__mb__','basketball',0,0);
+  var okClasses=['','fs-warming','fs-onrun','fs-onfire','fs-cold','fs-comeback','fs-flytime'];
+  var bseq=[10000,20000,20000,20000,15000], bok=true, blast='';
+  for(var b=0;b<bseq.length;b++){ blast=poll('__mb__','basketball',bseq[b],0); if(okClasses.indexOf(blast)<0) bok=false; }
+  ftest('FlyState','Momentum bounds (extreme inputs)','always a valid colour (momentum clamped 0-100)', 'last = '+flyColour(blast), bok, 'An invalid state appeared under extreme scoring');
+
+  // ---- Section 3: Red sustain ---------------------------------------------
+  flygroup('Section 3 - Red sustain');
+  poll('__ir__','basketball',0,0); var ir=poll('__ir__','basketball',10,0);
+  ftest('FlyState','Immediate Red prevention','not Red after one poll', flyColour(ir), ir!=='fs-onfire', 'One big score jumped straight to Red');
+  poll('__rs__','basketball',0,0); poll('__rs__','basketball',10,0); var rs=poll('__rs__','basketball',20,0);
+  ftest('FlyState','Red sustain ('+SUST+' polls)','Red (onfire)', flyColour(rs), rs==='fs-onfire', 'Sustained scoring did not reach Red');
+  poll('__rr__','basketball',0,0); poll('__rr__','basketball',10,0); poll('__rr__','basketball',20,0);
+  var rrCool=poll('__rr__','basketball',20,0), rrHot=poll('__rr__','basketball',30,0);
+  ftest('FlyState','Red reset (hot counter clears)','cools out of Red, re-heats to Orange not Red', flyColour(rrCool)+' -> '+flyColour(rrHot), rrCool!=='fs-onfire' && rrHot==='fs-onrun', 'Hot counter did not reset after cooling');
+
+  // ---- Section 4: Blue drought (clock-controlled) -------------------------
+  flygroup('Section 4 - Blue drought');
+  var realNow = win.Date.now.bind(win.Date), clk=1700000000000;
+  win.Date.now = function(){ return clk; };
+  try {
+    function drought(id, sport, mins){
+      clk=1700000000000;
+      win.updateFlyState({id:id, sportKey:sport, home:'QAH', away:'QAA', hInt:50, aInt:40, period:2, clockSec:1000, isOT:false});
+      clk += mins*60000;
+      win.updateFlyState({id:id, sportKey:sport, home:'QAH', away:'QAA', hInt:50, aInt:40, period:2, clockSec:1000, isOT:false});
+      return win.getFlyClass(id,'home');
+    }
+    var d1=drought('__d1__','australian-football',13);
+    ftest('FlyState','AFL drought 13 min','Blue (cold)', flyColour(d1), d1==='fs-cold', 'Did not go Blue after 13 min without scoring');
+    var d2=drought('__d2__','australian-football',11);
+    ftest('FlyState','AFL safe window 11 min','not Blue', flyColour(d2), d2!=='fs-cold', 'Went Blue before the 12 min AFL window');
+    var d3=drought('__d3__','basketball',5);
+    ftest('FlyState','Basketball drought 5 min','Blue (cold)', flyColour(d3), d3==='fs-cold', 'Did not go Blue after 5 min without scoring');
+    var d4=drought('__d4__','basketball',3);
+    ftest('FlyState','Basketball safe window 3 min','not Blue', flyColour(d4), d4!=='fs-cold', 'Went Blue before the 4 min basketball window');
+  } finally { win.Date.now = realNow; }
+
+  // ---- Section 5: Comeback ------------------------------------------------
+  flygroup('Section 5 - Comeback');
+  poll('__cb__','basketball',0,0); poll('__cb__','basketball',0,14); var cb=poll('__cb__','basketball',13,14);
+  ftest('FlyState','Large comeback -> Purple','Purple (comeback)', flyColour(cb), cb==='fs-comeback', 'A clawed-back deficit was not flagged Purple');
+  poll('__nc__','basketball',0,0); var nc=poll('__nc__','basketball',10,8);
+  ftest('FlyState','No comeback (never trailed)','not Purple', flyColour(nc), nc!=='fs-comeback', 'Flagged Purple without a real prior deficit');
+  var wouldTier = win.momTier(ONRUN+5, 1);
+  ftest('FlyState','Comeback priority over momentum','comeback wins over momentum ('+wouldTier+')', 'momentum would be '+wouldTier+' -> resolved '+flyColour(cb), cb==='fs-comeback' && wouldTier!=='', 'Comeback did not take priority over an active momentum tier');
+
+  // ---- Section 6: FlyMode -------------------------------------------------
+  flygroup('Section 6 - FlyMode');
+  var enterOk=false, exitOk=false, feErr='';
+  try { win.enterFlyMode(); enterOk = doc.getElementById('flymode-overlay').classList.contains('active'); } catch(e){ feErr=e.message; }
+  ftest('FlyMode','Enter FlyMode','overlay active', String(enterOk), enterOk===true, 'enterFlyMode did not activate the overlay'+(feErr?(' ('+feErr+')'):''));
+  try { win.exitFlyMode(); exitOk = !doc.getElementById('flymode-overlay').classList.contains('active'); } catch(e){}
+  ftest('FlyMode','Exit FlyMode','overlay inactive', String(exitOk), exitOk===true, 'exitFlyMode did not deactivate the overlay');
+  var POLL=srcNum(idx,'POLL_INTERVAL',60000), FLYP=srcNum(idx,'FLY_POLL',20000);
+  ftest('FlyMode','Refresh interval','60000ms default, 20000ms in FlyTime', POLL+'ms / '+FLYP+'ms', FLYP<POLL, 'FLY_POLL is not faster than POLL_INTERVAL');
+  ftestSkip('FlyMode','FlyMode state persistence','Fly Mode open/closed is not stored (no key), so it always starts closed after a refresh. Say the word if you want it remembered.');
+
+  // ---- Section 7: Notifications -------------------------------------------
+  flygroup('Section 7 - Notifications');
+  var hasAPI = ('Notification' in win);
+  ftest('Notification','Notification API exists','true', String(hasAPI), hasAPI, 'Notification API not available in this browser');
+  var perm = hasAPI ? win.Notification.permission : 'n/a';
+  ftest('Notification','Permission state','informational', perm, true, '');
+  var hasFn = typeof win.fireFlyTimeAlert==='function';
+  ftest('Notification','FlyTime notification function','function', typeof win.fireFlyTimeAlert, hasFn, 'fireFlyTimeAlert is missing');
+  var callOk=true, cErr='', beforeFt=localStorage.getItem('statfly_flytime');
+  try { win.fireFlyTimeAlert({id:'__QA_NF_'+Date.now()+'__', home:'Zzz Nonexistent United', away:'Qqq Imaginary City'}); } catch(e){ callOk=false; cErr=e.message; }
+  var afterFt=localStorage.getItem('statfly_flytime');
+  ftest('Notification','FlyTime notification callable','no exception', callOk?'ok':'threw', callOk, 'fireFlyTimeAlert threw: '+cErr);
+  ftest('Notification','Followed-team filtering','a non-followed team raises no alert', (beforeFt===afterFt)?'history unchanged':'history changed', beforeFt===afterFt, 'A non-followed team was recorded as alerted');
+  var bellSrc=/favs\.filter\(f=>f\.alert\)/.test(idx);
+  ftest('Notification','Bell filtering','only bell-on teams are alerted', bellSrc?'favs.filter(f=>f.alert) present':'not found', bellSrc, 'Bell (alert) filter not found in source');
+
+  // ---- Section 8: Storage (real save / reload / re-read; restores after) --
+  flygroup('Section 8 - Storage round-trip');
+  var bkKeys=['statfly_favs','statfly_flytime','statfly_notified'], bk={};
+  bkKeys.forEach(function(kk){ bk[kk]=localStorage.getItem(kk); });
+  try {
+    var testFav=[{key:'__QA__|__QA__', name:'QA Probe FC', league:'__QA__ League', flag:'', leagueEmoji:'', alert:true}];
+    localStorage.setItem('statfly_favs', JSON.stringify(testFav));
+    var app2 = await waitForApp(true);                  // genuine page reload
+    var d2 = app2.doc;
+    var parsed = JSON.parse(localStorage.getItem('statfly_favs')||'[]'), first = parsed[0]||{};
+    ftest('Storage','Followed teams persist','QA Probe FC after reload', first.name||'(none)', first.name==='QA Probe FC', 'Favourite not restored after reload');
+    ftest('Storage','Bell state persist','alert = true after reload', String(first.alert), first.alert===true, 'Bell state not restored');
+    var dom = d2.getElementById('team-list-wrap');
+    var shows = !!(dom && dom.innerHTML.indexOf('QA Probe FC')>-1), bellOn = !!(dom && /bell-btn on/.test(dom.innerHTML));
+    ftest('Storage','App re-reads favourites','team list shows it with bell ON', shows?(bellOn?'shown, bell on':'shown, bell off'):'not shown', shows&&bellOn, 'App did not render the restored favourite/bell');
+    var fset=new Set(['m1','m2']); localStorage.setItem('statfly_flytime', JSON.stringify(Array.from(fset)));
+    var fback=new Set(JSON.parse(localStorage.getItem('statfly_flytime')));
+    ftest('Storage','FlyTime alert history persist','m1, m2 survive', Array.from(fback).join(','), fback.has('m1')&&fback.has('m2'), 'FlyTime history round-trip failed');
+    localStorage.setItem('statfly_notified', JSON.stringify(['n1']));
+    var nback=JSON.parse(localStorage.getItem('statfly_notified'));
+    ftest('Storage','Notified history persist','n1 survives', (nback||[]).join(','), (nback||[]).indexOf('n1')>-1, 'Notified round-trip failed');
+    ftestSkip('Storage','FlyMode state persistence','Not stored by design - Fly Mode always starts closed after reload.');
+  } catch(e){
+    ftest('Storage','Storage round-trip','completes','threw: '+e.message, false, e.message);
+  } finally {
+    bkKeys.forEach(function(kk){ if(bk[kk]===null) localStorage.removeItem(kk); else localStorage.setItem(kk, bk[kk]); });
+    var app3 = await waitForApp(true);                  // restore the user's real data, fresh handle
+    win = app3.win; doc = app3.doc;
+  }
+
+  // ---- Section 9: Stress (500 synthetic matches, uses restored app) -------
+  flygroup('Section 9 - Stress (500 synthetic matches)');
+  var sports=['basketball','football','hockey','baseball','soccer','australian-football','tennis','cricket'];
+  var okMatch=['','flytime','overtime'], ex=0, badState=0, badFT=0, N=500;
+  for(var s=0;s<N;s++){
+    try {
+      var sp=sports[Math.floor(Math.random()*sports.length)], id='__st_'+s+'__';
+      var h1=Math.floor(Math.random()*150), a1=Math.floor(Math.random()*150);
+      win.updateFlyState({id:id, sportKey:sp, home:'QAH'+s, away:'QAA'+s, hInt:h1, aInt:a1, period:Math.floor(Math.random()*6), clockSec:Math.floor(Math.random()*700), clockRaw:String(Math.floor(Math.random()*95)), isOT:Math.random()<0.1});
+      var h2=h1+Math.floor(Math.random()*20), a2=a1+Math.floor(Math.random()*20);
+      win.updateFlyState({id:id, sportKey:sp, home:'QAH'+s, away:'QAA'+s, hInt:h2, aInt:a2, period:Math.floor(Math.random()*6)+1, clockSec:Math.floor(Math.random()*700), clockRaw:String(Math.floor(Math.random()*95)), isOT:Math.random()<0.1});
+      var ch=win.getFlyClass(id,'home'), ca=win.getFlyClass(id,'away'), mf=win.getMatchFly(id);
+      var ftv=win.isFlyTime({sportKey:sp, hInt:h2, aInt:a2, period:3, clockSec:120, clockRaw:'80'});
+      if(okClasses.indexOf(ch)<0 || okClasses.indexOf(ca)<0 || okMatch.indexOf(mf)<0) badState++;
+      if(typeof ftv!=='boolean') badFT++;
+    } catch(e){ ex++; }
+  }
+  var stressOk = ex===0 && badState===0 && badFT===0;
+  ftest('FlyState','Stress 500 matches','0 exceptions, 0 invalid states, 0 bad FlyTime', ex+' exc / '+badState+' bad state / '+badFT+' bad FlyTime', stressOk, ex+' exception(s), '+badState+' invalid state(s), '+badFT+' bad FlyTime output(s)');
+}
+
+// ---- render the FlyMode Tests results + category scorecard ----------------
+function flyRowHtml(r){
+  var label = r.status==='pass'?'PASS':(r.status==='fail'?'FAIL':'SKIP');
+  var det = 'Expected: '+r.expected+'<br>Actual: '+r.actual+(r.reason?('<br>Reason: '+r.reason):'');
+  return '<div class="row"><span class="dot '+r.status+'"></span>'
+    + '<div class="rcol"><div class="rname">'+r.name+'</div><div class="rdetail">'+det+'</div></div>'
+    + '<span class="rstat '+r.status+'">'+label+'</span></div>';
+}
+function renderFly(){
+  document.getElementById('flytbl').innerHTML = FLYROWS.map(function(r){
+    if(r.type==='group') return '<div class="grp">'+r.name+'</div>';
+    return flyRowHtml(r);
+  }).join('');
+
+  var cats={FlyState:{p:0,f:0}, FlyMode:{p:0,f:0}, Notification:{p:0,f:0}, Storage:{p:0,f:0}};
+  var tp=0, tf=0;
+  FLYROWS.forEach(function(r){
+    if(r.type!=='test' || r.status==='skip') return;
+    var c=cats[r.cat]; if(!c) return;
+    if(r.status==='pass'){ c.p++; tp++; } else { c.f++; tf++; }
+  });
+  function line(label,p,f,cls){
+    return '<div class="crow'+(cls?(' '+cls):'')+'"><span class="cname">'+label+'</span><span class="cval '+(f>0?'bad':'ok')+'">'+p+' pass / '+f+' fail</span></div>';
+  }
+  var infra = window.LAST_INFRA, infraTxt = infra ? (infra.pass+' pass / '+infra.fail+' fail') : 'not run yet';
+  var html='';
+  html += '<div class="crow"><span class="cname">Infrastructure QA</span><span class="cval '+(infra&&infra.fail>0?'bad':'ok')+'">'+infraTxt+'</span></div>';
+  html += line('FlyState QA', cats.FlyState.p, cats.FlyState.f);
+  html += line('FlyMode QA', cats.FlyMode.p, cats.FlyMode.f);
+  html += line('Notification QA', cats.Notification.p, cats.Notification.f);
+  html += line('Storage QA', cats.Storage.p, cats.Storage.f);
+  var pct=(tp+tf)?Math.round(tp/(tp+tf)*100):0;
+  html += line('Overall (this run): '+pct+'%', tp, tf, 'overall');
+  var box=document.getElementById('flycats'); box.innerHTML=html; box.classList.add('show');
+  document.getElementById('flylabel').textContent = 'FlyState / FlyMode engine tests  -  '+tp+'/'+(tp+tf)+' passed';
+}
+</script>
+</body>
+</html>

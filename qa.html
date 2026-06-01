@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>StatFly QA</title>
+<meta name="robots" content="noindex,nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap">
+<style>
+  /* StatFly design tokens (kept in sync with index.html) */
+  :root{
+    --bg:#000000; --card:#111114; --card2:#1c1c1e;
+    --live:#30d158; --upcoming:#ffd60a; --result:#ff453a;
+    --text:#fff; --text-2:rgba(235,235,245,.8); --text-3:rgba(235,235,245,.4);
+    --sep:rgba(255,255,255,.08); --blue:#0a84ff;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
+  html,body{
+    background:var(--bg);color:var(--text);
+    font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;
+    max-width:430px;margin:0 auto;min-height:100vh;
+    -webkit-font-smoothing:antialiased;padding:0 16px 60px;
+  }
+  .head{padding:22px 0 6px;}
+  .wordmark{font-size:33px;font-weight:700;letter-spacing:-.6px;line-height:1;}
+  .wordmark span{color:var(--live);}
+  .sub{font-size:12px;font-weight:600;color:var(--text-3);margin-top:6px;letter-spacing:.2px;}
+
+  .runbtn{
+    width:100%;margin:20px 0 8px;padding:16px;border:none;border-radius:14px;
+    background:var(--live);color:#000;font-family:inherit;font-size:16px;font-weight:800;
+    letter-spacing:.4px;cursor:pointer;transition:transform .12s ease,opacity .12s ease;
+  }
+  .runbtn:active{transform:scale(.985);}
+  .runbtn:disabled{opacity:.5;cursor:default;}
+
+  /* Overall score badge */
+  .score{
+    display:none;margin:14px 0 4px;padding:18px;border:1px solid var(--sep);
+    border-radius:16px;background:var(--card);text-align:center;
+  }
+  .score.show{display:block;}
+  .score .pct{font-size:46px;font-weight:800;line-height:1;letter-spacing:-1px;}
+  .score .word{font-size:13px;font-weight:700;letter-spacing:1px;margin-top:6px;text-transform:uppercase;}
+  .score .meta{font-size:12px;color:var(--text-3);margin-top:8px;font-weight:500;}
+
+  /* Results table */
+  .tbl{margin-top:12px;border:1px solid var(--sep);border-radius:14px;overflow:hidden;}
+  .row{
+    display:flex;align-items:flex-start;gap:10px;padding:13px 14px;
+    border-bottom:1px solid var(--sep);background:var(--card);
+  }
+  .row:last-child{border-bottom:none;}
+  .dot{flex-shrink:0;width:10px;height:10px;border-radius:50%;margin-top:4px;background:var(--text-3);}
+  .dot.pass{background:var(--live);}
+  .dot.fail{background:var(--result);}
+  .dot.skip{background:var(--upcoming);}
+  .rcol{flex:1;min-width:0;}
+  .rname{font-size:14px;font-weight:600;}
+  .rdetail{font-size:11.5px;color:var(--text-3);margin-top:3px;line-height:1.45;word-break:break-word;}
+  .rstat{flex-shrink:0;font-size:11px;font-weight:800;letter-spacing:.5px;margin-top:2px;}
+  .rstat.pass{color:var(--live);}
+  .rstat.fail{color:var(--result);}
+  .rstat.skip{color:var(--upcoming);}
+
+  .note{font-size:11.5px;color:var(--text-3);line-height:1.6;margin:16px 4px 0;}
+  .note b{color:var(--text-2);}
+
+  /* The app under test loads here, kept off-screen */
+  #probe{position:absolute;width:430px;height:1px;left:-9999px;top:0;border:0;opacity:0;pointer-events:none;}
+</style>
+</head>
+<body>
+
+  <div class="head">
+    <div class="wordmark">Stat<span>Fly</span> QA</div>
+    <div class="sub">INTERNAL TEST HARNESS</div>
+  </div>
+
+  <button class="runbtn" id="runbtn" onclick="runAll()">RUN FULL TEST SUITE</button>
+
+  <div class="score" id="score">
+    <div class="pct" id="scorePct">--</div>
+    <div class="word" id="scoreWord">awaiting run</div>
+    <div class="meta" id="scoreMeta"></div>
+  </div>
+
+  <div class="tbl" id="tbl"></div>
+
+  <div class="note" id="note"></div>
+
+  <!-- Hidden copy of the live app. We read its functions from here. -->
+  <iframe id="probe" src="index.html"></iframe>
+
+<script>
+/* -------------------------------------------------------------------------
+   StatFly QA harness.
+
+   Two kinds of check:
+   1) FILE checks  - download index.html / sw.js / manifest.json as text and
+                     inspect them (structure, unicode safety, PWA wiring, etc.)
+   2) LOGIC checks - read the REAL functions out of the hidden iframe and call
+                     them with test inputs, comparing against expected results.
+
+   IMPORTANT: this page must be served from the SAME folder as index.html on a
+   web server (e.g. GitHub Pages), and opened over https. The browser blocks a
+   page from reading an iframe loaded from a different origin, so opening this
+   file directly off disk (file://) will skip the logic tests.
+   ------------------------------------------------------------------------- */
+
+// Collected results. Each row: {name, status:'pass'|'fail'|'skip', detail}
+var ROWS = [];
+function row(name, status, detail){ ROWS.push({name:name, status:status, detail:detail||''}); }
+
+// Turn a list of booleans into a single pass/fail (all must be true).
+function allTrue(arr){ for(var i=0;i<arr.length;i++){ if(!arr[i]) return false; } return true; }
+
+// Read a number out of source text, e.g. const MOM_ONFIRE = 70;
+function srcNum(src, name, fallback){
+  var m = src.match(new RegExp(name + '\\s*=\\s*(\\d+)'));
+  return m ? parseInt(m[1],10) : fallback;
+}
+
+// Fetch a same-folder file as plain text. Returns null on failure.
+function fetchText(path){
+  return fetch(path, {cache:'no-store'})
+    .then(function(r){ return r.ok ? r.text() : null; })
+    .catch(function(){ return null; });
+}
+
+// Wait until the iframe has loaded and exposed its functions.
+function waitForApp(){
+  var iframe = document.getElementById('probe');
+  return new Promise(function(resolve){
+    var tries = 0;
+    function check(){
+      tries++;
+      var win = null;
+      try { win = iframe.contentWindow; if(win) { void win.location.href; } }
+      catch(e){ resolve({crossOrigin:true}); return; }     // blocked = different origin
+      if(win && typeof win.momTier === 'function'){ resolve({win:win, doc:iframe.contentDocument}); return; }
+      if(tries > 60){ resolve({timeout:true}); return; }    // ~6s ceiling
+      setTimeout(check, 100);
+    }
+    // Reload so each run starts clean, then poll.
+    try { iframe.src = 'index.html'; } catch(e){}
+    setTimeout(check, 300);
+  });
+}
+
+// ===========================================================================
+// MAIN
+// ===========================================================================
+function runAll(){
+  var btn = document.getElementById('runbtn');
+  btn.disabled = true; btn.textContent = 'RUNNING...';
+  ROWS = [];
+  document.getElementById('tbl').innerHTML = '';
+  document.getElementById('score').classList.remove('show');
+
+  var idxSrc=null, swSrc=null, manSrc=null;
+
+  Promise.all([ fetchText('index.html'), fetchText('sw.js'), fetchText('manifest.json') ])
+  .then(function(files){
+    idxSrc=files[0]; swSrc=files[1]; manSrc=files[2];
+    runFileChecks(idxSrc, swSrc, manSrc);
+    return waitForApp();
+  })
+  .then(function(app){
+    runLogicChecks(app, idxSrc);
+    render();
+    btn.disabled = false; btn.textContent = 'RUN FULL TEST SUITE';
+  });
+}
+
+// ---------------------------------------------------------------------------
+// FILE CHECKS (work on downloaded source text)
+// ---------------------------------------------------------------------------
+function runFileChecks(idx, sw, man){
+
+  // 1. Page structure ------------------------------------------------------
+  if(!idx){ row('Page structure','fail','Could not load index.html (must be served from the same folder over https).'); }
+  else {
+    var iHome=idx.indexOf('id="page-home"');
+    var iRes =idx.indexOf('id="page-results"');
+    var iSet =idx.indexOf('id="page-settings"');
+    var iCards=idx.indexOf('id="results-cards"');
+    var ok = iHome>-1 && iRes>-1 && iSet>-1 && iCards>-1
+             && iHome<iRes && iRes<iSet      // correct order
+             && iCards>iRes;                 // results-cards inside page-results
+    row('Page structure', ok?'pass':'fail',
+        ok ? 'page-home -> page-results -> page-settings in order; results-cards inside page-results.'
+           : 'Expected three page divs in order with results-cards inside page-results.');
+  }
+
+  // Unicode safety (hard rule: JS must be ASCII-only) ----------------------
+  if(idx){
+    var forbidden = {0x2014:'em dash',0x2013:'en dash',0x2212:'minus sign',0x00b1:'plus-minus'};
+    var bad = 0, sample = '';
+    var scripts = idx.match(/<script>[\s\S]*?<\/script>/g) || [];
+    scripts.forEach(function(block){
+      for(var i=0;i<block.length;i++){
+        var c = block.charCodeAt(i);
+        if(forbidden[c] || (c>=0x2500 && c<=0x257F)){
+          bad++; if(!sample) sample = forbidden[c] || ('box-drawing U+'+c.toString(16));
+        }
+      }
+    });
+    row('Unicode safety (script)', bad===0?'pass':'fail',
+        bad===0 ? 'No iOS-Safari-crashing characters inside any <script> block.'
+                : bad+' forbidden char(s) found in script, e.g. '+sample+'. Replace with ASCII.');
+  }
+
+  // 2. PWA -----------------------------------------------------------------
+  if(idx){
+    var checks = [
+      /rel="manifest"/.test(idx),
+      /name="theme-color"/.test(idx),
+      /apple-mobile-web-app-capable/.test(idx)
+    ];
+    row('PWA', allTrue(checks)?'pass':'fail',
+        allTrue(checks) ? 'Manifest link, theme-color and apple-mobile-web-app-capable all present.'
+                        : 'Missing one of: manifest link / theme-color / apple-mobile-web-app-capable.');
+  }
+
+  // 3. Service worker ------------------------------------------------------
+  if(!sw){ row('Service worker','fail','Could not load sw.js.'); }
+  else {
+    var cacheMatch = sw.match(/statfly-v(\d+)/);
+    var swOk = [
+      /serviceWorker\.register\(\s*['"]sw\.js['"]\s*\)/.test(idx||''),  // app registers it
+      !!cacheMatch,                                                      // versioned cache key
+      /addEventListener\(\s*['"]install['"]/.test(sw),
+      /addEventListener\(\s*['"]activate['"]/.test(sw),
+      /addEventListener\(\s*['"]fetch['"]/.test(sw),
+      /skipWaiting/.test(sw)
+    ];
+    row('Service worker', allTrue(swOk)?'pass':'fail',
+        allTrue(swOk) ? 'Registered as sw.js; cache key '+(cacheMatch?cacheMatch[0]:'?')+'; install/activate/fetch + skipWaiting present.'
+                      : 'sw.js missing register hook, versioned cache key, a lifecycle listener, or skipWaiting.');
+  }
+
+  // 4. Manifest ------------------------------------------------------------
+  if(!man){ row('Manifest','fail','Could not load manifest.json.'); }
+  else {
+    var ok=false, why='Invalid JSON.';
+    try {
+      var m = JSON.parse(man);
+      var sizes = (m.icons||[]).map(function(i){return i.sizes;}).join(' ');
+      var has192 = /192x192/.test(sizes), has512 = /512x512/.test(sizes);
+      ok = !!m.name && m.display==='standalone' && !!m.start_url && has192 && has512;
+      why = ok ? 'name, display:standalone, start_url, and 192+512 icons all present.'
+               : 'Missing name / display:standalone / start_url / 192 / 512 icon.';
+    } catch(e){}
+    row('Manifest', ok?'pass':'fail', why);
+  }
+
+  // 5. LocalStorage (runtime, on THIS page) --------------------------------
+  var lsOk=false, lsWhy='localStorage not available.';
+  try {
+    localStorage.setItem('__sf_qa__','1');
+    lsOk = localStorage.getItem('__sf_qa__')==='1';
+    localStorage.removeItem('__sf_qa__');
+    lsWhy = lsOk ? 'set / get / remove round-trip works.' : 'Round-trip mismatch.';
+  } catch(e){ lsWhy = 'localStorage threw: '+e.message; }
+  row('LocalStorage', lsOk?'pass':'fail', lsWhy);
+
+  // 6. Favourites ----------------------------------------------------------
+  if(idx){
+    var favOk = /'statfly_favs'/.test(idx) && /function saveFavs/.test(idx);
+    row('Favourites', favOk?'pass':'fail',
+        favOk ? "Persisted under 'statfly_favs' via saveFavs()."
+              : "Could not find 'statfly_favs' key and/or saveFavs().");
+  }
+
+  // 7. Bell states ---------------------------------------------------------
+  if(idx){
+    var bellOk = /\.alert\b/.test(idx) && /function toggleAlert/.test(idx) && /'statfly_favs'/.test(idx);
+    row('Bell states', bellOk?'pass':'fail',
+        bellOk ? "Per-team .alert flag toggled by toggleAlert(), stored with favourites."
+               : 'Could not find .alert flag / toggleAlert() / favourites persistence.');
+  }
+
+  // 8. FlyTime alert persistence -------------------------------------------
+  if(idx){
+    var keyOk = /'statfly_flytime'/.test(idx);
+    var patOk = /JSON\.stringify\(\[\.\.\.flytimeAlerted\]\)/.test(idx);
+    // Emulate the same Set <-> localStorage round-trip the app uses.
+    var rt=false;
+    try {
+      var s=new Set(); s.add('evt1'); s.add('evt2');
+      localStorage.setItem('__sf_qa_ft__', JSON.stringify([].concat(Array.from(s))));
+      var back=new Set(JSON.parse(localStorage.getItem('__sf_qa_ft__')));
+      localStorage.removeItem('__sf_qa_ft__');
+      rt = back.has('evt1') && back.has('evt2');
+    } catch(e){}
+    var ftOk = keyOk && patOk && rt;
+    row('FlyTime alert persistence', ftOk?'pass':'fail',
+        ftOk ? "Alerted-match Set saved to 'statfly_flytime'; Set round-trip verified."
+             : 'Missing flytime key / serialize pattern, or Set round-trip failed.');
+  }
+
+  // 15. ESPN feed arrays (no mock data: must start empty) ------------------
+  if(idx){
+    var emptyOk = /ALL_LIVE\s*=\s*\[\s*\]/.test(idx)
+               && /ALL_UPCOMING\s*=\s*\[\s*\]/.test(idx)
+               && /ALL_RESULTS\s*=\s*\[\s*\]/.test(idx);
+    row('ESPN feed arrays', emptyOk?'pass':'fail',
+        emptyOk ? 'ALL_LIVE / ALL_UPCOMING / ALL_RESULTS all initialise empty (no mock data).'
+                : 'One of the three match arrays does not start as an empty literal.');
+  }
+}
+
+// ---------------------------------------------------------------------------
+// LOGIC CHECKS (call the real functions inside the iframe)
+// ---------------------------------------------------------------------------
+function runLogicChecks(app, idx){
+  // If we could not reach the app, mark every logic test as skipped.
+  if(!app || !app.win){
+    var reason = app && app.crossOrigin
+      ? 'App loaded from a different origin (open this page from the same site over https).'
+      : 'App did not finish loading in time.';
+    ['Search index','FlyState functions','FlyTime logic','Momentum logic',
+     'Comeback logic','Cold logic','Fly Mode'].forEach(function(n){ row(n,'skip',reason); });
+    return;
+  }
+  var win = app.win, doc = app.doc;
+
+  // 9. FlyState functions present -----------------------------------------
+  var fns = ['momTier','isFlyTime','resolveSide','updateFlyState','getFlyClass'];
+  var present = fns.filter(function(f){ return typeof win[f]==='function'; });
+  row('FlyState functions', present.length===fns.length?'pass':'fail',
+      present.length+'/'+fns.length+' core functions found: '+present.join(', ')+'.');
+
+  // 8b. Search index (call buildSearchIndex for real) ----------------------
+  try {
+    var idxArr = win.buildSearchIndex();
+    var siOk = Array.isArray(idxArr) && idxArr.length>0
+            && idxArr.some(function(x){return x.type==='league';})
+            && idxArr.some(function(x){return x.type==='team';});
+    row('Search index', siOk?'pass':'fail',
+        siOk ? 'buildSearchIndex() returned '+idxArr.length+' entries incl. leagues and teams.'
+             : 'buildSearchIndex() returned an empty or malformed index.');
+  } catch(e){ row('Search index','fail','buildSearchIndex() threw: '+e.message); }
+
+  // 10. FlyTime logic ------------------------------------------------------
+  try {
+    var ft = win.isFlyTime;
+    var t = [];
+    // Basketball: close & late = true; blowout = false; too early = false.
+    t.push(ft({sportKey:'basketball',hInt:100,aInt:98,period:4,clockSec:120})===true);
+    t.push(ft({sportKey:'basketball',hInt:100,aInt:80,period:4,clockSec:120})===false);
+    t.push(ft({sportKey:'basketball',hInt:100,aInt:98,period:3,clockSec:120})===false);
+    // Football: within a possession late = true; two scores = false.
+    t.push(ft({sportKey:'football',hInt:21,aInt:17,period:4,clockSec:200})===true);
+    t.push(ft({sportKey:'football',hInt:31,aInt:10,period:4,clockSec:200})===false);
+    // Soccer: tight after 75' = true; before 75' = false; 2-goal gap = false.
+    t.push(ft({sportKey:'soccer',hInt:1,aInt:1,clockRaw:'85'})===true);
+    t.push(ft({sportKey:'soccer',hInt:1,aInt:1,clockRaw:'60'})===false);
+    t.push(ft({sportKey:'soccer',hInt:3,aInt:1,clockRaw:'85'})===false);
+    // Tennis/cricket excluded by design.
+    t.push(ft({sportKey:'tennis',hInt:6,aInt:5,period:3,clockSec:0})===false);
+    row('FlyTime logic', allTrue(t)?'pass':'fail',
+        allTrue(t) ? 'Basketball, football, soccer windows correct; tennis excluded ('+t.length+' cases).'
+                   : 'One or more FlyTime cases returned the wrong verdict.');
+  } catch(e){ row('FlyTime logic','fail','isFlyTime threw: '+e.message); }
+
+  // 11. Momentum logic (thresholds read from source -> robust to re-tuning)
+  try {
+    var mt = win.momTier;
+    var WARM   = srcNum(idx,'MOM_WARM',16);
+    var ONRUN  = srcNum(idx,'MOM_ONRUN',40);
+    var ONFIRE = srcNum(idx,'MOM_ONFIRE',70);
+    var SUST   = srcNum(idx,'RED_SUSTAIN',2);
+    var m = [];
+    // Hot AND sustained -> onfire.
+    m.push(mt(ONFIRE+5, SUST)==='onfire');
+    // Hot but NOT sustained -> falls back to onrun (only meaningful if SUST>=2).
+    if(SUST>=2) m.push(mt(ONFIRE+5, SUST-1)==='onrun');
+    // Mid (between onrun and onfire) -> onrun.
+    var midRun = Math.floor((ONRUN+ONFIRE)/2);
+    if(midRun<ONFIRE) m.push(mt(midRun,0)==='onrun');
+    // Low-warm (between warm and onrun) -> warming.
+    var midWarm = Math.floor((WARM+ONRUN)/2);
+    if(midWarm>=WARM && midWarm<ONRUN) m.push(mt(midWarm,0)==='warming');
+    // Below warm -> neutral ''.
+    if(WARM-5>=0) m.push(mt(WARM-5,0)==='');
+    row('Momentum logic', allTrue(m)?'pass':'fail',
+        allTrue(m) ? 'momTier tiers correct vs live thresholds ('+WARM+'/'+ONRUN+'/'+ONFIRE+', sustain '+SUST+').'
+                   : 'A momentum tier did not match its threshold band.');
+  } catch(e){ row('Momentum logic','fail','momTier threw: '+e.message); }
+
+  // 12. Comeback logic (resolveSide is a pure function; we supply the tune) -
+  try {
+    var rs = win.resolveSide;
+    var tune = {cbMin:10};
+    var c = [];
+    // Was down 14, clawed back to -2, level-ish, still moving -> comeback.
+    c.push(rs(30, 10, 2, 14, 0, false, tune)==='comeback');
+    // Max deficit too small to qualify -> not comeback (neutral here).
+    c.push(rs(5, 5, 4, 4, 0, false, tune)==='');
+    row('Comeback logic', allTrue(c)?'pass':'fail',
+        allTrue(c) ? 'resolveSide flags a real clawed-back deficit as comeback, ignores small swings.'
+                   : 'Comeback detection did not behave as expected.');
+  } catch(e){ row('Comeback logic','fail','resolveSide threw: '+e.message); }
+
+  // 13. Cold logic ---------------------------------------------------------
+  try {
+    var rs2 = win.resolveSide;
+    var COLD = srcNum(idx,'COLD_MOM',12);
+    var WARM2= srcNum(idx,'MOM_WARM',16);
+    var ONRUN2=srcNum(idx,'MOM_ONRUN',40);
+    var tune2 = {cbMin:10};
+    var low = Math.max(0, Math.min(COLD-1, WARM2-1));   // below warm AND below cold
+    var d = [];
+    // Real scoring drought -> cold.
+    d.push(rs2(low, low, 0, 0, 0, true, tune2)==='cold');
+    // Stalled while opponent is on a run -> cold.
+    d.push(rs2(low, ONRUN2+5, 0, 0, 0, false, tune2)==='cold');
+    // Quiet but symmetric -> neutral.
+    d.push(rs2(low, low, 0, 0, 0, false, tune2)==='');
+    row('Cold logic', allTrue(d)?'pass':'fail',
+        allTrue(d) ? 'Blue fires on a drought and on stalling vs a hot opponent; stays neutral otherwise.'
+                   : 'Cold (blue) detection did not behave as expected.');
+  } catch(e){ row('Cold logic','fail','resolveSide threw: '+e.message); }
+
+  // 14. Fly Mode -----------------------------------------------------------
+  try {
+    var fmOk = !!(doc && doc.getElementById('flymode-overlay') && doc.getElementById('flymode-grid'))
+            && typeof win.enterFlyMode==='function'
+            && typeof win.exitFlyMode==='function'
+            && typeof win.handleFlyModeTap==='function';
+    row('Fly Mode', fmOk?'pass':'fail',
+        fmOk ? 'Overlay + grid elements present; enter/exit/tap handlers wired.'
+             : 'Missing Fly Mode overlay/grid element or an enter/exit/tap handler.');
+  } catch(e){ row('Fly Mode','fail','Fly Mode check threw: '+e.message); }
+}
+
+// ---------------------------------------------------------------------------
+// RENDER
+// ---------------------------------------------------------------------------
+function render(){
+  var tbl = document.getElementById('tbl');
+  tbl.innerHTML = ROWS.map(function(r){
+    var label = r.status==='pass' ? 'PASS' : (r.status==='fail' ? 'FAIL' : 'SKIP');
+    return '<div class="row">'
+      + '<span class="dot '+r.status+'"></span>'
+      + '<div class="rcol"><div class="rname">'+r.name+'</div>'
+      + '<div class="rdetail">'+r.detail+'</div></div>'
+      + '<span class="rstat '+r.status+'">'+label+'</span>'
+      + '</div>';
+  }).join('');
+
+  var pass=0, fail=0, skip=0;
+  ROWS.forEach(function(r){ if(r.status==='pass')pass++; else if(r.status==='fail')fail++; else skip++; });
+  var applicable = pass+fail;
+  var pct = applicable ? Math.round(pass/applicable*100) : 0;
+
+  var box=document.getElementById('score');
+  var word = fail===0 && skip===0 ? 'all clear'
+           : (fail===0 ? 'passing (some skipped)' : 'attention needed');
+  var color = fail===0 ? 'var(--live)' : 'var(--result)';
+  document.getElementById('scorePct').textContent = pct+'%';
+  document.getElementById('scorePct').style.color = color;
+  document.getElementById('scoreWord').textContent = word;
+  document.getElementById('scoreWord').style.color = color;
+  document.getElementById('scoreMeta').textContent =
+    pass+' passed, '+fail+' failed'+(skip?(', '+skip+' skipped'):'')+'  -  '+new Date().toLocaleString([]);
+  box.classList.add('show');
+
+  document.getElementById('note').innerHTML =
+    '<b>How it works.</b> File checks download index.html, sw.js and manifest.json and '
+    + 'inspect them. Logic checks load the app invisibly and call its real functions. '
+    + 'Skipped logic tests usually mean this page is not being served from the same '
+    + 'folder as index.html over https.';
+}
+</script>
+</body>
+</html>

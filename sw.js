@@ -3,7 +3,7 @@
 //
 // IMPORTANT: bump CACHE on every deploy to force existing users to refresh.
 
-const CACHE = 'statfly-v40';
+const CACHE = 'statfly-v41';
 const SHELL = [
   './',
   './index.html',

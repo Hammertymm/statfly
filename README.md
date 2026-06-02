@@ -14,8 +14,8 @@ Follow your favourite teams and see everything in one feed.
 
 |Tab         |What you see                                          |
 |------------|------------------------------------------------------|
-|**Feed**    |Live scores + upcoming fixtures (next 14 days)        |
-|**Results** |Completed matches (last 4 days)                       |
+|**Feed**    |Live scores + upcoming fixtures (next 7 days)        |
+|**Results** |Completed matches (last 7 days)                       |
 |**Teams**   |Search and follow teams. Manage alerts.               |
 |**Fly Mode**|Full-screen scores designed for glancing across a room|
 

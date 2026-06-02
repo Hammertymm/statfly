@@ -172,11 +172,41 @@
   .del-btn:active{background:rgba(255,69,58,.12);}
   .bell-hint{display:flex;align-items:center;gap:10px;margin:10px 4px 4px;font-size:12px;color:var(--text-3);}
   .bell-hint-icon{font-size:16px;opacity:.9;}
+  /* FlyTime Buzz - global close-finish alert toggle (Teams tab) */
+  .buzz-card{display:flex;align-items:center;gap:12px;background:var(--card);border:1px solid var(--sep);border-radius:12px;padding:12px 14px;margin:0 0 4px;}
+  .buzz-icon{font-size:22px;line-height:1;flex-shrink:0;}
+  .buzz-text{flex:1;min-width:0;}
+  .buzz-title{font-size:14px;font-weight:700;letter-spacing:-.2px;color:var(--text);}
+  .buzz-desc{font-size:11px;font-weight:500;color:var(--text-3);line-height:1.35;margin-top:2px;}
+  .buzz-switch{position:relative;width:46px;height:28px;flex-shrink:0;border-radius:14px;background:rgba(255,255,255,.16);transition:background .2s;cursor:pointer;}
+  .buzz-switch.on{background:var(--live);}
+  .buzz-knob{position:absolute;top:2px;left:2px;width:24px;height:24px;border-radius:50%;background:#fff;transition:transform .2s;}
+  .buzz-switch.on .buzz-knob{transform:translateX(18px);}
+  /* ONBOARDING (first-run overlay) */
+  .onb-overlay { display: none; position: fixed; inset: 0; background: #000; z-index: 300; overflow-y: auto; }
+  .onb-overlay.active { display: block; }
+  .onb-inner { max-width: 430px; margin: 0 auto; min-height: 100%; display: flex; flex-direction: column; padding: 0 22px; box-sizing: border-box; }
+  .onb-step { flex: 1; display: flex; flex-direction: column; }
+  #onb-step-1 { justify-content: center; align-items: center; text-align: center; padding-bottom: 30px; }
+  .onb-logo { width: 96px; height: 96px; border-radius: 50%; display: block; margin-bottom: 22px; }
+  .onb-word { font-size: 46px; font-weight: 700; letter-spacing: -1px; line-height: 1; margin-bottom: 14px; }
+  .onb-word span { color: var(--live); }
+  .onb-tag { font-size: 17px; color: var(--text-2); margin-bottom: 26px; }
+  .onb-tag em { color: var(--live); font-style: normal; font-weight: 600; }
+  .onb-welcome { font-size: 15px; line-height: 1.5; color: var(--text-3); max-width: 300px; margin-bottom: 40px; }
+  .onb-h { font-size: 28px; font-weight: 700; letter-spacing: -.5px; margin: 50px 0 6px; }
+  .onb-sub { font-size: 15px; line-height: 1.45; color: var(--text-3); margin-bottom: 22px; }
+  .onb-label { font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: .5px; color: var(--text-3); margin: 22px 0 10px; }
+  .onb-count { font-size: 13px; color: var(--live); font-weight: 600; margin-top: 16px; text-align: center; min-height: 18px; }
+  .onb-bell { font-size: 54px; text-align: center; margin: 64px 0 4px; }
+  #onb-step-3 { text-align: center; }
+  .onb-btn { display: block; width: 100%; border: none; border-radius: 14px; font-family: inherit; font-size: 17px; font-weight: 600; padding: 16px; cursor: pointer; -webkit-tap-highlight-color: rgba(255,255,255,0.08); }
+  .onb-btn-primary { background: var(--live); color: #000; margin-bottom: 16px; }
+  #onb-step-2 .onb-btn-primary, #onb-step-3 .onb-btn-primary { margin-top: auto; }
+  .onb-btn-text { background: none; color: var(--text-3); font-size: 15px; padding: 12px; margin-bottom: 24px; }
   .follow-btn{background:transparent;border:1px solid rgba(48,209,88,0.55);color:var(--live);font-size:12px;font-weight:600;padding:6px 14px;border-radius:14px;cursor:pointer;font-family:inherit;transition:background .15s,transform .1s;}
   .follow-btn:active{background:rgba(48,209,88,.12);transform:scale(.97);}
   .follow-btn.followed{opacity:.55;}
-
-  /* -- COMPACT RESULTS TOGGLE -- */
 
   /* ── FLY MODE ── */
   /* -- FLY MODE OVERLAY -- */
@@ -189,48 +219,31 @@
   }
   .flymode-overlay.active { display: block; }
 
-  /* 1 column, N rows where N = number of live matches (1..4).
-     Layout scales with live match count via data-count attribute. */
+  /* The grid is positioned by JS (FlyGrid engine). We only set the box here;
+     columns/rows and every font size are written inline by buildFlyModeGrid()
+     after measuring the real card sizes. This is the key change from v40:
+     nothing is sized off the viewport or off hardcoded breakpoints any more. */
   .flymode-inner {
     position: absolute;
-    top: 0; left: 0; right: 0;
-    bottom: 72px;
+    top: env(safe-area-inset-top, 0px);
+    left: env(safe-area-inset-left, 0px);
+    right: env(safe-area-inset-right, 0px);
+    bottom: 84px; /* brightness bar */
     padding: 6px 8px;
     display: grid;
-    grid-template-columns: 1fr;
-    grid-auto-rows: 1fr;
-    gap: 0;
+    gap: 4px;
     transition: filter 0.1s;
   }
-  .flymode-inner[data-count="1"] { grid-template-rows: 1fr; --rows: 1; }
-  .flymode-inner[data-count="2"] { grid-template-rows: repeat(2, 1fr); --rows: 2; }
-  .flymode-inner[data-count="3"] { grid-template-rows: repeat(3, 1fr); --rows: 3; }
-  .flymode-inner[data-count="4"] { grid-template-rows: repeat(4, 1fr); --rows: 4; }
   .flymode-inner[data-count="0"] {
+    grid-template-columns: 1fr;
     grid-template-rows: 1fr;
     align-items: center;
     justify-items: center;
   }
-  /* Landscape: 2-column layout so matches sit side-by-side */
-  @media (orientation: landscape) {
-    .flymode-inner[data-count="2"] {
-      grid-template-columns: repeat(2, 1fr);
-      grid-template-rows: 1fr;
-      --rows: 1;
-    }
-    .flymode-inner[data-count="3"],
-    .flymode-inner[data-count="4"] {
-      grid-template-columns: repeat(2, 1fr);
-      grid-template-rows: repeat(2, 1fr);
-      --rows: 2;
-    }
-  }
 
-  .flymode-grid { display: contents; }
-
-  /* Card: team labels above scores, status badge centred between scores.
-     Columns: HOME-SIDE | CENTER-BADGE | AWAY-SIDE
-     Rows: TEAM-LABEL / SCORE */
+  /* FlyCard - a universal rectangle. It does not know orientation, device or
+     match count; it just fills the cell the grid gives it and scales its text
+     from its own measured size (font sizes set inline by JS). */
   .flymode-card {
     background: transparent;
     border: none;
@@ -242,19 +255,17 @@
     justify-items: center;
     padding: 0 8px;
     position: relative;
-    gap: 4px 8px;
+    gap: 2px 6px;
     overflow: hidden;
     min-width: 0;
+    min-height: 0;
   }
-  /* No top border on first card (cleaner top edge) */
-  .flymode-card:first-child { border-top: none; }
-
-  /* Vertical divider between the two scores, sits behind the badge */
+  /* Vertical divider between the two scores, behind the badge */
   .flymode-card::before {
     content: "";
     position: absolute;
-    top: 12%;
-    bottom: 12%;
+    top: 18%;
+    bottom: 18%;
     left: 50%;
     width: 1px;
     background: rgba(255,255,255,0.12);
@@ -263,91 +274,63 @@
   }
 
   .flymode-team {
-    font-family: 'Inter', monospace;
-    font-size: clamp(22px, 6vw, 36px);
+    font-family: 'Inter', -apple-system, sans-serif;
     font-weight: 800;
-    letter-spacing: 1.5px;
+    letter-spacing: 1px;
     color: rgba(255,255,255,0.65);
     text-transform: uppercase;
     line-height: 1;
     white-space: nowrap;
     grid-row: 1;
-    margin-top: 6px;
     z-index: 1;
-    max-width: 100%;
-    overflow: hidden;
-    text-overflow: ellipsis;
+    /* font-size set inline by JS */
   }
   .flymode-team.home { grid-column: 1; }
   .flymode-team.away { grid-column: 3; }
 
-  /* Score - scales with row count. Cap multiplier so 1-match doesn't overflow. */
   .flymode-score {
-    font-family: 'Inter', monospace;
-    font-size: clamp(36px, calc((100vh - 96px) / var(--rows, 1) * 0.42), 200px);
+    font-family: 'Inter', -apple-system, sans-serif;
     font-weight: 900;
     letter-spacing: -2px;
-    line-height: 1;
+    line-height: 0.9;
     color: #ffffff;
-    text-shadow: none;
     text-align: center;
     width: 100%;
     grid-row: 2;
     z-index: 1;
+    white-space: nowrap;
+    /* font-size set inline by JS */
   }
   .flymode-score.home { grid-column: 1; }
   .flymode-score.away { grid-column: 3; }
 
-  /* Status badge (Q3 11:35) - centred between scores, pill outline */
+  /* FlyState colour fills (shared with feed cards via the .sc rules elsewhere) */
+  .flymode-score.fs-warming  { color: var(--upcoming); }
+  .flymode-score.fs-onrun    { color: var(--onrun); }
+  .flymode-score.fs-onfire   { color: var(--result); }
+  .flymode-score.fs-cold     { color: var(--cold); }
+  .flymode-score.fs-comeback { color: var(--comeback); }
+  .flymode-score.fs-flytime  { color: var(--live); animation: flyPulse 1.6s ease-in-out infinite; }
+
   .flymode-status {
     grid-column: 2;
     grid-row: 2;
-    font-family: 'Inter', monospace;
-    font-size: clamp(18px, calc((100vh - 96px) / var(--rows, 1) * 0.14), 34px);
+    font-family: 'Inter', -apple-system, sans-serif;
     font-weight: 700;
     color: #ffffff;
     letter-spacing: 0.5px;
     text-align: center;
     line-height: 1.15;
-    padding: 6px 10px;
+    padding: 4px 8px;
     border: 1px solid rgba(255,255,255,0.4);
     border-radius: 8px;
     background: #000;
     white-space: nowrap;
     z-index: 2;
+    /* font-size set inline by JS */
   }
-  /* Overtime: red clock. FlyTime: green badge to match the green scores. */
   .flymode-status.ot      { color: var(--result); border-color: var(--result); }
   .flymode-status.flytime { color: var(--live);   border-color: var(--live); }
-
-  /* PORTRAIT (tall + narrow). The height-based score size overflows a narrow screen,
-     so: (a) cap every score by viewport width so it can never run off the edge, and
-     (b) for a SINGLE match, stack the two teams vertically (label/score over badge over
-     label/score) to use the tall space and keep the score big. Landscape is unaffected. */
-  @media (orientation: portrait) {
-    .flymode-score {
-      font-size: min(clamp(36px, calc((100vh - 96px) / var(--rows, 1) * 0.42), 200px), 18vw);
-    }
-    .flymode-inner[data-count="1"] .flymode-card {
-      grid-template-columns: 1fr;
-      /* flex / homeLabel / homeScore / flex / badge / flex / awayScore / awayLabel / flex
-         The auto rows for a label+score pair sit together (no flex between them) so each
-         label hugs its score; the 1fr rows soak up the rest and centre the whole board. */
-      grid-template-rows: 1fr auto auto 1fr auto 1fr auto auto 1fr;
-      gap: 0;
-    }
-    .flymode-inner[data-count="1"] .flymode-team.home  { grid-column: 1; grid-row: 2; }
-    .flymode-inner[data-count="1"] .flymode-score.home { grid-column: 1; grid-row: 3; }
-    .flymode-inner[data-count="1"] .flymode-status     { grid-column: 1; grid-row: 5; justify-self: center; }
-    .flymode-inner[data-count="1"] .flymode-score.away { grid-column: 1; grid-row: 7; }
-    .flymode-inner[data-count="1"] .flymode-team.away  { grid-column: 1; grid-row: 8; }
-    /* Full width is available when stacked, so the hero number can be much larger. */
-    .flymode-inner[data-count="1"] .flymode-score {
-      font-size: min(42vw, calc((100vh - 160px) / 2 * 0.62));
-    }
-    /* The vertical centre divider only makes sense side-by-side. */
-    .flymode-inner[data-count="1"] .flymode-card::before { display: none; }
-  }
 
   /* Empty-state message when no live My Teams matches */
   .flymode-empty {
@@ -358,6 +341,8 @@
     text-transform: uppercase;
     text-align: center;
   }
+
+
 
   /* brightness bar - full width, no exit button */
   .flymode-brightness {
@@ -633,6 +618,53 @@
   </div>
 </div>
 
+<!-- ONBOARDING: first-run only. Shown by startOnboarding(); hidden once finished. -->
+<div class="onb-overlay" id="onboard-overlay">
+  <div class="onb-inner">
+
+    <!-- Step 1: Welcome -->
+    <div class="onb-step" id="onb-step-1">
+      <img class="onb-logo" src="data:image/png;base64,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" alt="StatFly logo">
+      <div class="onb-word">Stat<span>Fly</span></div>
+      <div class="onb-tag">Scores Anywhere. <em>Simple.</em></div>
+      <div class="onb-welcome">Follow your teams and see live scores, fixtures and results in one feed. No login. No ads.</div>
+      <button class="onb-btn onb-btn-primary" onclick="onbGoStep(2)">Get started</button>
+    </div>
+
+    <!-- Step 2: Follow teams -->
+    <div class="onb-step" id="onb-step-2" style="display:none">
+      <div class="onb-h">Follow your teams</div>
+      <div class="onb-sub">Pick a few to follow. You can change these anytime on the Teams tab.</div>
+
+      <div class="global-search-wrap">
+        <span class="global-search-icon-left">&#128269;</span>
+        <input class="global-search-input" type="text" id="onb-search"
+          placeholder="Search teams or leagues..."
+          oninput="onbSearch(this.value)"
+          autocomplete="off" autocorrect="off" autocapitalize="off">
+        <button class="global-search-clear-btn" id="onb-search-clear" onclick="onbClearSearch()">&#10005;</button>
+      </div>
+      <div class="global-search-results" id="onb-results"></div>
+
+      <div class="onb-label">Popular</div>
+      <div id="onb-suggested"></div>
+
+      <div class="onb-count" id="onb-count"></div>
+      <button class="onb-btn onb-btn-primary" id="onb-step2-btn" onclick="onbGoStep(3)">Skip for now</button>
+    </div>
+
+    <!-- Step 3: Notifications -->
+    <div class="onb-step" id="onb-step-3" style="display:none">
+      <div class="onb-bell">&#128276;</div>
+      <div class="onb-h">Match alerts</div>
+      <div class="onb-sub">Get a heads-up when your teams are playing, and when a close game heats up in its final minutes.</div>
+      <button class="onb-btn onb-btn-primary" onclick="onbEnableNotifs()">Enable notifications</button>
+      <button class="onb-btn onb-btn-text" onclick="onbFinish()">Maybe later</button>
+    </div>
+
+  </div>
+</div>
+
 <div id="page-home" class="page active">
   <div class="freshness" id="freshness"></div>
   <div class="feed-header" style="display:flex;align-items:center;justify-content:space-between;margin:4px 2px 5px;">
@@ -685,6 +717,16 @@
   <div class="bell-hint">
     <span class="bell-hint-icon">🔔</span>
     <span>Tap the bell to manage alerts for a team</span>
+  </div>
+
+  <div class="teams-title">FlyTime Buzz</div>
+  <div class="buzz-card">
+    <span class="buzz-icon">🔥</span>
+    <div class="buzz-text">
+      <div class="buzz-title">Never miss a close finish</div>
+      <div class="buzz-desc">Get notified whenever a game anywhere enters FlyTime.</div>
+    </div>
+    <div class="buzz-switch" id="buzz-switch" onclick="toggleFlyBuzz()"><div class="buzz-knob"></div></div>
   </div>
 
   <div class="teams-title">Suggested for you</div>
@@ -1197,6 +1239,11 @@ function updateFlyState(m) {
       hState: '', aState: '', match: matchState,
     };
     return;
+  }
+
+  // FlyTime alert: fire once when a match first crosses INTO flytime.
+  if (matchState === 'flytime' && prev.match !== 'flytime') {
+    fireFlyTimeAlert(m);
   }
 
   const hDelta = Math.max(0, hNow - prev.h);
@@ -1719,6 +1766,87 @@ function fireMatchNotifications(liveMatches){
   });
 }
 
+// FlyTime alerts. Two independent opt-ins share ONE dedupe set (flytimeAlerted) so a
+// match buzzes at most once when it first crosses INTO FlyTime, even if both apply:
+//   1. Team alert  - a followed team with the bell on.
+//   2. FlyTime Buzz - a global toggle that fires for ANY live match, followed or not.
+// Followed-team matches get the personal alert; every other match gets the global buzz;
+// a match that qualifies for both still buzzes once (the team alert wins). On iPhone the
+// notification IS the buzz (iOS has no web vibration); navigator.vibrate is a bonus on Android.
+const flytimeAlerted = new Set(
+  JSON.parse(localStorage.getItem('statfly_flytime') || '[]')
+);
+function saveFlytimeAlerted(){
+  try{ localStorage.setItem('statfly_flytime', JSON.stringify([...flytimeAlerted])); }catch(e){}
+}
+
+// FlyTime Buzz: global opt-in, default OFF. Persisted separately from team bell alerts.
+let flyTimeBuzz = localStorage.getItem('statfly_flytime_buzz') === 'true';
+function renderFlyBuzz(){
+  const sw = document.getElementById('buzz-switch');
+  if(sw) sw.classList.toggle('on', flyTimeBuzz);
+}
+function toggleFlyBuzz(){
+  // Turning OFF is always allowed.
+  if(flyTimeBuzz){
+    flyTimeBuzz = false;
+    localStorage.setItem('statfly_flytime_buzz', 'false');
+    renderFlyBuzz();
+    return;
+  }
+  // Turning ON - notifications are required. Ask if we have not decided yet.
+  if('Notification' in window && Notification.permission === 'default'){
+    Notification.requestPermission().then(perm => {
+      const ok = perm === 'granted';
+      flyTimeBuzz = ok;
+      localStorage.setItem('statfly_flytime_buzz', ok ? 'true' : 'false');
+      if(!ok) alert('Notifications are required for FlyTime Buzz.');
+      renderFlyBuzz();
+    });
+    return;
+  }
+  if('Notification' in window && Notification.permission === 'denied'){
+    alert('Notifications are blocked. Turn them on for StatFly in your browser settings to use FlyTime Buzz.');
+    flyTimeBuzz = false;
+    localStorage.setItem('statfly_flytime_buzz', 'false');
+    renderFlyBuzz();
+    return;
+  }
+  // Permission already granted (or Notification unsupported - allow the toggle either way).
+  flyTimeBuzz = true;
+  localStorage.setItem('statfly_flytime_buzz', 'true');
+  renderFlyBuzz();
+}
+
+function fireFlyTimeAlert(m){
+  if(flytimeAlerted.has(m.id)) return;
+  // Is this a followed team with the bell on?
+  const alertKeys = new Set(favs.filter(f=>f.alert).map(f=>f.name.toLowerCase()));
+  const h = m.home.toLowerCase();
+  const a = m.away.toLowerCase();
+  const followed = alertKeys.size > 0 && [...alertKeys].some(k =>
+    h===k || a===k || h.includes(k) || a.includes(k) || k.includes(h) || k.includes(a)
+  );
+  // Nothing to send unless it is a followed team OR the global buzz is switched on.
+  if(!followed && !flyTimeBuzz) return;
+  flytimeAlerted.add(m.id);
+  saveFlytimeAlerted();
+  try{ if(navigator.vibrate) navigator.vibrate([120,60,120]); }catch(e){}
+  if('Notification' in window && Notification.permission === 'granted'){
+    let title, body;
+    if(followed){
+      title = 'FlyTime! Going to the wire';
+      body  = `${m.home} vs ${m.away} is heading for a dramatic finish`;
+    } else {
+      title = '\uD83D\uDD25 FlyTime';
+      body  = `Close finish:\n${m.away} ${m.aInt}\nvs\n${m.home} ${m.hInt}\nTap to watch.`;
+    }
+    try {
+      new Notification(title, { body, icon: 'icon192.png', tag: `statfly-flytime-${m.id}` });
+    } catch(e) {}
+  }
+}
+
 // - UPCOMING - populated by ESPN API only
 const ALL_UPCOMING=[];
 
@@ -2127,17 +2255,49 @@ function abbrev(name) {
   return words.slice(0,3).map(w=>w[0]).join('').toUpperCase();
 }
 
+// FlyGrid: for n cards in a box of (boxW x boxH), try every cols x rows grid
+// and return the one whose resulting card makes the score text largest. Pure
+// arithmetic, no DOM. Worst-case score is "999" so width must hold two of them
+// plus the centre badge without clipping.
+function flyCandidateGrids(n) {
+  const out = [];
+  const seen = new Set();
+  for (let cols = 1; cols <= n; cols++) {
+    const rows = Math.ceil(n / cols);
+    const k = cols + 'x' + rows;
+    if (!seen.has(k)) { seen.add(k); out.push({ cols: cols, rows: rows }); }
+  }
+  return out;
+}
+
+// Score font size a given grid yields, bounded by card height AND card width
+// so a 3-digit score can never clip or overflow. Returns px.
+function flyScoreSize(boxW, boxH, grid, gap) {
+  const cardW = (boxW - gap * (grid.cols - 1)) / grid.cols;
+  const cardH = (boxH - gap * (grid.rows - 1)) / grid.rows;
+  const byHeight = cardH * 0.46;        // score shares height with team label
+  const byWidth  = (cardW * 0.92) / 4.6; // two ~1.8em scores + badge across the row
+  return Math.max(8, Math.min(byHeight, byWidth));
+}
+
+function flyPickGrid(n, boxW, boxH, gap) {
+  const cands = flyCandidateGrids(n);
+  let best = null;
+  for (let i = 0; i < cands.length; i++) {
+    const s = flyScoreSize(boxW, boxH, cands[i], gap);
+    if (!best || s > best.score) best = { cols: cands[i].cols, rows: cands[i].rows, score: s };
+  }
+  return best || { cols: 1, rows: 1, score: 8 };
+}
+
 function buildFlyModeGrid() {
   const favNames = favs.map(f=>f.name.toLowerCase());
   const noFavs   = favNames.length === 0;
-  // Filter live matches to My Teams (or all if no favs set)
   let live = ALL_LIVE.filter(m => {
     if (noFavs) return true;
     return favNames.includes(m.home.toLowerCase()) || favNames.includes(m.away.toLowerCase());
   });
-  // Sort by start time ascending: first started, first in. Fall back to 0 if no startMs.
   live = live.slice().sort((a, b) => (a.startMs || 0) - (b.startMs || 0));
-  // Cap at 4
   if (live.length > 4) live = live.slice(0, 4);
 
   const inner = document.getElementById('flymode-inner');
@@ -2145,18 +2305,20 @@ function buildFlyModeGrid() {
   inner.setAttribute('data-count', String(live.length));
 
   if (!live.length) {
+    inner.style.gridTemplateColumns = '1fr';
+    inner.style.gridTemplateRows = '1fr';
     grid.innerHTML = '<div class="flymode-empty">No live matches</div>';
     return;
   }
-  // Centred-badge layout: TEAM-LABEL above SCORE on each side, status badge between scores
+
+  // Build the cards first (no sizes yet), then measure and size.
   grid.innerHTML = live.map(m => {
-    // Status text. Server returns like "Q3 11:35" - we render as two lines if it has a space.
     const timer = (m.timer || '').trim();
     const parts = timer.split(/\s+/);
     const badge = (parts.length >= 2)
       ? (parts[0] + '<br>' + parts.slice(1).join(' '))
       : timer;
-    const mf = getMatchFly(m.id); // '' | 'flytime' | 'overtime'
+    const mf = getMatchFly(m.id);
     const statusCls = mf === 'overtime' ? ' ot' : (mf === 'flytime' ? ' flytime' : '');
     return ''
       + '<div class="flymode-card">'
@@ -2167,6 +2329,41 @@ function buildFlyModeGrid() {
       +   '<div class="flymode-score away ' + getFlyClass(m.id,'away') + '">' + m.awayScore + '</div>'
       + '</div>';
   }).join('');
+
+  // Measure the usable box and choose the grid + font sizes. Defer one frame so
+  // the browser has applied the safe-area insets and we read real pixels.
+  requestAnimationFrame(function(){
+    sizeFlyMode(live.length);
+  });
+}
+
+// Measure inner box, pick best grid, write grid template + all font sizes inline.
+function sizeFlyMode(n) {
+  const inner = document.getElementById('flymode-inner');
+  if (!inner) return;
+  const gap = 4;
+  const rect = inner.getBoundingClientRect();
+  // getBoundingClientRect already accounts for the safe-area inset positioning.
+  const boxW = Math.max(40, rect.width  - 16); // minus the 8px side padding x2
+  const boxH = Math.max(40, rect.height - 12); // minus the 6px top/bottom padding x2
+
+  const g = flyPickGrid(n, boxW, boxH, gap);
+  inner.style.gridTemplateColumns = 'repeat(' + g.cols + ', 1fr)';
+  inner.style.gridTemplateRows    = 'repeat(' + g.rows + ', 1fr)';
+
+  const cardW = (boxW - gap * (g.cols - 1)) / g.cols;
+  const cardH = (boxH - gap * (g.rows - 1)) / g.rows;
+  const scorePx = Math.min(cardH * 0.46, (cardW * 0.92) / 4.6);
+  // Team label and badge scale off the score so the hierarchy stays constant.
+  const teamPx   = Math.max(10, scorePx * 0.30);
+  const statusPx = Math.max(10, scorePx * 0.26);
+
+  const scores = inner.querySelectorAll('.flymode-score');
+  for (let i = 0; i < scores.length; i++) scores[i].style.fontSize = scorePx + 'px';
+  const teams = inner.querySelectorAll('.flymode-team');
+  for (let i = 0; i < teams.length; i++) teams[i].style.fontSize = teamPx + 'px';
+  const stats = inner.querySelectorAll('.flymode-status');
+  for (let i = 0; i < stats.length; i++) stats[i].style.fontSize = statusPx + 'px';
 }
 
 function enterFlyMode() {
@@ -2177,16 +2374,15 @@ function enterFlyMode() {
   const inner = document.getElementById('flymode-inner');
   if (inner) inner.style.filter = 'brightness(100%)';
   buildFlyModeGrid();
-  bumpBrightnessControl(); // show the slider on entry, then let it fade
+  bumpBrightnessControl();
   try {
     if (navigator && navigator.wakeLock && typeof navigator.wakeLock.request === 'function') {
-      navigator.wakeLock.request('screen').catch(()=>{});
+      navigator.wakeLock.request('screen').catch(function(){});
     }
   } catch(e) {}
 }
 
 function handleFlyModeTap(e) {
-  // Exit Fly Mode on tap anywhere - brightness bar has stopPropagation so won't trigger
   exitFlyMode();
 }
 
@@ -2195,16 +2391,22 @@ function exitFlyMode() {
   if (brightnessFadeTimer) { clearTimeout(brightnessFadeTimer); brightnessFadeTimer = null; }
 }
 
-// Reveal the brightness control, then fade it out 1s after the last adjustment.
-// While dragging, the slider keeps firing input events which keep resetting this
-// timer - so it stays visible during use and fades 1s after you let go.
+// Re-fit Fly Mode when the device rotates or the window resizes.
+window.addEventListener('resize', function(){
+  const ov = document.getElementById('flymode-overlay');
+  if (ov && ov.classList.contains('active')) {
+    const n = parseInt(document.getElementById('flymode-inner').getAttribute('data-count')) || 0;
+    if (n > 0) requestAnimationFrame(function(){ sizeFlyMode(n); });
+  }
+});
+
 let brightnessFadeTimer = null;
 function bumpBrightnessControl() {
   const el = document.getElementById('flymode-brightness');
   if (!el) return;
   el.classList.remove('faded');
   if (brightnessFadeTimer) clearTimeout(brightnessFadeTimer);
-  brightnessFadeTimer = setTimeout(() => {
+  brightnessFadeTimer = setTimeout(function() {
     const e = document.getElementById('flymode-brightness');
     if (e) e.classList.add('faded');
   }, 1000);
@@ -2212,9 +2414,12 @@ function bumpBrightnessControl() {
 
 function setFlyModeBrightness(val) {
   const inner = document.getElementById('flymode-inner');
-  if (inner) inner.style.filter = `brightness(${val}%)`;
+  if (inner) inner.style.filter = 'brightness(' + val + '%)';
   bumpBrightnessControl();
 }
+
+
+
 
 // - GLOBAL SEARCH (My Teams page) -
 // Build a flat searchable index from all LEAGUES + TEAMS
@@ -2333,18 +2538,155 @@ function clearGlobalSearch() {
   document.getElementById('global-search-results').innerHTML = '';
 }
 
+// - ONBOARDING (first-run flow) -
+// Reuses the app's real state (favs/saveFavs), team dataset (searchIndex),
+// SUGGESTED list and renderers. Only the overlay navigation and a thin search
+// wrapper are new. The done-flag is set ONLY on finish, so an interrupted run
+// shows again next launch.
+
+function startOnboarding(){
+  onbGoStep(1);
+  onbRenderSuggested();
+  onbRefresh();
+  document.getElementById('onboard-overlay').classList.add('active');
+}
+
+function onbGoStep(n){
+  for(var i=1;i<=3;i++){
+    var el=document.getElementById('onb-step-'+i);
+    if(el) el.style.display = (i===n) ? 'flex' : 'none';
+  }
+  if(n===2){ onbRenderSuggested(); onbRefresh(); }
+}
+
+// Search inside onboarding. Mirrors globalSearch/gsrTap but targets the
+// onboarding elements so it never collides with the Teams-tab search.
+function onbSearch(query){
+  var clearBtn=document.getElementById('onb-search-clear');
+  var resultsDiv=document.getElementById('onb-results');
+  clearBtn.classList.toggle('visible', !!query);
+  if(!query.trim()){
+    resultsDiv.classList.remove('visible');
+    resultsDiv.innerHTML='';
+    return;
+  }
+  if(!searchIndex) searchIndex=buildSearchIndex();
+  var q=query.toLowerCase();
+  var matches=searchIndex.filter(function(item){
+    return item.name.toLowerCase().includes(q) ||
+      item.country.toLowerCase().includes(q) ||
+      (item.league && item.league.toLowerCase().includes(q));
+  }).slice(0,40);
+  if(!matches.length){
+    resultsDiv.innerHTML='<div class="gsr-empty">No results for "'+query+'"</div>';
+    resultsDiv.classList.add('visible');
+    return;
+  }
+  resultsDiv.innerHTML=matches.map(function(item,idx){
+    var alreadyAdded=item.type==='team' && favs.some(function(f){return f.key===item.favKey;});
+    var badge = item.type==='team'
+      ? (alreadyAdded ? '<span class="gsr-added">&#10003; Added</span>' : '<span class="gsr-add">+ Add</span>')
+      : '<span style="font-size:10px;color:var(--text-3)">'+item.emoji+'</span>';
+    return '<div class="gsr-item" data-idx="'+idx+'" onclick="onbTap(this)">'+
+      '<div class="gsr-flag">'+item.flag+'</div>'+
+      '<div class="gsr-info"><div class="gsr-team">'+item.name+'</div>'+
+      '<div class="gsr-meta">'+item.meta+'</div></div>'+badge+'</div>';
+  }).join('');
+  resultsDiv._matches=matches;
+  resultsDiv.classList.add('visible');
+}
+
+function onbTap(el){
+  var resultsDiv=document.getElementById('onb-results');
+  var matches=resultsDiv._matches || [];
+  var item=matches[parseInt(el.getAttribute('data-idx'))];
+  if(!item || item.type!=='team') return;
+  if(favs.some(function(f){return f.key===item.favKey;})) return;
+  favs.push({key:item.favKey,name:item.name,league:item.league,leagueEmoji:item.leagueEmoji,flag:item.countryFlag,alert:false});
+  saveFavs(); renderFavs(); renderHome(); renderResults();
+  onbSearch(document.getElementById('onb-search').value); // refresh to show Added
+  onbRefresh();
+}
+
+function onbClearSearch(){
+  document.getElementById('onb-search').value='';
+  document.getElementById('onb-search-clear').classList.remove('visible');
+  var r=document.getElementById('onb-results');
+  r.classList.remove('visible'); r.innerHTML='';
+}
+
+// Suggested picks inside onboarding (same SUGGESTED list as the Teams tab).
+function onbRenderSuggested(){
+  var wrap=document.getElementById('onb-suggested');
+  if(!wrap) return;
+  var items=SUGGESTED.filter(function(s){return !favs.some(function(f){return f.key===s.name+'|'+s.league;});});
+  if(!items.length){ wrap.innerHTML='<div class="section-empty">Nice picks!</div>'; return; }
+  wrap.innerHTML='<div class="team-list">'+items.map(function(s){
+    var key=(s.name+'|'+s.league).replace(/'/g,"\\'");
+    return '<div class="tli">'+
+      '<div class="tli-flag">'+s.flag+'</div>'+
+      '<div class="tli-sport">'+s.leagueEmoji+'</div>'+
+      '<div class="tli-info"><div class="tli-name">'+s.name+'</div><div class="tli-lg">'+s.league+'</div></div>'+
+      '<button class="follow-btn" onclick="onbFollowSuggested(\''+key+'\')">Follow</button>'+
+      '</div>';
+  }).join('')+'</div>';
+}
+
+function onbFollowSuggested(key){
+  followSuggested(key);   // shared: pushes to favs, saves, re-renders app views
+  onbRenderSuggested();
+  onbRefresh();
+}
+
+// Update the count line and primary button label for step 2.
+function onbRefresh(){
+  var n=favs.length;
+  var count=document.getElementById('onb-count');
+  var btn=document.getElementById('onb-step2-btn');
+  if(count) count.textContent = n ? ('Following '+n+(n===1?' team':' teams')) : '';
+  if(btn) btn.textContent = n ? 'Continue' : 'Skip for now';
+}
+
+// Notifications step: request permission once. On grant, turn the bell on for
+// every team just followed so the opt-in actually does something.
+function onbEnableNotifs(){
+  if('Notification' in window && Notification.permission==='default'){
+    Notification.requestPermission().then(function(perm){
+      if(perm==='granted'){
+        favs.forEach(function(f){ f.alert=true; });
+        saveFavs(); renderFavs();
+      }
+      onbFinish();
+    });
+    return;
+  }
+  if('Notification' in window && Notification.permission==='granted'){
+    favs.forEach(function(f){ f.alert=true; });
+    saveFavs(); renderFavs();
+  }
+  onbFinish();
+}
+
+function onbFinish(){
+  localStorage.setItem('statfly_onboarded','1');
+  document.getElementById('onboard-overlay').classList.remove('active');
+  // If they followed anyone, drop them straight into their own feed.
+  if(favs.length && typeof setFeedFilter==='function') setFeedFilter('my');
+  goTab('home',null,'nb-home');
+}
+
 setTimeout(()=>{
   renderHome();
   renderResults();
   renderFavs();
+  renderFlyBuzz();
   pollTick(); // first run does a full sweep (nothing live yet), then self-schedules
   setInterval(()=>{ if(!document.hidden) renderFreshness(); }, 30000);
   document.addEventListener('visibilitychange', () => {
     if (!document.hidden && !isPolling) { clearTimeout(pollTimer); pollTick(); }
   });
   if(!localStorage.getItem('statfly_onboarded')){
-    localStorage.setItem('statfly_onboarded','1');
-    goTab('settings',null,'nb-settings');
+    startOnboarding();
   }
 },0);
 

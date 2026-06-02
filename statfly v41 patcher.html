@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>StatFly v41 Patcher</title>
+<style>
+ body{font-family:-apple-system,sans-serif;background:#000;color:#fff;margin:0;padding:20px;max-width:560px;margin:0 auto;}
+ h1{font-size:22px;} h1 span{color:#30d158;}
+ .step{background:#111114;border:1px solid #20232E;border-radius:12px;padding:14px 16px;margin:12px 0;}
+ .num{display:inline-block;width:22px;height:22px;line-height:22px;text-align:center;background:#30d158;color:#000;border-radius:50%;font-weight:700;margin-right:8px;font-size:13px;}
+ button{font-family:inherit;font-size:15px;font-weight:600;padding:12px 18px;border-radius:10px;border:none;cursor:pointer;width:100%;margin-top:6px;}
+ .primary{background:#30d158;color:#000;}
+ .primary:disabled{background:#1c3a24;color:#5a7a63;}
+ .copy{background:#0a84ff;color:#fff;}
+ input[type=file]{margin-top:8px;color:#aaa;font-size:13px;}
+ .log{font-size:13px;line-height:1.5;white-space:pre-wrap;margin-top:10px;}
+ .ok{color:#30d158;} .err{color:#ff453a;} .muted{color:#7A7D87;}
+ textarea{width:100%;height:160px;margin-top:8px;background:#0b0b0e;color:#cfcfcf;border:1px solid #20232E;border-radius:8px;font-size:11px;font-family:monospace;padding:8px;box-sizing:border-box;}
+</style></head><body>
+<h1>Stat<span>Fly</span> v41 Patcher</h1>
+<p class="muted">Edits Fly Mode on your phone. Nothing is uploaded anywhere. After patching, COPY the result and paste it into GitHub.</p>
+
+<div class="step"><span class="num">1</span><b>Pick your index.html</b>
+<div class="muted" style="margin:6px 0 0 30px;font-size:13px;">From GitHub: open index.html, tap Raw, Share, Save to Files.</div>
+<input type="file" id="file" accept=".html,text/html"></div>
+
+<div class="step"><span class="num">2</span><b>Patch it</b>
+<button class="primary" id="go" disabled>Apply v41 Fly Mode update</button>
+<div class="log" id="log"></div></div>
+
+<div class="step"><span class="num">3</span><b>Copy the result into GitHub</b>
+<div class="muted" style="margin:6px 0 0 30px;font-size:13px;">Tap Copy, then in GitHub edit index.html: Select All, Delete, Paste, Commit. Also change sw.js cache to statfly-v41.</div>
+<div id="out"></div></div>
+
+<script>
+const NEW_CSS = "  /* \u2500\u2500 FLY MODE \u2500\u2500 */\n  /* -- FLY MODE OVERLAY -- */\n  .flymode-overlay {\n    display: none;\n    position: fixed;\n    inset: 0;\n    background: #000;\n    z-index: 200;\n  }\n  .flymode-overlay.active { display: block; }\n\n  /* The grid is positioned by JS (FlyGrid engine). We only set the box here;\n     columns/rows and every font size are written inline by buildFlyModeGrid()\n     after measuring the real card sizes. This is the key change from v40:\n     nothing is sized off the viewport or off hardcoded breakpoints any more. */\n  .flymode-inner {\n    position: absolute;\n    top: env(safe-area-inset-top, 0px);\n    left: env(safe-area-inset-left, 0px);\n    right: env(safe-area-inset-right, 0px);\n    bottom: 84px; /* brightness bar */\n    padding: 6px 8px;\n    display: grid;\n    gap: 4px;\n    transition: filter 0.1s;\n  }\n  .flymode-inner[data-count=\"0\"] {\n    grid-template-columns: 1fr;\n    grid-template-rows: 1fr;\n    align-items: center;\n    justify-items: center;\n  }\n\n  /* FlyCard - a universal rectangle. It does not know orientation, device or\n     match count; it just fills the cell the grid gives it and scales its text\n     from its own measured size (font sizes set inline by JS). */\n  .flymode-card {\n    background: transparent;\n    border: none;\n    border-top: 1px solid rgba(255,255,255,0.12);\n    display: grid;\n    grid-template-columns: 1fr auto 1fr;\n    grid-template-rows: auto 1fr;\n    align-items: center;\n    justify-items: center;\n    padding: 0 8px;\n    position: relative;\n    gap: 2px 6px;\n    overflow: hidden;\n    min-width: 0;\n    min-height: 0;\n  }\n  /* Vertical divider between the two scores, behind the badge */\n  .flymode-card::before {\n    content: \"\";\n    position: absolute;\n    top: 18%;\n    bottom: 18%;\n    left: 50%;\n    width: 1px;\n    background: rgba(255,255,255,0.12);\n    transform: translateX(-0.5px);\n    z-index: 0;\n  }\n\n  .flymode-team {\n    font-family: 'Inter', -apple-system, sans-serif;\n    font-weight: 800;\n    letter-spacing: 1px;\n    color: rgba(255,255,255,0.65);\n    text-transform: uppercase;\n    line-height: 1;\n    white-space: nowrap;\n    grid-row: 1;\n    z-index: 1;\n    /* font-size set inline by JS */\n  }\n  .flymode-team.home { grid-column: 1; }\n  .flymode-team.away { grid-column: 3; }\n\n  .flymode-score {\n    font-family: 'Inter', -apple-system, sans-serif;\n    font-weight: 900;\n    letter-spacing: -2px;\n    line-height: 0.9;\n    color: #ffffff;\n    text-align: center;\n    width: 100%;\n    grid-row: 2;\n    z-index: 1;\n    white-space: nowrap;\n    /* font-size set inline by JS */\n  }\n  .flymode-score.home { grid-column: 1; }\n  .flymode-score.away { grid-column: 3; }\n\n  /* FlyState colour fills (shared with feed cards via the .sc rules elsewhere) */\n  .flymode-score.fs-warming  { color: var(--upcoming); }\n  .flymode-score.fs-onrun    { color: var(--onrun); }\n  .flymode-score.fs-onfire   { color: var(--result); }\n  .flymode-score.fs-cold     { color: var(--cold); }\n  .flymode-score.fs-comeback { color: var(--comeback); }\n  .flymode-score.fs-flytime  { color: var(--live); animation: flyPulse 1.6s ease-in-out infinite; }\n\n  .flymode-status {\n    grid-column: 2;\n    grid-row: 2;\n    font-family: 'Inter', -apple-system, sans-serif;\n    font-weight: 700;\n    color: #ffffff;\n    letter-spacing: 0.5px;\n    text-align: center;\n    line-height: 1.15;\n    padding: 4px 8px;\n    border: 1px solid rgba(255,255,255,0.4);\n    border-radius: 8px;\n    background: #000;\n    white-space: nowrap;\n    z-index: 2;\n    /* font-size set inline by JS */\n  }\n  .flymode-status.ot      { color: var(--result); border-color: var(--result); }\n  .flymode-status.flytime { color: var(--live);   border-color: var(--live); }\n\n  /* Empty-state message when no live My Teams matches */\n  .flymode-empty {\n    color: rgba(255,255,255,0.35);\n    font-size: 14px;\n    font-weight: 600;\n    letter-spacing: 2px;\n    text-transform: uppercase;\n    text-align: center;\n  }\n";
+const NEW_JS  = "// - FLY MODE -\nfunction abbrev(name) {\n  const words = name.trim().split(/\\s+/);\n  if (words.length === 1) return words[0].slice(0,3).toUpperCase();\n  if (words.length === 2) return (words[0].slice(0,2) + words[1].slice(0,1)).toUpperCase();\n  return words.slice(0,3).map(w=>w[0]).join('').toUpperCase();\n}\n\n// FlyGrid: for n cards in a box of (boxW x boxH), try every cols x rows grid\n// and return the one whose resulting card makes the score text largest. Pure\n// arithmetic, no DOM. Worst-case score is \"999\" so width must hold two of them\n// plus the centre badge without clipping.\nfunction flyCandidateGrids(n) {\n  const out = [];\n  const seen = new Set();\n  for (let cols = 1; cols <= n; cols++) {\n    const rows = Math.ceil(n / cols);\n    const k = cols + 'x' + rows;\n    if (!seen.has(k)) { seen.add(k); out.push({ cols: cols, rows: rows }); }\n  }\n  return out;\n}\n\n// Score font size a given grid yields, bounded by card height AND card width\n// so a 3-digit score can never clip or overflow. Returns px.\nfunction flyScoreSize(boxW, boxH, grid, gap) {\n  const cardW = (boxW - gap * (grid.cols - 1)) / grid.cols;\n  const cardH = (boxH - gap * (grid.rows - 1)) / grid.rows;\n  const byHeight = cardH * 0.46;        // score shares height with team label\n  const byWidth  = (cardW * 0.92) / 4.6; // two ~1.8em scores + badge across the row\n  return Math.max(8, Math.min(byHeight, byWidth));\n}\n\nfunction flyPickGrid(n, boxW, boxH, gap) {\n  const cands = flyCandidateGrids(n);\n  let best = null;\n  for (let i = 0; i < cands.length; i++) {\n    const s = flyScoreSize(boxW, boxH, cands[i], gap);\n    if (!best || s > best.score) best = { cols: cands[i].cols, rows: cands[i].rows, score: s };\n  }\n  return best || { cols: 1, rows: 1, score: 8 };\n}\n\nfunction buildFlyModeGrid() {\n  const favNames = favs.map(f=>f.name.toLowerCase());\n  const noFavs   = favNames.length === 0;\n  let live = ALL_LIVE.filter(m => {\n    if (noFavs) return true;\n    return favNames.includes(m.home.toLowerCase()) || favNames.includes(m.away.toLowerCase());\n  });\n  live = live.slice().sort((a, b) => (a.startMs || 0) - (b.startMs || 0));\n  if (live.length > 4) live = live.slice(0, 4);\n\n  const inner = document.getElementById('flymode-inner');\n  const grid  = document.getElementById('flymode-grid');\n  inner.setAttribute('data-count', String(live.length));\n\n  if (!live.length) {\n    inner.style.gridTemplateColumns = '1fr';\n    inner.style.gridTemplateRows = '1fr';\n    grid.innerHTML = '<div class=\"flymode-empty\">No live matches</div>';\n    return;\n  }\n\n  // Build the cards first (no sizes yet), then measure and size.\n  grid.innerHTML = live.map(m => {\n    const timer = (m.timer || '').trim();\n    const parts = timer.split(/\\s+/);\n    const badge = (parts.length >= 2)\n      ? (parts[0] + '<br>' + parts.slice(1).join(' '))\n      : timer;\n    const mf = getMatchFly(m.id);\n    const statusCls = mf === 'overtime' ? ' ot' : (mf === 'flytime' ? ' flytime' : '');\n    return ''\n      + '<div class=\"flymode-card\">'\n      +   '<div class=\"flymode-team home\">' + (m.homeShort || abbrev(m.home)) + '</div>'\n      +   '<div class=\"flymode-team away\">' + (m.awayShort || abbrev(m.away)) + '</div>'\n      +   '<div class=\"flymode-score home ' + getFlyClass(m.id,'home') + '\">' + m.homeScore + '</div>'\n      +   '<div class=\"flymode-status' + statusCls + '\">' + badge + '</div>'\n      +   '<div class=\"flymode-score away ' + getFlyClass(m.id,'away') + '\">' + m.awayScore + '</div>'\n      + '</div>';\n  }).join('');\n\n  // Measure the usable box and choose the grid + font sizes. Defer one frame so\n  // the browser has applied the safe-area insets and we read real pixels.\n  requestAnimationFrame(function(){\n    sizeFlyMode(live.length);\n  });\n}\n\n// Measure inner box, pick best grid, write grid template + all font sizes inline.\nfunction sizeFlyMode(n) {\n  const inner = document.getElementById('flymode-inner');\n  if (!inner) return;\n  const gap = 4;\n  const rect = inner.getBoundingClientRect();\n  // getBoundingClientRect already accounts for the safe-area inset positioning.\n  const boxW = Math.max(40, rect.width  - 16); // minus the 8px side padding x2\n  const boxH = Math.max(40, rect.height - 12); // minus the 6px top/bottom padding x2\n\n  const g = flyPickGrid(n, boxW, boxH, gap);\n  inner.style.gridTemplateColumns = 'repeat(' + g.cols + ', 1fr)';\n  inner.style.gridTemplateRows    = 'repeat(' + g.rows + ', 1fr)';\n\n  const cardW = (boxW - gap * (g.cols - 1)) / g.cols;\n  const cardH = (boxH - gap * (g.rows - 1)) / g.rows;\n  const scorePx = Math.min(cardH * 0.46, (cardW * 0.92) / 4.6);\n  // Team label and badge scale off the score so the hierarchy stays constant.\n  const teamPx   = Math.max(10, scorePx * 0.30);\n  const statusPx = Math.max(10, scorePx * 0.26);\n\n  const scores = inner.querySelectorAll('.flymode-score');\n  for (let i = 0; i < scores.length; i++) scores[i].style.fontSize = scorePx + 'px';\n  const teams = inner.querySelectorAll('.flymode-team');\n  for (let i = 0; i < teams.length; i++) teams[i].style.fontSize = teamPx + 'px';\n  const stats = inner.querySelectorAll('.flymode-status');\n  for (let i = 0; i < stats.length; i++) stats[i].style.fontSize = statusPx + 'px';\n}\n\nfunction enterFlyMode() {\n  const slider = document.getElementById('flymode-bright');\n  const overlay = document.getElementById('flymode-overlay');\n  if (slider) slider.value = 100;\n  if (overlay) overlay.classList.add('active');\n  const inner = document.getElementById('flymode-inner');\n  if (inner) inner.style.filter = 'brightness(100%)';\n  buildFlyModeGrid();\n  bumpBrightnessControl();\n  try {\n    if (navigator && navigator.wakeLock && typeof navigator.wakeLock.request === 'function') {\n      navigator.wakeLock.request('screen').catch(function(){});\n    }\n  } catch(e) {}\n}\n\nfunction handleFlyModeTap(e) {\n  exitFlyMode();\n}\n\nfunction exitFlyMode() {\n  document.getElementById('flymode-overlay').classList.remove('active');\n  if (brightnessFadeTimer) { clearTimeout(brightnessFadeTimer); brightnessFadeTimer = null; }\n}\n\n// Re-fit Fly Mode when the device rotates or the window resizes.\nwindow.addEventListener('resize', function(){\n  const ov = document.getElementById('flymode-overlay');\n  if (ov && ov.classList.contains('active')) {\n    const n = parseInt(document.getElementById('flymode-inner').getAttribute('data-count')) || 0;\n    if (n > 0) requestAnimationFrame(function(){ sizeFlyMode(n); });\n  }\n});\n\nlet brightnessFadeTimer = null;\nfunction bumpBrightnessControl() {\n  const el = document.getElementById('flymode-brightness');\n  if (!el) return;\n  el.classList.remove('faded');\n  if (brightnessFadeTimer) clearTimeout(brightnessFadeTimer);\n  brightnessFadeTimer = setTimeout(function() {\n    const e = document.getElementById('flymode-brightness');\n    if (e) e.classList.add('faded');\n  }, 1000);\n}\n\nfunction setFlyModeBrightness(val) {\n  const inner = document.getElementById('flymode-inner');\n  if (inner) inner.style.filter = 'brightness(' + val + '%)';\n  bumpBrightnessControl();\n}\n";
+const log=document.getElementById('log');
+function say(m,c){const d=document.createElement('div');if(c)d.className=c;d.textContent=m;log.appendChild(d);}
+let fileText=null;
+
+document.getElementById('file').addEventListener('change',e=>{
+  const f=e.target.files[0];if(!f)return;
+  const r=new FileReader();
+  r.onload=()=>{fileText=r.result;log.innerHTML='';say('Loaded ('+fileText.length.toLocaleString()+' chars)','ok');document.getElementById('go').disabled=false;};
+  r.readAsText(f);
+});
+
+document.getElementById('go').addEventListener('click',()=>{
+  log.innerHTML='';document.getElementById('out').innerHTML='';
+  let txt=fileText;
+
+  const cssStartIdx=txt.indexOf('.flymode-overlay {');
+  if(cssStartIdx===-1){say('Could not find Fly Mode CSS. Wrong file?','err');return;}
+  let cs=txt.lastIndexOf('/*',cssStartIdx);
+  while(true){const prev=txt.lastIndexOf('/*',cs-1);if(prev===-1)break;const between=txt.slice(prev,cs);if(/^\s*\/\*[^]*?\*\/\s*$/.test(between)){cs=prev;}else break;}
+  const emptyIdx=txt.indexOf('.flymode-empty',cssStartIdx);
+  if(emptyIdx===-1){say('Could not find .flymode-empty. Aborting.','err');return;}
+  const braceOpen=txt.indexOf('{',emptyIdx);
+  const braceClose=txt.indexOf('}',braceOpen);
+  if(braceClose===-1){say('Could not find end of .flymode-empty. Aborting.','err');return;}
+  const cssEnd=braceClose+1;
+  const afterCss=txt.slice(cssEnd);
+  if(afterCss.indexOf('brightness bar')===-1||afterCss.indexOf('brightness bar')>200){say('Safety check failed (CSS). Aborting so nothing breaks.','err');return;}
+  txt=txt.slice(0,cs)+NEW_CSS.replace(/^\s+/,'')+'\n'+afterCss;
+  say('CSS block replaced.','ok');
+
+  const jsStart=txt.indexOf('// - FLY MODE -');
+  if(jsStart===-1){say('Could not find Fly Mode JS marker. Aborting.','err');return;}
+  const sfb=txt.indexOf('function setFlyModeBrightness',jsStart);
+  if(sfb===-1){say('Could not find setFlyModeBrightness. Aborting.','err');return;}
+  let i=txt.indexOf('{',sfb),depth=0,jsEnd=-1;
+  for(;i<txt.length;i++){if(txt[i]==='{')depth++;else if(txt[i]==='}'){depth--;if(depth===0){jsEnd=i+1;break;}}}
+  if(jsEnd===-1){say('Could not find end of setFlyModeBrightness. Aborting.','err');return;}
+  const afterJs=txt.slice(jsEnd);
+  if(afterJs.indexOf('GLOBAL SEARCH')===-1||afterJs.indexOf('GLOBAL SEARCH')>200){say('Safety check failed (JS). Aborting.','err');return;}
+  txt=txt.slice(0,jsStart)+NEW_JS.replace(/^\s+/,'')+'\n\n'+afterJs;
+  say('JS block replaced.','ok');
+
+  const sm=txt.match(/<script>([^]*)<\/script>/);
+  if(sm){const bad=[...sm[1]].filter(c=>[0x2014,0x2013,0x2550,0x2500,0x00b1,0x2212].includes(c.charCodeAt(0)));say('Dangerous unicode in script: '+bad.length+(bad.length?'  PROBLEM - do not use':'  (good)'),bad.length?'err':'ok');if(bad.length)return;}
+  const oh=txt.indexOf('id="page-home"'),orr=txt.indexOf('id="page-results"'),os=txt.indexOf('id="page-settings"');
+  const orderOk=oh>-1&&orr>oh&&os>orr;say('Page order: '+(orderOk?'OK':'WRONG'),orderOk?'ok':'err');if(!orderOk)return;
+  const rc=txt.indexOf('id="results-cards"');say('results-cards nested: '+((rc>orr&&rc<os)?'OK':'CHECK'),(rc>orr&&rc<os)?'ok':'err');
+
+  const ta=document.createElement('textarea');ta.value=txt;ta.id='result';ta.readOnly=true;
+  const btn=document.createElement('button');btn.className='copy';btn.textContent='Copy patched index.html';
+  btn.onclick=()=>{ta.select();ta.setSelectionRange(0,ta.value.length);
+    if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(ta.value).then(()=>{btn.textContent='Copied! Now paste into GitHub';}).catch(()=>{document.execCommand('copy');btn.textContent='Copied! Now paste into GitHub';});}
+    else{document.execCommand('copy');btn.textContent='Copied! Now paste into GitHub';}};
+  document.getElementById('out').appendChild(btn);
+  document.getElementById('out').appendChild(ta);
+  say('Done. Tap Copy above, then paste into GitHub.','ok');
+});
+</script>
+</body></html>

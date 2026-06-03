@@ -1,6 +1,6 @@
 // StatFly service worker
 // Bump CACHE on every deploy so devices pick up the new files.
-const CACHE = 'statfly-v47';
+const CACHE = 'statfly-v48';
 
 // App shell + icons. Relative paths so it works under the /statfly/ GitHub Pages path.
 const SHELL = [

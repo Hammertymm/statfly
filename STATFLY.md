@@ -306,8 +306,44 @@ Steps: edit in GitHub web UI, commit, wait ~30s for Pages rebuild, refresh on ph
 
 ## Open items
 
+**Backlog (JRod’s full item list - all 17 dispositioned)**
+
+*Numbering note:* these are JRod’s working item numbers, not unique IDs - “1” is reused (live-first ordering AND the sticky FlyTime pin) and the rejected set ran long. Treat the description as the key and the number as a loose label. (Code comments such as “Item 16” point back to this list.)
+
+*Building (8):*
+
+- **(4) Auto-clear search box after add** - clear the search field once a team is followed.
+- **(7) Tab memory** - remember the last tab; default to My Teams on first launch, fall back to All when My Teams is empty.
+- **(5) Six suggested teams, new logic** - 2 same-state / 2 same-country / 2 same-league; or 4 country / 2 league when no state data. Replaces the current `onbGetSuggestions` priority. Open dependency: where “state” data lives per team (see sub-points).
+- **(15) Pull-to-refresh** - pull-down on the Feed to force a poll; build carefully around the existing tab-swipe gesture so the two do not fight.
+- **(16) Clean global LIVE indicator** - one tidy global LIVE indicator; keep the per-card timer and the freshness line.
+- **(17) Last-scores cache for instant startup paint - HIGHEST VALUE.** *Mostly already built - verify, do not rebuild.* The INSTANT FEED SNAPSHOT system exists: `saveSnapshot()` stashes `ALL_LIVE/UPCOMING/RESULTS` to `localStorage` (`scorefly_snapshot_v1`) after each refresh; `hydrateSnapshot()` repaints on boot (TTL 6h for upcoming/results, live trusted only if snapshot < 15 min old). Remaining work: confirm it paints instantly on a real device and tune TTLs.
+- **(1) Sticky FlyTime pin** - keep Fly Time games pinned at top until the match finishes, instead of dropping out the moment `isFlyTime` stops being met mid-game. Open dependency: blowout buffer (see sub-points). Touches `isFlyTime` / `updateFlyState` / `renderHome`.
+- **(14) Discreet per-team “+” quick-add button** - MOCKUPS FIRST, before any code.
+
+*Keep / verify only, no build (6):*
+
+- **(1) Live-first ordering**, **(3) FlyTime as supporting intelligence** (not the headline), **(8) Results screen** as-is, **(9) upcoming-in-feed sort**, **(10) current FlyTime visuals** (now the coloured fly, v66), **(11) current FlyTime Buzz**. All confirmed good; just verify on a live day.
+
+*Rejected (do not revisit):*
+
+- 2-screen onboarding (keep 4 screens), inline “Added” tick, separate Upcoming screen, FlyTime visual teardown, confidence tiers, activations counter, 5-tab nav (nav stays locked: Feed / Results / My Teams + the Fly Mode button).
+
+*Design-first tasks (need JRod’s eyes before code):*
+
+- **(2) Onboarding quality redesign** - all 4 screens, same structure, better execution (not a new flow; see Onboarding section, v51).
+- **(14) Quick-add “+” button** - mockups first.
+
+*Open sub-points to settle at build time:*
+
+- **Blowout buffer (1)** - when a pinned game becomes a blowout, downgrade/unpin vs hold to the finish.
+- **“State” data location (5)** - where geographic state/city lives on each team object; the new suggestion logic depends on it, and `TEAMS` entries may need a `state` field.
+
+*Recommended order (low-risk first):* one batch deploy of the small UI wins (4, 7, 16, and the 6-team logic in 5); then the score cache (17) on its own since it touches the data layer; then pull-to-refresh (15) and the sticky FlyTime pin (1). The two design-heavy tasks (14 mockups, 2 onboarding) run in parallel - they need JRod’s input before code.
+
 **Verify on live match days**
 
+- FlyTime fly icon: green appears on a live Fly Time game, red on Results, yellow frequency feels right (tune `FLYMATCH_THRESHOLD`, currently 3.5).
 - Tiered polling: live scores refresh ~12s, kickoff appears within ~3 min, finish moves to Results, idle load unchanged.
 - Proxy rotation: scores load reliably, recover when a proxy dies.
 - AFL: proper names + TV codes resolve correctly; NRL same.

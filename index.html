@@ -1,0 +1,3778 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>ScoreFly</title>
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#000000">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="ScoreFly">
+<link rel="apple-touch-icon" href="icon192.png">
+<link rel="icon" href="icon192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap">
+<style>
+  :root {
+    --bg:#000000; --card:#111114; --card2:#1c1c1e;
+    --live:#06f03c; --upcoming:#ffd60a; --result:#ff453a;
+    --text:#fff; --text-2:rgba(235,235,245,.8); --text-3:rgba(235,235,245,.4);
+    --sep:rgba(255,255,255,.08); --blue:#0a84ff;
+    --onrun:#ff9f0a; --comeback:#bf5af2; --cold:#409cff;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
+  html,body{background:var(--bg);color:var(--text);font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;max-width:430px;margin:0 auto;min-height:100vh;-webkit-font-smoothing:antialiased;overflow-x:hidden;}
+
+  /* HEADER */
+  .header{position:sticky;top:0;z-index:50;background:rgba(0,0,0,.97);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);padding:14px 16px 0;}
+  .header-top{display:flex;align-items:center;justify-content:space-between;padding-bottom:9px;}
+  .brand{display:flex;align-items:center;gap:8px;cursor:pointer;-webkit-tap-highlight-color:transparent;}
+  .brand:active{opacity:.7;}
+  .brand-mark{width:46px;height:46px;flex-shrink:0;display:block;border-radius:50%;}
+  .wordmark{font-size:27px;font-weight:700;letter-spacing:-.6px;line-height:1;}
+  .wordmark span{color:var(--live);}
+  .header-tagline{font-size:12px;font-weight:600;color:var(--text);letter-spacing:.1px;white-space:nowrap;}
+  .header-tagline em{color:var(--live);font-style:normal;font-weight:700;}
+  .tabs{display:flex;border-bottom:1px solid var(--sep);}
+  .tab{flex:1;text-align:center;padding:9px 0 10px;font-size:14px;font-weight:600;color:var(--text-3);cursor:pointer;border-bottom:3px solid transparent;margin-bottom:-1px;transition:color .15s;}
+  .tab.active{color:var(--text);border-bottom-color:var(--live);font-weight:700;}
+
+  /* PAGES */
+  .page{display:none;padding:8px 12px 100px;background:#000;}
+  .page.active{display:block;animation:up .2s ease;}
+  @keyframes up{from{opacity:0;transform:translateY(4px);}to{opacity:1;transform:translateY(0);}}
+
+  /* SECTION HEADERS */
+  .sh{display:flex;align-items:center;margin:12px 2px 6px;}
+  .sh:first-child{margin-top:4px;}
+  .sh-label{display:flex;align-items:center;gap:8px;font-size:15px;font-weight:700;letter-spacing:-.2px;color:var(--text);}
+  .dot{width:9px;height:9px;border-radius:50%;flex-shrink:0;}
+  .dot.live{background:var(--live);animation:pulse 1.5s infinite;}
+  .dot.upcoming{background:var(--upcoming);}
+  .dot.result{background:var(--result);}
+  @keyframes pulse{0%,100%{opacity:1;}50%{opacity:.3;}}
+
+  /* CARDS */
+  .card{border-radius:8px;margin-bottom:9px;overflow:visible;border:1px solid transparent;background:#080808;transition:transform .12s,opacity .12s;}
+  .card-inner{border-radius:16px;overflow:hidden;}
+  .card.live{border-color:var(--live);}
+  .card.upcoming{border-color:var(--upcoming);}
+  .card.result{border-color:var(--result);}
+  .card.live:active,.card.upcoming:active{transform:scale(.977);opacity:.88;}
+
+  .card-meta{display:flex;align-items:center;justify-content:space-between;padding:8px 14px 0;}
+  .league-tag{display:flex;align-items:center;gap:8px;}
+  .lg-badge{display:inline-flex;align-items:center;background:#1b1e2c;color:#fff;font-size:11px;font-weight:700;letter-spacing:.4px;padding:4px 9px;border-radius:7px;text-transform:uppercase;line-height:1;}
+  .sport-icon{line-height:1;flex-shrink:0;display:inline-flex;align-items:center;}
+  .live-badge{display:flex;align-items:center;gap:5px;background:rgba(6,240,60,.14);border:1px solid var(--live);color:var(--live);font-size:10px;font-weight:700;letter-spacing:.5px;padding:4px 9px;border-radius:8px;}
+  .live-badge .bdot{width:6px;height:6px;border-radius:50%;background:var(--live);animation:pulse 1.2s infinite;}
+  .ft-badge{font-size:12.5px;font-weight:700;color:var(--result);letter-spacing:.3px;}
+  .up-badge{font-size:12px;font-weight:600;color:var(--upcoming);}
+
+  .card-body{display:flex;align-items:stretch;padding:12px 14px 11px;gap:10px;}
+  .card-teams{flex:1;display:flex;flex-direction:column;gap:14px;}
+  .team-row{display:flex;align-items:center;gap:10px;}
+  .t-logo{width:18px;height:18px;border-radius:50%;background:rgba(255,255,255,.10);display:flex;align-items:center;justify-content:center;font-size:11px;flex-shrink:0;}
+  .t-logo img{width:15px;height:15px;object-fit:contain;border-radius:2px;display:block;}
+  .t-name{font-size:14px;font-weight:600;letter-spacing:-.2px;text-transform:uppercase;flex:1;line-height:1.1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+  .t-name.dim{color:var(--text-3);}
+  .scores-col{display:flex;flex-direction:column;align-items:flex-end;justify-content:space-around;min-width:42px;gap:14px;}
+  .sc{font-size:18px;font-weight:700;letter-spacing:-.5px;line-height:1;transition:color 2.5s ease;}
+  .sc.dim{color:var(--text-3);}
+  .sc.sm{font-size:18px;letter-spacing:-.5px;}
+  /* Cricket scores are long strings like "156/4 (20/20 ov)" - shrink, wrap, keep right-aligned */
+  .sc.cricket{font-size:15px;font-weight:800;letter-spacing:0;line-height:1.25;text-align:right;white-space:normal;max-width:150px;}
+  /* Score flash - triggered when a live score updates between polls */
+  .sc.flash{animation:scoreFlash .55s ease-out;}
+  @keyframes scoreFlash{
+    0%  {color:var(--live);transform:scale(1);text-shadow:0 0 0 rgba(6,240,60,0);}
+    35% {color:var(--live);transform:scale(1.22);text-shadow:0 0 14px rgba(6,240,60,.65);}
+    100%{color:#fff;transform:scale(1);text-shadow:0 0 0 rgba(6,240,60,0);}
+  }
+  /* FLYSTATE - solid score fill colours. Solid (not glow) so the score stays
+     readable when Fly Mode brightness is turned right down. Neutral = no class = white.
+     Applies to both feed cards (.sc) and Fly Mode (.flymode-score). */
+  .sc.fs-warming,  .flymode-score.fs-warming  { color: var(--upcoming); }
+  .sc.fs-onrun,    .flymode-score.fs-onrun    { color: var(--onrun); }
+  .sc.fs-onfire,   .flymode-score.fs-onfire   { color: var(--result); }
+  .sc.fs-cold,     .flymode-score.fs-cold     { color: var(--cold); }
+  .sc.fs-comeback, .flymode-score.fs-comeback { color: var(--comeback); }
+  .sc.fs-flytime,  .flymode-score.fs-flytime  { color: var(--live); }
+  /* FlyTime is the headline moment - gentle pulse on the Fly Mode score so it feels alive */
+  .flymode-score.fs-flytime { animation: flyPulse 1.6s ease-in-out infinite; }
+  @keyframes flyPulse { 0%,100%{opacity:1;} 50%{opacity:.72;} }
+  .timer-col{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;min-width:44px;padding-left:8px;border-left:1px solid var(--sep);}
+  .timer-val{font-size:12px;font-weight:700;color:var(--live);text-align:center;line-height:1.3;letter-spacing:-.3px;}
+  .ft-col{display:flex;flex-direction:column;align-items:center;justify-content:center;min-width:44px;padding-left:8px;border-left:1px solid var(--sep);gap:2px;}
+  .ft-lbl{font-size:13px;font-weight:700;color:var(--result);}
+  .ft-date{font-size:10px;color:var(--text-3);font-weight:500;}
+
+  .card-sum{padding:5px 11px 8px;font-size:11px;font-weight:500;border-top:1px solid var(--sep);}
+  .card-sum.green{color:var(--live);}
+  .card-sum.yellow{color:var(--upcoming);}
+  .card-sum.red{color:var(--result);}
+
+  /* FACTS */
+  .facts-wrap{margin-top:2px;}
+  .facts-title{font-size:10px;font-weight:600;color:var(--text-3);letter-spacing:.4px;text-transform:uppercase;margin-bottom:6px;}
+  .fact-item{display:flex;align-items:flex-start;gap:7px;margin-bottom:5px;font-size:11px;color:var(--text-2);font-weight:500;line-height:1.4;}
+  .fact-item:last-child{margin-bottom:0;}
+  .fact-icon{font-size:12px;flex-shrink:0;margin-top:1px;}
+
+  /* RESULT SECTIONS */
+  .result-facts{padding:6px 11px 10px;border-top:1px solid var(--sep);}
+
+  /* FLYMATCH STAMP + RIVALRY SKULL (top-right of feed cards, beside any badge) */
+  .card-right{display:flex;align-items:center;gap:6px;}
+  .mk{display:inline-flex;align-items:center;justify-content:center;flex:0 0 auto;}
+  .mk img{display:block;height:20px;width:auto;}
+  .fm-skull img{height:18px;}
+  /* FlyMatch marker uses the circular SupaFly logo: clip square corners to a circle */
+  .fm-stamp img{height:22px;border-radius:50%;}
+  /* Text fallback shown only if the PNG asset is missing */
+  .mk-fb{align-items:center;justify-content:center;height:18px;padding:0 6px;border-radius:4px;
+    font-size:9px;font-weight:800;letter-spacing:.6px;line-height:1;}
+  .fm-stamp .mk-fb{background:rgba(6,240,60,.15);border:1px solid var(--live);color:var(--live);}
+  .fm-skull .mk-fb{background:rgba(255,255,255,.08);border:1px solid var(--text-3);color:var(--text-2);font-size:11px;padding:0 5px;}
+
+  /* FLYTIME ICON - single coloured fly, fixed top-right of every card. Own system:
+     green = live and in FlyTime now; yellow = upcoming and predicted; red = finished and reached FlyTime. */
+  .ft-fly img{height:22px;width:22px;border-radius:50%;display:block;}
+  .ft-fly .mk-fb{background:none;border:none;padding:0;height:auto;font-size:15px;}
+  .sh-flytime .sh-label{color:var(--live);}
+
+  /* Fly Mode overlay: FlyTime fly icon top-right, absolute so it never shifts layout */
+  .fm-markers{position:absolute;top:8px;right:10px;display:flex;align-items:center;gap:6px;z-index:3;}
+  .fm-markers .mk img{height:24px;}
+  .fm-markers .fm-skull img{height:22px;}
+
+  /* UPCOMING */
+  .upcoming-body{display:flex;align-items:stretch;padding:8px 14px 7px;}
+  .up-teams{flex:1;display:flex;flex-direction:column;gap:9px;}
+  .up-time{display:flex;flex-direction:column;align-items:flex-end;justify-content:center;min-width:80px;padding-left:12px;border-left:1px solid var(--sep);gap:0;}
+
+  /* FORM STRIP - last 5 results, oldest left newest right */
+  .up-teams .team-row{flex-direction:column;align-items:flex-start;gap:4px;}
+  .up-teams .team-row .row-top{display:flex;align-items:center;gap:8px;width:100%;}
+  .form-strip{display:flex;gap:3px;padding-left:30px;}
+  .form-box{width:11px;height:11px;border-radius:3px;background:rgba(255,255,255,0.08);}
+  .form-box.w{background:var(--live);}
+  .form-box.d{background:var(--upcoming);}
+  .form-box.l{background:var(--result);}
+  .countdown{font-size:22px;font-weight:800;color:var(--upcoming);letter-spacing:-.5px;line-height:1.1;text-align:right;}
+  .kday{font-size:10px;color:var(--upcoming);font-weight:700;text-align:right;letter-spacing:.2px;text-transform:uppercase;margin-bottom:2px;}
+  .ktod{font-size:11px;color:var(--text-3);font-weight:500;text-align:right;}
+
+  .section-divider{height:1px;background:var(--sep);margin:8px 2px;}
+  .section-empty{font-size:12px;color:var(--text-3);text-align:center;padding:8px 0 4px;font-style:italic;}
+  .empty-onboard{text-align:center;padding:40px 20px;color:var(--text-3);font-size:13px;line-height:1.7;}
+  .empty-onboard .ei{font-size:36px;margin-bottom:12px;}
+  .empty-onboard strong{color:var(--text-2);}
+  .date-group{display:flex;align-items:center;gap:9px;font-size:13px;font-weight:700;color:var(--text-2);letter-spacing:.6px;text-transform:uppercase;margin:14px 2px 7px;}
+  .date-group::before{content:"";width:3px;height:15px;border-radius:2px;background:var(--result);flex-shrink:0;}
+  .date-group:first-child{margin-top:4px;}
+
+  /* SETTINGS */
+  .fly-legend{background:var(--card);border:1px solid var(--sep);border-radius:12px;padding:2px 12px 8px;}
+  .fly-legend-row{display:flex;align-items:center;gap:10px;padding:9px 0;border-bottom:1px solid var(--sep);}
+  .fly-dot{width:11px;height:11px;border-radius:50%;flex:none;}
+  .fly-legend-name{font-size:13px;font-weight:600;color:var(--text);}
+  .fly-legend-desc{font-size:12px;color:var(--text-3);margin-left:auto;text-align:right;}
+  .fly-legend-note{font-size:11px;color:var(--text-3);padding:9px 0 2px;line-height:1.4;}
+  .pg-title{font-size:22px;font-weight:700;margin-bottom:3px;letter-spacing:-.4px;}
+  .pg-sub{font-size:12px;color:var(--text-3);margin-bottom:16px;}
+  .teams-title{font-size:11px;font-weight:600;color:var(--text-3);letter-spacing:.5px;text-transform:uppercase;margin:20px 4px 8px;}
+  .team-list{background:#111114;border-radius:12px;overflow:hidden;border:1.5px solid rgba(6,240,60,0.35);}
+  .tli{display:flex;align-items:center;gap:10px;padding:10px 14px;border-bottom:1px solid var(--sep);animation:up .18s ease;}
+  .tli:last-child{border-bottom:none;}
+  .tli-flag{font-size:18px;width:24px;text-align:center;}
+  .tli-sport{font-size:16px;width:20px;text-align:center;}
+  .tli-info{flex:1;}
+  .tli-name{font-size:14px;font-weight:600;}
+  .tli-lg{font-size:11px;color:var(--text-3);margin-top:1px;}
+  .tli-actions{display:flex;align-items:center;}
+  .bell-btn{background:none;border:none;font-size:18px;cursor:pointer;padding:5px 6px;opacity:.3;transition:opacity .2s;border-radius:8px;}
+  .bell-btn.on{opacity:1;background:rgba(6,240,60,.12);}
+  .del-btn{background:none;border:none;color:var(--result);font-size:17px;cursor:pointer;padding:5px 6px;opacity:.8;border-radius:8px;}
+  .del-btn:active{background:rgba(255,69,58,.12);}
+  .bell-hint{display:flex;align-items:center;gap:10px;margin:10px 4px 4px;font-size:12px;color:var(--text-3);}
+  .bell-hint-icon{font-size:16px;opacity:.9;}
+  /* FlyTime Buzz - global close-finish alert toggle (Teams tab) */
+  .buzz-card{display:flex;align-items:center;gap:12px;background:var(--card);border:1px solid var(--sep);border-radius:12px;padding:12px 14px;margin:0 0 4px;}
+  .buzz-icon{font-size:22px;line-height:1;flex-shrink:0;}
+  .buzz-text{flex:1;min-width:0;}
+  .buzz-title{font-size:14px;font-weight:700;letter-spacing:-.2px;color:var(--text);}
+  .buzz-desc{font-size:11px;font-weight:500;color:var(--text-3);line-height:1.35;margin-top:2px;}
+  .buzz-switch{position:relative;width:46px;height:28px;flex-shrink:0;border-radius:14px;background:rgba(255,255,255,.16);transition:background .2s;cursor:pointer;}
+  .buzz-switch.on{background:var(--live);}
+  .buzz-knob{position:absolute;top:2px;left:2px;width:24px;height:24px;border-radius:50%;background:#fff;transition:transform .2s;}
+  .buzz-switch.on .buzz-knob{transform:translateX(18px);}
+  /* ONBOARDING (first-run overlay) */
+  .onb-overlay { display: none; position: fixed; inset: 0; background: #000; z-index: 300; overflow-y: auto; }
+  .onb-overlay.active { display: block; }
+  .onb-inner { max-width: 430px; margin: 0 auto; min-height: 100%; display: flex; flex-direction: column; padding: 0 22px; box-sizing: border-box; }
+  .onb-step { flex: 1; display: flex; flex-direction: column; }
+  #onb-step-1 { padding: 0; }
+  .onb-hero { display: block; width: calc(100% + 44px); margin: 0 -22px; cursor: pointer; }
+  .onb-hero-btn { position: sticky; bottom: 14px; margin: 14px 0; z-index: 2; }
+  .onb-logo { width: 96px; height: 96px; border-radius: 50%; display: block; margin-bottom: 22px; }
+  .onb-word { font-size: 46px; font-weight: 700; letter-spacing: -1px; line-height: 1; margin-bottom: 14px; }
+  .onb-word span { color: var(--live); }
+  .onb-tag { font-size: 17px; color: var(--text-2); margin-bottom: 26px; }
+  .onb-tag em { color: var(--live); font-style: normal; font-weight: 600; }
+  .onb-welcome { font-size: 15px; line-height: 1.5; color: var(--text-3); max-width: 300px; margin-bottom: 40px; }
+  .onb-supafly { display: block; width: auto; height: 210px; margin: 0 auto 18px; }
+  .onb-supafly.sm { height: 150px; margin-bottom: 12px; }
+  #onb-step-fly { justify-content: center; align-items: center; text-align: center; padding-bottom: 30px; }
+  #onb-step-fly .onb-h { margin-top: 0; }
+  #onb-step-fly .onb-sub { max-width: 320px; }
+  .onb-fly-badge { display: inline-block; background: var(--live); color: #000; font-weight: 800; font-size: 15px; letter-spacing: 1px; padding: 8px 18px; border-radius: 999px; margin-bottom: 20px; animation: flyPulse 1.6s ease-in-out infinite; }
+  .onb-h { font-size: 28px; font-weight: 700; letter-spacing: -.5px; margin: 50px 0 6px; }
+  .onb-sub { font-size: 15px; line-height: 1.45; color: var(--text-3); margin-bottom: 22px; }
+  .onb-label { font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: .5px; color: var(--text-3); margin: 22px 0 10px; }
+  .onb-count { font-size: 13px; color: var(--live); font-weight: 600; margin-top: 16px; text-align: center; min-height: 18px; }
+  .onb-bell { font-size: 54px; text-align: center; margin: 64px 0 4px; }
+  #onb-step-3 { text-align: center; }
+  .onb-btn { display: block; width: 100%; border: none; border-radius: 14px; font-family: inherit; font-size: 17px; font-weight: 600; padding: 16px; cursor: pointer; -webkit-tap-highlight-color: rgba(255,255,255,0.08); }
+  .onb-btn-primary { background: var(--live); color: #000; margin-bottom: 16px; }
+  #onb-step-2 .onb-btn-primary, #onb-step-3 .onb-btn-primary { margin-top: auto; }
+  .onb-btn-text { background: none; color: var(--text-3); font-size: 15px; padding: 12px; margin-bottom: 24px; }
+  .follow-btn{background:transparent;border:1px solid rgba(6,240,60,0.55);color:var(--live);font-size:12px;font-weight:600;padding:6px 14px;border-radius:14px;cursor:pointer;font-family:inherit;transition:background .15s,transform .1s;}
+  .follow-btn:active{background:rgba(6,240,60,.12);transform:scale(.97);}
+  .follow-btn.followed{opacity:.55;}
+  /* Onboarding: first-team pick + smart suggestion cards */
+  .onb-pick-card{display:flex;align-items:center;gap:10px;background:var(--card);border:1px solid var(--sep);border-radius:12px;padding:11px 14px;margin-bottom:7px;cursor:pointer;transition:border-color .15s,background .15s;}
+  .onb-pick-card:active{background:#1a1a1e;}
+  .onb-pick-flag{font-size:18px;width:26px;text-align:center;flex-shrink:0;}
+  .onb-pick-info{flex:1;min-width:0;}
+  .onb-pick-name{font-size:14px;font-weight:600;color:var(--text);}
+  .onb-pick-league{font-size:11px;color:var(--text-3);margin-top:1px;}
+  .onb-sugg-grid{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px;}
+  .onb-sugg-chip{display:flex;align-items:center;gap:6px;background:var(--card);border:1px solid var(--sep);border-radius:20px;padding:7px 13px;cursor:pointer;transition:border-color .15s,background .15s;font-size:12px;font-weight:600;color:var(--text-2);}
+  .onb-sugg-chip:active{background:#1a1a1e;}
+  .onb-sugg-chip.followed{border-color:var(--live);color:var(--live);background:rgba(6,240,60,0.07);}
+  .onb-sugg-chip-flag{font-size:13px;}
+  .onb-sugg-tag{font-size:9px;font-weight:700;letter-spacing:.4px;text-transform:uppercase;color:var(--text-3);background:rgba(255,255,255,0.06);padding:1px 5px;border-radius:4px;}
+  .onb-sugg-chip.followed .onb-sugg-tag{color:var(--live);background:rgba(6,240,60,0.12);}
+
+  /* -- COMPACT RESULTS TOGGLE -- */
+
+  /* ── FLY MODE ── */
+  /* -- FLY MODE OVERLAY -- */
+  .flymode-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: #000;
+    z-index: 200;
+  }
+  .flymode-overlay.active { display: block; }
+
+  /* 1 column, N rows where N = number of live matches (1..4).
+     Layout scales with live match count via data-count attribute. */
+  .flymode-inner {
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    bottom: 72px;
+    padding: 6px 8px;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-auto-rows: 1fr;
+    gap: 0;
+    transition: filter 0.1s;
+  }
+  .flymode-inner[data-count="1"] { grid-template-rows: 1fr; --rows: 1; }
+  .flymode-inner[data-count="2"] { grid-template-rows: repeat(2, 1fr); --rows: 2; }
+  .flymode-inner[data-count="3"] { grid-template-rows: repeat(3, 1fr); --rows: 3; }
+  .flymode-inner[data-count="4"] { grid-template-rows: repeat(4, 1fr); --rows: 4; }
+  .flymode-inner[data-count="0"] {
+    grid-template-rows: 1fr;
+    align-items: center;
+    justify-items: center;
+  }
+  /* Landscape: 2-column layout so matches sit side-by-side */
+  @media (orientation: landscape) {
+    .flymode-inner[data-count="2"] {
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: 1fr;
+      --rows: 1;
+    }
+    .flymode-inner[data-count="3"],
+    .flymode-inner[data-count="4"] {
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(2, 1fr);
+      --rows: 2;
+    }
+  }
+
+  .flymode-grid { display: contents; }
+
+  /* SPLIT TILES (v58): each match is a row of two equal half-tiles meeting at a
+     centre seam. In an active FlyState the half fills with a DARK wash of that
+     side's colour and the number glows; the period/clock floats in a pill on the
+     seam. Neutral games stay pure black. */
+  .flymode-card {
+    background: transparent;
+    border: none;
+    border-top: 1px solid rgba(255,255,255,0.12);
+    display: flex;
+    align-items: stretch;
+    padding: 0;
+    position: relative;
+    overflow: hidden;
+    min-width: 0;
+  }
+  /* No top border on first card (cleaner top edge) */
+  .flymode-card:first-child { border-top: none; }
+
+  /* The two half-tiles. Each is a centred column: team code over score. */
+  .flymode-half {
+    flex: 1 1 0;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    padding: 8px 6px;
+    transition: background-color 2.5s ease, border-color 2.5s ease;
+  }
+  /* The home half carries the seam line; the pill floats on top of it. */
+  .flymode-half.home { border-right: 1px solid rgba(255,255,255,0.12); }
+
+  /* Dark state washes - low alpha so the board stays black-first. The class is
+     the same one getFlyClass() already puts on the score, so wash and number
+     colour always agree. Neutral has no class, so no wash. */
+  .flymode-half.fs-warming  { background: rgba(255,214,10,0.07); }
+  .flymode-half.fs-onrun    { background: rgba(255,159,10,0.10); }
+  .flymode-half.fs-onfire   { background: rgba(255,69,58,0.12); }
+  .flymode-half.fs-cold     { background: rgba(64,156,255,0.10); }
+  .flymode-half.fs-comeback { background: rgba(191,90,242,0.12); }
+  .flymode-half.fs-flytime  { background: rgba(6,240,60,0.14); }
+  /* Brighten the seam line to match on the big match-level states. */
+  .flymode-card.flytime .flymode-half.home { border-right-color: rgba(6,240,60,0.35); }
+  .flymode-card.ot      .flymode-half.home { border-right-color: rgba(255,69,58,0.35); }
+
+  .flymode-team {
+    font-family: 'Inter', monospace;
+    font-size: clamp(18px, 5.5vw, 34px);
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    color: rgba(255,255,255,0.55);
+    text-transform: uppercase;
+    line-height: 1;
+    white-space: nowrap;
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  /* Code picks up colour only on the dramatic match-level states. */
+  .flymode-card.flytime .flymode-team { color: rgba(6,240,60,0.85); }
+  .flymode-card.ot      .flymode-team { color: rgba(255,69,58,0.85); }
+
+  /* The hero number. Tabular figures so digits never shift as the score ticks.
+     Size = FILL THE CELL: grow to the height budget, shrink only if the digits
+     would overrun the half's width. --len (digit count) is set per match in JS;
+     each formation below sets --half-vw (the half's width, in vw) and --h-budget
+     (the vertical room). min() of the two budgets = biggest size that fits both. */
+  .flymode-score {
+    font-family: 'Inter', monospace;
+    font-variant-numeric: tabular-nums;
+    --len: 1;
+    --half-vw: 40;
+    --h-budget: 18vh;
+    font-size: clamp(40px, min(var(--h-budget), calc(var(--half-vw) * 1.3vw / var(--len))), 300px);
+    font-weight: 900;
+    letter-spacing: -2px;
+    line-height: 0.9;
+    color: #ffffff;
+    transition: color 2.5s ease;
+    text-align: center;
+  }
+
+  /* Status pill floating on the seam, dead centre of the card. */
+  .flymode-status {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    font-family: 'Inter', monospace;
+    font-variant-numeric: tabular-nums;
+    font-size: clamp(14px, calc((100vh - 96px) / var(--rows, 1) * 0.12), 28px);
+    font-weight: 800;
+    color: #ffffff;
+    letter-spacing: 0.5px;
+    text-align: center;
+    line-height: 1.1;
+    padding: 7px 11px;
+    border: 1px solid rgba(255,255,255,0.35);
+    border-radius: 10px;
+    background: #000;
+    white-space: nowrap;
+    z-index: 4;
+  }
+  .flymode-status.ot      { color: var(--result); border-color: var(--result); }
+  .flymode-status.flytime { color: var(--live);   border-color: var(--live); }
+
+  /* PORTRAIT */
+  @media (orientation: portrait) {
+    /* Side-by-side: each half is ~44vw wide; height shared across the live rows. */
+    .flymode-score { --half-vw: 44; --h-budget: calc((100vh - 90px) / var(--rows, 1) * 0.62); }
+    /* SINGLE match: stack the two tiles top/bottom (full width) for a hero number. */
+    .flymode-inner[data-count="1"] .flymode-card { flex-direction: column; }
+    .flymode-inner[data-count="1"] .flymode-half.home {
+      border-right: none;
+      border-bottom: 1px solid rgba(255,255,255,0.12);
+    }
+    .flymode-inner[data-count="1"] .flymode-card.flytime .flymode-half.home { border-bottom-color: rgba(6,240,60,0.35); }
+    .flymode-inner[data-count="1"] .flymode-card.ot      .flymode-half.home { border-bottom-color: rgba(255,69,58,0.35); }
+    .flymode-inner[data-count="1"] .flymode-score { --half-vw: 92; --h-budget: calc((100vh - 120px) / 2 * 0.74); }
+  }
+  /* LANDSCAPE */
+  @media (orientation: landscape) {
+    /* Multi (2+) is two columns, so each half is only ~21vw wide. */
+    .flymode-score { --half-vw: 21; --h-budget: calc((100vh - 80px) / var(--rows, 1) * 0.66); }
+    /* SINGLE match fills the whole wide screen: each half is ~46vw, full height. */
+    .flymode-inner[data-count="1"] .flymode-score { --half-vw: 46; --h-budget: calc((100vh - 110px) * 0.86); }
+  }
+
+  /* Empty-state message when no live My Teams matches */
+  .flymode-empty {
+    color: rgba(255,255,255,0.35);
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-align: center;
+  }
+
+  /* brightness bar - full width, no exit button */
+  .flymode-brightness {
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 84px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 6px;
+    border-top: 1px solid #111;
+    background: #000;
+    padding: 0 16px;
+    touch-action: pan-x;
+    transition: opacity 0.5s ease;
+  }
+  /* Auto-hides ~1s after you stop adjusting it, so it stays out of the way. */
+  .flymode-brightness.faded { opacity: 0; }
+
+  .flymode-bright-wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .flymode-bright-label {
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    color: rgba(255,255,255,0.25);
+    text-transform: uppercase;
+  }
+
+  .flymode-brightness input[type=range] {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    height: 50px;
+    background: transparent;
+    outline: none;
+    cursor: pointer;
+    touch-action: pan-x;
+  }
+  .flymode-brightness input[type=range]::-webkit-slider-runnable-track {
+    height: 6px;
+    border-radius: 3px;
+    background: #1a1a1a;
+  }
+  .flymode-brightness input[type=range]::-moz-range-track {
+    height: 6px;
+    border-radius: 3px;
+    background: #1a1a1a;
+    border: none;
+  }
+  .flymode-brightness input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 40px; height: 40px;
+    margin-top: -17px;
+    border-radius: 50%;
+    background-color: #000;
+    background-image: url('knob.png');
+    background-size: 40px 40px;
+    background-repeat: no-repeat;
+    background-position: center;
+    border: 2px solid rgba(255,255,255,0.85);
+    cursor: pointer;
+  }
+  .flymode-brightness input[type=range]::-moz-range-thumb {
+    width: 40px; height: 40px;
+    border-radius: 50%;
+    background-color: #000;
+    background-image: url('knob.png');
+    background-size: 40px 40px;
+    background-repeat: no-repeat;
+    background-position: center;
+    border: 2px solid rgba(255,255,255,0.85);
+    cursor: pointer;
+  }
+
+  /* ── FEED HEADER ── */
+  .feed-header {
+    display: flex;
+    align-items: center;
+    margin: 10px 2px 7px;
+  }
+
+  /* ── GLOBAL SEARCH (My Teams page) ── */
+  .global-search-wrap {
+    position: relative;
+    margin-bottom: 12px;
+  }
+  .global-search-input {
+    width: 100%;
+    background: #111114;
+    border: 1.5px solid rgba(10,132,255,0.35);
+    border-radius: 12px;
+    padding: 12px 48px 12px 40px;
+    font-size: 15px;
+    font-family: inherit;
+    font-weight: 500;
+    color: #fff;
+    outline: none;
+    transition: border-color 0.2s;
+  }
+  .global-search-input::placeholder { color: var(--text-3); }
+  .global-search-input:focus { border-color: var(--blue); }
+  .global-search-icon-left {
+    position: absolute;
+    left: 13px; top: 50%;
+    transform: translateY(-50%);
+    font-size: 15px;
+    opacity: 0.4;
+    pointer-events: none;
+  }
+  .global-search-clear-btn {
+    position: absolute;
+    right: 4px; top: 50%;
+    transform: translateY(-50%);
+    background: none; border: none;
+    color: var(--text-3); font-size: 24px;
+    line-height: 1;
+    cursor: pointer;
+    width: 44px; height: 44px;
+    padding: 0;
+    display: none;                       /* hidden until query present; JS adds .visible to show */
+    align-items: center;
+    justify-content: center;
+    -webkit-tap-highlight-color: rgba(255,255,255,0.08);
+  }
+  .global-search-clear-btn.visible { display: flex; }
+  .global-search-results {
+    background: #111114;
+    border: 1.5px solid rgba(10,132,255,0.25);
+    border-radius: 12px;
+    overflow: hidden;
+    margin-top: 6px;
+    display: none;
+    max-height: 280px;
+    overflow-y: auto;
+  }
+  .global-search-results.visible { display: block; }
+  .gsr-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 14px;
+    border-bottom: 1px solid var(--sep);
+    cursor: pointer;
+    transition: background 0.1s;
+  }
+  .gsr-item:last-child { border-bottom: none; }
+  .gsr-item:active { background: rgba(255,255,255,0.05); }
+  .gsr-flag { font-size: 16px; }
+  .gsr-info { flex: 1; }
+  .gsr-team { font-size: 14px; font-weight: 600; color: #fff; }
+  .gsr-meta { font-size: 11px; color: var(--text-3); margin-top: 1px; }
+  .gsr-add {
+    font-size: 11px; font-weight: 700;
+    color: var(--blue); padding: 3px 8px;
+    border: 1px solid rgba(10,132,255,0.4);
+    border-radius: 6px; background: rgba(10,132,255,0.1);
+  }
+  .gsr-added {
+    font-size: 11px; font-weight: 700;
+    color: var(--live); padding: 3px 8px;
+    border: 1px solid rgba(6,240,60,0.3);
+    border-radius: 6px; background: rgba(6,240,60,0.08);
+  }
+  .gsr-empty {
+    padding: 16px; text-align: center;
+    font-size: 13px; color: var(--text-3);
+  }
+  .results-header {
+    display: flex;
+    align-items: center;
+    margin: 10px 2px 7px;
+  }
+  /* MY TEAMS / ALL TOGGLE */
+  .feed-toggle {
+    display: flex;
+    align-items: center;
+    background: rgba(255,255,255,0.07);
+    border-radius: 10px;
+    padding: 3px;
+    gap: 2px;
+  }
+  .ft-btn {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text-3);
+    padding: 6px 13px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background .15s, color .15s;
+    white-space: nowrap;
+    user-select: none;
+  }
+  .ft-btn.active {
+    background: rgba(255,255,255,0.15);
+    color: #fff;
+  }
+
+  /* CONNECTION BANNER - shown when all ESPN proxies fail */
+  .conn-banner{
+    position:fixed;left:50%;transform:translateX(-50%) translateY(-120%);
+    top:calc(env(safe-area-inset-top,0px) + 8px);
+    z-index:60;
+    background:rgba(255,69,58,0.92);
+    color:#fff;
+    font-size:12px;font-weight:600;letter-spacing:.2px;
+    padding:8px 14px;
+    border-radius:10px;
+    box-shadow:0 6px 20px rgba(0,0,0,.4);
+    display:flex;align-items:center;gap:8px;
+    max-width:calc(100% - 24px);
+    transition:transform .35s cubic-bezier(.2,.8,.2,1),opacity .25s;
+    opacity:0;pointer-events:none;
+  }
+  .conn-banner.visible{transform:translateX(-50%) translateY(0);opacity:1;pointer-events:auto;}
+  .conn-banner-dot{width:7px;height:7px;border-radius:50%;background:#fff;animation:pulse 1.2s infinite;}
+  .conn-banner-msg{flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+
+  /* data freshness line at top of feed */
+  .freshness{font-size:12px;color:var(--text-3);text-align:center;letter-spacing:.2px;padding:2px 0 7px;min-height:14px;transition:color .25s;}
+  .freshness.stale{color:var(--upcoming);}
+
+  /* BOTTOM NAV */
+  .bnav{position:fixed;bottom:0;left:50%;transform:translateX(-50%);width:100%;max-width:430px;background:rgba(0,0,0,.97);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);border-top:1px solid var(--sep);display:flex;padding:8px 0 22px;z-index:50;}
+  .nb{flex:1;display:flex;flex-direction:column;align-items:center;gap:3px;cursor:pointer;opacity:.4;transition:opacity .15s;padding:3px 0;}
+  .nb.active{opacity:1;}
+  .nb.active .nb-lbl{color:var(--live);}
+  .nb.active .nb-icon{color:var(--live);}
+  .nb-icon{font-size:20px;}
+  .nb-lbl{font-size:11px;font-weight:600;letter-spacing:-.1px;}
+  /* fly mode nav button */
+  .nb-flymode{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;cursor:pointer;opacity:.7;padding:0;transition:opacity .15s;margin-top:-8px;}
+  .nb-flymode:active{opacity:1;}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="header-top">
+    <div class="brand" onclick="enterFlyMode()"><img class="brand-mark" src="icon192.png" alt="ScoreFly logo"><div class="wordmark">Score<span>Fly</span></div></div>
+    <div class="header-tagline">Scores Anywhere. <em>Simple.</em></div>
+  </div>
+  <div class="tabs">
+    <div class="tab active" onclick="goTab('home',this,'nb-home')">Feed</div>
+    <div class="tab" onclick="goTab('results',this,'nb-results')">Results</div>
+    <div class="tab" onclick="goTab('settings',this,'nb-settings')">Teams</div>
+  </div>
+</div>
+
+
+<!-- connection issue banner (shown when all ESPN proxies fail) -->
+<div class="conn-banner" id="conn-banner" role="status" aria-live="polite">
+  <span class="conn-banner-dot"></span>
+  <span class="conn-banner-msg" id="conn-banner-msg">Connection issue. Retrying...</span>
+</div>
+
+<!-- FLY MODE OVERLAY - tap anywhere except slider to exit -->
+<div class="flymode-overlay" id="flymode-overlay" onclick="handleFlyModeTap(event)">
+  <div class="flymode-inner" id="flymode-inner">
+    <div class="flymode-grid" id="flymode-grid"></div>
+  </div>
+  <!-- brightness bar - stopPropagation so slider use does not exit -->
+  <div class="flymode-brightness" id="flymode-brightness" onclick="event.stopPropagation()">
+    <div class="flymode-bright-wrap">
+      <div class="flymode-bright-label">Fly Mode Brightness</div>
+      <input type="range" id="flymode-bright" min="5" max="100" value="100"
+        oninput="setFlyModeBrightness(this.value)" onclick="event.stopPropagation()">
+    </div>
+  </div>
+</div>
+
+<!-- ONBOARDING: first-run only. Shown by startOnboarding(); hidden once finished. -->
+<div class="onb-overlay" id="onboard-overlay">
+  <div class="onb-inner">
+
+    <!-- Step 1: Welcome -->
+    <div class="onb-step" id="onb-step-1">
+      <img class="onb-hero" src="onboard-hero.png" alt="ScoreFly" onclick="onbGoStep(2)">
+      <button class="onb-btn onb-btn-primary onb-hero-btn" onclick="onbGoStep(2)">Choose My Teams</button>
+    </div>
+
+    <!-- Step: Meet FlyTime (inserted between welcome and team pick) -->
+    <div class="onb-step" id="onb-step-fly" style="display:none">
+      <img class="onb-supafly" src="supafly-pointing.png" alt="">
+      <div class="onb-fly-badge">FLYTIME</div>
+      <div class="onb-h">Meet FlyTime</div>
+      <div class="onb-sub">When a game gets tight in the final minutes, it hits FlyTime: the part actually worth watching. ScoreFly tells you the moment it happens, across every sport you follow.</div>
+      <button class="onb-btn onb-btn-primary" onclick="onbGoStep(2)">Got it</button>
+    </div>
+
+    <!-- Step 2: Pick one team + smart suggestions (single screen) -->
+    <div class="onb-step" id="onb-step-2" style="display:none">
+      <div class="onb-h" id="onb-step2-h">Pick your teams</div>
+      <div class="onb-sub" id="onb-step2-sub">Follow the teams you care about. We'll watch them for FlyTime moments and big results.</div>
+
+      <div class="global-search-wrap">
+        <span class="global-search-icon-left">&#128269;</span>
+        <input class="global-search-input" type="text" id="onb-search"
+          placeholder="Team, league or sport..."
+          oninput="onbSearch(this.value)"
+          autocomplete="off" autocorrect="off" autocapitalize="off">
+        <button class="global-search-clear-btn" id="onb-search-clear" onclick="onbClearSearch()">&#10005;</button>
+      </div>
+      <div class="global-search-results" id="onb-results"></div>
+
+      <!-- Example picks - shown before the first team is chosen -->
+      <div id="onb-examples-wrap">
+        <div class="onb-label">Popular picks</div>
+        <div id="onb-examples"></div>
+      </div>
+
+      <!-- Smart suggestions - shown after the first team is chosen -->
+      <div id="onb-suggestions-wrap" style="display:none">
+        <div class="onb-label" id="onb-sugg-label">You might also follow</div>
+        <div class="onb-sugg-grid" id="onb-sugg-grid"></div>
+      </div>
+
+      <div class="onb-count" id="onb-count"></div>
+      <button class="onb-btn onb-btn-primary" id="onb-step2-btn" onclick="onbGoStep(3)">Skip for now</button>
+    </div>
+
+    <!-- Step 3: Notifications -->
+    <div class="onb-step" id="onb-step-3" style="display:none">
+      <img class="onb-supafly sm" src="supafly-score.png" alt="">
+      <div class="onb-h">Never miss a finish</div>
+      <div class="onb-sub">Get a heads-up when your teams are playing, and when a close game hits FlyTime. You can fine-tune this anytime.</div>
+      <button class="onb-btn onb-btn-primary" onclick="onbEnableNotifs()">Enable notifications</button>
+      <button class="onb-btn onb-btn-text" onclick="onbFinish()">Maybe later</button>
+    </div>
+
+  </div>
+</div>
+
+<div id="page-home" class="page active">
+  <div class="freshness" id="freshness"></div>
+  <div class="feed-header" style="display:flex;align-items:center;justify-content:space-between;margin:10px 2px 7px;">
+    <div class="sh-label" id="live-now-label"><span class="dot live"></span>Live Now</div>
+    <div class="feed-toggle">
+      <div class="ft-btn" id="feed-toggle-my" onclick="setFeedFilter('my')">My Teams</div>
+      <div class="ft-btn active" id="feed-toggle-all" onclick="setFeedFilter('all')">All</div>
+    </div>
+  </div>
+  <div id="flytime-section" style="display:none">
+    <div class="sh sh-flytime"><div class="sh-label"><span class="dot live"></span>Worth watching now</div></div>
+    <div id="flytime-cards"></div>
+    <div class="section-divider"></div>
+  </div>
+  <div id="live-cards"></div>
+  <div class="section-divider" id="live-divider"></div>
+  <div class="sh" id="sh-upcoming"><div class="sh-label"><span class="dot upcoming"></span>Coming Up</div></div>
+  <div id="upcoming-cards"></div>
+</div>
+
+
+<div id="page-results" class="page">
+  <div class="results-header" style="justify-content:space-between;">
+    <div class="sh-label"><span class="dot result"></span>Results</div>
+    <div class="feed-toggle">
+      <div class="ft-btn" id="results-toggle-my" onclick="setResultsFilter('my')">My Teams</div>
+      <div class="ft-btn active" id="results-toggle-all" onclick="setResultsFilter('all')">All</div>
+    </div>
+  </div>
+  <div id="results-cards"></div>
+  <div id="results-empty" class="section-empty" style="display:none">No results for your teams yet</div>
+</div>
+
+<div id="page-settings" class="page">
+  <div style="margin-top:4px">
+    <div class="pg-title">Following</div>
+  </div>
+
+  <!-- GLOBAL SEARCH -->
+  <div class="global-search-wrap">
+    <span class="global-search-icon-left">🔍</span>
+    <input class="global-search-input" type="text" id="global-search"
+      placeholder="Search teams, leagues or players..."
+      oninput="globalSearch(this.value)"
+      autocomplete="off" autocorrect="off" autocapitalize="off">
+    <button class="global-search-clear-btn" id="global-search-clear" onclick="clearGlobalSearch()">✕</button>
+  </div>
+  <div class="global-search-results" id="global-search-results"></div>
+
+  <div class="teams-title">My Teams</div>
+  <div id="team-list-wrap">
+    <div class="section-empty">No teams selected yet</div>
+  </div>
+  <div class="bell-hint">
+    <span class="bell-hint-icon">🔔</span>
+    <span>Tap the bell to manage alerts for a team</span>
+  </div>
+
+  <div class="teams-title">FlyTime Buzz</div>
+  <div class="buzz-card">
+    <span class="buzz-icon">🔥</span>
+    <div class="buzz-text">
+      <div class="buzz-title">Never miss a close finish</div>
+      <div class="buzz-desc">Get notified whenever a game anywhere enters FlyTime.</div>
+    </div>
+    <div class="buzz-switch" id="buzz-switch" onclick="toggleFlyBuzz()"><div class="buzz-knob"></div></div>
+  </div>
+
+  <div id="suggested-section"><div class="teams-title">Suggested for you</div>
+  <div id="suggested-wrap"></div></div>
+
+  <div class="teams-title">Score colours</div>
+  <div class="fly-legend">
+    <div class="fly-legend-row"><span class="fly-dot" style="background:var(--text)"></span><span class="fly-legend-name">Neutral</span><span class="fly-legend-desc">steady or even</span></div>
+    <div class="fly-legend-row"><span class="fly-dot" style="background:var(--upcoming)"></span><span class="fly-legend-name">Warming up</span><span class="fly-legend-desc">building momentum</span></div>
+    <div class="fly-legend-row"><span class="fly-dot" style="background:var(--onrun)"></span><span class="fly-legend-name">On a run</span><span class="fly-legend-desc">scoring streak</span></div>
+    <div class="fly-legend-row"><span class="fly-dot" style="background:var(--result)"></span><span class="fly-legend-name">On fire</span><span class="fly-legend-desc">dominant run</span></div>
+    <div class="fly-legend-row"><span class="fly-dot" style="background:var(--cold)"></span><span class="fly-legend-name">Gone cold</span><span class="fly-legend-desc">opponent has taken over</span></div>
+    <div class="fly-legend-row"><span class="fly-dot" style="background:var(--comeback)"></span><span class="fly-legend-name">Comeback</span><span class="fly-legend-desc">clawing back a deficit</span></div>
+    <div class="fly-legend-row"><span class="fly-dot" style="background:var(--live)"></span><span class="fly-legend-name">Fly Time</span><span class="fly-legend-desc">close and in the final stretch</span></div>
+    <div class="fly-legend-note">A red match clock means the game has gone to overtime.</div>
+  </div>
+</div>
+
+<div class="bnav">
+  <div class="nb active" id="nb-home" onclick="goTab('home',null,'nb-home')">
+    <div class="nb-icon">
+      <svg width="33" height="22" viewBox="0 0 35.60 24" fill="none" stroke="currentColor" stroke-width="4.32" stroke-linecap="round" stroke-linejoin="round"><g transform="translate(17.80,12.00) scale(0.4167)"><circle cx="0" cy="0" r="4"/><path d="M-14,-14 A20 20 0 0 0 -14 14"/><path d="M14,-14 A20 20 0 0 1 14 14"/><path d="M-28,-24 A34 34 0 0 0 -28 24"/><path d="M28,-24 A34 34 0 0 1 28 24"/></g></svg>
+    </div>
+    <div class="nb-lbl">Feed</div>
+  </div>
+  <div class="nb" id="nb-results" onclick="goTab('results',null,'nb-results')">
+    <div class="nb-icon">
+      <svg width="21" height="22" viewBox="0 0 23.31 24" fill="none" stroke="currentColor" stroke-width="5.22" stroke-linecap="round" stroke-linejoin="round"><g transform="translate(11.66,4.76) scale(0.3448)"><path d="M-18,-8 H18"/><path d="M-16,-8 C-16,12 -10,20 0,20 C10,20 16,12 16,-8"/><path d="M-16,-4 H-28 C-28,8 -22,12 -16,12"/><path d="M16,-4 H28 C28,8 22,12 16,12"/><path d="M0,20 V38"/><path d="M-10,38 H10"/><path d="M-14,50 H14"/><path d="M-10,38 L-14,50"/><path d="M10,38 L14,50"/></g></svg>
+    </div>
+    <div class="nb-lbl">Results</div>
+  </div>
+  <div class="nb" id="nb-settings" onclick="goTab('settings',null,'nb-settings')">
+    <div class="nb-icon">
+      <svg width="43" height="22" viewBox="0 0 46.96 24" fill="none" stroke="currentColor" stroke-width="4.86" stroke-linecap="round" stroke-linejoin="round"><g transform="translate(23.48,11.63) scale(0.3704)"><circle cx="0" cy="-12" r="14"/><path d="M-24,28 C-24,8 -12,0 0,0 C12,0 24,8 24,28"/><circle cx="-38" cy="2" r="8"/><circle cx="38" cy="2" r="8"/><path d="M-58,28 C-58,16 -50,10 -42,10 C-34,10 -28,14 -24,20"/><path d="M58,28 C58,16 50,10 42,10 C34,10 28,14 24,20"/></g></svg>
+    </div>
+    <div class="nb-lbl">Teams</div>
+  </div>
+  <div class="nb-flymode" id="nb-flymode" onclick="enterFlyMode()">
+    <img src="icon192.png" 
+      alt="Fly Mode" style="width:48px;height:48px;border-radius:50%;opacity:0.9;display:block;filter:drop-shadow(0 0 6px rgba(6,240,60,0.55));">
+  </div>
+</div>
+
+<script>
+// ============================================================
+// ESPN LIVE DATA - direct browser fetch, no key required
+// Covers: NBA, NFL, MLB, NHL, MLS
+// Refreshes every 60 seconds while the tab is visible
+// ============================================================
+
+// Debug logging - enable via localStorage.setItem('scorefly_debug','1')
+const DEBUG = (function(){
+  try { return localStorage.getItem('scorefly_debug') === '1'; } catch(e) { return false; }
+})();
+const dlog  = DEBUG ? console.log.bind(console)  : function(){};
+const dwarn = DEBUG ? console.warn.bind(console) : function(){};
+const derr  = DEBUG ? console.error.bind(console): function(){};
+
+// Polling cadence. One self-rescheduling loop (see pollTick / scheduleNextPoll).
+const FAST_POLL  = 12000;  // while games are live: refresh live scores every 12s
+const FLYTIME_POLL = 8000; // a live match is in FlyTime: refresh even faster
+const SOON_POLL  = 30000;  // nothing live yet but a match starts soon: check at 30s
+const SLOW_POLL  = 60000;  // nothing live: full sweep this often to catch kickoffs
+const RETRY_POLL = 8000;   // quick retry after a failed cycle
+const FULL_EVERY = 15;     // even while live, do a full sweep every ~15 fast cycles (~3 min)
+
+// Date windows (in days). The "All" view stays lean; the leagues that contain a
+// followed team get a deeper window so "My Teams" can look further out.
+const WIN_ALL_FWD   = 14;  // upcoming fixtures shown in the All view
+const WIN_ALL_BACK  = 7;   // results shown in the All view
+const WIN_MINE_FWD  = 30;  // upcoming fixtures for My Teams
+const WIN_MINE_BACK = 30;  // results for My Teams
+
+const ESPN_FEEDS = [
+  { sport:'basketball', league:'nba',   label:'NBA', emoji:'🏀' },
+  { sport:'football',   league:'nfl',   label:'NFL', emoji:'🏈' },
+  { sport:'baseball',   league:'mlb',   label:'MLB', emoji:'⚾' },
+  { sport:'hockey',     league:'nhl',   label:'NHL', emoji:'🏒' },
+  { sport:'soccer',     league:'usa.1', label:'MLS', emoji:'⚽' },
+  { sport:'soccer',     league:'eng.1', label:'EPL', emoji:'⚽' },
+  { sport:'soccer',     league:'esp.1', label:'La Liga', emoji:'⚽' },
+  { sport:'soccer',     league:'uefa.champions', label:'UCL', emoji:'⚽' },
+  { sport:'soccer',     league:'uefa.europa',    label:'UEL', emoji:'⚽' },
+  { sport:'soccer',     league:'ger.1', label:'Bundesliga', emoji:'⚽' },
+  { sport:'soccer',     league:'ita.1', label:'Serie A',    emoji:'⚽' },
+  { sport:'soccer',     league:'fra.1', label:'Ligue 1',    emoji:'⚽' },
+  { sport:'soccer',     league:'eng.2', label:'Championship', emoji:'⚽' },
+  { sport:'soccer',     league:'ned.1', label:'Eredivisie',   emoji:'⚽' },
+  { sport:'soccer',     league:'por.1', label:'Primeira Liga', emoji:'⚽' },
+  { sport:'soccer',     league:'sco.1', label:'Scottish Premiership', emoji:'⚽' },
+  { sport:'soccer',     league:'tur.1', label:'Super Lig',    emoji:'⚽' },
+  { sport:'soccer',     league:'bra.1', label:'Brasileirao',  emoji:'⚽' },
+  { sport:'soccer',     league:'arg.1', label:'Liga Profesional', emoji:'⚽' },
+  { sport:'soccer',     league:'mex.1', label:'Liga MX',      emoji:'⚽' },
+  { sport:'soccer',     league:'aus.1', label:'A-League',     emoji:'⚽' },
+  { sport:'soccer',     league:'irl.1', label:'League of Ireland', emoji:'⚽' },
+  { sport:'soccer',     league:'ind.1', label:'ISL',          emoji:'⚽' },
+  { sport:'soccer',     league:'rsa.1', label:'PSL',          emoji:'⚽' },
+  { sport:'soccer',     league:'conmebol.libertadores', label:'Libertadores', emoji:'⚽' },
+  { sport:'soccer',     league:'eng.w.1', label:'WSL',        emoji:'⚽' },
+  { sport:'australian-football', league:'afl', label:'AFL', emoji:'🔴' },
+  { sport:'cricket',    league:'8048',  label:'IPL', emoji:'🏏' },
+  { sport:'cricket',    league:'23694', label:'Cricket', emoji:'🏏' },
+  { sport:'basketball', league:'wnba',  label:'WNBA', emoji:'🏀' },
+  { sport:'basketball', league:'mens-college-basketball', label:'NCAAM', emoji:'🏀' },
+  { sport:'football',   league:'college-football',        label:'NCAAF', emoji:'🏈' },
+  { sport:'tennis',     league:'atp',   label:'ATP', emoji:'🎾' },
+  { sport:'tennis',     league:'wta',   label:'WTA', emoji:'🎾' },
+  { sport:'rugby-league', league:'3',   label:'NRL', emoji:'🏉' },
+];
+
+// Bridge: a followed team stores its league by full name (e.g. "Premier League"),
+// but feeds use short codes (e.g. "EPL"). This maps each feed's league code to the
+// full league name used in the follow list. Feeds with no entry here (e.g.
+// college sports) simply never qualify for the deep window - they stay on the All
+// window. Keep this in sync if league names in TEAMS ever change.
+const FEED_LEAGUE_NAME = {
+  'nba':'NBA','wnba':'WNBA','nfl':'NFL','mlb':'MLB','nhl':'NHL','usa.1':'MLS',
+  'eng.1':'Premier League','esp.1':'La Liga','uefa.champions':'UEFA Champions League',
+  'uefa.europa':'UEFA Europa League','ger.1':'Bundesliga','ita.1':'Serie A',
+  'fra.1':'Ligue 1','eng.2':'Championship','ned.1':'Eredivisie','por.1':'Primeira Liga',
+  'sco.1':'Scottish Premiership','tur.1':'Super Lig','bra.1':'Brasileirao',
+  'arg.1':'Liga Profesional','mex.1':'Liga MX','aus.1':'A-League',
+  'irl.1':'League of Ireland','ind.1':'ISL Football','rsa.1':'PSL Football',
+  'conmebol.libertadores':'Copa Libertadores','eng.w.1':"Women's Super League",
+  'afl':'AFL','8048':'Indian Premier League','3':'NRL','atp':'ATP Tennis','wta':'WTA Tennis'
+};
+
+// Loose league-name match: lowercase, drop accents and punctuation/spacing so
+// "Super Lig" matches a stored "Sueper Lig"/accented form, "A-League" matches
+// "aleague", etc. Prevents a followed league being silently missed.
+function leagueNorm(s){
+  return String(s||'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().replace(/[^a-z0-9]/g,'');
+}
+
+// The set of feed codes that contain at least one followed team. Recomputed each
+// sweep from the current favourites, so it stays correct as teams are added/removed.
+function followedFeedSlugs(){
+  const wanted = new Set(favs.map(f => leagueNorm(f.league)));
+  const slugs = new Set();
+  ESPN_FEEDS.forEach(feed => {
+    const name = FEED_LEAGUE_NAME[feed.league];
+    if (name && wanted.has(leagueNorm(name))) slugs.add(feed.league);
+  });
+  return slugs;
+}
+
+// CORS proxy strategies. We no longer fire all of these every time; espnFetch
+// tries the one that worked last (cheap), and only falls back to the rest if it
+// fails. Order here is just the starting preference.
+function proxyUrls(url) {
+  return [
+    `https://corsproxy.io/?${encodeURIComponent(url)}`,
+    `https://api.allorigins.win/raw?url=${encodeURIComponent(url)}`,
+    `https://api.codetabs.com/v1/proxy?quest=${encodeURIComponent(url)}`,
+    `https://thingproxy.freeboard.io/fetch/${url}`,
+    url, // direct - works in some browsers/networks
+  ];
+}
+
+// Format a Date as YYYYMMDD for ESPN's ?dates= range parameter.
+function ymd(d){
+  return d.getFullYear() + String(d.getMonth()+1).padStart(2,'0') + String(d.getDate()).padStart(2,'0');
+}
+
+// Fetch one proxy URL, bounded by timeoutMs. Resolves a parsed JSON object that
+// has an .events array, or null on any failure/timeout. (allorigins wraps the
+// real body in {contents:...}, so we unwrap that.)
+function tryProxy(proxyUrl, timeoutMs) {
+  return new Promise(resolve => {
+    const ctrl = new AbortController();
+    const timer = setTimeout(() => ctrl.abort(), timeoutMs);
+    fetch(proxyUrl, { signal: ctrl.signal, cache: 'no-store' })
+      .then(res => { if (!res.ok) throw new Error(res.status); return res.text(); })
+      .then(text => {
+        let json;
+        try { json = JSON.parse(text); } catch (e) { resolve(null); return; }
+        if (json && json.contents) { try { json = JSON.parse(json.contents); } catch (e) { resolve(null); return; } }
+        resolve(json && json.events ? json : null);
+      })
+      .catch(() => resolve(null))
+      .finally(() => clearTimeout(timer));
+  });
+}
+
+// Remember which proxy last succeeded so we can try it first next time.
+// Persisted across launches so a cold open does not start by probing a dead proxy.
+let bestProxyIdx = 0;
+try { var _bp = parseInt(localStorage.getItem('scorefly_best_proxy'), 10); if (!isNaN(_bp) && _bp >= 0 && _bp < 5) bestProxyIdx = _bp; } catch (e) {}
+
+// Fetch one ESPN feed. win = { back, fwd } days around today (defaults 7/7).
+// Smart rotation: try the last-good proxy alone first (one request, short
+// timeout); if it fails, race the rest and adopt whichever wins as the new best.
+async function espnFetch(sport, league, win) {
+  const back = (win && win.back != null) ? win.back : 7;
+  const fwd  = (win && win.fwd  != null) ? win.fwd  : 7;
+  const now  = new Date();
+  const from = new Date(now); from.setDate(from.getDate() - back);
+  const to   = new Date(now); to.setDate(to.getDate() + fwd);
+  const url  = `https://site.api.espn.com/apis/site/v2/sports/${sport}/${league}/scoreboard?dates=${ymd(from)}-${ymd(to)}&_=${Date.now()}`;
+  const proxies = proxyUrls(url);
+
+  // 1) Try the proxy that worked last, on its own.
+  const first = await tryProxy(proxies[bestProxyIdx], 4500);
+  if (first) return first;
+
+  // 2) It failed - race the others, abort losers once one wins, remember winner.
+  const others = proxies.map((u, i) => ({ u, i })).filter(o => o.i !== bestProxyIdx);
+  return new Promise(resolve => {
+    if (!others.length) { resolve(null); return; }
+    let pending = others.length, done = false;
+    const ctrls = [];
+    const finish = (json, idx) => {
+      if (done) return;
+      done = true;
+      ctrls.forEach(c => { try { c.abort(); } catch (e) {} });
+      if (json && idx != null) { bestProxyIdx = idx; try { localStorage.setItem('scorefly_best_proxy', String(idx)); } catch (e) {} }
+      resolve(json);
+    };
+    others.forEach(async ({ u, i }) => {
+      const ctrl = new AbortController();
+      ctrls.push(ctrl);
+      const timer = setTimeout(() => ctrl.abort(), 8000);
+      try {
+        const res = await fetch(u, { signal: ctrl.signal, cache: 'no-store' });
+        clearTimeout(timer);
+        if (!res.ok) throw new Error(res.status);
+        const text = await res.text();
+        let json;
+        try { json = JSON.parse(text); } catch (e) { return; }
+        if (json && json.contents) { try { json = JSON.parse(json.contents); } catch (e) { return; } }
+        if (json && json.events) finish(json, i);
+      } catch (e) {
+      } finally {
+        clearTimeout(timer);
+        if (--pending === 0 && !done) finish(null, null);
+      }
+    });
+  });
+}
+
+function espnStatus(comp) {
+  const name = comp?.status?.type?.name || '';
+  if (['STATUS_IN_PROGRESS','STATUS_HALFTIME','STATUS_END_PERIOD'].includes(name)) return 'live';
+  if (name === 'STATUS_FINAL') return 'finished';
+  // Date sanity check: if scheduled date is in the past, it's not upcoming
+  const eventTime = new Date(comp?.date || '').getTime();
+  if (!isNaN(eventTime) && eventTime < Date.now()) return 'finished';
+  return 'upcoming';
+}
+
+function espnTimer(comp, label, sport) {
+  const type  = comp?.status?.type?.name || '';
+  const clock = comp?.status?.displayClock || '';
+  const period= comp?.status?.period || 0;
+  if (type === 'STATUS_HALFTIME') return 'HT';
+  if (type === 'STATUS_FINAL')    return 'FT';
+  if (type === 'STATUS_SCHEDULED') {
+    const d = new Date(comp?.date || '');
+    // Use browser's local timezone
+    return isNaN(d) ? '' : d.toLocaleTimeString([],{hour:'numeric',minute:'2-digit'});
+  }
+  // All soccer leagues show the live match minute, not a period number
+  if (sport === 'soccer') return (clock && clock !== '0:00') ? `${clock}'` : `${period}`;
+  const pLabel = {
+    NBA: p => p<=4?`Q${p}`:`OT`,
+    NFL: p => p<=4?`Q${p}`:`OT`,
+    MLB: p => { const sd=(comp?.status?.type?.shortDetail||'').toLowerCase(); if(sd.startsWith('top'))return `Top ${p}`; if(sd.startsWith('bot'))return `Btm ${p}`; if(sd.startsWith('end'))return `End ${p}`; const isTop=comp?.situation?.isTopInning; if(isTop===true)return `Top ${p}`; if(isTop===false)return `Btm ${p}`; return `Inn ${p}`; },
+    NHL: p => p<=3?`P${p}`:`OT`,
+    AFL: p => p<=4?`Q${p}`:`OT`,
+    NRL: p => p<=2?`H${p}`:`OT`,
+  };
+  const pl = pLabel[label]?.(period) || `${period}`;
+  // Clocks like "0:00" are meaningless (baseball, cricket) - show period only
+  return (clock && clock !== '0:00') ? `${pl} ${clock}`.trim() : pl;
+}
+
+function espnDateLabel(dateStr) {
+  const d = new Date(dateStr);
+  const today = new Date();
+  const yesterday = new Date(); yesterday.setDate(today.getDate()-1);
+  const tomorrow  = new Date(); tomorrow.setDate(today.getDate()+1);
+  if (d.toDateString()===today.toDateString())     return 'Today';
+  if (d.toDateString()===yesterday.toDateString()) return 'Yesterday';
+  if (d.toDateString()===tomorrow.toDateString())  return 'Tomorrow';
+  // Use local date formatting
+  return d.toLocaleDateString([],{weekday:'short',day:'numeric',month:'short'});
+}
+
+function espnCountdown(dateStr) {
+  const diff = new Date(dateStr) - Date.now();
+  if (diff <= 0) return 'Soon';
+  const h = Math.floor(diff/3600000);
+  const d = Math.floor(h/24);
+  if (d >= 1) return `In ${d}d`;
+  if (h >= 1) return `In ${h}h`;
+  return 'Soon';
+}
+
+// Parse ESPN displayClock ("11:35") into total seconds. "0:00"/blank -> 0.
+function clockToSec(str) {
+  if (!str) return 0;
+  const parts = String(str).replace(/[^0-9:]/g, '').split(':');
+  if (parts.length === 2) return (parseInt(parts[0], 10) || 0) * 60 + (parseInt(parts[1], 10) || 0);
+  return parseInt(parts[0], 10) || 0;
+}
+
+// Is this live match in overtime / extra time? Regulation period count varies by sport.
+function detectOT(feed, comp) {
+  const p  = comp?.status?.period || 0;
+  const sd = (comp?.status?.type?.shortDetail || '').toLowerCase();
+  switch (feed.sport) {
+    case 'basketball':
+    case 'football':
+    case 'australian-football': return p > 4;
+    case 'rugby-league':         return p > 2;
+    case 'hockey':              return p > 3 || sd.includes('ot') || sd.includes('shootout');
+    case 'baseball':            return p > 9;
+    case 'soccer':              return sd.includes('extra') || sd.includes('penalt') || sd.includes('shootout');
+    default:                    return false;
+  }
+}
+
+// AFL display overrides. ESPN's raw AFL names are inconsistent (some full, some
+// short), so we map each to its proper club name (used on cards) and a fixed
+// three-letter TV code (used on the Fly Mode scoreboard). Matched by distinctive
+// substring, most specific first so overlaps resolve correctly
+// (e.g. "north melbourne" before "melbourne", "port adelaide" before "adelaide").
+const AFL_TEAMS = [
+  ['north melbourne', 'North Melbourne Kangaroos',     'NM'],
+  ['kangaroo',        'North Melbourne Kangaroos',     'NM'],
+  ['port adelaide',   'Port Adelaide Power',           'PTA'],
+  ['adelaide',        'Adelaide Crows',                'ADE'],
+  ['crows',           'Adelaide Crows',                'ADE'],
+  ['brisbane',        'Brisbane Lions',                'BRI'],
+  ['carlton',         'Carlton Blues',                 'CAR'],
+  ['collingwood',     'Collingwood Magpies',           'COL'],
+  ['essendon',        'Essendon Bombers',              'ESS'],
+  ['fremantle',       'Fremantle Dockers',             'FRE'],
+  ['geelong',         'Geelong Cats',                  'GEE'],
+  ['gold coast',      'Gold Coast Suns',               'GCS'],
+  ['greater western', 'Greater Western Sydney Giants', 'GWS'],
+  ['gws',             'Greater Western Sydney Giants', 'GWS'],
+  ['hawthorn',        'Hawthorn Hawks',                'HAW'],
+  ['richmond',        'Richmond Tigers',               'RIC'],
+  ['st kilda',        'St Kilda Saints',               'STK'],
+  ['st. kilda',       'St Kilda Saints',               'STK'],
+  ['kilda',           'St Kilda Saints',               'STK'],
+  ['west coast',      'West Coast Eagles',             'WCE'],
+  ['western bulldog', 'Western Bulldogs',              'WBD'],
+  ['footscray',       'Western Bulldogs',              'WBD'],
+  ['bulldog',         'Western Bulldogs',              'WBD'],
+  ['sydney',          'Sydney Swans',                  'SYD'],
+  ['swans',           'Sydney Swans',                  'SYD'],
+  ['melbourne',       'Melbourne Demons',              'MEL'],
+  ['demons',          'Melbourne Demons',              'MEL'],
+];
+function aflTeam(name) {
+  const n = (name || '').toLowerCase();
+  for (let i = 0; i < AFL_TEAMS.length; i++) {
+    if (n.indexOf(AFL_TEAMS[i][0]) !== -1) return { name: AFL_TEAMS[i][1], abbr: AFL_TEAMS[i][2] };
+  }
+  // Unknown team: keep ESPN's name, derive a rough 3-letter code.
+  return { name: name, abbr: (name || '').slice(0, 3).toUpperCase() };
+}
+
+
+// NRL team name normalisation + 3-letter codes for Fly Mode.
+// Matched by distinctive substring, most-specific-first.
+const NRL_TEAMS = [
+  ['north queensland',    'North Queensland Cowboys',      'COW'],
+  ['cowboy',              'North Queensland Cowboys',      'COW'],
+  ['south sydney',        'South Sydney Rabbitohs',        'RAB'],
+  ['rabbitoh',            'South Sydney Rabbitohs',        'RAB'],
+  ['st george illawarra', 'St George Illawarra Dragons',   'DRG'],
+  ['dragon',              'St George Illawarra Dragons',   'DRG'],
+  ['new zealand',         'New Zealand Warriors',          'WAR'],
+  ['warrior',             'New Zealand Warriors',          'WAR'],
+  ['newcastle',           'Newcastle Knights',             'KNI'],
+  ['knight',              'Newcastle Knights',             'KNI'],
+  ['gold coast',          'Gold Coast Titans',             'TIT'],
+  ['titan',               'Gold Coast Titans',             'TIT'],
+  ['canberra',            'Canberra Raiders',              'RAI'],
+  ['raider',              'Canberra Raiders',              'RAI'],
+  ['parramatta',          'Parramatta Eels',               'EEL'],
+  ['eel',                 'Parramatta Eels',               'EEL'],
+  ['penrith',             'Penrith Panthers',              'PAN'],
+  ['panther',             'Penrith Panthers',              'PAN'],
+  ['melbourne',           'Melbourne Storm',               'STM'],
+  ['storm',               'Melbourne Storm',               'STM'],
+  ['manly',               'Manly Sea Eagles',              'SEA'],
+  ['sea eagle',           'Manly Sea Eagles',              'SEA'],
+  ['canterbury',          'Canterbury Bulldogs',           'BLD'],
+  ['bulldog',             'Canterbury Bulldogs',           'BLD'],
+  ['cronulla',            'Cronulla Sharks',               'SHA'],
+  ['shark',               'Cronulla Sharks',               'SHA'],
+  ['sydney roosters',     'Sydney Roosters',               'ROO'],
+  ['rooster',             'Sydney Roosters',               'ROO'],
+  ['brisbane broncos',    'Brisbane Broncos',              'BRO'],
+  ['bronco',              'Brisbane Broncos',              'BRO'],
+  ['wests tigers',        'Wests Tigers',                  'TIG'],
+  ['tiger',               'Wests Tigers',                  'TIG'],
+  ['dolphin',             'Dolphins',                      'DOL'],
+];
+function nrlTeam(name) {
+  const n = (name || '').toLowerCase();
+  for (let i = 0; i < NRL_TEAMS.length; i++) {
+    if (n.indexOf(NRL_TEAMS[i][0]) !== -1) return { name: NRL_TEAMS[i][1], abbr: NRL_TEAMS[i][2] };
+  }
+  return { name: name, abbr: (name || '').slice(0, 3).toUpperCase() };
+}
+
+function mapEspnEvent(event, feed) {
+  const comp        = event.competitions?.[0];
+  if (!comp) return null;
+  const competitors = comp.competitors || [];
+  const home        = competitors.find(c=>c.homeAway==='home') || competitors[0] || {};
+  const away        = competitors.find(c=>c.homeAway==='away') || competitors[1] || {};
+  const status      = espnStatus(comp);
+  const timer       = espnTimer(comp, feed.label, feed.sport);
+  const dateLabel   = espnDateLabel(event.date);
+  const countdown   = espnCountdown(event.date);
+  let homeName      = home.team?.displayName || home.team?.name || 'Home';
+  let awayName      = away.team?.displayName || away.team?.name || 'Away';
+  // ESPN sometimes supplies team.uid like "s:40~l:59~t:16" instead of team.id.
+  // Also try the competitor's own .id as a last resort.
+  function extractId(c){
+    if(c.team?.id) return c.team.id;
+    if(c.team?.uid){ const p=c.team.uid.split('~t:'); if(p.length>1) return p[1].split('~')[0]; }
+    return c.id || '';
+  }
+  const homeId      = extractId(home);
+  const awayId      = extractId(away);
+  const homeLogo    = home.team?.logo || '';
+  const awayLogo    = away.team?.logo || '';
+  const homeScore   = feed.sport==='cricket' ? String(home.score??'0').replace(/,\s*target\s*:\s*\d+/i,'').trim() : (home.score??'0');
+  const awayScore   = feed.sport==='cricket' ? String(away.score??'0').replace(/,\s*target\s*:\s*\d+/i,'').trim() : (away.score??'0');
+  const hInt        = parseInt(homeScore,10)||0;
+  const aInt        = parseInt(awayScore,10)||0;
+
+  // FlyMatch inputs - pulled from the SAME scoreboard payload (no extra fetch).
+  // Present for US sports / ranked comps / finals; absent for many regular
+  // soccer fixtures, in which case these stay '' / 0 and drop out of the rating.
+  const recOf  = c => (c && c.records && c.records[0] && c.records[0].summary) || (c && c.record) || '';
+  const rankOf = c => (c && (c.curatedRank && c.curatedRank.current)) || (c && c.team && c.team.rank) || 0;
+  const homeRec = recOf(home), awayRec = recOf(away);
+  const homeRank = rankOf(home), awayRank = rankOf(away);
+  const fmImp = fmImportanceScore(comp.notes || event.notes, event.season && event.season.type);
+
+  // AFL: proper club names on cards, fixed 3-letter TV codes in Fly Mode.
+  let homeShort = '', awayShort = '';
+  if (feed.league === 'afl') {
+    const ht = aflTeam(homeName), at = aflTeam(awayName);
+    homeName = ht.name; awayName = at.name;
+    homeShort = ht.abbr; awayShort = at.abbr;
+  }
+  // NRL: normalised club names on cards, 3-letter TV codes in Fly Mode.
+  if (feed.sport === 'rugby-league') {
+    const ht = nrlTeam(homeName), at = nrlTeam(awayName);
+    homeName = ht.name; awayName = at.name;
+    homeShort = ht.abbr; awayShort = at.abbr;
+  }
+
+  // Build summary
+  let summary = '';
+  if (status==='live')     summary = hInt>aInt?`${homeName} lead ${homeScore}-${awayScore}`:aInt>hInt?`${awayName} lead ${awayScore}-${homeScore}`:`Tied ${homeScore}-${awayScore}`;
+  if (status==='finished') summary = hInt>aInt?`${homeName} win ${homeScore}-${awayScore}`:aInt>hInt?`${awayName} win ${awayScore}-${homeScore}`:`Draw ${homeScore}-${awayScore}`;
+  if (status==='upcoming') summary = `${homeName} vs ${awayName}`;
+
+  const base = {
+    id:        event.id,
+    home:      homeName,
+    homeLogo:  homeLogo,
+    homeId:    homeId,
+    homeShort: homeShort,
+    away:      awayName,
+    awayLogo:  awayLogo,
+    awayId:    awayId,
+    awayShort: awayShort,
+    league:    `${feed.emoji} ${feed.label}`,
+    sport:     feed.label,
+    sportKey:  feed.sport,
+    leagueKey: feed.league,
+    homeRec, awayRec, homeRank, awayRank, fmImp,
+    summary,
+  };
+
+  if (status==='live') return { ...base,
+    homeScore: String(homeScore), awayScore: String(awayScore),
+    timer,
+    startMs: new Date(event.date).getTime() || 0,
+    hInt, aInt,
+    period:   comp?.status?.period || 0,
+    clockSec: clockToSec(comp?.status?.displayClock),
+    clockRaw: comp?.status?.displayClock || '',
+    isOT:     detectOT(feed, comp),
+  };
+
+  if (status==='finished') return { ...base,
+    homeScore: String(homeScore), awayScore: String(awayScore),
+    winner: hInt>=aInt?'home':'away',
+    date: dateLabel,
+    dateMs: new Date(event.date).getTime() || 0,
+  };
+
+  // upcoming
+  const kickoff = new Date(event.date);
+  const timeStr = isNaN(kickoff)?'':kickoff.toLocaleTimeString([],{hour:'numeric',minute:'2-digit'});
+  return { ...base, countdown, day:dateLabel, time:timeStr, eventMs: kickoff.getTime() || 0, facts:[] };
+}
+
+// - CONNECTION BANNER -
+// Shown when all ESPN proxies fail for a fetch cycle.
+// Self-hides as soon as the next successful fetch lands.
+let connBannerVisible = false;
+let connBannerHideTimer = null;
+function showConnectionBanner(msg) {
+  const el = document.getElementById('conn-banner');
+  const m  = document.getElementById('conn-banner-msg');
+  if (!el || !m) return;
+  if (msg) m.textContent = msg;
+  if (connBannerHideTimer) { clearTimeout(connBannerHideTimer); connBannerHideTimer = null; }
+  el.classList.add('visible');
+  connBannerVisible = true;
+}
+function hideConnectionBanner() {
+  if (!connBannerVisible) return;
+  const el = document.getElementById('conn-banner');
+  if (!el) return;
+  el.classList.remove('visible');
+  connBannerVisible = false;
+}
+
+// - DATA FRESHNESS -
+// Shows an honest "Updated Xm ago" line at the top of the feed so stale data
+// is never silent. lastUpdateMs = time of last successful refresh.
+let lastUpdateMs = 0;       // 0 = no successful refresh yet
+let lastPollFailed = false; // did the most recent cycle fail to reach ESPN?
+function renderFreshness() {
+  const el = document.getElementById('freshness');
+  if (!el) return;
+  if (!lastUpdateMs) { el.textContent = ''; el.classList.remove('stale'); return; }
+  const mins = Math.floor((Date.now() - lastUpdateMs) / 60000);
+  const txt = mins < 1 ? 'Updated just now'
+            : mins === 1 ? 'Updated 1 min ago'
+            : 'Updated ' + mins + ' mins ago';
+  if (lastPollFailed) {
+    el.innerHTML = txt + ' &middot; reconnecting';
+    el.classList.add('stale');
+  } else {
+    el.textContent = txt;
+    el.classList.remove('stale');
+  }
+}
+
+// - SCORE FLASH + FLYSTATE ENGINE -
+// lastScores: tracks prev scores for the flash animation on score change.
+// flyState:   per-match momentum + resolved FlyState for each side.
+const lastScores = {}; // id -> { home, away }
+
+// Per-sport tuning.
+//   bigPlay = points in one ~60s poll that signals a strong scoring burst.
+//   cbMin   = deficit (points) large enough to count as a real comeback.
+const FLY_TUNING = {
+  basketball:            { bigPlay: 6, cbMin: 10 },
+  football:              { bigPlay: 7, cbMin: 11 },
+  hockey:                { bigPlay: 2, cbMin: 2  },
+  soccer:                { bigPlay: 1, cbMin: 2  },
+  baseball:              { bigPlay: 3, cbMin: 3  },
+  'australian-football': { bigPlay: 9, cbMin: 18 },
+  'rugby-league':         { bigPlay: 6, cbMin: 12 },
+};
+
+// Momentum decays each poll so a hot streak cools gradually instead of snapping off
+// the instant scoring pauses. This decay IS our anti-flicker / hysteresis.
+const MOM_GAIN  = 70;    // a full bigPlay burst adds about 70 points
+// Momentum now decays on a wall-clock half-life rather than a fixed per-poll
+// factor, so the colour fade is the same whatever the refresh rate. ~49s half-life
+// is roughly 3x the old per-poll decay; raise this to make colours linger longer.
+const MOM_HALFLIFE_SEC = 49;
+
+// flyState[id] = {
+//   h, a              last seen integer scores
+//   hMom, aMom        momentum 0-100 per side
+//   hMaxDef, aMaxDef  largest deficit each side has faced (for comeback)
+//   hState, aState    resolved side state ('' | warming | onrun | onfire | cold | comeback)
+//   match             match-level state ('' | 'flytime' | 'overtime')
+// }
+const flyState = {};
+
+// Cross-fade FlyState colours instead of snapping. The feed and Fly Mode rebuild
+// their cards every poll, so a plain CSS transition has nothing to animate from.
+// We remember each cell's previous colour class (keyed by match+side) and, after
+// each rebuild, jump the new cell to that old colour with no transition, force one
+// reflow, then swap to the real colour so the stylesheet's 2.5s transition runs.
+const flyFadePrev = {};
+function flyCrossfade(){
+  var els = document.querySelectorAll('[data-fk]');
+  var pending = [];
+  for (var i = 0; i < els.length; i++) {
+    var el = els[i];
+    var key = el.getAttribute('data-fk');
+    var cur = (el.className.match(/fs-[a-z]+/) || [''])[0];
+    var prev = flyFadePrev[key];
+    if (prev !== undefined && prev !== cur) {
+      el.style.transition = 'none';
+      if (cur) el.classList.remove(cur);
+      if (prev) el.classList.add(prev);
+      pending.push([el, prev, cur]);
+    }
+    flyFadePrev[key] = cur;
+  }
+  if (pending.length) {
+    void document.body.offsetWidth;  // single reflow commits all the colour jumps
+    for (var j = 0; j < pending.length; j++) {
+      var e = pending[j][0], p = pending[j][1], c = pending[j][2];
+      e.style.transition = '';
+      if (p) e.classList.remove(p);
+      if (c) e.classList.add(c);
+    }
+  }
+}
+
+function momTier(mom) {
+  if (mom >= 68) return 'onfire';
+  if (mom >= 42) return 'onrun';
+  if (mom >= 20) return 'warming';
+  return '';
+}
+
+// Clutch (FlyTime) moment? Close score, late in the game. Clock-based, so it only
+// uses data we actually have. Tennis and cricket are intentionally excluded.
+function isFlyTime(m) {
+  const margin = Math.abs((m.hInt || 0) - (m.aInt || 0));
+  const p = m.period || 0;
+  const c = m.clockSec || 0;
+  switch (m.sportKey) {
+    case 'basketball':          return p >= 4 && c > 0 && c <= 300 && margin <= 8;
+    case 'football':            return p >= 4 && c > 0 && c <= 300 && margin <= 8;
+    case 'hockey':              return p >= 3 && c > 0 && c <= 300 && margin <= 1;
+    case 'baseball':            return p >= 8 && margin <= 2;
+    case 'australian-football': return p >= 4 && c > 0 && c <= 360 && margin <= 12;
+    case 'rugby-league':         return p >= 2 && c > 0 && c <= 600 && margin <= 12;
+    case 'soccer': {
+      const minute = parseInt(m.clockRaw, 10) || 0;
+      return minute >= 80 && margin <= 1;
+    }
+    default: return false; // tennis, cricket
+  }
+}
+
+// After-match Fly stamp: remember which matches ever entered FlyTime, so completed
+// matches can show a small validation stamp on Results. Stored id->timestamp and pruned
+// past the results window so it never grows without bound.
+let flyTimeMatches = {};
+try{ flyTimeMatches = JSON.parse(localStorage.getItem('scorefly_flytime_matches') || '{}') || {}; }catch(e){ flyTimeMatches = {}; }
+(function(){
+  const cutoff = Date.now() - 35*24*60*60*1000;
+  let changed = false;
+  for(const k in flyTimeMatches){ if(flyTimeMatches[k] < cutoff){ delete flyTimeMatches[k]; changed = true; } }
+  if(changed){ try{ localStorage.setItem('scorefly_flytime_matches', JSON.stringify(flyTimeMatches)); }catch(e){} }
+})();
+function markFlyTimeMatch(id){
+  if(Object.prototype.hasOwnProperty.call(flyTimeMatches, id)) return;
+  flyTimeMatches[id] = Date.now();
+  try{ localStorage.setItem('scorefly_flytime_matches', JSON.stringify(flyTimeMatches)); }catch(e){}
+}
+function matchHadFlyTime(id){ return Object.prototype.hasOwnProperty.call(flyTimeMatches, id); }
+
+function updateFlyState(m) {
+  const id   = m.id;
+  const hNow = m.hInt || 0;
+  const aNow = m.aInt || 0;
+  const tune = FLY_TUNING[m.sportKey] || FLY_TUNING.basketball;
+  const prev = flyState[id];
+  const now  = Date.now();
+
+  // Match-level states are clock-driven and recomputed each poll. OT outranks FlyTime.
+  const matchState = m.isOT ? 'overtime' : (isFlyTime(m) ? 'flytime' : '');
+  if(matchState === 'flytime') markFlyTimeMatch(id);
+
+  if (!prev) {
+    // First sighting - seed state, no momentum yet.
+    flyState[id] = {
+      h: hNow, a: aNow, hMom: 0, aMom: 0,
+      hMaxDef: Math.max(0, aNow - hNow), aMaxDef: Math.max(0, hNow - aNow),
+      hState: '', aState: '', match: matchState, ts: now,
+    };
+    return;
+  }
+
+  // FlyTime alert: fire once when a match first crosses INTO flytime.
+  if (matchState === 'flytime' && prev.match !== 'flytime') {
+    fireFlyTimeAlert(m);
+  }
+
+  const hDelta = Math.max(0, hNow - prev.h);
+  const aDelta = Math.max(0, aNow - prev.a);
+
+  // Decay last poll's momentum on a wall-clock half-life (independent of poll rate),
+  // then add this poll's burst (capped so it can't overshoot). A backgrounded tab can
+  // leave a long gap, so clamp the elapsed time to avoid one huge decay step.
+  const dt = Math.min(Math.max((now - (prev.ts || now)) / 1000, 0), 120);
+  const decay = Math.pow(0.5, dt / MOM_HALFLIFE_SEC);
+  let hMom = prev.hMom * decay + Math.min(hDelta / tune.bigPlay, 1.6) * MOM_GAIN;
+  let aMom = prev.aMom * decay + Math.min(aDelta / tune.bigPlay, 1.6) * MOM_GAIN;
+  hMom = Math.max(0, Math.min(100, hMom));
+  aMom = Math.max(0, Math.min(100, aMom));
+
+  // Track the worst deficit each side has been in (used to spot a real recovery).
+  const hMaxDef = Math.max(prev.hMaxDef, aNow - hNow);
+  const aMaxDef = Math.max(prev.aMaxDef, hNow - aNow);
+
+  flyState[id] = {
+    h: hNow, a: aNow, hMom, aMom, hMaxDef, aMaxDef,
+    hState: resolveSide(hMom, aMom, aNow - hNow, hMaxDef, tune),
+    aState: resolveSide(aMom, hMom, hNow - aNow, aMaxDef, tune),
+    match: matchState, ts: now,
+  };
+}
+
+// Resolve one side. Priority: comeback > onfire > onrun > warming > cold > neutral.
+function resolveSide(myMom, oppMom, myDeficit, myMaxDef, tune) {
+  // Comeback (purple): was down by a real margin, has clawed back at least half of it,
+  // is now roughly level (not yet a runaway lead), and still has positive momentum.
+  if (myMaxDef >= tune.cbMin &&
+      (myMaxDef - myDeficit) >= myMaxDef * 0.5 &&
+      myDeficit <= tune.cbMin && myDeficit >= -tune.cbMin &&
+      myMom >= 20) {
+    return 'comeback';
+  }
+  const tier = momTier(myMom);
+  if (tier) return tier;
+  // Gone cold (blue): I've stalled while my opponent is heating up.
+  if (myMom < 12 && oppMom >= 42) return 'cold';
+  return '';
+}
+
+// Class for a score cell. FlyTime forces both scores green (overrides side state).
+function getFlyClass(matchId, side) {
+  const s = flyState[matchId];
+  if (!s) return '';
+  if (s.match === 'flytime') return 'fs-flytime';
+  const st = side === 'home' ? s.hState : s.aState;
+  return st ? 'fs-' + st : '';
+}
+
+// Match-level state for the Fly Mode centre badge ('flytime' | 'overtime' | '').
+function getMatchFly(matchId) {
+  const s = flyState[matchId];
+  return s ? s.match : '';
+}
+
+function applyScoreFlashes(newLive) {
+  const seen = new Set();
+  newLive.forEach(m => {
+    seen.add(m.id);
+    const prev = lastScores[m.id];
+    const h = String(m.homeScore);
+    const a = String(m.awayScore);
+    if (prev) {
+      if (prev.home !== h) flashScoreCell(m.id, 'home');
+      if (prev.away !== a) flashScoreCell(m.id, 'away');
+    }
+    lastScores[m.id] = { home: h, away: a };
+    // Recompute FlyState (momentum, comeback, flytime, overtime) every poll
+    updateFlyState(m);
+  });
+  // Prune state for matches no longer live
+  Object.keys(lastScores).forEach(id => {
+    if (!seen.has(id)) { delete lastScores[id]; delete flyState[id]; }
+  });
+}
+
+function flashScoreCell(matchId, side) {
+  requestAnimationFrame(() => {
+    const card = document.querySelector(`[data-match-id="${matchId}"]`);
+    if (!card) return;
+    const cells = card.querySelectorAll('.scores-col .sc');
+    const idx = side === 'home' ? 0 : 1;
+    const cell = cells[idx];
+    if (!cell) return;
+    cell.classList.remove('flash');
+    void cell.offsetWidth; // force reflow so animation restarts
+    cell.classList.add('flash');
+    setTimeout(() => cell.classList.remove('flash'), 600);
+  });
+}
+
+// - INSTANT FEED SNAPSHOT -
+// After every successful refresh we stash the current scores in localStorage so
+// the next launch can paint them immediately, before any network round-trip.
+// This is the last REAL data, not mock data - ESPN remains the only source.
+// The freshness line ("Updated X ago") keeps a stale snapshot honest, and the
+// poll that fires right after launch corrects anything that has moved on.
+const SNAPSHOT_KEY = 'scorefly_snapshot_v1';
+const SNAPSHOT_TTL_MS = 6 * 60 * 60 * 1000;  // upcoming + results stay useful for 6h
+const SNAPSHOT_LIVE_MS = 15 * 60 * 1000;     // a "live" score is only trusted for 15 min
+function saveSnapshot() {
+  try {
+    localStorage.setItem(SNAPSHOT_KEY, JSON.stringify({
+      ts: Date.now(),
+      live: ALL_LIVE,
+      upcoming: ALL_UPCOMING.slice(0, 250),
+      results: ALL_RESULTS.slice(0, 300)
+    }));
+  } catch (e) {}
+}
+function hydrateSnapshot() {
+  try {
+    const raw = localStorage.getItem(SNAPSHOT_KEY);
+    if (!raw) return false;
+    const snap = JSON.parse(raw);
+    if (!snap || !snap.ts) return false;
+    const age = Date.now() - snap.ts;
+    if (age > SNAPSHOT_TTL_MS) return false;  // too old to be useful
+    if (Array.isArray(snap.upcoming)) { ALL_UPCOMING.length = 0; ALL_UPCOMING.push(...snap.upcoming); }
+    if (Array.isArray(snap.results))  { ALL_RESULTS.length  = 0; ALL_RESULTS.push(...snap.results); }
+    // Live scores go stale fast - only restore them from a very recent snapshot.
+    if (age <= SNAPSHOT_LIVE_MS && Array.isArray(snap.live)) { ALL_LIVE.length = 0; ALL_LIVE.push(...snap.live); }
+    ALL_LIVE.forEach(computeFlyMatch);
+    ALL_UPCOMING.forEach(computeFlyMatch);
+    ALL_UPCOMING.sort((a, b) => (a.eventMs || 0) - (b.eventMs || 0));
+    lastUpdateMs = snap.ts;  // freshness line shows the snapshot's true age
+    return true;
+  } catch (e) { return false; }
+}
+
+async function loadLiveData() {
+  const espnLive=[], espnUpcoming=[], espnResults=[], coveredSports=new Set();
+  const now = Date.now();
+  // Store up to the deepest (My Teams) window; the display layer trims the All view.
+  const MAX_UPCOMING_MS = WIN_MINE_FWD  * 24 * 60 * 60 * 1000;
+  const MAX_RESULTS_MS  = WIN_MINE_BACK * 24 * 60 * 60 * 1000;
+
+  // Feeds that hold a followed team get the deep 30-day window; the rest stay lean.
+  const deepSlugs = followedFeedSlugs();
+
+  await Promise.allSettled(ESPN_FEEDS.map(async feed => {
+    const win = deepSlugs.has(feed.league)
+      ? { back: WIN_MINE_BACK, fwd: WIN_MINE_FWD }
+      : { back: WIN_ALL_BACK,  fwd: WIN_ALL_FWD  };
+    const json = await espnFetch(feed.sport, feed.league, win);
+    if (!json) return;
+    coveredSports.add(feed.label);
+    (json.events||[]).forEach(ev => {
+      const m = mapEspnEvent(ev, feed);
+      if (!m) return;
+      const st = espnStatus(ev.competitions?.[0]);
+      const evTime = new Date(ev.date).getTime();
+
+      if (st==='live') {
+        espnLive.push(m);
+      } else if (st==='upcoming') {
+        // Keep up to the deep window; display trims to 14 (All) or 30 (My Teams)
+        if (evTime - now <= MAX_UPCOMING_MS) espnUpcoming.push(m);
+      } else if (st==='finished') {
+        // Keep up to the deep window; display trims to 7 (All) or 30 (My Teams)
+        if (now - evTime <= MAX_RESULTS_MS) espnResults.push(m);
+      }
+    });
+  }));
+
+  if (!coveredSports.size) {
+    dwarn('ScoreFly: ESPN unreachable');
+    showConnectionBanner('Connection issue. Retrying...');
+    lastPollFailed = true;
+    renderFreshness();
+    return;
+  }
+
+  // We got data - hide the banner if it was up
+  hideConnectionBanner();
+  lastUpdateMs = Date.now();
+  lastPollFailed = false;
+  renderFreshness();
+
+  // Sort upcoming by date ascending
+  espnUpcoming.sort((a,b) => (a.eventMs||0) - (b.eventMs||0));
+
+  // Capture flashes BEFORE we swap arrays, so we compare new vs old
+  applyScoreFlashes(espnLive);
+
+  // Directly assign - arrays start empty, ESPN is the only source
+  ALL_LIVE.length=0;     ALL_LIVE.push(...espnLive);
+  ALL_UPCOMING.length=0; ALL_UPCOMING.push(...espnUpcoming);
+  ALL_RESULTS.length=0;  ALL_RESULTS.push(...espnResults);
+
+  // FlyMatch rating + rivalry flag: computed once per fixture per refresh and
+  // cached on each match object. Cheap arithmetic, no network. Form is added
+  // later by loadTeamForm, which recomputes the affected upcoming matches.
+  ALL_LIVE.forEach(computeFlyMatch);
+  ALL_UPCOMING.forEach(computeFlyMatch);
+
+  fireMatchNotifications(espnLive);
+
+  renderHome();
+  renderResults();
+  saveSnapshot();
+  // If Fly Mode is open, refresh its grid with the new live data
+  if (document.getElementById('flymode-overlay').classList.contains('active')) {
+    buildFlyModeGrid();
+  }
+  dlog(`ScoreFly ESPN: ${espnLive.length} live, ${espnUpcoming.length} upcoming, ${espnResults.length} results (${[...coveredSports].join(', ')})`);
+
+  // Kick off form fetch for upcoming cards (team sports only).
+  // Runs in background, repaints when results land.
+  loadTeamForm();
+  loadRugbyLeagueForm();
+}
+
+// Feeds that currently have at least one live match (drives the fast lane).
+function currentLiveFeeds() {
+  const keys = new Set(ALL_LIVE.map(m => m.sportKey + '|' + m.leagueKey));
+  return ESPN_FEEDS.filter(f => keys.has(f.sport + '|' + f.league));
+}
+
+// Fast lane: re-fetch ONLY the given live feeds on a narrow (yesterday-tomorrow)
+// window, update live scores + FlyState, and move any just-finished games into
+// results. Upcoming fixtures are left untouched - the full sweep owns those, so
+// we are not re-downloading static data every few seconds.
+async function refreshLiveFeeds(feeds) {
+  const freshLive = [], freshFinished = [];
+  const covered = new Set();
+  const now = Date.now();
+  const RESULTS_MS = 7 * 24 * 60 * 60 * 1000;
+
+  await Promise.allSettled(feeds.map(async feed => {
+    const json = await espnFetch(feed.sport, feed.league, { back: 1, fwd: 1 });
+    if (!json) return;
+    covered.add(feed.label);
+    (json.events || []).forEach(ev => {
+      const m = mapEspnEvent(ev, feed);
+      if (!m) return;
+      const st = espnStatus(ev.competitions?.[0]);
+      if (st === 'live') freshLive.push(m);
+      else if (st === 'finished') {
+        const t = new Date(ev.date).getTime();
+        if (now - t <= RESULTS_MS) freshFinished.push(m);
+      }
+    });
+  }));
+
+  if (!covered.size) { lastPollFailed = true; renderFreshness(); return; }
+
+  // Keep live matches from feeds we did NOT refresh; swap in the fresh ones.
+  const refreshed = new Set(feeds.map(f => f.sport + '|' + f.league));
+  const newLive = ALL_LIVE.filter(m => !refreshed.has(m.sportKey + '|' + m.leagueKey)).concat(freshLive);
+
+  // Move newly-finished games into results (dedupe by id, newest first).
+  if (freshFinished.length) {
+    const have = new Set(ALL_RESULTS.map(m => m.id));
+    freshFinished.forEach(m => { if (!have.has(m.id)) ALL_RESULTS.unshift(m); });
+  }
+
+  applyScoreFlashes(newLive);
+  ALL_LIVE.length = 0; ALL_LIVE.push(...newLive);
+  ALL_LIVE.forEach(computeFlyMatch);
+
+  lastUpdateMs = Date.now(); lastPollFailed = false; renderFreshness();
+  fireMatchNotifications(freshLive);
+  renderHome();
+  if (freshFinished.length) renderResults();
+  saveSnapshot();
+  if (document.getElementById('flymode-overlay').classList.contains('active')) buildFlyModeGrid();
+}
+
+// - POLL LOOP -
+// One self-rescheduling loop (not two setIntervals) so a fast refresh and a full
+// sweep can never overlap and fight over the data arrays.
+//   - games live      -> fast lane every FAST_POLL (live feeds only)
+//   - nothing live     -> full sweep every SLOW_POLL (catches kickoffs)
+//   - just failed      -> quick retry after RETRY_POLL
+//   - every FULL_EVERY fast cycles, do a full sweep anyway (catch new games / finishes)
+let pollTimer = null;
+let isPolling = false;
+let fastCycles = 0;
+async function pollTick() {
+  if (isPolling) return;
+  if (document.hidden) { scheduleNextPoll(); return; }
+  isPolling = true;
+  try {
+    const liveFeeds = currentLiveFeeds();
+    if (liveFeeds.length === 0 || fastCycles >= FULL_EVERY) {
+      await loadLiveData();
+      fastCycles = 0;
+    } else {
+      await refreshLiveFeeds(liveFeeds);
+      fastCycles++;
+    }
+  } catch (e) { /* keep the loop alive on any error */ }
+  isPolling = false;
+  scheduleNextPoll();
+}
+// True if any live match is currently in FlyTime (drives the fastest poll tier).
+function anyFlyTimeLive(){
+  for (let i=0;i<ALL_LIVE.length;i++){ if (getMatchFly(ALL_LIVE[i].id) === 'flytime') return true; }
+  return false;
+}
+// True if an upcoming match starts within the next 30 minutes (mid tier when idle).
+function anyStartingSoon(){
+  const now = Date.now(), soon = now + 30*60*1000;
+  for (let i=0;i<ALL_UPCOMING.length;i++){ const s = ALL_UPCOMING[i].startMs; if (s && s>now && s<=soon) return true; }
+  return false;
+}
+function scheduleNextPoll() {
+  let delay;
+  if (lastPollFailed)            delay = RETRY_POLL;
+  else if (anyFlyTimeLive())     delay = FLYTIME_POLL;
+  else if (ALL_LIVE.length > 0)  delay = FAST_POLL;
+  else if (anyStartingSoon())    delay = SOON_POLL;
+  else                           delay = SLOW_POLL;
+  clearTimeout(pollTimer);
+  pollTimer = setTimeout(pollTick, delay);
+}
+
+// - TEAM FORM (last 5 results) -
+// Team sports only. Tennis/cricket excluded because the W/D/L model does not fit.
+const FORM_TEAM_SPORTS = new Set([
+  'basketball','football','baseball','hockey','soccer','australian-football'
+  // rugby-league parked: ESPN does not expose an NRL team-schedule endpoint
+]);
+const FORM_TTL_MS = 6 * 60 * 60 * 1000; // 6 hours
+const FORM_CACHE_KEY = 'scorefly_form_cache_v4';
+let formInflight = new Set(); // team ids being fetched right now
+
+function loadFormCache(){
+  try{ return JSON.parse(localStorage.getItem(FORM_CACHE_KEY)||'{}'); }
+  catch(e){ return {}; }
+}
+function saveFormCache(c){
+  try{ localStorage.setItem(FORM_CACHE_KEY, JSON.stringify(c)); }catch(e){}
+}
+
+// Parse a team schedule response into a w/d/l array, oldest first, max 5.
+function parseTeamForm(json, teamId){
+  // ESPN /teams/:id/schedule nests events several ways depending on sport
+  let list = [];
+  if(Array.isArray(json?.events))                  list = json.events;
+  else if(Array.isArray(json?.team?.events))        list = json.team.events;
+  else if(Array.isArray(json?.team?.nextEvent))     list = json.team.nextEvent;
+  else if(Array.isArray(json?.schedule))            list = json.schedule;
+  // Soccer/some leagues: events nested under season groups
+  if(!list.length && json?.groups){
+    (Array.isArray(json.groups)?json.groups:[]).forEach(g=>{
+      (g.events||[]).forEach(e=>list.push(e));
+    });
+  }
+  // Fallback: walk all top-level array values looking for events
+  if(!list.length){
+    Object.values(json||{}).forEach(v=>{
+      if(Array.isArray(v) && v[0]?.competitions) list = list.concat(v);
+    });
+  }
+  const done = [];
+  list.forEach(ev => {
+    const comp = ev.competitions?.[0] || ev;
+    if(!comp) return;
+    const t = comp.status?.type || {};
+    const statusStr = ((t.name||'') + ' ' + (t.description||'') + ' ' + (t.shortDetail||'')).toLowerCase();
+    const isFinal = t.completed === true || t.state === 'post' ||
+      statusStr.includes('final') || statusStr.includes('full') ||
+      statusStr.includes('complete') || statusStr.includes('ft');
+    if(!isFinal) return;
+    const cs = comp.competitors || comp.teams || [];
+    const me = cs.find(c => String(c.team?.id||c.id) === String(teamId));
+    const them = cs.find(c => String(c.team?.id||c.id) !== String(teamId));
+    if(!me || !them) return;
+    const myScore = parseInt(me.score,10);
+    const theirScore = parseInt(them.score,10);
+    let r;
+    if(!isNaN(myScore) && !isNaN(theirScore)){
+      if(myScore > theirScore) r = 'w';
+      else if(myScore < theirScore) r = 'l';
+      else r = 'd';
+    } else if(me.winner === true || me.winner === 'true') {
+      r = 'w';
+    } else if(them.winner === true || them.winner === 'true') {
+      r = 'l';
+    } else {
+      return;
+    }
+    const dateMs = new Date(ev.date||comp.date||0).getTime() || 0;
+    done.push({ r, dateMs });
+  });
+  done.sort((a,b) => b.dateMs - a.dateMs);
+  return done.slice(0,5).map(x => x.r).reverse();
+}
+
+// Fetch one schedule URL, racing the CORS proxies. Returns parsed JSON or null.
+function fetchFormJson(url){
+  const proxies = proxyUrls(url);
+  return new Promise(resolve => {
+    let done = false;
+    let pending = proxies.length;
+    const controllers = [];
+    const finish = (val) => {
+      if (done) return;
+      done = true;
+      controllers.forEach(c => { try { c.abort(); } catch(e) {} });
+      resolve(val);
+    };
+    proxies.forEach(async (proxyUrl) => {
+      const ctrl = new AbortController();
+      controllers.push(ctrl);
+      const timer = setTimeout(() => ctrl.abort(), 8000);
+      try{
+        const res = await fetch(proxyUrl, { signal: ctrl.signal });
+        clearTimeout(timer);
+        if(!res.ok) throw new Error(res.status);
+        const text = await res.text();
+        let json;
+        try{ json = JSON.parse(text); }catch{ return; }
+        if(json.contents){ try{ json = JSON.parse(json.contents); }catch{ return; } }
+        if(json && !done) finish(json);
+      }catch(e){ /* try next */ }
+      finally{
+        clearTimeout(timer);
+        pending--;
+        if(pending === 0 && !done) finish(null);
+      }
+    });
+  });
+}
+
+// Does this JSON clearly contain a schedule we can read? Used only to decide
+// whether to try a fallback endpoint, NOT to reject (parseTeamForm does a deeper
+// walk), so non-rugby sports never regress.
+function formJsonUsable(json){
+  if(!json) return false;
+  if(Array.isArray(json.events) && json.events.length) return true;
+  if(Array.isArray(json.team?.events) && json.team.events.length) return true;
+  if(Array.isArray(json.schedule) && json.schedule.length) return true;
+  if(json.groups) return true;
+  return false;
+}
+
+async function fetchTeamForm(sport, league, teamId){
+  // ESPN serves team schedules at {sport}/{league}/teams/{id}/schedule. For most
+  // sports the one league token works. ESPN's rugby-league (NRL) team-schedule
+  // endpoint is unconfirmed, so try the configured id first, then the 'nrl' slug.
+  const tokens = sport === 'rugby-league' ? [league, 'nrl'] : [league];
+  let last = null;
+  for(let i = 0; i < tokens.length; i++){
+    const url = `https://site.api.espn.com/apis/site/v2/sports/${sport}/${tokens[i]}/teams/${teamId}/schedule`;
+    const json = await fetchFormJson(url);
+    if(json){ last = json; if(formJsonUsable(json)) return json; }
+  }
+  return last; // hand back whatever we got; parseTeamForm will deep-walk it
+}
+
+async function loadTeamForm(){
+  const cache = loadFormCache();
+  const now = Date.now();
+  // Collect unique (sport, league, teamId) tuples from upcoming team-sport matches
+  const needed = new Map(); // key -> {sport, league, teamId, matches:[matchRef], side:[]}
+  ALL_UPCOMING.forEach(m => {
+    if(!FORM_TEAM_SPORTS.has(m.sportKey)) return;
+    [['home', m.homeId], ['away', m.awayId]].forEach(([side, id]) => {
+      if(!id) return;
+      const cached = cache[id];
+      if(cached && (now - cached.t) < FORM_TTL_MS){
+        // Apply cached form immediately
+        if(side === 'home') m.homeForm = cached.f;
+        else                m.awayForm = cached.f;
+        return;
+      }
+      const key = `${m.sportKey}|${m.leagueKey}|${id}`;
+      if(!needed.has(key)){
+        needed.set(key, { sport:m.sportKey, league:m.leagueKey, teamId:id, queue:[] });
+      }
+      needed.get(key).queue.push([m, side]);
+    });
+  });
+
+  // Repaint now so any cached form shows immediately
+  if(cache && Object.keys(cache).length){ ALL_UPCOMING.forEach(computeFlyMatch); renderHome(); }
+
+  if(!needed.size) return;
+  dlog(`ScoreFly form: fetching ${needed.size} team schedules`);
+
+  // Concurrency cap to avoid hammering proxies
+  const tasks = [...needed.values()];
+  const CONC = 6;
+  let idx = 0;
+  let touched = false;
+  async function worker(){
+    while(idx < tasks.length){
+      const t = tasks[idx++];
+      if(formInflight.has(t.teamId)) continue;
+      formInflight.add(t.teamId);
+      try{
+        const json = await fetchTeamForm(t.sport, t.league, t.teamId);
+        if(json){
+          const form = parseTeamForm(json, t.teamId);
+          if(form.length){
+            cache[t.teamId] = { t: Date.now(), f: form };
+            t.queue.forEach(([m, side]) => {
+              if(side === 'home') m.homeForm = form;
+              else                m.awayForm = form;
+            });
+            touched = true;
+          }
+        }
+      }catch(e){ /* ignore */ }
+      finally{ formInflight.delete(t.teamId); }
+    }
+  }
+  await Promise.all(Array.from({length:CONC}, worker));
+
+  if(touched){
+    saveFormCache(cache);
+    ALL_UPCOMING.forEach(computeFlyMatch);
+    renderHome();
+  }
+}
+
+// NRL / rugby-league form. ESPN has no working per-team schedule endpoint for
+// rugby-league, but the SCOREBOARD (the same feed the app already uses, league id
+// from the feed config) returns completed games over a date range. One wide call
+// builds last-5 form for every team. Cached in the shared form cache, so it only
+// refetches every FORM_TTL_MS.
+async function loadRugbyLeagueForm(){
+  const rl = ALL_UPCOMING.filter(m => m.sportKey === 'rugby-league');
+  if(!rl.length) return;
+  const cache = loadFormCache();
+  const now = Date.now();
+  // Apply fresh cached form first; track whether anything still needs fetching.
+  let needFetch = false;
+  rl.forEach(m => {
+    [['home', m.homeId], ['away', m.awayId]].forEach(([side, id]) => {
+      if(!id) return;
+      const c = cache[id];
+      if(c && (now - c.t) < FORM_TTL_MS){
+        if(side === 'home') m.homeForm = c.f; else m.awayForm = c.f;
+      } else { needFetch = true; }
+    });
+  });
+  if(!needFetch){ renderHome(); return; }
+
+  const league = rl[0].leagueKey || '3';
+  const today = new Date();
+  const start = new Date(today.getTime() - 77 * 24 * 3600 * 1000); // ~11 weeks back
+  const url = `https://site.api.espn.com/apis/site/v2/sports/rugby-league/${league}/scoreboard?dates=${ymd(start)}-${ymd(today)}`;
+  const json = await fetchFormJson(url);
+  const events = (json && Array.isArray(json.events)) ? json.events : [];
+  if(!events.length) return;
+
+  // Group completed games by team id -> [{r, dateMs}].
+  const byTeam = {};
+  events.forEach(ev => {
+    const comp = ev.competitions && ev.competitions[0];
+    if(!comp) return;
+    const t = (comp.status && comp.status.type) || {};
+    const isFinal = t.completed === true || t.state === 'post';
+    if(!isFinal) return;
+    const cs = comp.competitors || [];
+    if(cs.length < 2) return;
+    const dateMs = new Date(ev.date || comp.date || 0).getTime() || 0;
+    cs.forEach(me => {
+      const them = cs.find(x => x !== me);
+      const id = String((me.team && me.team.id) || me.id || '');
+      if(!id || !them) return;
+      const ms = parseInt(me.score, 10), ts = parseInt(them.score, 10);
+      let r;
+      if(!isNaN(ms) && !isNaN(ts)) r = ms > ts ? 'w' : (ms < ts ? 'l' : 'd');
+      else if(me.winner === true) r = 'w';
+      else if(them.winner === true) r = 'l';
+      else return;
+      (byTeam[id] = byTeam[id] || []).push({ r, dateMs });
+    });
+  });
+
+  // Build last-5 per team and cache it.
+  Object.keys(byTeam).forEach(id => {
+    const f = byTeam[id].sort((a,b) => b.dateMs - a.dateMs).slice(0,5).map(x => x.r).reverse();
+    if(f.length) cache[id] = { t: now, f };
+  });
+  // Apply to upcoming NRL matches.
+  let touched = false;
+  rl.forEach(m => {
+    [['home', m.homeId], ['away', m.awayId]].forEach(([side, id]) => {
+      const c = id && cache[id];
+      if(c && c.f && c.f.length){
+        if(side === 'home') m.homeForm = c.f; else m.awayForm = c.f;
+        touched = true;
+      }
+    });
+  });
+  if(touched){ saveFormCache(cache); ALL_UPCOMING.forEach(computeFlyMatch); renderHome(); }
+}
+
+// - TABS -
+const tabEls=document.querySelectorAll('.tab'),navBtns=document.querySelectorAll('.nb');
+function goTab(id,tabEl,navId){
+  document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+  tabEls.forEach(t=>t.classList.remove('active'));
+  navBtns.forEach(n=>n.classList.remove('active'));
+  document.getElementById('page-'+id).classList.add('active');
+  if(navId)document.getElementById(navId).classList.add('active');
+  const idx={home:0,results:1,settings:2}[id];
+  if(tabEls[idx])tabEls[idx].classList.add('active');
+  currentTabIdx = idx >= 0 ? idx : currentTabIdx;
+  try{ localStorage.setItem('scorefly_last_tab', id); }catch(e){}
+  window.scrollTo({top:0,behavior:'instant'});
+}
+
+// - SWIPE BETWEEN TABS -
+const TAB_ORDER = ['home','results','settings'];
+const TAB_NAV   = ['nb-home','nb-results','nb-settings'];
+let currentTabIdx = 0;
+
+function goTabByIdx(idx) {
+  if(idx < 0 || idx >= TAB_ORDER.length) return;
+  currentTabIdx = idx;
+  goTab(TAB_ORDER[idx], null, TAB_NAV[idx]);
+}
+
+(function initSwipe(){
+  let startX=0, startY=0, startTime=0;
+  const MIN_SWIPE_X = 60;   // px horizontal travel
+  const MAX_SWIPE_Y = 80;   // px vertical tolerance
+  const MAX_TIME    = 350;  // ms
+
+  document.addEventListener('touchstart', e => {
+    // Ignore swipes on dropdowns, sliders, and any input/range element.
+    // Also ignore entirely while Fly Mode overlay is active.
+    if(document.getElementById('flymode-overlay').classList.contains('active')) return;
+    if(e.target.closest('.sf-opts,.flymode-brightness')) return;
+    if(e.target.tagName === 'INPUT' || e.target.matches('input[type=range]')) return;
+    startX = e.touches[0].clientX;
+    startY = e.touches[0].clientY;
+    startTime = Date.now();
+  }, {passive:true});
+
+  document.addEventListener('touchend', e => {
+    if(!startTime) return;
+    const dx = e.changedTouches[0].clientX - startX;
+    const dy = e.changedTouches[0].clientY - startY;
+    const dt = Date.now() - startTime;
+    startTime = 0;
+
+    // Must be mostly horizontal, fast enough, and not on Fly Mode overlay
+    if(Math.abs(dx) < MIN_SWIPE_X) return;
+    if(Math.abs(dy) > MAX_SWIPE_Y) return;
+    if(dt > MAX_TIME) return;
+    if(document.getElementById('flymode-overlay').classList.contains('active')) return;
+
+    if(dx < 0) goTabByIdx(currentTabIdx + 1); // swipe left = next tab
+    if(dx > 0) goTabByIdx(currentTabIdx - 1); // swipe right = prev tab
+  }, {passive:true});
+})();
+
+function buildFacts(facts){
+  return`<div class="facts-wrap"><div class="facts-title">Match Facts</div>${facts.map(f=>`<div class="fact-item"><span class="fact-icon">${f.icon}</span><span>${f.text}</span></div>`).join('')}</div>`;
+}
+
+// - LIVE DATA - populated by ESPN API only, no demo data
+const ALL_LIVE=[];
+
+// - MATCH NOTIFICATIONS -
+// Track which match IDs we have already notified so we only fire once per match.
+const notifiedMatchIds = new Set(
+  JSON.parse(localStorage.getItem('scorefly_notified') || '[]')
+);
+function saveNotified(){
+  try{ localStorage.setItem('scorefly_notified', JSON.stringify([...notifiedMatchIds])); }catch(e){}
+}
+
+function fireMatchNotifications(liveMatches){
+  if(!('Notification' in window) || Notification.permission !== 'granted') return;
+  const alertKeys = new Set(favs.filter(f=>f.alert).map(f=>f.name.toLowerCase()));
+  if(!alertKeys.size) return;
+  liveMatches.forEach(m => {
+    if(notifiedMatchIds.has(m.id)) return;
+    const h = m.home.toLowerCase();
+    const a = m.away.toLowerCase();
+    const matched = [...alertKeys].some(k =>
+      h===k || a===k || h.includes(k) || a.includes(k) || k.includes(h) || k.includes(a)
+    );
+    if(!matched) return;
+    notifiedMatchIds.add(m.id);
+    saveNotified();
+    try {
+      new Notification('ScoreFly - Match Live', {
+        body: `${m.home} vs ${m.away} is live now!`,
+        icon: 'icon192.png',
+        tag: `scorefly-match-${m.id}`
+      });
+    } catch(e) {}
+  });
+}
+
+// FlyTime alerts. Two independent opt-ins share ONE dedupe set (flytimeAlerted) so a
+// match buzzes at most once when it first crosses INTO FlyTime, even if both apply:
+//   1. Team alert  - a followed team with the bell on.
+//   2. FlyTime Buzz - a global toggle that fires for ANY live match, followed or not.
+// Followed-team matches get the personal alert; every other match gets the global buzz;
+// a match that qualifies for both still buzzes once (the team alert wins). On iPhone the
+// notification IS the buzz (iOS has no web vibration); navigator.vibrate is a bonus on Android.
+const flytimeAlerted = new Set(
+  JSON.parse(localStorage.getItem('scorefly_flytime') || '[]')
+);
+function saveFlytimeAlerted(){
+  try{ localStorage.setItem('scorefly_flytime', JSON.stringify([...flytimeAlerted])); }catch(e){}
+}
+
+// FlyTime Buzz: global opt-in, default OFF. Persisted separately from team bell alerts.
+let flyTimeBuzz = localStorage.getItem('scorefly_flytime_buzz') === 'true';
+function renderFlyBuzz(){
+  const sw = document.getElementById('buzz-switch');
+  if(sw) sw.classList.toggle('on', flyTimeBuzz);
+}
+function toggleFlyBuzz(){
+  // Turning OFF is always allowed.
+  if(flyTimeBuzz){
+    flyTimeBuzz = false;
+    localStorage.setItem('scorefly_flytime_buzz', 'false');
+    renderFlyBuzz();
+    return;
+  }
+  // Turning ON - notifications are required. Ask if we have not decided yet.
+  if('Notification' in window && Notification.permission === 'default'){
+    Notification.requestPermission().then(perm => {
+      const ok = perm === 'granted';
+      flyTimeBuzz = ok;
+      localStorage.setItem('scorefly_flytime_buzz', ok ? 'true' : 'false');
+      if(!ok) alert('Notifications are required for FlyTime Buzz.');
+      renderFlyBuzz();
+    });
+    return;
+  }
+  if('Notification' in window && Notification.permission === 'denied'){
+    alert('Notifications are blocked. Turn them on for ScoreFly in your browser settings to use FlyTime Buzz.');
+    flyTimeBuzz = false;
+    localStorage.setItem('scorefly_flytime_buzz', 'false');
+    renderFlyBuzz();
+    return;
+  }
+  // Permission already granted (or Notification unsupported - allow the toggle either way).
+  flyTimeBuzz = true;
+  localStorage.setItem('scorefly_flytime_buzz', 'true');
+  renderFlyBuzz();
+}
+
+let flyAlertQueue=[];
+let flyAlertTimer=null;
+let flyAlertTimes=[];   // recent send timestamps for the 3-per-15-min cooldown
+
+// Bring the user to the pinned FlyTime section when they tap a buzz.
+function flyTimeNotifClick(){
+  try{ window.focus(); }catch(e){}
+  try{ goTab('home',null,'nb-home'); }catch(e){}
+  try{
+    var s=document.getElementById('flytime-section');
+    if(s && s.style.display!=='none') s.scrollIntoView({behavior:'smooth',block:'start'});
+  }catch(e){}
+}
+
+// Send queued FlyTime buzzes. One per match max (deduped on enqueue). Several matches
+// crossing in the same poll collapse into one summary buzz. After 3 buzzes in 15 minutes
+// everything batches into summaries to protect notification quality.
+function flushFlyTimeAlerts(){
+  flyAlertTimer=null;
+  const q=flyAlertQueue; flyAlertQueue=[];
+  if(!q.length) return;
+  if(!('Notification' in window) || Notification.permission!=='granted') return;
+  try{ if(navigator.vibrate) navigator.vibrate([120,60,120]); }catch(e){}
+  const now=Date.now();
+  flyAlertTimes=flyAlertTimes.filter(t => now-t < 15*60*1000);
+  const cooling = flyAlertTimes.length >= 3;
+  let title, body, tag;
+  if(q.length===1 && !cooling){
+    const it=q[0];
+    title='FlyBuzz';
+    body=`${it.away} vs ${it.home} has entered FlyTime`;
+    tag=`scorefly-flytime-${it.id}`;
+  } else {
+    const n=q.length;
+    title='FlyBuzz';
+    body=`${n} game${n>1?'s':''} ${n>1?'have':'has'} entered FlyTime`;
+    tag='scorefly-flytime-batch';
+  }
+  flyAlertTimes.push(now);
+  try{
+    const note=new Notification(title, { body, icon:'icon192.png', tag });
+    note.onclick=function(){ flyTimeNotifClick(); try{ note.close(); }catch(e){} };
+  }catch(e){}
+}
+
+// Queue a FlyTime buzz the first time a match crosses INTO FlyTime. Gated by either a
+// followed team (bell on) or the global FlyTime Buzz toggle. Sending is debounced so
+// simultaneous crossings batch together (see flushFlyTimeAlerts).
+function fireFlyTimeAlert(m){
+  if(flytimeAlerted.has(m.id)) return;
+  const alertKeys = new Set(favs.filter(f=>f.alert).map(f=>f.name.toLowerCase()));
+  const h = m.home.toLowerCase();
+  const a = m.away.toLowerCase();
+  const followed = alertKeys.size > 0 && [...alertKeys].some(k =>
+    h===k || a===k || h.includes(k) || a.includes(k) || k.includes(h) || k.includes(a)
+  );
+  if(!followed && !flyTimeBuzz) return;
+  flytimeAlerted.add(m.id);
+  saveFlytimeAlerted();
+  flyAlertQueue.push({ id:m.id, home:m.home, away:m.away, hInt:m.hInt, aInt:m.aInt, followed });
+  if(flyAlertTimer) clearTimeout(flyAlertTimer);
+  flyAlertTimer=setTimeout(flushFlyTimeAlerts, 1200);
+}
+
+// - UPCOMING - populated by ESPN API only
+const ALL_UPCOMING=[];
+
+// - RESULTS - populated by ESPN API only
+const ALL_RESULTS=[];
+
+// - CURATED LEAGUES & TEAMS (38 leagues · 20 countries) -
+const LEAGUES={
+  // - TIER 1: massive global audiences -
+  'England':     [{n:'Premier League',e:'⚽'},{n:'Championship',e:'⚽'},{n:'Women\'s Super League',e:'⚽'}],
+  'Spain':       [{n:'La Liga',e:'⚽'}],
+  'Germany':     [{n:'Bundesliga',e:'⚽'}],
+  'Italy':       [{n:'Serie A',e:'⚽'}],
+  'France':      [{n:'Ligue 1',e:'⚽'}],
+  'USA':         [{n:'NFL',e:'🏈'},{n:'NBA',e:'🏀'},{n:'WNBA',e:'🏀'},{n:'MLB',e:'⚾'},{n:'NHL',e:'🏒'},{n:'MLS',e:'⚽'}],
+  'Australia':   [{n:'AFL',e:'🔴'},{n:'NRL',e:'🏉'},{n:'Big Bash League',e:'🏏'},{n:'A-League',e:'⚽'},{n:'Super Rugby Pacific',e:'🏉'},{n:'NBL',e:'🏀'}],
+  'India':       [{n:'Indian Premier League',e:'🏏'},{n:'ISL Football',e:'⚽'}],
+  // - TIER 2: strong regional audiences -
+  'Netherlands': [{n:'Eredivisie',e:'⚽'}],
+  'Portugal':    [{n:'Primeira Liga',e:'⚽'}],
+  'Scotland':    [{n:'Scottish Premiership',e:'⚽'}],
+  'Turkey':      [{n:'Süper Lig',e:'⚽'}],
+  'Brazil':      [{n:'Brasileirao',e:'⚽'},{n:'Copa do Brasil',e:'⚽'}],
+  'Argentina':   [{n:'Liga Profesional',e:'⚽'}],
+  'Mexico':      [{n:'Liga MX',e:'⚽'}],
+  'Ireland':     [{n:'League of Ireland',e:'⚽'}],
+  'South Africa':[{n:'PSL Football',e:'⚽'},{n:'SA T20 Cricket',e:'🏏'}],
+  'Pakistan':    [{n:'Pakistan Super League',e:'🏏'}],
+  'New Zealand': [{n:'Super Rugby Pacific',e:'🏉'}],
+  // - GLOBAL / MULTI-NATION -
+  'Global':      [{n:'UEFA Champions League',e:'🏆'},{n:'UEFA Europa League',e:'🏆'},{n:'Copa Libertadores',e:'🏆'},{n:'ATP Tennis',e:'🎾'},{n:'WTA Tennis',e:'🎾'},{n:'ICC Cricket (ODI)',e:'🏏'},{n:'ICC Cricket (T20)',e:'🏏'},{n:'Six Nations Rugby',e:'🏉'}],
+};
+
+const TEAMS={
+  // England
+  'Premier League':['Arsenal','Aston Villa','Bournemouth','Brentford','Brighton','Burnley','Chelsea','Crystal Palace','Everton','Fulham','Liverpool','Luton Town','Manchester City','Manchester United','Newcastle United','Nottingham Forest','Sheffield United','Tottenham Hotspur','West Ham United','Wolverhampton Wanderers'],
+  'Championship':  ['Birmingham City','Blackburn Rovers','Bristol City','Cardiff City','Coventry City','Hull City','Ipswich Town','Leeds United','Leicester City','Middlesbrough','Millwall','Norwich City','Plymouth Argyle','Preston NE','QPR','Rotherham United','Sheffield Wed','Southampton','Stoke City','Sunderland','Swansea City','Watford'],
+  "Women's Super League":['Arsenal Women','Aston Villa Women','Brighton Women','Chelsea Women','Everton Women','Leicester City Women','Liverpool Women','Manchester City Women','Manchester United Women','Tottenham Women','West Ham Women'],
+  // Spain
+  'La Liga':       ['Alaves','Almeria','Athletic Club','Atletico Madrid','Barcelona','Cadiz','Celta Vigo','Getafe','Girona','Granada','Las Palmas','Mallorca','Osasuna','Rayo Vallecano','Real Betis','Real Madrid','Real Sociedad','Sevilla','Valencia','Villarreal'],
+  // Germany
+  'Bundesliga':    ['Augsburg','Bayer Leverkusen','Bayern Munich','Bochum','Borussia Dortmund','Borussia Mönchengladbach','Darmstadt 98','Eintracht Frankfurt','Freiburg','Hoffenheim','FC Köln','Mainz','RB Leipzig','Stuttgart','Union Berlin','Werder Bremen','Wolfsburg'],
+  // Italy
+  'Serie A':       ['AC Milan','Atalanta','Bologna','Cagliari','Empoli','Fiorentina','Frosinone','Genoa','Inter Milan','Juventus','Lazio','Lecce','Monza','Napoli','Roma','Salernitana','Sassuolo','Torino','Udinese','Hellas Verona'],
+  // France
+  'Ligue 1':       ['Brest','Clermont','Le Havre','Lens','Lille','Lorient','Lyon','Marseille','Metz','Monaco','Montpellier','Nantes','Nice','Paris Saint-Germain','Reims','Rennes','Strasbourg','Toulouse'],
+  // Netherlands
+  'Eredivisie':    ['Ajax','AZ Alkmaar','Feyenoord','Fortuna Sittard','Go Ahead Eagles','Groningen','Heerenveen','NEC Nijmegen','PSV Eindhoven','RKC Waalwijk','Sparta Rotterdam','Twente','Utrecht','Vitesse','Waalwijk'],
+  // Portugal
+  'Primeira Liga': ['Arouca','Benfica','Boavista','Braga','Casa Pia','Chaves','Estoril','Famalicão','FC Porto','Gil Vicente','Moreirense','Portimonense','Rio Ave','Santa Clara','Sporting CP','Vizela'],
+  // Scotland
+  'Scottish Premiership':['Aberdeen','Celtic','Dundee','Dundee United','Hearts','Hibernian','Kilmarnock','Livingston','Motherwell','Rangers','Ross County','St Johnstone','St Mirren'],
+  // Turkey
+  'Süper Lig':     ['Adana Demirspor','Antalyaspor','Başakşehir','Beşiktaş','Caykur Rizespor','Fatih Karagumruk','Fenerbahçe','Galatasaray','Gaziantep','Hatayspor','İstanbul Başakşehir','Kasımpaşa','Kayserispor','Konyaspor','Pendikspor','Samsunspor','Sivasspor','Trabzonspor'],
+  // Brazil
+  'Brasileirao':   ['América Mineiro','Athletico Paranaense','Atletico Mineiro','Bahia','Botafogo','Bragantino','Corinthians','Cruzeiro','Cuiabá','Flamengo','Fluminense','Fortaleza','Goiás','Grêmio','Internacional','Palmeiras','Santos','São Paulo','Vasco da Gama'],
+  'Copa do Brasil':['Flamengo','Palmeiras','Atletico Mineiro','Santos','Grêmio','Fluminense','Corinthians','São Paulo'],
+  // Argentina
+  'Liga Profesional':['Boca Juniors','Defensa y Justicia','Estudiantes','Huracán','Independiente','Lanús','Newells Old Boys','Racing Club','River Plate','Rosario Central','San Lorenzo','Talleres','Vélez Sársfield'],
+  // Mexico
+  'Liga MX':       ['Atlas','Club América','Cruz Azul','FC Juárez','Guadalajara','León','Mazatlán','Monterrey','Necaxa','Pachuca','Puebla','Pumas UNAM','Querétaro','San Luis','Santos Laguna','Tigres UANL','Tijuana','Toluca'],
+  // Ireland
+  'League of Ireland':['Bohemian','Derry City','Drogheda United','Dundalk','Galway United','Shamrock Rovers','Shelbourne','Sligo Rovers','St Patrick\'s Athletic','UCD'],
+  // South Africa
+  'PSL Football':  ['AmaZulu','Cape Town City','Cape Town Spurs','Kaizer Chiefs','Mamelodi Sundowns','Orlando Pirates','Sekhukhune United','Stellenbosch FC','SuperSport United'],
+  'SA T20 Cricket':['Cape Cobras','Dolphins','Knights','Lions','Titans','Warriors'],
+  // Pakistan
+  'Pakistan Super League':['Islamabad United','Karachi Kings','Lahore Qalandars','Multan Sultans','Peshawar Zalmi','Quetta Gladiators'],
+  // New Zealand / Australia (shared)
+  'Super Rugby Pacific':['Blues','Brumbies','Chiefs','Crusaders','Fijian Drua','Force','Highlanders','Hurricanes','Moana Pasifika','Reds','Waratahs'],
+  // Australia
+  'AFL':           ['Adelaide Crows','Brisbane Lions','Carlton Blues','Collingwood Magpies','Essendon Bombers','Fremantle Dockers','Geelong Cats','Gold Coast Suns','Greater Western Sydney Giants','Hawthorn Hawks','Melbourne Demons','North Melbourne Kangaroos','Port Adelaide Power','Richmond Tigers','St Kilda Saints','Sydney Swans','West Coast Eagles','Western Bulldogs'],
+  'NRL':           ['Brisbane Broncos','Canberra Raiders','Canterbury Bulldogs','Cronulla Sharks','Dolphins','Gold Coast Titans','Manly Sea Eagles','Melbourne Storm','New Zealand Warriors','Newcastle Knights','North Queensland Cowboys','Parramatta Eels','Penrith Panthers','South Sydney Rabbitohs','St George Illawarra Dragons','Sydney Roosters','Wests Tigers'],
+  'Big Bash League':['Adelaide Strikers','Brisbane Heat','Hobart Hurricanes','Melbourne Renegades','Melbourne Stars','Perth Scorchers','Sydney Sixers','Sydney Thunder'],
+  'A-League':      ['Adelaide United','Brisbane Roar','Central Coast Mariners','Macarthur FC','Melbourne City','Melbourne Victory','Newcastle Jets','Perth Glory','Sydney FC','Wellington Phoenix','Western Sydney Wanderers','Western United'],
+  'NBL':           ['Adelaide 36ers','Brisbane Bullets','Cairns Taipans','Illawarra Hawks','Melbourne United','New Zealand Breakers','Perth Wildcats','South East Melbourne Phoenix','Sydney Kings','Tasmania JackJumpers'],
+  // India
+  'Indian Premier League':['Chennai Super Kings','Delhi Capitals','Gujarat Titans','Kolkata Knight Riders','Lucknow Super Giants','Mumbai Indians','Punjab Kings','Rajasthan Royals','Royal Challengers Bengaluru','Sunrisers Hyderabad'],
+  'ISL Football':  ['ATK Mohun Bagan','Bengaluru FC','Chennaiyin FC','East Bengal','FC Goa','Hyderabad FC','Jamshedpur FC','Kerala Blasters','Mohun Bagan','Mumbai City FC','NorthEast United','Odisha FC','Punjab FC'],
+  // USA
+  'NFL':           ['Arizona Cardinals','Atlanta Falcons','Baltimore Ravens','Buffalo Bills','Carolina Panthers','Chicago Bears','Cincinnati Bengals','Cleveland Browns','Dallas Cowboys','Denver Broncos','Detroit Lions','Green Bay Packers','Houston Texans','Indianapolis Colts','Jacksonville Jaguars','Kansas City Chiefs','Las Vegas Raiders','Los Angeles Chargers','Los Angeles Rams','Miami Dolphins','Minnesota Vikings','New England Patriots','New Orleans Saints','New York Giants','New York Jets','Philadelphia Eagles','Pittsburgh Steelers','San Francisco 49ers','Seattle Seahawks','Tampa Bay Buccaneers','Tennessee Titans','Washington Commanders'],
+  'NBA':           ['Atlanta Hawks','Boston Celtics','Brooklyn Nets','Charlotte Hornets','Chicago Bulls','Cleveland Cavaliers','Dallas Mavericks','Denver Nuggets','Detroit Pistons','Golden State Warriors','Houston Rockets','Indiana Pacers','Los Angeles Clippers','Los Angeles Lakers','Memphis Grizzlies','Miami Heat','Milwaukee Bucks','Minnesota Timberwolves','New Orleans Pelicans','New York Knicks','Oklahoma City Thunder','Orlando Magic','Philadelphia 76ers','Phoenix Suns','Portland Trail Blazers','Sacramento Kings','San Antonio Spurs','Toronto Raptors','Utah Jazz','Washington Wizards'],
+  'WNBA':          ['Atlanta Dream','Chicago Sky','Connecticut Sun','Dallas Wings','Golden State Valkyries','Indiana Fever','Las Vegas Aces','Los Angeles Sparks','Minnesota Lynx','New York Liberty','Phoenix Mercury','Seattle Storm','Washington Mystics'],
+  'MLB':           ['Arizona Diamondbacks','Atlanta Braves','Baltimore Orioles','Boston Red Sox','Chicago Cubs','Chicago White Sox','Cincinnati Reds','Cleveland Guardians','Colorado Rockies','Detroit Tigers','Houston Astros','Kansas City Royals','Los Angeles Angels','Los Angeles Dodgers','Miami Marlins','Milwaukee Brewers','Minnesota Twins','New York Mets','New York Yankees','Oakland Athletics','Philadelphia Phillies','Pittsburgh Pirates','San Diego Padres','San Francisco Giants','Seattle Mariners','St. Louis Cardinals','Tampa Bay Rays','Texas Rangers','Toronto Blue Jays','Washington Nationals'],
+  'NHL':           ['Anaheim Ducks','Boston Bruins','Buffalo Sabres','Calgary Flames','Carolina Hurricanes','Chicago Blackhawks','Colorado Avalanche','Columbus Blue Jackets','Dallas Stars','Detroit Red Wings','Edmonton Oilers','Florida Panthers','Los Angeles Kings','Minnesota Wild','Montreal Canadiens','Nashville Predators','New Jersey Devils','New York Islanders','New York Rangers','Ottawa Senators','Philadelphia Flyers','Pittsburgh Penguins','San Jose Sharks','Seattle Kraken','St. Louis Blues','Tampa Bay Lightning','Toronto Maple Leafs','Utah Hockey Club','Vancouver Canucks','Vegas Golden Knights','Washington Capitals','Winnipeg Jets'],
+  'MLS':           ['Atlanta United','Austin FC','Charlotte FC','Chicago Fire','Colorado Rapids','Columbus Crew','D.C. United','FC Cincinnati','FC Dallas','Houston Dynamo','Inter Miami','LA Galaxy','LAFC','Minnesota United','Nashville SC','New England Revolution','New York City FC','New York Red Bulls','Orlando City','Philadelphia Union','Portland Timbers','Real Salt Lake','San Jose Earthquakes','Seattle Sounders','Sporting Kansas City','St. Louis City SC','Toronto FC','Vancouver Whitecaps'],
+  // Global
+  'UEFA Champions League':['AC Milan','Arsenal','Atletico Madrid','Barcelona','Bayern Munich','Benfica','Borussia Dortmund','Chelsea','Inter Milan','Liverpool','Manchester City','Napoli','Paris Saint-Germain','Porto','RB Leipzig','Real Madrid'],
+  'UEFA Europa League':   ['Ajax','Atalanta','Bayer Leverkusen','Feyenoord','Lazio','Liverpool','Manchester United','Roma','Sevilla','Sporting CP','Villarreal','West Ham United'],
+  'Copa Libertadores':    ['Atletico Mineiro','Boca Juniors','Flamengo','Fluminense','Nacional','Palmeiras','Peñarol','Racing Club','River Plate','Vélez Sársfield'],
+  'ATP Tennis':    ['Alexander Zverev','Andrey Rublev','Ben Shelton','Carlos Alcaraz','Casper Ruud','Daniil Medvedev','Holger Rune','Hubert Hurkacz','Jannik Sinner','Novak Djokovic','Sebastian Korda','Stefanos Tsitsipas','Taylor Fritz','Tommy Paul'],
+  'WTA Tennis':    ['Aryna Sabalenka','Coco Gauff','Elena Rybakina','Iga Swiatek','Jessica Pegula','Karolina Muchova','Madison Keys','Marketa Vondrousova'],
+  'ICC Cricket (ODI)': ['Afghanistan','Australia','Bangladesh','England','India','Ireland','New Zealand','Pakistan','South Africa','Sri Lanka','West Indies','Zimbabwe'],
+  'ICC Cricket (T20)': ['Afghanistan','Australia','Bangladesh','England','India','Ireland','New Zealand','Pakistan','South Africa','Sri Lanka','West Indies'],
+  'Six Nations Rugby': ['England','France','Ireland','Italy','Scotland','Wales'],
+};
+
+// - Country flags -
+const FLAG={
+  'England':'🏴󠁧󠁢󠁥󠁮󠁧󠁿','Spain':'🇪🇸','Germany':'🇩🇪','Italy':'🇮🇹','France':'🇫🇷',
+  'Netherlands':'🇳🇱','Portugal':'🇵🇹','Scotland':'🏴󠁧󠁢󠁳󠁣󠁴󠁿','Turkey':'🇹🇷',
+  'Brazil':'🇧🇷','Argentina':'🇦🇷','Mexico':'🇲🇽','Ireland':'🇮🇪',
+  'South Africa':'🇿🇦','Pakistan':'🇵🇰','New Zealand':'🇳🇿',
+  'Australia':'🇦🇺','India':'🇮🇳','USA':'🇺🇸','Global':'🌍',
+};
+
+// - CARD BUILDERS -
+function logoImg(src, emoji) {
+  // No-crest fallback: show only the leading sport icon, not the whole league
+  // label. Callers pass the league string (icon + name), so a logo-less team
+  // would otherwise dump the league name into the tiny logo slot.
+  const fallback = (emoji || '').split(' ')[0];
+  if (src) return `<img src="${src}" alt="" onerror="this.style.display='none';this.nextSibling.style.display=''" style="width:20px;height:20px;object-fit:contain;border-radius:2px;"><span style="display:none">${fallback}</span>`;
+  return fallback;
+}
+// Photo sport icons (exact balls from the brand image, backgrounds already transparent).
+// Keys are JS unicode escapes of the emoji stored in feed.emoji / LEAGUES.e (ASCII-safe).
+// \u26BD soccer  \uD83C\uDFC0 basketball  \uD83C\uDFC8 gridiron(NFL)  \uD83D\uDD34 AFL
+// \u26BE baseball  \uD83C\uDFD2 hockey  \uD83C\uDFCF cricket  \uD83C\uDFBE tennis
+// \uD83C\uDFC9 rugby  \uD83C\uDFC6 cup competitions (use the soccer ball)
+const SPORT_IMGS={
+  '\u26BD':'icon-soccer.png',
+  '\uD83C\uDFC0':'icon-basketball.png',
+  '\uD83C\uDFC8':'icon-football.png',
+  '\uD83D\uDD34':'icon-afl.png',
+  '\u26BE':'icon-baseball.png',
+  '\uD83C\uDFD2':'icon-hockey.png',
+  '\uD83C\uDFCF':'icon-cricket.png',
+  '\uD83C\uDFBE':'icon-tennis.png',
+  '\uD83C\uDFC9':'icon-rugby.png',
+  '\uD83C\uDFC6':'icon-cup.png'
+};
+// Returns an <img> for a known sport emoji; otherwise returns the raw emoji unchanged.
+function sportImg(e,s){var d=SPORT_IMGS[e];if(!d)return e;return '<img src="'+d+'" width="'+s+'" height="'+s+'" alt="" style="object-fit:contain;display:inline-block;vertical-align:middle">';}
+function renderSportIcon(e){return sportImg(e,18);}
+// Display-only short names for cards. Canonical m.home/m.away stay full so
+// follow-matching, rivalry detection, Fly Mode codes, and saved favourites are
+// unaffected; only the visible card text is shortened.
+function displayTeamName(name){
+  switch(name){
+    case 'North Melbourne Kangaroos':     return 'Nth Melbourne Kangaroos';
+    case 'North Queensland Cowboys':      return 'NQ Cowboys';
+    case 'Greater Western Sydney Giants': return 'GWS Giants';
+    case 'St George Illawarra Dragons':   return 'St George Ill Dragons';
+  }
+  return name;
+}
+
+function buildLiveCard(m){
+  const sc=m.sportKey==='cricket'?'sc cricket':'sc';
+  const lparts=m.league.split(' ');
+  const sico=lparts[0];
+  const ltxt=lparts.slice(1).join(' ');
+  const fly=flyTimeIcon(m,'live');
+  return`<div class="card live" data-match-id="${m.id}">
+    <div class="card-meta"><span class="league-tag"><span class="sport-icon">${renderSportIcon(sico)}</span><span class="lg-badge">${ltxt}</span></span><span class="card-right">${fly}<span class="live-badge"><span class="bdot"></span>LIVE ${m.timer}</span></span></div>
+    <div class="card-body">
+      <div class="card-teams">
+        <div class="team-row"><div class="t-logo">${logoImg(m.homeLogo,m.league)}</div><div class="t-name">${displayTeamName(m.home)}</div></div>
+        <div class="team-row"><div class="t-logo">${logoImg(m.awayLogo,m.league)}</div><div class="t-name">${displayTeamName(m.away)}</div></div>
+      </div>
+      <div class="scores-col"><div class="${sc} ${getFlyClass(m.id,'home')}" data-fk="${m.id}|h|s">${m.homeScore}</div><div class="${sc} ${getFlyClass(m.id,'away')}" data-fk="${m.id}|a|s">${m.awayScore}</div></div>
+    </div>
+  </div>`;
+}
+
+function buildUpcomingCard(m){
+  const facts=(m.facts&&m.facts.length)?buildFacts(m.facts):'';
+  const hForm=buildFormStrip(m.homeForm);
+  const aForm=buildFormStrip(m.awayForm);
+  const lparts=m.league.split(' ');
+  const sico=lparts[0];
+  const ltxt=lparts.slice(1).join(' ');
+  return`<div class="card upcoming">
+    <div class="card-meta"><span class="league-tag"><span class="sport-icon">${renderSportIcon(sico)}</span><span class="lg-badge">${ltxt}</span></span><span class="card-right">${flyTimeIcon(m,'upcoming')}${buildMarkers(m)}</span></div>
+    <div class="upcoming-body">
+      <div class="up-teams">
+        <div class="team-row">
+          <div class="row-top"><div class="t-logo">${logoImg(m.homeLogo,m.league)}</div><div class="t-name">${displayTeamName(m.home)}</div></div>
+          ${hForm}
+        </div>
+        <div class="team-row">
+          <div class="row-top"><div class="t-logo">${logoImg(m.awayLogo,m.league)}</div><div class="t-name">${displayTeamName(m.away)}</div></div>
+          ${aForm}
+        </div>
+      </div>
+      <div class="up-time"><div class="kday">${m.day}</div><div class="countdown">${m.countdown}</div><div class="ktod">${m.time}</div></div>
+    </div>
+    ${facts?`<div class="result-facts">${facts}</div>`:''}
+  </div>`;
+}
+
+// Build form strip from real results only. Renders nothing when there is no
+// data, so matches with no form show no blocks rather than greyed-out boxes.
+// Oldest left to newest right. form is array of 'w'|'d'|'l'.
+function buildFormStrip(form){
+  const f = (form || []).filter(r => r==='w' || r==='d' || r==='l');
+  if(!f.length) return '';
+  const boxes = f.map(r => `<div class="form-box ${r}"></div>`);
+  return`<div class="form-strip">${boxes.join('')}</div>`;
+}
+
+function buildResultCard(m){
+  const hw=m.winner==='home';
+  const sc=m.sportKey==='cricket'?'sc cricket':'sc';
+  const facts=(m.facts&&m.facts.length)?buildFacts(m.facts):'';
+  const lparts=m.league.split(' ');
+  const sico=lparts[0];
+  const ltxt=lparts.slice(1).join(' ');
+  const flyStamp=flyTimeIcon(m,'result');
+  return`<div class="card result">
+    <div class="card-meta"><span class="league-tag"><span class="sport-icon">${renderSportIcon(sico)}</span><span class="lg-badge">${ltxt}</span></span><span class="card-right">${flyStamp}<span class="ft-badge">FT · ${m.date}</span></span></div>
+    <div class="card-body">
+      <div class="card-teams">
+        <div class="team-row"><div class="t-logo">${logoImg(m.homeLogo,m.league)}</div><div class="t-name ${hw?'':'dim'}">${displayTeamName(m.home)}</div></div>
+        <div class="team-row"><div class="t-logo">${logoImg(m.awayLogo,m.league)}</div><div class="t-name ${hw?'dim':''}">${displayTeamName(m.away)}</div></div>
+      </div>
+      <div class="scores-col"><div class="${sc} ${hw?'':'dim'}">${m.homeScore}</div><div class="${sc} ${hw?'dim':''}">${m.awayScore}</div></div>
+    </div>
+    ${facts?`<div class="result-facts">${facts}</div>`:''}
+  </div>`;
+}
+
+// - RENDERERS -
+let feedFilter = 'all';
+let resultsFilter = 'all';
+
+// Default returning users (onboarded and following at least one team) straight to
+// My Teams, and remember whichever filter they last chose. Runs once at startup,
+// after favs has loaded, and syncs the toggle buttons to the chosen mode.
+function applyInitialFilter() {
+  var saved = null;
+  try { saved = localStorage.getItem('scorefly_feed_filter'); } catch (e) {}
+  var initial = (saved === 'my' || saved === 'all')
+    ? saved
+    : ((favs.length && localStorage.getItem('scorefly_onboarded')) ? 'my' : 'all');
+  // Item 7: never strand a user on an empty My Teams view.
+  if (initial === 'my' && !favs.length) initial = 'all';
+  feedFilter = initial;
+  resultsFilter = initial;
+  var fm = document.getElementById('feed-toggle-my');
+  var fa = document.getElementById('feed-toggle-all');
+  var rm = document.getElementById('results-toggle-my');
+  var ra = document.getElementById('results-toggle-all');
+  if (fm && fa) { fm.classList.toggle('active', initial === 'my'); fa.classList.toggle('active', initial === 'all'); }
+  if (rm && ra) { rm.classList.toggle('active', initial === 'my'); ra.classList.toggle('active', initial === 'all'); }
+}
+
+function setFeedFilter(mode) {
+  feedFilter = mode;
+  try { localStorage.setItem('scorefly_feed_filter', mode); } catch (e) {}
+  document.getElementById('feed-toggle-my').classList.toggle('active', mode === 'my');
+  document.getElementById('feed-toggle-all').classList.toggle('active', mode === 'all');
+  renderHome();
+}
+
+function setResultsFilter(mode) {
+  resultsFilter = mode;
+  document.getElementById('results-toggle-my').classList.toggle('active', mode === 'my');
+  document.getElementById('results-toggle-all').classList.toggle('active', mode === 'all');
+  renderResults();
+}
+
+function teamMatch(m, favNames) {
+  // Try exact match first, then partial contains match
+  const h = m.home.toLowerCase();
+  const a = m.away.toLowerCase();
+  return favNames.some(f =>
+    h === f || a === f ||
+    h.includes(f) || a.includes(f) ||
+    f.includes(h) || f.includes(a)
+  );
+}
+
+function renderHome(){
+  const favNames=favs.map(f=>f.name.toLowerCase());
+  const noFavs=favNames.length===0;
+  const useMyTeams = feedFilter === 'my' && !noFavs;
+  function mf(m){ return !useMyTeams || teamMatch(m, favNames); }
+  const upMaxMs = (useMyTeams ? WIN_MINE_FWD : WIN_ALL_FWD) * 24*60*60*1000;
+  const nowMs = Date.now();
+  const liveFilt=ALL_LIVE.filter(mf);
+  const upFilt=ALL_UPCOMING.filter(m => mf(m) && (m.eventMs||0) - nowMs <= upMaxMs);
+  const lw=document.getElementById('live-cards');
+  const uw=document.getElementById('upcoming-cards');
+  const fsec=document.getElementById('flytime-section');
+  const fcards=document.getElementById('flytime-cards');
+  if(noFavs && feedFilter === 'my'){
+    if(fsec) fsec.style.display='none';
+    if(fcards) fcards.innerHTML='';
+    var _lnl0=document.getElementById('live-now-label'); if(_lnl0) _lnl0.style.display='none';
+    var _ld0=document.getElementById('live-divider'); if(_ld0) _ld0.style.display='none';
+    lw.innerHTML=`<div class="empty-onboard"><div class="ei"><img src="icon192.png" alt="" style="width:56px;height:56px;border-radius:50%;object-fit:cover;display:inline-block"></div><strong>Welcome to ScoreFly</strong><br>Go to <strong>Teams</strong> to follow your teams and see live scores here. Or tap <strong>All</strong> to browse everything.</div>`;
+    uw.innerHTML='';
+  } else {
+    const flyFilt=liveFilt.filter(m => getMatchFly(m.id)==='flytime');
+    const liveRest=liveFilt.filter(m => getMatchFly(m.id)!=='flytime');
+    if(flyFilt.length){ fcards.innerHTML=flyFilt.map(buildLiveCard).join(''); fsec.style.display='block'; }
+    else { fcards.innerHTML=''; fsec.style.display='none'; }
+    lw.innerHTML=liveRest.length?liveRest.map(buildLiveCard).join(''):'';
+    // Item 16: the LIVE label + divider appear only when something is actually live.
+    var _hasLive = liveRest.length>0 || flyFilt.length>0;
+    var _lnl=document.getElementById('live-now-label'); if(_lnl) _lnl.style.display=_hasLive?'':'none';
+    var _ld=document.getElementById('live-divider'); if(_ld) _ld.style.display=(liveRest.length>0)?'':'none';
+    const upEmpty = useMyTeams ? 'No upcoming matches for your teams' : 'No upcoming fixtures in next 14 days';
+    uw.innerHTML=upFilt.length?upFilt.map(buildUpcomingCard).join(''):`<div class="section-empty">${upEmpty}</div>`;
+  }
+  flyCrossfade();
+}
+
+function renderResults(){
+  try{
+    const favNames=favs.map(f=>f.name.toLowerCase());
+    const noFavs=favNames.length===0;
+    const useMyTeams = resultsFilter === 'my' && !noFavs;
+    const resMaxMs = (useMyTeams ? WIN_MINE_BACK : WIN_ALL_BACK) * 24*60*60*1000;
+    const nowMs = Date.now();
+    const filtered=ALL_RESULTS.filter(m => (!useMyTeams || teamMatch(m, favNames)) && nowMs - (m.dateMs||0) <= resMaxMs);
+    const rw=document.getElementById('results-cards');
+    const re=document.getElementById('results-empty');
+    if(!filtered.length){
+      rw.innerHTML='';
+      re.textContent = useMyTeams ? 'No recent results for your teams' : 'No recent results';
+      re.style.display='block';
+      return;
+    }
+    re.style.display='none';
+    // Newest finished match first. Sorting before grouping also orders the date
+    // groups themselves (a group's key is inserted when its first/newest match is seen).
+    filtered.sort((a,b) => (b.dateMs||0) - (a.dateMs||0));
+    const groups={};
+    filtered.forEach(m=>{if(!groups[m.date])groups[m.date]=[];groups[m.date].push(m);});
+    rw.innerHTML=Object.entries(groups).map(([date,matches])=>`<div class="date-group">${date}</div>`+matches.map(buildResultCard).join('')).join('');
+  }catch(e){derr('renderResults error:',e);}
+}
+
+// - SETTINGS -
+let favs=[];
+try{const s=localStorage.getItem('scorefly_favs');if(s)favs=JSON.parse(s);}catch(e){}
+function saveFavs(){try{localStorage.setItem('scorefly_favs',JSON.stringify(favs));}catch(e){}}
+
+function removeTeam(key){
+  favs=favs.filter(f=>f.key!==key);
+  saveFavs();renderFavs();renderHome();renderResults();
+}
+
+function toggleAlert(key){
+  const fav=favs.find(f=>f.key===key);
+  if(!fav)return;
+  const turningOn=!fav.alert;
+  // request browser notification permission when turning on for the first time
+  if(turningOn && 'Notification' in window && Notification.permission==='default'){
+    Notification.requestPermission().then(perm=>{
+      if(perm==='granted'){
+        fav.alert=true;
+        saveFavs();renderFavs();
+        new Notification('ScoreFly',{
+          body:`Alerts on for ${fav.name}. We'll notify you when they play.`,
+          icon:'icon192.png'
+        });
+      }
+    });
+    return;
+  }
+  fav.alert=!fav.alert;
+  saveFavs();renderFavs();
+  // play a single tone when turning ON
+  if(fav.alert) playBellTone();
+  // fire a push notification if permission already granted and turning on
+  if(fav.alert && 'Notification' in window && Notification.permission==='granted'){
+    new Notification('ScoreFly',{
+      body:`Alerts on for ${fav.name}. We'll notify you when they play.`,
+      icon:'icon192.png'
+    });
+  }
+}
+
+function playBellTone() {
+  try {
+    const ctx = new (window.AudioContext || window.webkitAudioContext)();
+    const now = ctx.currentTime;
+    // Delicate ding - two sine partials for warmth, gentle volume, long soft tail
+    const freq = 620; // E5 - warm, not harsh
+    [freq, freq * 2.756].forEach((f, i) => {
+      const osc  = ctx.createOscillator();
+      const gain = ctx.createGain();
+      osc.connect(gain);
+      gain.connect(ctx.destination);
+      osc.type = 'sine';
+      osc.frequency.value = f;
+      const amp = i === 0 ? 0.18 : 0.06; // fundamental louder than overtone
+      gain.gain.setValueAtTime(0, now);
+      gain.gain.linearRampToValueAtTime(amp, now + 0.005); // near-instant attack
+      gain.gain.exponentialRampToValueAtTime(0.0001, now + 1.4); // long gentle fade
+      osc.start(now);
+      osc.stop(now + 1.4);
+      osc.onended = () => { try { ctx.close(); } catch(e) {} };
+    });
+  } catch(e) {}
+}
+
+function renderFavs(){
+  const wrap=document.getElementById('team-list-wrap');
+  if(!favs.length){wrap.innerHTML=`<div class="section-empty">No teams selected yet</div>`;}
+  else{
+  wrap.innerHTML=`<div class="team-list">${favs.map(f=>`
+    <div class="tli">
+      <div class="tli-flag">${f.flag}</div>
+      <div class="tli-sport">${sportImg(f.leagueEmoji,18)}</div>
+      <div class="tli-info"><div class="tli-name">${f.name}</div><div class="tli-lg">${f.league}</div></div>
+      <div class="tli-actions">
+        <button class="bell-btn ${f.alert?'on':''}" onclick="toggleAlert('${f.key.replace(/'/g,"\\'")}')">🔔</button>
+        <button class="del-btn" onclick="removeTeam('${f.key.replace(/'/g,"\\'")}')">🗑</button>
+      </div>
+    </div>`).join('')}</div>`;
+  }
+  renderSuggested();
+}
+
+// Onboarding example teams. Order matches suggestion priority:
+//   1. Same city / state (3 teams) -- local teams across different sports
+//   2. Same country, different sport (3 teams) -- national cross-sport appeal
+//   3. Same league, rivalry / popularity (2 teams)
+// England flag: regional indicator GB-ENG tag sequence.
+const ENG_FLAG='\uD83C\uDFF4\uDB40\uDC67\uDB40\uDC62\uDB40\uDC65\uDB40\uDC6E\uDB40\uDC67\uDB40\uDC7F';
+const USA_FLAG='\uD83C\uDDFA\uD83C\uDDF8';
+const CAN_FLAG='\uD83C\uDDE8\uD83C\uDDE6';
+const ESP_FLAG='\uD83C\uDDEA\uD83C\uDDF8';
+const AUS_FLAG='\uD83C\uDDE6\uD83C\uDDFA';
+const SUGGESTED=[
+  // 3 same city (Los Angeles)
+  {name:'Los Angeles Lakers',  league:'NBA',           leagueEmoji:'\uD83C\uDFC0',flag:USA_FLAG},
+  {name:'Los Angeles Dodgers', league:'MLB',           leagueEmoji:'\u26BE',       flag:USA_FLAG},
+  {name:'Los Angeles Rams',    league:'NFL',           leagueEmoji:'\uD83C\uDFC8',flag:USA_FLAG},
+  // 3 same country, different sport
+  {name:'New York Yankees',    league:'MLB',           leagueEmoji:'\u26BE',       flag:USA_FLAG},
+  {name:'Kansas City Chiefs',  league:'NFL',           leagueEmoji:'\uD83C\uDFC8',flag:USA_FLAG},
+  {name:'Toronto Maple Leafs', league:'NHL',           leagueEmoji:'\uD83C\uDFD2',flag:CAN_FLAG},
+  // 2 rivalry / popularity (same league)
+  {name:'Manchester United',   league:'Premier League',leagueEmoji:'\u26BD',       flag:ENG_FLAG},
+  {name:'Real Madrid',         league:'La Liga',       leagueEmoji:'\u26BD',       flag:ESP_FLAG},
+];
+
+function renderSuggested(){
+  const section=document.getElementById('suggested-section');
+  const wrap=document.getElementById('suggested-wrap');
+  if(!wrap) return;
+  // Suggestions are onboarding-only: hide permanently once onboarding is done.
+  if(localStorage.getItem('scorefly_onboarded')){
+    if(section) section.style.display='none';
+    return;
+  }
+  const items=SUGGESTED.filter(s=>!favs.some(f=>f.key===s.name+'|'+s.league));
+  if(!items.length){ if(section) section.style.display='none'; return; }
+  if(section) section.style.display='';
+  wrap.innerHTML=`<div class="team-list">${items.map(s=>{
+    const key=(s.name+'|'+s.league).replace(/'/g,"\'");
+    return `<div class="tli">
+      <div class="tli-flag">${s.flag}</div>
+      <div class="tli-sport">${sportImg(s.leagueEmoji,18)}</div>
+      <div class="tli-info"><div class="tli-name">${s.name}</div><div class="tli-lg">${s.league}</div></div>
+      <button class="follow-btn" onclick="followSuggested('${key}')">Follow</button>
+    </div>`;
+  }).join('')}</div>`;
+}
+
+function followSuggested(key){
+  const s=SUGGESTED.find(x=>x.name+'|'+x.league===key);
+  if(!s)return;
+  if(favs.some(f=>f.key===key))return;
+  favs.push({key,name:s.name,league:s.league,leagueEmoji:s.leagueEmoji,flag:s.flag,alert:false});
+  saveFavs();renderFavs();renderHome();renderResults();
+}
+
+// - FLY MODE -
+function abbrev(name) {
+  const words = name.trim().split(/\s+/);
+  if (words.length === 1) return words[0].slice(0,3).toUpperCase();
+  if (words.length === 2) return (words[0].slice(0,2) + words[1].slice(0,1)).toUpperCase();
+  return words.slice(0,3).map(w=>w[0]).join('').toUpperCase();
+}
+
+function buildFlyModeGrid() {
+  const favNames = favs.map(f=>f.name.toLowerCase());
+  const noFavs   = favNames.length === 0;
+  // Filter live matches to My Teams (or all if no favs set)
+  let live = ALL_LIVE.filter(m => {
+    if (noFavs) return true;
+    const fav = favNames.includes(m.home.toLowerCase()) || favNames.includes(m.away.toLowerCase());
+    if (fav) return true;
+    // Rec 2: when FlyBuzz is on, also surface non-followed matches currently in FlyTime.
+    if (flyTimeBuzz && getMatchFly(m.id) === 'flytime') return true;
+    return false;
+  });
+  // Rec 3: a match that has entered FlyTime pins to the top and stays pinned until it
+  // completes (drops out of ALL_LIVE), even if FlyTime conditions later fluctuate.
+  // Within each group, earliest start first.
+  live = live.slice().sort((a, b) => {
+    const pa = matchHadFlyTime(a.id) ? 1 : 0;
+    const pb = matchHadFlyTime(b.id) ? 1 : 0;
+    if (pa !== pb) return pb - pa;
+    return (a.startMs || 0) - (b.startMs || 0);
+  });
+  // Cap at 4
+  if (live.length > 4) live = live.slice(0, 4);
+
+  const inner = document.getElementById('flymode-inner');
+  const grid  = document.getElementById('flymode-grid');
+  inner.setAttribute('data-count', String(live.length));
+
+  if (!live.length) {
+    grid.innerHTML = '<div class="flymode-empty">No live matches</div>';
+    return;
+  }
+  // Split-tiles layout: two half-tiles per match meeting at a centre seam pill.
+  grid.innerHTML = live.map(m => {
+    // Status text. Server returns like "Q3 11:35" - we render as two lines if it has a space.
+    const timer = (m.timer || '').trim();
+    const parts = timer.split(/\s+/);
+    const badge = (parts.length >= 2)
+      ? (parts[0] + '<br>' + parts.slice(1).join(' '))
+      : timer;
+    const mf = getMatchFly(m.id); // '' | 'flytime' | 'overtime'
+    const statusCls = mf === 'overtime' ? ' ot' : (mf === 'flytime' ? ' flytime' : '');
+    // Per-side FlyState class drives BOTH the number colour and the tile wash.
+    const hCls = getFlyClass(m.id, 'home');
+    const aCls = getFlyClass(m.id, 'away');
+    const homeCode = m.homeShort || abbrev(m.home);
+    const awayCode = m.awayShort || abbrev(m.away);
+    // Longest score (in characters) drives the number size so both sides match
+    // and a 3-digit score never overruns its half. Clamped to 1..4.
+    const sLen = Math.min(4, Math.max(1, String(m.homeScore).length, String(m.awayScore).length));
+    const markers = flyTimeIcon(m, 'live');
+    const markerBox = markers ? ('<div class="fm-markers">' + markers + '</div>') : '';
+    return ''
+      + '<div class="flymode-card' + statusCls + '" style="--len:' + sLen + '">'
+      +   markerBox
+      +   '<div class="flymode-half home ' + hCls + '" data-fk="' + m.id + '|h|fmh">'
+      +     '<div class="flymode-team">' + homeCode + '</div>'
+      +     '<div class="flymode-score home ' + hCls + '" data-fk="' + m.id + '|h|fms">' + m.homeScore + '</div>'
+      +   '</div>'
+      +   '<div class="flymode-half away ' + aCls + '" data-fk="' + m.id + '|a|fmh">'
+      +     '<div class="flymode-team">' + awayCode + '</div>'
+      +     '<div class="flymode-score away ' + aCls + '" data-fk="' + m.id + '|a|fms">' + m.awayScore + '</div>'
+      +   '</div>'
+      +   '<div class="flymode-status' + statusCls + '">' + badge + '</div>'
+      + '</div>';
+  }).join('');
+  flyCrossfade();
+}
+
+function enterFlyMode() {
+  const slider = document.getElementById('flymode-bright');
+  const overlay = document.getElementById('flymode-overlay');
+  if (slider) slider.value = 100;
+  if (overlay) overlay.classList.add('active');
+  const inner = document.getElementById('flymode-inner');
+  if (inner) inner.style.filter = 'brightness(100%)';
+  buildFlyModeGrid();
+  bumpBrightnessControl(); // show the slider on entry, then let it fade
+  try {
+    if (navigator && navigator.wakeLock && typeof navigator.wakeLock.request === 'function') {
+      navigator.wakeLock.request('screen').catch(()=>{});
+    }
+  } catch(e) {}
+}
+
+function handleFlyModeTap(e) {
+  // Exit Fly Mode on tap anywhere - brightness bar has stopPropagation so won't trigger
+  exitFlyMode();
+}
+
+function exitFlyMode() {
+  document.getElementById('flymode-overlay').classList.remove('active');
+  if (brightnessFadeTimer) { clearTimeout(brightnessFadeTimer); brightnessFadeTimer = null; }
+}
+
+// Reveal the brightness control, then fade it out 1s after the last adjustment.
+// While dragging, the slider keeps firing input events which keep resetting this
+// timer - so it stays visible during use and fades 1s after you let go.
+let brightnessFadeTimer = null;
+function bumpBrightnessControl() {
+  const el = document.getElementById('flymode-brightness');
+  if (!el) return;
+  el.classList.remove('faded');
+  if (brightnessFadeTimer) clearTimeout(brightnessFadeTimer);
+  brightnessFadeTimer = setTimeout(() => {
+    const e = document.getElementById('flymode-brightness');
+    if (e) e.classList.add('faded');
+  }, 1000);
+}
+
+function setFlyModeBrightness(val) {
+  const inner = document.getElementById('flymode-inner');
+  if (inner) inner.style.filter = `brightness(${val}%)`;
+  bumpBrightnessControl();
+}
+
+// - GLOBAL SEARCH (My Teams page) -
+// Build a flat searchable index from all LEAGUES + TEAMS
+function buildSearchIndex() {
+  const index = [];
+  Object.entries(LEAGUES).forEach(([country, leagues]) => {
+    const flag = FLAG[country] || '🌐';
+    leagues.forEach(league => {
+      // add the league itself
+      index.push({
+        type: 'league',
+        country, flag,
+        name: league.n,
+        emoji: league.e,
+        meta: `${flag} ${country}`,
+        key: `${league.n}|${league.n}` // special -- selects league
+      });
+      // add every team in the league
+      (TEAMS[league.n] || []).forEach(team => {
+        index.push({
+          type: 'team',
+          country, flag,
+          name: team,
+          league: league.n,
+          emoji: league.e,
+          meta: `${sportImg(league.e,14)} ${league.n} &middot; ${flag} ${country}`,
+          favKey: `${team}|${league.n}`,
+          countryFlag: flag,
+          leagueEmoji: league.e
+        });
+      });
+    });
+  });
+  return index;
+}
+
+let searchIndex = null;
+
+function globalSearch(query) {
+  const clearBtn = document.getElementById('global-search-clear');
+  const resultsDiv = document.getElementById('global-search-results');
+
+  clearBtn.classList.toggle('visible', !!query);
+
+  if (!query.trim()) {
+    resultsDiv.classList.remove('visible');
+    resultsDiv.innerHTML = '';
+    return;
+  }
+
+  // build index lazily
+  if (!searchIndex) searchIndex = buildSearchIndex();
+
+  const q = query.toLowerCase();
+  const matches = searchIndex.filter(item =>
+    item.name.toLowerCase().includes(q) ||
+    item.country.toLowerCase().includes(q) ||
+    (item.league && item.league.toLowerCase().includes(q))
+  ).slice(0, 40); // cap at 40 results
+
+  if (!matches.length) {
+    resultsDiv.innerHTML = `<div class="gsr-empty">No results for "${query}"</div>`;
+    resultsDiv.classList.add('visible');
+    return;
+  }
+
+  renderSearchMatches(matches);
+}
+
+// Renders the search-results list. Shared by globalSearch (fresh search) and
+// gsrTap (so the list can be redrawn in place after adding a team).
+function renderSearchMatches(matches) {
+  const resultsDiv = document.getElementById('global-search-results');
+  resultsDiv.innerHTML = matches.map((item, idx) => {
+    const alreadyAdded = item.type === 'team' && favs.some(f => f.key === item.favKey);
+    const badge = item.type === 'team'
+      ? (alreadyAdded
+          ? `<span class="gsr-added">✓ Added</span>`
+          : `<span class="gsr-add">+ Add</span>`)
+      : `<span class="gsr-badge-icon">${sportImg(item.emoji,16)}</span>`;
+
+    return `<div class="gsr-item" data-idx="${idx}" onclick="gsrTap(this)">
+      <div class="gsr-flag">${item.flag}</div>
+      <div class="gsr-info">
+        <div class="gsr-team">${item.name}</div>
+        <div class="gsr-meta">${item.meta}</div>
+      </div>
+      ${badge}
+    </div>`;
+  }).join('');
+
+  // store matches for tap handler
+  resultsDiv._matches = matches;
+
+  resultsDiv.classList.add('visible');
+}
+
+function gsrTap(el) {
+  const resultsDiv = document.getElementById('global-search-results');
+  const matches = resultsDiv._matches || [];
+  const idx = parseInt(el.getAttribute('data-idx'));
+  const item = matches[idx];
+  if (!item || item.type !== 'team') return;
+  const already = favs.some(f => f.key === item.favKey);
+  if (already) return;
+  favs.push({
+    key: item.favKey,
+    name: item.name,
+    league: item.league,
+    leagueEmoji: item.leagueEmoji,
+    flag: item.countryFlag,
+    alert: false
+  });
+  saveFavs(); renderFavs(); renderHome(); renderResults();
+  // Item 4: clear the search box after adding, but keep the results list visible
+  // so several teams can be added in a row.
+  document.getElementById('global-search').value = '';
+  document.getElementById('global-search-clear').classList.remove('visible');
+  renderSearchMatches(matches);
+}
+
+function clearGlobalSearch() {
+  document.getElementById('global-search').value = '';
+  document.getElementById('global-search-clear').classList.remove('visible');
+  document.getElementById('global-search-results').classList.remove('visible');
+  document.getElementById('global-search-results').innerHTML = '';
+}
+
+// - ONBOARDING (first-run flow) -
+// Reuses the app's real state (favs/saveFavs), team dataset (searchIndex),
+// SUGGESTED list and renderers. Only the overlay navigation, a thin search
+// wrapper and the first-team suggestion engine are new. The done-flag is set
+// ONLY on finish, so an interrupted run shows again next launch.
+
+// RIVALRIES: lightweight, hand-curated rival pairs. Keys + values use the same
+// "Team|League" format as a follow key, so a rival resolves straight into the
+// existing search index. Rivalry is symmetric - we expand both directions at
+// build time, so you only list each pair once here. Extend freely later.
+const RIVALRIES_RAW = [
+  // AFL
+  ['Port Adelaide Power|AFL', 'Adelaide Crows|AFL'],
+  ['Collingwood Magpies|AFL', 'Carlton Blues|AFL'],
+  ['Essendon Bombers|AFL', 'Carlton Blues|AFL'],
+  ['Geelong Cats|AFL', 'Hawthorn Hawks|AFL'],
+  ['West Coast Eagles|AFL', 'Fremantle Dockers|AFL'],
+  ['Sydney Swans|AFL', 'Greater Western Sydney Giants|AFL'],
+  // Premier League
+  ['Liverpool|Premier League', 'Manchester United|Premier League'],
+  ['Arsenal|Premier League', 'Tottenham Hotspur|Premier League'],
+  ['Manchester City|Premier League', 'Manchester United|Premier League'],
+  ['Liverpool|Premier League', 'Everton|Premier League'],
+  ['Chelsea|Premier League', 'Tottenham Hotspur|Premier League'],
+  // La Liga
+  ['Real Madrid|La Liga', 'Barcelona|La Liga'],
+  ['Atletico Madrid|La Liga', 'Real Madrid|La Liga'],
+  ['Sevilla|La Liga', 'Real Betis|La Liga'],
+  // NBA
+  ['Los Angeles Lakers|NBA', 'Boston Celtics|NBA'],
+  ['Los Angeles Lakers|NBA', 'Los Angeles Clippers|NBA'],
+  ['Golden State Warriors|NBA', 'Cleveland Cavaliers|NBA'],
+  ['New York Knicks|NBA', 'Brooklyn Nets|NBA'],
+  // NFL
+  ['Dallas Cowboys|NFL', 'Philadelphia Eagles|NFL'],
+  ['Green Bay Packers|NFL', 'Chicago Bears|NFL'],
+  ['Pittsburgh Steelers|NFL', 'Baltimore Ravens|NFL'],
+  ['Kansas City Chiefs|NFL', 'Las Vegas Raiders|NFL'],
+  ['New England Patriots|NFL', 'New York Jets|NFL'],
+  // NRL
+  ['South Sydney Rabbitohs|NRL', 'Sydney Roosters|NRL'],
+  ['Brisbane Broncos|NRL', 'North Queensland Cowboys|NRL'],
+  ['Penrith Panthers|NRL', 'Melbourne Storm|NRL'],
+  ['Parramatta Eels|NRL', 'Canterbury Bulldogs|NRL'],
+];
+// Build a symmetric lookup: key -> [rival keys]
+const RIVALRIES = (function(){
+  const map = {};
+  function add(a, b){ (map[a] = map[a] || []).push(b); }
+  RIVALRIES_RAW.forEach(function(pair){ add(pair[0], pair[1]); add(pair[1], pair[0]); });
+  return map;
+})();
+
+// ---------------------------------------------------------------------------
+// FLYMATCH RATING ENGINE + RIVALRY MATCH DETECTION
+// A lightweight, deterministic pre-match watchability score (0.0 - 5.0) built
+// only from data already in the ESPN scoreboard payload (team records, ranks,
+// postseason notes) plus signals we already hold (rivalries, recent form).
+// No new network requests. Factors with no data drop out of the average, so a
+// match is never penalised for missing data. Thresholds are reasoned defaults
+// and need live-day tuning, like FlyState.
+// ---------------------------------------------------------------------------
+
+// Normalise a team name for fuzzy comparison: lowercase, strip accents and
+// punctuation, collapse spaces. Used for both rivalry and popularity matching.
+function normTeamName(s){
+  return (s || '')
+    .normalize('NFD').replace(/[\u0300-\u036f]/g, '') // drop accent marks
+    .toLowerCase()
+    .replace(/[^a-z0-9 ]+/g, ' ')
+    .replace(/\s+/g, ' ')
+    .trim();
+}
+
+// Pre-normalised rival name pairs (league portion of the key dropped), so we
+// can detect a rivalry from a live/upcoming match's team names without needing
+// the league label to match exactly (ESPN labels EPL "EPL", rivalry keys say
+// "Premier League"). Matching is contains-tolerant so "Tottenham" resolves to
+// "Tottenham Hotspur".
+const RIVAL_PAIRS = RIVALRIES_RAW.map(function(p){
+  return [ normTeamName(p[0].split('|')[0]), normTeamName(p[1].split('|')[0]) ];
+});
+function nameTouches(a, b){
+  if(!a || !b) return false;
+  return a === b || a.indexOf(b) !== -1 || b.indexOf(a) !== -1;
+}
+function isRivalryMatch(m){
+  const h = normTeamName(m.home), a = normTeamName(m.away);
+  if(!h || !a) return false;
+  for(let i = 0; i < RIVAL_PAIRS.length; i++){
+    const x = RIVAL_PAIRS[i][0], y = RIVAL_PAIRS[i][1];
+    if((nameTouches(h, x) && nameTouches(a, y)) ||
+       (nameTouches(h, y) && nameTouches(a, x))) return true;
+  }
+  return false;
+}
+
+// Major clubs / big draws for the Popularity factor (normalised names).
+const MAJOR_CLUBS = (function(){
+  const list = [
+    // Soccer
+    'real madrid','barcelona','manchester united','manchester city','liverpool',
+    'arsenal','chelsea','tottenham hotspur','bayern munich','paris saint germain',
+    'juventus','ac milan','inter milan','atletico madrid','borussia dortmund',
+    // NBA
+    'los angeles lakers','boston celtics','golden state warriors','chicago bulls',
+    'new york knicks','miami heat',
+    // NFL
+    'dallas cowboys','green bay packers','kansas city chiefs','new england patriots',
+    'pittsburgh steelers','san francisco 49ers',
+    // MLB
+    'new york yankees','los angeles dodgers','boston red sox',
+    // NHL
+    'montreal canadiens','toronto maple leafs','new york rangers',
+    // AFL / NRL marquees
+    'collingwood magpies','essendon bombers','carlton blues',
+    'brisbane broncos','melbourne storm','sydney roosters',
+    // v68 expansion - iconic, recognisable names so "same country" picks lean on
+    // household recognition. Full names only (matching is contains-tolerant, so
+    // single words like "rangers"/"kings" are avoided to prevent false hits).
+    'napoli','as roma','ajax','benfica','fc porto','celtic','olympique marseille','sevilla',
+    'aston villa','newcastle united','west ham united',
+    'los angeles clippers','milwaukee bucks','philadelphia 76ers','phoenix suns','dallas mavericks',
+    'philadelphia eagles','new york giants','las vegas raiders','buffalo bills','los angeles rams',
+    'chicago cubs','san francisco giants','st louis cardinals','atlanta braves','new york mets',
+    'boston bruins','chicago blackhawks','edmonton oilers','detroit red wings',
+    'richmond tigers','geelong cats','west coast eagles','hawthorn hawks','sydney swans','adelaide crows','port adelaide power','western bulldogs',
+    'penrith panthers','south sydney rabbitohs','parramatta eels','canterbury bulldogs',
+    'sydney fc','melbourne victory','melbourne city','perth scorchers','sydney sixers','melbourne united','sydney kings','adelaide 36ers',
+    'mumbai indians','chennai super kings'
+  ];
+  const set = {};
+  list.forEach(function(n){ set[n] = true; });
+  return set;
+})();
+function isMajorClub(name){
+  const n = normTeamName(name);
+  if(MAJOR_CLUBS[n]) return true;
+  // contains-tolerant: "Liverpool FC" still matches "liverpool"
+  for(const k in MAJOR_CLUBS){ if(nameTouches(n, k)) return true; }
+  return false;
+}
+
+// Tunable: weights for the normalised base factors, the rivalry bonus added on
+// top, and the FlyMatch threshold. Adjust on live match days.
+const FLYMATCH_WEIGHTS = { popularity:1.0, competitiveness:0.9, quality:0.8, form:0.7 };
+const FLYMATCH_RIVALRY_BONUS = 1.3;
+const FLYMATCH_IMPORTANCE_BONUS = 1.2;
+const FLYMATCH_THRESHOLD = 3.0;
+
+// Win fraction from a record string like "12-3" or "12-3-1" (W-L or W-L-D).
+function fmWinPct(rec){
+  if(!rec) return null;
+  const parts = String(rec).split(/[^0-9]+/).filter(function(x){ return x !== ''; }).map(Number);
+  if(parts.length < 2) return null;
+  const w = parts[0], l = parts[1], d = parts.length >= 3 ? parts[2] : 0;
+  const games = w + l + d;
+  if(games <= 0) return null;
+  return (w + d * 0.5) / games;
+}
+
+// Form score 0-1 from an array of 'w'|'d'|'l' (oldest first). Recent results
+// weighted more heavily.
+function fmFormScore(form){
+  const f = (form || []).filter(function(r){ return r==='w'||r==='d'||r==='l'; });
+  if(!f.length) return null;
+  let num = 0, den = 0;
+  f.forEach(function(r, i){
+    const wgt = i + 1; // newer entries (later index) weigh more
+    const val = r==='w' ? 1 : (r==='d' ? 0.5 : 0);
+    num += val * wgt; den += wgt;
+  });
+  return den ? num / den : null;
+}
+
+// Importance 0-1 from ESPN notes headlines + season type (3 = postseason).
+// Computed at parse time and stored on the match as m.fmImp.
+function fmImportanceScore(notes, seasonType){
+  let txt = '';
+  (notes || []).forEach(function(n){ txt += ' ' + (n && (n.headline || n.text) || ''); });
+  txt = txt.toLowerCase();
+  if(/grand final|\bfinal\b|championship|title game|super bowl|world series/.test(txt)) return 1.0;
+  if(/semifinal|semi-final|conference|elimination|playoff|knockout|quarterfinal|wildcard|wild card/.test(txt)) return 0.8;
+  if(seasonType === 3) return 0.6; // postseason but no descriptive note
+  return 0;
+}
+
+// Main engine: sets m.flyMatchRating (0-5), m.isFlyMatch (>= threshold) and
+// m.isRivalry. Reads only fields already on the match object.
+function computeFlyMatch(m){
+  m.isRivalry = isRivalryMatch(m);
+
+  let num = 0, den = 0;
+  function add(weight, score){ if(score === null || score === undefined) return; num += weight * score; den += weight; }
+
+  // Popularity (always evaluable)
+  const hMaj = isMajorClub(m.home), aMaj = isMajorClub(m.away);
+  add(FLYMATCH_WEIGHTS.popularity, (hMaj && aMaj) ? 1.0 : (hMaj || aMaj) ? 0.6 : 0.2);
+
+  // Team quality + competitiveness (only when records/ranks are present)
+  const hp = fmWinPct(m.homeRec), ap = fmWinPct(m.awayRec);
+  if(hp !== null || ap !== null){
+    const vals = [hp, ap].filter(function(x){ return x !== null; });
+    const avg = vals.reduce(function(s,x){ return s+x; }, 0) / vals.length;
+    const max = Math.max.apply(null, vals);
+    add(FLYMATCH_WEIGHTS.quality, 0.4 * avg + 0.6 * max);
+  }
+  if(hp !== null && ap !== null){
+    add(FLYMATCH_WEIGHTS.competitiveness, 1 - Math.abs(hp - ap));
+  } else if(m.homeRank && m.awayRank){
+    const gap = Math.abs(m.homeRank - m.awayRank);
+    add(FLYMATCH_WEIGHTS.competitiveness, Math.max(0, 1 - gap / 10));
+  }
+
+  // Recent form (present after the form fetch lands for upcoming cards)
+  const hf = fmFormScore(m.homeForm), af = fmFormScore(m.awayForm);
+  if(hf !== null || af !== null){
+    const vals = [hf, af].filter(function(x){ return x !== null; });
+    const avg = vals.reduce(function(s,x){ return s+x; }, 0) / vals.length;
+    const max = Math.max.apply(null, vals);
+    add(FLYMATCH_WEIGHTS.form, 0.5 * avg + 0.5 * max);
+  }
+
+  let rating = den > 0 ? (5 * num / den) : 0;
+  rating += (m.fmImp || 0) * FLYMATCH_IMPORTANCE_BONUS; // playoff/final lift, added not averaged
+  if(m.isRivalry) rating += FLYMATCH_RIVALRY_BONUS;
+  rating = Math.max(0, Math.min(5, rating));
+
+  m.flyMatchRating = Math.round(rating * 10) / 10; // one decimal
+  m.isFlyMatch = m.flyMatchRating >= FLYMATCH_THRESHOLD;
+  return m;
+}
+
+// HTML for the corner markers. Stamp first, rivalry skull second. Each uses the
+// PNG asset with a clean text fallback so it renders even before the asset is
+// added to the repo. Source is ASCII-only (skull glyph via HTML entity).
+function markerHTML(cls, src, alt, fb){
+  return '<span class="mk ' + cls + '">' +
+    '<img src="' + src + '" alt="' + alt + '" ' +
+    "onerror=\"this.style.display='none';this.nextSibling.style.display='inline-flex'\">" +
+    '<span class="mk-fb" style="display:none">' + fb + '</span></span>';
+}
+function buildMarkers(m, opts){
+  // Rivalry skull only. The FlyTime fly icon is now its own system (flyTimeIcon).
+  const withSkull = !opts || opts.skull !== false;
+  let out = '';
+  if(withSkull && m.isRivalry) out += markerHTML('fm-skull', 'rivalry_skull.png', 'Rivalry', '&#128128;');
+  return out;
+}
+
+// FlyTime traffic light: one coloured fly per card, in the fixed top-right slot.
+// status is 'live' | 'upcoming' | 'result'. Returns '' when the card has no FlyTime state.
+//   green  = live now and currently in FlyTime
+//   yellow = not started, predicted to reach FlyTime (FlyMatch rating)
+//   red    = finished, and reached FlyTime while it was live
+function flyTimeIcon(m, status){
+  if(status === 'live' && getMatchFly(m.id) === 'flytime')
+    return markerHTML('ft-fly ft-green', 'fly-green.png', 'In FlyTime', '&#129712;');
+  if(status === 'upcoming' && m.isFlyMatch)
+    return markerHTML('ft-fly ft-yellow', 'fly-yellow.png', 'FlyTime predicted', '&#129712;');
+  if(status === 'result' && matchHadFlyTime(m.id))
+    return markerHTML('ft-fly ft-red', 'fly-red.png', 'Reached FlyTime', '&#129712;');
+  return '';
+}
+
+// Resolve which country a league belongs to (reverse of the LEAGUES map),
+// built once and cached. Used so we can suggest "same country" teams.
+let LEAGUE_COUNTRY = null;
+function leagueCountry(leagueName){
+  if(!LEAGUE_COUNTRY){
+    LEAGUE_COUNTRY = {};
+    Object.entries(LEAGUES).forEach(function(entry){
+      const country = entry[0];
+      entry[1].forEach(function(lg){ LEAGUE_COUNTRY[lg.n] = country; });
+    });
+  }
+  return LEAGUE_COUNTRY[leagueName] || null;
+}
+
+// Map a league name to its sport emoji (from the LEAGUES dataset), so we can
+// group "same sport" suggestions. Cached on first use.
+let LEAGUE_SPORT = null;
+function leagueSport(leagueName){
+  if(!LEAGUE_SPORT){
+    LEAGUE_SPORT = {};
+    Object.values(LEAGUES).forEach(function(leagues){
+      leagues.forEach(function(lg){ LEAGUE_SPORT[lg.n] = lg.e; });
+    });
+  }
+  return LEAGUE_SPORT[leagueName] || null;
+}
+
+// Look up the searchIndex entry for a "Team|League" follow key.
+function indexEntryForKey(key){
+  if(!searchIndex) searchIndex = buildSearchIndex();
+  return searchIndex.find(function(it){ return it.type === 'team' && it.favKey === key; }) || null;
+}
+
+// THE SUGGESTION ENGINE.
+// Given the one team the user picked (a searchIndex entry), build a ranked,
+// de-duplicated list of up to 12 suggestions. Priority order:
+//   Tier 1: same country, different sport (3 slots) -- most likely to follow
+//   Tier 2: rivals and same league (2 slots each)
+//   Tier 3: same sport, different league (fills remainder)
+// Pure local logic - no network, no ML.
+// Per-team state/region. No state data exists in the team dataset yet, so this
+// returns '' for everyone and the engine uses the country/league fallback. When
+// a `state` field is added to teams later, return it here and the
+// 2-state / 2-country / 2-league split activates automatically.
+// Metro/city tags for cross-sport local discovery (onboarding Positions 1-2).
+// Only cities where ScoreFly carries teams in more than one league are listed -
+// everywhere else a team has no metro and the engine falls back to country.
+// Keyed by the exact team name string used in TEAMS.
+const METRO_TEAMS = {
+  // United States + Canada
+  'New York':['New York Knicks','Brooklyn Nets','New York Yankees','New York Mets','New York Rangers','New York Islanders','New Jersey Devils','New York Giants','New York Jets','New York City FC','New York Red Bulls'],
+  'Los Angeles':['Los Angeles Lakers','Los Angeles Clippers','Los Angeles Dodgers','Los Angeles Angels','Los Angeles Kings','Anaheim Ducks','Los Angeles Rams','Los Angeles Chargers','LA Galaxy','LAFC'],
+  'Chicago':['Chicago Bulls','Chicago Cubs','Chicago White Sox','Chicago Blackhawks','Chicago Bears','Chicago Fire'],
+  'Boston':['Boston Celtics','Boston Red Sox','Boston Bruins','New England Patriots','New England Revolution'],
+  'Philadelphia':['Philadelphia 76ers','Philadelphia Phillies','Philadelphia Flyers','Philadelphia Eagles','Philadelphia Union'],
+  'Miami':['Miami Heat','Miami Marlins','Florida Panthers','Miami Dolphins','Inter Miami'],
+  'Dallas':['Dallas Mavericks','Texas Rangers','Dallas Stars','Dallas Cowboys','FC Dallas'],
+  'Houston':['Houston Rockets','Houston Astros','Houston Texans','Houston Dynamo'],
+  'Denver':['Denver Nuggets','Colorado Rockies','Colorado Avalanche','Denver Broncos','Colorado Rapids'],
+  'Phoenix':['Phoenix Suns','Arizona Diamondbacks','Arizona Cardinals'],
+  'San Francisco Bay Area':['Golden State Warriors','San Francisco Giants','Oakland Athletics','San Jose Sharks','San Francisco 49ers','San Jose Earthquakes'],
+  'Seattle':['Seattle Mariners','Seattle Kraken','Seattle Seahawks','Seattle Sounders'],
+  'Washington':['Washington Wizards','Washington Nationals','Washington Capitals','Washington Commanders','D.C. United'],
+  'Atlanta':['Atlanta Hawks','Atlanta Braves','Atlanta Falcons','Atlanta United'],
+  'Detroit':['Detroit Pistons','Detroit Tigers','Detroit Red Wings','Detroit Lions'],
+  'Minneapolis':['Minnesota Timberwolves','Minnesota Twins','Minnesota Wild','Minnesota Vikings','Minnesota United'],
+  'Pittsburgh':['Pittsburgh Pirates','Pittsburgh Penguins','Pittsburgh Steelers'],
+  'Tampa Bay':['Tampa Bay Rays','Tampa Bay Lightning','Tampa Bay Buccaneers'],
+  'Nashville':['Nashville Predators','Tennessee Titans','Nashville SC'],
+  'St. Louis':['St. Louis Cardinals','St. Louis Blues','St. Louis City SC'],
+  'Cincinnati':['Cincinnati Reds','Cincinnati Bengals','FC Cincinnati'],
+  'Cleveland':['Cleveland Cavaliers','Cleveland Guardians','Cleveland Browns'],
+  'Kansas City':['Kansas City Royals','Kansas City Chiefs','Sporting Kansas City'],
+  'Charlotte':['Charlotte Hornets','Carolina Panthers','Charlotte FC'],
+  'Orlando':['Orlando Magic','Orlando City'],
+  'Indianapolis':['Indiana Pacers','Indianapolis Colts'],
+  'Milwaukee':['Milwaukee Bucks','Milwaukee Brewers'],
+  'Portland':['Portland Trail Blazers','Portland Timbers'],
+  'Salt Lake City':['Utah Jazz','Utah Hockey Club','Real Salt Lake'],
+  'Buffalo':['Buffalo Sabres','Buffalo Bills'],
+  'New Orleans':['New Orleans Pelicans','New Orleans Saints'],
+  'Baltimore':['Baltimore Orioles','Baltimore Ravens'],
+  'Las Vegas':['Vegas Golden Knights','Las Vegas Raiders'],
+  'Columbus':['Columbus Blue Jackets','Columbus Crew'],
+  'Toronto':['Toronto Raptors','Toronto Blue Jays','Toronto Maple Leafs','Toronto FC'],
+  'Vancouver':['Vancouver Canucks','Vancouver Whitecaps'],
+  // Australia
+  'Adelaide':['Adelaide Crows','Port Adelaide Power','Adelaide United','Adelaide 36ers','Adelaide Strikers'],
+  'Brisbane':['Brisbane Lions','Brisbane Broncos','Brisbane Roar','Brisbane Heat','Brisbane Bullets','Reds'],
+  'Melbourne':['Carlton Blues','Collingwood Magpies','Essendon Bombers','Hawthorn Hawks','Melbourne Demons','North Melbourne Kangaroos','Richmond Tigers','St Kilda Saints','Western Bulldogs','Melbourne Storm','Melbourne City','Melbourne Victory','Western United','Melbourne Renegades','Melbourne Stars','Melbourne United','South East Melbourne Phoenix'],
+  'Sydney':['Greater Western Sydney Giants','Sydney Swans','Canterbury Bulldogs','Cronulla Sharks','Manly Sea Eagles','Parramatta Eels','Penrith Panthers','South Sydney Rabbitohs','St George Illawarra Dragons','Sydney Roosters','Wests Tigers','Sydney FC','Western Sydney Wanderers','Sydney Sixers','Sydney Thunder','Sydney Kings','Waratahs'],
+  'Perth':['West Coast Eagles','Fremantle Dockers','Perth Glory','Perth Scorchers','Perth Wildcats','Force'],
+  'Gold Coast':['Gold Coast Suns','Gold Coast Titans'],
+  'Canberra':['Canberra Raiders','Brumbies'],
+  'Newcastle (AU)':['Newcastle Knights','Newcastle Jets'],
+  'Tasmania':['Hobart Hurricanes','Tasmania JackJumpers'],
+  // New Zealand
+  'Auckland':['New Zealand Warriors','New Zealand Breakers','Blues'],
+  'Wellington':['Wellington Phoenix','Hurricanes']
+};
+// Inverted lookup: exact team name -> metro. Built once.
+const TEAM_METRO = (function(){
+  var m = {};
+  for(var city in METRO_TEAMS){ METRO_TEAMS[city].forEach(function(t){ m[t] = city; }); }
+  return m;
+})();
+
+// Metro/city for a team item, by exact name (no fuzzy match, to avoid e.g.
+// "Blues" colliding with "Carlton Blues"). '' when the team has no metro tag.
+function teamState(item){
+  if(!item) return '';
+  if(item.state) return item.state;
+  return TEAM_METRO[item.name] || '';
+}
+
+// Normalised rival names for a team (league dropped), from the curated pairs.
+function rivalNamesOf(name){
+  var n = normTeamName(name), out = [];
+  for(var i = 0; i < RIVAL_PAIRS.length; i++){
+    var x = RIVAL_PAIRS[i][0], y = RIVAL_PAIRS[i][1];
+    if(nameTouches(n, x)) out.push(y);
+    else if(nameTouches(n, y)) out.push(x);
+  }
+  return out;
+}
+
+// Suggestion engine for the onboarding "you might also follow" chips, based on
+// the first team picked. Target is 6 chips:
+//   - if the pick has a known state: 2 same state, 2 same country, 2 same league
+//   - otherwise:                     4 same country, 2 same league
+// Backfills toward 6 if a small country/league comes up short.
+function onbGetSuggestions(picked){
+  if(!searchIndex) searchIndex = buildSearchIndex();
+  var TARGET = 6, out = [], seen = {};
+  seen[picked.favKey] = true;
+  favs.forEach(function(f){ seen[f.key] = true; });
+
+  function push(it, tag){
+    if(!it || seen[it.favKey] || out.length >= TARGET) return false;
+    seen[it.favKey] = true; out.push({ entry: it, tag: tag }); return true;
+  }
+  // Take up to n from cands, household names first; optionally one-per-league
+  // first. keepOrder preserves the caller's order (used for the metro list,
+  // which is authored by prominence) instead of re-sorting by major-club.
+  function take(cands, tag, n, distinctLeague, keepOrder){
+    cands = cands.filter(function(it){ return !seen[it.favKey]; });
+    if(!keepOrder) cands.sort(function(a, b){ return (isMajorClub(b.name) ? 1 : 0) - (isMajorClub(a.name) ? 1 : 0); });
+    var added = 0;
+    if(distinctLeague){
+      var usedL = {};
+      for(var i = 0; i < cands.length && added < n; i++){
+        if(!usedL[cands[i].league] && push(cands[i], tag)){ usedL[cands[i].league] = true; added++; }
+      }
+    }
+    for(var j = 0; j < cands.length && added < n; j++){ if(push(cands[j], tag)) added++; }
+  }
+
+  var teams    = searchIndex.filter(function(it){ return it.type === 'team'; });
+  var byName   = {}; teams.forEach(function(it){ if(!byName[it.name]) byName[it.name] = it; });
+  var pCountry = leagueCountry(picked.league);
+  var pState   = teamState(picked);
+  var pLeague  = picked.league;
+  var pSport   = picked.emoji;
+
+  // Positions 1-2: same metro, a DIFFERENT league than the anchor (cross-sport
+  // local discovery), spread across leagues. Walked in METRO_TEAMS order, which
+  // is authored most-iconic-first, so the marquee local team surfaces.
+  if(pState){
+    var localCands = (METRO_TEAMS[pState] || []).map(function(nm){ return byName[nm]; })
+      .filter(function(it){ return it && it.league !== pLeague; });
+    take(localCands, 'Local', 2, true, true);
+  }
+  // Positions 3-4 (or 1-4 when no metro): same country, a different sport than
+  // the anchor, biggest national names first.
+  take(teams.filter(function(it){ return leagueCountry(it.league) === pCountry && it.emoji !== pSport; }), 'Same country', pState ? 2 : 4, true);
+
+  // Positions 5-6: same league - rivals first, then the rest of the competition.
+  var rivals     = rivalNamesOf(picked.name);
+  var sameLeague = teams.filter(function(it){ return it.league === pLeague; });
+  var rivalFirst = sameLeague.filter(function(it){
+    var n = normTeamName(it.name);
+    return rivals.some(function(r){ return nameTouches(n, r); });
+  }).concat(sameLeague); // rivals lead; duplicates skipped via seen
+  take(rivalFirst, 'Same league', 2, false);
+
+  // Cascade backfill so we always return six: more same country, then league, then sport.
+  take(teams.filter(function(it){ return leagueCountry(it.league) === pCountry; }), 'Same country', TARGET, true);
+  take(sameLeague, 'Same league', TARGET, false);
+  take(teams.filter(function(it){ return it.emoji === pSport; }), 'Same sport', TARGET, true);
+
+  return out.slice(0, TARGET);
+}
+
+function startOnboarding(){
+  onbGoStep(1);
+  onbRenderExamples();
+  onbRefresh();
+  document.getElementById('onboard-overlay').classList.add('active');
+}
+
+function onbGoStep(n){
+  var steps=document.querySelectorAll('.onb-step');
+  for(var i=0;i<steps.length;i++){ steps[i].style.display='none'; }
+  var target=document.getElementById('onb-step-'+n);
+  if(target) target.style.display='flex';
+  if(n===2){ onbRefresh(); }
+}
+
+// Has the user picked their first team yet? Drives example-vs-suggestion view.
+let onbFirstPick = null;
+
+// Search inside onboarding. Mirrors globalSearch/gsrTap but targets the
+// onboarding elements so it never collides with the Teams-tab search.
+function onbSearch(query){
+  var clearBtn=document.getElementById('onb-search-clear');
+  var resultsDiv=document.getElementById('onb-results');
+  clearBtn.classList.toggle('visible', !!query);
+  if(!query.trim()){
+    resultsDiv.classList.remove('visible');
+    resultsDiv.innerHTML='';
+    return;
+  }
+  if(!searchIndex) searchIndex=buildSearchIndex();
+  var q=query.toLowerCase();
+  var matches=searchIndex.filter(function(item){
+    return item.name.toLowerCase().includes(q) ||
+      item.country.toLowerCase().includes(q) ||
+      (item.league && item.league.toLowerCase().includes(q));
+  }).slice(0,40);
+  if(!matches.length){
+    resultsDiv.innerHTML='<div class="gsr-empty">No results for "'+query+'"</div>';
+    resultsDiv.classList.add('visible');
+    return;
+  }
+  resultsDiv.innerHTML=matches.map(function(item,idx){
+    var alreadyAdded=item.type==='team' && favs.some(function(f){return f.key===item.favKey;});
+    var badge = item.type==='team'
+      ? (alreadyAdded ? '<span class="gsr-added">&#10003; Added</span>' : '<span class="gsr-add">+ Add</span>')
+      : '<span class="gsr-badge-icon">'+sportImg(item.emoji,16)+'</span>';
+    return '<div class="gsr-item" data-idx="'+idx+'" onclick="onbTap(this)">'+
+      '<div class="gsr-flag">'+item.flag+'</div>'+
+      '<div class="gsr-info"><div class="gsr-team">'+item.name+'</div>'+
+      '<div class="gsr-meta">'+item.meta+'</div></div>'+badge+'</div>';
+  }).join('');
+  resultsDiv._matches=matches;
+  resultsDiv.classList.add('visible');
+}
+
+function onbTap(el){
+  var resultsDiv=document.getElementById('onb-results');
+  var matches=resultsDiv._matches || [];
+  var item=matches[parseInt(el.getAttribute('data-idx'))];
+  if(!item || item.type!=='team') return;
+  if(favs.some(function(f){return f.key===item.favKey;})) return;
+  onbAddTeam(item);
+  onbSearch(document.getElementById('onb-search').value); // refresh to show Added
+}
+
+// Shared add path for onboarding (search result OR example pick). The first team
+// added becomes onbFirstPick and triggers the smart-suggestion view.
+function onbAddTeam(item){
+  if(favs.some(function(f){return f.key===item.favKey;})) return;
+  favs.push({key:item.favKey,name:item.name,league:item.league,leagueEmoji:item.leagueEmoji,flag:item.countryFlag||item.flag,alert:false});
+  saveFavs(); renderFavs(); renderHome(); renderResults();
+  if(!onbFirstPick){
+    onbFirstPick = item;
+    onbShowSuggestions(item);
+  } else {
+    onbRenderSuggestions(); // refresh chip states
+  }
+  onbRefresh();
+}
+
+function onbClearSearch(){
+  document.getElementById('onb-search').value='';
+  document.getElementById('onb-search-clear').classList.remove('visible');
+  var r=document.getElementById('onb-results');
+  r.classList.remove('visible'); r.innerHTML='';
+}
+
+// A short list of recognisable example teams shown BEFORE the first pick.
+// Reuses the existing SUGGESTED list (already in the search index).
+function onbRenderExamples(){
+  var wrap=document.getElementById('onb-examples');
+  if(!wrap) return;
+  wrap.innerHTML=SUGGESTED.slice(0,6).map(function(s){
+    var key=(s.name+'|'+s.league).replace(/'/g,"\\'");
+    return '<div class="onb-pick-card" onclick="onbPickExample(\''+key+'\')">'+
+      '<div class="onb-pick-flag">'+s.flag+'</div>'+
+      '<div class="onb-pick-info"><div class="onb-pick-name">'+s.name+'</div>'+
+      '<div class="onb-pick-league">'+s.league+'</div></div>'+
+      '</div>';
+  }).join('');
+}
+
+function onbPickExample(key){
+  if(!searchIndex) searchIndex=buildSearchIndex();
+  var item=searchIndex.find(function(it){ return it.type==='team' && it.favKey===key; });
+  // Fallback: build a minimal item from the SUGGESTED entry if not in index.
+  if(!item){
+    var parts=key.split('|');
+    var s=SUGGESTED.find(function(x){ return x.name===parts[0] && x.league===parts[1]; });
+    if(!s) return;
+    item={type:'team',name:s.name,league:s.league,emoji:s.leagueEmoji,favKey:key,countryFlag:s.flag,leagueEmoji:s.leagueEmoji,flag:s.flag,country:''};
+  }
+  onbAddTeam(item);
+}
+
+// Switch from the examples view to the smart-suggestion view after first pick.
+function onbShowSuggestions(picked){
+  var examples=document.getElementById('onb-examples-wrap');
+  var suggWrap=document.getElementById('onb-suggestions-wrap');
+  var h=document.getElementById('onb-step2-h');
+  var sub=document.getElementById('onb-step2-sub');
+  var lbl=document.getElementById('onb-sugg-label');
+  if(examples) examples.style.display='none';
+  if(suggWrap) suggWrap.style.display='block';
+  if(h) h.textContent='Following '+picked.name;
+  if(sub) sub.textContent='Tap any of these to follow them too, or continue.';
+  if(lbl) lbl.textContent='You might also follow';
+  onbRenderSuggestions();
+}
+
+// Render the suggestion chips for the current first pick.
+function onbRenderSuggestions(){
+  var grid=document.getElementById('onb-sugg-grid');
+  if(!grid || !onbFirstPick) return;
+  var suggestions=onbGetSuggestions(onbFirstPick);
+  if(!suggestions.length){
+    grid.innerHTML='<div class="section-empty" style="padding:4px 0">No suggestions - search above to add more.</div>';
+    return;
+  }
+  grid.innerHTML=suggestions.map(function(s,idx){
+    var it=s.entry;
+    var followed=favs.some(function(f){return f.key===it.favKey;});
+    return '<div class="onb-sugg-chip'+(followed?' followed':'')+'" data-idx="'+idx+'" onclick="onbSuggTap(this)">'+
+      '<span class="onb-sugg-chip-flag">'+(it.flag||it.countryFlag||'')+'</span>'+
+      '<span>'+it.name+'</span>'+
+      '<span class="onb-sugg-tag">'+s.tag+'</span>'+
+      '</div>';
+  }).join('');
+  grid._suggestions=suggestions;
+}
+
+function onbSuggTap(el){
+  var grid=document.getElementById('onb-sugg-grid');
+  var list=grid._suggestions || [];
+  var s=list[parseInt(el.getAttribute('data-idx'))];
+  if(!s) return;
+  var it=s.entry;
+  if(favs.some(function(f){return f.key===it.favKey;})) return; // already following
+  onbAddTeam(it);
+}
+
+// Update the count line and primary button label for step 2.
+function onbRefresh(){
+  var n=favs.length;
+  var count=document.getElementById('onb-count');
+  var btn=document.getElementById('onb-step2-btn');
+  if(count) count.textContent = n ? ('Following '+n+(n===1?' team':' teams')) : '';
+  if(btn) btn.textContent = n ? 'Continue' : 'Skip for now';
+}
+
+// Notifications step: request permission once. On grant, turn the bell on for
+// every team just followed so the opt-in actually does something.
+function onbEnableNotifs(){
+  if('Notification' in window && Notification.permission==='default'){
+    Notification.requestPermission().then(function(perm){
+      if(perm==='granted'){
+        favs.forEach(function(f){ f.alert=true; });
+        saveFavs(); renderFavs();
+      }
+      onbFinish();
+    });
+    return;
+  }
+  if('Notification' in window && Notification.permission==='granted'){
+    favs.forEach(function(f){ f.alert=true; });
+    saveFavs(); renderFavs();
+  }
+  onbFinish();
+}
+
+function onbFinish(){
+  localStorage.setItem('scorefly_onboarded','1');
+  document.getElementById('onboard-overlay').classList.remove('active');
+  // If they followed anyone, drop them straight into their own feed.
+  if(favs.length && typeof setFeedFilter==='function') setFeedFilter('my');
+  goTab('home',null,'nb-home');
+}
+
+setTimeout(()=>{
+  hydrateSnapshot();    // paint the last-known scores instantly, before any network
+  applyInitialFilter(); // returning users with teams land on My Teams
+  renderHome();
+  renderResults();
+  renderFavs();
+  renderFlyBuzz();
+  // Item 7: returning (onboarded) users resume on whichever tab they last used.
+  try{
+    var _navById = {home:'nb-home', results:'nb-results', settings:'nb-settings'};
+    var _lt = localStorage.getItem('scorefly_last_tab');
+    if(_lt && localStorage.getItem('scorefly_onboarded') && _navById[_lt]){
+      goTab(_lt, null, _navById[_lt]);
+    }
+  }catch(e){}
+  pollTick(); // first run does a full sweep, then self-schedules; corrects the snapshot
+  setInterval(()=>{ if(!document.hidden) renderFreshness(); }, 30000);
+  document.addEventListener('visibilitychange', () => {
+    if (!document.hidden && !isPolling) { clearTimeout(pollTimer); pollTick(); }
+  });
+  if(!localStorage.getItem('scorefly_onboarded')){
+    startOnboarding();
+  }
+},0);
+
+// Register service worker for PWA / offline support
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('sw.js')
+      .then(() => dlog('ScoreFly: SW registered'))
+      .catch(e => dlog('ScoreFly: SW failed', e));
+  });
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,2908 @@
+{
+  "matchup_ratings": [
+    {
+      "matchup": "Collingwood vs GWS GIANTS",
+      "games_played": 11,
+      "avg_margin": 28.0,
+      "avg_excitement": 57.73
+    },
+    {
+      "matchup": "Hawthorn vs Western Bulldogs",
+      "games_played": 12,
+      "avg_margin": 30.67,
+      "avg_excitement": 56.25
+    },
+    {
+      "matchup": "Brisbane Lions vs Sydney Swans",
+      "games_played": 11,
+      "avg_margin": 24.18,
+      "avg_excitement": 64.09
+    },
+    {
+      "matchup": "Geelong Cats vs Gold Coast SUNS",
+      "games_played": 11,
+      "avg_margin": 48.27,
+      "avg_excitement": 45.0
+    },
+    {
+      "matchup": "North Melbourne vs Richmond",
+      "games_played": 9,
+      "avg_margin": 29.44,
+      "avg_excitement": 60.0
+    },
+    {
+      "matchup": "Melbourne vs St Kilda",
+      "games_played": 11,
+      "avg_margin": 23.55,
+      "avg_excitement": 63.18
+    },
+    {
+      "matchup": "GWS GIANTS vs Sydney Swans",
+      "games_played": 21,
+      "avg_margin": 23.05,
+      "avg_excitement": 61.9
+    },
+    {
+      "matchup": "Collingwood vs Western Bulldogs",
+      "games_played": 9,
+      "avg_margin": 25.0,
+      "avg_excitement": 59.44
+    },
+    {
+      "matchup": "Adelaide Crows vs Port Adelaide",
+      "games_played": 18,
+      "avg_margin": 33.33,
+      "avg_excitement": 58.06
+    },
+    {
+      "matchup": "Carlton vs Hawthorn",
+      "games_played": 9,
+      "avg_margin": 31.56,
+      "avg_excitement": 58.89
+    },
+    {
+      "matchup": "Essendon vs Geelong Cats",
+      "games_played": 14,
+      "avg_margin": 39.64,
+      "avg_excitement": 50.36
+    },
+    {
+      "matchup": "Brisbane Lions vs Gold Coast SUNS",
+      "games_played": 18,
+      "avg_margin": 39.0,
+      "avg_excitement": 49.72
+    },
+    {
+      "matchup": "Fremantle vs West Coast Eagles",
+      "games_played": 19,
+      "avg_margin": 36.84,
+      "avg_excitement": 51.84
+    },
+    {
+      "matchup": "Carlton vs Richmond",
+      "games_played": 10,
+      "avg_margin": 19.4,
+      "avg_excitement": 63.0
+    },
+    {
+      "matchup": "Adelaide Crows vs Essendon",
+      "games_played": 8,
+      "avg_margin": 20.75,
+      "avg_excitement": 73.75
+    },
+    {
+      "matchup": "Brisbane Lions vs St Kilda",
+      "games_played": 11,
+      "avg_margin": 31.0,
+      "avg_excitement": 56.82
+    },
+    {
+      "matchup": "Fremantle vs Port Adelaide",
+      "games_played": 13,
+      "avg_margin": 24.69,
+      "avg_excitement": 59.62
+    },
+    {
+      "matchup": "Gold Coast SUNS vs North Melbourne",
+      "games_played": 13,
+      "avg_margin": 41.69,
+      "avg_excitement": 47.31
+    },
+    {
+      "matchup": "Collingwood vs Hawthorn",
+      "games_played": 10,
+      "avg_margin": 31.3,
+      "avg_excitement": 57.0
+    },
+    {
+      "matchup": "GWS GIANTS vs Western Bulldogs",
+      "games_played": 12,
+      "avg_margin": 33.75,
+      "avg_excitement": 57.08
+    },
+    {
+      "matchup": "Geelong Cats vs Melbourne",
+      "games_played": 12,
+      "avg_margin": 26.58,
+      "avg_excitement": 62.08
+    },
+    {
+      "matchup": "Sydney Swans vs West Coast Eagles",
+      "games_played": 9,
+      "avg_margin": 60.22,
+      "avg_excitement": 43.89
+    },
+    {
+      "matchup": "Adelaide Crows vs Richmond",
+      "games_played": 9,
+      "avg_margin": 35.0,
+      "avg_excitement": 52.22
+    },
+    {
+      "matchup": "North Melbourne vs St Kilda",
+      "games_played": 11,
+      "avg_margin": 25.36,
+      "avg_excitement": 58.64
+    },
+    {
+      "matchup": "West Coast Eagles vs Western Bulldogs",
+      "games_played": 9,
+      "avg_margin": 48.0,
+      "avg_excitement": 51.67
+    },
+    {
+      "matchup": "Port Adelaide vs Sydney Swans",
+      "games_played": 10,
+      "avg_margin": 30.6,
+      "avg_excitement": 58.5
+    },
+    {
+      "matchup": "Geelong Cats vs Hawthorn",
+      "games_played": 11,
+      "avg_margin": 29.0,
+      "avg_excitement": 61.36
+    },
+    {
+      "matchup": "Carlton vs Collingwood",
+      "games_played": 15,
+      "avg_margin": 18.2,
+      "avg_excitement": 66.67
+    },
+    {
+      "matchup": "Brisbane Lions vs Port Adelaide",
+      "games_played": 9,
+      "avg_margin": 36.44,
+      "avg_excitement": 57.78
+    },
+    {
+      "matchup": "Melbourne vs North Melbourne",
+      "games_played": 10,
+      "avg_margin": 39.6,
+      "avg_excitement": 54.0
+    },
+    {
+      "matchup": "Fremantle vs Gold Coast SUNS",
+      "games_played": 7,
+      "avg_margin": 19.29,
+      "avg_excitement": 62.86
+    },
+    {
+      "matchup": "Adelaide Crows vs St Kilda",
+      "games_played": 9,
+      "avg_margin": 33.0,
+      "avg_excitement": 53.33
+    },
+    {
+      "matchup": "Hawthorn vs Richmond",
+      "games_played": 14,
+      "avg_margin": 31.07,
+      "avg_excitement": 56.07
+    },
+    {
+      "matchup": "Essendon vs Western Bulldogs",
+      "games_played": 10,
+      "avg_margin": 51.5,
+      "avg_excitement": 43.0
+    },
+    {
+      "matchup": "Geelong Cats vs West Coast Eagles",
+      "games_played": 11,
+      "avg_margin": 47.18,
+      "avg_excitement": 48.64
+    },
+    {
+      "matchup": "Adelaide Crows vs Collingwood",
+      "games_played": 11,
+      "avg_margin": 21.18,
+      "avg_excitement": 65.0
+    },
+    {
+      "matchup": "Fremantle vs GWS GIANTS",
+      "games_played": 9,
+      "avg_margin": 32.33,
+      "avg_excitement": 54.44
+    },
+    {
+      "matchup": "Brisbane Lions vs Richmond",
+      "games_played": 10,
+      "avg_margin": 48.6,
+      "avg_excitement": 49.0
+    },
+    {
+      "matchup": "Sydney Swans vs Western Bulldogs",
+      "games_played": 9,
+      "avg_margin": 20.89,
+      "avg_excitement": 64.44
+    },
+    {
+      "matchup": "Carlton vs North Melbourne",
+      "games_played": 9,
+      "avg_margin": 42.33,
+      "avg_excitement": 56.67
+    },
+    {
+      "matchup": "Gold Coast SUNS vs West Coast Eagles",
+      "games_played": 9,
+      "avg_margin": 44.78,
+      "avg_excitement": 49.44
+    },
+    {
+      "matchup": "Essendon vs Port Adelaide",
+      "games_played": 10,
+      "avg_margin": 37.5,
+      "avg_excitement": 56.0
+    },
+    {
+      "matchup": "Hawthorn vs Melbourne",
+      "games_played": 12,
+      "avg_margin": 36.42,
+      "avg_excitement": 48.75
+    },
+    {
+      "matchup": "Geelong Cats vs St Kilda",
+      "games_played": 11,
+      "avg_margin": 26.64,
+      "avg_excitement": 58.18
+    },
+    {
+      "matchup": "Adelaide Crows vs Sydney Swans",
+      "games_played": 8,
+      "avg_margin": 22.38,
+      "avg_excitement": 63.75
+    },
+    {
+      "matchup": "GWS GIANTS vs St Kilda",
+      "games_played": 11,
+      "avg_margin": 20.18,
+      "avg_excitement": 65.0
+    },
+    {
+      "matchup": "Carlton vs West Coast Eagles",
+      "games_played": 10,
+      "avg_margin": 49.0,
+      "avg_excitement": 45.0
+    },
+    {
+      "matchup": "Geelong Cats vs Port Adelaide",
+      "games_played": 13,
+      "avg_margin": 40.0,
+      "avg_excitement": 55.77
+    },
+    {
+      "matchup": "Fremantle vs Western Bulldogs",
+      "games_played": 11,
+      "avg_margin": 26.73,
+      "avg_excitement": 54.55
+    },
+    {
+      "matchup": "Hawthorn vs North Melbourne",
+      "games_played": 13,
+      "avg_margin": 38.69,
+      "avg_excitement": 54.23
+    },
+    {
+      "matchup": "Melbourne vs Richmond",
+      "games_played": 12,
+      "avg_margin": 31.67,
+      "avg_excitement": 52.92
+    },
+    {
+      "matchup": "Collingwood vs Essendon",
+      "games_played": 14,
+      "avg_margin": 22.0,
+      "avg_excitement": 62.5
+    },
+    {
+      "matchup": "Carlton vs Western Bulldogs",
+      "games_played": 10,
+      "avg_margin": 20.7,
+      "avg_excitement": 64.5
+    },
+    {
+      "matchup": "Geelong Cats vs Sydney Swans",
+      "games_played": 10,
+      "avg_margin": 33.6,
+      "avg_excitement": 58.0
+    },
+    {
+      "matchup": "North Melbourne vs Port Adelaide",
+      "games_played": 10,
+      "avg_margin": 45.1,
+      "avg_excitement": 50.0
+    },
+    {
+      "matchup": "Brisbane Lions vs GWS GIANTS",
+      "games_played": 12,
+      "avg_margin": 25.92,
+      "avg_excitement": 61.67
+    },
+    {
+      "matchup": "Hawthorn vs St Kilda",
+      "games_played": 11,
+      "avg_margin": 24.73,
+      "avg_excitement": 64.09
+    },
+    {
+      "matchup": "Adelaide Crows vs Gold Coast SUNS",
+      "games_played": 10,
+      "avg_margin": 33.0,
+      "avg_excitement": 55.5
+    },
+    {
+      "matchup": "Essendon vs Melbourne",
+      "games_played": 9,
+      "avg_margin": 21.78,
+      "avg_excitement": 64.44
+    },
+    {
+      "matchup": "Collingwood vs Richmond",
+      "games_played": 11,
+      "avg_margin": 27.73,
+      "avg_excitement": 55.91
+    },
+    {
+      "matchup": "GWS GIANTS vs Geelong Cats",
+      "games_played": 10,
+      "avg_margin": 24.5,
+      "avg_excitement": 62.0
+    },
+    {
+      "matchup": "Gold Coast SUNS vs Western Bulldogs",
+      "games_played": 10,
+      "avg_margin": 18.1,
+      "avg_excitement": 70.5
+    },
+    {
+      "matchup": "Essendon vs Hawthorn",
+      "games_played": 10,
+      "avg_margin": 21.2,
+      "avg_excitement": 66.5
+    },
+    {
+      "matchup": "Port Adelaide vs West Coast Eagles",
+      "games_played": 9,
+      "avg_margin": 41.44,
+      "avg_excitement": 43.89
+    },
+    {
+      "matchup": "North Melbourne vs Sydney Swans",
+      "games_played": 13,
+      "avg_margin": 23.62,
+      "avg_excitement": 66.54
+    },
+    {
+      "matchup": "Adelaide Crows vs Carlton",
+      "games_played": 9,
+      "avg_margin": 42.22,
+      "avg_excitement": 53.89
+    },
+    {
+      "matchup": "Fremantle vs Richmond",
+      "games_played": 8,
+      "avg_margin": 32.88,
+      "avg_excitement": 53.12
+    },
+    {
+      "matchup": "Brisbane Lions vs Collingwood",
+      "games_played": 14,
+      "avg_margin": 27.64,
+      "avg_excitement": 62.86
+    },
+    {
+      "matchup": "Hawthorn vs Sydney Swans",
+      "games_played": 9,
+      "avg_margin": 33.22,
+      "avg_excitement": 53.33
+    },
+    {
+      "matchup": "GWS GIANTS vs West Coast Eagles",
+      "games_played": 10,
+      "avg_margin": 39.2,
+      "avg_excitement": 51.5
+    },
+    {
+      "matchup": "Carlton vs Essendon",
+      "games_played": 9,
+      "avg_margin": 22.11,
+      "avg_excitement": 59.44
+    },
+    {
+      "matchup": "Gold Coast SUNS vs Melbourne",
+      "games_played": 10,
+      "avg_margin": 43.0,
+      "avg_excitement": 55.5
+    },
+    {
+      "matchup": "Brisbane Lions vs Western Bulldogs",
+      "games_played": 11,
+      "avg_margin": 16.91,
+      "avg_excitement": 66.36
+    },
+    {
+      "matchup": "Fremantle vs St Kilda",
+      "games_played": 11,
+      "avg_margin": 23.45,
+      "avg_excitement": 61.82
+    },
+    {
+      "matchup": "Collingwood vs Geelong Cats",
+      "games_played": 11,
+      "avg_margin": 12.91,
+      "avg_excitement": 73.64
+    },
+    {
+      "matchup": "Adelaide Crows vs Western Bulldogs",
+      "games_played": 7,
+      "avg_margin": 32.0,
+      "avg_excitement": 58.57
+    },
+    {
+      "matchup": "GWS GIANTS vs North Melbourne",
+      "games_played": 8,
+      "avg_margin": 32.0,
+      "avg_excitement": 56.25
+    },
+    {
+      "matchup": "Gold Coast SUNS vs Port Adelaide",
+      "games_played": 8,
+      "avg_margin": 28.5,
+      "avg_excitement": 55.62
+    },
+    {
+      "matchup": "Fremantle vs Sydney Swans",
+      "games_played": 11,
+      "avg_margin": 23.45,
+      "avg_excitement": 62.27
+    },
+    {
+      "matchup": "Collingwood vs St Kilda",
+      "games_played": 9,
+      "avg_margin": 22.78,
+      "avg_excitement": 61.67
+    },
+    {
+      "matchup": "Carlton vs Melbourne",
+      "games_played": 10,
+      "avg_margin": 17.8,
+      "avg_excitement": 74.0
+    },
+    {
+      "matchup": "Brisbane Lions vs Hawthorn",
+      "games_played": 11,
+      "avg_margin": 26.18,
+      "avg_excitement": 58.18
+    },
+    {
+      "matchup": "Richmond vs West Coast Eagles",
+      "games_played": 11,
+      "avg_margin": 36.55,
+      "avg_excitement": 57.73
+    },
+    {
+      "matchup": "Richmond vs St Kilda",
+      "games_played": 12,
+      "avg_margin": 38.67,
+      "avg_excitement": 51.25
+    },
+    {
+      "matchup": "Essendon vs GWS GIANTS",
+      "games_played": 11,
+      "avg_margin": 33.27,
+      "avg_excitement": 58.18
+    },
+    {
+      "matchup": "Carlton vs Geelong Cats",
+      "games_played": 9,
+      "avg_margin": 28.44,
+      "avg_excitement": 57.78
+    },
+    {
+      "matchup": "Hawthorn vs West Coast Eagles",
+      "games_played": 8,
+      "avg_margin": 40.0,
+      "avg_excitement": 51.88
+    },
+    {
+      "matchup": "Adelaide Crows vs Melbourne",
+      "games_played": 10,
+      "avg_margin": 26.0,
+      "avg_excitement": 61.0
+    },
+    {
+      "matchup": "Fremantle vs North Melbourne",
+      "games_played": 8,
+      "avg_margin": 42.0,
+      "avg_excitement": 48.75
+    },
+    {
+      "matchup": "Carlton vs Sydney Swans",
+      "games_played": 10,
+      "avg_margin": 23.4,
+      "avg_excitement": 60.0
+    },
+    {
+      "matchup": "Melbourne vs Western Bulldogs",
+      "games_played": 13,
+      "avg_margin": 36.62,
+      "avg_excitement": 51.54
+    },
+    {
+      "matchup": "Hawthorn vs Port Adelaide",
+      "games_played": 10,
+      "avg_margin": 26.9,
+      "avg_excitement": 62.0
+    },
+    {
+      "matchup": "Essendon vs Richmond",
+      "games_played": 11,
+      "avg_margin": 26.91,
+      "avg_excitement": 61.36
+    },
+    {
+      "matchup": "St Kilda vs West Coast Eagles",
+      "games_played": 10,
+      "avg_margin": 22.4,
+      "avg_excitement": 61.5
+    },
+    {
+      "matchup": "Brisbane Lions vs North Melbourne",
+      "games_played": 8,
+      "avg_margin": 41.75,
+      "avg_excitement": 60.62
+    },
+    {
+      "matchup": "Collingwood vs Fremantle",
+      "games_played": 12,
+      "avg_margin": 20.17,
+      "avg_excitement": 66.67
+    },
+    {
+      "matchup": "Adelaide Crows vs GWS GIANTS",
+      "games_played": 10,
+      "avg_margin": 21.2,
+      "avg_excitement": 60.0
+    },
+    {
+      "matchup": "Port Adelaide vs Richmond",
+      "games_played": 10,
+      "avg_margin": 25.7,
+      "avg_excitement": 63.0
+    },
+    {
+      "matchup": "Geelong Cats vs North Melbourne",
+      "games_played": 11,
+      "avg_margin": 57.18,
+      "avg_excitement": 41.36
+    },
+    {
+      "matchup": "GWS GIANTS vs Gold Coast SUNS",
+      "games_played": 12,
+      "avg_margin": 42.5,
+      "avg_excitement": 50.42
+    },
+    {
+      "matchup": "St Kilda vs Sydney Swans",
+      "games_played": 10,
+      "avg_margin": 29.3,
+      "avg_excitement": 55.5
+    },
+    {
+      "matchup": "Brisbane Lions vs Essendon",
+      "games_played": 8,
+      "avg_margin": 29.75,
+      "avg_excitement": 53.75
+    },
+    {
+      "matchup": "Adelaide Crows vs Fremantle",
+      "games_played": 8,
+      "avg_margin": 18.12,
+      "avg_excitement": 66.88
+    },
+    {
+      "matchup": "Collingwood vs Melbourne",
+      "games_played": 12,
+      "avg_margin": 24.25,
+      "avg_excitement": 61.25
+    },
+    {
+      "matchup": "Port Adelaide vs Western Bulldogs",
+      "games_played": 13,
+      "avg_margin": 33.23,
+      "avg_excitement": 53.46
+    },
+    {
+      "matchup": "Carlton vs Fremantle",
+      "games_played": 10,
+      "avg_margin": 30.7,
+      "avg_excitement": 52.5
+    },
+    {
+      "matchup": "Gold Coast SUNS vs St Kilda",
+      "games_played": 10,
+      "avg_margin": 14.7,
+      "avg_excitement": 69.5
+    },
+    {
+      "matchup": "Adelaide Crows vs Hawthorn",
+      "games_played": 12,
+      "avg_margin": 27.0,
+      "avg_excitement": 61.25
+    },
+    {
+      "matchup": "Geelong Cats vs Richmond",
+      "games_played": 12,
+      "avg_margin": 33.5,
+      "avg_excitement": 53.75
+    },
+    {
+      "matchup": "Essendon vs West Coast Eagles",
+      "games_played": 11,
+      "avg_margin": 22.55,
+      "avg_excitement": 62.73
+    },
+    {
+      "matchup": "Melbourne vs Port Adelaide",
+      "games_played": 10,
+      "avg_margin": 20.2,
+      "avg_excitement": 62.5
+    },
+    {
+      "matchup": "Gold Coast SUNS vs Hawthorn",
+      "games_played": 8,
+      "avg_margin": 42.88,
+      "avg_excitement": 46.88
+    },
+    {
+      "matchup": "North Melbourne vs Western Bulldogs",
+      "games_played": 13,
+      "avg_margin": 43.46,
+      "avg_excitement": 55.38
+    },
+    {
+      "matchup": "Richmond vs Sydney Swans",
+      "games_played": 8,
+      "avg_margin": 26.0,
+      "avg_excitement": 58.12
+    },
+    {
+      "matchup": "Geelong Cats vs Western Bulldogs",
+      "games_played": 11,
+      "avg_margin": 19.55,
+      "avg_excitement": 68.18
+    },
+    {
+      "matchup": "Essendon vs North Melbourne",
+      "games_played": 9,
+      "avg_margin": 26.33,
+      "avg_excitement": 62.22
+    },
+    {
+      "matchup": "Brisbane Lions vs Fremantle",
+      "games_played": 10,
+      "avg_margin": 30.1,
+      "avg_excitement": 58.5
+    },
+    {
+      "matchup": "Brisbane Lions vs Carlton",
+      "games_played": 11,
+      "avg_margin": 27.36,
+      "avg_excitement": 55.0
+    },
+    {
+      "matchup": "Port Adelaide vs St Kilda",
+      "games_played": 9,
+      "avg_margin": 31.11,
+      "avg_excitement": 52.78
+    },
+    {
+      "matchup": "Fremantle vs Melbourne",
+      "games_played": 11,
+      "avg_margin": 33.27,
+      "avg_excitement": 55.45
+    },
+    {
+      "matchup": "Adelaide Crows vs Geelong Cats",
+      "games_played": 10,
+      "avg_margin": 21.7,
+      "avg_excitement": 61.5
+    },
+    {
+      "matchup": "Carlton vs St Kilda",
+      "games_played": 11,
+      "avg_margin": 21.36,
+      "avg_excitement": 61.36
+    },
+    {
+      "matchup": "GWS GIANTS vs Richmond",
+      "games_played": 10,
+      "avg_margin": 27.5,
+      "avg_excitement": 66.0
+    },
+    {
+      "matchup": "Essendon vs Gold Coast SUNS",
+      "games_played": 9,
+      "avg_margin": 37.33,
+      "avg_excitement": 53.33
+    },
+    {
+      "matchup": "Collingwood vs West Coast Eagles",
+      "games_played": 10,
+      "avg_margin": 34.2,
+      "avg_excitement": 49.0
+    },
+    {
+      "matchup": "Collingwood vs North Melbourne",
+      "games_played": 7,
+      "avg_margin": 28.86,
+      "avg_excitement": 57.86
+    },
+    {
+      "matchup": "Gold Coast SUNS vs Sydney Swans",
+      "games_played": 11,
+      "avg_margin": 40.45,
+      "avg_excitement": 47.27
+    },
+    {
+      "matchup": "Essendon vs Fremantle",
+      "games_played": 9,
+      "avg_margin": 22.56,
+      "avg_excitement": 60.0
+    },
+    {
+      "matchup": "Adelaide Crows vs Brisbane Lions",
+      "games_played": 10,
+      "avg_margin": 17.0,
+      "avg_excitement": 74.5
+    },
+    {
+      "matchup": "GWS GIANTS vs Port Adelaide",
+      "games_played": 8,
+      "avg_margin": 29.12,
+      "avg_excitement": 55.0
+    },
+    {
+      "matchup": "Essendon vs Sydney Swans",
+      "games_played": 12,
+      "avg_margin": 18.67,
+      "avg_excitement": 70.42
+    },
+    {
+      "matchup": "Brisbane Lions vs Geelong Cats",
+      "games_played": 15,
+      "avg_margin": 28.27,
+      "avg_excitement": 57.33
+    },
+    {
+      "matchup": "Carlton vs Gold Coast SUNS",
+      "games_played": 10,
+      "avg_margin": 24.1,
+      "avg_excitement": 61.0
+    },
+    {
+      "matchup": "North Melbourne vs West Coast Eagles",
+      "games_played": 9,
+      "avg_margin": 11.22,
+      "avg_excitement": 74.44
+    },
+    {
+      "matchup": "Fremantle vs Hawthorn",
+      "games_played": 9,
+      "avg_margin": 33.0,
+      "avg_excitement": 48.33
+    },
+    {
+      "matchup": "Collingwood vs Sydney Swans",
+      "games_played": 10,
+      "avg_margin": 17.2,
+      "avg_excitement": 67.5
+    },
+    {
+      "matchup": "St Kilda vs Western Bulldogs",
+      "games_played": 9,
+      "avg_margin": 53.44,
+      "avg_excitement": 41.67
+    },
+    {
+      "matchup": "Carlton vs GWS GIANTS",
+      "games_played": 12,
+      "avg_margin": 35.33,
+      "avg_excitement": 59.58
+    },
+    {
+      "matchup": "Essendon vs St Kilda",
+      "games_played": 11,
+      "avg_margin": 29.27,
+      "avg_excitement": 58.64
+    },
+    {
+      "matchup": "Gold Coast SUNS vs Richmond",
+      "games_played": 7,
+      "avg_margin": 37.0,
+      "avg_excitement": 54.29
+    },
+    {
+      "matchup": "Melbourne vs Sydney Swans",
+      "games_played": 11,
+      "avg_margin": 26.73,
+      "avg_excitement": 59.09
+    },
+    {
+      "matchup": "Collingwood vs Port Adelaide",
+      "games_played": 10,
+      "avg_margin": 34.7,
+      "avg_excitement": 56.5
+    },
+    {
+      "matchup": "Fremantle vs Geelong Cats",
+      "games_played": 8,
+      "avg_margin": 45.12,
+      "avg_excitement": 55.0
+    },
+    {
+      "matchup": "Melbourne vs West Coast Eagles",
+      "games_played": 11,
+      "avg_margin": 43.27,
+      "avg_excitement": 47.27
+    },
+    {
+      "matchup": "Adelaide Crows vs North Melbourne",
+      "games_played": 11,
+      "avg_margin": 39.36,
+      "avg_excitement": 49.09
+    },
+    {
+      "matchup": "Richmond vs Western Bulldogs",
+      "games_played": 8,
+      "avg_margin": 44.88,
+      "avg_excitement": 50.62
+    },
+    {
+      "matchup": "Brisbane Lions vs West Coast Eagles",
+      "games_played": 8,
+      "avg_margin": 40.75,
+      "avg_excitement": 46.88
+    },
+    {
+      "matchup": "GWS GIANTS vs Melbourne",
+      "games_played": 9,
+      "avg_margin": 21.44,
+      "avg_excitement": 63.89
+    },
+    {
+      "matchup": "Brisbane Lions vs Melbourne",
+      "games_played": 12,
+      "avg_margin": 20.92,
+      "avg_excitement": 66.67
+    },
+    {
+      "matchup": "Carlton vs Port Adelaide",
+      "games_played": 10,
+      "avg_margin": 34.9,
+      "avg_excitement": 56.0
+    },
+    {
+      "matchup": "GWS GIANTS vs Hawthorn",
+      "games_played": 11,
+      "avg_margin": 19.73,
+      "avg_excitement": 65.0
+    },
+    {
+      "matchup": "Adelaide Crows vs West Coast Eagles",
+      "games_played": 14,
+      "avg_margin": 45.79,
+      "avg_excitement": 50.0
+    },
+    {
+      "matchup": "Collingwood vs Gold Coast SUNS",
+      "games_played": 8,
+      "avg_margin": 30.0,
+      "avg_excitement": 60.62
+    }
+  ],
+  "matchup_close_rates": [
+    {
+      "matchup": "GWS GIANTS vs Collingwood",
+      "games": 5,
+      "close_games": 1,
+      "close_rate": 20.0
+    },
+    {
+      "matchup": "Western Bulldogs vs Hawthorn",
+      "games": 7,
+      "close_games": 1,
+      "close_rate": 14.285714285714285
+    },
+    {
+      "matchup": "Brisbane Lions vs Sydney Swans",
+      "games": 7,
+      "close_games": 2,
+      "close_rate": 28.57142857142857
+    },
+    {
+      "matchup": "Gold Coast SUNS vs Geelong Cats",
+      "games": 7,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Richmond vs North Melbourne",
+      "games": 5,
+      "close_games": 1,
+      "close_rate": 20.0
+    },
+    {
+      "matchup": "Melbourne vs St Kilda",
+      "games": 7,
+      "close_games": 2,
+      "close_rate": 28.57142857142857
+    },
+    {
+      "matchup": "Sydney Swans vs GWS GIANTS",
+      "games": 12,
+      "close_games": 5,
+      "close_rate": 41.66666666666667
+    },
+    {
+      "matchup": "Collingwood vs Western Bulldogs",
+      "games": 5,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Port Adelaide vs Adelaide Crows",
+      "games": 9,
+      "close_games": 2,
+      "close_rate": 22.22222222222222
+    },
+    {
+      "matchup": "Hawthorn vs Carlton",
+      "games": 4,
+      "close_games": 2,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Geelong Cats vs Essendon",
+      "games": 12,
+      "close_games": 4,
+      "close_rate": 33.33333333333333
+    },
+    {
+      "matchup": "Gold Coast SUNS vs Brisbane Lions",
+      "games": 9,
+      "close_games": 2,
+      "close_rate": 22.22222222222222
+    },
+    {
+      "matchup": "Fremantle vs West Coast Eagles",
+      "games": 10,
+      "close_games": 1,
+      "close_rate": 10.0
+    },
+    {
+      "matchup": "Richmond vs Carlton",
+      "games": 7,
+      "close_games": 1,
+      "close_rate": 14.285714285714285
+    },
+    {
+      "matchup": "Essendon vs Adelaide Crows",
+      "games": 6,
+      "close_games": 3,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "St Kilda vs Brisbane Lions",
+      "games": 6,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Port Adelaide vs Fremantle",
+      "games": 6,
+      "close_games": 2,
+      "close_rate": 33.33333333333333
+    },
+    {
+      "matchup": "Gold Coast SUNS vs North Melbourne",
+      "games": 7,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Hawthorn vs Collingwood",
+      "games": 7,
+      "close_games": 2,
+      "close_rate": 28.57142857142857
+    },
+    {
+      "matchup": "GWS GIANTS vs Western Bulldogs",
+      "games": 8,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Melbourne vs Geelong Cats",
+      "games": 6,
+      "close_games": 3,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "West Coast Eagles vs Sydney Swans",
+      "games": 5,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Adelaide Crows vs Richmond",
+      "games": 6,
+      "close_games": 1,
+      "close_rate": 16.666666666666664
+    },
+    {
+      "matchup": "North Melbourne vs St Kilda",
+      "games": 4,
+      "close_games": 1,
+      "close_rate": 25.0
+    },
+    {
+      "matchup": "Western Bulldogs vs West Coast Eagles",
+      "games": 5,
+      "close_games": 3,
+      "close_rate": 60.0
+    },
+    {
+      "matchup": "Sydney Swans vs Port Adelaide",
+      "games": 4,
+      "close_games": 2,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Geelong Cats vs Hawthorn",
+      "games": 7,
+      "close_games": 3,
+      "close_rate": 42.857142857142854
+    },
+    {
+      "matchup": "Carlton vs Collingwood",
+      "games": 8,
+      "close_games": 2,
+      "close_rate": 25.0
+    },
+    {
+      "matchup": "Port Adelaide vs Brisbane Lions",
+      "games": 3,
+      "close_games": 1,
+      "close_rate": 33.33333333333333
+    },
+    {
+      "matchup": "Melbourne vs North Melbourne",
+      "games": 5,
+      "close_games": 1,
+      "close_rate": 20.0
+    },
+    {
+      "matchup": "Gold Coast SUNS vs Fremantle",
+      "games": 3,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "St Kilda vs Adelaide Crows",
+      "games": 3,
+      "close_games": 1,
+      "close_rate": 33.33333333333333
+    },
+    {
+      "matchup": "Richmond vs Hawthorn",
+      "games": 8,
+      "close_games": 2,
+      "close_rate": 25.0
+    },
+    {
+      "matchup": "Western Bulldogs vs Essendon",
+      "games": 6,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "West Coast Eagles vs Geelong Cats",
+      "games": 5,
+      "close_games": 1,
+      "close_rate": 20.0
+    },
+    {
+      "matchup": "Adelaide Crows vs Collingwood",
+      "games": 7,
+      "close_games": 3,
+      "close_rate": 42.857142857142854
+    },
+    {
+      "matchup": "GWS GIANTS vs Fremantle",
+      "games": 6,
+      "close_games": 1,
+      "close_rate": 16.666666666666664
+    },
+    {
+      "matchup": "Richmond vs Brisbane Lions",
+      "games": 5,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Western Bulldogs vs Sydney Swans",
+      "games": 4,
+      "close_games": 1,
+      "close_rate": 25.0
+    },
+    {
+      "matchup": "North Melbourne vs Carlton",
+      "games": 5,
+      "close_games": 1,
+      "close_rate": 20.0
+    },
+    {
+      "matchup": "West Coast Eagles vs Gold Coast SUNS",
+      "games": 7,
+      "close_games": 1,
+      "close_rate": 14.285714285714285
+    },
+    {
+      "matchup": "Essendon vs Port Adelaide",
+      "games": 5,
+      "close_games": 2,
+      "close_rate": 40.0
+    },
+    {
+      "matchup": "Hawthorn vs Melbourne",
+      "games": 8,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Geelong Cats vs St Kilda",
+      "games": 5,
+      "close_games": 1,
+      "close_rate": 20.0
+    },
+    {
+      "matchup": "Sydney Swans vs Adelaide Crows",
+      "games": 5,
+      "close_games": 1,
+      "close_rate": 20.0
+    },
+    {
+      "matchup": "St Kilda vs GWS GIANTS",
+      "games": 4,
+      "close_games": 1,
+      "close_rate": 25.0
+    },
+    {
+      "matchup": "Carlton vs West Coast Eagles",
+      "games": 5,
+      "close_games": 1,
+      "close_rate": 20.0
+    },
+    {
+      "matchup": "Port Adelaide vs Geelong Cats",
+      "games": 8,
+      "close_games": 2,
+      "close_rate": 25.0
+    },
+    {
+      "matchup": "Fremantle vs Western Bulldogs",
+      "games": 8,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "North Melbourne vs Hawthorn",
+      "games": 6,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Brisbane Lions vs Gold Coast SUNS",
+      "games": 9,
+      "close_games": 1,
+      "close_rate": 11.11111111111111
+    },
+    {
+      "matchup": "Melbourne vs Richmond",
+      "games": 7,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Collingwood vs Essendon",
+      "games": 8,
+      "close_games": 3,
+      "close_rate": 37.5
+    },
+    {
+      "matchup": "Western Bulldogs vs Carlton",
+      "games": 5,
+      "close_games": 1,
+      "close_rate": 20.0
+    },
+    {
+      "matchup": "Geelong Cats vs Sydney Swans",
+      "games": 4,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "North Melbourne vs Port Adelaide",
+      "games": 7,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "GWS GIANTS vs Brisbane Lions",
+      "games": 6,
+      "close_games": 1,
+      "close_rate": 16.666666666666664
+    },
+    {
+      "matchup": "Hawthorn vs St Kilda",
+      "games": 4,
+      "close_games": 1,
+      "close_rate": 25.0
+    },
+    {
+      "matchup": "Adelaide Crows vs Gold Coast SUNS",
+      "games": 6,
+      "close_games": 2,
+      "close_rate": 33.33333333333333
+    },
+    {
+      "matchup": "Essendon vs Melbourne",
+      "games": 5,
+      "close_games": 2,
+      "close_rate": 40.0
+    },
+    {
+      "matchup": "Collingwood vs Richmond",
+      "games": 4,
+      "close_games": 2,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Geelong Cats vs GWS GIANTS",
+      "games": 7,
+      "close_games": 4,
+      "close_rate": 57.14285714285714
+    },
+    {
+      "matchup": "Western Bulldogs vs Gold Coast SUNS",
+      "games": 5,
+      "close_games": 2,
+      "close_rate": 40.0
+    },
+    {
+      "matchup": "Essendon vs Hawthorn",
+      "games": 5,
+      "close_games": 1,
+      "close_rate": 20.0
+    },
+    {
+      "matchup": "West Coast Eagles vs Port Adelaide",
+      "games": 3,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Sydney Swans vs North Melbourne",
+      "games": 5,
+      "close_games": 2,
+      "close_rate": 40.0
+    },
+    {
+      "matchup": "Adelaide Crows vs Carlton",
+      "games": 4,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Richmond vs Fremantle",
+      "games": 5,
+      "close_games": 1,
+      "close_rate": 20.0
+    },
+    {
+      "matchup": "St Kilda vs Melbourne",
+      "games": 4,
+      "close_games": 1,
+      "close_rate": 25.0
+    },
+    {
+      "matchup": "Brisbane Lions vs Collingwood",
+      "games": 8,
+      "close_games": 3,
+      "close_rate": 37.5
+    },
+    {
+      "matchup": "Hawthorn vs Sydney Swans",
+      "games": 3,
+      "close_games": 1,
+      "close_rate": 33.33333333333333
+    },
+    {
+      "matchup": "GWS GIANTS vs West Coast Eagles",
+      "games": 4,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Carlton vs Essendon",
+      "games": 3,
+      "close_games": 1,
+      "close_rate": 33.33333333333333
+    },
+    {
+      "matchup": "Gold Coast SUNS vs Melbourne",
+      "games": 7,
+      "close_games": 2,
+      "close_rate": 28.57142857142857
+    },
+    {
+      "matchup": "Western Bulldogs vs Brisbane Lions",
+      "games": 7,
+      "close_games": 1,
+      "close_rate": 14.285714285714285
+    },
+    {
+      "matchup": "Fremantle vs St Kilda",
+      "games": 5,
+      "close_games": 4,
+      "close_rate": 80.0
+    },
+    {
+      "matchup": "North Melbourne vs Richmond",
+      "games": 4,
+      "close_games": 2,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Collingwood vs Geelong Cats",
+      "games": 7,
+      "close_games": 4,
+      "close_rate": 57.14285714285714
+    },
+    {
+      "matchup": "Adelaide Crows vs Western Bulldogs",
+      "games": 2,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "North Melbourne vs GWS GIANTS",
+      "games": 5,
+      "close_games": 1,
+      "close_rate": 20.0
+    },
+    {
+      "matchup": "Gold Coast SUNS vs Port Adelaide",
+      "games": 4,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Essendon vs Geelong Cats",
+      "games": 2,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Sydney Swans vs Fremantle",
+      "games": 5,
+      "close_games": 2,
+      "close_rate": 40.0
+    },
+    {
+      "matchup": "St Kilda vs Collingwood",
+      "games": 3,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Carlton vs Melbourne",
+      "games": 6,
+      "close_games": 5,
+      "close_rate": 83.33333333333334
+    },
+    {
+      "matchup": "Brisbane Lions vs Hawthorn",
+      "games": 4,
+      "close_games": 1,
+      "close_rate": 25.0
+    },
+    {
+      "matchup": "West Coast Eagles vs Richmond",
+      "games": 6,
+      "close_games": 1,
+      "close_rate": 16.666666666666664
+    },
+    {
+      "matchup": "Richmond vs St Kilda",
+      "games": 6,
+      "close_games": 2,
+      "close_rate": 33.33333333333333
+    },
+    {
+      "matchup": "GWS GIANTS vs Essendon",
+      "games": 5,
+      "close_games": 1,
+      "close_rate": 20.0
+    },
+    {
+      "matchup": "Geelong Cats vs Carlton",
+      "games": 4,
+      "close_games": 1,
+      "close_rate": 25.0
+    },
+    {
+      "matchup": "Hawthorn vs West Coast Eagles",
+      "games": 6,
+      "close_games": 1,
+      "close_rate": 16.666666666666664
+    },
+    {
+      "matchup": "Melbourne vs Adelaide Crows",
+      "games": 4,
+      "close_games": 2,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Fremantle vs North Melbourne",
+      "games": 5,
+      "close_games": 1,
+      "close_rate": 20.0
+    },
+    {
+      "matchup": "Sydney Swans vs Carlton",
+      "games": 6,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Western Bulldogs vs Melbourne",
+      "games": 6,
+      "close_games": 1,
+      "close_rate": 16.666666666666664
+    },
+    {
+      "matchup": "Hawthorn vs Port Adelaide",
+      "games": 4,
+      "close_games": 1,
+      "close_rate": 25.0
+    },
+    {
+      "matchup": "Essendon vs Richmond",
+      "games": 6,
+      "close_games": 2,
+      "close_rate": 33.33333333333333
+    },
+    {
+      "matchup": "West Coast Eagles vs St Kilda",
+      "games": 6,
+      "close_games": 2,
+      "close_rate": 33.33333333333333
+    },
+    {
+      "matchup": "North Melbourne vs Brisbane Lions",
+      "games": 4,
+      "close_games": 2,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Collingwood vs Fremantle",
+      "games": 6,
+      "close_games": 3,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Adelaide Crows vs GWS GIANTS",
+      "games": 7,
+      "close_games": 1,
+      "close_rate": 14.285714285714285
+    },
+    {
+      "matchup": "Port Adelaide vs Richmond",
+      "games": 7,
+      "close_games": 2,
+      "close_rate": 28.57142857142857
+    },
+    {
+      "matchup": "Geelong Cats vs North Melbourne",
+      "games": 7,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "GWS GIANTS vs Gold Coast SUNS",
+      "games": 8,
+      "close_games": 2,
+      "close_rate": 25.0
+    },
+    {
+      "matchup": "St Kilda vs Sydney Swans",
+      "games": 6,
+      "close_games": 2,
+      "close_rate": 33.33333333333333
+    },
+    {
+      "matchup": "Brisbane Lions vs Essendon",
+      "games": 6,
+      "close_games": 1,
+      "close_rate": 16.666666666666664
+    },
+    {
+      "matchup": "Fremantle vs Adelaide Crows",
+      "games": 3,
+      "close_games": 1,
+      "close_rate": 33.33333333333333
+    },
+    {
+      "matchup": "Melbourne vs Collingwood",
+      "games": 7,
+      "close_games": 3,
+      "close_rate": 42.857142857142854
+    },
+    {
+      "matchup": "Port Adelaide vs Western Bulldogs",
+      "games": 9,
+      "close_games": 1,
+      "close_rate": 11.11111111111111
+    },
+    {
+      "matchup": "Sydney Swans vs West Coast Eagles",
+      "games": 4,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Carlton vs Fremantle",
+      "games": 3,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Gold Coast SUNS vs St Kilda",
+      "games": 5,
+      "close_games": 4,
+      "close_rate": 80.0
+    },
+    {
+      "matchup": "Hawthorn vs Adelaide Crows",
+      "games": 7,
+      "close_games": 3,
+      "close_rate": 42.857142857142854
+    },
+    {
+      "matchup": "Geelong Cats vs Richmond",
+      "games": 6,
+      "close_games": 1,
+      "close_rate": 16.666666666666664
+    },
+    {
+      "matchup": "West Coast Eagles vs Essendon",
+      "games": 9,
+      "close_games": 3,
+      "close_rate": 33.33333333333333
+    },
+    {
+      "matchup": "Port Adelaide vs Melbourne",
+      "games": 6,
+      "close_games": 3,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Hawthorn vs Gold Coast SUNS",
+      "games": 3,
+      "close_games": 1,
+      "close_rate": 33.33333333333333
+    },
+    {
+      "matchup": "Brisbane Lions vs GWS GIANTS",
+      "games": 6,
+      "close_games": 2,
+      "close_rate": 33.33333333333333
+    },
+    {
+      "matchup": "Western Bulldogs vs North Melbourne",
+      "games": 7,
+      "close_games": 1,
+      "close_rate": 14.285714285714285
+    },
+    {
+      "matchup": "Collingwood vs Carlton",
+      "games": 7,
+      "close_games": 3,
+      "close_rate": 42.857142857142854
+    },
+    {
+      "matchup": "Richmond vs Sydney Swans",
+      "games": 7,
+      "close_games": 1,
+      "close_rate": 14.285714285714285
+    },
+    {
+      "matchup": "Western Bulldogs vs Geelong Cats",
+      "games": 5,
+      "close_games": 3,
+      "close_rate": 60.0
+    },
+    {
+      "matchup": "Essendon vs North Melbourne",
+      "games": 6,
+      "close_games": 2,
+      "close_rate": 33.33333333333333
+    },
+    {
+      "matchup": "Fremantle vs Brisbane Lions",
+      "games": 7,
+      "close_games": 2,
+      "close_rate": 28.57142857142857
+    },
+    {
+      "matchup": "Sydney Swans vs Geelong Cats",
+      "games": 6,
+      "close_games": 3,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Richmond vs Adelaide Crows",
+      "games": 3,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Brisbane Lions vs Carlton",
+      "games": 6,
+      "close_games": 1,
+      "close_rate": 16.666666666666664
+    },
+    {
+      "matchup": "Port Adelaide vs St Kilda",
+      "games": 5,
+      "close_games": 1,
+      "close_rate": 20.0
+    },
+    {
+      "matchup": "Melbourne vs Fremantle",
+      "games": 8,
+      "close_games": 2,
+      "close_rate": 25.0
+    },
+    {
+      "matchup": "North Melbourne vs Gold Coast SUNS",
+      "games": 6,
+      "close_games": 2,
+      "close_rate": 33.33333333333333
+    },
+    {
+      "matchup": "Essendon vs Collingwood",
+      "games": 6,
+      "close_games": 3,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "West Coast Eagles vs GWS GIANTS",
+      "games": 6,
+      "close_games": 2,
+      "close_rate": 33.33333333333333
+    },
+    {
+      "matchup": "Adelaide Crows vs Geelong Cats",
+      "games": 6,
+      "close_games": 1,
+      "close_rate": 16.666666666666664
+    },
+    {
+      "matchup": "St Kilda vs Carlton",
+      "games": 5,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Hawthorn vs Brisbane Lions",
+      "games": 7,
+      "close_games": 2,
+      "close_rate": 28.57142857142857
+    },
+    {
+      "matchup": "Melbourne vs Western Bulldogs",
+      "games": 7,
+      "close_games": 1,
+      "close_rate": 14.285714285714285
+    },
+    {
+      "matchup": "GWS GIANTS vs Richmond",
+      "games": 6,
+      "close_games": 3,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Gold Coast SUNS vs Essendon",
+      "games": 5,
+      "close_games": 2,
+      "close_rate": 40.0
+    },
+    {
+      "matchup": "Collingwood vs West Coast Eagles",
+      "games": 5,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "North Melbourne vs Sydney Swans",
+      "games": 8,
+      "close_games": 5,
+      "close_rate": 62.5
+    },
+    {
+      "matchup": "Fremantle vs Port Adelaide",
+      "games": 7,
+      "close_games": 2,
+      "close_rate": 28.57142857142857
+    },
+    {
+      "matchup": "St Kilda vs Richmond",
+      "games": 6,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Collingwood vs North Melbourne",
+      "games": 4,
+      "close_games": 1,
+      "close_rate": 25.0
+    },
+    {
+      "matchup": "Sydney Swans vs Gold Coast SUNS",
+      "games": 8,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Essendon vs Fremantle",
+      "games": 6,
+      "close_games": 4,
+      "close_rate": 66.66666666666666
+    },
+    {
+      "matchup": "Brisbane Lions vs Adelaide Crows",
+      "games": 5,
+      "close_games": 4,
+      "close_rate": 80.0
+    },
+    {
+      "matchup": "Geelong Cats vs Melbourne",
+      "games": 6,
+      "close_games": 2,
+      "close_rate": 33.33333333333333
+    },
+    {
+      "matchup": "Carlton vs Hawthorn",
+      "games": 5,
+      "close_games": 1,
+      "close_rate": 20.0
+    },
+    {
+      "matchup": "West Coast Eagles vs Western Bulldogs",
+      "games": 4,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Port Adelaide vs GWS GIANTS",
+      "games": 5,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Essendon vs Sydney Swans",
+      "games": 6,
+      "close_games": 4,
+      "close_rate": 66.66666666666666
+    },
+    {
+      "matchup": "Richmond vs Collingwood",
+      "games": 7,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Geelong Cats vs Brisbane Lions",
+      "games": 9,
+      "close_games": 3,
+      "close_rate": 33.33333333333333
+    },
+    {
+      "matchup": "GWS GIANTS vs St Kilda",
+      "games": 7,
+      "close_games": 4,
+      "close_rate": 57.14285714285714
+    },
+    {
+      "matchup": "Gold Coast SUNS vs Carlton",
+      "games": 6,
+      "close_games": 3,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Adelaide Crows vs Melbourne",
+      "games": 6,
+      "close_games": 1,
+      "close_rate": 16.666666666666664
+    },
+    {
+      "matchup": "North Melbourne vs West Coast Eagles",
+      "games": 5,
+      "close_games": 3,
+      "close_rate": 60.0
+    },
+    {
+      "matchup": "Western Bulldogs vs Port Adelaide",
+      "games": 4,
+      "close_games": 1,
+      "close_rate": 25.0
+    },
+    {
+      "matchup": "Fremantle vs Hawthorn",
+      "games": 6,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Richmond vs Geelong Cats",
+      "games": 6,
+      "close_games": 1,
+      "close_rate": 16.666666666666664
+    },
+    {
+      "matchup": "Hawthorn vs Essendon",
+      "games": 5,
+      "close_games": 1,
+      "close_rate": 20.0
+    },
+    {
+      "matchup": "Brisbane Lions vs North Melbourne",
+      "games": 4,
+      "close_games": 1,
+      "close_rate": 25.0
+    },
+    {
+      "matchup": "Adelaide Crows vs Port Adelaide",
+      "games": 9,
+      "close_games": 3,
+      "close_rate": 33.33333333333333
+    },
+    {
+      "matchup": "Sydney Swans vs Collingwood",
+      "games": 6,
+      "close_games": 4,
+      "close_rate": 66.66666666666666
+    },
+    {
+      "matchup": "St Kilda vs Western Bulldogs",
+      "games": 4,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Carlton vs GWS GIANTS",
+      "games": 6,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Melbourne vs Gold Coast SUNS",
+      "games": 3,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "West Coast Eagles vs Fremantle",
+      "games": 9,
+      "close_games": 2,
+      "close_rate": 22.22222222222222
+    },
+    {
+      "matchup": "Essendon vs St Kilda",
+      "games": 6,
+      "close_games": 4,
+      "close_rate": 66.66666666666666
+    },
+    {
+      "matchup": "Hawthorn vs Geelong Cats",
+      "games": 4,
+      "close_games": 2,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Gold Coast SUNS vs Richmond",
+      "games": 4,
+      "close_games": 1,
+      "close_rate": 25.0
+    },
+    {
+      "matchup": "Port Adelaide vs West Coast Eagles",
+      "games": 6,
+      "close_games": 1,
+      "close_rate": 16.666666666666664
+    },
+    {
+      "matchup": "GWS GIANTS vs Adelaide Crows",
+      "games": 3,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Collingwood vs Brisbane Lions",
+      "games": 6,
+      "close_games": 2,
+      "close_rate": 33.33333333333333
+    },
+    {
+      "matchup": "North Melbourne vs Western Bulldogs",
+      "games": 6,
+      "close_games": 1,
+      "close_rate": 16.666666666666664
+    },
+    {
+      "matchup": "Melbourne vs Sydney Swans",
+      "games": 7,
+      "close_games": 3,
+      "close_rate": 42.857142857142854
+    },
+    {
+      "matchup": "Fremantle vs Carlton",
+      "games": 7,
+      "close_games": 2,
+      "close_rate": 28.57142857142857
+    },
+    {
+      "matchup": "Richmond vs Essendon",
+      "games": 5,
+      "close_games": 3,
+      "close_rate": 60.0
+    },
+    {
+      "matchup": "Collingwood vs Port Adelaide",
+      "games": 8,
+      "close_games": 2,
+      "close_rate": 25.0
+    },
+    {
+      "matchup": "Geelong Cats vs Fremantle",
+      "games": 3,
+      "close_games": 1,
+      "close_rate": 33.33333333333333
+    },
+    {
+      "matchup": "GWS GIANTS vs Sydney Swans",
+      "games": 9,
+      "close_games": 2,
+      "close_rate": 22.22222222222222
+    },
+    {
+      "matchup": "St Kilda vs Hawthorn",
+      "games": 7,
+      "close_games": 4,
+      "close_rate": 57.14285714285714
+    },
+    {
+      "matchup": "Carlton vs Western Bulldogs",
+      "games": 5,
+      "close_games": 2,
+      "close_rate": 40.0
+    },
+    {
+      "matchup": "West Coast Eagles vs Melbourne",
+      "games": 9,
+      "close_games": 1,
+      "close_rate": 11.11111111111111
+    },
+    {
+      "matchup": "Adelaide Crows vs North Melbourne",
+      "games": 5,
+      "close_games": 1,
+      "close_rate": 20.0
+    },
+    {
+      "matchup": "Geelong Cats vs Gold Coast SUNS",
+      "games": 4,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Richmond vs Western Bulldogs",
+      "games": 4,
+      "close_games": 2,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Fremantle vs Collingwood",
+      "games": 6,
+      "close_games": 3,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Sydney Swans vs Hawthorn",
+      "games": 6,
+      "close_games": 2,
+      "close_rate": 33.33333333333333
+    },
+    {
+      "matchup": "Carlton vs Adelaide Crows",
+      "games": 5,
+      "close_games": 2,
+      "close_rate": 40.0
+    },
+    {
+      "matchup": "Brisbane Lions vs West Coast Eagles",
+      "games": 7,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Melbourne vs GWS GIANTS",
+      "games": 7,
+      "close_games": 4,
+      "close_rate": 57.14285714285714
+    },
+    {
+      "matchup": "St Kilda vs North Melbourne",
+      "games": 7,
+      "close_games": 2,
+      "close_rate": 28.57142857142857
+    },
+    {
+      "matchup": "West Coast Eagles vs Collingwood",
+      "games": 5,
+      "close_games": 1,
+      "close_rate": 20.0
+    },
+    {
+      "matchup": "Collingwood vs GWS GIANTS",
+      "games": 6,
+      "close_games": 4,
+      "close_rate": 66.66666666666666
+    },
+    {
+      "matchup": "Richmond vs Melbourne",
+      "games": 5,
+      "close_games": 1,
+      "close_rate": 20.0
+    },
+    {
+      "matchup": "Gold Coast SUNS vs Western Bulldogs",
+      "games": 5,
+      "close_games": 5,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Port Adelaide vs North Melbourne",
+      "games": 3,
+      "close_games": 1,
+      "close_rate": 33.33333333333333
+    },
+    {
+      "matchup": "Melbourne vs Brisbane Lions",
+      "games": 8,
+      "close_games": 3,
+      "close_rate": 37.5
+    },
+    {
+      "matchup": "Hawthorn vs Richmond",
+      "games": 6,
+      "close_games": 1,
+      "close_rate": 16.666666666666664
+    },
+    {
+      "matchup": "Western Bulldogs vs St Kilda",
+      "games": 5,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Carlton vs Richmond",
+      "games": 3,
+      "close_games": 1,
+      "close_rate": 33.33333333333333
+    },
+    {
+      "matchup": "Melbourne vs Port Adelaide",
+      "games": 4,
+      "close_games": 1,
+      "close_rate": 25.0
+    },
+    {
+      "matchup": "Adelaide Crows vs Hawthorn",
+      "games": 5,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "St Kilda vs Gold Coast SUNS",
+      "games": 5,
+      "close_games": 2,
+      "close_rate": 40.0
+    },
+    {
+      "matchup": "Port Adelaide vs Carlton",
+      "games": 4,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Melbourne vs Essendon",
+      "games": 4,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Carlton vs Sydney Swans",
+      "games": 4,
+      "close_games": 2,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Brisbane Lions vs Port Adelaide",
+      "games": 6,
+      "close_games": 1,
+      "close_rate": 16.666666666666664
+    },
+    {
+      "matchup": "Hawthorn vs North Melbourne",
+      "games": 7,
+      "close_games": 2,
+      "close_rate": 28.57142857142857
+    },
+    {
+      "matchup": "Sydney Swans vs Melbourne",
+      "games": 4,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Essendon vs Brisbane Lions",
+      "games": 2,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "North Melbourne vs Adelaide Crows",
+      "games": 6,
+      "close_games": 1,
+      "close_rate": 16.666666666666664
+    },
+    {
+      "matchup": "North Melbourne vs Essendon",
+      "games": 3,
+      "close_games": 1,
+      "close_rate": 33.33333333333333
+    },
+    {
+      "matchup": "Geelong Cats vs West Coast Eagles",
+      "games": 6,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Melbourne vs Hawthorn",
+      "games": 4,
+      "close_games": 2,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Western Bulldogs vs Richmond",
+      "games": 4,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Carlton vs North Melbourne",
+      "games": 4,
+      "close_games": 1,
+      "close_rate": 25.0
+    },
+    {
+      "matchup": "Adelaide Crows vs Fremantle",
+      "games": 5,
+      "close_games": 2,
+      "close_rate": 40.0
+    },
+    {
+      "matchup": "Sydney Swans vs Essendon",
+      "games": 6,
+      "close_games": 3,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "St Kilda vs West Coast Eagles",
+      "games": 4,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "North Melbourne vs Geelong Cats",
+      "games": 4,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Hawthorn vs GWS GIANTS",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.66666666666666
+    },
+    {
+      "matchup": "Fremantle vs Richmond",
+      "games": 3,
+      "close_games": 1,
+      "close_rate": 33.33333333333333
+    },
+    {
+      "matchup": "Collingwood vs St Kilda",
+      "games": 6,
+      "close_games": 3,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Geelong Cats vs Western Bulldogs",
+      "games": 6,
+      "close_games": 1,
+      "close_rate": 16.666666666666664
+    },
+    {
+      "matchup": "Port Adelaide vs Gold Coast SUNS",
+      "games": 4,
+      "close_games": 2,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "GWS GIANTS vs Carlton",
+      "games": 6,
+      "close_games": 3,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Adelaide Crows vs West Coast Eagles",
+      "games": 7,
+      "close_games": 1,
+      "close_rate": 14.285714285714285
+    },
+    {
+      "matchup": "St Kilda vs Port Adelaide",
+      "games": 4,
+      "close_games": 1,
+      "close_rate": 25.0
+    },
+    {
+      "matchup": "Essendon vs Carlton",
+      "games": 6,
+      "close_games": 1,
+      "close_rate": 16.666666666666664
+    },
+    {
+      "matchup": "Carlton vs Brisbane Lions",
+      "games": 5,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Collingwood vs Melbourne",
+      "games": 5,
+      "close_games": 2,
+      "close_rate": 40.0
+    },
+    {
+      "matchup": "Western Bulldogs vs Collingwood",
+      "games": 4,
+      "close_games": 3,
+      "close_rate": 75.0
+    },
+    {
+      "matchup": "Essendon vs GWS GIANTS",
+      "games": 6,
+      "close_games": 2,
+      "close_rate": 33.33333333333333
+    },
+    {
+      "matchup": "Geelong Cats vs Adelaide Crows",
+      "games": 4,
+      "close_games": 1,
+      "close_rate": 25.0
+    },
+    {
+      "matchup": "Fremantle vs Geelong Cats",
+      "games": 5,
+      "close_games": 2,
+      "close_rate": 40.0
+    },
+    {
+      "matchup": "Adelaide Crows vs St Kilda",
+      "games": 6,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Collingwood vs Gold Coast SUNS",
+      "games": 4,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Brisbane Lions vs Western Bulldogs",
+      "games": 4,
+      "close_games": 2,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "GWS GIANTS vs Hawthorn",
+      "games": 8,
+      "close_games": 2,
+      "close_rate": 25.0
+    },
+    {
+      "matchup": "Port Adelaide vs Sydney Swans",
+      "games": 6,
+      "close_games": 1,
+      "close_rate": 16.666666666666664
+    },
+    {
+      "matchup": "Essendon vs Western Bulldogs",
+      "games": 4,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "St Kilda vs Fremantle",
+      "games": 6,
+      "close_games": 1,
+      "close_rate": 16.666666666666664
+    },
+    {
+      "matchup": "West Coast Eagles vs Adelaide Crows",
+      "games": 7,
+      "close_games": 2,
+      "close_rate": 28.57142857142857
+    },
+    {
+      "matchup": "Carlton vs St Kilda",
+      "games": 6,
+      "close_games": 2,
+      "close_rate": 33.33333333333333
+    },
+    {
+      "matchup": "Brisbane Lions vs Geelong Cats",
+      "games": 6,
+      "close_games": 3,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Fremantle vs Essendon",
+      "games": 3,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Richmond vs West Coast Eagles",
+      "games": 5,
+      "close_games": 2,
+      "close_rate": 40.0
+    },
+    {
+      "matchup": "Sydney Swans vs St Kilda",
+      "games": 4,
+      "close_games": 1,
+      "close_rate": 25.0
+    },
+    {
+      "matchup": "North Melbourne vs Melbourne",
+      "games": 5,
+      "close_games": 1,
+      "close_rate": 20.0
+    },
+    {
+      "matchup": "Gold Coast SUNS vs GWS GIANTS",
+      "games": 4,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "West Coast Eagles vs Hawthorn",
+      "games": 2,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Western Bulldogs vs Adelaide Crows",
+      "games": 5,
+      "close_games": 2,
+      "close_rate": 40.0
+    },
+    {
+      "matchup": "Geelong Cats vs Collingwood",
+      "games": 4,
+      "close_games": 2,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Brisbane Lions vs Richmond",
+      "games": 5,
+      "close_games": 1,
+      "close_rate": 20.0
+    },
+    {
+      "matchup": "Richmond vs GWS GIANTS",
+      "games": 4,
+      "close_games": 1,
+      "close_rate": 25.0
+    },
+    {
+      "matchup": "Adelaide Crows vs Sydney Swans",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.66666666666666
+    },
+    {
+      "matchup": "GWS GIANTS vs Geelong Cats",
+      "games": 3,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Brisbane Lions vs Fremantle",
+      "games": 3,
+      "close_games": 1,
+      "close_rate": 33.33333333333333
+    },
+    {
+      "matchup": "Gold Coast SUNS vs West Coast Eagles",
+      "games": 2,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "GWS GIANTS vs North Melbourne",
+      "games": 3,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Western Bulldogs vs GWS GIANTS",
+      "games": 4,
+      "close_games": 2,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Gold Coast SUNS vs Adelaide Crows",
+      "games": 4,
+      "close_games": 2,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Sydney Swans vs Western Bulldogs",
+      "games": 5,
+      "close_games": 2,
+      "close_rate": 40.0
+    },
+    {
+      "matchup": "Collingwood vs Hawthorn",
+      "games": 3,
+      "close_games": 1,
+      "close_rate": 33.33333333333333
+    },
+    {
+      "matchup": "Carlton vs Port Adelaide",
+      "games": 6,
+      "close_games": 2,
+      "close_rate": 33.33333333333333
+    },
+    {
+      "matchup": "Adelaide Crows vs Essendon",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Collingwood vs Sydney Swans",
+      "games": 4,
+      "close_games": 1,
+      "close_rate": 25.0
+    },
+    {
+      "matchup": "West Coast Eagles vs Carlton",
+      "games": 5,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "St Kilda vs Geelong Cats",
+      "games": 6,
+      "close_games": 2,
+      "close_rate": 33.33333333333333
+    },
+    {
+      "matchup": "Geelong Cats vs Port Adelaide",
+      "games": 5,
+      "close_games": 2,
+      "close_rate": 40.0
+    },
+    {
+      "matchup": "St Kilda vs Essendon",
+      "games": 5,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Richmond vs Gold Coast SUNS",
+      "games": 3,
+      "close_games": 1,
+      "close_rate": 33.33333333333333
+    },
+    {
+      "matchup": "Port Adelaide vs Hawthorn",
+      "games": 6,
+      "close_games": 3,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Fremantle vs Sydney Swans",
+      "games": 6,
+      "close_games": 2,
+      "close_rate": 33.33333333333333
+    },
+    {
+      "matchup": "Brisbane Lions vs St Kilda",
+      "games": 5,
+      "close_games": 2,
+      "close_rate": 40.0
+    },
+    {
+      "matchup": "Fremantle vs GWS GIANTS",
+      "games": 3,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "North Melbourne vs Fremantle",
+      "games": 3,
+      "close_games": 1,
+      "close_rate": 33.33333333333333
+    },
+    {
+      "matchup": "Port Adelaide vs Essendon",
+      "games": 5,
+      "close_games": 1,
+      "close_rate": 20.0
+    },
+    {
+      "matchup": "GWS GIANTS vs Melbourne",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Hawthorn vs Western Bulldogs",
+      "games": 5,
+      "close_games": 1,
+      "close_rate": 20.0
+    },
+    {
+      "matchup": "Sydney Swans vs Brisbane Lions",
+      "games": 4,
+      "close_games": 1,
+      "close_rate": 25.0
+    },
+    {
+      "matchup": "Gold Coast SUNS vs Sydney Swans",
+      "games": 3,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "North Melbourne vs Collingwood",
+      "games": 3,
+      "close_games": 1,
+      "close_rate": 33.33333333333333
+    },
+    {
+      "matchup": "Melbourne vs Carlton",
+      "games": 4,
+      "close_games": 2,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Gold Coast SUNS vs Hawthorn",
+      "games": 5,
+      "close_games": 1,
+      "close_rate": 20.0
+    },
+    {
+      "matchup": "Fremantle vs Gold Coast SUNS",
+      "games": 4,
+      "close_games": 2,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Adelaide Crows vs Brisbane Lions",
+      "games": 5,
+      "close_games": 2,
+      "close_rate": 40.0
+    },
+    {
+      "matchup": "Hawthorn vs Fremantle",
+      "games": 3,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Carlton vs Geelong Cats",
+      "games": 5,
+      "close_games": 1,
+      "close_rate": 20.0
+    },
+    {
+      "matchup": "West Coast Eagles vs North Melbourne",
+      "games": 4,
+      "close_games": 4,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Port Adelaide vs Collingwood",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "GWS GIANTS vs Port Adelaide",
+      "games": 3,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Carlton vs Gold Coast SUNS",
+      "games": 4,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Collingwood vs Adelaide Crows",
+      "games": 4,
+      "close_games": 3,
+      "close_rate": 75.0
+    },
+    {
+      "matchup": "Sydney Swans vs Richmond",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Richmond vs Port Adelaide",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.66666666666666
+    },
+    {
+      "matchup": "Gold Coast SUNS vs Collingwood",
+      "games": 4,
+      "close_games": 3,
+      "close_rate": 75.0
+    },
+    {
+      "matchup": "Essendon vs Gold Coast SUNS",
+      "games": 4,
+      "close_games": 1,
+      "close_rate": 25.0
+    },
+    {
+      "matchup": "Fremantle vs Melbourne",
+      "games": 3,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Western Bulldogs vs Fremantle",
+      "games": 3,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Brisbane Lions vs Melbourne",
+      "games": 4,
+      "close_games": 3,
+      "close_rate": 75.0
+    },
+    {
+      "matchup": "Essendon vs West Coast Eagles",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Melbourne vs West Coast Eagles",
+      "games": 2,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "West Coast Eagles vs Brisbane Lions",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    }
+  ],
+  "form_strengths": [
+    {
+      "team": "Adelaide Crows",
+      "strength": 85.0
+    },
+    {
+      "team": "Brisbane Lions",
+      "strength": 85.0
+    },
+    {
+      "team": "Carlton",
+      "strength": 72.5
+    },
+    {
+      "team": "Collingwood",
+      "strength": 82.5
+    },
+    {
+      "team": "Essendon",
+      "strength": 62.5
+    },
+    {
+      "team": "Fremantle",
+      "strength": 85.0
+    },
+    {
+      "team": "GWS GIANTS",
+      "strength": 82.5
+    },
+    {
+      "team": "Geelong Cats",
+      "strength": 87.5
+    },
+    {
+      "team": "Gold Coast SUNS",
+      "strength": 80.0
+    },
+    {
+      "team": "Hawthorn",
+      "strength": 82.5
+    },
+    {
+      "team": "Melbourne",
+      "strength": 67.5
+    },
+    {
+      "team": "North Melbourne",
+      "strength": 60.0
+    },
+    {
+      "team": "Port Adelaide",
+      "strength": 70.0
+    },
+    {
+      "team": "Richmond",
+      "strength": 60.0
+    },
+    {
+      "team": "St Kilda",
+      "strength": 67.5
+    },
+    {
+      "team": "Sydney Swans",
+      "strength": 80.0
+    },
+    {
+      "team": "West Coast Eagles",
+      "strength": 52.5
+    },
+    {
+      "team": "Western Bulldogs",
+      "strength": 80.0
+    }
+  ],
+  "team_margin_ratings": [
+    {
+      "team": "Geelong Cats",
+      "avg_margin": 18.3
+    },
+    {
+      "team": "Brisbane Lions",
+      "avg_margin": 11.9
+    },
+    {
+      "team": "Melbourne",
+      "avg_margin": 8.5
+    },
+    {
+      "team": "Collingwood",
+      "avg_margin": 8.1
+    },
+    {
+      "team": "Sydney Swans",
+      "avg_margin": 8.0
+    },
+    {
+      "team": "Western Bulldogs",
+      "avg_margin": 7.9
+    },
+    {
+      "team": "Port Adelaide",
+      "avg_margin": 6.7
+    },
+    {
+      "team": "GWS GIANTS",
+      "avg_margin": 4.8
+    },
+    {
+      "team": "Adelaide Crows",
+      "avg_margin": -0.2
+    },
+    {
+      "team": "Richmond",
+      "avg_margin": -1.2
+    },
+    {
+      "team": "Fremantle",
+      "avg_margin": -1.3
+    },
+    {
+      "team": "Hawthorn",
+      "avg_margin": -1.4
+    },
+    {
+      "team": "St Kilda",
+      "avg_margin": -4.8
+    },
+    {
+      "team": "Carlton",
+      "avg_margin": -7.1
+    },
+    {
+      "team": "Essendon",
+      "avg_margin": -9.4
+    },
+    {
+      "team": "Gold Coast SUNS",
+      "avg_margin": -10.6
+    },
+    {
+      "team": "West Coast Eagles",
+      "avg_margin": -18.5
+    },
+    {
+      "team": "North Melbourne",
+      "avg_margin": -24.3
+    }
+  ]
+}

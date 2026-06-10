@@ -154,6 +154,10 @@
      green = live and in FlyTime now; yellow = upcoming and predicted; red = finished and reached FlyTime. */
   .ft-fly img{height:22px;width:22px;border-radius:50%;display:block;}
   .ft-fly .mk-fb{background:none;border:none;padding:0;height:auto;font-size:15px;}
+  /* Local testing: flyscore readout on cards. Set DEBUG_FLYSCORES false before production. */
+  .fly-debug-score{font-size:10px;font-weight:700;color:rgba(255,255,255,.45);letter-spacing:.3px;font-variant-numeric:tabular-nums;white-space:nowrap;}
+  .fly-debug-score.qual{color:var(--upcoming);}
+  .fly-debug-score.na{opacity:.35;}
   .sh-flytime .sh-label{color:var(--live);}
 
   /* Fly Mode overlay: FlyTime fly icon top-right, absolute so it never shifts layout */
@@ -1587,6 +1591,10 @@ function momTier(mom) {
   return '';
 }
 
+// AFL quarter clock COUNTS UP (elapsed time). FlyTime starts once Q4 clock passes
+// 20:00 (incl. time-on). Other US sports clocks count DOWN (time remaining).
+const AFL_FLY_Q4_ELAPSED_SEC = 20 * 60;
+
 // Clutch (FlyTime) moment? Close score, late in the game. Clock-based, so it only
 // uses data we actually have. Tennis and cricket are intentionally excluded.
 function isFlyTime(m) {
@@ -1598,7 +1606,10 @@ function isFlyTime(m) {
     case 'football':            return p >= 4 && c > 0 && c <= 300 && margin <= 8;
     case 'hockey':              return p >= 3 && c > 0 && c <= 300 && margin <= 1;
     case 'baseball':            return p >= 8 && margin <= 2;
-    case 'australian-football': return p >= 4 && c > 0 && c <= 360 && margin <= 12;
+    case 'australian-football':
+      if (margin > 12) return false;
+      if (p > 4) return true;  // OT: close margin only
+      return p === 4 && c >= AFL_FLY_Q4_ELAPSED_SEC;
     case 'rugby-league':         return p >= 2 && c > 0 && c <= 600 && margin <= 12;
     case 'soccer': {
       const minute = parseInt(m.clockRaw, 10) || 0;
@@ -2781,7 +2792,7 @@ function buildLiveCard(m){
   const fly=flyTimeIcon(m,'live');
   const ftLocked=matchHadFlyTime(m.id)?' flytime-locked':'';
   return`<div class="card live${ftLocked}" data-match-id="${m.id}">
-    <div class="card-meta"><span class="league-tag"><span class="sport-icon">${renderSportIcon(sico)}</span><span class="lg-badge">${ltxt}</span></span><span class="card-right">${fly}<span class="live-badge"><span class="bdot"></span>LIVE ${m.timer}</span></span></div>
+    <div class="card-meta"><span class="league-tag"><span class="sport-icon">${renderSportIcon(sico)}</span><span class="lg-badge">${ltxt}</span></span><span class="card-right">${flyScoreDebugHTML(m)}${fly}<span class="live-badge"><span class="bdot"></span>LIVE ${m.timer}</span></span></div>
     <div class="card-body">
       <div class="card-teams">
         <div class="team-row"><div class="t-logo">${logoImg(m.homeLogo,m.league)}</div><div class="t-name">${displayTeamName(m.home)}</div></div>
@@ -2800,7 +2811,7 @@ function buildUpcomingCard(m){
   const sico=lparts[0];
   const ltxt=lparts.slice(1).join(' ');
   return`<div class="card upcoming">
-    <div class="card-meta"><span class="league-tag"><span class="sport-icon">${renderSportIcon(sico)}</span><span class="lg-badge">${ltxt}</span></span><span class="card-right">${flyTimeIcon(m,'upcoming')}</span></div>
+    <div class="card-meta"><span class="league-tag"><span class="sport-icon">${renderSportIcon(sico)}</span><span class="lg-badge">${ltxt}</span></span><span class="card-right">${flyScoreDebugHTML(m)}${flyTimeIcon(m,'upcoming')}</span></div>
     <div class="upcoming-body">
       <div class="up-teams">
         <div class="team-row">
@@ -2837,7 +2848,7 @@ function buildResultCard(m){
   const ltxt=lparts.slice(1).join(' ');
   const flyStamp=flyTimeIcon(m,'result');
   return`<div class="card result">
-    <div class="card-meta"><span class="league-tag"><span class="sport-icon">${renderSportIcon(sico)}</span><span class="lg-badge">${ltxt}</span></span><span class="card-right">${flyStamp}<span class="ft-badge">FT · ${m.date}</span></span></div>
+    <div class="card-meta"><span class="league-tag"><span class="sport-icon">${renderSportIcon(sico)}</span><span class="lg-badge">${ltxt}</span></span><span class="card-right">${flyScoreDebugHTML(m)}${flyStamp}<span class="ft-badge">FT · ${m.date}</span></span></div>
     <div class="card-body">
       <div class="card-teams">
         <div class="team-row"><div class="t-logo">${logoImg(m.homeLogo,m.league)}</div><div class="t-name ${hw?'':'dim'}">${displayTeamName(m.home)}</div></div>
@@ -3510,10 +3521,14 @@ function fmImportanceScore(notes, seasonType){
   return 0;
 }
 
-// --- AFL FlyTime Engine v1.0 (production-locked research model) ---
-// Precomputed tables in afl-flytime-v1.json. AFL upcoming games use this
-// instead of computeFlyMatch. Scores all fixtures, ranks, flags top 2.
+// --- FlyTime Engine v1 (offline JSON tables per sport) ---
+// AFL: production-locked research model. NFL: v1 bootstrap from ESPN history.
+// Formula: close*0.35 + form_balance*0.25 + margin_balance*0.25 + matchup*0.15
+const AFL_FLYTIME_THRESHOLD = 72;
+const NFL_FLYTIME_THRESHOLD = 93; // calibrated ~2 yellow flies per NFL week (bootstrap data)
+const DEBUG_FLYSCORES = true;
 let aflFlyV1 = null;
+let nflFlyV1 = null;
 
 const AFL_RESEARCH_NAMES = {
   'North Melbourne Kangaroos': 'North Melbourne',
@@ -3530,11 +3545,11 @@ const AFL_RESEARCH_NAMES = {
   'Melbourne Demons': 'Melbourne'
 };
 
-function aflResearchTeam(name) {
-  return AFL_RESEARCH_NAMES[name] || name;
+function mapResearchTeam(name, nameMap) {
+  return (nameMap && nameMap[name]) || name;
 }
 
-function buildAflFlyV1Index(raw) {
+function buildFlyV1Index(raw) {
   const closeRates = {}, matchupRatings = {}, formStrength = {}, marginRating = {};
   (raw.form_strengths || []).forEach(function(r) { formStrength[r.team] = r.strength; });
   (raw.team_margin_ratings || []).forEach(function(r) { marginRating[r.team] = r.avg_margin; });
@@ -3554,16 +3569,17 @@ function buildAflFlyV1Index(raw) {
   return { closeRates, matchupRatings, formStrength, marginRating };
 }
 
-function aflFlyTimeScore(m) {
-  if (!aflFlyV1) return null;
-  const home = aflResearchTeam(m.home), away = aflResearchTeam(m.away);
+function flyV1Score(home, away, idx, nameMap) {
+  if (!idx) return null;
+  home = mapResearchTeam(home, nameMap);
+  away = mapResearchTeam(away, nameMap);
   const mKey = home + '|' + away;
-  const closeRate = aflFlyV1.closeRates[mKey];
-  const matchupRating = aflFlyV1.matchupRatings[mKey];
-  const formHome = aflFlyV1.formStrength[home];
-  const formAway = aflFlyV1.formStrength[away];
-  const marginHome = aflFlyV1.marginRating[home];
-  const marginAway = aflFlyV1.marginRating[away];
+  const closeRate = idx.closeRates[mKey];
+  const matchupRating = idx.matchupRatings[mKey];
+  const formHome = idx.formStrength[home];
+  const formAway = idx.formStrength[away];
+  const marginHome = idx.marginRating[home];
+  const marginAway = idx.marginRating[away];
   if (closeRate == null || matchupRating == null ||
       formHome == null || formAway == null ||
       marginHome == null || marginAway == null) return null;
@@ -3572,43 +3588,80 @@ function aflFlyTimeScore(m) {
   return closeRate * 0.35 + formBalance * 0.25 + marginBalance * 0.25 + matchupRating * 0.15;
 }
 
+function aflFlyTimeScore(m) { return flyV1Score(m.home, m.away, aflFlyV1, AFL_RESEARCH_NAMES); }
+function nflFlyTimeScore(m) { return flyV1Score(m.home, m.away, nflFlyV1, null); }
+
+function usesFlyV1Engine(m) {
+  return m.sportKey === 'australian-football' ||
+    (m.sportKey === 'football' && m.leagueKey === 'nfl');
+}
+
+function flyV1Threshold(m) {
+  if (m.sportKey === 'australian-football') return AFL_FLYTIME_THRESHOLD;
+  if (m.sportKey === 'football' && m.leagueKey === 'nfl') return NFL_FLYTIME_THRESHOLD;
+  return null;
+}
+
+function applyFlyV1Batch(matches, idx, threshold, scoreFn, nameMap) {
+  if (!idx) return;
+  matches.forEach(function(m) {
+    const score = scoreFn(m);
+    if (score === null) {
+      m.isFlyMatch = false;
+      m.flyMatchRating = 0;
+      return;
+    }
+    m.flyMatchRating = Math.round(score * 10) / 10;
+    m.isFlyMatch = score >= threshold;
+    if (m.isFlyMatch) ledgerPredict(m);
+  });
+}
+
 function applyAflFlyTimeV1() {
-  if (!aflFlyV1) return;
   const afl = ALL_UPCOMING.filter(function(m) { return m.sportKey === 'australian-football'; });
-  afl.forEach(function(m) { m.isFlyMatch = false; m.flyMatchRating = 0; });
-  const scored = afl.map(function(m) { return { m: m, score: aflFlyTimeScore(m) }; })
-    .filter(function(x) { return x.score !== null; })
-    .sort(function(a, b) { return b.score - a.score; });
-  if (!scored.length) return;
-  const topN = Math.min(2, scored.length);
-  for (let i = 0; i < topN; i++) {
-    scored[i].m.isFlyMatch = true;
-    scored[i].m.flyMatchRating = Math.round(scored[i].score * 10) / 10;
-    ledgerPredict(scored[i].m);
-  }
+  applyFlyV1Batch(afl, aflFlyV1, AFL_FLYTIME_THRESHOLD, aflFlyTimeScore, AFL_RESEARCH_NAMES);
 }
 
-async function loadAflFlyV1Data() {
+function applyNflFlyTimeV1() {
+  const nfl = ALL_UPCOMING.filter(function(m) {
+    return m.sportKey === 'football' && m.leagueKey === 'nfl';
+  });
+  applyFlyV1Batch(nfl, nflFlyV1, NFL_FLYTIME_THRESHOLD, nflFlyTimeScore, null);
+}
+
+async function loadFlyV1Json(url) {
+  const res = await fetch(url);
+  if (!res.ok) return null;
+  const raw = await res.json();
+  return buildFlyV1Index(raw);
+}
+
+async function loadFlyV1Engines() {
   try {
-    const res = await fetch('afl-flytime-v1.json');
-    if (!res.ok) return;
-    const raw = await res.json();
-    aflFlyV1 = buildAflFlyV1Index(raw);
-    runFlyMatchSweep();
-    renderHome();
-    renderFlyLedger();
-  } catch (e) { /* offline or missing file - AFL yellow flies stay off */ }
+    const [afl, nfl] = await Promise.all([
+      loadFlyV1Json('afl-flytime-v1.json'),
+      loadFlyV1Json('nfl-flytime-v1.json')
+    ]);
+    if (afl) aflFlyV1 = afl;
+    if (nfl) nflFlyV1 = nfl;
+    if (afl || nfl) {
+      runFlyMatchSweep();
+      renderHome();
+      renderFlyLedger();
+    }
+  } catch (e) { /* offline — v1 yellow flies stay off for missing sports */ }
 }
 
-// Generic FlyMatch for non-AFL sports; AFL uses applyAflFlyTimeV1 above.
+// Generic FlyMatch fallback for sports without a v1 engine.
 function runFlyMatchSweep() {
   ALL_LIVE.forEach(function(m) {
-    if (m.sportKey !== 'australian-football') computeFlyMatch(m);
+    if (!usesFlyV1Engine(m)) computeFlyMatch(m);
   });
   ALL_UPCOMING.forEach(function(m) {
-    if (m.sportKey !== 'australian-football') computeFlyMatch(m);
+    if (!usesFlyV1Engine(m)) computeFlyMatch(m);
   });
   applyAflFlyTimeV1();
+  applyNflFlyTimeV1();
 }
 
 // Main engine: sets m.flyMatchRating (0-100) and m.isFlyMatch (>= threshold).
@@ -3672,6 +3725,34 @@ function markerHTML(cls, src, alt, fb){
     '<img src="' + src + '" alt="' + alt + '" ' +
     "onerror=\"this.style.display='none';this.nextSibling.style.display='inline-flex'\">" +
     '<span class="mk-fb" style="display:none">' + fb + '</span></span>';
+}
+
+// Testing overlay: show internal flyscore on every card (see DEBUG_FLYSCORES).
+function flyScoreDebugHTML(m) {
+  if (!DEBUG_FLYSCORES) return '';
+  let score = null, tag = '', thr = null;
+  if (m.sportKey === 'australian-football') {
+    if (!aflFlyV1) return '<span class="fly-debug-score na">FT —</span>';
+    score = aflFlyTimeScore(m);
+    tag = 'FT';
+    thr = AFL_FLYTIME_THRESHOLD;
+  } else if (m.sportKey === 'football' && m.leagueKey === 'nfl') {
+    if (!nflFlyV1) return '<span class="fly-debug-score na">NFL —</span>';
+    score = nflFlyTimeScore(m);
+    tag = 'NFL';
+    thr = NFL_FLYTIME_THRESHOLD;
+  } else if (m.sportKey === 'tennis' || m.sportKey === 'cricket') {
+    return '<span class="fly-debug-score na">—</span>';
+  } else {
+    if (m.flyMatchRating == null || m.flyMatchRating === 0) computeFlyMatch(m);
+    score = m.flyMatchRating;
+    tag = 'FM';
+  }
+  if (score == null) return '<span class="fly-debug-score na">' + tag + ' —</span>';
+  const qual = thr != null
+    ? (score >= thr ? ' qual' : '')
+    : (m.isFlyMatch ? ' qual' : '');
+  return '<span class="fly-debug-score' + qual + '">' + tag + ' ' + (Math.round(score * 10) / 10) + '</span>';
 }
 
 // FlyTime traffic light: one coloured fly per card, in the fixed top-right slot.
@@ -4070,7 +4151,7 @@ function onbFinish(){
 
 setTimeout(()=>{
   hydrateSnapshot();    // paint the last-known scores instantly, before any network
-  loadAflFlyV1Data();   // AFL FlyTime v1 tables (offline JSON, no ESPN calls)
+  loadFlyV1Engines();   // AFL + NFL FlyTime v1 tables (offline JSON)
   applyInitialFilter(); // returning users with teams land on My Teams
   renderHome();
   renderResults();

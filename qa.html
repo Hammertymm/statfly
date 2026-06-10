@@ -717,10 +717,11 @@ async function flyRun(app, idx){
   flygroup('Section 1 - FlyTime validation');
   var ft=win.isFlyTime;
   function aflFT(cs,m){ return ft({sportKey:'australian-football', hInt:m, aInt:0, period:4, clockSec:cs}); }
-  ftest('FlyState','AFL 7:59 / margin 12','TRUE', aflFT(479,12), aflFT(479,12)===true, 'Last 8 min within 2 goals should be FlyTime');
-  ftest('FlyState','AFL 8:01 / margin 12','FALSE', aflFT(481,12), aflFT(481,12)===false, 'Outside the last 8 minutes');
-  ftest('FlyState','AFL 4:00 / margin 13','FALSE', aflFT(240,13), aflFT(240,13)===false, 'Margin over 12 (more than 2 goals)');
-  ftest('FlyState','AFL 4:00 / margin 10','TRUE', aflFT(240,10), aflFT(240,10)===true, 'Late and within 2 goals');
+  ftest('FlyState','AFL Q4 20:00 elapsed / margin 12','TRUE', aflFT(1200,12), aflFT(1200,12)===true, 'Count-up clock at 20:00 in Q4 within 2 goals');
+  ftest('FlyState','AFL Q4 19:59 elapsed / margin 12','FALSE', aflFT(1199,12), aflFT(1199,12)===false, 'Before Q4 clock hits 20:00');
+  ftest('FlyState','AFL Q4 5:00 elapsed / margin 10','FALSE', aflFT(300,10), aflFT(300,10)===false, 'Early Q4 must not trigger (count-up not countdown)');
+  ftest('FlyState','AFL Q4 21:30 elapsed / margin 10','TRUE', aflFT(1290,10), aflFT(1290,10)===true, 'Time-on after 20:00 still FlyTime');
+  ftest('FlyState','AFL Q4 20:00 / margin 13','FALSE', aflFT(1200,13), aflFT(1200,13)===false, 'Margin over 12 (more than 2 goals)');
   function socFT(min,m){ return ft({sportKey:'soccer', hInt:m, aInt:0, clockRaw:String(min)}); }
   ftest('FlyState','Soccer 75 / margin 1','TRUE', socFT(75,1), socFT(75,1)===true, 'From 75 min within 1 goal');
   ftest('FlyState','Soccer 74 / margin 1','FALSE', socFT(74,1), socFT(74,1)===false, 'Before 75 min');

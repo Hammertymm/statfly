@@ -1,0 +1,2011 @@
+{
+  "meta": {
+    "sport": "NRL",
+    "engine": "v1-bootstrap",
+    "formula": "close*0.35 + form_balance*0.25 + margin_balance*0.25 + matchup*0.15",
+    "close_margin": 12,
+    "games_sampled": 132,
+    "week_chunk": 8,
+    "built": "2026-06-10"
+  },
+  "matchup_ratings": [
+    {
+      "matchup": "Canberra Raiders vs Cronulla Sharks",
+      "games_played": 4,
+      "avg_margin": 10.25,
+      "avg_excitement": 73.96
+    },
+    {
+      "matchup": "Cronulla Sharks vs Canberra Raiders",
+      "games_played": 4,
+      "avg_margin": 10.25,
+      "avg_excitement": 73.96
+    },
+    {
+      "matchup": "St George Illawarra Dragons vs Wests Tigers",
+      "games_played": 1,
+      "avg_margin": 28,
+      "avg_excitement": 6.67
+    },
+    {
+      "matchup": "Wests Tigers vs St George Illawarra Dragons",
+      "games_played": 1,
+      "avg_margin": 28,
+      "avg_excitement": 6.67
+    },
+    {
+      "matchup": "South Sydney Rabbitohs vs Sydney Roosters",
+      "games_played": 7,
+      "avg_margin": 18.57,
+      "avg_excitement": 44.52
+    },
+    {
+      "matchup": "Sydney Roosters vs South Sydney Rabbitohs",
+      "games_played": 7,
+      "avg_margin": 18.57,
+      "avg_excitement": 44.52
+    },
+    {
+      "matchup": "Manly Sea Eagles vs Parramatta Eels",
+      "games_played": 1,
+      "avg_margin": 16,
+      "avg_excitement": 16.67
+    },
+    {
+      "matchup": "Parramatta Eels vs Manly Sea Eagles",
+      "games_played": 1,
+      "avg_margin": 16,
+      "avg_excitement": 16.67
+    },
+    {
+      "matchup": "Melbourne Storm vs North Queensland Cowboys",
+      "games_played": 2,
+      "avg_margin": 12,
+      "avg_excitement": 55.0
+    },
+    {
+      "matchup": "North Queensland Cowboys vs Melbourne Storm",
+      "games_played": 2,
+      "avg_margin": 12,
+      "avg_excitement": 55.0
+    },
+    {
+      "matchup": "Canberra Raiders vs New Zealand Warriors",
+      "games_played": 2,
+      "avg_margin": 8,
+      "avg_excitement": 93.33
+    },
+    {
+      "matchup": "New Zealand Warriors vs Canberra Raiders",
+      "games_played": 2,
+      "avg_margin": 8,
+      "avg_excitement": 93.33
+    },
+    {
+      "matchup": "Brisbane Broncos vs Canterbury Bulldogs",
+      "games_played": 1,
+      "avg_margin": 16,
+      "avg_excitement": 16.67
+    },
+    {
+      "matchup": "Canterbury Bulldogs vs Brisbane Broncos",
+      "games_played": 1,
+      "avg_margin": 16,
+      "avg_excitement": 16.67
+    },
+    {
+      "matchup": "Gold Coast Titans vs St George Illawarra Dragons",
+      "games_played": 1,
+      "avg_margin": 8,
+      "avg_excitement": 93.33
+    },
+    {
+      "matchup": "St George Illawarra Dragons vs Gold Coast Titans",
+      "games_played": 1,
+      "avg_margin": 8,
+      "avg_excitement": 93.33
+    },
+    {
+      "matchup": "Cronulla Sharks vs Wests Tigers",
+      "games_played": 1,
+      "avg_margin": 17,
+      "avg_excitement": 15.83
+    },
+    {
+      "matchup": "Wests Tigers vs Cronulla Sharks",
+      "games_played": 1,
+      "avg_margin": 17,
+      "avg_excitement": 15.83
+    },
+    {
+      "matchup": "Newcastle Knights vs Penrith Panthers",
+      "games_played": 1,
+      "avg_margin": 44,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Penrith Panthers vs Newcastle Knights",
+      "games_played": 1,
+      "avg_margin": 44,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Canberra Raiders vs Melbourne Storm",
+      "games_played": 3,
+      "avg_margin": 10,
+      "avg_excitement": 68.33
+    },
+    {
+      "matchup": "Melbourne Storm vs Canberra Raiders",
+      "games_played": 3,
+      "avg_margin": 10,
+      "avg_excitement": 68.33
+    },
+    {
+      "matchup": "Cronulla Sharks vs Manly Sea Eagles",
+      "games_played": 2,
+      "avg_margin": 16,
+      "avg_excitement": 51.67
+    },
+    {
+      "matchup": "Manly Sea Eagles vs Cronulla Sharks",
+      "games_played": 2,
+      "avg_margin": 16,
+      "avg_excitement": 51.67
+    },
+    {
+      "matchup": "Brisbane Broncos vs Parramatta Eels",
+      "games_played": 2,
+      "avg_margin": 36,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Parramatta Eels vs Brisbane Broncos",
+      "games_played": 2,
+      "avg_margin": 36,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Manly Sea Eagles vs South Sydney Rabbitohs",
+      "games_played": 2,
+      "avg_margin": 14,
+      "avg_excitement": 53.33
+    },
+    {
+      "matchup": "South Sydney Rabbitohs vs Manly Sea Eagles",
+      "games_played": 2,
+      "avg_margin": 14,
+      "avg_excitement": 53.33
+    },
+    {
+      "matchup": "Melbourne Storm vs Parramatta Eels",
+      "games_played": 3,
+      "avg_margin": 17.33,
+      "avg_excitement": 62.22
+    },
+    {
+      "matchup": "Parramatta Eels vs Melbourne Storm",
+      "games_played": 3,
+      "avg_margin": 17.33,
+      "avg_excitement": 62.22
+    },
+    {
+      "matchup": "Canberra Raiders vs South Sydney Rabbitohs",
+      "games_played": 1,
+      "avg_margin": 6,
+      "avg_excitement": 95.0
+    },
+    {
+      "matchup": "South Sydney Rabbitohs vs Canberra Raiders",
+      "games_played": 1,
+      "avg_margin": 6,
+      "avg_excitement": 95.0
+    },
+    {
+      "matchup": "Melbourne Storm vs Sydney Roosters",
+      "games_played": 3,
+      "avg_margin": 14.33,
+      "avg_excitement": 64.72
+    },
+    {
+      "matchup": "Sydney Roosters vs Melbourne Storm",
+      "games_played": 3,
+      "avg_margin": 14.33,
+      "avg_excitement": 64.72
+    },
+    {
+      "matchup": "Canberra Raiders vs Sydney Roosters",
+      "games_played": 5,
+      "avg_margin": 9.6,
+      "avg_excitement": 78.0
+    },
+    {
+      "matchup": "Sydney Roosters vs Canberra Raiders",
+      "games_played": 5,
+      "avg_margin": 9.6,
+      "avg_excitement": 78.0
+    },
+    {
+      "matchup": "Brisbane Broncos vs Penrith Panthers",
+      "games_played": 2,
+      "avg_margin": 7.5,
+      "avg_excitement": 58.75
+    },
+    {
+      "matchup": "Penrith Panthers vs Brisbane Broncos",
+      "games_played": 2,
+      "avg_margin": 7.5,
+      "avg_excitement": 58.75
+    },
+    {
+      "matchup": "Cronulla Sharks vs Newcastle Knights",
+      "games_played": 2,
+      "avg_margin": 25,
+      "avg_excitement": 9.17
+    },
+    {
+      "matchup": "Newcastle Knights vs Cronulla Sharks",
+      "games_played": 2,
+      "avg_margin": 25,
+      "avg_excitement": 9.17
+    },
+    {
+      "matchup": "Melbourne Storm vs South Sydney Rabbitohs",
+      "games_played": 1,
+      "avg_margin": 6,
+      "avg_excitement": 95.0
+    },
+    {
+      "matchup": "South Sydney Rabbitohs vs Melbourne Storm",
+      "games_played": 1,
+      "avg_margin": 6,
+      "avg_excitement": 95.0
+    },
+    {
+      "matchup": "Canterbury Bulldogs vs Gold Coast Titans",
+      "games_played": 2,
+      "avg_margin": 4,
+      "avg_excitement": 96.67
+    },
+    {
+      "matchup": "Gold Coast Titans vs Canterbury Bulldogs",
+      "games_played": 2,
+      "avg_margin": 4,
+      "avg_excitement": 96.67
+    },
+    {
+      "matchup": "Manly Sea Eagles vs Wests Tigers",
+      "games_played": 2,
+      "avg_margin": 22,
+      "avg_excitement": 46.67
+    },
+    {
+      "matchup": "Wests Tigers vs Manly Sea Eagles",
+      "games_played": 2,
+      "avg_margin": 22,
+      "avg_excitement": 46.67
+    },
+    {
+      "matchup": "New Zealand Warriors vs Parramatta Eels",
+      "games_played": 1,
+      "avg_margin": 6,
+      "avg_excitement": 95.0
+    },
+    {
+      "matchup": "Parramatta Eels vs New Zealand Warriors",
+      "games_played": 1,
+      "avg_margin": 6,
+      "avg_excitement": 95.0
+    },
+    {
+      "matchup": "North Queensland Cowboys vs St George Illawarra Dragons",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 99.17
+    },
+    {
+      "matchup": "St George Illawarra Dragons vs North Queensland Cowboys",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 99.17
+    },
+    {
+      "matchup": "South Sydney Rabbitohs vs Wests Tigers",
+      "games_played": 1,
+      "avg_margin": 2,
+      "avg_excitement": 98.33
+    },
+    {
+      "matchup": "Wests Tigers vs South Sydney Rabbitohs",
+      "games_played": 1,
+      "avg_margin": 2,
+      "avg_excitement": 98.33
+    },
+    {
+      "matchup": "Canterbury Bulldogs vs Manly Sea Eagles",
+      "games_played": 3,
+      "avg_margin": 5,
+      "avg_excitement": 95.83
+    },
+    {
+      "matchup": "Manly Sea Eagles vs Canterbury Bulldogs",
+      "games_played": 3,
+      "avg_margin": 5,
+      "avg_excitement": 95.83
+    },
+    {
+      "matchup": "Parramatta Eels vs Penrith Panthers",
+      "games_played": 5,
+      "avg_margin": 17.8,
+      "avg_excitement": 29.17
+    },
+    {
+      "matchup": "Penrith Panthers vs Parramatta Eels",
+      "games_played": 5,
+      "avg_margin": 17.8,
+      "avg_excitement": 29.17
+    },
+    {
+      "matchup": "Canberra Raiders vs St George Illawarra Dragons",
+      "games_played": 2,
+      "avg_margin": 15.5,
+      "avg_excitement": 52.08
+    },
+    {
+      "matchup": "St George Illawarra Dragons vs Canberra Raiders",
+      "games_played": 2,
+      "avg_margin": 15.5,
+      "avg_excitement": 52.08
+    },
+    {
+      "matchup": "Brisbane Broncos vs Gold Coast Titans",
+      "games_played": 1,
+      "avg_margin": 12,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Gold Coast Titans vs Brisbane Broncos",
+      "games_played": 1,
+      "avg_margin": 12,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Newcastle Knights vs Sydney Roosters",
+      "games_played": 1,
+      "avg_margin": 30,
+      "avg_excitement": 5.0
+    },
+    {
+      "matchup": "Sydney Roosters vs Newcastle Knights",
+      "games_played": 1,
+      "avg_margin": 30,
+      "avg_excitement": 5.0
+    },
+    {
+      "matchup": "Cronulla Sharks vs New Zealand Warriors",
+      "games_played": 1,
+      "avg_margin": 8,
+      "avg_excitement": 93.33
+    },
+    {
+      "matchup": "New Zealand Warriors vs Cronulla Sharks",
+      "games_played": 1,
+      "avg_margin": 8,
+      "avg_excitement": 93.33
+    },
+    {
+      "matchup": "Canterbury Bulldogs vs South Sydney Rabbitohs",
+      "games_played": 1,
+      "avg_margin": 10,
+      "avg_excitement": 91.67
+    },
+    {
+      "matchup": "South Sydney Rabbitohs vs Canterbury Bulldogs",
+      "games_played": 1,
+      "avg_margin": 10,
+      "avg_excitement": 91.67
+    },
+    {
+      "matchup": "North Queensland Cowboys vs Penrith Panthers",
+      "games_played": 3,
+      "avg_margin": 27.33,
+      "avg_excitement": 7.22
+    },
+    {
+      "matchup": "Penrith Panthers vs North Queensland Cowboys",
+      "games_played": 3,
+      "avg_margin": 27.33,
+      "avg_excitement": 7.22
+    },
+    {
+      "matchup": "Gold Coast Titans vs Manly Sea Eagles",
+      "games_played": 1,
+      "avg_margin": 18,
+      "avg_excitement": 15.0
+    },
+    {
+      "matchup": "Manly Sea Eagles vs Gold Coast Titans",
+      "games_played": 1,
+      "avg_margin": 18,
+      "avg_excitement": 15.0
+    },
+    {
+      "matchup": "Melbourne Storm vs Wests Tigers",
+      "games_played": 1,
+      "avg_margin": 28,
+      "avg_excitement": 6.67
+    },
+    {
+      "matchup": "Wests Tigers vs Melbourne Storm",
+      "games_played": 1,
+      "avg_margin": 28,
+      "avg_excitement": 6.67
+    },
+    {
+      "matchup": "Cronulla Sharks vs Sydney Roosters",
+      "games_played": 2,
+      "avg_margin": 8.5,
+      "avg_excitement": 57.92
+    },
+    {
+      "matchup": "Sydney Roosters vs Cronulla Sharks",
+      "games_played": 2,
+      "avg_margin": 8.5,
+      "avg_excitement": 57.92
+    },
+    {
+      "matchup": "Newcastle Knights vs St George Illawarra Dragons",
+      "games_played": 2,
+      "avg_margin": 22,
+      "avg_excitement": 11.67
+    },
+    {
+      "matchup": "St George Illawarra Dragons vs Newcastle Knights",
+      "games_played": 2,
+      "avg_margin": 22,
+      "avg_excitement": 11.67
+    },
+    {
+      "matchup": "Brisbane Broncos vs North Queensland Cowboys",
+      "games_played": 1,
+      "avg_margin": 16,
+      "avg_excitement": 16.67
+    },
+    {
+      "matchup": "North Queensland Cowboys vs Brisbane Broncos",
+      "games_played": 1,
+      "avg_margin": 16,
+      "avg_excitement": 16.67
+    },
+    {
+      "matchup": "Gold Coast Titans vs Newcastle Knights",
+      "games_played": 2,
+      "avg_margin": 26,
+      "avg_excitement": 8.33
+    },
+    {
+      "matchup": "Newcastle Knights vs Gold Coast Titans",
+      "games_played": 2,
+      "avg_margin": 26,
+      "avg_excitement": 8.33
+    },
+    {
+      "matchup": "Canterbury Bulldogs vs Penrith Panthers",
+      "games_played": 1,
+      "avg_margin": 42,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Penrith Panthers vs Canterbury Bulldogs",
+      "games_played": 1,
+      "avg_margin": 42,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Parramatta Eels vs Wests Tigers",
+      "games_played": 2,
+      "avg_margin": 19,
+      "avg_excitement": 49.17
+    },
+    {
+      "matchup": "Wests Tigers vs Parramatta Eels",
+      "games_played": 2,
+      "avg_margin": 19,
+      "avg_excitement": 49.17
+    },
+    {
+      "matchup": "Manly Sea Eagles vs New Zealand Warriors",
+      "games_played": 1,
+      "avg_margin": 12,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "New Zealand Warriors vs Manly Sea Eagles",
+      "games_played": 1,
+      "avg_margin": 12,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Melbourne Storm vs St George Illawarra Dragons",
+      "games_played": 1,
+      "avg_margin": 8,
+      "avg_excitement": 93.33
+    },
+    {
+      "matchup": "St George Illawarra Dragons vs Melbourne Storm",
+      "games_played": 1,
+      "avg_margin": 8,
+      "avg_excitement": 93.33
+    },
+    {
+      "matchup": "Penrith Panthers vs Sydney Roosters",
+      "games_played": 2,
+      "avg_margin": 10.5,
+      "avg_excitement": 56.25
+    },
+    {
+      "matchup": "Sydney Roosters vs Penrith Panthers",
+      "games_played": 2,
+      "avg_margin": 10.5,
+      "avg_excitement": 56.25
+    },
+    {
+      "matchup": "Newcastle Knights vs South Sydney Rabbitohs",
+      "games_played": 1,
+      "avg_margin": 26,
+      "avg_excitement": 8.33
+    },
+    {
+      "matchup": "South Sydney Rabbitohs vs Newcastle Knights",
+      "games_played": 1,
+      "avg_margin": 26,
+      "avg_excitement": 8.33
+    },
+    {
+      "matchup": "Parramatta Eels vs South Sydney Rabbitohs",
+      "games_played": 1,
+      "avg_margin": 14,
+      "avg_excitement": 18.33
+    },
+    {
+      "matchup": "South Sydney Rabbitohs vs Parramatta Eels",
+      "games_played": 1,
+      "avg_margin": 14,
+      "avg_excitement": 18.33
+    },
+    {
+      "matchup": "Penrith Panthers vs South Sydney Rabbitohs",
+      "games_played": 4,
+      "avg_margin": 8,
+      "avg_excitement": 75.83
+    },
+    {
+      "matchup": "South Sydney Rabbitohs vs Penrith Panthers",
+      "games_played": 4,
+      "avg_margin": 8,
+      "avg_excitement": 75.83
+    },
+    {
+      "matchup": "Melbourne Storm vs Penrith Panthers",
+      "games_played": 4,
+      "avg_margin": 13,
+      "avg_excitement": 71.67
+    },
+    {
+      "matchup": "Penrith Panthers vs Melbourne Storm",
+      "games_played": 4,
+      "avg_margin": 13,
+      "avg_excitement": 71.67
+    },
+    {
+      "matchup": "New South Wales vs Queensland",
+      "games_played": 3,
+      "avg_margin": 11.33,
+      "avg_excitement": 67.22
+    },
+    {
+      "matchup": "Queensland vs New South Wales",
+      "games_played": 3,
+      "avg_margin": 11.33,
+      "avg_excitement": 67.22
+    },
+    {
+      "matchup": "Cronulla Sharks vs Melbourne Storm",
+      "games_played": 2,
+      "avg_margin": 19.5,
+      "avg_excitement": 48.75
+    },
+    {
+      "matchup": "Melbourne Storm vs Cronulla Sharks",
+      "games_played": 2,
+      "avg_margin": 19.5,
+      "avg_excitement": 48.75
+    },
+    {
+      "matchup": "Brisbane Broncos vs Newcastle Knights",
+      "games_played": 1,
+      "avg_margin": 13,
+      "avg_excitement": 19.17
+    },
+    {
+      "matchup": "Newcastle Knights vs Brisbane Broncos",
+      "games_played": 1,
+      "avg_margin": 13,
+      "avg_excitement": 19.17
+    },
+    {
+      "matchup": "Manly Sea Eagles vs North Queensland Cowboys",
+      "games_played": 1,
+      "avg_margin": 28,
+      "avg_excitement": 6.67
+    },
+    {
+      "matchup": "North Queensland Cowboys vs Manly Sea Eagles",
+      "games_played": 1,
+      "avg_margin": 28,
+      "avg_excitement": 6.67
+    },
+    {
+      "matchup": "South Sydney Rabbitohs vs St George Illawarra Dragons",
+      "games_played": 1,
+      "avg_margin": 4,
+      "avg_excitement": 96.67
+    },
+    {
+      "matchup": "St George Illawarra Dragons vs South Sydney Rabbitohs",
+      "games_played": 1,
+      "avg_margin": 4,
+      "avg_excitement": 96.67
+    },
+    {
+      "matchup": "Gold Coast Titans vs New Zealand Warriors",
+      "games_played": 2,
+      "avg_margin": 22.5,
+      "avg_excitement": 46.25
+    },
+    {
+      "matchup": "New Zealand Warriors vs Gold Coast Titans",
+      "games_played": 2,
+      "avg_margin": 22.5,
+      "avg_excitement": 46.25
+    },
+    {
+      "matchup": "Canterbury Bulldogs vs Wests Tigers",
+      "games_played": 1,
+      "avg_margin": 38,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Wests Tigers vs Canterbury Bulldogs",
+      "games_played": 1,
+      "avg_margin": 38,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Manly Sea Eagles vs Melbourne Storm",
+      "games_played": 1,
+      "avg_margin": 28,
+      "avg_excitement": 6.67
+    },
+    {
+      "matchup": "Melbourne Storm vs Manly Sea Eagles",
+      "games_played": 1,
+      "avg_margin": 28,
+      "avg_excitement": 6.67
+    },
+    {
+      "matchup": "Gold Coast Titans vs Sydney Roosters",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 99.17
+    },
+    {
+      "matchup": "Sydney Roosters vs Gold Coast Titans",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 99.17
+    },
+    {
+      "matchup": "Newcastle Knights vs Parramatta Eels",
+      "games_played": 1,
+      "avg_margin": 8,
+      "avg_excitement": 93.33
+    },
+    {
+      "matchup": "Parramatta Eels vs Newcastle Knights",
+      "games_played": 1,
+      "avg_margin": 8,
+      "avg_excitement": 93.33
+    },
+    {
+      "matchup": "Manly Sea Eagles vs Sydney Roosters",
+      "games_played": 2,
+      "avg_margin": 30,
+      "avg_excitement": 5.0
+    },
+    {
+      "matchup": "Sydney Roosters vs Manly Sea Eagles",
+      "games_played": 2,
+      "avg_margin": 30,
+      "avg_excitement": 5.0
+    },
+    {
+      "matchup": "Brisbane Broncos vs St George Illawarra Dragons",
+      "games_played": 1,
+      "avg_margin": 10,
+      "avg_excitement": 91.67
+    },
+    {
+      "matchup": "St George Illawarra Dragons vs Brisbane Broncos",
+      "games_played": 1,
+      "avg_margin": 10,
+      "avg_excitement": 91.67
+    },
+    {
+      "matchup": "Canberra Raiders vs Wests Tigers",
+      "games_played": 1,
+      "avg_margin": 46,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Wests Tigers vs Canberra Raiders",
+      "games_played": 1,
+      "avg_margin": 46,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Cronulla Sharks vs North Queensland Cowboys",
+      "games_played": 2,
+      "avg_margin": 5,
+      "avg_excitement": 95.83
+    },
+    {
+      "matchup": "North Queensland Cowboys vs Cronulla Sharks",
+      "games_played": 2,
+      "avg_margin": 5,
+      "avg_excitement": 95.83
+    },
+    {
+      "matchup": "Canberra Raiders vs Parramatta Eels",
+      "games_played": 1,
+      "avg_margin": 36,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Parramatta Eels vs Canberra Raiders",
+      "games_played": 1,
+      "avg_margin": 36,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Cronulla Sharks vs South Sydney Rabbitohs",
+      "games_played": 1,
+      "avg_margin": 26,
+      "avg_excitement": 8.33
+    },
+    {
+      "matchup": "South Sydney Rabbitohs vs Cronulla Sharks",
+      "games_played": 1,
+      "avg_margin": 26,
+      "avg_excitement": 8.33
+    },
+    {
+      "matchup": "North Queensland Cowboys vs Parramatta Eels",
+      "games_played": 1,
+      "avg_margin": 4,
+      "avg_excitement": 96.67
+    },
+    {
+      "matchup": "Parramatta Eels vs North Queensland Cowboys",
+      "games_played": 1,
+      "avg_margin": 4,
+      "avg_excitement": 96.67
+    },
+    {
+      "matchup": "Dolphins vs New Zealand Warriors",
+      "games_played": 1,
+      "avg_margin": 24,
+      "avg_excitement": 10.0
+    },
+    {
+      "matchup": "New Zealand Warriors vs Dolphins",
+      "games_played": 1,
+      "avg_margin": 24,
+      "avg_excitement": 10.0
+    },
+    {
+      "matchup": "Brisbane Broncos vs Melbourne Storm",
+      "games_played": 2,
+      "avg_margin": 32,
+      "avg_excitement": 3.33
+    },
+    {
+      "matchup": "Melbourne Storm vs Brisbane Broncos",
+      "games_played": 2,
+      "avg_margin": 32,
+      "avg_excitement": 3.33
+    },
+    {
+      "matchup": "New Zealand Warriors vs Penrith Panthers",
+      "games_played": 1,
+      "avg_margin": 26,
+      "avg_excitement": 8.33
+    },
+    {
+      "matchup": "Penrith Panthers vs New Zealand Warriors",
+      "games_played": 1,
+      "avg_margin": 26,
+      "avg_excitement": 8.33
+    },
+    {
+      "matchup": "Canberra Raiders vs Newcastle Knights",
+      "games_played": 1,
+      "avg_margin": 2,
+      "avg_excitement": 98.33
+    },
+    {
+      "matchup": "Newcastle Knights vs Canberra Raiders",
+      "games_played": 1,
+      "avg_margin": 2,
+      "avg_excitement": 98.33
+    },
+    {
+      "matchup": "New Zealand Warriors vs Newcastle Knights",
+      "games_played": 1,
+      "avg_margin": 30,
+      "avg_excitement": 5.0
+    },
+    {
+      "matchup": "Newcastle Knights vs New Zealand Warriors",
+      "games_played": 1,
+      "avg_margin": 30,
+      "avg_excitement": 5.0
+    },
+    {
+      "matchup": "Brisbane Broncos vs New Zealand Warriors",
+      "games_played": 1,
+      "avg_margin": 30,
+      "avg_excitement": 5.0
+    },
+    {
+      "matchup": "New Zealand Warriors vs Brisbane Broncos",
+      "games_played": 1,
+      "avg_margin": 30,
+      "avg_excitement": 5.0
+    },
+    {
+      "matchup": "Canterbury Bulldogs vs North Queensland Cowboys",
+      "games_played": 1,
+      "avg_margin": 38,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "North Queensland Cowboys vs Canterbury Bulldogs",
+      "games_played": 1,
+      "avg_margin": 38,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Gold Coast Titans vs Penrith Panthers",
+      "games_played": 1,
+      "avg_margin": 6,
+      "avg_excitement": 95.0
+    },
+    {
+      "matchup": "Penrith Panthers vs Gold Coast Titans",
+      "games_played": 1,
+      "avg_margin": 6,
+      "avg_excitement": 95.0
+    },
+    {
+      "matchup": "Dolphins vs Newcastle Knights",
+      "games_played": 1,
+      "avg_margin": 8,
+      "avg_excitement": 93.33
+    },
+    {
+      "matchup": "Newcastle Knights vs Dolphins",
+      "games_played": 1,
+      "avg_margin": 8,
+      "avg_excitement": 93.33
+    },
+    {
+      "matchup": "Newcastle Knights vs North Queensland Cowboys",
+      "games_played": 1,
+      "avg_margin": 12,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "North Queensland Cowboys vs Newcastle Knights",
+      "games_played": 1,
+      "avg_margin": 12,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Cronulla Sharks vs Penrith Panthers",
+      "games_played": 1,
+      "avg_margin": 20,
+      "avg_excitement": 13.33
+    },
+    {
+      "matchup": "Penrith Panthers vs Cronulla Sharks",
+      "games_played": 1,
+      "avg_margin": 20,
+      "avg_excitement": 13.33
+    }
+  ],
+  "matchup_close_rates": [
+    {
+      "matchup": "Canberra Raiders vs Cronulla Sharks",
+      "games": 4,
+      "close_games": 3,
+      "close_rate": 75.0
+    },
+    {
+      "matchup": "Cronulla Sharks vs Canberra Raiders",
+      "games": 4,
+      "close_games": 3,
+      "close_rate": 75.0
+    },
+    {
+      "matchup": "St George Illawarra Dragons vs Wests Tigers",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Wests Tigers vs St George Illawarra Dragons",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "South Sydney Rabbitohs vs Sydney Roosters",
+      "games": 7,
+      "close_games": 3,
+      "close_rate": 42.86
+    },
+    {
+      "matchup": "Sydney Roosters vs South Sydney Rabbitohs",
+      "games": 7,
+      "close_games": 3,
+      "close_rate": 42.86
+    },
+    {
+      "matchup": "Manly Sea Eagles vs Parramatta Eels",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Parramatta Eels vs Manly Sea Eagles",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Melbourne Storm vs North Queensland Cowboys",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "North Queensland Cowboys vs Melbourne Storm",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Canberra Raiders vs New Zealand Warriors",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "New Zealand Warriors vs Canberra Raiders",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Brisbane Broncos vs Canterbury Bulldogs",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Canterbury Bulldogs vs Brisbane Broncos",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Gold Coast Titans vs St George Illawarra Dragons",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "St George Illawarra Dragons vs Gold Coast Titans",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Cronulla Sharks vs Wests Tigers",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Wests Tigers vs Cronulla Sharks",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Newcastle Knights vs Penrith Panthers",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Penrith Panthers vs Newcastle Knights",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Canberra Raiders vs Melbourne Storm",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Melbourne Storm vs Canberra Raiders",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Cronulla Sharks vs Manly Sea Eagles",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Manly Sea Eagles vs Cronulla Sharks",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Brisbane Broncos vs Parramatta Eels",
+      "games": 2,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Parramatta Eels vs Brisbane Broncos",
+      "games": 2,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Manly Sea Eagles vs South Sydney Rabbitohs",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "South Sydney Rabbitohs vs Manly Sea Eagles",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Melbourne Storm vs Parramatta Eels",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Parramatta Eels vs Melbourne Storm",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Canberra Raiders vs South Sydney Rabbitohs",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "South Sydney Rabbitohs vs Canberra Raiders",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Melbourne Storm vs Sydney Roosters",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Sydney Roosters vs Melbourne Storm",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Canberra Raiders vs Sydney Roosters",
+      "games": 5,
+      "close_games": 4,
+      "close_rate": 80.0
+    },
+    {
+      "matchup": "Sydney Roosters vs Canberra Raiders",
+      "games": 5,
+      "close_games": 4,
+      "close_rate": 80.0
+    },
+    {
+      "matchup": "Brisbane Broncos vs Penrith Panthers",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Penrith Panthers vs Brisbane Broncos",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Cronulla Sharks vs Newcastle Knights",
+      "games": 2,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Newcastle Knights vs Cronulla Sharks",
+      "games": 2,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Melbourne Storm vs South Sydney Rabbitohs",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "South Sydney Rabbitohs vs Melbourne Storm",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Canterbury Bulldogs vs Gold Coast Titans",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Gold Coast Titans vs Canterbury Bulldogs",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Manly Sea Eagles vs Wests Tigers",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Wests Tigers vs Manly Sea Eagles",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "New Zealand Warriors vs Parramatta Eels",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Parramatta Eels vs New Zealand Warriors",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "North Queensland Cowboys vs St George Illawarra Dragons",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "St George Illawarra Dragons vs North Queensland Cowboys",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "South Sydney Rabbitohs vs Wests Tigers",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Wests Tigers vs South Sydney Rabbitohs",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Canterbury Bulldogs vs Manly Sea Eagles",
+      "games": 3,
+      "close_games": 3,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Manly Sea Eagles vs Canterbury Bulldogs",
+      "games": 3,
+      "close_games": 3,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Parramatta Eels vs Penrith Panthers",
+      "games": 5,
+      "close_games": 1,
+      "close_rate": 20.0
+    },
+    {
+      "matchup": "Penrith Panthers vs Parramatta Eels",
+      "games": 5,
+      "close_games": 1,
+      "close_rate": 20.0
+    },
+    {
+      "matchup": "Canberra Raiders vs St George Illawarra Dragons",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "St George Illawarra Dragons vs Canberra Raiders",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Brisbane Broncos vs Gold Coast Titans",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Gold Coast Titans vs Brisbane Broncos",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Newcastle Knights vs Sydney Roosters",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Sydney Roosters vs Newcastle Knights",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Cronulla Sharks vs New Zealand Warriors",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "New Zealand Warriors vs Cronulla Sharks",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Canterbury Bulldogs vs South Sydney Rabbitohs",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "South Sydney Rabbitohs vs Canterbury Bulldogs",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "North Queensland Cowboys vs Penrith Panthers",
+      "games": 3,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Penrith Panthers vs North Queensland Cowboys",
+      "games": 3,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Gold Coast Titans vs Manly Sea Eagles",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Manly Sea Eagles vs Gold Coast Titans",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Melbourne Storm vs Wests Tigers",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Wests Tigers vs Melbourne Storm",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Cronulla Sharks vs Sydney Roosters",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Sydney Roosters vs Cronulla Sharks",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Newcastle Knights vs St George Illawarra Dragons",
+      "games": 2,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "St George Illawarra Dragons vs Newcastle Knights",
+      "games": 2,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Brisbane Broncos vs North Queensland Cowboys",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "North Queensland Cowboys vs Brisbane Broncos",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Gold Coast Titans vs Newcastle Knights",
+      "games": 2,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Newcastle Knights vs Gold Coast Titans",
+      "games": 2,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Canterbury Bulldogs vs Penrith Panthers",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Penrith Panthers vs Canterbury Bulldogs",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Parramatta Eels vs Wests Tigers",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Wests Tigers vs Parramatta Eels",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Manly Sea Eagles vs New Zealand Warriors",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "New Zealand Warriors vs Manly Sea Eagles",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Melbourne Storm vs St George Illawarra Dragons",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "St George Illawarra Dragons vs Melbourne Storm",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Penrith Panthers vs Sydney Roosters",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Sydney Roosters vs Penrith Panthers",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Newcastle Knights vs South Sydney Rabbitohs",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "South Sydney Rabbitohs vs Newcastle Knights",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Parramatta Eels vs South Sydney Rabbitohs",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "South Sydney Rabbitohs vs Parramatta Eels",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Penrith Panthers vs South Sydney Rabbitohs",
+      "games": 4,
+      "close_games": 3,
+      "close_rate": 75.0
+    },
+    {
+      "matchup": "South Sydney Rabbitohs vs Penrith Panthers",
+      "games": 4,
+      "close_games": 3,
+      "close_rate": 75.0
+    },
+    {
+      "matchup": "Melbourne Storm vs Penrith Panthers",
+      "games": 4,
+      "close_games": 3,
+      "close_rate": 75.0
+    },
+    {
+      "matchup": "Penrith Panthers vs Melbourne Storm",
+      "games": 4,
+      "close_games": 3,
+      "close_rate": 75.0
+    },
+    {
+      "matchup": "New South Wales vs Queensland",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Queensland vs New South Wales",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Cronulla Sharks vs Melbourne Storm",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Melbourne Storm vs Cronulla Sharks",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Brisbane Broncos vs Newcastle Knights",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Newcastle Knights vs Brisbane Broncos",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Manly Sea Eagles vs North Queensland Cowboys",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "North Queensland Cowboys vs Manly Sea Eagles",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "South Sydney Rabbitohs vs St George Illawarra Dragons",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "St George Illawarra Dragons vs South Sydney Rabbitohs",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Gold Coast Titans vs New Zealand Warriors",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "New Zealand Warriors vs Gold Coast Titans",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Canterbury Bulldogs vs Wests Tigers",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Wests Tigers vs Canterbury Bulldogs",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Manly Sea Eagles vs Melbourne Storm",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Melbourne Storm vs Manly Sea Eagles",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Gold Coast Titans vs Sydney Roosters",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Sydney Roosters vs Gold Coast Titans",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Newcastle Knights vs Parramatta Eels",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Parramatta Eels vs Newcastle Knights",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Manly Sea Eagles vs Sydney Roosters",
+      "games": 2,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Sydney Roosters vs Manly Sea Eagles",
+      "games": 2,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Brisbane Broncos vs St George Illawarra Dragons",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "St George Illawarra Dragons vs Brisbane Broncos",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Canberra Raiders vs Wests Tigers",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Wests Tigers vs Canberra Raiders",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Cronulla Sharks vs North Queensland Cowboys",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "North Queensland Cowboys vs Cronulla Sharks",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Canberra Raiders vs Parramatta Eels",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Parramatta Eels vs Canberra Raiders",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Cronulla Sharks vs South Sydney Rabbitohs",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "South Sydney Rabbitohs vs Cronulla Sharks",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "North Queensland Cowboys vs Parramatta Eels",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Parramatta Eels vs North Queensland Cowboys",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Dolphins vs New Zealand Warriors",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "New Zealand Warriors vs Dolphins",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Brisbane Broncos vs Melbourne Storm",
+      "games": 2,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Melbourne Storm vs Brisbane Broncos",
+      "games": 2,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "New Zealand Warriors vs Penrith Panthers",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Penrith Panthers vs New Zealand Warriors",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Canberra Raiders vs Newcastle Knights",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Newcastle Knights vs Canberra Raiders",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "New Zealand Warriors vs Newcastle Knights",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Newcastle Knights vs New Zealand Warriors",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Brisbane Broncos vs New Zealand Warriors",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "New Zealand Warriors vs Brisbane Broncos",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Canterbury Bulldogs vs North Queensland Cowboys",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "North Queensland Cowboys vs Canterbury Bulldogs",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Gold Coast Titans vs Penrith Panthers",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Penrith Panthers vs Gold Coast Titans",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Dolphins vs Newcastle Knights",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Newcastle Knights vs Dolphins",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Newcastle Knights vs North Queensland Cowboys",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "North Queensland Cowboys vs Newcastle Knights",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Cronulla Sharks vs Penrith Panthers",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Penrith Panthers vs Cronulla Sharks",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    }
+  ],
+  "form_strengths": [
+    {
+      "team": "Brisbane Broncos",
+      "strength": 59.3
+    },
+    {
+      "team": "Canberra Raiders",
+      "strength": 74.0
+    },
+    {
+      "team": "Canterbury Bulldogs",
+      "strength": 60.0
+    },
+    {
+      "team": "Cronulla Sharks",
+      "strength": 64.0
+    },
+    {
+      "team": "Gold Coast Titans",
+      "strength": 65.3
+    },
+    {
+      "team": "Manly Sea Eagles",
+      "strength": 62.0
+    },
+    {
+      "team": "Melbourne Storm",
+      "strength": 74.0
+    },
+    {
+      "team": "New South Wales",
+      "strength": 66.7
+    },
+    {
+      "team": "New Zealand Warriors",
+      "strength": 60.7
+    },
+    {
+      "team": "Newcastle Knights",
+      "strength": 69.3
+    },
+    {
+      "team": "North Queensland Cowboys",
+      "strength": 66.7
+    },
+    {
+      "team": "Parramatta Eels",
+      "strength": 74.7
+    },
+    {
+      "team": "Penrith Panthers",
+      "strength": 86.0
+    },
+    {
+      "team": "Queensland",
+      "strength": 80.0
+    },
+    {
+      "team": "South Sydney Rabbitohs",
+      "strength": 58.0
+    },
+    {
+      "team": "St George Illawarra Dragons",
+      "strength": 62.7
+    },
+    {
+      "team": "Sydney Roosters",
+      "strength": 66.0
+    },
+    {
+      "team": "Wests Tigers",
+      "strength": 46.0
+    }
+  ],
+  "team_margin_ratings": [
+    {
+      "team": "Brisbane Broncos",
+      "avg_margin": -3.6
+    },
+    {
+      "team": "Canberra Raiders",
+      "avg_margin": -3.8
+    },
+    {
+      "team": "Canterbury Bulldogs",
+      "avg_margin": -3.7
+    },
+    {
+      "team": "Cronulla Sharks",
+      "avg_margin": -2
+    },
+    {
+      "team": "Gold Coast Titans",
+      "avg_margin": 8.4
+    },
+    {
+      "team": "Manly Sea Eagles",
+      "avg_margin": 0.3
+    },
+    {
+      "team": "Melbourne Storm",
+      "avg_margin": 1.2
+    },
+    {
+      "team": "New South Wales",
+      "avg_margin": 4.7
+    },
+    {
+      "team": "New Zealand Warriors",
+      "avg_margin": -10.9
+    },
+    {
+      "team": "Newcastle Knights",
+      "avg_margin": -5.9
+    },
+    {
+      "team": "North Queensland Cowboys",
+      "avg_margin": 0.6
+    },
+    {
+      "team": "Parramatta Eels",
+      "avg_margin": 0.5
+    },
+    {
+      "team": "Penrith Panthers",
+      "avg_margin": 18.4
+    },
+    {
+      "team": "Queensland",
+      "avg_margin": -4.7
+    },
+    {
+      "team": "South Sydney Rabbitohs",
+      "avg_margin": 1.8
+    },
+    {
+      "team": "St George Illawarra Dragons",
+      "avg_margin": -8.2
+    },
+    {
+      "team": "Sydney Roosters",
+      "avg_margin": -1.6
+    },
+    {
+      "team": "Wests Tigers",
+      "avg_margin": -18.1
+    }
+  ]
+}

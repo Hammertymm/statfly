@@ -1373,6 +1373,63 @@ function nrlTeam(name) {
   return { name: name, abbr: (name || '').slice(0, 3).toUpperCase() };
 }
 
+function competitorName(c) {
+  return (c.team && (c.team.displayName || c.team.name)) ||
+    (c.athlete && (c.athlete.displayName || c.athlete.shortName || c.athlete.fullName)) ||
+    'Player';
+}
+
+function cricketChaseFields(comp) {
+  const reg = (comp.format && comp.format.regulation) || {};
+  const maxOvers = reg.overs || null;
+  if (!maxOvers || maxOvers > 20) return {};
+  const cs = comp.competitors || [];
+  let chasing = null, target = null;
+  cs.forEach(function(c) {
+    const ls = (c.linescores || []).find(function(x) { return x.isBatting; });
+    if (ls) chasing = { runs: ls.runs || 0, overs: ls.overs || 0 };
+  });
+  if (!chasing) return {};
+  cs.forEach(function(c) {
+    (c.linescores || []).forEach(function(x) {
+      if (!x.isBatting && x.runs != null && !target) target = x.runs + 1;
+    });
+  });
+  if (target == null) return {};
+  return {
+    cricketRunsReq: target - chasing.runs,
+    cricketOversLeft: maxOvers - chasing.overs
+  };
+}
+
+function tennisSetGames(comp, home, away) {
+  const maxSets = (comp.format && comp.format.regulation && comp.format.regulation.periods) || 3;
+  const setNum = (comp.status && comp.status.period) || 0;
+  const idx = setNum - 1;
+  const hg = (home.linescores && home.linescores[idx] && home.linescores[idx].value);
+  const ag = (away.linescores && away.linescores[idx] && away.linescores[idx].value);
+  return { tennisMaxSets: maxSets, tennisSetGamesHome: hg, tennisSetGamesAway: ag };
+}
+
+// Tennis tournaments nest matches under groupings; flatten to one event per match.
+function espnEventsFromFeed(json, feed) {
+  if (feed.sport !== 'tennis') return json.events || [];
+  const out = [];
+  (json.events || []).forEach(function(ev) {
+    (ev.groupings || []).forEach(function(grp) {
+      (grp.competitions || []).forEach(function(comp) {
+        out.push({
+          id: comp.id || ev.id,
+          date: comp.date || ev.date,
+          name: ev.name,
+          competitions: [comp]
+        });
+      });
+    });
+  });
+  return out;
+}
+
 function mapEspnEvent(event, feed) {
   const comp        = event.competitions?.[0];
   if (!comp) return null;
@@ -1383,8 +1440,8 @@ function mapEspnEvent(event, feed) {
   const timer       = espnTimer(comp, feed.label, feed.sport);
   const dateLabel   = espnDateLabel(event.date);
   const countdown   = espnCountdown(event.date);
-  let homeName      = home.team?.displayName || home.team?.name || 'Home';
-  let awayName      = away.team?.displayName || away.team?.name || 'Away';
+  let homeName      = competitorName(home);
+  let awayName      = competitorName(away);
   // ESPN sometimes supplies team.uid like "s:40~l:59~t:16" instead of team.id.
   // Also try the competitor's own .id as a last resort.
   function extractId(c){
@@ -1448,16 +1505,21 @@ function mapEspnEvent(event, feed) {
     summary,
   };
 
-  if (status==='live') return { ...base,
-    homeScore: String(homeScore), awayScore: String(awayScore),
-    timer,
-    startMs: new Date(event.date).getTime() || 0,
-    hInt, aInt,
-    period:   comp?.status?.period || 0,
-    clockSec: clockToSec(comp?.status?.displayClock),
-    clockRaw: comp?.status?.displayClock || '',
-    isOT:     detectOT(feed, comp),
-  };
+  if (status==='live') {
+    const live = { ...base,
+      homeScore: String(homeScore), awayScore: String(awayScore),
+      timer,
+      startMs: new Date(event.date).getTime() || 0,
+      hInt, aInt,
+      period:   comp?.status?.period || 0,
+      clockSec: clockToSec(comp?.status?.displayClock),
+      clockRaw: comp?.status?.displayClock || '',
+      isOT:     detectOT(feed, comp),
+    };
+    if (feed.sport === 'tennis') Object.assign(live, tennisSetGames(comp, home, away));
+    if (feed.sport === 'cricket') Object.assign(live, cricketChaseFields(comp));
+    return live;
+  }
 
   if (status==='finished') return { ...base,
     homeScore: String(homeScore), awayScore: String(awayScore),
@@ -1595,8 +1657,24 @@ function momTier(mom) {
 // 20:00 (incl. time-on). Other US sports clocks count DOWN (time remaining).
 const AFL_FLY_Q4_ELAPSED_SEC = 20 * 60;
 
-// Clutch (FlyTime) moment? Close score, late in the game. Clock-based, so it only
-// uses data we actually have. Tennis and cricket are intentionally excluded.
+// Tennis: Bo3 -> 3-3 in set 3; Bo5 -> 3-3 in set 5 (decider set only).
+function isTennisFlyTime(m) {
+  const maxSets = m.tennisMaxSets || 3;
+  const setNum = m.period || 0;
+  if (setNum !== maxSets) return false;
+  const hg = m.tennisSetGamesHome, ag = m.tennisSetGamesAway;
+  if (hg == null || ag == null) return false;
+  return hg === 3 && ag === 3;
+}
+
+// Cricket T20: chasing side needs <=20 runs with <=2 overs left.
+function isCricketFlyTime(m) {
+  if (m.cricketRunsReq == null || m.cricketOversLeft == null) return false;
+  return m.cricketRunsReq > 0 && m.cricketRunsReq <= 20 &&
+    m.cricketOversLeft >= 0 && m.cricketOversLeft <= 2;
+}
+
+// Clutch (FlyTime) moment? Close score, late in the game. Clock-based where possible.
 function isFlyTime(m) {
   const margin = Math.abs((m.hInt || 0) - (m.aInt || 0));
   const p = m.period || 0;
@@ -1615,7 +1693,9 @@ function isFlyTime(m) {
       const minute = parseInt(m.clockRaw, 10) || 0;
       return minute >= 80 && margin <= 1;
     }
-    default: return false; // tennis, cricket
+    case 'tennis':              return isTennisFlyTime(m);
+    case 'cricket':             return isCricketFlyTime(m);
+    default: return false;
   }
 }
 
@@ -1897,7 +1977,7 @@ async function loadLiveData() {
     const json = await espnFetch(feed.sport, feed.league, win);
     if (!json) return;
     coveredSports.add(feed.label);
-    (json.events||[]).forEach(ev => {
+    espnEventsFromFeed(json, feed).forEach(ev => {
       const m = mapEspnEvent(ev, feed);
       if (!m) return;
       const st = espnStatus(ev.competitions?.[0]);
@@ -1983,7 +2063,7 @@ async function refreshLiveFeeds(feeds) {
     const json = await espnFetch(feed.sport, feed.league, { back: 1, fwd: 1 });
     if (!json) return;
     covered.add(feed.label);
-    (json.events || []).forEach(ev => {
+    espnEventsFromFeed(json, feed).forEach(ev => {
       const m = mapEspnEvent(ev, feed);
       if (!m) return;
       const st = espnStatus(ev.competitions?.[0]);
@@ -3522,13 +3602,22 @@ function fmImportanceScore(notes, seasonType){
 }
 
 // --- FlyTime Engine v1 (offline JSON tables per sport) ---
-// AFL: production-locked research model. NFL: v1 bootstrap from ESPN history.
 // Formula: close*0.35 + form_balance*0.25 + margin_balance*0.25 + matchup*0.15
-const AFL_FLYTIME_THRESHOLD = 72;
-const NFL_FLYTIME_THRESHOLD = 93; // calibrated ~2 yellow flies per NFL week (bootstrap data)
+// Soccer intentionally excluded — still uses generic computeFlyMatch.
 const DEBUG_FLYSCORES = true;
-let aflFlyV1 = null;
-let nflFlyV1 = null;
+const flyV1Engines = {}; // keyed sportKey|leagueKey -> { idx, threshold, nameMap, tag }
+
+const FLY_V1_REGISTRY = {
+  'australian-football|afl':              { file: 'afl-flytime-v1.json',              threshold: 72, tag: 'FT',   nameMap: 'afl' },
+  'football|nfl':                           { file: 'nfl-flytime-v1.json',              threshold: 93, tag: 'NFL' },
+  'basketball|nba':                         { file: 'nba-flytime-v1.json',              threshold: 88, tag: 'NBA' },
+  'basketball|wnba':                        { file: 'wnba-flytime-v1.json',             threshold: 70, tag: 'WNBA' },
+  'basketball|mens-college-basketball':     { file: 'ncaam-flytime-v1.json',            threshold: 97, tag: 'NCAAM' },
+  'baseball|mlb':                           { file: 'mlb-flytime-v1.json',              threshold: 85, tag: 'MLB' },
+  'hockey|nhl':                             { file: 'nhl-flytime-v1.json',              threshold: 78, tag: 'NHL' },
+  'football|college-football':              { file: 'ncaaf-flytime-v1.json',            threshold: 96, tag: 'NCAAF' },
+  'rugby-league|3':                         { file: 'nrl-flytime-v1.json',              threshold: 85, tag: 'NRL' }
+};
 
 const AFL_RESEARCH_NAMES = {
   'North Melbourne Kangaroos': 'North Melbourne',
@@ -3588,18 +3677,29 @@ function flyV1Score(home, away, idx, nameMap) {
   return closeRate * 0.35 + formBalance * 0.25 + marginBalance * 0.25 + matchupRating * 0.15;
 }
 
-function aflFlyTimeScore(m) { return flyV1Score(m.home, m.away, aflFlyV1, AFL_RESEARCH_NAMES); }
-function nflFlyTimeScore(m) { return flyV1Score(m.home, m.away, nflFlyV1, null); }
+function flyV1Key(m) {
+  return m.sportKey + '|' + m.leagueKey;
+}
+
+function flyV1NameMap(key) {
+  const cfg = FLY_V1_REGISTRY[key];
+  if (!cfg || cfg.nameMap !== 'afl') return null;
+  return AFL_RESEARCH_NAMES;
+}
+
+function flyV1ScoreForMatch(m) {
+  const eng = flyV1Engines[flyV1Key(m)];
+  if (!eng || !eng.idx) return null;
+  return flyV1Score(m.home, m.away, eng.idx, eng.nameMap);
+}
 
 function usesFlyV1Engine(m) {
-  return m.sportKey === 'australian-football' ||
-    (m.sportKey === 'football' && m.leagueKey === 'nfl');
+  return !!FLY_V1_REGISTRY[flyV1Key(m)];
 }
 
 function flyV1Threshold(m) {
-  if (m.sportKey === 'australian-football') return AFL_FLYTIME_THRESHOLD;
-  if (m.sportKey === 'football' && m.leagueKey === 'nfl') return NFL_FLYTIME_THRESHOLD;
-  return null;
+  const eng = flyV1Engines[flyV1Key(m)];
+  return eng ? eng.threshold : null;
 }
 
 function applyFlyV1Batch(matches, idx, threshold, scoreFn, nameMap) {
@@ -3617,16 +3717,21 @@ function applyFlyV1Batch(matches, idx, threshold, scoreFn, nameMap) {
   });
 }
 
-function applyAflFlyTimeV1() {
-  const afl = ALL_UPCOMING.filter(function(m) { return m.sportKey === 'australian-football'; });
-  applyFlyV1Batch(afl, aflFlyV1, AFL_FLYTIME_THRESHOLD, aflFlyTimeScore, AFL_RESEARCH_NAMES);
-}
-
-function applyNflFlyTimeV1() {
-  const nfl = ALL_UPCOMING.filter(function(m) {
-    return m.sportKey === 'football' && m.leagueKey === 'nfl';
+function applyAllFlyTimeV1() {
+  ALL_UPCOMING.forEach(function(m) {
+    const key = flyV1Key(m);
+    const eng = flyV1Engines[key];
+    if (!eng || !eng.idx) return;
+    const score = flyV1ScoreForMatch(m);
+    if (score === null) {
+      m.isFlyMatch = false;
+      m.flyMatchRating = 0;
+      return;
+    }
+    m.flyMatchRating = Math.round(score * 10) / 10;
+    m.isFlyMatch = score >= eng.threshold;
+    if (m.isFlyMatch) ledgerPredict(m);
   });
-  applyFlyV1Batch(nfl, nflFlyV1, NFL_FLYTIME_THRESHOLD, nflFlyTimeScore, null);
 }
 
 async function loadFlyV1Json(url) {
@@ -3638,13 +3743,24 @@ async function loadFlyV1Json(url) {
 
 async function loadFlyV1Engines() {
   try {
-    const [afl, nfl] = await Promise.all([
-      loadFlyV1Json('afl-flytime-v1.json'),
-      loadFlyV1Json('nfl-flytime-v1.json')
-    ]);
-    if (afl) aflFlyV1 = afl;
-    if (nfl) nflFlyV1 = nfl;
-    if (afl || nfl) {
+    const keys = Object.keys(FLY_V1_REGISTRY);
+    const loaded = await Promise.all(keys.map(async function(key) {
+      const cfg = FLY_V1_REGISTRY[key];
+      const idx = await loadFlyV1Json(cfg.file);
+      return { key, idx, cfg };
+    }));
+    let any = false;
+    loaded.forEach(function(row) {
+      if (!row.idx) return;
+      flyV1Engines[row.key] = {
+        idx: row.idx,
+        threshold: row.cfg.threshold,
+        nameMap: flyV1NameMap(row.key),
+        tag: row.cfg.tag
+      };
+      any = true;
+    });
+    if (any) {
       runFlyMatchSweep();
       renderHome();
       renderFlyLedger();
@@ -3660,8 +3776,7 @@ function runFlyMatchSweep() {
   ALL_UPCOMING.forEach(function(m) {
     if (!usesFlyV1Engine(m)) computeFlyMatch(m);
   });
-  applyAflFlyTimeV1();
-  applyNflFlyTimeV1();
+  applyAllFlyTimeV1();
 }
 
 // Main engine: sets m.flyMatchRating (0-100) and m.isFlyMatch (>= threshold).
@@ -3731,16 +3846,12 @@ function markerHTML(cls, src, alt, fb){
 function flyScoreDebugHTML(m) {
   if (!DEBUG_FLYSCORES) return '';
   let score = null, tag = '', thr = null;
-  if (m.sportKey === 'australian-football') {
-    if (!aflFlyV1) return '<span class="fly-debug-score na">FT —</span>';
-    score = aflFlyTimeScore(m);
-    tag = 'FT';
-    thr = AFL_FLYTIME_THRESHOLD;
-  } else if (m.sportKey === 'football' && m.leagueKey === 'nfl') {
-    if (!nflFlyV1) return '<span class="fly-debug-score na">NFL —</span>';
-    score = nflFlyTimeScore(m);
-    tag = 'NFL';
-    thr = NFL_FLYTIME_THRESHOLD;
+  const eng = flyV1Engines[flyV1Key(m)];
+  if (eng) {
+    if (!eng.idx) return '<span class="fly-debug-score na">' + eng.tag + ' —</span>';
+    score = flyV1ScoreForMatch(m);
+    tag = eng.tag;
+    thr = eng.threshold;
   } else if (m.sportKey === 'tennis' || m.sportKey === 'cricket') {
     return '<span class="fly-debug-score na">—</span>';
   } else {

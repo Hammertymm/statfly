@@ -1,0 +1,1627 @@
+{
+  "meta": {
+    "sport": "WNBA",
+    "engine": "v1-bootstrap",
+    "formula": "close*0.35 + form_balance*0.25 + margin_balance*0.25 + matchup*0.15",
+    "close_margin": 8,
+    "games_sampled": 266,
+    "week_chunk": 6,
+    "built": "2026-06-10"
+  },
+  "matchup_ratings": [
+    {
+      "matchup": "Chicago Sky vs Phoenix Mercury",
+      "games_played": 7,
+      "avg_margin": 17.43,
+      "avg_excitement": 38.21
+    },
+    {
+      "matchup": "Phoenix Mercury vs Chicago Sky",
+      "games_played": 7,
+      "avg_margin": 17.43,
+      "avg_excitement": 38.21
+    },
+    {
+      "matchup": "Indiana Fever vs Minnesota Lynx",
+      "games_played": 7,
+      "avg_margin": 13.14,
+      "avg_excitement": 23.57
+    },
+    {
+      "matchup": "Minnesota Lynx vs Indiana Fever",
+      "games_played": 7,
+      "avg_margin": 13.14,
+      "avg_excitement": 23.57
+    },
+    {
+      "matchup": "Atlanta Dream vs Seattle Storm",
+      "games_played": 2,
+      "avg_margin": 14,
+      "avg_excitement": 12.5
+    },
+    {
+      "matchup": "Seattle Storm vs Atlanta Dream",
+      "games_played": 2,
+      "avg_margin": 14,
+      "avg_excitement": 12.5
+    },
+    {
+      "matchup": "New York Liberty vs Washington Mystics",
+      "games_played": 7,
+      "avg_margin": 11.71,
+      "avg_excitement": 35.36
+    },
+    {
+      "matchup": "Washington Mystics vs New York Liberty",
+      "games_played": 7,
+      "avg_margin": 11.71,
+      "avg_excitement": 35.36
+    },
+    {
+      "matchup": "Phoenix Mercury vs Seattle Storm",
+      "games_played": 6,
+      "avg_margin": 15.33,
+      "avg_excitement": 22.5
+    },
+    {
+      "matchup": "Seattle Storm vs Phoenix Mercury",
+      "games_played": 6,
+      "avg_margin": 15.33,
+      "avg_excitement": 22.5
+    },
+    {
+      "matchup": "Atlanta Dream vs Los Angeles Sparks",
+      "games_played": 3,
+      "avg_margin": 11.33,
+      "avg_excitement": 39.17
+    },
+    {
+      "matchup": "Los Angeles Sparks vs Atlanta Dream",
+      "games_played": 3,
+      "avg_margin": 11.33,
+      "avg_excitement": 39.17
+    },
+    {
+      "matchup": "Connecticut Sun vs Dallas Wings",
+      "games_played": 2,
+      "avg_margin": 28.5,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Dallas Wings vs Connecticut Sun",
+      "games_played": 2,
+      "avg_margin": 28.5,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Atlanta Dream vs Las Vegas Aces",
+      "games_played": 2,
+      "avg_margin": 7,
+      "avg_excitement": 56.25
+    },
+    {
+      "matchup": "Las Vegas Aces vs Atlanta Dream",
+      "games_played": 2,
+      "avg_margin": 7,
+      "avg_excitement": 56.25
+    },
+    {
+      "matchup": "Los Angeles Sparks vs Seattle Storm",
+      "games_played": 7,
+      "avg_margin": 14.14,
+      "avg_excitement": 52.32
+    },
+    {
+      "matchup": "Seattle Storm vs Los Angeles Sparks",
+      "games_played": 7,
+      "avg_margin": 14.14,
+      "avg_excitement": 52.32
+    },
+    {
+      "matchup": "Dallas Wings vs Washington Mystics",
+      "games_played": 3,
+      "avg_margin": 8,
+      "avg_excitement": 66.67
+    },
+    {
+      "matchup": "Washington Mystics vs Dallas Wings",
+      "games_played": 3,
+      "avg_margin": 8,
+      "avg_excitement": 66.67
+    },
+    {
+      "matchup": "Indiana Fever vs New York Liberty",
+      "games_played": 2,
+      "avg_margin": 7.5,
+      "avg_excitement": 55.62
+    },
+    {
+      "matchup": "New York Liberty vs Indiana Fever",
+      "games_played": 2,
+      "avg_margin": 7.5,
+      "avg_excitement": 55.62
+    },
+    {
+      "matchup": "Chicago Sky vs Connecticut Sun",
+      "games_played": 11,
+      "avg_margin": 11.73,
+      "avg_excitement": 40.8
+    },
+    {
+      "matchup": "Connecticut Sun vs Chicago Sky",
+      "games_played": 11,
+      "avg_margin": 11.73,
+      "avg_excitement": 40.8
+    },
+    {
+      "matchup": "Minnesota Lynx vs Phoenix Mercury",
+      "games_played": 5,
+      "avg_margin": 9.6,
+      "avg_excitement": 46.0
+    },
+    {
+      "matchup": "Phoenix Mercury vs Minnesota Lynx",
+      "games_played": 5,
+      "avg_margin": 9.6,
+      "avg_excitement": 46.0
+    },
+    {
+      "matchup": "Atlanta Dream vs New York Liberty",
+      "games_played": 5,
+      "avg_margin": 9.6,
+      "avg_excitement": 46.0
+    },
+    {
+      "matchup": "New York Liberty vs Atlanta Dream",
+      "games_played": 5,
+      "avg_margin": 9.6,
+      "avg_excitement": 46.0
+    },
+    {
+      "matchup": "Connecticut Sun vs Indiana Fever",
+      "games_played": 5,
+      "avg_margin": 18.8,
+      "avg_excitement": 20.5
+    },
+    {
+      "matchup": "Indiana Fever vs Connecticut Sun",
+      "games_played": 5,
+      "avg_margin": 18.8,
+      "avg_excitement": 20.5
+    },
+    {
+      "matchup": "Chicago Sky vs Washington Mystics",
+      "games_played": 4,
+      "avg_margin": 15.75,
+      "avg_excitement": 27.81
+    },
+    {
+      "matchup": "Washington Mystics vs Chicago Sky",
+      "games_played": 4,
+      "avg_margin": 15.75,
+      "avg_excitement": 27.81
+    },
+    {
+      "matchup": "Dallas Wings vs Seattle Storm",
+      "games_played": 4,
+      "avg_margin": 10.75,
+      "avg_excitement": 34.06
+    },
+    {
+      "matchup": "Seattle Storm vs Dallas Wings",
+      "games_played": 4,
+      "avg_margin": 10.75,
+      "avg_excitement": 34.06
+    },
+    {
+      "matchup": "Las Vegas Aces vs Phoenix Mercury",
+      "games_played": 11,
+      "avg_margin": 13.64,
+      "avg_excitement": 38.41
+    },
+    {
+      "matchup": "Phoenix Mercury vs Las Vegas Aces",
+      "games_played": 11,
+      "avg_margin": 13.64,
+      "avg_excitement": 38.41
+    },
+    {
+      "matchup": "Los Angeles Sparks vs Minnesota Lynx",
+      "games_played": 3,
+      "avg_margin": 11.67,
+      "avg_excitement": 15.42
+    },
+    {
+      "matchup": "Minnesota Lynx vs Los Angeles Sparks",
+      "games_played": 3,
+      "avg_margin": 11.67,
+      "avg_excitement": 15.42
+    },
+    {
+      "matchup": "Minnesota Lynx vs Seattle Storm",
+      "games_played": 6,
+      "avg_margin": 9.67,
+      "avg_excitement": 41.25
+    },
+    {
+      "matchup": "Seattle Storm vs Minnesota Lynx",
+      "games_played": 6,
+      "avg_margin": 9.67,
+      "avg_excitement": 41.25
+    },
+    {
+      "matchup": "Chicago Sky vs Las Vegas Aces",
+      "games_played": 7,
+      "avg_margin": 16.86,
+      "avg_excitement": 38.93
+    },
+    {
+      "matchup": "Las Vegas Aces vs Chicago Sky",
+      "games_played": 7,
+      "avg_margin": 16.86,
+      "avg_excitement": 38.93
+    },
+    {
+      "matchup": "Connecticut Sun vs Los Angeles Sparks",
+      "games_played": 8,
+      "avg_margin": 16.88,
+      "avg_excitement": 8.91
+    },
+    {
+      "matchup": "Los Angeles Sparks vs Connecticut Sun",
+      "games_played": 8,
+      "avg_margin": 16.88,
+      "avg_excitement": 8.91
+    },
+    {
+      "matchup": "Las Vegas Aces vs Washington Mystics",
+      "games_played": 4,
+      "avg_margin": 8.75,
+      "avg_excitement": 54.06
+    },
+    {
+      "matchup": "Washington Mystics vs Las Vegas Aces",
+      "games_played": 4,
+      "avg_margin": 8.75,
+      "avg_excitement": 54.06
+    },
+    {
+      "matchup": "Connecticut Sun vs Washington Mystics",
+      "games_played": 5,
+      "avg_margin": 9.8,
+      "avg_excitement": 31.75
+    },
+    {
+      "matchup": "Washington Mystics vs Connecticut Sun",
+      "games_played": 5,
+      "avg_margin": 9.8,
+      "avg_excitement": 31.75
+    },
+    {
+      "matchup": "Connecticut Sun vs New York Liberty",
+      "games_played": 7,
+      "avg_margin": 14.43,
+      "avg_excitement": 41.96
+    },
+    {
+      "matchup": "New York Liberty vs Connecticut Sun",
+      "games_played": 7,
+      "avg_margin": 14.43,
+      "avg_excitement": 41.96
+    },
+    {
+      "matchup": "Atlanta Dream vs Indiana Fever",
+      "games_played": 3,
+      "avg_margin": 7.67,
+      "avg_excitement": 67.08
+    },
+    {
+      "matchup": "Indiana Fever vs Atlanta Dream",
+      "games_played": 3,
+      "avg_margin": 7.67,
+      "avg_excitement": 67.08
+    },
+    {
+      "matchup": "Chicago Sky vs Minnesota Lynx",
+      "games_played": 5,
+      "avg_margin": 8.6,
+      "avg_excitement": 61.25
+    },
+    {
+      "matchup": "Minnesota Lynx vs Chicago Sky",
+      "games_played": 5,
+      "avg_margin": 8.6,
+      "avg_excitement": 61.25
+    },
+    {
+      "matchup": "Dallas Wings vs Los Angeles Sparks",
+      "games_played": 2,
+      "avg_margin": 5.5,
+      "avg_excitement": 93.12
+    },
+    {
+      "matchup": "Los Angeles Sparks vs Dallas Wings",
+      "games_played": 2,
+      "avg_margin": 5.5,
+      "avg_excitement": 93.12
+    },
+    {
+      "matchup": "Seattle Storm vs Washington Mystics",
+      "games_played": 2,
+      "avg_margin": 20.5,
+      "avg_excitement": 39.38
+    },
+    {
+      "matchup": "Washington Mystics vs Seattle Storm",
+      "games_played": 2,
+      "avg_margin": 20.5,
+      "avg_excitement": 39.38
+    },
+    {
+      "matchup": "Connecticut Sun vs Las Vegas Aces",
+      "games_played": 12,
+      "avg_margin": 11.67,
+      "avg_excitement": 44.58
+    },
+    {
+      "matchup": "Las Vegas Aces vs Connecticut Sun",
+      "games_played": 12,
+      "avg_margin": 11.67,
+      "avg_excitement": 44.58
+    },
+    {
+      "matchup": "Indiana Fever vs Phoenix Mercury",
+      "games_played": 3,
+      "avg_margin": 17,
+      "avg_excitement": 32.08
+    },
+    {
+      "matchup": "Phoenix Mercury vs Indiana Fever",
+      "games_played": 3,
+      "avg_margin": 17,
+      "avg_excitement": 32.08
+    },
+    {
+      "matchup": "Dallas Wings vs Minnesota Lynx",
+      "games_played": 1,
+      "avg_margin": 13,
+      "avg_excitement": 13.75
+    },
+    {
+      "matchup": "Minnesota Lynx vs Dallas Wings",
+      "games_played": 1,
+      "avg_margin": 13,
+      "avg_excitement": 13.75
+    },
+    {
+      "matchup": "New York Liberty vs Phoenix Mercury",
+      "games_played": 2,
+      "avg_margin": 8.5,
+      "avg_excitement": 54.38
+    },
+    {
+      "matchup": "Phoenix Mercury vs New York Liberty",
+      "games_played": 2,
+      "avg_margin": 8.5,
+      "avg_excitement": 54.38
+    },
+    {
+      "matchup": "Chicago Sky vs Los Angeles Sparks",
+      "games_played": 2,
+      "avg_margin": 10,
+      "avg_excitement": 52.5
+    },
+    {
+      "matchup": "Los Angeles Sparks vs Chicago Sky",
+      "games_played": 2,
+      "avg_margin": 10,
+      "avg_excitement": 52.5
+    },
+    {
+      "matchup": "Connecticut Sun vs Phoenix Mercury",
+      "games_played": 4,
+      "avg_margin": 12,
+      "avg_excitement": 32.5
+    },
+    {
+      "matchup": "Phoenix Mercury vs Connecticut Sun",
+      "games_played": 4,
+      "avg_margin": 12,
+      "avg_excitement": 32.5
+    },
+    {
+      "matchup": "Los Angeles Sparks vs New York Liberty",
+      "games_played": 2,
+      "avg_margin": 16.5,
+      "avg_excitement": 44.38
+    },
+    {
+      "matchup": "New York Liberty vs Los Angeles Sparks",
+      "games_played": 2,
+      "avg_margin": 16.5,
+      "avg_excitement": 44.38
+    },
+    {
+      "matchup": "Minnesota Lynx vs Washington Mystics",
+      "games_played": 4,
+      "avg_margin": 8.5,
+      "avg_excitement": 71.88
+    },
+    {
+      "matchup": "Washington Mystics vs Minnesota Lynx",
+      "games_played": 4,
+      "avg_margin": 8.5,
+      "avg_excitement": 71.88
+    },
+    {
+      "matchup": "Indiana Fever vs Las Vegas Aces",
+      "games_played": 3,
+      "avg_margin": 7,
+      "avg_excitement": 67.92
+    },
+    {
+      "matchup": "Las Vegas Aces vs Indiana Fever",
+      "games_played": 3,
+      "avg_margin": 7,
+      "avg_excitement": 67.92
+    },
+    {
+      "matchup": "Atlanta Dream vs Chicago Sky",
+      "games_played": 2,
+      "avg_margin": 12,
+      "avg_excitement": 50.0
+    },
+    {
+      "matchup": "Chicago Sky vs Atlanta Dream",
+      "games_played": 2,
+      "avg_margin": 12,
+      "avg_excitement": 50.0
+    },
+    {
+      "matchup": "Las Vegas Aces vs Minnesota Lynx",
+      "games_played": 2,
+      "avg_margin": 18,
+      "avg_excitement": 7.5
+    },
+    {
+      "matchup": "Minnesota Lynx vs Las Vegas Aces",
+      "games_played": 2,
+      "avg_margin": 18,
+      "avg_excitement": 7.5
+    },
+    {
+      "matchup": "Los Angeles Sparks vs Washington Mystics",
+      "games_played": 2,
+      "avg_margin": 8,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Washington Mystics vs Los Angeles Sparks",
+      "games_played": 2,
+      "avg_margin": 8,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Atlanta Dream vs Connecticut Sun",
+      "games_played": 2,
+      "avg_margin": 13.5,
+      "avg_excitement": 48.12
+    },
+    {
+      "matchup": "Connecticut Sun vs Atlanta Dream",
+      "games_played": 2,
+      "avg_margin": 13.5,
+      "avg_excitement": 48.12
+    },
+    {
+      "matchup": "Chicago Sky vs Dallas Wings",
+      "games_played": 3,
+      "avg_margin": 13,
+      "avg_excitement": 37.08
+    },
+    {
+      "matchup": "Dallas Wings vs Chicago Sky",
+      "games_played": 3,
+      "avg_margin": 13,
+      "avg_excitement": 37.08
+    },
+    {
+      "matchup": "Las Vegas Aces vs Los Angeles Sparks",
+      "games_played": 1,
+      "avg_margin": 14,
+      "avg_excitement": 12.5
+    },
+    {
+      "matchup": "Los Angeles Sparks vs Las Vegas Aces",
+      "games_played": 1,
+      "avg_margin": 14,
+      "avg_excitement": 12.5
+    },
+    {
+      "matchup": "Dallas Wings vs New York Liberty",
+      "games_played": 5,
+      "avg_margin": 10.2,
+      "avg_excitement": 59.25
+    },
+    {
+      "matchup": "New York Liberty vs Dallas Wings",
+      "games_played": 5,
+      "avg_margin": 10.2,
+      "avg_excitement": 59.25
+    },
+    {
+      "matchup": "Las Vegas Aces vs Seattle Storm",
+      "games_played": 10,
+      "avg_margin": 13.5,
+      "avg_excitement": 34.12
+    },
+    {
+      "matchup": "Seattle Storm vs Las Vegas Aces",
+      "games_played": 10,
+      "avg_margin": 13.5,
+      "avg_excitement": 34.12
+    },
+    {
+      "matchup": "Atlanta Dream vs Washington Mystics",
+      "games_played": 5,
+      "avg_margin": 5.2,
+      "avg_excitement": 93.5
+    },
+    {
+      "matchup": "Washington Mystics vs Atlanta Dream",
+      "games_played": 5,
+      "avg_margin": 5.2,
+      "avg_excitement": 93.5
+    },
+    {
+      "matchup": "Phoenix Mercury vs Washington Mystics",
+      "games_played": 3,
+      "avg_margin": 12.33,
+      "avg_excitement": 37.92
+    },
+    {
+      "matchup": "Washington Mystics vs Phoenix Mercury",
+      "games_played": 3,
+      "avg_margin": 12.33,
+      "avg_excitement": 37.92
+    },
+    {
+      "matchup": "Atlanta Dream vs Dallas Wings",
+      "games_played": 6,
+      "avg_margin": 12.67,
+      "avg_excitement": 37.5
+    },
+    {
+      "matchup": "Dallas Wings vs Atlanta Dream",
+      "games_played": 6,
+      "avg_margin": 12.67,
+      "avg_excitement": 37.5
+    },
+    {
+      "matchup": "New York Liberty vs Seattle Storm",
+      "games_played": 2,
+      "avg_margin": 8.5,
+      "avg_excitement": 54.38
+    },
+    {
+      "matchup": "Seattle Storm vs New York Liberty",
+      "games_played": 2,
+      "avg_margin": 8.5,
+      "avg_excitement": 54.38
+    },
+    {
+      "matchup": "Atlanta Dream vs Phoenix Mercury",
+      "games_played": 2,
+      "avg_margin": 4.5,
+      "avg_excitement": 94.38
+    },
+    {
+      "matchup": "Phoenix Mercury vs Atlanta Dream",
+      "games_played": 2,
+      "avg_margin": 4.5,
+      "avg_excitement": 94.38
+    },
+    {
+      "matchup": "Dallas Wings vs Las Vegas Aces",
+      "games_played": 5,
+      "avg_margin": 9.6,
+      "avg_excitement": 46.0
+    },
+    {
+      "matchup": "Las Vegas Aces vs Dallas Wings",
+      "games_played": 5,
+      "avg_margin": 9.6,
+      "avg_excitement": 46.0
+    },
+    {
+      "matchup": "Chicago Sky vs Indiana Fever",
+      "games_played": 2,
+      "avg_margin": 19,
+      "avg_excitement": 6.25
+    },
+    {
+      "matchup": "Indiana Fever vs Chicago Sky",
+      "games_played": 2,
+      "avg_margin": 19,
+      "avg_excitement": 6.25
+    },
+    {
+      "matchup": "Dallas Wings vs Indiana Fever",
+      "games_played": 4,
+      "avg_margin": 7.75,
+      "avg_excitement": 55.31
+    },
+    {
+      "matchup": "Indiana Fever vs Dallas Wings",
+      "games_played": 4,
+      "avg_margin": 7.75,
+      "avg_excitement": 55.31
+    },
+    {
+      "matchup": "Atlanta Dream vs Minnesota Lynx",
+      "games_played": 2,
+      "avg_margin": 9,
+      "avg_excitement": 53.75
+    },
+    {
+      "matchup": "Minnesota Lynx vs Atlanta Dream",
+      "games_played": 2,
+      "avg_margin": 9,
+      "avg_excitement": 53.75
+    },
+    {
+      "matchup": "Chicago Sky vs New York Liberty",
+      "games_played": 1,
+      "avg_margin": 17,
+      "avg_excitement": 8.75
+    },
+    {
+      "matchup": "New York Liberty vs Chicago Sky",
+      "games_played": 1,
+      "avg_margin": 17,
+      "avg_excitement": 8.75
+    },
+    {
+      "matchup": "Connecticut Sun vs Minnesota Lynx",
+      "games_played": 9,
+      "avg_margin": 10.44,
+      "avg_excitement": 48.06
+    },
+    {
+      "matchup": "Minnesota Lynx vs Connecticut Sun",
+      "games_played": 9,
+      "avg_margin": 10.44,
+      "avg_excitement": 48.06
+    },
+    {
+      "matchup": "Las Vegas Aces vs New York Liberty",
+      "games_played": 9,
+      "avg_margin": 11.78,
+      "avg_excitement": 38.61
+    },
+    {
+      "matchup": "New York Liberty vs Las Vegas Aces",
+      "games_played": 9,
+      "avg_margin": 11.78,
+      "avg_excitement": 38.61
+    },
+    {
+      "matchup": "Connecticut Sun vs Seattle Storm",
+      "games_played": 2,
+      "avg_margin": 7,
+      "avg_excitement": 91.25
+    },
+    {
+      "matchup": "Seattle Storm vs Connecticut Sun",
+      "games_played": 2,
+      "avg_margin": 7,
+      "avg_excitement": 91.25
+    },
+    {
+      "matchup": "Indiana Fever vs Los Angeles Sparks",
+      "games_played": 1,
+      "avg_margin": 7,
+      "avg_excitement": 91.25
+    },
+    {
+      "matchup": "Los Angeles Sparks vs Indiana Fever",
+      "games_played": 1,
+      "avg_margin": 7,
+      "avg_excitement": 91.25
+    },
+    {
+      "matchup": "Minnesota Lynx vs New York Liberty",
+      "games_played": 6,
+      "avg_margin": 5.83,
+      "avg_excitement": 69.38
+    },
+    {
+      "matchup": "New York Liberty vs Minnesota Lynx",
+      "games_played": 6,
+      "avg_margin": 5.83,
+      "avg_excitement": 69.38
+    },
+    {
+      "matchup": "Los Angeles Sparks vs Phoenix Mercury",
+      "games_played": 1,
+      "avg_margin": 4,
+      "avg_excitement": 95.0
+    },
+    {
+      "matchup": "Phoenix Mercury vs Los Angeles Sparks",
+      "games_played": 1,
+      "avg_margin": 4,
+      "avg_excitement": 95.0
+    },
+    {
+      "matchup": "Indiana Fever vs Washington Mystics",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 98.75
+    },
+    {
+      "matchup": "Washington Mystics vs Indiana Fever",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 98.75
+    }
+  ],
+  "matchup_close_rates": [
+    {
+      "matchup": "Chicago Sky vs Phoenix Mercury",
+      "games": 7,
+      "close_games": 3,
+      "close_rate": 42.86
+    },
+    {
+      "matchup": "Phoenix Mercury vs Chicago Sky",
+      "games": 7,
+      "close_games": 3,
+      "close_rate": 42.86
+    },
+    {
+      "matchup": "Indiana Fever vs Minnesota Lynx",
+      "games": 7,
+      "close_games": 1,
+      "close_rate": 14.29
+    },
+    {
+      "matchup": "Minnesota Lynx vs Indiana Fever",
+      "games": 7,
+      "close_games": 1,
+      "close_rate": 14.29
+    },
+    {
+      "matchup": "Atlanta Dream vs Seattle Storm",
+      "games": 2,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Seattle Storm vs Atlanta Dream",
+      "games": 2,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "New York Liberty vs Washington Mystics",
+      "games": 7,
+      "close_games": 2,
+      "close_rate": 28.57
+    },
+    {
+      "matchup": "Washington Mystics vs New York Liberty",
+      "games": 7,
+      "close_games": 2,
+      "close_rate": 28.57
+    },
+    {
+      "matchup": "Phoenix Mercury vs Seattle Storm",
+      "games": 6,
+      "close_games": 1,
+      "close_rate": 16.67
+    },
+    {
+      "matchup": "Seattle Storm vs Phoenix Mercury",
+      "games": 6,
+      "close_games": 1,
+      "close_rate": 16.67
+    },
+    {
+      "matchup": "Atlanta Dream vs Los Angeles Sparks",
+      "games": 3,
+      "close_games": 1,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "Los Angeles Sparks vs Atlanta Dream",
+      "games": 3,
+      "close_games": 1,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "Connecticut Sun vs Dallas Wings",
+      "games": 2,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Dallas Wings vs Connecticut Sun",
+      "games": 2,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Atlanta Dream vs Las Vegas Aces",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Las Vegas Aces vs Atlanta Dream",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Los Angeles Sparks vs Seattle Storm",
+      "games": 7,
+      "close_games": 4,
+      "close_rate": 57.14
+    },
+    {
+      "matchup": "Seattle Storm vs Los Angeles Sparks",
+      "games": 7,
+      "close_games": 4,
+      "close_rate": 57.14
+    },
+    {
+      "matchup": "Dallas Wings vs Washington Mystics",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Washington Mystics vs Dallas Wings",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Indiana Fever vs New York Liberty",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "New York Liberty vs Indiana Fever",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Chicago Sky vs Connecticut Sun",
+      "games": 11,
+      "close_games": 4,
+      "close_rate": 36.36
+    },
+    {
+      "matchup": "Connecticut Sun vs Chicago Sky",
+      "games": 11,
+      "close_games": 4,
+      "close_rate": 36.36
+    },
+    {
+      "matchup": "Minnesota Lynx vs Phoenix Mercury",
+      "games": 5,
+      "close_games": 2,
+      "close_rate": 40.0
+    },
+    {
+      "matchup": "Phoenix Mercury vs Minnesota Lynx",
+      "games": 5,
+      "close_games": 2,
+      "close_rate": 40.0
+    },
+    {
+      "matchup": "Atlanta Dream vs New York Liberty",
+      "games": 5,
+      "close_games": 2,
+      "close_rate": 40.0
+    },
+    {
+      "matchup": "New York Liberty vs Atlanta Dream",
+      "games": 5,
+      "close_games": 2,
+      "close_rate": 40.0
+    },
+    {
+      "matchup": "Connecticut Sun vs Indiana Fever",
+      "games": 5,
+      "close_games": 1,
+      "close_rate": 20.0
+    },
+    {
+      "matchup": "Indiana Fever vs Connecticut Sun",
+      "games": 5,
+      "close_games": 1,
+      "close_rate": 20.0
+    },
+    {
+      "matchup": "Chicago Sky vs Washington Mystics",
+      "games": 4,
+      "close_games": 1,
+      "close_rate": 25.0
+    },
+    {
+      "matchup": "Washington Mystics vs Chicago Sky",
+      "games": 4,
+      "close_games": 1,
+      "close_rate": 25.0
+    },
+    {
+      "matchup": "Dallas Wings vs Seattle Storm",
+      "games": 4,
+      "close_games": 1,
+      "close_rate": 25.0
+    },
+    {
+      "matchup": "Seattle Storm vs Dallas Wings",
+      "games": 4,
+      "close_games": 1,
+      "close_rate": 25.0
+    },
+    {
+      "matchup": "Las Vegas Aces vs Phoenix Mercury",
+      "games": 11,
+      "close_games": 4,
+      "close_rate": 36.36
+    },
+    {
+      "matchup": "Phoenix Mercury vs Las Vegas Aces",
+      "games": 11,
+      "close_games": 4,
+      "close_rate": 36.36
+    },
+    {
+      "matchup": "Los Angeles Sparks vs Minnesota Lynx",
+      "games": 3,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Minnesota Lynx vs Los Angeles Sparks",
+      "games": 3,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Minnesota Lynx vs Seattle Storm",
+      "games": 6,
+      "close_games": 2,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "Seattle Storm vs Minnesota Lynx",
+      "games": 6,
+      "close_games": 2,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "Chicago Sky vs Las Vegas Aces",
+      "games": 7,
+      "close_games": 3,
+      "close_rate": 42.86
+    },
+    {
+      "matchup": "Las Vegas Aces vs Chicago Sky",
+      "games": 7,
+      "close_games": 3,
+      "close_rate": 42.86
+    },
+    {
+      "matchup": "Connecticut Sun vs Los Angeles Sparks",
+      "games": 8,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Los Angeles Sparks vs Connecticut Sun",
+      "games": 8,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Las Vegas Aces vs Washington Mystics",
+      "games": 4,
+      "close_games": 2,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Washington Mystics vs Las Vegas Aces",
+      "games": 4,
+      "close_games": 2,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Connecticut Sun vs Washington Mystics",
+      "games": 5,
+      "close_games": 1,
+      "close_rate": 20.0
+    },
+    {
+      "matchup": "Washington Mystics vs Connecticut Sun",
+      "games": 5,
+      "close_games": 1,
+      "close_rate": 20.0
+    },
+    {
+      "matchup": "Connecticut Sun vs New York Liberty",
+      "games": 7,
+      "close_games": 3,
+      "close_rate": 42.86
+    },
+    {
+      "matchup": "New York Liberty vs Connecticut Sun",
+      "games": 7,
+      "close_games": 3,
+      "close_rate": 42.86
+    },
+    {
+      "matchup": "Atlanta Dream vs Indiana Fever",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Indiana Fever vs Atlanta Dream",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Chicago Sky vs Minnesota Lynx",
+      "games": 5,
+      "close_games": 3,
+      "close_rate": 60.0
+    },
+    {
+      "matchup": "Minnesota Lynx vs Chicago Sky",
+      "games": 5,
+      "close_games": 3,
+      "close_rate": 60.0
+    },
+    {
+      "matchup": "Dallas Wings vs Los Angeles Sparks",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Los Angeles Sparks vs Dallas Wings",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Seattle Storm vs Washington Mystics",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Washington Mystics vs Seattle Storm",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Connecticut Sun vs Las Vegas Aces",
+      "games": 12,
+      "close_games": 5,
+      "close_rate": 41.67
+    },
+    {
+      "matchup": "Las Vegas Aces vs Connecticut Sun",
+      "games": 12,
+      "close_games": 5,
+      "close_rate": 41.67
+    },
+    {
+      "matchup": "Indiana Fever vs Phoenix Mercury",
+      "games": 3,
+      "close_games": 1,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "Phoenix Mercury vs Indiana Fever",
+      "games": 3,
+      "close_games": 1,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "Dallas Wings vs Minnesota Lynx",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Minnesota Lynx vs Dallas Wings",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "New York Liberty vs Phoenix Mercury",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Phoenix Mercury vs New York Liberty",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Chicago Sky vs Los Angeles Sparks",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Los Angeles Sparks vs Chicago Sky",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Connecticut Sun vs Phoenix Mercury",
+      "games": 4,
+      "close_games": 1,
+      "close_rate": 25.0
+    },
+    {
+      "matchup": "Phoenix Mercury vs Connecticut Sun",
+      "games": 4,
+      "close_games": 1,
+      "close_rate": 25.0
+    },
+    {
+      "matchup": "Los Angeles Sparks vs New York Liberty",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "New York Liberty vs Los Angeles Sparks",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Minnesota Lynx vs Washington Mystics",
+      "games": 4,
+      "close_games": 3,
+      "close_rate": 75.0
+    },
+    {
+      "matchup": "Washington Mystics vs Minnesota Lynx",
+      "games": 4,
+      "close_games": 3,
+      "close_rate": 75.0
+    },
+    {
+      "matchup": "Indiana Fever vs Las Vegas Aces",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Las Vegas Aces vs Indiana Fever",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Atlanta Dream vs Chicago Sky",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Chicago Sky vs Atlanta Dream",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Las Vegas Aces vs Minnesota Lynx",
+      "games": 2,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Minnesota Lynx vs Las Vegas Aces",
+      "games": 2,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Los Angeles Sparks vs Washington Mystics",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Washington Mystics vs Los Angeles Sparks",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Atlanta Dream vs Connecticut Sun",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Connecticut Sun vs Atlanta Dream",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Chicago Sky vs Dallas Wings",
+      "games": 3,
+      "close_games": 1,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "Dallas Wings vs Chicago Sky",
+      "games": 3,
+      "close_games": 1,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "Las Vegas Aces vs Los Angeles Sparks",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Los Angeles Sparks vs Las Vegas Aces",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Dallas Wings vs New York Liberty",
+      "games": 5,
+      "close_games": 3,
+      "close_rate": 60.0
+    },
+    {
+      "matchup": "New York Liberty vs Dallas Wings",
+      "games": 5,
+      "close_games": 3,
+      "close_rate": 60.0
+    },
+    {
+      "matchup": "Las Vegas Aces vs Seattle Storm",
+      "games": 10,
+      "close_games": 3,
+      "close_rate": 30.0
+    },
+    {
+      "matchup": "Seattle Storm vs Las Vegas Aces",
+      "games": 10,
+      "close_games": 3,
+      "close_rate": 30.0
+    },
+    {
+      "matchup": "Atlanta Dream vs Washington Mystics",
+      "games": 5,
+      "close_games": 5,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Washington Mystics vs Atlanta Dream",
+      "games": 5,
+      "close_games": 5,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Phoenix Mercury vs Washington Mystics",
+      "games": 3,
+      "close_games": 1,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "Washington Mystics vs Phoenix Mercury",
+      "games": 3,
+      "close_games": 1,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "Atlanta Dream vs Dallas Wings",
+      "games": 6,
+      "close_games": 2,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "Dallas Wings vs Atlanta Dream",
+      "games": 6,
+      "close_games": 2,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "New York Liberty vs Seattle Storm",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Seattle Storm vs New York Liberty",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Atlanta Dream vs Phoenix Mercury",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Phoenix Mercury vs Atlanta Dream",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Dallas Wings vs Las Vegas Aces",
+      "games": 5,
+      "close_games": 2,
+      "close_rate": 40.0
+    },
+    {
+      "matchup": "Las Vegas Aces vs Dallas Wings",
+      "games": 5,
+      "close_games": 2,
+      "close_rate": 40.0
+    },
+    {
+      "matchup": "Chicago Sky vs Indiana Fever",
+      "games": 2,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Indiana Fever vs Chicago Sky",
+      "games": 2,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Dallas Wings vs Indiana Fever",
+      "games": 4,
+      "close_games": 2,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Indiana Fever vs Dallas Wings",
+      "games": 4,
+      "close_games": 2,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Atlanta Dream vs Minnesota Lynx",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Minnesota Lynx vs Atlanta Dream",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Chicago Sky vs New York Liberty",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "New York Liberty vs Chicago Sky",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Connecticut Sun vs Minnesota Lynx",
+      "games": 9,
+      "close_games": 4,
+      "close_rate": 44.44
+    },
+    {
+      "matchup": "Minnesota Lynx vs Connecticut Sun",
+      "games": 9,
+      "close_games": 4,
+      "close_rate": 44.44
+    },
+    {
+      "matchup": "Las Vegas Aces vs New York Liberty",
+      "games": 9,
+      "close_games": 3,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "New York Liberty vs Las Vegas Aces",
+      "games": 9,
+      "close_games": 3,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "Connecticut Sun vs Seattle Storm",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Seattle Storm vs Connecticut Sun",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Indiana Fever vs Los Angeles Sparks",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Los Angeles Sparks vs Indiana Fever",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Minnesota Lynx vs New York Liberty",
+      "games": 6,
+      "close_games": 4,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "New York Liberty vs Minnesota Lynx",
+      "games": 6,
+      "close_games": 4,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Los Angeles Sparks vs Phoenix Mercury",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Phoenix Mercury vs Los Angeles Sparks",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Indiana Fever vs Washington Mystics",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Washington Mystics vs Indiana Fever",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    }
+  ],
+  "form_strengths": [
+    {
+      "team": "Atlanta Dream",
+      "strength": 64.0
+    },
+    {
+      "team": "Chicago Sky",
+      "strength": 44.0
+    },
+    {
+      "team": "Connecticut Sun",
+      "strength": 61.3
+    },
+    {
+      "team": "Dallas Wings",
+      "strength": 50.0
+    },
+    {
+      "team": "Indiana Fever",
+      "strength": 59.3
+    },
+    {
+      "team": "Las Vegas Aces",
+      "strength": 59.3
+    },
+    {
+      "team": "Los Angeles Sparks",
+      "strength": 63.3
+    },
+    {
+      "team": "Minnesota Lynx",
+      "strength": 65.3
+    },
+    {
+      "team": "New York Liberty",
+      "strength": 76.7
+    },
+    {
+      "team": "Phoenix Mercury",
+      "strength": 56.0
+    },
+    {
+      "team": "Seattle Storm",
+      "strength": 62.7
+    },
+    {
+      "team": "Washington Mystics",
+      "strength": 73.3
+    }
+  ],
+  "team_margin_ratings": [
+    {
+      "team": "Atlanta Dream",
+      "avg_margin": -0.9
+    },
+    {
+      "team": "Chicago Sky",
+      "avg_margin": -11.9
+    },
+    {
+      "team": "Connecticut Sun",
+      "avg_margin": 3.4
+    },
+    {
+      "team": "Dallas Wings",
+      "avg_margin": -10.3
+    },
+    {
+      "team": "Indiana Fever",
+      "avg_margin": -3.8
+    },
+    {
+      "team": "Las Vegas Aces",
+      "avg_margin": 4.8
+    },
+    {
+      "team": "Los Angeles Sparks",
+      "avg_margin": -6.7
+    },
+    {
+      "team": "Minnesota Lynx",
+      "avg_margin": -0.4
+    },
+    {
+      "team": "New York Liberty",
+      "avg_margin": 4.1
+    },
+    {
+      "team": "Phoenix Mercury",
+      "avg_margin": -9.6
+    },
+    {
+      "team": "Seattle Storm",
+      "avg_margin": 2.5
+    },
+    {
+      "team": "Washington Mystics",
+      "avg_margin": 0.6
+    }
+  ]
+}

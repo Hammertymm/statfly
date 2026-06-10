@@ -1,0 +1,4299 @@
+{
+  "meta": {
+    "sport": "MLB",
+    "engine": "v1-bootstrap",
+    "formula": "close*0.35 + form_balance*0.25 + margin_balance*0.25 + matchup*0.15",
+    "close_margin": 2,
+    "games_sampled": 600,
+    "week_chunk": 16,
+    "built": "2026-06-10"
+  },
+  "matchup_ratings": [
+    {
+      "matchup": "Detroit Tigers vs Oakland Athletics",
+      "games_played": 7,
+      "avg_margin": 2.71,
+      "avg_excitement": 66.43
+    },
+    {
+      "matchup": "Oakland Athletics vs Detroit Tigers",
+      "games_played": 7,
+      "avg_margin": 2.71,
+      "avg_excitement": 66.43
+    },
+    {
+      "matchup": "Cincinnati Reds vs St. Louis Cardinals",
+      "games_played": 7,
+      "avg_margin": 4.86,
+      "avg_excitement": 45.71
+    },
+    {
+      "matchup": "St. Louis Cardinals vs Cincinnati Reds",
+      "games_played": 7,
+      "avg_margin": 4.86,
+      "avg_excitement": 45.71
+    },
+    {
+      "matchup": "New York Yankees vs Oakland Athletics",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 95.0
+    },
+    {
+      "matchup": "Oakland Athletics vs New York Yankees",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 95.0
+    },
+    {
+      "matchup": "Houston Astros vs Toronto Blue Jays",
+      "games_played": 1,
+      "avg_margin": 2,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Toronto Blue Jays vs Houston Astros",
+      "games_played": 1,
+      "avg_margin": 2,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Cleveland Indians vs Tampa Bay Rays",
+      "games_played": 1,
+      "avg_margin": 6,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Tampa Bay Rays vs Cleveland Indians",
+      "games_played": 1,
+      "avg_margin": 6,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Detroit Tigers vs Minnesota Twins",
+      "games_played": 7,
+      "avg_margin": 2.29,
+      "avg_excitement": 68.57
+    },
+    {
+      "matchup": "Minnesota Twins vs Detroit Tigers",
+      "games_played": 7,
+      "avg_margin": 2.29,
+      "avg_excitement": 68.57
+    },
+    {
+      "matchup": "Miami Marlins vs Washington Nationals",
+      "games_played": 6,
+      "avg_margin": 3.67,
+      "avg_excitement": 35.0
+    },
+    {
+      "matchup": "Washington Nationals vs Miami Marlins",
+      "games_played": 6,
+      "avg_margin": 3.67,
+      "avg_excitement": 35.0
+    },
+    {
+      "matchup": "Baltimore Orioles vs Kansas City Royals",
+      "games_played": 3,
+      "avg_margin": 2.33,
+      "avg_excitement": 65.0
+    },
+    {
+      "matchup": "Kansas City Royals vs Baltimore Orioles",
+      "games_played": 3,
+      "avg_margin": 2.33,
+      "avg_excitement": 65.0
+    },
+    {
+      "matchup": "Chicago Cubs vs Milwaukee Brewers",
+      "games_played": 4,
+      "avg_margin": 4,
+      "avg_excitement": 27.5
+    },
+    {
+      "matchup": "Milwaukee Brewers vs Chicago Cubs",
+      "games_played": 4,
+      "avg_margin": 4,
+      "avg_excitement": 27.5
+    },
+    {
+      "matchup": "Seattle Mariners vs Texas Rangers",
+      "games_played": 5,
+      "avg_margin": 3.6,
+      "avg_excitement": 40.0
+    },
+    {
+      "matchup": "Texas Rangers vs Seattle Mariners",
+      "games_played": 5,
+      "avg_margin": 3.6,
+      "avg_excitement": 40.0
+    },
+    {
+      "matchup": "Colorado Rockies vs Pittsburgh Pirates",
+      "games_played": 1,
+      "avg_margin": 4,
+      "avg_excitement": 10.0
+    },
+    {
+      "matchup": "Pittsburgh Pirates vs Colorado Rockies",
+      "games_played": 1,
+      "avg_margin": 4,
+      "avg_excitement": 10.0
+    },
+    {
+      "matchup": "San Diego Padres vs San Francisco Giants",
+      "games_played": 6,
+      "avg_margin": 4,
+      "avg_excitement": 10.0
+    },
+    {
+      "matchup": "San Francisco Giants vs San Diego Padres",
+      "games_played": 6,
+      "avg_margin": 4,
+      "avg_excitement": 10.0
+    },
+    {
+      "matchup": "Boston Red Sox vs Los Angeles Angels",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 95.0
+    },
+    {
+      "matchup": "Los Angeles Angels vs Boston Red Sox",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 95.0
+    },
+    {
+      "matchup": "Arizona Diamondbacks vs Los Angeles Dodgers",
+      "games_played": 6,
+      "avg_margin": 4.17,
+      "avg_excitement": 32.5
+    },
+    {
+      "matchup": "Los Angeles Dodgers vs Arizona Diamondbacks",
+      "games_played": 6,
+      "avg_margin": 4.17,
+      "avg_excitement": 32.5
+    },
+    {
+      "matchup": "Atlanta Braves vs Chicago White Sox",
+      "games_played": 1,
+      "avg_margin": 2,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Chicago White Sox vs Atlanta Braves",
+      "games_played": 1,
+      "avg_margin": 2,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "New York Mets vs Philadelphia Phillies",
+      "games_played": 8,
+      "avg_margin": 4,
+      "avg_excitement": 36.25
+    },
+    {
+      "matchup": "Philadelphia Phillies vs New York Mets",
+      "games_played": 8,
+      "avg_margin": 4,
+      "avg_excitement": 36.25
+    },
+    {
+      "matchup": "New York Yankees vs Texas Rangers",
+      "games_played": 6,
+      "avg_margin": 5,
+      "avg_excitement": 5.0
+    },
+    {
+      "matchup": "Texas Rangers vs New York Yankees",
+      "games_played": 6,
+      "avg_margin": 5,
+      "avg_excitement": 5.0
+    },
+    {
+      "matchup": "New York Mets vs Washington Nationals",
+      "games_played": 13,
+      "avg_margin": 3.62,
+      "avg_excitement": 38.85
+    },
+    {
+      "matchup": "Washington Nationals vs New York Mets",
+      "games_played": 13,
+      "avg_margin": 3.62,
+      "avg_excitement": 38.85
+    },
+    {
+      "matchup": "Baltimore Orioles vs Tampa Bay Rays",
+      "games_played": 6,
+      "avg_margin": 2.5,
+      "avg_excitement": 75.83
+    },
+    {
+      "matchup": "Tampa Bay Rays vs Baltimore Orioles",
+      "games_played": 6,
+      "avg_margin": 2.5,
+      "avg_excitement": 75.83
+    },
+    {
+      "matchup": "Atlanta Braves vs Toronto Blue Jays",
+      "games_played": 5,
+      "avg_margin": 3,
+      "avg_excitement": 43.0
+    },
+    {
+      "matchup": "Toronto Blue Jays vs Atlanta Braves",
+      "games_played": 5,
+      "avg_margin": 3,
+      "avg_excitement": 43.0
+    },
+    {
+      "matchup": "Cincinnati Reds vs Philadelphia Phillies",
+      "games_played": 4,
+      "avg_margin": 3.5,
+      "avg_excitement": 30.0
+    },
+    {
+      "matchup": "Philadelphia Phillies vs Cincinnati Reds",
+      "games_played": 4,
+      "avg_margin": 3.5,
+      "avg_excitement": 30.0
+    },
+    {
+      "matchup": "San Francisco Giants vs St. Louis Cardinals",
+      "games_played": 4,
+      "avg_margin": 3.5,
+      "avg_excitement": 65.0
+    },
+    {
+      "matchup": "St. Louis Cardinals vs San Francisco Giants",
+      "games_played": 4,
+      "avg_margin": 3.5,
+      "avg_excitement": 65.0
+    },
+    {
+      "matchup": "Chicago Cubs vs Seattle Mariners",
+      "games_played": 2,
+      "avg_margin": 4.5,
+      "avg_excitement": 7.5
+    },
+    {
+      "matchup": "Seattle Mariners vs Chicago Cubs",
+      "games_played": 2,
+      "avg_margin": 4.5,
+      "avg_excitement": 7.5
+    },
+    {
+      "matchup": "Houston Astros vs Milwaukee Brewers",
+      "games_played": 2,
+      "avg_margin": 1.5,
+      "avg_excitement": 92.5
+    },
+    {
+      "matchup": "Milwaukee Brewers vs Houston Astros",
+      "games_played": 2,
+      "avg_margin": 1.5,
+      "avg_excitement": 92.5
+    },
+    {
+      "matchup": "Arizona Diamondbacks vs San Diego Padres",
+      "games_played": 7,
+      "avg_margin": 3.57,
+      "avg_excitement": 32.14
+    },
+    {
+      "matchup": "San Diego Padres vs Arizona Diamondbacks",
+      "games_played": 7,
+      "avg_margin": 3.57,
+      "avg_excitement": 32.14
+    },
+    {
+      "matchup": "Chicago White Sox vs Cleveland Indians",
+      "games_played": 4,
+      "avg_margin": 4.25,
+      "avg_excitement": 43.75
+    },
+    {
+      "matchup": "Cleveland Indians vs Chicago White Sox",
+      "games_played": 4,
+      "avg_margin": 4.25,
+      "avg_excitement": 43.75
+    },
+    {
+      "matchup": "Colorado Rockies vs Los Angeles Dodgers",
+      "games_played": 6,
+      "avg_margin": 3.5,
+      "avg_excitement": 35.83
+    },
+    {
+      "matchup": "Los Angeles Dodgers vs Colorado Rockies",
+      "games_played": 6,
+      "avg_margin": 3.5,
+      "avg_excitement": 35.83
+    },
+    {
+      "matchup": "Miami Marlins vs Pittsburgh Pirates",
+      "games_played": 3,
+      "avg_margin": 1.67,
+      "avg_excitement": 68.33
+    },
+    {
+      "matchup": "Pittsburgh Pirates vs Miami Marlins",
+      "games_played": 3,
+      "avg_margin": 1.67,
+      "avg_excitement": 68.33
+    },
+    {
+      "matchup": "Boston Red Sox vs Minnesota Twins",
+      "games_played": 3,
+      "avg_margin": 2,
+      "avg_excitement": 66.67
+    },
+    {
+      "matchup": "Minnesota Twins vs Boston Red Sox",
+      "games_played": 3,
+      "avg_margin": 2,
+      "avg_excitement": 66.67
+    },
+    {
+      "matchup": "Detroit Tigers vs Kansas City Royals",
+      "games_played": 6,
+      "avg_margin": 2.67,
+      "avg_excitement": 75.0
+    },
+    {
+      "matchup": "Kansas City Royals vs Detroit Tigers",
+      "games_played": 6,
+      "avg_margin": 2.67,
+      "avg_excitement": 75.0
+    },
+    {
+      "matchup": "Los Angeles Angels vs Oakland Athletics",
+      "games_played": 6,
+      "avg_margin": 3.67,
+      "avg_excitement": 35.0
+    },
+    {
+      "matchup": "Oakland Athletics vs Los Angeles Angels",
+      "games_played": 6,
+      "avg_margin": 3.67,
+      "avg_excitement": 35.0
+    },
+    {
+      "matchup": "Baltimore Orioles vs Texas Rangers",
+      "games_played": 4,
+      "avg_margin": 3.5,
+      "avg_excitement": 47.5
+    },
+    {
+      "matchup": "Texas Rangers vs Baltimore Orioles",
+      "games_played": 4,
+      "avg_margin": 3.5,
+      "avg_excitement": 47.5
+    },
+    {
+      "matchup": "Tampa Bay Rays vs Toronto Blue Jays",
+      "games_played": 3,
+      "avg_margin": 3,
+      "avg_excitement": 61.67
+    },
+    {
+      "matchup": "Toronto Blue Jays vs Tampa Bay Rays",
+      "games_played": 3,
+      "avg_margin": 3,
+      "avg_excitement": 61.67
+    },
+    {
+      "matchup": "Atlanta Braves vs Washington Nationals",
+      "games_played": 8,
+      "avg_margin": 3.38,
+      "avg_excitement": 48.12
+    },
+    {
+      "matchup": "Washington Nationals vs Atlanta Braves",
+      "games_played": 8,
+      "avg_margin": 3.38,
+      "avg_excitement": 48.12
+    },
+    {
+      "matchup": "Houston Astros vs Seattle Mariners",
+      "games_played": 7,
+      "avg_margin": 2.86,
+      "avg_excitement": 55.71
+    },
+    {
+      "matchup": "Seattle Mariners vs Houston Astros",
+      "games_played": 7,
+      "avg_margin": 2.86,
+      "avg_excitement": 55.71
+    },
+    {
+      "matchup": "Pittsburgh Pirates vs St. Louis Cardinals",
+      "games_played": 5,
+      "avg_margin": 3.8,
+      "avg_excitement": 53.0
+    },
+    {
+      "matchup": "St. Louis Cardinals vs Pittsburgh Pirates",
+      "games_played": 5,
+      "avg_margin": 3.8,
+      "avg_excitement": 53.0
+    },
+    {
+      "matchup": "Boston Red Sox vs New York Yankees",
+      "games_played": 2,
+      "avg_margin": 4.5,
+      "avg_excitement": 7.5
+    },
+    {
+      "matchup": "New York Yankees vs Boston Red Sox",
+      "games_played": 2,
+      "avg_margin": 4.5,
+      "avg_excitement": 7.5
+    },
+    {
+      "matchup": "Arizona Diamondbacks vs Cincinnati Reds",
+      "games_played": 2,
+      "avg_margin": 2,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Cincinnati Reds vs Arizona Diamondbacks",
+      "games_played": 2,
+      "avg_margin": 2,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Kansas City Royals vs Miami Marlins",
+      "games_played": 2,
+      "avg_margin": 4,
+      "avg_excitement": 10.0
+    },
+    {
+      "matchup": "Miami Marlins vs Kansas City Royals",
+      "games_played": 2,
+      "avg_margin": 4,
+      "avg_excitement": 10.0
+    },
+    {
+      "matchup": "Chicago White Sox vs Los Angeles Angels",
+      "games_played": 2,
+      "avg_margin": 1,
+      "avg_excitement": 95.0
+    },
+    {
+      "matchup": "Los Angeles Angels vs Chicago White Sox",
+      "games_played": 2,
+      "avg_margin": 1,
+      "avg_excitement": 95.0
+    },
+    {
+      "matchup": "Cleveland Indians vs Minnesota Twins",
+      "games_played": 4,
+      "avg_margin": 3,
+      "avg_excitement": 32.5
+    },
+    {
+      "matchup": "Minnesota Twins vs Cleveland Indians",
+      "games_played": 4,
+      "avg_margin": 3,
+      "avg_excitement": 32.5
+    },
+    {
+      "matchup": "Colorado Rockies vs San Diego Padres",
+      "games_played": 2,
+      "avg_margin": 2,
+      "avg_excitement": 55.0
+    },
+    {
+      "matchup": "San Diego Padres vs Colorado Rockies",
+      "games_played": 2,
+      "avg_margin": 2,
+      "avg_excitement": 55.0
+    },
+    {
+      "matchup": "Los Angeles Dodgers vs San Francisco Giants",
+      "games_played": 8,
+      "avg_margin": 2.5,
+      "avg_excitement": 52.5
+    },
+    {
+      "matchup": "San Francisco Giants vs Los Angeles Dodgers",
+      "games_played": 8,
+      "avg_margin": 2.5,
+      "avg_excitement": 52.5
+    },
+    {
+      "matchup": "Miami Marlins vs Toronto Blue Jays",
+      "games_played": 2,
+      "avg_margin": 1,
+      "avg_excitement": 95.0
+    },
+    {
+      "matchup": "Toronto Blue Jays vs Miami Marlins",
+      "games_played": 2,
+      "avg_margin": 1,
+      "avg_excitement": 95.0
+    },
+    {
+      "matchup": "New York Yankees vs Tampa Bay Rays",
+      "games_played": 5,
+      "avg_margin": 3.2,
+      "avg_excitement": 56.0
+    },
+    {
+      "matchup": "Tampa Bay Rays vs New York Yankees",
+      "games_played": 5,
+      "avg_margin": 3.2,
+      "avg_excitement": 56.0
+    },
+    {
+      "matchup": "Philadelphia Phillies vs Washington Nationals",
+      "games_played": 5,
+      "avg_margin": 2.2,
+      "avg_excitement": 61.0
+    },
+    {
+      "matchup": "Washington Nationals vs Philadelphia Phillies",
+      "games_played": 5,
+      "avg_margin": 2.2,
+      "avg_excitement": 61.0
+    },
+    {
+      "matchup": "Chicago Cubs vs Pittsburgh Pirates",
+      "games_played": 10,
+      "avg_margin": 3.6,
+      "avg_excitement": 47.0
+    },
+    {
+      "matchup": "Pittsburgh Pirates vs Chicago Cubs",
+      "games_played": 10,
+      "avg_margin": 3.6,
+      "avg_excitement": 47.0
+    },
+    {
+      "matchup": "Atlanta Braves vs Boston Red Sox",
+      "games_played": 2,
+      "avg_margin": 4.5,
+      "avg_excitement": 42.5
+    },
+    {
+      "matchup": "Boston Red Sox vs Atlanta Braves",
+      "games_played": 2,
+      "avg_margin": 4.5,
+      "avg_excitement": 42.5
+    },
+    {
+      "matchup": "Baltimore Orioles vs New York Mets",
+      "games_played": 2,
+      "avg_margin": 4.5,
+      "avg_excitement": 7.5
+    },
+    {
+      "matchup": "New York Mets vs Baltimore Orioles",
+      "games_played": 2,
+      "avg_margin": 4.5,
+      "avg_excitement": 7.5
+    },
+    {
+      "matchup": "Detroit Tigers vs Milwaukee Brewers",
+      "games_played": 2,
+      "avg_margin": 7,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Milwaukee Brewers vs Detroit Tigers",
+      "games_played": 2,
+      "avg_margin": 7,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Cleveland Indians vs Kansas City Royals",
+      "games_played": 5,
+      "avg_margin": 4.2,
+      "avg_excitement": 37.0
+    },
+    {
+      "matchup": "Kansas City Royals vs Cleveland Indians",
+      "games_played": 5,
+      "avg_margin": 4.2,
+      "avg_excitement": 37.0
+    },
+    {
+      "matchup": "Houston Astros vs Texas Rangers",
+      "games_played": 9,
+      "avg_margin": 4.22,
+      "avg_excitement": 47.78
+    },
+    {
+      "matchup": "Texas Rangers vs Houston Astros",
+      "games_played": 9,
+      "avg_margin": 4.22,
+      "avg_excitement": 47.78
+    },
+    {
+      "matchup": "Chicago White Sox vs Minnesota Twins",
+      "games_played": 5,
+      "avg_margin": 5.2,
+      "avg_excitement": 32.0
+    },
+    {
+      "matchup": "Minnesota Twins vs Chicago White Sox",
+      "games_played": 5,
+      "avg_margin": 5.2,
+      "avg_excitement": 32.0
+    },
+    {
+      "matchup": "Colorado Rockies vs San Francisco Giants",
+      "games_played": 5,
+      "avg_margin": 7.6,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "San Francisco Giants vs Colorado Rockies",
+      "games_played": 5,
+      "avg_margin": 7.6,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Oakland Athletics vs Seattle Mariners",
+      "games_played": 7,
+      "avg_margin": 2.43,
+      "avg_excitement": 77.86
+    },
+    {
+      "matchup": "Seattle Mariners vs Oakland Athletics",
+      "games_played": 7,
+      "avg_margin": 2.43,
+      "avg_excitement": 77.86
+    },
+    {
+      "matchup": "Los Angeles Angels vs San Diego Padres",
+      "games_played": 3,
+      "avg_margin": 4.33,
+      "avg_excitement": 31.67
+    },
+    {
+      "matchup": "San Diego Padres vs Los Angeles Angels",
+      "games_played": 3,
+      "avg_margin": 4.33,
+      "avg_excitement": 31.67
+    },
+    {
+      "matchup": "New York Mets vs New York Yankees",
+      "games_played": 1,
+      "avg_margin": 2,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "New York Yankees vs New York Mets",
+      "games_played": 1,
+      "avg_margin": 2,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Boston Red Sox vs Toronto Blue Jays",
+      "games_played": 5,
+      "avg_margin": 1.8,
+      "avg_excitement": 77.0
+    },
+    {
+      "matchup": "Toronto Blue Jays vs Boston Red Sox",
+      "games_played": 5,
+      "avg_margin": 1.8,
+      "avg_excitement": 77.0
+    },
+    {
+      "matchup": "Chicago White Sox vs Kansas City Royals",
+      "games_played": 11,
+      "avg_margin": 4.55,
+      "avg_excitement": 26.36
+    },
+    {
+      "matchup": "Kansas City Royals vs Chicago White Sox",
+      "games_played": 11,
+      "avg_margin": 4.55,
+      "avg_excitement": 26.36
+    },
+    {
+      "matchup": "Cincinnati Reds vs Pittsburgh Pirates",
+      "games_played": 4,
+      "avg_margin": 2,
+      "avg_excitement": 72.5
+    },
+    {
+      "matchup": "Pittsburgh Pirates vs Cincinnati Reds",
+      "games_played": 4,
+      "avg_margin": 2,
+      "avg_excitement": 72.5
+    },
+    {
+      "matchup": "Baltimore Orioles vs New York Yankees",
+      "games_played": 7,
+      "avg_margin": 2.29,
+      "avg_excitement": 58.57
+    },
+    {
+      "matchup": "New York Yankees vs Baltimore Orioles",
+      "games_played": 7,
+      "avg_margin": 2.29,
+      "avg_excitement": 58.57
+    },
+    {
+      "matchup": "Miami Marlins vs Tampa Bay Rays",
+      "games_played": 3,
+      "avg_margin": 2,
+      "avg_excitement": 66.67
+    },
+    {
+      "matchup": "Tampa Bay Rays vs Miami Marlins",
+      "games_played": 3,
+      "avg_margin": 2,
+      "avg_excitement": 66.67
+    },
+    {
+      "matchup": "Cleveland Indians vs Milwaukee Brewers",
+      "games_played": 3,
+      "avg_margin": 3.33,
+      "avg_excitement": 36.67
+    },
+    {
+      "matchup": "Milwaukee Brewers vs Cleveland Indians",
+      "games_played": 3,
+      "avg_margin": 3.33,
+      "avg_excitement": 36.67
+    },
+    {
+      "matchup": "Chicago Cubs vs St. Louis Cardinals",
+      "games_played": 8,
+      "avg_margin": 3.88,
+      "avg_excitement": 28.12
+    },
+    {
+      "matchup": "St. Louis Cardinals vs Chicago Cubs",
+      "games_played": 8,
+      "avg_margin": 3.88,
+      "avg_excitement": 28.12
+    },
+    {
+      "matchup": "Houston Astros vs Los Angeles Angels",
+      "games_played": 7,
+      "avg_margin": 2.57,
+      "avg_excitement": 67.14
+    },
+    {
+      "matchup": "Los Angeles Angels vs Houston Astros",
+      "games_played": 7,
+      "avg_margin": 2.57,
+      "avg_excitement": 67.14
+    },
+    {
+      "matchup": "Oakland Athletics vs San Diego Padres",
+      "games_played": 3,
+      "avg_margin": 4.33,
+      "avg_excitement": 31.67
+    },
+    {
+      "matchup": "San Diego Padres vs Oakland Athletics",
+      "games_played": 3,
+      "avg_margin": 4.33,
+      "avg_excitement": 31.67
+    },
+    {
+      "matchup": "Arizona Diamondbacks vs San Francisco Giants",
+      "games_played": 7,
+      "avg_margin": 1.43,
+      "avg_excitement": 92.86
+    },
+    {
+      "matchup": "San Francisco Giants vs Arizona Diamondbacks",
+      "games_played": 7,
+      "avg_margin": 1.43,
+      "avg_excitement": 92.86
+    },
+    {
+      "matchup": "Atlanta Braves vs Miami Marlins",
+      "games_played": 4,
+      "avg_margin": 3.75,
+      "avg_excitement": 46.25
+    },
+    {
+      "matchup": "Miami Marlins vs Atlanta Braves",
+      "games_played": 4,
+      "avg_margin": 3.75,
+      "avg_excitement": 46.25
+    },
+    {
+      "matchup": "Tampa Bay Rays vs Washington Nationals",
+      "games_played": 1,
+      "avg_margin": 5,
+      "avg_excitement": 5.0
+    },
+    {
+      "matchup": "Washington Nationals vs Tampa Bay Rays",
+      "games_played": 1,
+      "avg_margin": 5,
+      "avg_excitement": 5.0
+    },
+    {
+      "matchup": "New York Yankees vs Toronto Blue Jays",
+      "games_played": 3,
+      "avg_margin": 5.67,
+      "avg_excitement": 1.67
+    },
+    {
+      "matchup": "Toronto Blue Jays vs New York Yankees",
+      "games_played": 3,
+      "avg_margin": 5.67,
+      "avg_excitement": 1.67
+    },
+    {
+      "matchup": "Houston Astros vs Oakland Athletics",
+      "games_played": 1,
+      "avg_margin": 6,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Oakland Athletics vs Houston Astros",
+      "games_played": 1,
+      "avg_margin": 6,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Atlanta Braves vs San Diego Padres",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 95.0
+    },
+    {
+      "matchup": "San Diego Padres vs Atlanta Braves",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 95.0
+    },
+    {
+      "matchup": "Colorado Rockies vs Texas Rangers",
+      "games_played": 1,
+      "avg_margin": 4,
+      "avg_excitement": 10.0
+    },
+    {
+      "matchup": "Texas Rangers vs Colorado Rockies",
+      "games_played": 1,
+      "avg_margin": 4,
+      "avg_excitement": 10.0
+    },
+    {
+      "matchup": "Baltimore Orioles vs Toronto Blue Jays",
+      "games_played": 5,
+      "avg_margin": 3,
+      "avg_excitement": 29.0
+    },
+    {
+      "matchup": "Toronto Blue Jays vs Baltimore Orioles",
+      "games_played": 5,
+      "avg_margin": 3,
+      "avg_excitement": 29.0
+    },
+    {
+      "matchup": "Los Angeles Angels vs New York Yankees",
+      "games_played": 1,
+      "avg_margin": 3,
+      "avg_excitement": 15.0
+    },
+    {
+      "matchup": "New York Yankees vs Los Angeles Angels",
+      "games_played": 1,
+      "avg_margin": 3,
+      "avg_excitement": 15.0
+    },
+    {
+      "matchup": "Boston Red Sox vs Tampa Bay Rays",
+      "games_played": 10,
+      "avg_margin": 2.5,
+      "avg_excitement": 59.5
+    },
+    {
+      "matchup": "Tampa Bay Rays vs Boston Red Sox",
+      "games_played": 10,
+      "avg_margin": 2.5,
+      "avg_excitement": 59.5
+    },
+    {
+      "matchup": "Miami Marlins vs New York Mets",
+      "games_played": 3,
+      "avg_margin": 2,
+      "avg_excitement": 66.67
+    },
+    {
+      "matchup": "New York Mets vs Miami Marlins",
+      "games_played": 3,
+      "avg_margin": 2,
+      "avg_excitement": 66.67
+    },
+    {
+      "matchup": "Chicago Cubs vs Minnesota Twins",
+      "games_played": 1,
+      "avg_margin": 3,
+      "avg_excitement": 15.0
+    },
+    {
+      "matchup": "Minnesota Twins vs Chicago Cubs",
+      "games_played": 1,
+      "avg_margin": 3,
+      "avg_excitement": 15.0
+    },
+    {
+      "matchup": "Chicago White Sox vs Pittsburgh Pirates",
+      "games_played": 1,
+      "avg_margin": 3,
+      "avg_excitement": 15.0
+    },
+    {
+      "matchup": "Pittsburgh Pirates vs Chicago White Sox",
+      "games_played": 1,
+      "avg_margin": 3,
+      "avg_excitement": 15.0
+    },
+    {
+      "matchup": "Milwaukee Brewers vs San Francisco Giants",
+      "games_played": 2,
+      "avg_margin": 3.5,
+      "avg_excitement": 12.5
+    },
+    {
+      "matchup": "San Francisco Giants vs Milwaukee Brewers",
+      "games_played": 2,
+      "avg_margin": 3.5,
+      "avg_excitement": 12.5
+    },
+    {
+      "matchup": "Atlanta Braves vs Los Angeles Dodgers",
+      "games_played": 4,
+      "avg_margin": 2,
+      "avg_excitement": 72.5
+    },
+    {
+      "matchup": "Los Angeles Dodgers vs Atlanta Braves",
+      "games_played": 4,
+      "avg_margin": 2,
+      "avg_excitement": 72.5
+    },
+    {
+      "matchup": "Atlanta Braves vs Colorado Rockies",
+      "games_played": 8,
+      "avg_margin": 2.62,
+      "avg_excitement": 51.88
+    },
+    {
+      "matchup": "Colorado Rockies vs Atlanta Braves",
+      "games_played": 8,
+      "avg_margin": 2.62,
+      "avg_excitement": 51.88
+    },
+    {
+      "matchup": "Oakland Athletics vs Toronto Blue Jays",
+      "games_played": 6,
+      "avg_margin": 3.5,
+      "avg_excitement": 47.5
+    },
+    {
+      "matchup": "Toronto Blue Jays vs Oakland Athletics",
+      "games_played": 6,
+      "avg_margin": 3.5,
+      "avg_excitement": 47.5
+    },
+    {
+      "matchup": "Boston Red Sox vs Cleveland Indians",
+      "games_played": 3,
+      "avg_margin": 3.33,
+      "avg_excitement": 36.67
+    },
+    {
+      "matchup": "Cleveland Indians vs Boston Red Sox",
+      "games_played": 3,
+      "avg_margin": 3.33,
+      "avg_excitement": 36.67
+    },
+    {
+      "matchup": "Cincinnati Reds vs Detroit Tigers",
+      "games_played": 3,
+      "avg_margin": 5.33,
+      "avg_excitement": 3.33
+    },
+    {
+      "matchup": "Detroit Tigers vs Cincinnati Reds",
+      "games_played": 3,
+      "avg_margin": 5.33,
+      "avg_excitement": 3.33
+    },
+    {
+      "matchup": "Minnesota Twins vs Tampa Bay Rays",
+      "games_played": 7,
+      "avg_margin": 2.57,
+      "avg_excitement": 67.14
+    },
+    {
+      "matchup": "Tampa Bay Rays vs Minnesota Twins",
+      "games_played": 7,
+      "avg_margin": 2.57,
+      "avg_excitement": 67.14
+    },
+    {
+      "matchup": "Miami Marlins vs Philadelphia Phillies",
+      "games_played": 10,
+      "avg_margin": 4.2,
+      "avg_excitement": 44.0
+    },
+    {
+      "matchup": "Philadelphia Phillies vs Miami Marlins",
+      "games_played": 10,
+      "avg_margin": 4.2,
+      "avg_excitement": 44.0
+    },
+    {
+      "matchup": "Milwaukee Brewers vs St. Louis Cardinals",
+      "games_played": 6,
+      "avg_margin": 4.33,
+      "avg_excitement": 31.67
+    },
+    {
+      "matchup": "St. Louis Cardinals vs Milwaukee Brewers",
+      "games_played": 6,
+      "avg_margin": 4.33,
+      "avg_excitement": 31.67
+    },
+    {
+      "matchup": "Los Angeles Angels vs Texas Rangers",
+      "games_played": 7,
+      "avg_margin": 2.86,
+      "avg_excitement": 45.71
+    },
+    {
+      "matchup": "Texas Rangers vs Los Angeles Angels",
+      "games_played": 7,
+      "avg_margin": 2.86,
+      "avg_excitement": 45.71
+    },
+    {
+      "matchup": "Arizona Diamondbacks vs Seattle Mariners",
+      "games_played": 3,
+      "avg_margin": 3.33,
+      "avg_excitement": 36.67
+    },
+    {
+      "matchup": "Seattle Mariners vs Arizona Diamondbacks",
+      "games_played": 3,
+      "avg_margin": 3.33,
+      "avg_excitement": 36.67
+    },
+    {
+      "matchup": "Houston Astros vs San Diego Padres",
+      "games_played": 3,
+      "avg_margin": 4,
+      "avg_excitement": 33.33
+    },
+    {
+      "matchup": "San Diego Padres vs Houston Astros",
+      "games_played": 3,
+      "avg_margin": 4,
+      "avg_excitement": 33.33
+    },
+    {
+      "matchup": "Detroit Tigers vs Pittsburgh Pirates",
+      "games_played": 2,
+      "avg_margin": 2,
+      "avg_excitement": 55.0
+    },
+    {
+      "matchup": "Pittsburgh Pirates vs Detroit Tigers",
+      "games_played": 2,
+      "avg_margin": 2,
+      "avg_excitement": 55.0
+    },
+    {
+      "matchup": "Milwaukee Brewers vs Philadelphia Phillies",
+      "games_played": 5,
+      "avg_margin": 5.6,
+      "avg_excitement": 44.0
+    },
+    {
+      "matchup": "Philadelphia Phillies vs Milwaukee Brewers",
+      "games_played": 5,
+      "avg_margin": 5.6,
+      "avg_excitement": 44.0
+    },
+    {
+      "matchup": "Chicago Cubs vs Cincinnati Reds",
+      "games_played": 8,
+      "avg_margin": 3.5,
+      "avg_excitement": 47.5
+    },
+    {
+      "matchup": "Cincinnati Reds vs Chicago Cubs",
+      "games_played": 8,
+      "avg_margin": 3.5,
+      "avg_excitement": 47.5
+    },
+    {
+      "matchup": "Los Angeles Dodgers vs St. Louis Cardinals",
+      "games_played": 2,
+      "avg_margin": 4.5,
+      "avg_excitement": 7.5
+    },
+    {
+      "matchup": "St. Louis Cardinals vs Los Angeles Dodgers",
+      "games_played": 2,
+      "avg_margin": 4.5,
+      "avg_excitement": 7.5
+    },
+    {
+      "matchup": "Chicago White Sox vs Oakland Athletics",
+      "games_played": 1,
+      "avg_margin": 3,
+      "avg_excitement": 15.0
+    },
+    {
+      "matchup": "Oakland Athletics vs Chicago White Sox",
+      "games_played": 1,
+      "avg_margin": 3,
+      "avg_excitement": 15.0
+    },
+    {
+      "matchup": "Arizona Diamondbacks vs Texas Rangers",
+      "games_played": 1,
+      "avg_margin": 2,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Texas Rangers vs Arizona Diamondbacks",
+      "games_played": 1,
+      "avg_margin": 2,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Detroit Tigers vs Seattle Mariners",
+      "games_played": 1,
+      "avg_margin": 7,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Seattle Mariners vs Detroit Tigers",
+      "games_played": 1,
+      "avg_margin": 7,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Oakland Athletics vs Washington Nationals",
+      "games_played": 1,
+      "avg_margin": 2,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Washington Nationals vs Oakland Athletics",
+      "games_played": 1,
+      "avg_margin": 2,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Los Angeles Dodgers vs New York Mets",
+      "games_played": 1,
+      "avg_margin": 2,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "New York Mets vs Los Angeles Dodgers",
+      "games_played": 1,
+      "avg_margin": 2,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Baltimore Orioles vs Cleveland Guardians",
+      "games_played": 1,
+      "avg_margin": 3,
+      "avg_excitement": 15.0
+    },
+    {
+      "matchup": "Cleveland Guardians vs Baltimore Orioles",
+      "games_played": 1,
+      "avg_margin": 3,
+      "avg_excitement": 15.0
+    },
+    {
+      "matchup": "Boston Red Sox vs Texas Rangers",
+      "games_played": 4,
+      "avg_margin": 3.5,
+      "avg_excitement": 47.5
+    },
+    {
+      "matchup": "Texas Rangers vs Boston Red Sox",
+      "games_played": 4,
+      "avg_margin": 3.5,
+      "avg_excitement": 47.5
+    },
+    {
+      "matchup": "Arizona Diamondbacks vs Milwaukee Brewers",
+      "games_played": 4,
+      "avg_margin": 3,
+      "avg_excitement": 50.0
+    },
+    {
+      "matchup": "Milwaukee Brewers vs Arizona Diamondbacks",
+      "games_played": 4,
+      "avg_margin": 3,
+      "avg_excitement": 50.0
+    },
+    {
+      "matchup": "Pittsburgh Pirates vs Toronto Blue Jays",
+      "games_played": 3,
+      "avg_margin": 2.67,
+      "avg_excitement": 40.0
+    },
+    {
+      "matchup": "Toronto Blue Jays vs Pittsburgh Pirates",
+      "games_played": 3,
+      "avg_margin": 2.67,
+      "avg_excitement": 40.0
+    },
+    {
+      "matchup": "Cincinnati Reds vs Colorado Rockies",
+      "games_played": 4,
+      "avg_margin": 3.75,
+      "avg_excitement": 46.25
+    },
+    {
+      "matchup": "Colorado Rockies vs Cincinnati Reds",
+      "games_played": 4,
+      "avg_margin": 3.75,
+      "avg_excitement": 46.25
+    },
+    {
+      "matchup": "Baltimore Orioles vs Oakland Athletics",
+      "games_played": 3,
+      "avg_margin": 5,
+      "avg_excitement": 5.0
+    },
+    {
+      "matchup": "Oakland Athletics vs Baltimore Orioles",
+      "games_played": 3,
+      "avg_margin": 5,
+      "avg_excitement": 5.0
+    },
+    {
+      "matchup": "Cleveland Guardians vs Seattle Mariners",
+      "games_played": 3,
+      "avg_margin": 4,
+      "avg_excitement": 10.0
+    },
+    {
+      "matchup": "Seattle Mariners vs Cleveland Guardians",
+      "games_played": 3,
+      "avg_margin": 4,
+      "avg_excitement": 10.0
+    },
+    {
+      "matchup": "Los Angeles Dodgers vs San Diego Padres",
+      "games_played": 3,
+      "avg_margin": 7.33,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "San Diego Padres vs Los Angeles Dodgers",
+      "games_played": 3,
+      "avg_margin": 7.33,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Philadelphia Phillies vs San Francisco Giants",
+      "games_played": 3,
+      "avg_margin": 5,
+      "avg_excitement": 51.67
+    },
+    {
+      "matchup": "San Francisco Giants vs Philadelphia Phillies",
+      "games_played": 3,
+      "avg_margin": 5,
+      "avg_excitement": 51.67
+    },
+    {
+      "matchup": "New York Mets vs Pittsburgh Pirates",
+      "games_played": 4,
+      "avg_margin": 5,
+      "avg_excitement": 22.5
+    },
+    {
+      "matchup": "Pittsburgh Pirates vs New York Mets",
+      "games_played": 4,
+      "avg_margin": 5,
+      "avg_excitement": 22.5
+    },
+    {
+      "matchup": "Minnesota Twins vs New York Yankees",
+      "games_played": 4,
+      "avg_margin": 2.5,
+      "avg_excitement": 52.5
+    },
+    {
+      "matchup": "New York Yankees vs Minnesota Twins",
+      "games_played": 4,
+      "avg_margin": 2.5,
+      "avg_excitement": 52.5
+    },
+    {
+      "matchup": "Colorado Rockies vs Milwaukee Brewers",
+      "games_played": 5,
+      "avg_margin": 2.6,
+      "avg_excitement": 45.0
+    },
+    {
+      "matchup": "Milwaukee Brewers vs Colorado Rockies",
+      "games_played": 5,
+      "avg_margin": 2.6,
+      "avg_excitement": 45.0
+    },
+    {
+      "matchup": "St. Louis Cardinals vs Washington Nationals",
+      "games_played": 4,
+      "avg_margin": 3.75,
+      "avg_excitement": 28.75
+    },
+    {
+      "matchup": "Washington Nationals vs St. Louis Cardinals",
+      "games_played": 4,
+      "avg_margin": 3.75,
+      "avg_excitement": 28.75
+    },
+    {
+      "matchup": "Chicago White Sox vs Seattle Mariners",
+      "games_played": 3,
+      "avg_margin": 2.33,
+      "avg_excitement": 41.67
+    },
+    {
+      "matchup": "Seattle Mariners vs Chicago White Sox",
+      "games_played": 3,
+      "avg_margin": 2.33,
+      "avg_excitement": 41.67
+    },
+    {
+      "matchup": "Cleveland Guardians vs Kansas City Royals",
+      "games_played": 6,
+      "avg_margin": 2.67,
+      "avg_excitement": 51.67
+    },
+    {
+      "matchup": "Kansas City Royals vs Cleveland Guardians",
+      "games_played": 6,
+      "avg_margin": 2.67,
+      "avg_excitement": 51.67
+    },
+    {
+      "matchup": "Detroit Tigers vs Los Angeles Angels",
+      "games_played": 3,
+      "avg_margin": 4,
+      "avg_excitement": 56.67
+    },
+    {
+      "matchup": "Los Angeles Angels vs Detroit Tigers",
+      "games_played": 3,
+      "avg_margin": 4,
+      "avg_excitement": 56.67
+    },
+    {
+      "matchup": "Atlanta Braves vs Oakland Athletics",
+      "games_played": 2,
+      "avg_margin": 2.5,
+      "avg_excitement": 52.5
+    },
+    {
+      "matchup": "Oakland Athletics vs Atlanta Braves",
+      "games_played": 2,
+      "avg_margin": 2.5,
+      "avg_excitement": 52.5
+    },
+    {
+      "matchup": "New York Mets vs Seattle Mariners",
+      "games_played": 3,
+      "avg_margin": 1.67,
+      "avg_excitement": 68.33
+    },
+    {
+      "matchup": "Seattle Mariners vs New York Mets",
+      "games_played": 3,
+      "avg_margin": 1.67,
+      "avg_excitement": 68.33
+    },
+    {
+      "matchup": "Cleveland Guardians vs Tampa Bay Rays",
+      "games_played": 3,
+      "avg_margin": 2,
+      "avg_excitement": 66.67
+    },
+    {
+      "matchup": "Tampa Bay Rays vs Cleveland Guardians",
+      "games_played": 3,
+      "avg_margin": 2,
+      "avg_excitement": 66.67
+    },
+    {
+      "matchup": "Minnesota Twins vs Texas Rangers",
+      "games_played": 3,
+      "avg_margin": 2.33,
+      "avg_excitement": 65.0
+    },
+    {
+      "matchup": "Texas Rangers vs Minnesota Twins",
+      "games_played": 3,
+      "avg_margin": 2.33,
+      "avg_excitement": 65.0
+    },
+    {
+      "matchup": "Boston Red Sox vs Kansas City Royals",
+      "games_played": 3,
+      "avg_margin": 6.33,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Kansas City Royals vs Boston Red Sox",
+      "games_played": 3,
+      "avg_margin": 6.33,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Chicago White Sox vs Detroit Tigers",
+      "games_played": 4,
+      "avg_margin": 4.75,
+      "avg_excitement": 41.25
+    },
+    {
+      "matchup": "Detroit Tigers vs Chicago White Sox",
+      "games_played": 4,
+      "avg_margin": 4.75,
+      "avg_excitement": 41.25
+    },
+    {
+      "matchup": "Houston Astros vs New York Yankees",
+      "games_played": 3,
+      "avg_margin": 3.33,
+      "avg_excitement": 36.67
+    },
+    {
+      "matchup": "New York Yankees vs Houston Astros",
+      "games_played": 3,
+      "avg_margin": 3.33,
+      "avg_excitement": 36.67
+    },
+    {
+      "matchup": "Colorado Rockies vs Toronto Blue Jays",
+      "games_played": 3,
+      "avg_margin": 2.33,
+      "avg_excitement": 65.0
+    },
+    {
+      "matchup": "Toronto Blue Jays vs Colorado Rockies",
+      "games_played": 3,
+      "avg_margin": 2.33,
+      "avg_excitement": 65.0
+    },
+    {
+      "matchup": "Arizona Diamondbacks vs Baltimore Orioles",
+      "games_played": 3,
+      "avg_margin": 3,
+      "avg_excitement": 38.33
+    },
+    {
+      "matchup": "Baltimore Orioles vs Arizona Diamondbacks",
+      "games_played": 3,
+      "avg_margin": 3,
+      "avg_excitement": 38.33
+    },
+    {
+      "matchup": "Chicago Cubs vs San Francisco Giants",
+      "games_played": 3,
+      "avg_margin": 4.67,
+      "avg_excitement": 6.67
+    },
+    {
+      "matchup": "San Francisco Giants vs Chicago Cubs",
+      "games_played": 3,
+      "avg_margin": 4.67,
+      "avg_excitement": 6.67
+    },
+    {
+      "matchup": "Arizona Diamondbacks vs Colorado Rockies",
+      "games_played": 3,
+      "avg_margin": 3.33,
+      "avg_excitement": 60.0
+    },
+    {
+      "matchup": "Colorado Rockies vs Arizona Diamondbacks",
+      "games_played": 3,
+      "avg_margin": 3.33,
+      "avg_excitement": 60.0
+    },
+    {
+      "matchup": "Cincinnati Reds vs Seattle Mariners",
+      "games_played": 3,
+      "avg_margin": 2.67,
+      "avg_excitement": 40.0
+    },
+    {
+      "matchup": "Seattle Mariners vs Cincinnati Reds",
+      "games_played": 3,
+      "avg_margin": 2.67,
+      "avg_excitement": 40.0
+    },
+    {
+      "matchup": "Cleveland Guardians vs Minnesota Twins",
+      "games_played": 3,
+      "avg_margin": 6.67,
+      "avg_excitement": 23.33
+    },
+    {
+      "matchup": "Minnesota Twins vs Cleveland Guardians",
+      "games_played": 3,
+      "avg_margin": 6.67,
+      "avg_excitement": 23.33
+    },
+    {
+      "matchup": "Milwaukee Brewers vs Pittsburgh Pirates",
+      "games_played": 3,
+      "avg_margin": 2.33,
+      "avg_excitement": 65.0
+    },
+    {
+      "matchup": "Pittsburgh Pirates vs Milwaukee Brewers",
+      "games_played": 3,
+      "avg_margin": 2.33,
+      "avg_excitement": 65.0
+    },
+    {
+      "matchup": "Philadelphia Phillies vs San Diego Padres",
+      "games_played": 3,
+      "avg_margin": 4.67,
+      "avg_excitement": 30.0
+    },
+    {
+      "matchup": "San Diego Padres vs Philadelphia Phillies",
+      "games_played": 3,
+      "avg_margin": 4.67,
+      "avg_excitement": 30.0
+    },
+    {
+      "matchup": "Baltimore Orioles vs Los Angeles Angels",
+      "games_played": 3,
+      "avg_margin": 3.67,
+      "avg_excitement": 35.0
+    },
+    {
+      "matchup": "Los Angeles Angels vs Baltimore Orioles",
+      "games_played": 3,
+      "avg_margin": 3.67,
+      "avg_excitement": 35.0
+    },
+    {
+      "matchup": "Los Angeles Dodgers vs Miami Marlins",
+      "games_played": 3,
+      "avg_margin": 6.67,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Miami Marlins vs Los Angeles Dodgers",
+      "games_played": 3,
+      "avg_margin": 6.67,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Detroit Tigers vs New York Yankees",
+      "games_played": 3,
+      "avg_margin": 4,
+      "avg_excitement": 33.33
+    },
+    {
+      "matchup": "New York Yankees vs Detroit Tigers",
+      "games_played": 3,
+      "avg_margin": 4,
+      "avg_excitement": 33.33
+    },
+    {
+      "matchup": "Atlanta Braves vs St. Louis Cardinals",
+      "games_played": 3,
+      "avg_margin": 4,
+      "avg_excitement": 10.0
+    },
+    {
+      "matchup": "St. Louis Cardinals vs Atlanta Braves",
+      "games_played": 3,
+      "avg_margin": 4,
+      "avg_excitement": 10.0
+    },
+    {
+      "matchup": "Seattle Mariners vs Tampa Bay Rays",
+      "games_played": 2,
+      "avg_margin": 2,
+      "avg_excitement": 55.0
+    },
+    {
+      "matchup": "Tampa Bay Rays vs Seattle Mariners",
+      "games_played": 2,
+      "avg_margin": 2,
+      "avg_excitement": 55.0
+    },
+    {
+      "matchup": "Arizona Diamondbacks vs Chicago Cubs",
+      "games_played": 2,
+      "avg_margin": 2.5,
+      "avg_excitement": 52.5
+    },
+    {
+      "matchup": "Chicago Cubs vs Arizona Diamondbacks",
+      "games_played": 2,
+      "avg_margin": 2.5,
+      "avg_excitement": 52.5
+    },
+    {
+      "matchup": "Cleveland Guardians vs Los Angeles Angels",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 95.0
+    },
+    {
+      "matchup": "Los Angeles Angels vs Cleveland Guardians",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 95.0
+    },
+    {
+      "matchup": "Los Angeles Dodgers vs Washington Nationals",
+      "games_played": 1,
+      "avg_margin": 3,
+      "avg_excitement": 15.0
+    },
+    {
+      "matchup": "Washington Nationals vs Los Angeles Dodgers",
+      "games_played": 1,
+      "avg_margin": 3,
+      "avg_excitement": 15.0
+    },
+    {
+      "matchup": "Milwaukee Brewers vs New York Yankees",
+      "games_played": 1,
+      "avg_margin": 6,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "New York Yankees vs Milwaukee Brewers",
+      "games_played": 1,
+      "avg_margin": 6,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Cincinnati Reds vs Milwaukee Brewers",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 95.0
+    },
+    {
+      "matchup": "Milwaukee Brewers vs Cincinnati Reds",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 95.0
+    },
+    {
+      "matchup": "Chicago Cubs vs Washington Nationals",
+      "games_played": 1,
+      "avg_margin": 13,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Washington Nationals vs Chicago Cubs",
+      "games_played": 1,
+      "avg_margin": 13,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "New York Yankees vs St. Louis Cardinals",
+      "games_played": 1,
+      "avg_margin": 7,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "St. Louis Cardinals vs New York Yankees",
+      "games_played": 1,
+      "avg_margin": 7,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Boston Red Sox vs Detroit Tigers",
+      "games_played": 1,
+      "avg_margin": 3,
+      "avg_excitement": 15.0
+    },
+    {
+      "matchup": "Detroit Tigers vs Boston Red Sox",
+      "games_played": 1,
+      "avg_margin": 3,
+      "avg_excitement": 15.0
+    },
+    {
+      "matchup": "Cleveland Guardians vs Pittsburgh Pirates",
+      "games_played": 1,
+      "avg_margin": 5,
+      "avg_excitement": 5.0
+    },
+    {
+      "matchup": "Pittsburgh Pirates vs Cleveland Guardians",
+      "games_played": 1,
+      "avg_margin": 5,
+      "avg_excitement": 5.0
+    },
+    {
+      "matchup": "San Diego Padres vs Tampa Bay Rays",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 95.0
+    },
+    {
+      "matchup": "Tampa Bay Rays vs San Diego Padres",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 95.0
+    },
+    {
+      "matchup": "Houston Astros vs Kansas City Royals",
+      "games_played": 1,
+      "avg_margin": 5,
+      "avg_excitement": 5.0
+    },
+    {
+      "matchup": "Kansas City Royals vs Houston Astros",
+      "games_played": 1,
+      "avg_margin": 5,
+      "avg_excitement": 5.0
+    },
+    {
+      "matchup": "Chicago White Sox vs New York Mets",
+      "games_played": 1,
+      "avg_margin": 2,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "New York Mets vs Chicago White Sox",
+      "games_played": 1,
+      "avg_margin": 2,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Minnesota Twins vs Toronto Blue Jays",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 95.0
+    },
+    {
+      "matchup": "Toronto Blue Jays vs Minnesota Twins",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 95.0
+    },
+    {
+      "matchup": "Oakland Athletics vs Texas Rangers",
+      "games_played": 1,
+      "avg_margin": 2,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Texas Rangers vs Oakland Athletics",
+      "games_played": 1,
+      "avg_margin": 2,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Baltimore Orioles vs Colorado Rockies",
+      "games_played": 1,
+      "avg_margin": 5,
+      "avg_excitement": 5.0
+    },
+    {
+      "matchup": "Colorado Rockies vs Baltimore Orioles",
+      "games_played": 1,
+      "avg_margin": 5,
+      "avg_excitement": 5.0
+    },
+    {
+      "matchup": "Miami Marlins vs San Francisco Giants",
+      "games_played": 1,
+      "avg_margin": 2,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "San Francisco Giants vs Miami Marlins",
+      "games_played": 1,
+      "avg_margin": 2,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Los Angeles Angels vs Seattle Mariners",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 95.0
+    },
+    {
+      "matchup": "Seattle Mariners vs Los Angeles Angels",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 95.0
+    },
+    {
+      "matchup": "Atlanta Braves vs Philadelphia Phillies",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 95.0
+    },
+    {
+      "matchup": "Philadelphia Phillies vs Atlanta Braves",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 95.0
+    },
+    {
+      "matchup": "Baltimore Orioles vs Chicago White Sox",
+      "games_played": 3,
+      "avg_margin": 8.67,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Chicago White Sox vs Baltimore Orioles",
+      "games_played": 3,
+      "avg_margin": 8.67,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Cincinnati Reds vs Houston Astros",
+      "games_played": 3,
+      "avg_margin": 3.33,
+      "avg_excitement": 60.0
+    },
+    {
+      "matchup": "Houston Astros vs Cincinnati Reds",
+      "games_played": 3,
+      "avg_margin": 3.33,
+      "avg_excitement": 60.0
+    },
+    {
+      "matchup": "Detroit Tigers vs San Diego Padres",
+      "games_played": 3,
+      "avg_margin": 1.67,
+      "avg_excitement": 68.33
+    },
+    {
+      "matchup": "San Diego Padres vs Detroit Tigers",
+      "games_played": 3,
+      "avg_margin": 1.67,
+      "avg_excitement": 68.33
+    },
+    {
+      "matchup": "Boston Red Sox vs New York Mets",
+      "games_played": 3,
+      "avg_margin": 4.33,
+      "avg_excitement": 8.33
+    },
+    {
+      "matchup": "New York Mets vs Boston Red Sox",
+      "games_played": 3,
+      "avg_margin": 4.33,
+      "avg_excitement": 8.33
+    },
+    {
+      "matchup": "Philadelphia Phillies vs Toronto Blue Jays",
+      "games_played": 2,
+      "avg_margin": 1.5,
+      "avg_excitement": 92.5
+    },
+    {
+      "matchup": "Toronto Blue Jays vs Philadelphia Phillies",
+      "games_played": 2,
+      "avg_margin": 1.5,
+      "avg_excitement": 92.5
+    },
+    {
+      "matchup": "Los Angeles Angels vs Los Angeles Dodgers",
+      "games_played": 2,
+      "avg_margin": 6.5,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Los Angeles Dodgers vs Los Angeles Angels",
+      "games_played": 2,
+      "avg_margin": 6.5,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Pittsburgh Pirates vs Washington Nationals",
+      "games_played": 5,
+      "avg_margin": 2.6,
+      "avg_excitement": 59.0
+    },
+    {
+      "matchup": "Washington Nationals vs Pittsburgh Pirates",
+      "games_played": 5,
+      "avg_margin": 2.6,
+      "avg_excitement": 59.0
+    },
+    {
+      "matchup": "Chicago Cubs vs New York Yankees",
+      "games_played": 2,
+      "avg_margin": 2.5,
+      "avg_excitement": 52.5
+    },
+    {
+      "matchup": "New York Yankees vs Chicago Cubs",
+      "games_played": 2,
+      "avg_margin": 2.5,
+      "avg_excitement": 52.5
+    },
+    {
+      "matchup": "Boston Red Sox vs Chicago White Sox",
+      "games_played": 3,
+      "avg_margin": 3,
+      "avg_excitement": 61.67
+    },
+    {
+      "matchup": "Chicago White Sox vs Boston Red Sox",
+      "games_played": 3,
+      "avg_margin": 3,
+      "avg_excitement": 61.67
+    },
+    {
+      "matchup": "Cincinnati Reds vs New York Mets",
+      "games_played": 3,
+      "avg_margin": 2.67,
+      "avg_excitement": 63.33
+    },
+    {
+      "matchup": "New York Mets vs Cincinnati Reds",
+      "games_played": 3,
+      "avg_margin": 2.67,
+      "avg_excitement": 63.33
+    },
+    {
+      "matchup": "Arizona Diamondbacks vs Houston Astros",
+      "games_played": 2,
+      "avg_margin": 7,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Houston Astros vs Arizona Diamondbacks",
+      "games_played": 2,
+      "avg_margin": 7,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Kansas City Royals vs Minnesota Twins",
+      "games_played": 2,
+      "avg_margin": 3.5,
+      "avg_excitement": 47.5
+    },
+    {
+      "matchup": "Minnesota Twins vs Kansas City Royals",
+      "games_played": 2,
+      "avg_margin": 3.5,
+      "avg_excitement": 47.5
+    },
+    {
+      "matchup": "Seattle Mariners vs St. Louis Cardinals",
+      "games_played": 2,
+      "avg_margin": 3.5,
+      "avg_excitement": 47.5
+    },
+    {
+      "matchup": "St. Louis Cardinals vs Seattle Mariners",
+      "games_played": 2,
+      "avg_margin": 3.5,
+      "avg_excitement": 47.5
+    },
+    {
+      "matchup": "Cleveland Guardians vs Los Angeles Dodgers",
+      "games_played": 2,
+      "avg_margin": 3.5,
+      "avg_excitement": 47.5
+    },
+    {
+      "matchup": "Los Angeles Dodgers vs Cleveland Guardians",
+      "games_played": 2,
+      "avg_margin": 3.5,
+      "avg_excitement": 47.5
+    }
+  ],
+  "matchup_close_rates": [
+    {
+      "matchup": "Detroit Tigers vs Oakland Athletics",
+      "games": 7,
+      "close_games": 5,
+      "close_rate": 71.43
+    },
+    {
+      "matchup": "Oakland Athletics vs Detroit Tigers",
+      "games": 7,
+      "close_games": 5,
+      "close_rate": 71.43
+    },
+    {
+      "matchup": "Cincinnati Reds vs St. Louis Cardinals",
+      "games": 7,
+      "close_games": 4,
+      "close_rate": 57.14
+    },
+    {
+      "matchup": "St. Louis Cardinals vs Cincinnati Reds",
+      "games": 7,
+      "close_games": 4,
+      "close_rate": 57.14
+    },
+    {
+      "matchup": "New York Yankees vs Oakland Athletics",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Oakland Athletics vs New York Yankees",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Houston Astros vs Toronto Blue Jays",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Toronto Blue Jays vs Houston Astros",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Cleveland Indians vs Tampa Bay Rays",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Tampa Bay Rays vs Cleveland Indians",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Detroit Tigers vs Minnesota Twins",
+      "games": 7,
+      "close_games": 5,
+      "close_rate": 71.43
+    },
+    {
+      "matchup": "Minnesota Twins vs Detroit Tigers",
+      "games": 7,
+      "close_games": 5,
+      "close_rate": 71.43
+    },
+    {
+      "matchup": "Miami Marlins vs Washington Nationals",
+      "games": 6,
+      "close_games": 2,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "Washington Nationals vs Miami Marlins",
+      "games": 6,
+      "close_games": 2,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "Baltimore Orioles vs Kansas City Royals",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Kansas City Royals vs Baltimore Orioles",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Chicago Cubs vs Milwaukee Brewers",
+      "games": 4,
+      "close_games": 1,
+      "close_rate": 25.0
+    },
+    {
+      "matchup": "Milwaukee Brewers vs Chicago Cubs",
+      "games": 4,
+      "close_games": 1,
+      "close_rate": 25.0
+    },
+    {
+      "matchup": "Seattle Mariners vs Texas Rangers",
+      "games": 5,
+      "close_games": 2,
+      "close_rate": 40.0
+    },
+    {
+      "matchup": "Texas Rangers vs Seattle Mariners",
+      "games": 5,
+      "close_games": 2,
+      "close_rate": 40.0
+    },
+    {
+      "matchup": "Colorado Rockies vs Pittsburgh Pirates",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Pittsburgh Pirates vs Colorado Rockies",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "San Diego Padres vs San Francisco Giants",
+      "games": 6,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "San Francisco Giants vs San Diego Padres",
+      "games": 6,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Boston Red Sox vs Los Angeles Angels",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Los Angeles Angels vs Boston Red Sox",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Arizona Diamondbacks vs Los Angeles Dodgers",
+      "games": 6,
+      "close_games": 2,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "Los Angeles Dodgers vs Arizona Diamondbacks",
+      "games": 6,
+      "close_games": 2,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "Atlanta Braves vs Chicago White Sox",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Chicago White Sox vs Atlanta Braves",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "New York Mets vs Philadelphia Phillies",
+      "games": 8,
+      "close_games": 3,
+      "close_rate": 37.5
+    },
+    {
+      "matchup": "Philadelphia Phillies vs New York Mets",
+      "games": 8,
+      "close_games": 3,
+      "close_rate": 37.5
+    },
+    {
+      "matchup": "New York Yankees vs Texas Rangers",
+      "games": 6,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Texas Rangers vs New York Yankees",
+      "games": 6,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "New York Mets vs Washington Nationals",
+      "games": 13,
+      "close_games": 5,
+      "close_rate": 38.46
+    },
+    {
+      "matchup": "Washington Nationals vs New York Mets",
+      "games": 13,
+      "close_games": 5,
+      "close_rate": 38.46
+    },
+    {
+      "matchup": "Baltimore Orioles vs Tampa Bay Rays",
+      "games": 6,
+      "close_games": 5,
+      "close_rate": 83.33
+    },
+    {
+      "matchup": "Tampa Bay Rays vs Baltimore Orioles",
+      "games": 6,
+      "close_games": 5,
+      "close_rate": 83.33
+    },
+    {
+      "matchup": "Atlanta Braves vs Toronto Blue Jays",
+      "games": 5,
+      "close_games": 2,
+      "close_rate": 40.0
+    },
+    {
+      "matchup": "Toronto Blue Jays vs Atlanta Braves",
+      "games": 5,
+      "close_games": 2,
+      "close_rate": 40.0
+    },
+    {
+      "matchup": "Cincinnati Reds vs Philadelphia Phillies",
+      "games": 4,
+      "close_games": 1,
+      "close_rate": 25.0
+    },
+    {
+      "matchup": "Philadelphia Phillies vs Cincinnati Reds",
+      "games": 4,
+      "close_games": 1,
+      "close_rate": 25.0
+    },
+    {
+      "matchup": "San Francisco Giants vs St. Louis Cardinals",
+      "games": 4,
+      "close_games": 3,
+      "close_rate": 75.0
+    },
+    {
+      "matchup": "St. Louis Cardinals vs San Francisco Giants",
+      "games": 4,
+      "close_games": 3,
+      "close_rate": 75.0
+    },
+    {
+      "matchup": "Chicago Cubs vs Seattle Mariners",
+      "games": 2,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Seattle Mariners vs Chicago Cubs",
+      "games": 2,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Houston Astros vs Milwaukee Brewers",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Milwaukee Brewers vs Houston Astros",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Arizona Diamondbacks vs San Diego Padres",
+      "games": 7,
+      "close_games": 2,
+      "close_rate": 28.57
+    },
+    {
+      "matchup": "San Diego Padres vs Arizona Diamondbacks",
+      "games": 7,
+      "close_games": 2,
+      "close_rate": 28.57
+    },
+    {
+      "matchup": "Chicago White Sox vs Cleveland Indians",
+      "games": 4,
+      "close_games": 2,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Cleveland Indians vs Chicago White Sox",
+      "games": 4,
+      "close_games": 2,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Colorado Rockies vs Los Angeles Dodgers",
+      "games": 6,
+      "close_games": 2,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "Los Angeles Dodgers vs Colorado Rockies",
+      "games": 6,
+      "close_games": 2,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "Miami Marlins vs Pittsburgh Pirates",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Pittsburgh Pirates vs Miami Marlins",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Boston Red Sox vs Minnesota Twins",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Minnesota Twins vs Boston Red Sox",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Detroit Tigers vs Kansas City Royals",
+      "games": 6,
+      "close_games": 5,
+      "close_rate": 83.33
+    },
+    {
+      "matchup": "Kansas City Royals vs Detroit Tigers",
+      "games": 6,
+      "close_games": 5,
+      "close_rate": 83.33
+    },
+    {
+      "matchup": "Los Angeles Angels vs Oakland Athletics",
+      "games": 6,
+      "close_games": 2,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "Oakland Athletics vs Los Angeles Angels",
+      "games": 6,
+      "close_games": 2,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "Baltimore Orioles vs Texas Rangers",
+      "games": 4,
+      "close_games": 2,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Texas Rangers vs Baltimore Orioles",
+      "games": 4,
+      "close_games": 2,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Tampa Bay Rays vs Toronto Blue Jays",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Toronto Blue Jays vs Tampa Bay Rays",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Atlanta Braves vs Washington Nationals",
+      "games": 8,
+      "close_games": 4,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Washington Nationals vs Atlanta Braves",
+      "games": 8,
+      "close_games": 4,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Houston Astros vs Seattle Mariners",
+      "games": 7,
+      "close_games": 4,
+      "close_rate": 57.14
+    },
+    {
+      "matchup": "Seattle Mariners vs Houston Astros",
+      "games": 7,
+      "close_games": 4,
+      "close_rate": 57.14
+    },
+    {
+      "matchup": "Pittsburgh Pirates vs St. Louis Cardinals",
+      "games": 5,
+      "close_games": 3,
+      "close_rate": 60.0
+    },
+    {
+      "matchup": "St. Louis Cardinals vs Pittsburgh Pirates",
+      "games": 5,
+      "close_games": 3,
+      "close_rate": 60.0
+    },
+    {
+      "matchup": "Boston Red Sox vs New York Yankees",
+      "games": 2,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "New York Yankees vs Boston Red Sox",
+      "games": 2,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Arizona Diamondbacks vs Cincinnati Reds",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Cincinnati Reds vs Arizona Diamondbacks",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Kansas City Royals vs Miami Marlins",
+      "games": 2,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Miami Marlins vs Kansas City Royals",
+      "games": 2,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Chicago White Sox vs Los Angeles Angels",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Los Angeles Angels vs Chicago White Sox",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Cleveland Indians vs Minnesota Twins",
+      "games": 4,
+      "close_games": 1,
+      "close_rate": 25.0
+    },
+    {
+      "matchup": "Minnesota Twins vs Cleveland Indians",
+      "games": 4,
+      "close_games": 1,
+      "close_rate": 25.0
+    },
+    {
+      "matchup": "Colorado Rockies vs San Diego Padres",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "San Diego Padres vs Colorado Rockies",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Los Angeles Dodgers vs San Francisco Giants",
+      "games": 8,
+      "close_games": 4,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "San Francisco Giants vs Los Angeles Dodgers",
+      "games": 8,
+      "close_games": 4,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Miami Marlins vs Toronto Blue Jays",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Toronto Blue Jays vs Miami Marlins",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "New York Yankees vs Tampa Bay Rays",
+      "games": 5,
+      "close_games": 3,
+      "close_rate": 60.0
+    },
+    {
+      "matchup": "Tampa Bay Rays vs New York Yankees",
+      "games": 5,
+      "close_games": 3,
+      "close_rate": 60.0
+    },
+    {
+      "matchup": "Philadelphia Phillies vs Washington Nationals",
+      "games": 5,
+      "close_games": 3,
+      "close_rate": 60.0
+    },
+    {
+      "matchup": "Washington Nationals vs Philadelphia Phillies",
+      "games": 5,
+      "close_games": 3,
+      "close_rate": 60.0
+    },
+    {
+      "matchup": "Chicago Cubs vs Pittsburgh Pirates",
+      "games": 10,
+      "close_games": 5,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Pittsburgh Pirates vs Chicago Cubs",
+      "games": 10,
+      "close_games": 5,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Atlanta Braves vs Boston Red Sox",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Boston Red Sox vs Atlanta Braves",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Baltimore Orioles vs New York Mets",
+      "games": 2,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "New York Mets vs Baltimore Orioles",
+      "games": 2,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Detroit Tigers vs Milwaukee Brewers",
+      "games": 2,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Milwaukee Brewers vs Detroit Tigers",
+      "games": 2,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Cleveland Indians vs Kansas City Royals",
+      "games": 5,
+      "close_games": 2,
+      "close_rate": 40.0
+    },
+    {
+      "matchup": "Kansas City Royals vs Cleveland Indians",
+      "games": 5,
+      "close_games": 2,
+      "close_rate": 40.0
+    },
+    {
+      "matchup": "Houston Astros vs Texas Rangers",
+      "games": 9,
+      "close_games": 5,
+      "close_rate": 55.56
+    },
+    {
+      "matchup": "Texas Rangers vs Houston Astros",
+      "games": 9,
+      "close_games": 5,
+      "close_rate": 55.56
+    },
+    {
+      "matchup": "Chicago White Sox vs Minnesota Twins",
+      "games": 5,
+      "close_games": 2,
+      "close_rate": 40.0
+    },
+    {
+      "matchup": "Minnesota Twins vs Chicago White Sox",
+      "games": 5,
+      "close_games": 2,
+      "close_rate": 40.0
+    },
+    {
+      "matchup": "Colorado Rockies vs San Francisco Giants",
+      "games": 5,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "San Francisco Giants vs Colorado Rockies",
+      "games": 5,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Oakland Athletics vs Seattle Mariners",
+      "games": 7,
+      "close_games": 6,
+      "close_rate": 85.71
+    },
+    {
+      "matchup": "Seattle Mariners vs Oakland Athletics",
+      "games": 7,
+      "close_games": 6,
+      "close_rate": 85.71
+    },
+    {
+      "matchup": "Los Angeles Angels vs San Diego Padres",
+      "games": 3,
+      "close_games": 1,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "San Diego Padres vs Los Angeles Angels",
+      "games": 3,
+      "close_games": 1,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "New York Mets vs New York Yankees",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "New York Yankees vs New York Mets",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Boston Red Sox vs Toronto Blue Jays",
+      "games": 5,
+      "close_games": 4,
+      "close_rate": 80.0
+    },
+    {
+      "matchup": "Toronto Blue Jays vs Boston Red Sox",
+      "games": 5,
+      "close_games": 4,
+      "close_rate": 80.0
+    },
+    {
+      "matchup": "Chicago White Sox vs Kansas City Royals",
+      "games": 11,
+      "close_games": 3,
+      "close_rate": 27.27
+    },
+    {
+      "matchup": "Kansas City Royals vs Chicago White Sox",
+      "games": 11,
+      "close_games": 3,
+      "close_rate": 27.27
+    },
+    {
+      "matchup": "Cincinnati Reds vs Pittsburgh Pirates",
+      "games": 4,
+      "close_games": 3,
+      "close_rate": 75.0
+    },
+    {
+      "matchup": "Pittsburgh Pirates vs Cincinnati Reds",
+      "games": 4,
+      "close_games": 3,
+      "close_rate": 75.0
+    },
+    {
+      "matchup": "Baltimore Orioles vs New York Yankees",
+      "games": 7,
+      "close_games": 4,
+      "close_rate": 57.14
+    },
+    {
+      "matchup": "New York Yankees vs Baltimore Orioles",
+      "games": 7,
+      "close_games": 4,
+      "close_rate": 57.14
+    },
+    {
+      "matchup": "Miami Marlins vs Tampa Bay Rays",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Tampa Bay Rays vs Miami Marlins",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Cleveland Indians vs Milwaukee Brewers",
+      "games": 3,
+      "close_games": 1,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "Milwaukee Brewers vs Cleveland Indians",
+      "games": 3,
+      "close_games": 1,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "Chicago Cubs vs St. Louis Cardinals",
+      "games": 8,
+      "close_games": 2,
+      "close_rate": 25.0
+    },
+    {
+      "matchup": "St. Louis Cardinals vs Chicago Cubs",
+      "games": 8,
+      "close_games": 2,
+      "close_rate": 25.0
+    },
+    {
+      "matchup": "Houston Astros vs Los Angeles Angels",
+      "games": 7,
+      "close_games": 5,
+      "close_rate": 71.43
+    },
+    {
+      "matchup": "Los Angeles Angels vs Houston Astros",
+      "games": 7,
+      "close_games": 5,
+      "close_rate": 71.43
+    },
+    {
+      "matchup": "Oakland Athletics vs San Diego Padres",
+      "games": 3,
+      "close_games": 1,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "San Diego Padres vs Oakland Athletics",
+      "games": 3,
+      "close_games": 1,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "Arizona Diamondbacks vs San Francisco Giants",
+      "games": 7,
+      "close_games": 7,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "San Francisco Giants vs Arizona Diamondbacks",
+      "games": 7,
+      "close_games": 7,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Atlanta Braves vs Miami Marlins",
+      "games": 4,
+      "close_games": 2,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Miami Marlins vs Atlanta Braves",
+      "games": 4,
+      "close_games": 2,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Tampa Bay Rays vs Washington Nationals",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Washington Nationals vs Tampa Bay Rays",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "New York Yankees vs Toronto Blue Jays",
+      "games": 3,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Toronto Blue Jays vs New York Yankees",
+      "games": 3,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Houston Astros vs Oakland Athletics",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Oakland Athletics vs Houston Astros",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Atlanta Braves vs San Diego Padres",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "San Diego Padres vs Atlanta Braves",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Colorado Rockies vs Texas Rangers",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Texas Rangers vs Colorado Rockies",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Baltimore Orioles vs Toronto Blue Jays",
+      "games": 5,
+      "close_games": 1,
+      "close_rate": 20.0
+    },
+    {
+      "matchup": "Toronto Blue Jays vs Baltimore Orioles",
+      "games": 5,
+      "close_games": 1,
+      "close_rate": 20.0
+    },
+    {
+      "matchup": "Los Angeles Angels vs New York Yankees",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "New York Yankees vs Los Angeles Angels",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Boston Red Sox vs Tampa Bay Rays",
+      "games": 10,
+      "close_games": 6,
+      "close_rate": 60.0
+    },
+    {
+      "matchup": "Tampa Bay Rays vs Boston Red Sox",
+      "games": 10,
+      "close_games": 6,
+      "close_rate": 60.0
+    },
+    {
+      "matchup": "Miami Marlins vs New York Mets",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "New York Mets vs Miami Marlins",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Chicago Cubs vs Minnesota Twins",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Minnesota Twins vs Chicago Cubs",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Chicago White Sox vs Pittsburgh Pirates",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Pittsburgh Pirates vs Chicago White Sox",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Milwaukee Brewers vs San Francisco Giants",
+      "games": 2,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "San Francisco Giants vs Milwaukee Brewers",
+      "games": 2,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Atlanta Braves vs Los Angeles Dodgers",
+      "games": 4,
+      "close_games": 3,
+      "close_rate": 75.0
+    },
+    {
+      "matchup": "Los Angeles Dodgers vs Atlanta Braves",
+      "games": 4,
+      "close_games": 3,
+      "close_rate": 75.0
+    },
+    {
+      "matchup": "Atlanta Braves vs Colorado Rockies",
+      "games": 8,
+      "close_games": 4,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Colorado Rockies vs Atlanta Braves",
+      "games": 8,
+      "close_games": 4,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Oakland Athletics vs Toronto Blue Jays",
+      "games": 6,
+      "close_games": 3,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Toronto Blue Jays vs Oakland Athletics",
+      "games": 6,
+      "close_games": 3,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Boston Red Sox vs Cleveland Indians",
+      "games": 3,
+      "close_games": 1,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "Cleveland Indians vs Boston Red Sox",
+      "games": 3,
+      "close_games": 1,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "Cincinnati Reds vs Detroit Tigers",
+      "games": 3,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Detroit Tigers vs Cincinnati Reds",
+      "games": 3,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Minnesota Twins vs Tampa Bay Rays",
+      "games": 7,
+      "close_games": 5,
+      "close_rate": 71.43
+    },
+    {
+      "matchup": "Tampa Bay Rays vs Minnesota Twins",
+      "games": 7,
+      "close_games": 5,
+      "close_rate": 71.43
+    },
+    {
+      "matchup": "Miami Marlins vs Philadelphia Phillies",
+      "games": 10,
+      "close_games": 5,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Philadelphia Phillies vs Miami Marlins",
+      "games": 10,
+      "close_games": 5,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Milwaukee Brewers vs St. Louis Cardinals",
+      "games": 6,
+      "close_games": 2,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "St. Louis Cardinals vs Milwaukee Brewers",
+      "games": 6,
+      "close_games": 2,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "Los Angeles Angels vs Texas Rangers",
+      "games": 7,
+      "close_games": 3,
+      "close_rate": 42.86
+    },
+    {
+      "matchup": "Texas Rangers vs Los Angeles Angels",
+      "games": 7,
+      "close_games": 3,
+      "close_rate": 42.86
+    },
+    {
+      "matchup": "Arizona Diamondbacks vs Seattle Mariners",
+      "games": 3,
+      "close_games": 1,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "Seattle Mariners vs Arizona Diamondbacks",
+      "games": 3,
+      "close_games": 1,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "Houston Astros vs San Diego Padres",
+      "games": 3,
+      "close_games": 1,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "San Diego Padres vs Houston Astros",
+      "games": 3,
+      "close_games": 1,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "Detroit Tigers vs Pittsburgh Pirates",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Pittsburgh Pirates vs Detroit Tigers",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Milwaukee Brewers vs Philadelphia Phillies",
+      "games": 5,
+      "close_games": 3,
+      "close_rate": 60.0
+    },
+    {
+      "matchup": "Philadelphia Phillies vs Milwaukee Brewers",
+      "games": 5,
+      "close_games": 3,
+      "close_rate": 60.0
+    },
+    {
+      "matchup": "Chicago Cubs vs Cincinnati Reds",
+      "games": 8,
+      "close_games": 4,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Cincinnati Reds vs Chicago Cubs",
+      "games": 8,
+      "close_games": 4,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Los Angeles Dodgers vs St. Louis Cardinals",
+      "games": 2,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "St. Louis Cardinals vs Los Angeles Dodgers",
+      "games": 2,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Chicago White Sox vs Oakland Athletics",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Oakland Athletics vs Chicago White Sox",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Arizona Diamondbacks vs Texas Rangers",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Texas Rangers vs Arizona Diamondbacks",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Detroit Tigers vs Seattle Mariners",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Seattle Mariners vs Detroit Tigers",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Oakland Athletics vs Washington Nationals",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Washington Nationals vs Oakland Athletics",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Los Angeles Dodgers vs New York Mets",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "New York Mets vs Los Angeles Dodgers",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Baltimore Orioles vs Cleveland Guardians",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Cleveland Guardians vs Baltimore Orioles",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Boston Red Sox vs Texas Rangers",
+      "games": 4,
+      "close_games": 2,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Texas Rangers vs Boston Red Sox",
+      "games": 4,
+      "close_games": 2,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Arizona Diamondbacks vs Milwaukee Brewers",
+      "games": 4,
+      "close_games": 2,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Milwaukee Brewers vs Arizona Diamondbacks",
+      "games": 4,
+      "close_games": 2,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Pittsburgh Pirates vs Toronto Blue Jays",
+      "games": 3,
+      "close_games": 1,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "Toronto Blue Jays vs Pittsburgh Pirates",
+      "games": 3,
+      "close_games": 1,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "Cincinnati Reds vs Colorado Rockies",
+      "games": 4,
+      "close_games": 2,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Colorado Rockies vs Cincinnati Reds",
+      "games": 4,
+      "close_games": 2,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Baltimore Orioles vs Oakland Athletics",
+      "games": 3,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Oakland Athletics vs Baltimore Orioles",
+      "games": 3,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Cleveland Guardians vs Seattle Mariners",
+      "games": 3,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Seattle Mariners vs Cleveland Guardians",
+      "games": 3,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Los Angeles Dodgers vs San Diego Padres",
+      "games": 3,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "San Diego Padres vs Los Angeles Dodgers",
+      "games": 3,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Philadelphia Phillies vs San Francisco Giants",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "San Francisco Giants vs Philadelphia Phillies",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "New York Mets vs Pittsburgh Pirates",
+      "games": 4,
+      "close_games": 1,
+      "close_rate": 25.0
+    },
+    {
+      "matchup": "Pittsburgh Pirates vs New York Mets",
+      "games": 4,
+      "close_games": 1,
+      "close_rate": 25.0
+    },
+    {
+      "matchup": "Minnesota Twins vs New York Yankees",
+      "games": 4,
+      "close_games": 2,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "New York Yankees vs Minnesota Twins",
+      "games": 4,
+      "close_games": 2,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Colorado Rockies vs Milwaukee Brewers",
+      "games": 5,
+      "close_games": 2,
+      "close_rate": 40.0
+    },
+    {
+      "matchup": "Milwaukee Brewers vs Colorado Rockies",
+      "games": 5,
+      "close_games": 2,
+      "close_rate": 40.0
+    },
+    {
+      "matchup": "St. Louis Cardinals vs Washington Nationals",
+      "games": 4,
+      "close_games": 1,
+      "close_rate": 25.0
+    },
+    {
+      "matchup": "Washington Nationals vs St. Louis Cardinals",
+      "games": 4,
+      "close_games": 1,
+      "close_rate": 25.0
+    },
+    {
+      "matchup": "Chicago White Sox vs Seattle Mariners",
+      "games": 3,
+      "close_games": 1,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "Seattle Mariners vs Chicago White Sox",
+      "games": 3,
+      "close_games": 1,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "Cleveland Guardians vs Kansas City Royals",
+      "games": 6,
+      "close_games": 3,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Kansas City Royals vs Cleveland Guardians",
+      "games": 6,
+      "close_games": 3,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Detroit Tigers vs Los Angeles Angels",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Los Angeles Angels vs Detroit Tigers",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Atlanta Braves vs Oakland Athletics",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Oakland Athletics vs Atlanta Braves",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "New York Mets vs Seattle Mariners",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Seattle Mariners vs New York Mets",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Cleveland Guardians vs Tampa Bay Rays",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Tampa Bay Rays vs Cleveland Guardians",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Minnesota Twins vs Texas Rangers",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Texas Rangers vs Minnesota Twins",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Boston Red Sox vs Kansas City Royals",
+      "games": 3,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Kansas City Royals vs Boston Red Sox",
+      "games": 3,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Chicago White Sox vs Detroit Tigers",
+      "games": 4,
+      "close_games": 2,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Detroit Tigers vs Chicago White Sox",
+      "games": 4,
+      "close_games": 2,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Houston Astros vs New York Yankees",
+      "games": 3,
+      "close_games": 1,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "New York Yankees vs Houston Astros",
+      "games": 3,
+      "close_games": 1,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "Colorado Rockies vs Toronto Blue Jays",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Toronto Blue Jays vs Colorado Rockies",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Arizona Diamondbacks vs Baltimore Orioles",
+      "games": 3,
+      "close_games": 1,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "Baltimore Orioles vs Arizona Diamondbacks",
+      "games": 3,
+      "close_games": 1,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "Chicago Cubs vs San Francisco Giants",
+      "games": 3,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "San Francisco Giants vs Chicago Cubs",
+      "games": 3,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Arizona Diamondbacks vs Colorado Rockies",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Colorado Rockies vs Arizona Diamondbacks",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Cincinnati Reds vs Seattle Mariners",
+      "games": 3,
+      "close_games": 1,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "Seattle Mariners vs Cincinnati Reds",
+      "games": 3,
+      "close_games": 1,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "Cleveland Guardians vs Minnesota Twins",
+      "games": 3,
+      "close_games": 1,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "Minnesota Twins vs Cleveland Guardians",
+      "games": 3,
+      "close_games": 1,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "Milwaukee Brewers vs Pittsburgh Pirates",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Pittsburgh Pirates vs Milwaukee Brewers",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Philadelphia Phillies vs San Diego Padres",
+      "games": 3,
+      "close_games": 1,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "San Diego Padres vs Philadelphia Phillies",
+      "games": 3,
+      "close_games": 1,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "Baltimore Orioles vs Los Angeles Angels",
+      "games": 3,
+      "close_games": 1,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "Los Angeles Angels vs Baltimore Orioles",
+      "games": 3,
+      "close_games": 1,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "Los Angeles Dodgers vs Miami Marlins",
+      "games": 3,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Miami Marlins vs Los Angeles Dodgers",
+      "games": 3,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Detroit Tigers vs New York Yankees",
+      "games": 3,
+      "close_games": 1,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "New York Yankees vs Detroit Tigers",
+      "games": 3,
+      "close_games": 1,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "Atlanta Braves vs St. Louis Cardinals",
+      "games": 3,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "St. Louis Cardinals vs Atlanta Braves",
+      "games": 3,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Seattle Mariners vs Tampa Bay Rays",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Tampa Bay Rays vs Seattle Mariners",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Arizona Diamondbacks vs Chicago Cubs",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Chicago Cubs vs Arizona Diamondbacks",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Cleveland Guardians vs Los Angeles Angels",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Los Angeles Angels vs Cleveland Guardians",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Los Angeles Dodgers vs Washington Nationals",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Washington Nationals vs Los Angeles Dodgers",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Milwaukee Brewers vs New York Yankees",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "New York Yankees vs Milwaukee Brewers",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Cincinnati Reds vs Milwaukee Brewers",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Milwaukee Brewers vs Cincinnati Reds",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Chicago Cubs vs Washington Nationals",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Washington Nationals vs Chicago Cubs",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "New York Yankees vs St. Louis Cardinals",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "St. Louis Cardinals vs New York Yankees",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Boston Red Sox vs Detroit Tigers",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Detroit Tigers vs Boston Red Sox",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Cleveland Guardians vs Pittsburgh Pirates",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Pittsburgh Pirates vs Cleveland Guardians",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "San Diego Padres vs Tampa Bay Rays",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Tampa Bay Rays vs San Diego Padres",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Houston Astros vs Kansas City Royals",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Kansas City Royals vs Houston Astros",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Chicago White Sox vs New York Mets",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "New York Mets vs Chicago White Sox",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Minnesota Twins vs Toronto Blue Jays",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Toronto Blue Jays vs Minnesota Twins",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Oakland Athletics vs Texas Rangers",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Texas Rangers vs Oakland Athletics",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Baltimore Orioles vs Colorado Rockies",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Colorado Rockies vs Baltimore Orioles",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Miami Marlins vs San Francisco Giants",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "San Francisco Giants vs Miami Marlins",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Los Angeles Angels vs Seattle Mariners",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Seattle Mariners vs Los Angeles Angels",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Atlanta Braves vs Philadelphia Phillies",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Philadelphia Phillies vs Atlanta Braves",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Baltimore Orioles vs Chicago White Sox",
+      "games": 3,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Chicago White Sox vs Baltimore Orioles",
+      "games": 3,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Cincinnati Reds vs Houston Astros",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Houston Astros vs Cincinnati Reds",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Detroit Tigers vs San Diego Padres",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "San Diego Padres vs Detroit Tigers",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Boston Red Sox vs New York Mets",
+      "games": 3,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "New York Mets vs Boston Red Sox",
+      "games": 3,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Philadelphia Phillies vs Toronto Blue Jays",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Toronto Blue Jays vs Philadelphia Phillies",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Los Angeles Angels vs Los Angeles Dodgers",
+      "games": 2,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Los Angeles Dodgers vs Los Angeles Angels",
+      "games": 2,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Pittsburgh Pirates vs Washington Nationals",
+      "games": 5,
+      "close_games": 3,
+      "close_rate": 60.0
+    },
+    {
+      "matchup": "Washington Nationals vs Pittsburgh Pirates",
+      "games": 5,
+      "close_games": 3,
+      "close_rate": 60.0
+    },
+    {
+      "matchup": "Chicago Cubs vs New York Yankees",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "New York Yankees vs Chicago Cubs",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Boston Red Sox vs Chicago White Sox",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Chicago White Sox vs Boston Red Sox",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Cincinnati Reds vs New York Mets",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "New York Mets vs Cincinnati Reds",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Arizona Diamondbacks vs Houston Astros",
+      "games": 2,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Houston Astros vs Arizona Diamondbacks",
+      "games": 2,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Kansas City Royals vs Minnesota Twins",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Minnesota Twins vs Kansas City Royals",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Seattle Mariners vs St. Louis Cardinals",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "St. Louis Cardinals vs Seattle Mariners",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Cleveland Guardians vs Los Angeles Dodgers",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Los Angeles Dodgers vs Cleveland Guardians",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    }
+  ],
+  "form_strengths": [
+    {
+      "team": "Arizona Diamondbacks",
+      "strength": 56.0
+    },
+    {
+      "team": "Atlanta Braves",
+      "strength": 72.0
+    },
+    {
+      "team": "Baltimore Orioles",
+      "strength": 56.7
+    },
+    {
+      "team": "Boston Red Sox",
+      "strength": 66.7
+    },
+    {
+      "team": "Chicago Cubs",
+      "strength": 54.0
+    },
+    {
+      "team": "Chicago White Sox",
+      "strength": 68.7
+    },
+    {
+      "team": "Cincinnati Reds",
+      "strength": 73.3
+    },
+    {
+      "team": "Cleveland Guardians",
+      "strength": 66.7
+    },
+    {
+      "team": "Cleveland Indians",
+      "strength": 56.0
+    },
+    {
+      "team": "Colorado Rockies",
+      "strength": 68.7
+    },
+    {
+      "team": "Detroit Tigers",
+      "strength": 71.3
+    },
+    {
+      "team": "Houston Astros",
+      "strength": 68.0
+    },
+    {
+      "team": "Kansas City Royals",
+      "strength": 80.0
+    },
+    {
+      "team": "Los Angeles Angels",
+      "strength": 66.0
+    },
+    {
+      "team": "Los Angeles Dodgers",
+      "strength": 63.3
+    },
+    {
+      "team": "Miami Marlins",
+      "strength": 72.7
+    },
+    {
+      "team": "Milwaukee Brewers",
+      "strength": 66.0
+    },
+    {
+      "team": "Minnesota Twins",
+      "strength": 60.0
+    },
+    {
+      "team": "New York Mets",
+      "strength": 74.7
+    },
+    {
+      "team": "New York Yankees",
+      "strength": 70.7
+    },
+    {
+      "team": "Oakland Athletics",
+      "strength": 67.3
+    },
+    {
+      "team": "Philadelphia Phillies",
+      "strength": 64.0
+    },
+    {
+      "team": "Pittsburgh Pirates",
+      "strength": 66.0
+    },
+    {
+      "team": "San Diego Padres",
+      "strength": 66.7
+    },
+    {
+      "team": "San Francisco Giants",
+      "strength": 69.3
+    },
+    {
+      "team": "Seattle Mariners",
+      "strength": 76.0
+    },
+    {
+      "team": "St. Louis Cardinals",
+      "strength": 70.7
+    },
+    {
+      "team": "Tampa Bay Rays",
+      "strength": 80.7
+    },
+    {
+      "team": "Texas Rangers",
+      "strength": 75.3
+    },
+    {
+      "team": "Toronto Blue Jays",
+      "strength": 64.7
+    },
+    {
+      "team": "Washington Nationals",
+      "strength": 68.7
+    }
+  ],
+  "team_margin_ratings": [
+    {
+      "team": "Arizona Diamondbacks",
+      "avg_margin": 0.6
+    },
+    {
+      "team": "Atlanta Braves",
+      "avg_margin": -0.4
+    },
+    {
+      "team": "Baltimore Orioles",
+      "avg_margin": 2.2
+    },
+    {
+      "team": "Boston Red Sox",
+      "avg_margin": -1.7
+    },
+    {
+      "team": "Chicago Cubs",
+      "avg_margin": 1.7
+    },
+    {
+      "team": "Chicago White Sox",
+      "avg_margin": -0.6
+    },
+    {
+      "team": "Cincinnati Reds",
+      "avg_margin": -0.1
+    },
+    {
+      "team": "Cleveland Guardians",
+      "avg_margin": -1.2
+    },
+    {
+      "team": "Cleveland Indians",
+      "avg_margin": 0.7
+    },
+    {
+      "team": "Colorado Rockies",
+      "avg_margin": -2.1
+    },
+    {
+      "team": "Detroit Tigers",
+      "avg_margin": -0.4
+    },
+    {
+      "team": "Houston Astros",
+      "avg_margin": 3.3
+    },
+    {
+      "team": "Kansas City Royals",
+      "avg_margin": 0.3
+    },
+    {
+      "team": "Los Angeles Angels",
+      "avg_margin": -0.4
+    },
+    {
+      "team": "Los Angeles Dodgers",
+      "avg_margin": -0.5
+    },
+    {
+      "team": "Miami Marlins",
+      "avg_margin": -0.7
+    },
+    {
+      "team": "Milwaukee Brewers",
+      "avg_margin": 1
+    },
+    {
+      "team": "Minnesota Twins",
+      "avg_margin": 0.8
+    },
+    {
+      "team": "New York Mets",
+      "avg_margin": 2.7
+    },
+    {
+      "team": "New York Yankees",
+      "avg_margin": -1.3
+    },
+    {
+      "team": "Oakland Athletics",
+      "avg_margin": -1.9
+    },
+    {
+      "team": "Philadelphia Phillies",
+      "avg_margin": 0.3
+    },
+    {
+      "team": "Pittsburgh Pirates",
+      "avg_margin": -0.4
+    },
+    {
+      "team": "San Diego Padres",
+      "avg_margin": 1.1
+    },
+    {
+      "team": "San Francisco Giants",
+      "avg_margin": -2.3
+    },
+    {
+      "team": "Seattle Mariners",
+      "avg_margin": 1.7
+    },
+    {
+      "team": "St. Louis Cardinals",
+      "avg_margin": 1.3
+    },
+    {
+      "team": "Tampa Bay Rays",
+      "avg_margin": 1.1
+    },
+    {
+      "team": "Texas Rangers",
+      "avg_margin": -2.4
+    },
+    {
+      "team": "Toronto Blue Jays",
+      "avg_margin": 0.3
+    },
+    {
+      "team": "Washington Nationals",
+      "avg_margin": -1.7
+    }
+  ]
+}

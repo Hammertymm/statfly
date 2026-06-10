@@ -6,6 +6,15 @@
 |-------|------|-----------|--------|
 | AFL | `afl-flytime-v1.json` | 72 | Research-locked |
 | NFL | `nfl-flytime-v1.json` | 93 | v1 bootstrap |
+| NBA | `nba-flytime-v1.json` | 88 | v1 bootstrap |
+| WNBA | `wnba-flytime-v1.json` | 70 | v1 bootstrap |
+| NCAAM | `ncaam-flytime-v1.json` | 97 | v1 bootstrap |
+| MLB | `mlb-flytime-v1.json` | 85 | v1 bootstrap |
+| NHL | `nhl-flytime-v1.json` | 78 | v1 bootstrap |
+| NCAAF | `ncaaf-flytime-v1.json` | 96 | v1 bootstrap |
+| NRL | `nrl-flytime-v1.json` | 85 | v1 bootstrap |
+| Soccer | — | 62/82 (generic) | Not v1 yet |
+| Tennis / Cricket | — | — | Green fly only |
 
 ## Rebuild AFL tables
 
@@ -15,12 +24,14 @@ python export_tables_to_json.py
 copy scorefly_research_tables.json ..\afl-flytime-v1.json
 ```
 
-## Rebuild NFL tables
+## Rebuild bootstrap tables (all non-soccer team sports)
 
 ```bash
-python build_nfl_flytime.py
-python calibrate_nfl_threshold.py
+python build_flytime_v1.py --all
+python calibrate_flytime.py
 ```
+
+Legacy NFL-only script: `build_nfl_flytime.py`
 
 `build_nfl_flytime.py` pulls NFL finals from ESPN (2019–2024 windows, 600 games in current API cap) and writes `nfl-flytime-v1.json`.
 

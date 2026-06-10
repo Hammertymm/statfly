@@ -1,0 +1,6195 @@
+{
+  "meta": {
+    "sport": "NBA",
+    "engine": "v1-bootstrap",
+    "formula": "close*0.35 + form_balance*0.25 + margin_balance*0.25 + matchup*0.15",
+    "close_margin": 8,
+    "games_sampled": 600,
+    "week_chunk": 16,
+    "built": "2026-06-10"
+  },
+  "matchup_ratings": [
+    {
+      "matchup": "Houston Rockets vs Shanghai Sharks",
+      "games_played": 1,
+      "avg_margin": 69,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Shanghai Sharks vs Houston Rockets",
+      "games_played": 1,
+      "avg_margin": 69,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Houston Rockets vs LA Clippers",
+      "games_played": 1,
+      "avg_margin": 13,
+      "avg_excitement": 13.75
+    },
+    {
+      "matchup": "LA Clippers vs Houston Rockets",
+      "games_played": 1,
+      "avg_margin": 13,
+      "avg_excitement": 13.75
+    },
+    {
+      "matchup": "Indiana Pacers vs Sacramento Kings",
+      "games_played": 2,
+      "avg_margin": 12.5,
+      "avg_excitement": 49.38
+    },
+    {
+      "matchup": "Sacramento Kings vs Indiana Pacers",
+      "games_played": 2,
+      "avg_margin": 12.5,
+      "avg_excitement": 49.38
+    },
+    {
+      "matchup": "Brooklyn Nets vs Franca",
+      "games_played": 1,
+      "avg_margin": 48,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Franca vs Brooklyn Nets",
+      "games_played": 1,
+      "avg_margin": 48,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Golden State Warriors vs Los Angeles Lakers",
+      "games_played": 13,
+      "avg_margin": 16.77,
+      "avg_excitement": 35.96
+    },
+    {
+      "matchup": "Los Angeles Lakers vs Golden State Warriors",
+      "games_played": 13,
+      "avg_margin": 16.77,
+      "avg_excitement": 35.96
+    },
+    {
+      "matchup": "Orlando Magic vs San Antonio Spurs",
+      "games_played": 5,
+      "avg_margin": 15.2,
+      "avg_excitement": 39.0
+    },
+    {
+      "matchup": "San Antonio Spurs vs Orlando Magic",
+      "games_played": 5,
+      "avg_margin": 15.2,
+      "avg_excitement": 39.0
+    },
+    {
+      "matchup": "ADELAIDE 36ers vs Utah Jazz",
+      "games_played": 1,
+      "avg_margin": 52,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Utah Jazz vs ADELAIDE 36ers",
+      "games_played": 1,
+      "avg_margin": 52,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Maccabi Haifa vs Memphis Grizzlies",
+      "games_played": 1,
+      "avg_margin": 35,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Memphis Grizzlies vs Maccabi Haifa",
+      "games_played": 1,
+      "avg_margin": 35,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Boston Celtics vs Charlotte Hornets",
+      "games_played": 4,
+      "avg_margin": 19.75,
+      "avg_excitement": 22.81
+    },
+    {
+      "matchup": "Charlotte Hornets vs Boston Celtics",
+      "games_played": 4,
+      "avg_margin": 19.75,
+      "avg_excitement": 22.81
+    },
+    {
+      "matchup": "LA Clippers vs Shanghai Sharks",
+      "games_played": 1,
+      "avg_margin": 40,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Shanghai Sharks vs LA Clippers",
+      "games_played": 1,
+      "avg_margin": 40,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Cleveland Cavaliers vs San Lorenzo",
+      "games_played": 1,
+      "avg_margin": 31,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "San Lorenzo vs Cleveland Cavaliers",
+      "games_played": 1,
+      "avg_margin": 31,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Detroit Pistons vs Orlando Magic",
+      "games_played": 2,
+      "avg_margin": 14,
+      "avg_excitement": 47.5
+    },
+    {
+      "matchup": "Orlando Magic vs Detroit Pistons",
+      "games_played": 2,
+      "avg_margin": 14,
+      "avg_excitement": 47.5
+    },
+    {
+      "matchup": "New York Knicks vs Washington Wizards",
+      "games_played": 8,
+      "avg_margin": 13.25,
+      "avg_excitement": 39.69
+    },
+    {
+      "matchup": "Washington Wizards vs New York Knicks",
+      "games_played": 8,
+      "avg_margin": 13.25,
+      "avg_excitement": 39.69
+    },
+    {
+      "matchup": "Atlanta Hawks vs New Orleans Pelicans",
+      "games_played": 3,
+      "avg_margin": 12.67,
+      "avg_excitement": 37.5
+    },
+    {
+      "matchup": "New Orleans Pelicans vs Atlanta Hawks",
+      "games_played": 3,
+      "avg_margin": 12.67,
+      "avg_excitement": 37.5
+    },
+    {
+      "matchup": "Chicago Bulls vs Milwaukee Bucks",
+      "games_played": 5,
+      "avg_margin": 10.2,
+      "avg_excitement": 45.25
+    },
+    {
+      "matchup": "Milwaukee Bucks vs Chicago Bulls",
+      "games_played": 5,
+      "avg_margin": 10.2,
+      "avg_excitement": 45.25
+    },
+    {
+      "matchup": "Houston Rockets vs Toronto Raptors",
+      "games_played": 4,
+      "avg_margin": 10.75,
+      "avg_excitement": 51.56
+    },
+    {
+      "matchup": "Toronto Raptors vs Houston Rockets",
+      "games_played": 4,
+      "avg_margin": 10.75,
+      "avg_excitement": 51.56
+    },
+    {
+      "matchup": "Guangzhou Loong-Lions vs Philadelphia 76ers",
+      "games_played": 1,
+      "avg_margin": 58,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Philadelphia 76ers vs Guangzhou Loong-Lions",
+      "games_played": 1,
+      "avg_margin": 58,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Miami Heat vs San Antonio Spurs",
+      "games_played": 4,
+      "avg_margin": 10.25,
+      "avg_excitement": 52.19
+    },
+    {
+      "matchup": "San Antonio Spurs vs Miami Heat",
+      "games_played": 4,
+      "avg_margin": 10.25,
+      "avg_excitement": 52.19
+    },
+    {
+      "matchup": "Memphis Grizzlies vs New Zealand Breakers",
+      "games_played": 1,
+      "avg_margin": 14,
+      "avg_excitement": 12.5
+    },
+    {
+      "matchup": "New Zealand Breakers vs Memphis Grizzlies",
+      "games_played": 1,
+      "avg_margin": 14,
+      "avg_excitement": 12.5
+    },
+    {
+      "matchup": "Dallas Mavericks vs Oklahoma City Thunder",
+      "games_played": 3,
+      "avg_margin": 18,
+      "avg_excitement": 30.83
+    },
+    {
+      "matchup": "Oklahoma City Thunder vs Dallas Mavericks",
+      "games_played": 3,
+      "avg_margin": 18,
+      "avg_excitement": 30.83
+    },
+    {
+      "matchup": "Minnesota Timberwolves vs Phoenix Suns",
+      "games_played": 1,
+      "avg_margin": 5,
+      "avg_excitement": 93.75
+    },
+    {
+      "matchup": "Phoenix Suns vs Minnesota Timberwolves",
+      "games_played": 1,
+      "avg_margin": 5,
+      "avg_excitement": 93.75
+    },
+    {
+      "matchup": "Denver Nuggets vs Portland Trail Blazers",
+      "games_played": 5,
+      "avg_margin": 17.8,
+      "avg_excitement": 35.75
+    },
+    {
+      "matchup": "Portland Trail Blazers vs Denver Nuggets",
+      "games_played": 5,
+      "avg_margin": 17.8,
+      "avg_excitement": 35.75
+    },
+    {
+      "matchup": "Dallas Mavericks vs Detroit Pistons",
+      "games_played": 2,
+      "avg_margin": 8.5,
+      "avg_excitement": 54.38
+    },
+    {
+      "matchup": "Detroit Pistons vs Dallas Mavericks",
+      "games_played": 2,
+      "avg_margin": 8.5,
+      "avg_excitement": 54.38
+    },
+    {
+      "matchup": "Guangzhou Loong-Lions vs Washington Wizards",
+      "games_played": 1,
+      "avg_margin": 39,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Washington Wizards vs Guangzhou Loong-Lions",
+      "games_played": 1,
+      "avg_margin": 39,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Atlanta Hawks vs Orlando Magic",
+      "games_played": 4,
+      "avg_margin": 8,
+      "avg_excitement": 37.5
+    },
+    {
+      "matchup": "Orlando Magic vs Atlanta Hawks",
+      "games_played": 4,
+      "avg_margin": 8,
+      "avg_excitement": 37.5
+    },
+    {
+      "matchup": "Charlotte Hornets vs Miami Heat",
+      "games_played": 4,
+      "avg_margin": 5.5,
+      "avg_excitement": 75.62
+    },
+    {
+      "matchup": "Miami Heat vs Charlotte Hornets",
+      "games_played": 4,
+      "avg_margin": 5.5,
+      "avg_excitement": 75.62
+    },
+    {
+      "matchup": "Chicago Bulls vs New Orleans Pelicans",
+      "games_played": 5,
+      "avg_margin": 14,
+      "avg_excitement": 40.5
+    },
+    {
+      "matchup": "New Orleans Pelicans vs Chicago Bulls",
+      "games_played": 5,
+      "avg_margin": 14,
+      "avg_excitement": 40.5
+    },
+    {
+      "matchup": "Milwaukee Bucks vs Utah Jazz",
+      "games_played": 2,
+      "avg_margin": 19,
+      "avg_excitement": 41.25
+    },
+    {
+      "matchup": "Utah Jazz vs Milwaukee Bucks",
+      "games_played": 2,
+      "avg_margin": 19,
+      "avg_excitement": 41.25
+    },
+    {
+      "matchup": "Brooklyn Nets vs Los Angeles Lakers",
+      "games_played": 4,
+      "avg_margin": 11.5,
+      "avg_excitement": 50.62
+    },
+    {
+      "matchup": "Los Angeles Lakers vs Brooklyn Nets",
+      "games_played": 4,
+      "avg_margin": 11.5,
+      "avg_excitement": 50.62
+    },
+    {
+      "matchup": "New Zealand Breakers vs Oklahoma City Thunder",
+      "games_played": 2,
+      "avg_margin": 27,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Oklahoma City Thunder vs New Zealand Breakers",
+      "games_played": 2,
+      "avg_margin": 27,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Maccabi Haifa vs Portland Trail Blazers",
+      "games_played": 1,
+      "avg_margin": 36,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Portland Trail Blazers vs Maccabi Haifa",
+      "games_played": 1,
+      "avg_margin": 36,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Phoenix Suns vs Sacramento Kings",
+      "games_played": 4,
+      "avg_margin": 14.5,
+      "avg_excitement": 29.38
+    },
+    {
+      "matchup": "Sacramento Kings vs Phoenix Suns",
+      "games_played": 4,
+      "avg_margin": 14.5,
+      "avg_excitement": 29.38
+    },
+    {
+      "matchup": "Golden State Warriors vs Minnesota Timberwolves",
+      "games_played": 1,
+      "avg_margin": 20,
+      "avg_excitement": 5.0
+    },
+    {
+      "matchup": "Minnesota Timberwolves vs Golden State Warriors",
+      "games_played": 1,
+      "avg_margin": 20,
+      "avg_excitement": 5.0
+    },
+    {
+      "matchup": "Denver Nuggets vs LA Clippers",
+      "games_played": 12,
+      "avg_margin": 11.75,
+      "avg_excitement": 32.81
+    },
+    {
+      "matchup": "LA Clippers vs Denver Nuggets",
+      "games_played": 12,
+      "avg_margin": 11.75,
+      "avg_excitement": 32.81
+    },
+    {
+      "matchup": "Cleveland Cavaliers vs Detroit Pistons",
+      "games_played": 3,
+      "avg_margin": 10.67,
+      "avg_excitement": 40.0
+    },
+    {
+      "matchup": "Detroit Pistons vs Cleveland Cavaliers",
+      "games_played": 3,
+      "avg_margin": 10.67,
+      "avg_excitement": 40.0
+    },
+    {
+      "matchup": "Chicago Bulls vs Indiana Pacers",
+      "games_played": 1,
+      "avg_margin": 18,
+      "avg_excitement": 7.5
+    },
+    {
+      "matchup": "Indiana Pacers vs Chicago Bulls",
+      "games_played": 1,
+      "avg_margin": 18,
+      "avg_excitement": 7.5
+    },
+    {
+      "matchup": "Boston Celtics vs Orlando Magic",
+      "games_played": 4,
+      "avg_margin": 8.25,
+      "avg_excitement": 72.19
+    },
+    {
+      "matchup": "Orlando Magic vs Boston Celtics",
+      "games_played": 4,
+      "avg_margin": 8.25,
+      "avg_excitement": 72.19
+    },
+    {
+      "matchup": "Charlotte Hornets vs Philadelphia 76ers",
+      "games_played": 2,
+      "avg_margin": 9,
+      "avg_excitement": 53.75
+    },
+    {
+      "matchup": "Philadelphia 76ers vs Charlotte Hornets",
+      "games_played": 2,
+      "avg_margin": 9,
+      "avg_excitement": 53.75
+    },
+    {
+      "matchup": "New Orleans Pelicans vs Utah Jazz",
+      "games_played": 2,
+      "avg_margin": 16,
+      "avg_excitement": 45.0
+    },
+    {
+      "matchup": "Utah Jazz vs New Orleans Pelicans",
+      "games_played": 2,
+      "avg_margin": 16,
+      "avg_excitement": 45.0
+    },
+    {
+      "matchup": "Dallas Mavericks vs Milwaukee Bucks",
+      "games_played": 5,
+      "avg_margin": 13.8,
+      "avg_excitement": 26.75
+    },
+    {
+      "matchup": "Milwaukee Bucks vs Dallas Mavericks",
+      "games_played": 5,
+      "avg_margin": 13.8,
+      "avg_excitement": 26.75
+    },
+    {
+      "matchup": "Phoenix Suns vs Portland Trail Blazers",
+      "games_played": 6,
+      "avg_margin": 19,
+      "avg_excitement": 17.92
+    },
+    {
+      "matchup": "Portland Trail Blazers vs Phoenix Suns",
+      "games_played": 6,
+      "avg_margin": 19,
+      "avg_excitement": 17.92
+    },
+    {
+      "matchup": "Boston Celtics vs Cleveland Cavaliers",
+      "games_played": 2,
+      "avg_margin": 34.5,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Cleveland Cavaliers vs Boston Celtics",
+      "games_played": 2,
+      "avg_margin": 34.5,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "LA Clippers vs Melbourne United",
+      "games_played": 1,
+      "avg_margin": 18,
+      "avg_excitement": 7.5
+    },
+    {
+      "matchup": "Melbourne United vs LA Clippers",
+      "games_played": 1,
+      "avg_margin": 18,
+      "avg_excitement": 7.5
+    },
+    {
+      "matchup": "New Orleans Pelicans vs San Antonio Spurs",
+      "games_played": 2,
+      "avg_margin": 11.5,
+      "avg_excitement": 15.62
+    },
+    {
+      "matchup": "San Antonio Spurs vs New Orleans Pelicans",
+      "games_played": 2,
+      "avg_margin": 11.5,
+      "avg_excitement": 15.62
+    },
+    {
+      "matchup": "Orlando Magic vs Philadelphia 76ers",
+      "games_played": 2,
+      "avg_margin": 23.5,
+      "avg_excitement": 0.63
+    },
+    {
+      "matchup": "Philadelphia 76ers vs Orlando Magic",
+      "games_played": 2,
+      "avg_margin": 23.5,
+      "avg_excitement": 0.63
+    },
+    {
+      "matchup": "Chicago Bulls vs Toronto Raptors",
+      "games_played": 4,
+      "avg_margin": 9,
+      "avg_excitement": 53.75
+    },
+    {
+      "matchup": "Toronto Raptors vs Chicago Bulls",
+      "games_played": 4,
+      "avg_margin": 9,
+      "avg_excitement": 53.75
+    },
+    {
+      "matchup": "Milwaukee Bucks vs Washington Wizards",
+      "games_played": 1,
+      "avg_margin": 7,
+      "avg_excitement": 91.25
+    },
+    {
+      "matchup": "Washington Wizards vs Milwaukee Bucks",
+      "games_played": 1,
+      "avg_margin": 7,
+      "avg_excitement": 91.25
+    },
+    {
+      "matchup": "Maccabi Haifa vs Minnesota Timberwolves",
+      "games_played": 1,
+      "avg_margin": 30,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Minnesota Timberwolves vs Maccabi Haifa",
+      "games_played": 1,
+      "avg_margin": 30,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Atlanta Hawks vs Miami Heat",
+      "games_played": 4,
+      "avg_margin": 25.75,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Miami Heat vs Atlanta Hawks",
+      "games_played": 4,
+      "avg_margin": 25.75,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Charlotte Hornets vs Memphis Grizzlies",
+      "games_played": 3,
+      "avg_margin": 25.33,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Memphis Grizzlies vs Charlotte Hornets",
+      "games_played": 3,
+      "avg_margin": 25.33,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Sacramento Kings vs Utah Jazz",
+      "games_played": 5,
+      "avg_margin": 8.8,
+      "avg_excitement": 47.0
+    },
+    {
+      "matchup": "Utah Jazz vs Sacramento Kings",
+      "games_played": 5,
+      "avg_margin": 8.8,
+      "avg_excitement": 47.0
+    },
+    {
+      "matchup": "Denver Nuggets vs Phoenix Suns",
+      "games_played": 5,
+      "avg_margin": 6.2,
+      "avg_excitement": 78.25
+    },
+    {
+      "matchup": "Phoenix Suns vs Denver Nuggets",
+      "games_played": 5,
+      "avg_margin": 6.2,
+      "avg_excitement": 78.25
+    },
+    {
+      "matchup": "Indiana Pacers vs Minnesota Timberwolves",
+      "games_played": 1,
+      "avg_margin": 8,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Minnesota Timberwolves vs Indiana Pacers",
+      "games_played": 1,
+      "avg_margin": 8,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Detroit Pistons vs Philadelphia 76ers",
+      "games_played": 2,
+      "avg_margin": 12,
+      "avg_excitement": 50.0
+    },
+    {
+      "matchup": "Philadelphia 76ers vs Detroit Pistons",
+      "games_played": 2,
+      "avg_margin": 12,
+      "avg_excitement": 50.0
+    },
+    {
+      "matchup": "Charlotte Hornets vs Detroit Pistons",
+      "games_played": 2,
+      "avg_margin": 9,
+      "avg_excitement": 53.75
+    },
+    {
+      "matchup": "Detroit Pistons vs Charlotte Hornets",
+      "games_played": 2,
+      "avg_margin": 9,
+      "avg_excitement": 53.75
+    },
+    {
+      "matchup": "Atlanta Hawks vs New York Knicks",
+      "games_played": 2,
+      "avg_margin": 5,
+      "avg_excitement": 93.75
+    },
+    {
+      "matchup": "New York Knicks vs Atlanta Hawks",
+      "games_played": 2,
+      "avg_margin": 5,
+      "avg_excitement": 93.75
+    },
+    {
+      "matchup": "Houston Rockets vs San Antonio Spurs",
+      "games_played": 9,
+      "avg_margin": 18.44,
+      "avg_excitement": 14.72
+    },
+    {
+      "matchup": "San Antonio Spurs vs Houston Rockets",
+      "games_played": 9,
+      "avg_margin": 18.44,
+      "avg_excitement": 14.72
+    },
+    {
+      "matchup": "Memphis Grizzlies vs Oklahoma City Thunder",
+      "games_played": 1,
+      "avg_margin": 5,
+      "avg_excitement": 93.75
+    },
+    {
+      "matchup": "Oklahoma City Thunder vs Memphis Grizzlies",
+      "games_played": 1,
+      "avg_margin": 5,
+      "avg_excitement": 93.75
+    },
+    {
+      "matchup": "Portland Trail Blazers vs Utah Jazz",
+      "games_played": 4,
+      "avg_margin": 17,
+      "avg_excitement": 43.75
+    },
+    {
+      "matchup": "Utah Jazz vs Portland Trail Blazers",
+      "games_played": 4,
+      "avg_margin": 17,
+      "avg_excitement": 43.75
+    },
+    {
+      "matchup": "Melbourne United vs Sacramento Kings",
+      "games_played": 1,
+      "avg_margin": 14,
+      "avg_excitement": 12.5
+    },
+    {
+      "matchup": "Sacramento Kings vs Melbourne United",
+      "games_played": 1,
+      "avg_margin": 14,
+      "avg_excitement": 12.5
+    },
+    {
+      "matchup": "Miami Heat vs Orlando Magic",
+      "games_played": 3,
+      "avg_margin": 11.33,
+      "avg_excitement": 39.17
+    },
+    {
+      "matchup": "Orlando Magic vs Miami Heat",
+      "games_played": 3,
+      "avg_margin": 11.33,
+      "avg_excitement": 39.17
+    },
+    {
+      "matchup": "Atlanta Hawks vs Chicago Bulls",
+      "games_played": 2,
+      "avg_margin": 19,
+      "avg_excitement": 6.25
+    },
+    {
+      "matchup": "Chicago Bulls vs Atlanta Hawks",
+      "games_played": 2,
+      "avg_margin": 19,
+      "avg_excitement": 6.25
+    },
+    {
+      "matchup": "Milwaukee Bucks vs Minnesota Timberwolves",
+      "games_played": 1,
+      "avg_margin": 22,
+      "avg_excitement": 2.5
+    },
+    {
+      "matchup": "Minnesota Timberwolves vs Milwaukee Bucks",
+      "games_played": 1,
+      "avg_margin": 22,
+      "avg_excitement": 2.5
+    },
+    {
+      "matchup": "Dallas Mavericks vs LA Clippers",
+      "games_played": 3,
+      "avg_margin": 12.33,
+      "avg_excitement": 37.92
+    },
+    {
+      "matchup": "LA Clippers vs Dallas Mavericks",
+      "games_played": 3,
+      "avg_margin": 12.33,
+      "avg_excitement": 37.92
+    },
+    {
+      "matchup": "Philadelphia 76ers vs Washington Wizards",
+      "games_played": 2,
+      "avg_margin": 12.5,
+      "avg_excitement": 49.38
+    },
+    {
+      "matchup": "Washington Wizards vs Philadelphia 76ers",
+      "games_played": 2,
+      "avg_margin": 12.5,
+      "avg_excitement": 49.38
+    },
+    {
+      "matchup": "Brooklyn Nets vs Toronto Raptors",
+      "games_played": 3,
+      "avg_margin": 8,
+      "avg_excitement": 66.67
+    },
+    {
+      "matchup": "Toronto Raptors vs Brooklyn Nets",
+      "games_played": 3,
+      "avg_margin": 8,
+      "avg_excitement": 66.67
+    },
+    {
+      "matchup": "Houston Rockets vs Miami Heat",
+      "games_played": 4,
+      "avg_margin": 8,
+      "avg_excitement": 72.5
+    },
+    {
+      "matchup": "Miami Heat vs Houston Rockets",
+      "games_played": 4,
+      "avg_margin": 8,
+      "avg_excitement": 72.5
+    },
+    {
+      "matchup": "New Orleans Pelicans vs New York Knicks",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 98.75
+    },
+    {
+      "matchup": "New York Knicks vs New Orleans Pelicans",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 98.75
+    },
+    {
+      "matchup": "Memphis Grizzlies vs San Antonio Spurs",
+      "games_played": 1,
+      "avg_margin": 13,
+      "avg_excitement": 13.75
+    },
+    {
+      "matchup": "San Antonio Spurs vs Memphis Grizzlies",
+      "games_played": 1,
+      "avg_margin": 13,
+      "avg_excitement": 13.75
+    },
+    {
+      "matchup": "New Orleans Pelicans vs Toronto Raptors",
+      "games_played": 2,
+      "avg_margin": 11,
+      "avg_excitement": 51.25
+    },
+    {
+      "matchup": "Toronto Raptors vs New Orleans Pelicans",
+      "games_played": 2,
+      "avg_margin": 11,
+      "avg_excitement": 51.25
+    },
+    {
+      "matchup": "LA Clippers vs Los Angeles Lakers",
+      "games_played": 5,
+      "avg_margin": 10.8,
+      "avg_excitement": 58.5
+    },
+    {
+      "matchup": "Los Angeles Lakers vs LA Clippers",
+      "games_played": 5,
+      "avg_margin": 10.8,
+      "avg_excitement": 58.5
+    },
+    {
+      "matchup": "Charlotte Hornets vs Chicago Bulls",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 98.75
+    },
+    {
+      "matchup": "Chicago Bulls vs Charlotte Hornets",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 98.75
+    },
+    {
+      "matchup": "Detroit Pistons vs Indiana Pacers",
+      "games_played": 3,
+      "avg_margin": 8,
+      "avg_excitement": 43.33
+    },
+    {
+      "matchup": "Indiana Pacers vs Detroit Pistons",
+      "games_played": 3,
+      "avg_margin": 8,
+      "avg_excitement": 43.33
+    },
+    {
+      "matchup": "Cleveland Cavaliers vs Orlando Magic",
+      "games_played": 3,
+      "avg_margin": 6,
+      "avg_excitement": 69.17
+    },
+    {
+      "matchup": "Orlando Magic vs Cleveland Cavaliers",
+      "games_played": 3,
+      "avg_margin": 6,
+      "avg_excitement": 69.17
+    },
+    {
+      "matchup": "Brooklyn Nets vs Minnesota Timberwolves",
+      "games_played": 3,
+      "avg_margin": 5.67,
+      "avg_excitement": 69.58
+    },
+    {
+      "matchup": "Minnesota Timberwolves vs Brooklyn Nets",
+      "games_played": 3,
+      "avg_margin": 5.67,
+      "avg_excitement": 69.58
+    },
+    {
+      "matchup": "Memphis Grizzlies vs Miami Heat",
+      "games_played": 4,
+      "avg_margin": 8.75,
+      "avg_excitement": 71.56
+    },
+    {
+      "matchup": "Miami Heat vs Memphis Grizzlies",
+      "games_played": 4,
+      "avg_margin": 8.75,
+      "avg_excitement": 71.56
+    },
+    {
+      "matchup": "Boston Celtics vs Philadelphia 76ers",
+      "games_played": 6,
+      "avg_margin": 16.83,
+      "avg_excitement": 20.62
+    },
+    {
+      "matchup": "Philadelphia 76ers vs Boston Celtics",
+      "games_played": 6,
+      "avg_margin": 16.83,
+      "avg_excitement": 20.62
+    },
+    {
+      "matchup": "Dallas Mavericks vs Washington Wizards",
+      "games_played": 1,
+      "avg_margin": 8,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Washington Wizards vs Dallas Mavericks",
+      "games_played": 1,
+      "avg_margin": 8,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "New York Knicks vs San Antonio Spurs",
+      "games_played": 1,
+      "avg_margin": 9,
+      "avg_excitement": 18.75
+    },
+    {
+      "matchup": "San Antonio Spurs vs New York Knicks",
+      "games_played": 1,
+      "avg_margin": 9,
+      "avg_excitement": 18.75
+    },
+    {
+      "matchup": "Oklahoma City Thunder vs Utah Jazz",
+      "games_played": 2,
+      "avg_margin": 13,
+      "avg_excitement": 48.75
+    },
+    {
+      "matchup": "Utah Jazz vs Oklahoma City Thunder",
+      "games_played": 2,
+      "avg_margin": 13,
+      "avg_excitement": 48.75
+    },
+    {
+      "matchup": "Atlanta Hawks vs Detroit Pistons",
+      "games_played": 1,
+      "avg_margin": 17,
+      "avg_excitement": 8.75
+    },
+    {
+      "matchup": "Detroit Pistons vs Atlanta Hawks",
+      "games_played": 1,
+      "avg_margin": 17,
+      "avg_excitement": 8.75
+    },
+    {
+      "matchup": "Houston Rockets vs Milwaukee Bucks",
+      "games_played": 1,
+      "avg_margin": 6,
+      "avg_excitement": 92.5
+    },
+    {
+      "matchup": "Milwaukee Bucks vs Houston Rockets",
+      "games_played": 1,
+      "avg_margin": 6,
+      "avg_excitement": 92.5
+    },
+    {
+      "matchup": "Golden State Warriors vs LA Clippers",
+      "games_played": 3,
+      "avg_margin": 7.33,
+      "avg_excitement": 67.5
+    },
+    {
+      "matchup": "LA Clippers vs Golden State Warriors",
+      "games_played": 3,
+      "avg_margin": 7.33,
+      "avg_excitement": 67.5
+    },
+    {
+      "matchup": "Boston Celtics vs Toronto Raptors",
+      "games_played": 13,
+      "avg_margin": 7.31,
+      "avg_excitement": 80.1
+    },
+    {
+      "matchup": "Toronto Raptors vs Boston Celtics",
+      "games_played": 13,
+      "avg_margin": 7.31,
+      "avg_excitement": 80.1
+    },
+    {
+      "matchup": "Charlotte Hornets vs Minnesota Timberwolves",
+      "games_played": 1,
+      "avg_margin": 22,
+      "avg_excitement": 2.5
+    },
+    {
+      "matchup": "Minnesota Timberwolves vs Charlotte Hornets",
+      "games_played": 1,
+      "avg_margin": 22,
+      "avg_excitement": 2.5
+    },
+    {
+      "matchup": "Brooklyn Nets vs New York Knicks",
+      "games_played": 1,
+      "avg_margin": 4,
+      "avg_excitement": 95.0
+    },
+    {
+      "matchup": "New York Knicks vs Brooklyn Nets",
+      "games_played": 1,
+      "avg_margin": 4,
+      "avg_excitement": 95.0
+    },
+    {
+      "matchup": "Chicago Bulls vs Memphis Grizzlies",
+      "games_played": 3,
+      "avg_margin": 8,
+      "avg_excitement": 66.67
+    },
+    {
+      "matchup": "Memphis Grizzlies vs Chicago Bulls",
+      "games_played": 3,
+      "avg_margin": 8,
+      "avg_excitement": 66.67
+    },
+    {
+      "matchup": "Dallas Mavericks vs New Orleans Pelicans",
+      "games_played": 1,
+      "avg_margin": 7,
+      "avg_excitement": 91.25
+    },
+    {
+      "matchup": "New Orleans Pelicans vs Dallas Mavericks",
+      "games_played": 1,
+      "avg_margin": 7,
+      "avg_excitement": 91.25
+    },
+    {
+      "matchup": "Denver Nuggets vs Utah Jazz",
+      "games_played": 2,
+      "avg_margin": 11.5,
+      "avg_excitement": 50.62
+    },
+    {
+      "matchup": "Utah Jazz vs Denver Nuggets",
+      "games_played": 2,
+      "avg_margin": 11.5,
+      "avg_excitement": 50.62
+    },
+    {
+      "matchup": "Miami Heat vs Milwaukee Bucks",
+      "games_played": 5,
+      "avg_margin": 14.2,
+      "avg_excitement": 40.25
+    },
+    {
+      "matchup": "Milwaukee Bucks vs Miami Heat",
+      "games_played": 5,
+      "avg_margin": 14.2,
+      "avg_excitement": 40.25
+    },
+    {
+      "matchup": "Houston Rockets vs Oklahoma City Thunder",
+      "games_played": 4,
+      "avg_margin": 11,
+      "avg_excitement": 51.25
+    },
+    {
+      "matchup": "Oklahoma City Thunder vs Houston Rockets",
+      "games_played": 4,
+      "avg_margin": 11,
+      "avg_excitement": 51.25
+    },
+    {
+      "matchup": "Houston Rockets vs Los Angeles Lakers",
+      "games_played": 5,
+      "avg_margin": 13.2,
+      "avg_excitement": 27.5
+    },
+    {
+      "matchup": "Los Angeles Lakers vs Houston Rockets",
+      "games_played": 5,
+      "avg_margin": 13.2,
+      "avg_excitement": 27.5
+    },
+    {
+      "matchup": "Boston Celtics vs Miami Heat",
+      "games_played": 9,
+      "avg_margin": 9.22,
+      "avg_excitement": 57.36
+    },
+    {
+      "matchup": "Miami Heat vs Boston Celtics",
+      "games_played": 9,
+      "avg_margin": 9.22,
+      "avg_excitement": 57.36
+    },
+    {
+      "matchup": "Denver Nuggets vs Los Angeles Lakers",
+      "games_played": 6,
+      "avg_margin": 8.33,
+      "avg_excitement": 54.58
+    },
+    {
+      "matchup": "Los Angeles Lakers vs Denver Nuggets",
+      "games_played": 6,
+      "avg_margin": 8.33,
+      "avg_excitement": 54.58
+    },
+    {
+      "matchup": "Los Angeles Lakers vs Miami Heat",
+      "games_played": 6,
+      "avg_margin": 10.17,
+      "avg_excitement": 40.62
+    },
+    {
+      "matchup": "Miami Heat vs Los Angeles Lakers",
+      "games_played": 6,
+      "avg_margin": 10.17,
+      "avg_excitement": 40.62
+    },
+    {
+      "matchup": "Detroit Pistons vs New York Knicks",
+      "games_played": 5,
+      "avg_margin": 13.4,
+      "avg_excitement": 55.25
+    },
+    {
+      "matchup": "New York Knicks vs Detroit Pistons",
+      "games_played": 5,
+      "avg_margin": 13.4,
+      "avg_excitement": 55.25
+    },
+    {
+      "matchup": "Chicago Bulls vs Houston Rockets",
+      "games_played": 2,
+      "avg_margin": 17,
+      "avg_excitement": 8.75
+    },
+    {
+      "matchup": "Houston Rockets vs Chicago Bulls",
+      "games_played": 2,
+      "avg_margin": 17,
+      "avg_excitement": 8.75
+    },
+    {
+      "matchup": "Portland Trail Blazers vs Sacramento Kings",
+      "games_played": 7,
+      "avg_margin": 16.57,
+      "avg_excitement": 29.29
+    },
+    {
+      "matchup": "Sacramento Kings vs Portland Trail Blazers",
+      "games_played": 7,
+      "avg_margin": 16.57,
+      "avg_excitement": 29.29
+    },
+    {
+      "matchup": "Charlotte Hornets vs Toronto Raptors",
+      "games_played": 2,
+      "avg_margin": 7,
+      "avg_excitement": 56.25
+    },
+    {
+      "matchup": "Toronto Raptors vs Charlotte Hornets",
+      "games_played": 2,
+      "avg_margin": 7,
+      "avg_excitement": 56.25
+    },
+    {
+      "matchup": "Cleveland Cavaliers vs Indiana Pacers",
+      "games_played": 6,
+      "avg_margin": 9.17,
+      "avg_excitement": 41.88
+    },
+    {
+      "matchup": "Indiana Pacers vs Cleveland Cavaliers",
+      "games_played": 6,
+      "avg_margin": 9.17,
+      "avg_excitement": 41.88
+    },
+    {
+      "matchup": "Oklahoma City Thunder vs San Antonio Spurs",
+      "games_played": 4,
+      "avg_margin": 6.25,
+      "avg_excitement": 74.69
+    },
+    {
+      "matchup": "San Antonio Spurs vs Oklahoma City Thunder",
+      "games_played": 4,
+      "avg_margin": 6.25,
+      "avg_excitement": 74.69
+    },
+    {
+      "matchup": "Memphis Grizzlies vs Minnesota Timberwolves",
+      "games_played": 2,
+      "avg_margin": 10.5,
+      "avg_excitement": 51.88
+    },
+    {
+      "matchup": "Minnesota Timberwolves vs Memphis Grizzlies",
+      "games_played": 2,
+      "avg_margin": 10.5,
+      "avg_excitement": 51.88
+    },
+    {
+      "matchup": "Denver Nuggets vs Golden State Warriors",
+      "games_played": 4,
+      "avg_margin": 4,
+      "avg_excitement": 95.0
+    },
+    {
+      "matchup": "Golden State Warriors vs Denver Nuggets",
+      "games_played": 4,
+      "avg_margin": 4,
+      "avg_excitement": 95.0
+    },
+    {
+      "matchup": "Phoenix Suns vs Utah Jazz",
+      "games_played": 2,
+      "avg_margin": 16.5,
+      "avg_excitement": 9.38
+    },
+    {
+      "matchup": "Utah Jazz vs Phoenix Suns",
+      "games_played": 2,
+      "avg_margin": 16.5,
+      "avg_excitement": 9.38
+    },
+    {
+      "matchup": "Brooklyn Nets vs Washington Wizards",
+      "games_played": 2,
+      "avg_margin": 22,
+      "avg_excitement": 37.5
+    },
+    {
+      "matchup": "Washington Wizards vs Brooklyn Nets",
+      "games_played": 2,
+      "avg_margin": 22,
+      "avg_excitement": 37.5
+    },
+    {
+      "matchup": "Miami Heat vs New Orleans Pelicans",
+      "games_played": 3,
+      "avg_margin": 13.67,
+      "avg_excitement": 36.25
+    },
+    {
+      "matchup": "New Orleans Pelicans vs Miami Heat",
+      "games_played": 3,
+      "avg_margin": 13.67,
+      "avg_excitement": 36.25
+    },
+    {
+      "matchup": "Golden State Warriors vs Sacramento Kings",
+      "games_played": 7,
+      "avg_margin": 5.29,
+      "avg_excitement": 83.39
+    },
+    {
+      "matchup": "Sacramento Kings vs Golden State Warriors",
+      "games_played": 7,
+      "avg_margin": 5.29,
+      "avg_excitement": 83.39
+    },
+    {
+      "matchup": "Cleveland Cavaliers vs New York Knicks",
+      "games_played": 2,
+      "avg_margin": 21.5,
+      "avg_excitement": 38.12
+    },
+    {
+      "matchup": "New York Knicks vs Cleveland Cavaliers",
+      "games_played": 2,
+      "avg_margin": 21.5,
+      "avg_excitement": 38.12
+    },
+    {
+      "matchup": "Chicago Bulls vs Oklahoma City Thunder",
+      "games_played": 3,
+      "avg_margin": 14.33,
+      "avg_excitement": 35.42
+    },
+    {
+      "matchup": "Oklahoma City Thunder vs Chicago Bulls",
+      "games_played": 3,
+      "avg_margin": 14.33,
+      "avg_excitement": 35.42
+    },
+    {
+      "matchup": "Los Angeles Lakers vs Phoenix Suns",
+      "games_played": 11,
+      "avg_margin": 9.64,
+      "avg_excitement": 62.5
+    },
+    {
+      "matchup": "Phoenix Suns vs Los Angeles Lakers",
+      "games_played": 11,
+      "avg_margin": 9.64,
+      "avg_excitement": 62.5
+    },
+    {
+      "matchup": "Charlotte Hornets vs Orlando Magic",
+      "games_played": 2,
+      "avg_margin": 5.5,
+      "avg_excitement": 93.12
+    },
+    {
+      "matchup": "Orlando Magic vs Charlotte Hornets",
+      "games_played": 2,
+      "avg_margin": 5.5,
+      "avg_excitement": 93.12
+    },
+    {
+      "matchup": "Detroit Pistons vs Washington Wizards",
+      "games_played": 2,
+      "avg_margin": 7,
+      "avg_excitement": 56.25
+    },
+    {
+      "matchup": "Washington Wizards vs Detroit Pistons",
+      "games_played": 2,
+      "avg_margin": 7,
+      "avg_excitement": 56.25
+    },
+    {
+      "matchup": "Atlanta Hawks vs Memphis Grizzlies",
+      "games_played": 4,
+      "avg_margin": 7,
+      "avg_excitement": 73.75
+    },
+    {
+      "matchup": "Memphis Grizzlies vs Atlanta Hawks",
+      "games_played": 4,
+      "avg_margin": 7,
+      "avg_excitement": 73.75
+    },
+    {
+      "matchup": "Dallas Mavericks vs Minnesota Timberwolves",
+      "games_played": 3,
+      "avg_margin": 7.33,
+      "avg_excitement": 67.5
+    },
+    {
+      "matchup": "Minnesota Timberwolves vs Dallas Mavericks",
+      "games_played": 3,
+      "avg_margin": 7.33,
+      "avg_excitement": 67.5
+    },
+    {
+      "matchup": "LA Clippers vs Utah Jazz",
+      "games_played": 4,
+      "avg_margin": 8,
+      "avg_excitement": 72.5
+    },
+    {
+      "matchup": "Utah Jazz vs LA Clippers",
+      "games_played": 4,
+      "avg_margin": 8,
+      "avg_excitement": 72.5
+    },
+    {
+      "matchup": "Indiana Pacers vs Philadelphia 76ers",
+      "games_played": 1,
+      "avg_margin": 6,
+      "avg_excitement": 92.5
+    },
+    {
+      "matchup": "Philadelphia 76ers vs Indiana Pacers",
+      "games_played": 1,
+      "avg_margin": 6,
+      "avg_excitement": 92.5
+    },
+    {
+      "matchup": "Miami Heat vs Toronto Raptors",
+      "games_played": 1,
+      "avg_margin": 12,
+      "avg_excitement": 15.0
+    },
+    {
+      "matchup": "Toronto Raptors vs Miami Heat",
+      "games_played": 1,
+      "avg_margin": 12,
+      "avg_excitement": 15.0
+    },
+    {
+      "matchup": "Boston Celtics vs Brooklyn Nets",
+      "games_played": 1,
+      "avg_margin": 24,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Brooklyn Nets vs Boston Celtics",
+      "games_played": 1,
+      "avg_margin": 24,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Milwaukee Bucks vs New Orleans Pelicans",
+      "games_played": 1,
+      "avg_margin": 14,
+      "avg_excitement": 12.5
+    },
+    {
+      "matchup": "New Orleans Pelicans vs Milwaukee Bucks",
+      "games_played": 1,
+      "avg_margin": 14,
+      "avg_excitement": 12.5
+    },
+    {
+      "matchup": "Brooklyn Nets vs Golden State Warriors",
+      "games_played": 1,
+      "avg_margin": 26,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Golden State Warriors vs Brooklyn Nets",
+      "games_played": 1,
+      "avg_margin": 26,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Charlotte Hornets vs Cleveland Cavaliers",
+      "games_played": 2,
+      "avg_margin": 9,
+      "avg_excitement": 53.75
+    },
+    {
+      "matchup": "Cleveland Cavaliers vs Charlotte Hornets",
+      "games_played": 2,
+      "avg_margin": 9,
+      "avg_excitement": 53.75
+    },
+    {
+      "matchup": "Indiana Pacers vs New York Knicks",
+      "games_played": 5,
+      "avg_margin": 17.2,
+      "avg_excitement": 8.5
+    },
+    {
+      "matchup": "New York Knicks vs Indiana Pacers",
+      "games_played": 5,
+      "avg_margin": 17.2,
+      "avg_excitement": 8.5
+    },
+    {
+      "matchup": "Boston Celtics vs Milwaukee Bucks",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 98.75
+    },
+    {
+      "matchup": "Milwaukee Bucks vs Boston Celtics",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 98.75
+    },
+    {
+      "matchup": "Philadelphia 76ers vs Toronto Raptors",
+      "games_played": 3,
+      "avg_margin": 12,
+      "avg_excitement": 38.33
+    },
+    {
+      "matchup": "Toronto Raptors vs Philadelphia 76ers",
+      "games_played": 3,
+      "avg_margin": 12,
+      "avg_excitement": 38.33
+    },
+    {
+      "matchup": "Minnesota Timberwolves vs New Orleans Pelicans",
+      "games_played": 2,
+      "avg_margin": 5,
+      "avg_excitement": 93.75
+    },
+    {
+      "matchup": "New Orleans Pelicans vs Minnesota Timberwolves",
+      "games_played": 2,
+      "avg_margin": 5,
+      "avg_excitement": 93.75
+    },
+    {
+      "matchup": "Charlotte Hornets vs Oklahoma City Thunder",
+      "games_played": 2,
+      "avg_margin": 9,
+      "avg_excitement": 53.75
+    },
+    {
+      "matchup": "Oklahoma City Thunder vs Charlotte Hornets",
+      "games_played": 2,
+      "avg_margin": 9,
+      "avg_excitement": 53.75
+    },
+    {
+      "matchup": "San Antonio Spurs vs Utah Jazz",
+      "games_played": 3,
+      "avg_margin": 13,
+      "avg_excitement": 60.42
+    },
+    {
+      "matchup": "Utah Jazz vs San Antonio Spurs",
+      "games_played": 3,
+      "avg_margin": 13,
+      "avg_excitement": 60.42
+    },
+    {
+      "matchup": "Golden State Warriors vs Portland Trail Blazers",
+      "games_played": 4,
+      "avg_margin": 26.25,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Portland Trail Blazers vs Golden State Warriors",
+      "games_played": 4,
+      "avg_margin": 26.25,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Chicago Bulls vs Cleveland Cavaliers",
+      "games_played": 4,
+      "avg_margin": 10.75,
+      "avg_excitement": 69.06
+    },
+    {
+      "matchup": "Cleveland Cavaliers vs Chicago Bulls",
+      "games_played": 4,
+      "avg_margin": 10.75,
+      "avg_excitement": 69.06
+    },
+    {
+      "matchup": "Houston Rockets vs Washington Wizards",
+      "games_played": 1,
+      "avg_margin": 6,
+      "avg_excitement": 92.5
+    },
+    {
+      "matchup": "Washington Wizards vs Houston Rockets",
+      "games_played": 1,
+      "avg_margin": 6,
+      "avg_excitement": 92.5
+    },
+    {
+      "matchup": "Memphis Grizzlies vs Milwaukee Bucks",
+      "games_played": 4,
+      "avg_margin": 7.25,
+      "avg_excitement": 73.44
+    },
+    {
+      "matchup": "Milwaukee Bucks vs Memphis Grizzlies",
+      "games_played": 4,
+      "avg_margin": 7.25,
+      "avg_excitement": 73.44
+    },
+    {
+      "matchup": "Detroit Pistons vs San Antonio Spurs",
+      "games_played": 1,
+      "avg_margin": 10,
+      "avg_excitement": 17.5
+    },
+    {
+      "matchup": "San Antonio Spurs vs Detroit Pistons",
+      "games_played": 1,
+      "avg_margin": 10,
+      "avg_excitement": 17.5
+    },
+    {
+      "matchup": "Atlanta Hawks vs Cleveland Cavaliers",
+      "games_played": 4,
+      "avg_margin": 4,
+      "avg_excitement": 95.0
+    },
+    {
+      "matchup": "Cleveland Cavaliers vs Atlanta Hawks",
+      "games_played": 4,
+      "avg_margin": 4,
+      "avg_excitement": 95.0
+    },
+    {
+      "matchup": "New Orleans Pelicans vs Orlando Magic",
+      "games_played": 5,
+      "avg_margin": 9.8,
+      "avg_excitement": 45.75
+    },
+    {
+      "matchup": "Orlando Magic vs New Orleans Pelicans",
+      "games_played": 5,
+      "avg_margin": 9.8,
+      "avg_excitement": 45.75
+    },
+    {
+      "matchup": "Dallas Mavericks vs Utah Jazz",
+      "games_played": 3,
+      "avg_margin": 9.67,
+      "avg_excitement": 41.25
+    },
+    {
+      "matchup": "Utah Jazz vs Dallas Mavericks",
+      "games_played": 3,
+      "avg_margin": 9.67,
+      "avg_excitement": 41.25
+    },
+    {
+      "matchup": "LA Clippers vs Sacramento Kings",
+      "games_played": 2,
+      "avg_margin": 18.5,
+      "avg_excitement": 6.87
+    },
+    {
+      "matchup": "Sacramento Kings vs LA Clippers",
+      "games_played": 2,
+      "avg_margin": 18.5,
+      "avg_excitement": 6.87
+    },
+    {
+      "matchup": "Brooklyn Nets vs Milwaukee Bucks",
+      "games_played": 3,
+      "avg_margin": 12.33,
+      "avg_excitement": 37.92
+    },
+    {
+      "matchup": "Milwaukee Bucks vs Brooklyn Nets",
+      "games_played": 3,
+      "avg_margin": 12.33,
+      "avg_excitement": 37.92
+    },
+    {
+      "matchup": "Denver Nuggets vs Minnesota Timberwolves",
+      "games_played": 2,
+      "avg_margin": 4,
+      "avg_excitement": 95.0
+    },
+    {
+      "matchup": "Minnesota Timberwolves vs Denver Nuggets",
+      "games_played": 2,
+      "avg_margin": 4,
+      "avg_excitement": 95.0
+    },
+    {
+      "matchup": "Milwaukee Bucks vs Oklahoma City Thunder",
+      "games_played": 2,
+      "avg_margin": 21.5,
+      "avg_excitement": 3.12
+    },
+    {
+      "matchup": "Oklahoma City Thunder vs Milwaukee Bucks",
+      "games_played": 2,
+      "avg_margin": 21.5,
+      "avg_excitement": 3.12
+    },
+    {
+      "matchup": "Brooklyn Nets vs Philadelphia 76ers",
+      "games_played": 5,
+      "avg_margin": 13,
+      "avg_excitement": 41.75
+    },
+    {
+      "matchup": "Philadelphia 76ers vs Brooklyn Nets",
+      "games_played": 5,
+      "avg_margin": 13,
+      "avg_excitement": 41.75
+    },
+    {
+      "matchup": "Detroit Pistons vs Memphis Grizzlies",
+      "games_played": 2,
+      "avg_margin": 25,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Memphis Grizzlies vs Detroit Pistons",
+      "games_played": 2,
+      "avg_margin": 25,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "LA Clippers vs Minnesota Timberwolves",
+      "games_played": 2,
+      "avg_margin": 15,
+      "avg_excitement": 46.25
+    },
+    {
+      "matchup": "Minnesota Timberwolves vs LA Clippers",
+      "games_played": 2,
+      "avg_margin": 15,
+      "avg_excitement": 46.25
+    },
+    {
+      "matchup": "Toronto Raptors vs Washington Wizards",
+      "games_played": 5,
+      "avg_margin": 20.2,
+      "avg_excitement": 18.75
+    },
+    {
+      "matchup": "Washington Wizards vs Toronto Raptors",
+      "games_played": 5,
+      "avg_margin": 20.2,
+      "avg_excitement": 18.75
+    },
+    {
+      "matchup": "Charlotte Hornets vs Dallas Mavericks",
+      "games_played": 1,
+      "avg_margin": 68,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Dallas Mavericks vs Charlotte Hornets",
+      "games_played": 1,
+      "avg_margin": 68,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Indiana Pacers vs Memphis Grizzlies",
+      "games_played": 3,
+      "avg_margin": 3.67,
+      "avg_excitement": 95.42
+    },
+    {
+      "matchup": "Memphis Grizzlies vs Indiana Pacers",
+      "games_played": 3,
+      "avg_margin": 3.67,
+      "avg_excitement": 95.42
+    },
+    {
+      "matchup": "Denver Nuggets vs Oklahoma City Thunder",
+      "games_played": 5,
+      "avg_margin": 14.2,
+      "avg_excitement": 26.25
+    },
+    {
+      "matchup": "Oklahoma City Thunder vs Denver Nuggets",
+      "games_played": 5,
+      "avg_margin": 14.2,
+      "avg_excitement": 26.25
+    },
+    {
+      "matchup": "Los Angeles Lakers vs Sacramento Kings",
+      "games_played": 4,
+      "avg_margin": 22.25,
+      "avg_excitement": 37.19
+    },
+    {
+      "matchup": "Sacramento Kings vs Los Angeles Lakers",
+      "games_played": 4,
+      "avg_margin": 22.25,
+      "avg_excitement": 37.19
+    },
+    {
+      "matchup": "Charlotte Hornets vs Indiana Pacers",
+      "games_played": 3,
+      "avg_margin": 10.33,
+      "avg_excitement": 63.75
+    },
+    {
+      "matchup": "Indiana Pacers vs Charlotte Hornets",
+      "games_played": 3,
+      "avg_margin": 10.33,
+      "avg_excitement": 63.75
+    },
+    {
+      "matchup": "Chicago Bulls vs Detroit Pistons",
+      "games_played": 2,
+      "avg_margin": 10.5,
+      "avg_excitement": 51.88
+    },
+    {
+      "matchup": "Detroit Pistons vs Chicago Bulls",
+      "games_played": 2,
+      "avg_margin": 10.5,
+      "avg_excitement": 51.88
+    },
+    {
+      "matchup": "Boston Celtics vs New York Knicks",
+      "games_played": 5,
+      "avg_margin": 10.2,
+      "avg_excitement": 59.25
+    },
+    {
+      "matchup": "New York Knicks vs Boston Celtics",
+      "games_played": 5,
+      "avg_margin": 10.2,
+      "avg_excitement": 59.25
+    },
+    {
+      "matchup": "Cleveland Cavaliers vs Memphis Grizzlies",
+      "games_played": 1,
+      "avg_margin": 11,
+      "avg_excitement": 16.25
+    },
+    {
+      "matchup": "Memphis Grizzlies vs Cleveland Cavaliers",
+      "games_played": 1,
+      "avg_margin": 11,
+      "avg_excitement": 16.25
+    },
+    {
+      "matchup": "Houston Rockets vs Minnesota Timberwolves",
+      "games_played": 1,
+      "avg_margin": 18,
+      "avg_excitement": 7.5
+    },
+    {
+      "matchup": "Minnesota Timberwolves vs Houston Rockets",
+      "games_played": 1,
+      "avg_margin": 18,
+      "avg_excitement": 7.5
+    },
+    {
+      "matchup": "New Orleans Pelicans vs Philadelphia 76ers",
+      "games_played": 1,
+      "avg_margin": 20,
+      "avg_excitement": 5.0
+    },
+    {
+      "matchup": "Philadelphia 76ers vs New Orleans Pelicans",
+      "games_played": 1,
+      "avg_margin": 20,
+      "avg_excitement": 5.0
+    },
+    {
+      "matchup": "Atlanta Hawks vs Dallas Mavericks",
+      "games_played": 1,
+      "avg_margin": 26,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Dallas Mavericks vs Atlanta Hawks",
+      "games_played": 1,
+      "avg_margin": 26,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "New York Knicks vs Orlando Magic",
+      "games_played": 1,
+      "avg_margin": 25,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Orlando Magic vs New York Knicks",
+      "games_played": 1,
+      "avg_margin": 25,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Indiana Pacers vs Washington Wizards",
+      "games_played": 3,
+      "avg_margin": 10.33,
+      "avg_excitement": 63.75
+    },
+    {
+      "matchup": "Washington Wizards vs Indiana Pacers",
+      "games_played": 3,
+      "avg_margin": 10.33,
+      "avg_excitement": 63.75
+    },
+    {
+      "matchup": "Denver Nuggets vs San Antonio Spurs",
+      "games_played": 1,
+      "avg_margin": 6,
+      "avg_excitement": 92.5
+    },
+    {
+      "matchup": "San Antonio Spurs vs Denver Nuggets",
+      "games_played": 1,
+      "avg_margin": 6,
+      "avg_excitement": 92.5
+    },
+    {
+      "matchup": "Indiana Pacers vs Miami Heat",
+      "games_played": 1,
+      "avg_margin": 11,
+      "avg_excitement": 16.25
+    },
+    {
+      "matchup": "Miami Heat vs Indiana Pacers",
+      "games_played": 1,
+      "avg_margin": 11,
+      "avg_excitement": 16.25
+    },
+    {
+      "matchup": "Dallas Mavericks vs Toronto Raptors",
+      "games_played": 1,
+      "avg_margin": 8,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Toronto Raptors vs Dallas Mavericks",
+      "games_played": 1,
+      "avg_margin": 8,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Milwaukee Bucks vs San Antonio Spurs",
+      "games_played": 1,
+      "avg_margin": 10,
+      "avg_excitement": 17.5
+    },
+    {
+      "matchup": "San Antonio Spurs vs Milwaukee Bucks",
+      "games_played": 1,
+      "avg_margin": 10,
+      "avg_excitement": 17.5
+    },
+    {
+      "matchup": "LA Clippers vs Memphis Grizzlies",
+      "games_played": 1,
+      "avg_margin": 6,
+      "avg_excitement": 92.5
+    },
+    {
+      "matchup": "Memphis Grizzlies vs LA Clippers",
+      "games_played": 1,
+      "avg_margin": 6,
+      "avg_excitement": 92.5
+    },
+    {
+      "matchup": "Golden State Warriors vs Washington Wizards",
+      "games_played": 2,
+      "avg_margin": 9,
+      "avg_excitement": 18.75
+    },
+    {
+      "matchup": "Washington Wizards vs Golden State Warriors",
+      "games_played": 2,
+      "avg_margin": 9,
+      "avg_excitement": 18.75
+    },
+    {
+      "matchup": "LA Clippers vs Ra'Anana",
+      "games_played": 1,
+      "avg_margin": 40,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Ra'Anana vs LA Clippers",
+      "games_played": 1,
+      "avg_margin": 40,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Toronto Raptors vs Utah Jazz",
+      "games_played": 1,
+      "avg_margin": 32,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Utah Jazz vs Toronto Raptors",
+      "games_played": 1,
+      "avg_margin": 32,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "ADELAIDE 36ers vs Phoenix Suns",
+      "games_played": 1,
+      "avg_margin": 10,
+      "avg_excitement": 17.5
+    },
+    {
+      "matchup": "Phoenix Suns vs ADELAIDE 36ers",
+      "games_played": 1,
+      "avg_margin": 10,
+      "avg_excitement": 17.5
+    },
+    {
+      "matchup": "Memphis Grizzlies vs Orlando Magic",
+      "games_played": 2,
+      "avg_margin": 8,
+      "avg_excitement": 55.0
+    },
+    {
+      "matchup": "Orlando Magic vs Memphis Grizzlies",
+      "games_played": 2,
+      "avg_margin": 8,
+      "avg_excitement": 55.0
+    },
+    {
+      "matchup": "LA Clippers vs Portland Trail Blazers",
+      "games_played": 3,
+      "avg_margin": 6.33,
+      "avg_excitement": 68.75
+    },
+    {
+      "matchup": "Portland Trail Blazers vs LA Clippers",
+      "games_played": 3,
+      "avg_margin": 6.33,
+      "avg_excitement": 68.75
+    },
+    {
+      "matchup": "Miami Heat vs Minnesota Timberwolves",
+      "games_played": 1,
+      "avg_margin": 10,
+      "avg_excitement": 17.5
+    },
+    {
+      "matchup": "Minnesota Timberwolves vs Miami Heat",
+      "games_played": 1,
+      "avg_margin": 10,
+      "avg_excitement": 17.5
+    },
+    {
+      "matchup": "Cleveland Cavaliers vs Philadelphia 76ers",
+      "games_played": 2,
+      "avg_margin": 8.5,
+      "avg_excitement": 54.38
+    },
+    {
+      "matchup": "Philadelphia 76ers vs Cleveland Cavaliers",
+      "games_played": 2,
+      "avg_margin": 8.5,
+      "avg_excitement": 54.38
+    },
+    {
+      "matchup": "Atlanta Hawks vs Milwaukee Bucks",
+      "games_played": 2,
+      "avg_margin": 9.5,
+      "avg_excitement": 18.13
+    },
+    {
+      "matchup": "Milwaukee Bucks vs Atlanta Hawks",
+      "games_played": 2,
+      "avg_margin": 9.5,
+      "avg_excitement": 18.13
+    },
+    {
+      "matchup": "Brooklyn Nets vs Miami Heat",
+      "games_played": 2,
+      "avg_margin": 16,
+      "avg_excitement": 45.0
+    },
+    {
+      "matchup": "Miami Heat vs Brooklyn Nets",
+      "games_played": 2,
+      "avg_margin": 16,
+      "avg_excitement": 45.0
+    },
+    {
+      "matchup": "ADELAIDE 36ers vs Oklahoma City Thunder",
+      "games_played": 1,
+      "avg_margin": 33,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Oklahoma City Thunder vs ADELAIDE 36ers",
+      "games_played": 1,
+      "avg_margin": 33,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Portland Trail Blazers vs Ra'Anana",
+      "games_played": 1,
+      "avg_margin": 53,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Ra'Anana vs Portland Trail Blazers",
+      "games_played": 1,
+      "avg_margin": 53,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Los Angeles Lakers vs Minnesota Timberwolves",
+      "games_played": 4,
+      "avg_margin": 11,
+      "avg_excitement": 51.25
+    },
+    {
+      "matchup": "Minnesota Timberwolves vs Los Angeles Lakers",
+      "games_played": 4,
+      "avg_margin": 11,
+      "avg_excitement": 51.25
+    },
+    {
+      "matchup": "Chicago Bulls vs Denver Nuggets",
+      "games_played": 3,
+      "avg_margin": 13.67,
+      "avg_excitement": 12.92
+    },
+    {
+      "matchup": "Denver Nuggets vs Chicago Bulls",
+      "games_played": 3,
+      "avg_margin": 13.67,
+      "avg_excitement": 12.92
+    },
+    {
+      "matchup": "Detroit Pistons vs New Orleans Pelicans",
+      "games_played": 1,
+      "avg_margin": 6,
+      "avg_excitement": 92.5
+    },
+    {
+      "matchup": "New Orleans Pelicans vs Detroit Pistons",
+      "games_played": 1,
+      "avg_margin": 6,
+      "avg_excitement": 92.5
+    },
+    {
+      "matchup": "Dallas Mavericks vs Orlando Magic",
+      "games_played": 1,
+      "avg_margin": 5,
+      "avg_excitement": 93.75
+    },
+    {
+      "matchup": "Orlando Magic vs Dallas Mavericks",
+      "games_played": 1,
+      "avg_margin": 5,
+      "avg_excitement": 93.75
+    },
+    {
+      "matchup": "Oklahoma City Thunder vs Ra'Anana",
+      "games_played": 1,
+      "avg_margin": 47,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Ra'Anana vs Oklahoma City Thunder",
+      "games_played": 1,
+      "avg_margin": 47,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Charlotte Hornets vs Washington Wizards",
+      "games_played": 2,
+      "avg_margin": 7.5,
+      "avg_excitement": 55.62
+    },
+    {
+      "matchup": "Washington Wizards vs Charlotte Hornets",
+      "games_played": 2,
+      "avg_margin": 7.5,
+      "avg_excitement": 55.62
+    },
+    {
+      "matchup": "Detroit Pistons vs Oklahoma City Thunder",
+      "games_played": 3,
+      "avg_margin": 7,
+      "avg_excitement": 67.92
+    },
+    {
+      "matchup": "Oklahoma City Thunder vs Detroit Pistons",
+      "games_played": 3,
+      "avg_margin": 7,
+      "avg_excitement": 67.92
+    },
+    {
+      "matchup": "Houston Rockets vs Indiana Pacers",
+      "games_played": 2,
+      "avg_margin": 13.5,
+      "avg_excitement": 48.12
+    },
+    {
+      "matchup": "Indiana Pacers vs Houston Rockets",
+      "games_played": 2,
+      "avg_margin": 13.5,
+      "avg_excitement": 48.12
+    },
+    {
+      "matchup": "Atlanta Hawks vs Houston Rockets",
+      "games_played": 1,
+      "avg_margin": 10,
+      "avg_excitement": 17.5
+    },
+    {
+      "matchup": "Houston Rockets vs Atlanta Hawks",
+      "games_played": 1,
+      "avg_margin": 10,
+      "avg_excitement": 17.5
+    },
+    {
+      "matchup": "Brooklyn Nets vs New Orleans Pelicans",
+      "games_played": 1,
+      "avg_margin": 22,
+      "avg_excitement": 2.5
+    },
+    {
+      "matchup": "New Orleans Pelicans vs Brooklyn Nets",
+      "games_played": 1,
+      "avg_margin": 22,
+      "avg_excitement": 2.5
+    },
+    {
+      "matchup": "Chicago Bulls vs Miami Heat",
+      "games_played": 1,
+      "avg_margin": 8,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Miami Heat vs Chicago Bulls",
+      "games_played": 1,
+      "avg_margin": 8,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Cleveland Cavaliers vs Toronto Raptors",
+      "games_played": 2,
+      "avg_margin": 16.5,
+      "avg_excitement": 44.38
+    },
+    {
+      "matchup": "Toronto Raptors vs Cleveland Cavaliers",
+      "games_played": 2,
+      "avg_margin": 16.5,
+      "avg_excitement": 44.38
+    },
+    {
+      "matchup": "Memphis Grizzlies vs New York Knicks",
+      "games_played": 1,
+      "avg_margin": 3,
+      "avg_excitement": 96.25
+    },
+    {
+      "matchup": "New York Knicks vs Memphis Grizzlies",
+      "games_played": 1,
+      "avg_margin": 3,
+      "avg_excitement": 96.25
+    },
+    {
+      "matchup": "Minnesota Timberwolves vs Oklahoma City Thunder",
+      "games_played": 1,
+      "avg_margin": 7,
+      "avg_excitement": 91.25
+    },
+    {
+      "matchup": "Oklahoma City Thunder vs Minnesota Timberwolves",
+      "games_played": 1,
+      "avg_margin": 7,
+      "avg_excitement": 91.25
+    },
+    {
+      "matchup": "Charlotte Hornets vs San Antonio Spurs",
+      "games_played": 1,
+      "avg_margin": 27,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "San Antonio Spurs vs Charlotte Hornets",
+      "games_played": 1,
+      "avg_margin": 27,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Dallas Mavericks vs Phoenix Suns",
+      "games_played": 1,
+      "avg_margin": 2,
+      "avg_excitement": 97.5
+    },
+    {
+      "matchup": "Phoenix Suns vs Dallas Mavericks",
+      "games_played": 1,
+      "avg_margin": 2,
+      "avg_excitement": 97.5
+    },
+    {
+      "matchup": "Milwaukee Bucks vs Philadelphia 76ers",
+      "games_played": 3,
+      "avg_margin": 6,
+      "avg_excitement": 69.17
+    },
+    {
+      "matchup": "Philadelphia 76ers vs Milwaukee Bucks",
+      "games_played": 3,
+      "avg_margin": 6,
+      "avg_excitement": 69.17
+    },
+    {
+      "matchup": "Charlotte Hornets vs New Orleans Pelicans",
+      "games_played": 1,
+      "avg_margin": 12,
+      "avg_excitement": 15.0
+    },
+    {
+      "matchup": "New Orleans Pelicans vs Charlotte Hornets",
+      "games_played": 1,
+      "avg_margin": 12,
+      "avg_excitement": 15.0
+    },
+    {
+      "matchup": "Indiana Pacers vs San Antonio Spurs",
+      "games_played": 1,
+      "avg_margin": 3,
+      "avg_excitement": 96.25
+    },
+    {
+      "matchup": "San Antonio Spurs vs Indiana Pacers",
+      "games_played": 1,
+      "avg_margin": 3,
+      "avg_excitement": 96.25
+    },
+    {
+      "matchup": "Chicago Bulls vs Washington Wizards",
+      "games_played": 1,
+      "avg_margin": 2,
+      "avg_excitement": 97.5
+    },
+    {
+      "matchup": "Washington Wizards vs Chicago Bulls",
+      "games_played": 1,
+      "avg_margin": 2,
+      "avg_excitement": 97.5
+    },
+    {
+      "matchup": "Houston Rockets vs Memphis Grizzlies",
+      "games_played": 2,
+      "avg_margin": 13.5,
+      "avg_excitement": 48.12
+    },
+    {
+      "matchup": "Memphis Grizzlies vs Houston Rockets",
+      "games_played": 2,
+      "avg_margin": 13.5,
+      "avg_excitement": 48.12
+    },
+    {
+      "matchup": "Minnesota Timberwolves vs Utah Jazz",
+      "games_played": 1,
+      "avg_margin": 6,
+      "avg_excitement": 92.5
+    },
+    {
+      "matchup": "Utah Jazz vs Minnesota Timberwolves",
+      "games_played": 1,
+      "avg_margin": 6,
+      "avg_excitement": 92.5
+    },
+    {
+      "matchup": "Philadelphia 76ers vs San Antonio Spurs",
+      "games_played": 1,
+      "avg_margin": 9,
+      "avg_excitement": 18.75
+    },
+    {
+      "matchup": "San Antonio Spurs vs Philadelphia 76ers",
+      "games_played": 1,
+      "avg_margin": 9,
+      "avg_excitement": 18.75
+    },
+    {
+      "matchup": "Detroit Pistons vs Phoenix Suns",
+      "games_played": 3,
+      "avg_margin": 10,
+      "avg_excitement": 64.17
+    },
+    {
+      "matchup": "Phoenix Suns vs Detroit Pistons",
+      "games_played": 3,
+      "avg_margin": 10,
+      "avg_excitement": 64.17
+    },
+    {
+      "matchup": "Sacramento Kings vs Toronto Raptors",
+      "games_played": 1,
+      "avg_margin": 13,
+      "avg_excitement": 13.75
+    },
+    {
+      "matchup": "Toronto Raptors vs Sacramento Kings",
+      "games_played": 1,
+      "avg_margin": 13,
+      "avg_excitement": 13.75
+    },
+    {
+      "matchup": "Dallas Mavericks vs Real Madrid",
+      "games_played": 1,
+      "avg_margin": 4,
+      "avg_excitement": 95.0
+    },
+    {
+      "matchup": "Real Madrid vs Dallas Mavericks",
+      "games_played": 1,
+      "avg_margin": 4,
+      "avg_excitement": 95.0
+    },
+    {
+      "matchup": "Cairns Taipans vs Washington Wizards",
+      "games_played": 1,
+      "avg_margin": 63,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Washington Wizards vs Cairns Taipans",
+      "games_played": 1,
+      "avg_margin": 63,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "New Zealand Breakers vs Portland Trail Blazers",
+      "games_played": 1,
+      "avg_margin": 40,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Portland Trail Blazers vs New Zealand Breakers",
+      "games_played": 1,
+      "avg_margin": 40,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Brooklyn Nets vs Ra'Anana",
+      "games_played": 1,
+      "avg_margin": 32,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Ra'Anana vs Brooklyn Nets",
+      "games_played": 1,
+      "avg_margin": 32,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Houston Rockets vs New Orleans Pelicans",
+      "games_played": 2,
+      "avg_margin": 26.5,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "New Orleans Pelicans vs Houston Rockets",
+      "games_played": 2,
+      "avg_margin": 26.5,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Minnesota Timberwolves vs New York Knicks",
+      "games_played": 2,
+      "avg_margin": 7,
+      "avg_excitement": 56.25
+    },
+    {
+      "matchup": "New York Knicks vs Minnesota Timberwolves",
+      "games_played": 2,
+      "avg_margin": 7,
+      "avg_excitement": 56.25
+    },
+    {
+      "matchup": "Cairns Taipans vs Toronto Raptors",
+      "games_played": 1,
+      "avg_margin": 41,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Toronto Raptors vs Cairns Taipans",
+      "games_played": 1,
+      "avg_margin": 41,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Los Angeles Lakers vs Milwaukee Bucks",
+      "games_played": 2,
+      "avg_margin": 8,
+      "avg_excitement": 55.0
+    },
+    {
+      "matchup": "Milwaukee Bucks vs Los Angeles Lakers",
+      "games_played": 2,
+      "avg_margin": 8,
+      "avg_excitement": 55.0
+    },
+    {
+      "matchup": "Cleveland Cavaliers vs Ra'Anana",
+      "games_played": 1,
+      "avg_margin": 31,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Ra'Anana vs Cleveland Cavaliers",
+      "games_played": 1,
+      "avg_margin": 31,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Atlanta Hawks vs Indiana Pacers",
+      "games_played": 2,
+      "avg_margin": 2.5,
+      "avg_excitement": 96.88
+    },
+    {
+      "matchup": "Indiana Pacers vs Atlanta Hawks",
+      "games_played": 2,
+      "avg_margin": 2.5,
+      "avg_excitement": 96.88
+    },
+    {
+      "matchup": "New Zealand Breakers vs Utah Jazz",
+      "games_played": 2,
+      "avg_margin": 24.5,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Utah Jazz vs New Zealand Breakers",
+      "games_played": 2,
+      "avg_margin": 24.5,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Minnesota Timberwolves vs Ra'Anana",
+      "games_played": 1,
+      "avg_margin": 27,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Ra'Anana vs Minnesota Timberwolves",
+      "games_played": 1,
+      "avg_margin": 27,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Chicago Bulls vs Minnesota Timberwolves",
+      "games_played": 2,
+      "avg_margin": 5.5,
+      "avg_excitement": 58.12
+    },
+    {
+      "matchup": "Minnesota Timberwolves vs Chicago Bulls",
+      "games_played": 2,
+      "avg_margin": 5.5,
+      "avg_excitement": 58.12
+    },
+    {
+      "matchup": "Flamengo vs Orlando Magic",
+      "games_played": 1,
+      "avg_margin": 33,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Orlando Magic vs Flamengo",
+      "games_played": 1,
+      "avg_margin": 33,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Atlanta Hawks vs Philadelphia 76ers",
+      "games_played": 2,
+      "avg_margin": 14.5,
+      "avg_excitement": 11.88
+    },
+    {
+      "matchup": "Philadelphia 76ers vs Atlanta Hawks",
+      "games_played": 2,
+      "avg_margin": 14.5,
+      "avg_excitement": 11.88
+    },
+    {
+      "matchup": "Golden State Warriors vs San Antonio Spurs",
+      "games_played": 1,
+      "avg_margin": 5,
+      "avg_excitement": 93.75
+    },
+    {
+      "matchup": "San Antonio Spurs vs Golden State Warriors",
+      "games_played": 1,
+      "avg_margin": 5,
+      "avg_excitement": 93.75
+    },
+    {
+      "matchup": "Golden State Warriors vs Phoenix Suns",
+      "games_played": 1,
+      "avg_margin": 4,
+      "avg_excitement": 95.0
+    },
+    {
+      "matchup": "Phoenix Suns vs Golden State Warriors",
+      "games_played": 1,
+      "avg_margin": 4,
+      "avg_excitement": 95.0
+    },
+    {
+      "matchup": "Atlanta Hawks vs Charlotte Hornets",
+      "games_played": 2,
+      "avg_margin": 5.5,
+      "avg_excitement": 93.12
+    },
+    {
+      "matchup": "Charlotte Hornets vs Atlanta Hawks",
+      "games_played": 2,
+      "avg_margin": 5.5,
+      "avg_excitement": 93.12
+    },
+    {
+      "matchup": "Houston Rockets vs Orlando Magic",
+      "games_played": 1,
+      "avg_margin": 30,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Orlando Magic vs Houston Rockets",
+      "games_played": 1,
+      "avg_margin": 30,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Brooklyn Nets vs Cleveland Cavaliers",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 98.75
+    },
+    {
+      "matchup": "Cleveland Cavaliers vs Brooklyn Nets",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 98.75
+    },
+    {
+      "matchup": "Detroit Pistons vs Miami Heat",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 98.75
+    },
+    {
+      "matchup": "Miami Heat vs Detroit Pistons",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 98.75
+    },
+    {
+      "matchup": "Minnesota Timberwolves vs Toronto Raptors",
+      "games_played": 1,
+      "avg_margin": 3,
+      "avg_excitement": 96.25
+    },
+    {
+      "matchup": "Toronto Raptors vs Minnesota Timberwolves",
+      "games_played": 1,
+      "avg_margin": 3,
+      "avg_excitement": 96.25
+    },
+    {
+      "matchup": "Memphis Grizzlies vs New Orleans Pelicans",
+      "games_played": 1,
+      "avg_margin": 7,
+      "avg_excitement": 91.25
+    },
+    {
+      "matchup": "New Orleans Pelicans vs Memphis Grizzlies",
+      "games_played": 1,
+      "avg_margin": 7,
+      "avg_excitement": 91.25
+    },
+    {
+      "matchup": "Dallas Mavericks vs San Antonio Spurs",
+      "games_played": 2,
+      "avg_margin": 9,
+      "avg_excitement": 53.75
+    },
+    {
+      "matchup": "San Antonio Spurs vs Dallas Mavericks",
+      "games_played": 2,
+      "avg_margin": 9,
+      "avg_excitement": 53.75
+    },
+    {
+      "matchup": "Denver Nuggets vs Memphis Grizzlies",
+      "games_played": 1,
+      "avg_margin": 4,
+      "avg_excitement": 95.0
+    },
+    {
+      "matchup": "Memphis Grizzlies vs Denver Nuggets",
+      "games_played": 1,
+      "avg_margin": 4,
+      "avg_excitement": 95.0
+    },
+    {
+      "matchup": "Cleveland Cavaliers vs Oklahoma City Thunder",
+      "games_played": 1,
+      "avg_margin": 3,
+      "avg_excitement": 96.25
+    },
+    {
+      "matchup": "Oklahoma City Thunder vs Cleveland Cavaliers",
+      "games_played": 1,
+      "avg_margin": 3,
+      "avg_excitement": 96.25
+    },
+    {
+      "matchup": "Brooklyn Nets vs Dallas Mavericks",
+      "games_played": 1,
+      "avg_margin": 5,
+      "avg_excitement": 93.75
+    },
+    {
+      "matchup": "Dallas Mavericks vs Brooklyn Nets",
+      "games_played": 1,
+      "avg_margin": 5,
+      "avg_excitement": 93.75
+    },
+    {
+      "matchup": "Orlando Magic vs Portland Trail Blazers",
+      "games_played": 1,
+      "avg_margin": 5,
+      "avg_excitement": 93.75
+    },
+    {
+      "matchup": "Portland Trail Blazers vs Orlando Magic",
+      "games_played": 1,
+      "avg_margin": 5,
+      "avg_excitement": 93.75
+    },
+    {
+      "matchup": "Boston Celtics vs Denver Nuggets",
+      "games_played": 2,
+      "avg_margin": 15,
+      "avg_excitement": 46.25
+    },
+    {
+      "matchup": "Denver Nuggets vs Boston Celtics",
+      "games_played": 2,
+      "avg_margin": 15,
+      "avg_excitement": 46.25
+    },
+    {
+      "matchup": "Charlotte Hornets vs New York Knicks",
+      "games_played": 2,
+      "avg_margin": 4,
+      "avg_excitement": 95.0
+    },
+    {
+      "matchup": "New York Knicks vs Charlotte Hornets",
+      "games_played": 2,
+      "avg_margin": 4,
+      "avg_excitement": 95.0
+    },
+    {
+      "matchup": "Detroit Pistons vs Milwaukee Bucks",
+      "games_played": 1,
+      "avg_margin": 33,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Milwaukee Bucks vs Detroit Pistons",
+      "games_played": 1,
+      "avg_margin": 33,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "New Zealand Breakers vs Philadelphia 76ers",
+      "games_played": 1,
+      "avg_margin": 55,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Philadelphia 76ers vs New Zealand Breakers",
+      "games_played": 1,
+      "avg_margin": 55,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Dallas Mavericks vs Memphis Grizzlies",
+      "games_played": 1,
+      "avg_margin": 5,
+      "avg_excitement": 93.75
+    },
+    {
+      "matchup": "Memphis Grizzlies vs Dallas Mavericks",
+      "games_played": 1,
+      "avg_margin": 5,
+      "avg_excitement": 93.75
+    },
+    {
+      "matchup": "Houston Rockets vs Utah Jazz",
+      "games_played": 1,
+      "avg_margin": 9,
+      "avg_excitement": 18.75
+    },
+    {
+      "matchup": "Utah Jazz vs Houston Rockets",
+      "games_played": 1,
+      "avg_margin": 9,
+      "avg_excitement": 18.75
+    },
+    {
+      "matchup": "Brooklyn Nets vs LA Clippers",
+      "games_played": 1,
+      "avg_margin": 9,
+      "avg_excitement": 18.75
+    },
+    {
+      "matchup": "LA Clippers vs Brooklyn Nets",
+      "games_played": 1,
+      "avg_margin": 9,
+      "avg_excitement": 18.75
+    },
+    {
+      "matchup": "Minnesota Timberwolves vs Philadelphia 76ers",
+      "games_played": 1,
+      "avg_margin": 10,
+      "avg_excitement": 17.5
+    },
+    {
+      "matchup": "Philadelphia 76ers vs Minnesota Timberwolves",
+      "games_played": 1,
+      "avg_margin": 10,
+      "avg_excitement": 17.5
+    },
+    {
+      "matchup": "Detroit Pistons vs Golden State Warriors",
+      "games_played": 1,
+      "avg_margin": 18,
+      "avg_excitement": 7.5
+    },
+    {
+      "matchup": "Golden State Warriors vs Detroit Pistons",
+      "games_played": 1,
+      "avg_margin": 18,
+      "avg_excitement": 7.5
+    },
+    {
+      "matchup": "Portland Trail Blazers vs Ulm",
+      "games_played": 1,
+      "avg_margin": 11,
+      "avg_excitement": 16.25
+    },
+    {
+      "matchup": "Ulm vs Portland Trail Blazers",
+      "games_played": 1,
+      "avg_margin": 11,
+      "avg_excitement": 16.25
+    },
+    {
+      "matchup": "Atlanta Hawks vs Oklahoma City Thunder",
+      "games_played": 1,
+      "avg_margin": 5,
+      "avg_excitement": 93.75
+    },
+    {
+      "matchup": "Oklahoma City Thunder vs Atlanta Hawks",
+      "games_played": 1,
+      "avg_margin": 5,
+      "avg_excitement": 93.75
+    },
+    {
+      "matchup": "Atlanta Hawks vs Brooklyn Nets",
+      "games_played": 1,
+      "avg_margin": 4,
+      "avg_excitement": 95.0
+    },
+    {
+      "matchup": "Brooklyn Nets vs Atlanta Hawks",
+      "games_played": 1,
+      "avg_margin": 4,
+      "avg_excitement": 95.0
+    },
+    {
+      "matchup": "Charlotte Hornets vs Houston Rockets",
+      "games_played": 1,
+      "avg_margin": 5,
+      "avg_excitement": 93.75
+    },
+    {
+      "matchup": "Houston Rockets vs Charlotte Hornets",
+      "games_played": 1,
+      "avg_margin": 5,
+      "avg_excitement": 93.75
+    },
+    {
+      "matchup": "Memphis Grizzlies vs Utah Jazz",
+      "games_played": 1,
+      "avg_margin": 2,
+      "avg_excitement": 97.5
+    },
+    {
+      "matchup": "Utah Jazz vs Memphis Grizzlies",
+      "games_played": 1,
+      "avg_margin": 2,
+      "avg_excitement": 97.5
+    },
+    {
+      "matchup": "LA Clippers vs Phoenix Suns",
+      "games_played": 1,
+      "avg_margin": 3,
+      "avg_excitement": 96.25
+    },
+    {
+      "matchup": "Phoenix Suns vs LA Clippers",
+      "games_played": 1,
+      "avg_margin": 3,
+      "avg_excitement": 96.25
+    },
+    {
+      "matchup": "Boston Celtics vs Washington Wizards",
+      "games_played": 1,
+      "avg_margin": 20,
+      "avg_excitement": 5.0
+    },
+    {
+      "matchup": "Washington Wizards vs Boston Celtics",
+      "games_played": 1,
+      "avg_margin": 20,
+      "avg_excitement": 5.0
+    },
+    {
+      "matchup": "Minnesota Timberwolves vs Sacramento Kings",
+      "games_played": 1,
+      "avg_margin": 2,
+      "avg_excitement": 97.5
+    },
+    {
+      "matchup": "Sacramento Kings vs Minnesota Timberwolves",
+      "games_played": 1,
+      "avg_margin": 2,
+      "avg_excitement": 97.5
+    },
+    {
+      "matchup": "Brooklyn Nets vs Orlando Magic",
+      "games_played": 1,
+      "avg_margin": 15,
+      "avg_excitement": 11.25
+    },
+    {
+      "matchup": "Orlando Magic vs Brooklyn Nets",
+      "games_played": 1,
+      "avg_margin": 15,
+      "avg_excitement": 11.25
+    },
+    {
+      "matchup": "Golden State Warriors vs Utah Jazz",
+      "games_played": 1,
+      "avg_margin": 41,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Utah Jazz vs Golden State Warriors",
+      "games_played": 1,
+      "avg_margin": 41,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "New Orleans Pelicans vs Portland Trail Blazers",
+      "games_played": 1,
+      "avg_margin": 2,
+      "avg_excitement": 97.5
+    },
+    {
+      "matchup": "Portland Trail Blazers vs New Orleans Pelicans",
+      "games_played": 1,
+      "avg_margin": 2,
+      "avg_excitement": 97.5
+    }
+  ],
+  "matchup_close_rates": [
+    {
+      "matchup": "Houston Rockets vs Shanghai Sharks",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Shanghai Sharks vs Houston Rockets",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Houston Rockets vs LA Clippers",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "LA Clippers vs Houston Rockets",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Indiana Pacers vs Sacramento Kings",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Sacramento Kings vs Indiana Pacers",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Brooklyn Nets vs Franca",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Franca vs Brooklyn Nets",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Golden State Warriors vs Los Angeles Lakers",
+      "games": 13,
+      "close_games": 5,
+      "close_rate": 38.46
+    },
+    {
+      "matchup": "Los Angeles Lakers vs Golden State Warriors",
+      "games": 13,
+      "close_games": 5,
+      "close_rate": 38.46
+    },
+    {
+      "matchup": "Orlando Magic vs San Antonio Spurs",
+      "games": 5,
+      "close_games": 2,
+      "close_rate": 40.0
+    },
+    {
+      "matchup": "San Antonio Spurs vs Orlando Magic",
+      "games": 5,
+      "close_games": 2,
+      "close_rate": 40.0
+    },
+    {
+      "matchup": "ADELAIDE 36ers vs Utah Jazz",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Utah Jazz vs ADELAIDE 36ers",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Maccabi Haifa vs Memphis Grizzlies",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Memphis Grizzlies vs Maccabi Haifa",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Boston Celtics vs Charlotte Hornets",
+      "games": 4,
+      "close_games": 1,
+      "close_rate": 25.0
+    },
+    {
+      "matchup": "Charlotte Hornets vs Boston Celtics",
+      "games": 4,
+      "close_games": 1,
+      "close_rate": 25.0
+    },
+    {
+      "matchup": "LA Clippers vs Shanghai Sharks",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Shanghai Sharks vs LA Clippers",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Cleveland Cavaliers vs San Lorenzo",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "San Lorenzo vs Cleveland Cavaliers",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Detroit Pistons vs Orlando Magic",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Orlando Magic vs Detroit Pistons",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "New York Knicks vs Washington Wizards",
+      "games": 8,
+      "close_games": 3,
+      "close_rate": 37.5
+    },
+    {
+      "matchup": "Washington Wizards vs New York Knicks",
+      "games": 8,
+      "close_games": 3,
+      "close_rate": 37.5
+    },
+    {
+      "matchup": "Atlanta Hawks vs New Orleans Pelicans",
+      "games": 3,
+      "close_games": 1,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "New Orleans Pelicans vs Atlanta Hawks",
+      "games": 3,
+      "close_games": 1,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "Chicago Bulls vs Milwaukee Bucks",
+      "games": 5,
+      "close_games": 2,
+      "close_rate": 40.0
+    },
+    {
+      "matchup": "Milwaukee Bucks vs Chicago Bulls",
+      "games": 5,
+      "close_games": 2,
+      "close_rate": 40.0
+    },
+    {
+      "matchup": "Houston Rockets vs Toronto Raptors",
+      "games": 4,
+      "close_games": 2,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Toronto Raptors vs Houston Rockets",
+      "games": 4,
+      "close_games": 2,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Guangzhou Loong-Lions vs Philadelphia 76ers",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Philadelphia 76ers vs Guangzhou Loong-Lions",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Miami Heat vs San Antonio Spurs",
+      "games": 4,
+      "close_games": 2,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "San Antonio Spurs vs Miami Heat",
+      "games": 4,
+      "close_games": 2,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Memphis Grizzlies vs New Zealand Breakers",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "New Zealand Breakers vs Memphis Grizzlies",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Dallas Mavericks vs Oklahoma City Thunder",
+      "games": 3,
+      "close_games": 1,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "Oklahoma City Thunder vs Dallas Mavericks",
+      "games": 3,
+      "close_games": 1,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "Minnesota Timberwolves vs Phoenix Suns",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Phoenix Suns vs Minnesota Timberwolves",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Denver Nuggets vs Portland Trail Blazers",
+      "games": 5,
+      "close_games": 2,
+      "close_rate": 40.0
+    },
+    {
+      "matchup": "Portland Trail Blazers vs Denver Nuggets",
+      "games": 5,
+      "close_games": 2,
+      "close_rate": 40.0
+    },
+    {
+      "matchup": "Dallas Mavericks vs Detroit Pistons",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Detroit Pistons vs Dallas Mavericks",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Guangzhou Loong-Lions vs Washington Wizards",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Washington Wizards vs Guangzhou Loong-Lions",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Atlanta Hawks vs Orlando Magic",
+      "games": 4,
+      "close_games": 1,
+      "close_rate": 25.0
+    },
+    {
+      "matchup": "Orlando Magic vs Atlanta Hawks",
+      "games": 4,
+      "close_games": 1,
+      "close_rate": 25.0
+    },
+    {
+      "matchup": "Charlotte Hornets vs Miami Heat",
+      "games": 4,
+      "close_games": 3,
+      "close_rate": 75.0
+    },
+    {
+      "matchup": "Miami Heat vs Charlotte Hornets",
+      "games": 4,
+      "close_games": 3,
+      "close_rate": 75.0
+    },
+    {
+      "matchup": "Chicago Bulls vs New Orleans Pelicans",
+      "games": 5,
+      "close_games": 2,
+      "close_rate": 40.0
+    },
+    {
+      "matchup": "New Orleans Pelicans vs Chicago Bulls",
+      "games": 5,
+      "close_games": 2,
+      "close_rate": 40.0
+    },
+    {
+      "matchup": "Milwaukee Bucks vs Utah Jazz",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Utah Jazz vs Milwaukee Bucks",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Brooklyn Nets vs Los Angeles Lakers",
+      "games": 4,
+      "close_games": 2,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Los Angeles Lakers vs Brooklyn Nets",
+      "games": 4,
+      "close_games": 2,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "New Zealand Breakers vs Oklahoma City Thunder",
+      "games": 2,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Oklahoma City Thunder vs New Zealand Breakers",
+      "games": 2,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Maccabi Haifa vs Portland Trail Blazers",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Portland Trail Blazers vs Maccabi Haifa",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Phoenix Suns vs Sacramento Kings",
+      "games": 4,
+      "close_games": 1,
+      "close_rate": 25.0
+    },
+    {
+      "matchup": "Sacramento Kings vs Phoenix Suns",
+      "games": 4,
+      "close_games": 1,
+      "close_rate": 25.0
+    },
+    {
+      "matchup": "Golden State Warriors vs Minnesota Timberwolves",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Minnesota Timberwolves vs Golden State Warriors",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Denver Nuggets vs LA Clippers",
+      "games": 12,
+      "close_games": 3,
+      "close_rate": 25.0
+    },
+    {
+      "matchup": "LA Clippers vs Denver Nuggets",
+      "games": 12,
+      "close_games": 3,
+      "close_rate": 25.0
+    },
+    {
+      "matchup": "Cleveland Cavaliers vs Detroit Pistons",
+      "games": 3,
+      "close_games": 1,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "Detroit Pistons vs Cleveland Cavaliers",
+      "games": 3,
+      "close_games": 1,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "Chicago Bulls vs Indiana Pacers",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Indiana Pacers vs Chicago Bulls",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Boston Celtics vs Orlando Magic",
+      "games": 4,
+      "close_games": 3,
+      "close_rate": 75.0
+    },
+    {
+      "matchup": "Orlando Magic vs Boston Celtics",
+      "games": 4,
+      "close_games": 3,
+      "close_rate": 75.0
+    },
+    {
+      "matchup": "Charlotte Hornets vs Philadelphia 76ers",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Philadelphia 76ers vs Charlotte Hornets",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "New Orleans Pelicans vs Utah Jazz",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Utah Jazz vs New Orleans Pelicans",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Dallas Mavericks vs Milwaukee Bucks",
+      "games": 5,
+      "close_games": 1,
+      "close_rate": 20.0
+    },
+    {
+      "matchup": "Milwaukee Bucks vs Dallas Mavericks",
+      "games": 5,
+      "close_games": 1,
+      "close_rate": 20.0
+    },
+    {
+      "matchup": "Phoenix Suns vs Portland Trail Blazers",
+      "games": 6,
+      "close_games": 1,
+      "close_rate": 16.67
+    },
+    {
+      "matchup": "Portland Trail Blazers vs Phoenix Suns",
+      "games": 6,
+      "close_games": 1,
+      "close_rate": 16.67
+    },
+    {
+      "matchup": "Boston Celtics vs Cleveland Cavaliers",
+      "games": 2,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Cleveland Cavaliers vs Boston Celtics",
+      "games": 2,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "LA Clippers vs Melbourne United",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Melbourne United vs LA Clippers",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "New Orleans Pelicans vs San Antonio Spurs",
+      "games": 2,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "San Antonio Spurs vs New Orleans Pelicans",
+      "games": 2,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Orlando Magic vs Philadelphia 76ers",
+      "games": 2,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Philadelphia 76ers vs Orlando Magic",
+      "games": 2,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Chicago Bulls vs Toronto Raptors",
+      "games": 4,
+      "close_games": 2,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Toronto Raptors vs Chicago Bulls",
+      "games": 4,
+      "close_games": 2,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Milwaukee Bucks vs Washington Wizards",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Washington Wizards vs Milwaukee Bucks",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Maccabi Haifa vs Minnesota Timberwolves",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Minnesota Timberwolves vs Maccabi Haifa",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Atlanta Hawks vs Miami Heat",
+      "games": 4,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Miami Heat vs Atlanta Hawks",
+      "games": 4,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Charlotte Hornets vs Memphis Grizzlies",
+      "games": 3,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Memphis Grizzlies vs Charlotte Hornets",
+      "games": 3,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Sacramento Kings vs Utah Jazz",
+      "games": 5,
+      "close_games": 2,
+      "close_rate": 40.0
+    },
+    {
+      "matchup": "Utah Jazz vs Sacramento Kings",
+      "games": 5,
+      "close_games": 2,
+      "close_rate": 40.0
+    },
+    {
+      "matchup": "Denver Nuggets vs Phoenix Suns",
+      "games": 5,
+      "close_games": 4,
+      "close_rate": 80.0
+    },
+    {
+      "matchup": "Phoenix Suns vs Denver Nuggets",
+      "games": 5,
+      "close_games": 4,
+      "close_rate": 80.0
+    },
+    {
+      "matchup": "Indiana Pacers vs Minnesota Timberwolves",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Minnesota Timberwolves vs Indiana Pacers",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Detroit Pistons vs Philadelphia 76ers",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Philadelphia 76ers vs Detroit Pistons",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Charlotte Hornets vs Detroit Pistons",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Detroit Pistons vs Charlotte Hornets",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Atlanta Hawks vs New York Knicks",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "New York Knicks vs Atlanta Hawks",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Houston Rockets vs San Antonio Spurs",
+      "games": 9,
+      "close_games": 1,
+      "close_rate": 11.11
+    },
+    {
+      "matchup": "San Antonio Spurs vs Houston Rockets",
+      "games": 9,
+      "close_games": 1,
+      "close_rate": 11.11
+    },
+    {
+      "matchup": "Memphis Grizzlies vs Oklahoma City Thunder",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Oklahoma City Thunder vs Memphis Grizzlies",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Portland Trail Blazers vs Utah Jazz",
+      "games": 4,
+      "close_games": 2,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Utah Jazz vs Portland Trail Blazers",
+      "games": 4,
+      "close_games": 2,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Melbourne United vs Sacramento Kings",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Sacramento Kings vs Melbourne United",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Miami Heat vs Orlando Magic",
+      "games": 3,
+      "close_games": 1,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "Orlando Magic vs Miami Heat",
+      "games": 3,
+      "close_games": 1,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "Atlanta Hawks vs Chicago Bulls",
+      "games": 2,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Chicago Bulls vs Atlanta Hawks",
+      "games": 2,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Milwaukee Bucks vs Minnesota Timberwolves",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Minnesota Timberwolves vs Milwaukee Bucks",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Dallas Mavericks vs LA Clippers",
+      "games": 3,
+      "close_games": 1,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "LA Clippers vs Dallas Mavericks",
+      "games": 3,
+      "close_games": 1,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "Philadelphia 76ers vs Washington Wizards",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Washington Wizards vs Philadelphia 76ers",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Brooklyn Nets vs Toronto Raptors",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Toronto Raptors vs Brooklyn Nets",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Houston Rockets vs Miami Heat",
+      "games": 4,
+      "close_games": 3,
+      "close_rate": 75.0
+    },
+    {
+      "matchup": "Miami Heat vs Houston Rockets",
+      "games": 4,
+      "close_games": 3,
+      "close_rate": 75.0
+    },
+    {
+      "matchup": "New Orleans Pelicans vs New York Knicks",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "New York Knicks vs New Orleans Pelicans",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Memphis Grizzlies vs San Antonio Spurs",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "San Antonio Spurs vs Memphis Grizzlies",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "New Orleans Pelicans vs Toronto Raptors",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Toronto Raptors vs New Orleans Pelicans",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "LA Clippers vs Los Angeles Lakers",
+      "games": 5,
+      "close_games": 3,
+      "close_rate": 60.0
+    },
+    {
+      "matchup": "Los Angeles Lakers vs LA Clippers",
+      "games": 5,
+      "close_games": 3,
+      "close_rate": 60.0
+    },
+    {
+      "matchup": "Charlotte Hornets vs Chicago Bulls",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Chicago Bulls vs Charlotte Hornets",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Detroit Pistons vs Indiana Pacers",
+      "games": 3,
+      "close_games": 1,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "Indiana Pacers vs Detroit Pistons",
+      "games": 3,
+      "close_games": 1,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "Cleveland Cavaliers vs Orlando Magic",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Orlando Magic vs Cleveland Cavaliers",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Brooklyn Nets vs Minnesota Timberwolves",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Minnesota Timberwolves vs Brooklyn Nets",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Memphis Grizzlies vs Miami Heat",
+      "games": 4,
+      "close_games": 3,
+      "close_rate": 75.0
+    },
+    {
+      "matchup": "Miami Heat vs Memphis Grizzlies",
+      "games": 4,
+      "close_games": 3,
+      "close_rate": 75.0
+    },
+    {
+      "matchup": "Boston Celtics vs Philadelphia 76ers",
+      "games": 6,
+      "close_games": 1,
+      "close_rate": 16.67
+    },
+    {
+      "matchup": "Philadelphia 76ers vs Boston Celtics",
+      "games": 6,
+      "close_games": 1,
+      "close_rate": 16.67
+    },
+    {
+      "matchup": "Dallas Mavericks vs Washington Wizards",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Washington Wizards vs Dallas Mavericks",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "New York Knicks vs San Antonio Spurs",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "San Antonio Spurs vs New York Knicks",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Oklahoma City Thunder vs Utah Jazz",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Utah Jazz vs Oklahoma City Thunder",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Atlanta Hawks vs Detroit Pistons",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Detroit Pistons vs Atlanta Hawks",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Houston Rockets vs Milwaukee Bucks",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Milwaukee Bucks vs Houston Rockets",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Golden State Warriors vs LA Clippers",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "LA Clippers vs Golden State Warriors",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Boston Celtics vs Toronto Raptors",
+      "games": 13,
+      "close_games": 11,
+      "close_rate": 84.62
+    },
+    {
+      "matchup": "Toronto Raptors vs Boston Celtics",
+      "games": 13,
+      "close_games": 11,
+      "close_rate": 84.62
+    },
+    {
+      "matchup": "Charlotte Hornets vs Minnesota Timberwolves",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Minnesota Timberwolves vs Charlotte Hornets",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Brooklyn Nets vs New York Knicks",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "New York Knicks vs Brooklyn Nets",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Chicago Bulls vs Memphis Grizzlies",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Memphis Grizzlies vs Chicago Bulls",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Dallas Mavericks vs New Orleans Pelicans",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "New Orleans Pelicans vs Dallas Mavericks",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Denver Nuggets vs Utah Jazz",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Utah Jazz vs Denver Nuggets",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Miami Heat vs Milwaukee Bucks",
+      "games": 5,
+      "close_games": 2,
+      "close_rate": 40.0
+    },
+    {
+      "matchup": "Milwaukee Bucks vs Miami Heat",
+      "games": 5,
+      "close_games": 2,
+      "close_rate": 40.0
+    },
+    {
+      "matchup": "Houston Rockets vs Oklahoma City Thunder",
+      "games": 4,
+      "close_games": 2,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Oklahoma City Thunder vs Houston Rockets",
+      "games": 4,
+      "close_games": 2,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Houston Rockets vs Los Angeles Lakers",
+      "games": 5,
+      "close_games": 1,
+      "close_rate": 20.0
+    },
+    {
+      "matchup": "Los Angeles Lakers vs Houston Rockets",
+      "games": 5,
+      "close_games": 1,
+      "close_rate": 20.0
+    },
+    {
+      "matchup": "Boston Celtics vs Miami Heat",
+      "games": 9,
+      "close_games": 5,
+      "close_rate": 55.56
+    },
+    {
+      "matchup": "Miami Heat vs Boston Celtics",
+      "games": 9,
+      "close_games": 5,
+      "close_rate": 55.56
+    },
+    {
+      "matchup": "Denver Nuggets vs Los Angeles Lakers",
+      "games": 6,
+      "close_games": 3,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Los Angeles Lakers vs Denver Nuggets",
+      "games": 6,
+      "close_games": 3,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Los Angeles Lakers vs Miami Heat",
+      "games": 6,
+      "close_games": 2,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "Miami Heat vs Los Angeles Lakers",
+      "games": 6,
+      "close_games": 2,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "Detroit Pistons vs New York Knicks",
+      "games": 5,
+      "close_games": 3,
+      "close_rate": 60.0
+    },
+    {
+      "matchup": "New York Knicks vs Detroit Pistons",
+      "games": 5,
+      "close_games": 3,
+      "close_rate": 60.0
+    },
+    {
+      "matchup": "Chicago Bulls vs Houston Rockets",
+      "games": 2,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Houston Rockets vs Chicago Bulls",
+      "games": 2,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Portland Trail Blazers vs Sacramento Kings",
+      "games": 7,
+      "close_games": 2,
+      "close_rate": 28.57
+    },
+    {
+      "matchup": "Sacramento Kings vs Portland Trail Blazers",
+      "games": 7,
+      "close_games": 2,
+      "close_rate": 28.57
+    },
+    {
+      "matchup": "Charlotte Hornets vs Toronto Raptors",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Toronto Raptors vs Charlotte Hornets",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Cleveland Cavaliers vs Indiana Pacers",
+      "games": 6,
+      "close_games": 2,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "Indiana Pacers vs Cleveland Cavaliers",
+      "games": 6,
+      "close_games": 2,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "Oklahoma City Thunder vs San Antonio Spurs",
+      "games": 4,
+      "close_games": 3,
+      "close_rate": 75.0
+    },
+    {
+      "matchup": "San Antonio Spurs vs Oklahoma City Thunder",
+      "games": 4,
+      "close_games": 3,
+      "close_rate": 75.0
+    },
+    {
+      "matchup": "Memphis Grizzlies vs Minnesota Timberwolves",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Minnesota Timberwolves vs Memphis Grizzlies",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Denver Nuggets vs Golden State Warriors",
+      "games": 4,
+      "close_games": 4,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Golden State Warriors vs Denver Nuggets",
+      "games": 4,
+      "close_games": 4,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Phoenix Suns vs Utah Jazz",
+      "games": 2,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Utah Jazz vs Phoenix Suns",
+      "games": 2,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Brooklyn Nets vs Washington Wizards",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Washington Wizards vs Brooklyn Nets",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Miami Heat vs New Orleans Pelicans",
+      "games": 3,
+      "close_games": 1,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "New Orleans Pelicans vs Miami Heat",
+      "games": 3,
+      "close_games": 1,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "Golden State Warriors vs Sacramento Kings",
+      "games": 7,
+      "close_games": 6,
+      "close_rate": 85.71
+    },
+    {
+      "matchup": "Sacramento Kings vs Golden State Warriors",
+      "games": 7,
+      "close_games": 6,
+      "close_rate": 85.71
+    },
+    {
+      "matchup": "Cleveland Cavaliers vs New York Knicks",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "New York Knicks vs Cleveland Cavaliers",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Chicago Bulls vs Oklahoma City Thunder",
+      "games": 3,
+      "close_games": 1,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "Oklahoma City Thunder vs Chicago Bulls",
+      "games": 3,
+      "close_games": 1,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "Los Angeles Lakers vs Phoenix Suns",
+      "games": 11,
+      "close_games": 7,
+      "close_rate": 63.64
+    },
+    {
+      "matchup": "Phoenix Suns vs Los Angeles Lakers",
+      "games": 11,
+      "close_games": 7,
+      "close_rate": 63.64
+    },
+    {
+      "matchup": "Charlotte Hornets vs Orlando Magic",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Orlando Magic vs Charlotte Hornets",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Detroit Pistons vs Washington Wizards",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Washington Wizards vs Detroit Pistons",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Atlanta Hawks vs Memphis Grizzlies",
+      "games": 4,
+      "close_games": 3,
+      "close_rate": 75.0
+    },
+    {
+      "matchup": "Memphis Grizzlies vs Atlanta Hawks",
+      "games": 4,
+      "close_games": 3,
+      "close_rate": 75.0
+    },
+    {
+      "matchup": "Dallas Mavericks vs Minnesota Timberwolves",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Minnesota Timberwolves vs Dallas Mavericks",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "LA Clippers vs Utah Jazz",
+      "games": 4,
+      "close_games": 3,
+      "close_rate": 75.0
+    },
+    {
+      "matchup": "Utah Jazz vs LA Clippers",
+      "games": 4,
+      "close_games": 3,
+      "close_rate": 75.0
+    },
+    {
+      "matchup": "Indiana Pacers vs Philadelphia 76ers",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Philadelphia 76ers vs Indiana Pacers",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Miami Heat vs Toronto Raptors",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Toronto Raptors vs Miami Heat",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Boston Celtics vs Brooklyn Nets",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Brooklyn Nets vs Boston Celtics",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Milwaukee Bucks vs New Orleans Pelicans",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "New Orleans Pelicans vs Milwaukee Bucks",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Brooklyn Nets vs Golden State Warriors",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Golden State Warriors vs Brooklyn Nets",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Charlotte Hornets vs Cleveland Cavaliers",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Cleveland Cavaliers vs Charlotte Hornets",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Indiana Pacers vs New York Knicks",
+      "games": 5,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "New York Knicks vs Indiana Pacers",
+      "games": 5,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Boston Celtics vs Milwaukee Bucks",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Milwaukee Bucks vs Boston Celtics",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Philadelphia 76ers vs Toronto Raptors",
+      "games": 3,
+      "close_games": 1,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "Toronto Raptors vs Philadelphia 76ers",
+      "games": 3,
+      "close_games": 1,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "Minnesota Timberwolves vs New Orleans Pelicans",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "New Orleans Pelicans vs Minnesota Timberwolves",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Charlotte Hornets vs Oklahoma City Thunder",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Oklahoma City Thunder vs Charlotte Hornets",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "San Antonio Spurs vs Utah Jazz",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Utah Jazz vs San Antonio Spurs",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Golden State Warriors vs Portland Trail Blazers",
+      "games": 4,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Portland Trail Blazers vs Golden State Warriors",
+      "games": 4,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Chicago Bulls vs Cleveland Cavaliers",
+      "games": 4,
+      "close_games": 3,
+      "close_rate": 75.0
+    },
+    {
+      "matchup": "Cleveland Cavaliers vs Chicago Bulls",
+      "games": 4,
+      "close_games": 3,
+      "close_rate": 75.0
+    },
+    {
+      "matchup": "Houston Rockets vs Washington Wizards",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Washington Wizards vs Houston Rockets",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Memphis Grizzlies vs Milwaukee Bucks",
+      "games": 4,
+      "close_games": 3,
+      "close_rate": 75.0
+    },
+    {
+      "matchup": "Milwaukee Bucks vs Memphis Grizzlies",
+      "games": 4,
+      "close_games": 3,
+      "close_rate": 75.0
+    },
+    {
+      "matchup": "Detroit Pistons vs San Antonio Spurs",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "San Antonio Spurs vs Detroit Pistons",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Atlanta Hawks vs Cleveland Cavaliers",
+      "games": 4,
+      "close_games": 4,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Cleveland Cavaliers vs Atlanta Hawks",
+      "games": 4,
+      "close_games": 4,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "New Orleans Pelicans vs Orlando Magic",
+      "games": 5,
+      "close_games": 2,
+      "close_rate": 40.0
+    },
+    {
+      "matchup": "Orlando Magic vs New Orleans Pelicans",
+      "games": 5,
+      "close_games": 2,
+      "close_rate": 40.0
+    },
+    {
+      "matchup": "Dallas Mavericks vs Utah Jazz",
+      "games": 3,
+      "close_games": 1,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "Utah Jazz vs Dallas Mavericks",
+      "games": 3,
+      "close_games": 1,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "LA Clippers vs Sacramento Kings",
+      "games": 2,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Sacramento Kings vs LA Clippers",
+      "games": 2,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Brooklyn Nets vs Milwaukee Bucks",
+      "games": 3,
+      "close_games": 1,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "Milwaukee Bucks vs Brooklyn Nets",
+      "games": 3,
+      "close_games": 1,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "Denver Nuggets vs Minnesota Timberwolves",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Minnesota Timberwolves vs Denver Nuggets",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Milwaukee Bucks vs Oklahoma City Thunder",
+      "games": 2,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Oklahoma City Thunder vs Milwaukee Bucks",
+      "games": 2,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Brooklyn Nets vs Philadelphia 76ers",
+      "games": 5,
+      "close_games": 2,
+      "close_rate": 40.0
+    },
+    {
+      "matchup": "Philadelphia 76ers vs Brooklyn Nets",
+      "games": 5,
+      "close_games": 2,
+      "close_rate": 40.0
+    },
+    {
+      "matchup": "Detroit Pistons vs Memphis Grizzlies",
+      "games": 2,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Memphis Grizzlies vs Detroit Pistons",
+      "games": 2,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "LA Clippers vs Minnesota Timberwolves",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Minnesota Timberwolves vs LA Clippers",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Toronto Raptors vs Washington Wizards",
+      "games": 5,
+      "close_games": 1,
+      "close_rate": 20.0
+    },
+    {
+      "matchup": "Washington Wizards vs Toronto Raptors",
+      "games": 5,
+      "close_games": 1,
+      "close_rate": 20.0
+    },
+    {
+      "matchup": "Charlotte Hornets vs Dallas Mavericks",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Dallas Mavericks vs Charlotte Hornets",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Indiana Pacers vs Memphis Grizzlies",
+      "games": 3,
+      "close_games": 3,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Memphis Grizzlies vs Indiana Pacers",
+      "games": 3,
+      "close_games": 3,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Denver Nuggets vs Oklahoma City Thunder",
+      "games": 5,
+      "close_games": 1,
+      "close_rate": 20.0
+    },
+    {
+      "matchup": "Oklahoma City Thunder vs Denver Nuggets",
+      "games": 5,
+      "close_games": 1,
+      "close_rate": 20.0
+    },
+    {
+      "matchup": "Los Angeles Lakers vs Sacramento Kings",
+      "games": 4,
+      "close_games": 2,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Sacramento Kings vs Los Angeles Lakers",
+      "games": 4,
+      "close_games": 2,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Charlotte Hornets vs Indiana Pacers",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Indiana Pacers vs Charlotte Hornets",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Chicago Bulls vs Detroit Pistons",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Detroit Pistons vs Chicago Bulls",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Boston Celtics vs New York Knicks",
+      "games": 5,
+      "close_games": 3,
+      "close_rate": 60.0
+    },
+    {
+      "matchup": "New York Knicks vs Boston Celtics",
+      "games": 5,
+      "close_games": 3,
+      "close_rate": 60.0
+    },
+    {
+      "matchup": "Cleveland Cavaliers vs Memphis Grizzlies",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Memphis Grizzlies vs Cleveland Cavaliers",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Houston Rockets vs Minnesota Timberwolves",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Minnesota Timberwolves vs Houston Rockets",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "New Orleans Pelicans vs Philadelphia 76ers",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Philadelphia 76ers vs New Orleans Pelicans",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Atlanta Hawks vs Dallas Mavericks",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Dallas Mavericks vs Atlanta Hawks",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "New York Knicks vs Orlando Magic",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Orlando Magic vs New York Knicks",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Indiana Pacers vs Washington Wizards",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Washington Wizards vs Indiana Pacers",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Denver Nuggets vs San Antonio Spurs",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "San Antonio Spurs vs Denver Nuggets",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Indiana Pacers vs Miami Heat",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Miami Heat vs Indiana Pacers",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Dallas Mavericks vs Toronto Raptors",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Toronto Raptors vs Dallas Mavericks",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Milwaukee Bucks vs San Antonio Spurs",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "San Antonio Spurs vs Milwaukee Bucks",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "LA Clippers vs Memphis Grizzlies",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Memphis Grizzlies vs LA Clippers",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Golden State Warriors vs Washington Wizards",
+      "games": 2,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Washington Wizards vs Golden State Warriors",
+      "games": 2,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "LA Clippers vs Ra'Anana",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Ra'Anana vs LA Clippers",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Toronto Raptors vs Utah Jazz",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Utah Jazz vs Toronto Raptors",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "ADELAIDE 36ers vs Phoenix Suns",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Phoenix Suns vs ADELAIDE 36ers",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Memphis Grizzlies vs Orlando Magic",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Orlando Magic vs Memphis Grizzlies",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "LA Clippers vs Portland Trail Blazers",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Portland Trail Blazers vs LA Clippers",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Miami Heat vs Minnesota Timberwolves",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Minnesota Timberwolves vs Miami Heat",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Cleveland Cavaliers vs Philadelphia 76ers",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Philadelphia 76ers vs Cleveland Cavaliers",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Atlanta Hawks vs Milwaukee Bucks",
+      "games": 2,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Milwaukee Bucks vs Atlanta Hawks",
+      "games": 2,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Brooklyn Nets vs Miami Heat",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Miami Heat vs Brooklyn Nets",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "ADELAIDE 36ers vs Oklahoma City Thunder",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Oklahoma City Thunder vs ADELAIDE 36ers",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Portland Trail Blazers vs Ra'Anana",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Ra'Anana vs Portland Trail Blazers",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Los Angeles Lakers vs Minnesota Timberwolves",
+      "games": 4,
+      "close_games": 2,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Minnesota Timberwolves vs Los Angeles Lakers",
+      "games": 4,
+      "close_games": 2,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Chicago Bulls vs Denver Nuggets",
+      "games": 3,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Denver Nuggets vs Chicago Bulls",
+      "games": 3,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Detroit Pistons vs New Orleans Pelicans",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "New Orleans Pelicans vs Detroit Pistons",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Dallas Mavericks vs Orlando Magic",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Orlando Magic vs Dallas Mavericks",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Oklahoma City Thunder vs Ra'Anana",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Ra'Anana vs Oklahoma City Thunder",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Charlotte Hornets vs Washington Wizards",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Washington Wizards vs Charlotte Hornets",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Detroit Pistons vs Oklahoma City Thunder",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Oklahoma City Thunder vs Detroit Pistons",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Houston Rockets vs Indiana Pacers",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Indiana Pacers vs Houston Rockets",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Atlanta Hawks vs Houston Rockets",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Houston Rockets vs Atlanta Hawks",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Brooklyn Nets vs New Orleans Pelicans",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "New Orleans Pelicans vs Brooklyn Nets",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Chicago Bulls vs Miami Heat",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Miami Heat vs Chicago Bulls",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Cleveland Cavaliers vs Toronto Raptors",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Toronto Raptors vs Cleveland Cavaliers",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Memphis Grizzlies vs New York Knicks",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "New York Knicks vs Memphis Grizzlies",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Minnesota Timberwolves vs Oklahoma City Thunder",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Oklahoma City Thunder vs Minnesota Timberwolves",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Charlotte Hornets vs San Antonio Spurs",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "San Antonio Spurs vs Charlotte Hornets",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Dallas Mavericks vs Phoenix Suns",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Phoenix Suns vs Dallas Mavericks",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Milwaukee Bucks vs Philadelphia 76ers",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Philadelphia 76ers vs Milwaukee Bucks",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Charlotte Hornets vs New Orleans Pelicans",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "New Orleans Pelicans vs Charlotte Hornets",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Indiana Pacers vs San Antonio Spurs",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "San Antonio Spurs vs Indiana Pacers",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Chicago Bulls vs Washington Wizards",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Washington Wizards vs Chicago Bulls",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Houston Rockets vs Memphis Grizzlies",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Memphis Grizzlies vs Houston Rockets",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Minnesota Timberwolves vs Utah Jazz",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Utah Jazz vs Minnesota Timberwolves",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Philadelphia 76ers vs San Antonio Spurs",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "San Antonio Spurs vs Philadelphia 76ers",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Detroit Pistons vs Phoenix Suns",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Phoenix Suns vs Detroit Pistons",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Sacramento Kings vs Toronto Raptors",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Toronto Raptors vs Sacramento Kings",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Dallas Mavericks vs Real Madrid",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Real Madrid vs Dallas Mavericks",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Cairns Taipans vs Washington Wizards",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Washington Wizards vs Cairns Taipans",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "New Zealand Breakers vs Portland Trail Blazers",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Portland Trail Blazers vs New Zealand Breakers",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Brooklyn Nets vs Ra'Anana",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Ra'Anana vs Brooklyn Nets",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Houston Rockets vs New Orleans Pelicans",
+      "games": 2,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "New Orleans Pelicans vs Houston Rockets",
+      "games": 2,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Minnesota Timberwolves vs New York Knicks",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "New York Knicks vs Minnesota Timberwolves",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Cairns Taipans vs Toronto Raptors",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Toronto Raptors vs Cairns Taipans",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Los Angeles Lakers vs Milwaukee Bucks",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Milwaukee Bucks vs Los Angeles Lakers",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Cleveland Cavaliers vs Ra'Anana",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Ra'Anana vs Cleveland Cavaliers",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Atlanta Hawks vs Indiana Pacers",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Indiana Pacers vs Atlanta Hawks",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "New Zealand Breakers vs Utah Jazz",
+      "games": 2,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Utah Jazz vs New Zealand Breakers",
+      "games": 2,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Minnesota Timberwolves vs Ra'Anana",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Ra'Anana vs Minnesota Timberwolves",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Chicago Bulls vs Minnesota Timberwolves",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Minnesota Timberwolves vs Chicago Bulls",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Flamengo vs Orlando Magic",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Orlando Magic vs Flamengo",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Atlanta Hawks vs Philadelphia 76ers",
+      "games": 2,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Philadelphia 76ers vs Atlanta Hawks",
+      "games": 2,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Golden State Warriors vs San Antonio Spurs",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "San Antonio Spurs vs Golden State Warriors",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Golden State Warriors vs Phoenix Suns",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Phoenix Suns vs Golden State Warriors",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Atlanta Hawks vs Charlotte Hornets",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Charlotte Hornets vs Atlanta Hawks",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Houston Rockets vs Orlando Magic",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Orlando Magic vs Houston Rockets",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Brooklyn Nets vs Cleveland Cavaliers",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Cleveland Cavaliers vs Brooklyn Nets",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Detroit Pistons vs Miami Heat",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Miami Heat vs Detroit Pistons",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Minnesota Timberwolves vs Toronto Raptors",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Toronto Raptors vs Minnesota Timberwolves",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Memphis Grizzlies vs New Orleans Pelicans",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "New Orleans Pelicans vs Memphis Grizzlies",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Dallas Mavericks vs San Antonio Spurs",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "San Antonio Spurs vs Dallas Mavericks",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Denver Nuggets vs Memphis Grizzlies",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Memphis Grizzlies vs Denver Nuggets",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Cleveland Cavaliers vs Oklahoma City Thunder",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Oklahoma City Thunder vs Cleveland Cavaliers",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Brooklyn Nets vs Dallas Mavericks",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Dallas Mavericks vs Brooklyn Nets",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Orlando Magic vs Portland Trail Blazers",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Portland Trail Blazers vs Orlando Magic",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Boston Celtics vs Denver Nuggets",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Denver Nuggets vs Boston Celtics",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Charlotte Hornets vs New York Knicks",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "New York Knicks vs Charlotte Hornets",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Detroit Pistons vs Milwaukee Bucks",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Milwaukee Bucks vs Detroit Pistons",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "New Zealand Breakers vs Philadelphia 76ers",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Philadelphia 76ers vs New Zealand Breakers",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Dallas Mavericks vs Memphis Grizzlies",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Memphis Grizzlies vs Dallas Mavericks",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Houston Rockets vs Utah Jazz",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Utah Jazz vs Houston Rockets",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Brooklyn Nets vs LA Clippers",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "LA Clippers vs Brooklyn Nets",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Minnesota Timberwolves vs Philadelphia 76ers",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Philadelphia 76ers vs Minnesota Timberwolves",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Detroit Pistons vs Golden State Warriors",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Golden State Warriors vs Detroit Pistons",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Portland Trail Blazers vs Ulm",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Ulm vs Portland Trail Blazers",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Atlanta Hawks vs Oklahoma City Thunder",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Oklahoma City Thunder vs Atlanta Hawks",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Atlanta Hawks vs Brooklyn Nets",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Brooklyn Nets vs Atlanta Hawks",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Charlotte Hornets vs Houston Rockets",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Houston Rockets vs Charlotte Hornets",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Memphis Grizzlies vs Utah Jazz",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Utah Jazz vs Memphis Grizzlies",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "LA Clippers vs Phoenix Suns",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Phoenix Suns vs LA Clippers",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Boston Celtics vs Washington Wizards",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Washington Wizards vs Boston Celtics",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Minnesota Timberwolves vs Sacramento Kings",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Sacramento Kings vs Minnesota Timberwolves",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Brooklyn Nets vs Orlando Magic",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Orlando Magic vs Brooklyn Nets",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Golden State Warriors vs Utah Jazz",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Utah Jazz vs Golden State Warriors",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "New Orleans Pelicans vs Portland Trail Blazers",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Portland Trail Blazers vs New Orleans Pelicans",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    }
+  ],
+  "form_strengths": [
+    {
+      "team": "ADELAIDE 36ers",
+      "strength": 53.3
+    },
+    {
+      "team": "Atlanta Hawks",
+      "strength": 78.0
+    },
+    {
+      "team": "Boston Celtics",
+      "strength": 82.0
+    },
+    {
+      "team": "Brooklyn Nets",
+      "strength": 54.7
+    },
+    {
+      "team": "Charlotte Hornets",
+      "strength": 67.3
+    },
+    {
+      "team": "Chicago Bulls",
+      "strength": 78.7
+    },
+    {
+      "team": "Cleveland Cavaliers",
+      "strength": 74.0
+    },
+    {
+      "team": "Dallas Mavericks",
+      "strength": 76.0
+    },
+    {
+      "team": "Denver Nuggets",
+      "strength": 58.7
+    },
+    {
+      "team": "Detroit Pistons",
+      "strength": 56.7
+    },
+    {
+      "team": "Golden State Warriors",
+      "strength": 88.0
+    },
+    {
+      "team": "Houston Rockets",
+      "strength": 75.3
+    },
+    {
+      "team": "Indiana Pacers",
+      "strength": 73.3
+    },
+    {
+      "team": "LA Clippers",
+      "strength": 74.7
+    },
+    {
+      "team": "Los Angeles Lakers",
+      "strength": 81.3
+    },
+    {
+      "team": "Maccabi Haifa",
+      "strength": 40.0
+    },
+    {
+      "team": "Memphis Grizzlies",
+      "strength": 74.7
+    },
+    {
+      "team": "Miami Heat",
+      "strength": 82.7
+    },
+    {
+      "team": "Milwaukee Bucks",
+      "strength": 64.0
+    },
+    {
+      "team": "Minnesota Timberwolves",
+      "strength": 65.3
+    },
+    {
+      "team": "New Orleans Pelicans",
+      "strength": 76.0
+    },
+    {
+      "team": "New York Knicks",
+      "strength": 73.3
+    },
+    {
+      "team": "New Zealand Breakers",
+      "strength": 40.0
+    },
+    {
+      "team": "Oklahoma City Thunder",
+      "strength": 85.3
+    },
+    {
+      "team": "Orlando Magic",
+      "strength": 78.0
+    },
+    {
+      "team": "Philadelphia 76ers",
+      "strength": 52.0
+    },
+    {
+      "team": "Phoenix Suns",
+      "strength": 72.0
+    },
+    {
+      "team": "Portland Trail Blazers",
+      "strength": 64.0
+    },
+    {
+      "team": "Ra'Anana",
+      "strength": 40.0
+    },
+    {
+      "team": "Sacramento Kings",
+      "strength": 52.0
+    },
+    {
+      "team": "San Antonio Spurs",
+      "strength": 60.0
+    },
+    {
+      "team": "Toronto Raptors",
+      "strength": 78.7
+    },
+    {
+      "team": "Utah Jazz",
+      "strength": 55.3
+    },
+    {
+      "team": "Washington Wizards",
+      "strength": 60.0
+    }
+  ],
+  "team_margin_ratings": [
+    {
+      "team": "ADELAIDE 36ers",
+      "avg_margin": -25
+    },
+    {
+      "team": "Atlanta Hawks",
+      "avg_margin": -4.9
+    },
+    {
+      "team": "Boston Celtics",
+      "avg_margin": 16.6
+    },
+    {
+      "team": "Brooklyn Nets",
+      "avg_margin": -2.6
+    },
+    {
+      "team": "Charlotte Hornets",
+      "avg_margin": -1.9
+    },
+    {
+      "team": "Chicago Bulls",
+      "avg_margin": -2.8
+    },
+    {
+      "team": "Cleveland Cavaliers",
+      "avg_margin": 3.2
+    },
+    {
+      "team": "Dallas Mavericks",
+      "avg_margin": 2.2
+    },
+    {
+      "team": "Denver Nuggets",
+      "avg_margin": -5.7
+    },
+    {
+      "team": "Detroit Pistons",
+      "avg_margin": 2.4
+    },
+    {
+      "team": "Golden State Warriors",
+      "avg_margin": 18.5
+    },
+    {
+      "team": "Houston Rockets",
+      "avg_margin": 1.5
+    },
+    {
+      "team": "Indiana Pacers",
+      "avg_margin": 0.6
+    },
+    {
+      "team": "LA Clippers",
+      "avg_margin": 5.3
+    },
+    {
+      "team": "Los Angeles Lakers",
+      "avg_margin": -7.5
+    },
+    {
+      "team": "Maccabi Haifa",
+      "avg_margin": -33.7
+    },
+    {
+      "team": "Memphis Grizzlies",
+      "avg_margin": -5.5
+    },
+    {
+      "team": "Miami Heat",
+      "avg_margin": -1.9
+    },
+    {
+      "team": "Milwaukee Bucks",
+      "avg_margin": -5.8
+    },
+    {
+      "team": "Minnesota Timberwolves",
+      "avg_margin": 4.2
+    },
+    {
+      "team": "New Orleans Pelicans",
+      "avg_margin": -2.5
+    },
+    {
+      "team": "New York Knicks",
+      "avg_margin": 1.4
+    },
+    {
+      "team": "New Zealand Breakers",
+      "avg_margin": -30.3
+    },
+    {
+      "team": "Oklahoma City Thunder",
+      "avg_margin": 11.8
+    },
+    {
+      "team": "Orlando Magic",
+      "avg_margin": 9.3
+    },
+    {
+      "team": "Philadelphia 76ers",
+      "avg_margin": 0.7
+    },
+    {
+      "team": "Phoenix Suns",
+      "avg_margin": 1
+    },
+    {
+      "team": "Portland Trail Blazers",
+      "avg_margin": -0.4
+    },
+    {
+      "team": "Ra'Anana",
+      "avg_margin": -38.3
+    },
+    {
+      "team": "Sacramento Kings",
+      "avg_margin": -5
+    },
+    {
+      "team": "San Antonio Spurs",
+      "avg_margin": -0.9
+    },
+    {
+      "team": "Toronto Raptors",
+      "avg_margin": 2.6
+    },
+    {
+      "team": "Utah Jazz",
+      "avg_margin": -5.5
+    },
+    {
+      "team": "Washington Wizards",
+      "avg_margin": -11.8
+    }
+  ]
+}

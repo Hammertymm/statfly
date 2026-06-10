@@ -1862,8 +1862,7 @@ function hydrateSnapshot() {
     if (Array.isArray(snap.results))  { ALL_RESULTS.length  = 0; ALL_RESULTS.push(...snap.results); }
     // Live scores go stale fast - only restore them from a very recent snapshot.
     if (age <= SNAPSHOT_LIVE_MS && Array.isArray(snap.live)) { ALL_LIVE.length = 0; ALL_LIVE.push(...snap.live); }
-    ALL_LIVE.forEach(computeFlyMatch);
-    ALL_UPCOMING.forEach(computeFlyMatch);
+    runFlyMatchSweep();
     ALL_UPCOMING.sort((a, b) => (a.eventMs || 0) - (b.eventMs || 0));
     lastUpdateMs = snap.ts;  // freshness line shows the snapshot's true age
     return true;
@@ -1934,8 +1933,7 @@ async function loadLiveData() {
   // FlyMatch rating: computed once per fixture per refresh and cached on each
   // match object. Cheap arithmetic, no network. Form + margins are added later
   // by loadTeamForm, which recomputes the affected upcoming matches.
-  ALL_LIVE.forEach(computeFlyMatch);
-  ALL_UPCOMING.forEach(computeFlyMatch);
+  runFlyMatchSweep();
 
   fireMatchNotifications(espnLive);
 
@@ -2001,7 +1999,7 @@ async function refreshLiveFeeds(feeds) {
   applyScoreFlashes(newLive);
   ALL_LIVE.length = 0; ALL_LIVE.push(...newLive);
   pruneResultsOfLive();
-  ALL_LIVE.forEach(computeFlyMatch);
+  runFlyMatchSweep();
 
   lastUpdateMs = Date.now(); lastPollFailed = false; renderFreshness();
   fireMatchNotifications(freshLive);
@@ -2225,7 +2223,7 @@ async function loadTeamForm(){
   });
 
   // Repaint now so any cached form shows immediately
-  if(cache && Object.keys(cache).length){ ALL_UPCOMING.forEach(computeFlyMatch); renderHome(); renderFlyLedger(); }
+  if(cache && Object.keys(cache).length){ runFlyMatchSweep(); renderHome(); renderFlyLedger(); }
 
   if(!needed.size) return;
   dlog(`ScoreFly form: fetching ${needed.size} team schedules`);
@@ -2262,7 +2260,7 @@ async function loadTeamForm(){
 
   if(touched){
     saveFormCache(cache);
-    ALL_UPCOMING.forEach(computeFlyMatch);
+    runFlyMatchSweep();
     renderHome();
     renderFlyLedger();
   }
@@ -2344,7 +2342,7 @@ async function loadRugbyLeagueForm(){
       }
     });
   });
-  if(touched){ saveFormCache(cache); ALL_UPCOMING.forEach(computeFlyMatch); renderHome(); renderFlyLedger(); }
+  if(touched){ saveFormCache(cache); runFlyMatchSweep(); renderHome(); renderFlyLedger(); }
 }
 
 // - TABS -
@@ -3512,6 +3510,107 @@ function fmImportanceScore(notes, seasonType){
   return 0;
 }
 
+// --- AFL FlyTime Engine v1.0 (production-locked research model) ---
+// Precomputed tables in afl-flytime-v1.json. AFL upcoming games use this
+// instead of computeFlyMatch. Scores all fixtures, ranks, flags top 2.
+let aflFlyV1 = null;
+
+const AFL_RESEARCH_NAMES = {
+  'North Melbourne Kangaroos': 'North Melbourne',
+  'Port Adelaide Power': 'Port Adelaide',
+  'Carlton Blues': 'Carlton',
+  'Collingwood Magpies': 'Collingwood',
+  'Essendon Bombers': 'Essendon',
+  'Fremantle Dockers': 'Fremantle',
+  'Gold Coast Suns': 'Gold Coast SUNS',
+  'Greater Western Sydney Giants': 'GWS GIANTS',
+  'Hawthorn Hawks': 'Hawthorn',
+  'Richmond Tigers': 'Richmond',
+  'St Kilda Saints': 'St Kilda',
+  'Melbourne Demons': 'Melbourne'
+};
+
+function aflResearchTeam(name) {
+  return AFL_RESEARCH_NAMES[name] || name;
+}
+
+function buildAflFlyV1Index(raw) {
+  const closeRates = {}, matchupRatings = {}, formStrength = {}, marginRating = {};
+  (raw.form_strengths || []).forEach(function(r) { formStrength[r.team] = r.strength; });
+  (raw.team_margin_ratings || []).forEach(function(r) { marginRating[r.team] = r.avg_margin; });
+  (raw.matchup_ratings || []).forEach(function(r) {
+    const parts = (r.matchup || '').split(' vs ');
+    if (parts.length !== 2) return;
+    const key = parts[0] + '|' + parts[1];
+    matchupRatings[key] = r.avg_excitement;
+    matchupRatings[parts[1] + '|' + parts[0]] = r.avg_excitement;
+  });
+  (raw.matchup_close_rates || []).forEach(function(r) {
+    const parts = (r.matchup || '').split(' vs ');
+    if (parts.length !== 2) return;
+    closeRates[parts[0] + '|' + parts[1]] = r.close_rate;
+    closeRates[parts[1] + '|' + parts[0]] = r.close_rate;
+  });
+  return { closeRates, matchupRatings, formStrength, marginRating };
+}
+
+function aflFlyTimeScore(m) {
+  if (!aflFlyV1) return null;
+  const home = aflResearchTeam(m.home), away = aflResearchTeam(m.away);
+  const mKey = home + '|' + away;
+  const closeRate = aflFlyV1.closeRates[mKey];
+  const matchupRating = aflFlyV1.matchupRatings[mKey];
+  const formHome = aflFlyV1.formStrength[home];
+  const formAway = aflFlyV1.formStrength[away];
+  const marginHome = aflFlyV1.marginRating[home];
+  const marginAway = aflFlyV1.marginRating[away];
+  if (closeRate == null || matchupRating == null ||
+      formHome == null || formAway == null ||
+      marginHome == null || marginAway == null) return null;
+  const formBalance = 100 - Math.abs(formHome - formAway);
+  const marginBalance = 100 - Math.abs(marginHome - marginAway);
+  return closeRate * 0.35 + formBalance * 0.25 + marginBalance * 0.25 + matchupRating * 0.15;
+}
+
+function applyAflFlyTimeV1() {
+  if (!aflFlyV1) return;
+  const afl = ALL_UPCOMING.filter(function(m) { return m.sportKey === 'australian-football'; });
+  afl.forEach(function(m) { m.isFlyMatch = false; m.flyMatchRating = 0; });
+  const scored = afl.map(function(m) { return { m: m, score: aflFlyTimeScore(m) }; })
+    .filter(function(x) { return x.score !== null; })
+    .sort(function(a, b) { return b.score - a.score; });
+  if (!scored.length) return;
+  const topN = Math.min(2, scored.length);
+  for (let i = 0; i < topN; i++) {
+    scored[i].m.isFlyMatch = true;
+    scored[i].m.flyMatchRating = Math.round(scored[i].score * 10) / 10;
+    ledgerPredict(scored[i].m);
+  }
+}
+
+async function loadAflFlyV1Data() {
+  try {
+    const res = await fetch('afl-flytime-v1.json');
+    if (!res.ok) return;
+    const raw = await res.json();
+    aflFlyV1 = buildAflFlyV1Index(raw);
+    runFlyMatchSweep();
+    renderHome();
+    renderFlyLedger();
+  } catch (e) { /* offline or missing file - AFL yellow flies stay off */ }
+}
+
+// Generic FlyMatch for non-AFL sports; AFL uses applyAflFlyTimeV1 above.
+function runFlyMatchSweep() {
+  ALL_LIVE.forEach(function(m) {
+    if (m.sportKey !== 'australian-football') computeFlyMatch(m);
+  });
+  ALL_UPCOMING.forEach(function(m) {
+    if (m.sportKey !== 'australian-football') computeFlyMatch(m);
+  });
+  applyAflFlyTimeV1();
+}
+
 // Main engine: sets m.flyMatchRating (0-100) and m.isFlyMatch (>= threshold).
 // Reads only fields already on the match object - no new network requests.
 function computeFlyMatch(m){
@@ -3971,6 +4070,7 @@ function onbFinish(){
 
 setTimeout(()=>{
   hydrateSnapshot();    // paint the last-known scores instantly, before any network
+  loadAflFlyV1Data();   // AFL FlyTime v1 tables (offline JSON, no ESPN calls)
   applyInitialFilter(); // returning users with teams land on My Teams
   renderHome();
   renderResults();

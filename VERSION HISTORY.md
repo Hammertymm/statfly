@@ -1,10 +1,10 @@
 # ScoreFly — Version History (V1 → V76)
 
-**Sources:** reconstructed from STATFLY.md’s changelog, the v69–v75 session handover, and the v76 session.
+**Sources:** reconstructed from SCOREFLY.md’s changelog, the v69–v75 session handover, and the v76 session.
 
 **Honesty note:** The recorded changelog only begins at **v20**. Everything before that, plus several intermediate cache bumps and sessions whose notes were never captured, has **no surviving record** — those are marked as gaps below rather than invented. Some versions were only ever logged as ranges (e.g. v20–v25); they’re kept as ranges here for the same reason.
 
-The app began life as **StatFly** and was rebranded to **ScoreFly** by v50. The GitHub repo, Pages URL and file paths still use `statfly`.
+The app began life as **StatFly** and was rebranded to **ScoreFly** by v50. The GitHub repo and Pages URL were renamed to `scorefly` in 2026; custom domain is `scorefly.app`.
 
 -----
 
@@ -53,7 +53,7 @@ No changelog exists for these. What the later entries imply was already present 
 
 -----
 
-## v50 – v60 — ScoreFly brand, onboarding, FlyTime Buzz, Fly Mode redesign
+## v50 – v60 — ScoreFly brand, onboarding, FlyTime ALL (formerly Buzz), Fly Mode redesign
 
 **v50** — **ScoreFly rebrand** present in code: wordmark, storage keys (`scorefly_*`), cache key (`scorefly-v50`). (Detailed change list for this version not logged.)
 
@@ -95,8 +95,8 @@ No changelog exists for these. What the later entries imply was already present 
 
 **v75 — “Final Touch-Up,” 11 items:**
 
-1. FlyBuzz notification copy — title “FlyBuzz”, body “X vs Y has entered FlyTime” / “N games have entered FlyTime”.
-1. Fly Mode mixes in non-followed FlyTime games **only when FlyBuzz is ON**.
+1. FlyTime ALL notification copy — title “FlyTime ALL”, body “X vs Y has entered FlyTime” / “N games have entered FlyTime”.
+1. Fly Mode mixes in non-followed FlyTime games **only when FlyTime ALL is ON**.
 1. Fly Mode pins FlyTime games to the top until the match completes.
 1. Team-logo plate opacity .07 → .10.
 1. Removed the Teams-screen subtitle.
@@ -116,7 +116,7 @@ No changelog exists for these. What the later entries imply was already present 
 - **#8** Countdown reduced 22 → 20px.
 - **#10** Header baseline lockup “D”: fly mark stays centred on “ScoreFly”; tagline drops to share ScoreFly’s baseline.
 
-*Items dispositioned but not built in v76: #2 (document card variants) and #7 (formalise freshness spec) are doc-only and pending the STATFLY.md sync; #5 (FlyTime placement) and #11 (status-badge width) were no-change; #9 (yellow border optical weight) was held.*
+*Items dispositioned but not built in v76: #2 (document card variants) and #7 (formalise freshness spec) are doc-only and pending the SCOREFLY.md sync; #5 (FlyTime placement) and #11 (status-badge width) were no-change; #9 (yellow border optical weight) was held.*
 
 -----
 

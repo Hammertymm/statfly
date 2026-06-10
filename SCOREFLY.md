@@ -4,11 +4,11 @@ Mobile-first sports scores app. Pure black UI, Apple-style typography, single se
 
 **Tagline:** Scores Anywhere. Simple.
 **Brand colour:** `#06f03c` (electric green; swapped from `#30d158` in the v69-v74 pixel-match pass)
-**Current file:** `index.html` (cache `scorefly-v83`)
-**Live URL:** [hammertymm.github.io/statfly](https://hammertymm.github.io/statfly)
-**Repo:** [github.com/Hammertymm/statfly](https://github.com/Hammertymm/statfly)
+**Current file:** `index.html` (cache `scorefly-v95`)
+**Live URL:** [scorefly.app](https://scorefly.app) · [hammertymm.github.io/scorefly](https://hammertymm.github.io/scorefly)
+**Repo:** [github.com/Hammertymm/scorefly](https://github.com/Hammertymm/scorefly)
 
-> **Name:** the app rebranded **StatFly -> ScoreFly** (by v50). The GitHub repo, Pages URL, and file paths still use `statfly` (lowercase) and are unchanged. In-app wordmark, storage keys (`scorefly_*`), and SW cache are all `scorefly`. The separate “StatFly Brand Style Guide” doc is now stale on the name; treat this doc as authoritative.
+> **Name:** the app rebranded **StatFly → ScoreFly** (by v50). Repo, Pages URL, and custom domain now use `scorefly`. In-app wordmark, storage keys (`scorefly_*`), and SW cache are all `scorefly`. Treat this doc as authoritative.
 
 **This single document is the source of truth.**
 
@@ -54,7 +54,7 @@ A fourth bottom-nav button opens **Fly Mode**: full-screen live scores for follo
 
 ## Onboarding
 
-**Single-hero onboarding (BUILT v68).** Onboarding now opens on ONE hero screen: the rebuilt poster `onboard-hero.png` (“We’ll Tell You When It Matters”, sells FlyTime/FlyBuzz visually, full-bleed) with a sticky “Choose My Teams” green button -> team selection (step 2) -> notifications (step 3). The old `onb-step-1` welcome content and the `onb-step-fly` “Meet FlyTime” screen are retired (the hero carries that message); `onb-step-fly` markup is left orphaned/unreachable. Flow is now Hero -> Pick teams -> Notifications. Notifications confirmed to come AFTER team selection: `onbAddTeam` and search-add both follow teams with `alert:false` (bell off), and `onbEnableNotifs` (step 3) sets `alert=true` on all followed teams only when permission is granted. The hero image is the bottom-cropped version of JRod’s render (the baked-in CTA pill removed so a real button can sit beneath), pre-cached in `sw.js`.
+**Single-hero onboarding (BUILT v68).** Onboarding now opens on ONE hero screen: the rebuilt poster `onboard-hero.png` (“We’ll Tell You When It Matters”, sells FlyTime/FlyTime ALL visually, full-bleed) with a sticky “Choose My Teams” green button -> team selection (step 2) -> notifications (step 3). The old `onb-step-1` welcome content and the `onb-step-fly` “Meet FlyTime” screen are retired (the hero carries that message); `onb-step-fly` markup is left orphaned/unreachable. Flow is now Hero -> Pick teams -> Notifications. Notifications confirmed to come AFTER team selection: `onbAddTeam` and search-add both follow teams with `alert:false` (bell off), and `onbEnableNotifs` (step 3) sets `alert=true` on all followed teams only when permission is granted. The hero image is the bottom-cropped version of JRod’s render (the baked-in CTA pill removed so a real button can sit beneath), pre-cached in `sw.js`.
 
 First-run flow triggered when `scorefly_onboarded` is not set in localStorage. Four screens, led by FlyTime and guided by the **SupaFly** mascot (introduced v51). Step navigation is `onbGoStep(n)`, which hides every `.onb-step` by class and shows the target by id, so it accepts both numeric ids and the string `'fly'`.
 
@@ -146,25 +146,25 @@ History of this dial (so we do not repeat it): pre-v78 the model was popularity-
 
 **KNOWN OPEN ISSUE - margin data may not be loading.** The whole model leans on `m.homeMargins`/`m.awayMargins`, set by the async per-team schedule fetch (`loadTeamForm` -> `fetchTeamForm` -> `parseTeamForm`). This has NEVER been confirmed to work on a live day. v83 added a **“Margin data ready for X of Y upcoming games”** readout to the FlyTime accuracy ledger (Teams tab): if X is low, few/no yellow flies is a DATA problem (schedules not loading), not a threshold one. That number is the first thing to read on a match day before any further tuning.
 
-### FlyTime Buzz (notifications)
+### FlyTime ALL (notifications)
 
-Two opt-ins share one dedupe set (`flytimeAlerted`, persisted to `scorefly_flytime`) so a match buzzes at most once when it first crosses INTO Fly Time:
+Two opt-ins share one dedupe set (`flytimeAlerted`, persisted to `scorefly_flytime`) so a match alerts at most once when it first crosses INTO Fly Time:
 
 - **Team alert** — a followed team with the bell on. Copy: “🪰 FlyTime” / “Your team is in a close finish” + score line.
-- **FlyTime ALL** (labelled “FlyTime ALL” since v77; internals still `flyTimeBuzz`) - global toggle on the Teams tab (`scorefly_flytime_buzz`, default off), fires for ANY live match. Copy: title “FlyTime”, body “X vs Y has entered FlyTime” / “N games have entered FlyTime”.
+- **FlyTime ALL** — global toggle on the Teams tab (`scorefly_flytime_all`, default off; migrates legacy `scorefly_flytime_buzz`), fires for ANY live match. Copy: title “FlyTime ALL”, body “X vs Y has entered FlyTime” / “N games have entered FlyTime”.
 
 Score lines use Fly Mode 3-letter codes (`abbrev`). Sending is **debounced**: `fireFlyTimeAlert` queues; `flushFlyTimeAlerts` sends ~1.2s later (v53).
 
-- **Batching** — several matches crossing in one poll collapse into one summary buzz: “🪰 FlyTime / N games worth watching / Open ScoreFly”.
-- **Cooldown** — after 3 buzzes in 15 minutes (`flyAlertTimes`), everything batches into summaries until the window clears.
-- **No exit buzz** — fires only on entry, never when Fly Time ends.
+- **Batching** — several matches crossing in one poll collapse into one summary alert: “🪰 FlyTime / N games worth watching / Open ScoreFly”.
+- **Cooldown** — after 3 alerts in 15 minutes (`flyAlertTimes`), everything batches into summaries until the window clears.
+- **No exit alert** — fires only on entry, never when Fly Time ends.
 - **Tap** — `flyTimeNotifClick` focuses the app, switches to Feed, scrolls to the FlyTime section.
 
 Delivery uses page-context `new Notification` (reliable while the app is open or backgrounded). True closed-app background push needs a service-worker push subscription — not built; native-track item.
 
 ### “Worth watching now” feed section (v52)
 
-When any live game is in Fly Time, `renderHome` lifts those matches out of the live list into a pinned green-headed section (`#flytime-section` / `#flytime-cards`) at the top of the Feed. Hidden entirely when nothing is in Fly Time. Also the FlyTime Buzz tap destination. The section is feed *organisation* and is kept; its cards are built by `buildLiveCard`, so each now carries the green fly icon in the corner (v66) - the old per-card `🪰 FLYTIME` badge (`flyTimeBannerHTML`) was retired.
+When any live game is in Fly Time, `renderHome` lifts those matches out of the live list into a pinned green-headed section (`#flytime-section` / `#flytime-cards`) at the top of the Feed. Hidden entirely when nothing is in Fly Time. Also the FlyTime ALL tap destination. The section is feed *organisation* and is kept; its cards are built by `buildLiveCard`, so each now carries the green fly icon in the corner (v66) - the old per-card `🪰 FLYTIME` badge (`flyTimeBannerHTML`) was retired.
 
 ### After-match Fly stamp (v54)
 
@@ -329,9 +329,9 @@ Pure black `#000000` everywhere. No dark grey, no gradients.
 
 ## Deployment (GitHub Pages, edit-on-phone)
 
-Repo files: `index.html`, `sw.js`, `manifest.json`, `icon192.png`, `icon512.png`, `icon-*.png` (per-sport fallback icons), `fly-green.png`, `fly-yellow.png`, `fly-red.png`, `knob.png` (brightness slider), `onboard-hero.png`, `onboard-notif.png`, `supafly-*.png`, `README.md`, `NOTES.md`, `STATFLY.md`, `VERSION HISTORY.md`, `.nojekyll`. (Leftover test files still in the repo, safe to delete: `nrl-feed-test.html`, `statfly v41 patcher.html`, `statfly splash.png`. `supafly-score.png` is precached but unused since the v78 onboarding swap.)
+Repo files: `index.html`, `sw.js`, `manifest.json`, `icon192.png`, `icon512.png`, `icon-*.png` (per-sport fallback icons), `fly-green.png`, `fly-yellow.png`, `fly-red.png`, `knob.png` (brightness slider), `onboard-hero.png`, `onboard-notif.png`, `supafly-*.png`, `README.md`, `NOTES.md`, `SCOREFLY.md`, `VERSION HISTORY.md`, `CNAME`, `.nojekyll`. (`supafly-score.png` is precached but unused since the v78 onboarding swap.)
 
-Steps: edit in GitHub web UI, commit, wait ~30s for Pages rebuild, refresh on phone. **Every deploy that touches HTML/CSS/JS/icons: bump `CACHE` in `sw.js` to a higher number.** Current: **`scorefly-v83`**. For an installed PWA, removing + re-adding the Home Screen icon forces a stale cache to clear.
+Steps: edit in GitHub web UI, commit, wait ~30s for Pages rebuild, refresh on phone. **Every deploy that touches HTML/CSS/JS/icons: bump `CACHE` in `sw.js` to a higher number.** Current: **`scorefly-v95`**. For an installed PWA, removing + re-adding the Home Screen icon forces a stale cache to clear.
 
 -----
 
@@ -354,7 +354,7 @@ Steps: edit in GitHub web UI, commit, wait ~30s for Pages rebuild, refresh on ph
 
 *Keep / verify only, no build (6):*
 
-- **(1) Live-first ordering**, **(3) FlyTime as supporting intelligence** (not the headline), **(8) Results screen** as-is, **(9) upcoming-in-feed sort**, **(10) current FlyTime visuals** (now the coloured fly, v66), **(11) current FlyTime Buzz**. All confirmed good; just verify on a live day.
+- **(1) Live-first ordering**, **(3) FlyTime as supporting intelligence** (not the headline), **(8) Results screen** as-is, **(9) upcoming-in-feed sort**, **(10) current FlyTime visuals** (now the coloured fly, v66), **(11) current FlyTime ALL**. All confirmed good; just verify on a live day.
 
 *Rejected (do not revisit):*
 
@@ -419,7 +419,7 @@ Steps: edit in GitHub web UI, commit, wait ~30s for Pages rebuild, refresh on ph
 |Freshness line                 |“Updated X ago / reconnecting” at top of Feed                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
 |FlyState                       |8-state colour-fill on live scores + Fly Mode (untouched by v66)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
 |FlyTime indicator              |Single coloured fly icon in a fixed top-right slot: green=live in FlyTime, yellow=upcoming predicted (`computeFlyMatch`), red=finished reached FlyTime. Own system; no banners/pills/text/extra borders. Locked spec (v66)                                                                                                                                                                                                                                                                                                                        |
-|FlyTime Buzz                   |Teams-tab toggle (global) + followed-team alerts; one buzz per match on FlyTime entry; debounced batching + 3-per-15-min cooldown; tap opens FlyTime section (v53)                                                                                                                                                                                                                                                                                                                                                                                |
+|FlyTime ALL                    |Teams-tab toggle (global) + followed-team alerts; one alert per match on FlyTime entry; debounced batching + 3-per-15-min cooldown; tap opens FlyTime section (v53; renamed from FlyTime Buzz v77)                                                                                                                                                                                                                                                                                                                                               |
 |Worth watching now             |Pinned FlyTime section at top of Feed kept; per-card badge replaced by the green fly icon (v66)                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
 |After-match indicator          |Result cards show the red fly icon if the app saw the match enter FlyTime; per-device, 35-day prune, not retroactive (v54, icon v66)                                                                                                                                                                                                                                                                                                                                                                                                              |
 |Rivalries                      |REMOVED entirely in v78 (data, helpers, skull marker, onboarding slot, FlyMatch bonus). Do not reintroduce without a fresh decision.                                                                                                                                                                                                                                                                                                                                                                                                              |
@@ -449,8 +449,8 @@ Steps: edit in GitHub web UI, commit, wait ~30s for Pages rebuild, refresh on ph
 **v80** — FlyMatch gate + sharper competitiveness. Added a hard gate requiring BOTH teams to have recent margin history before flagging (so competitiveness alone could not float every game over the line), and steepened competitiveness via `FLYMATCH_COMP_GAP` (0.5) so real mismatches reach 0. Correct in principle but later proved too strict given flaky margin data (see v83). `sw.js` -> v80.
 **v79** — Fly Mode font swapped to Overpass (free Interstate-style highway font, Google Fonts) at weights 800-900 for across-the-room legibility; chain `'Overpass','Inter',monospace`. Fly Mode text only. `sw.js` -> v79.
 **v78** — New FlyTime predictor + rivalry removal + onboarding poster swap. (1) `computeFlyMatch` rebuilt as a close-game-led 0-100 model (close-margin profile 45 + competitiveness 30 + form 10, importance additive; popularity/quality/rivalry dropped); margins now captured in `parseTeamForm` + NRL path, form cache `v4 -> v5`. (2) Rivalry system deleted entirely (data, helpers, skull marker, onboarding slot, bonus). (3) Onboarding welcome + notifications screens swapped to new full-bleed posters (`onboard-hero.png` / `onboard-notif.png`). `sw.js` -> v78.
-**v77** — FlyTime accuracy ledger (Teams tab, predicted vs reached) and the global toggle renamed “FlyTime Buzz” -> “FlyTime ALL” (internals still `flyTimeBuzz`).
-**v75-v76** — UI polish. v75 “Final Touch-Up” (11 items): FlyBuzz notification copy, Fly Mode mixes in non-followed FlyTime games only when the toggle is on + pins FlyTime games to top, poll tiers 8s FlyTime / 12s live / 30s soon / 60s idle, Fly Mode nav icon +20%, WNBA made searchable (added to USA group). v76: 6 CSS/markup alignment tweaks (freshness band, upcoming-name alignment, league-badge anchor, section-spacing tokens, countdown size, header baseline).
+**v77** — FlyTime accuracy ledger (Teams tab, predicted vs reached) and the global toggle renamed “FlyTime Buzz” -> “FlyTime ALL”.
+**v75-v76** — UI polish. v75 “Final Touch-Up” (11 items): FlyTime ALL notification copy, Fly Mode mixes in non-followed FlyTime games only when the toggle is on + pins FlyTime games to top, poll tiers 8s FlyTime / 12s live / 30s soon / 60s idle, Fly Mode nav icon +20%, WNBA made searchable (added to USA group). v76: 6 CSS/markup alignment tweaks (freshness band, upcoming-name alignment, league-badge anchor, section-spacing tokens, countdown size, header baseline).
 **v69-v74** — Card UI pixel-match phase (logged as one phase): Feed/Results cards matched to reference screenshots by forensic measurement (card gap, height, border, radius, team-name/score/logo/wordmark sizes). **Brand green changed `#30d158` -> `#06f03c`** (all rgba literals swapped).
 **v68** — Single-hero onboarding + household-list expansion + local-pick prominence.
 **v67** — Onboarding recommendation engine made data-driven + upgraded; yellow-fly calibration fix. (1) Added `METRO_TEAMS` (name->metro side-car for ~45 US/Canada/Australia/NZ multi-sport cities) and `TEAM_METRO` inverted lookup; `teamState` now reads it (exact name, city granularity), so onboarding Positions 1-2 finally fire. (2) Rewrote `onbGetSuggestions` to spec quality: 2 Local (same metro, DIFFERENT league than anchor, distinct leagues, household names first via `isMajorClub`), 2 Same country (different sport, biggest names), 2 Same league (rivals first via `rivalNamesOf`/`RIVAL_PAIRS`), with cascade backfill to always return 6 and a 4-country/2-league fallback when the anchor has no metro. Verified against example anchors (Knicks->Yankees+Rangers, Adelaide Crows->Strikers+United, Lakers->Dodgers+Chargers, Liverpool->Man Utd+Arsenal). (3) Yellow fix: importance was an averaged term scored 0 for every regular-season game, capping marquee matchups below the old 3.5 cutoff -> almost no yellow flies. Importance is now an additive bonus (`FLYMATCH_IMPORTANCE_BONUS = 1.2`), removed from `FLYMATCH_WEIGHTS`; `FLYMATCH_THRESHOLD` lowered 3.5 -> 3.0. No new assets; `sw.js` bumped. Static checks pass (unicode, page order, JS syntax); yellow frequency still wants a live-day glance. NOTE: the single-hero onboarding screen is a design, not yet in code; the engine it feeds is built.

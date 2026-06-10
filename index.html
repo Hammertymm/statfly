@@ -215,7 +215,7 @@
   .del-btn:active{background:rgba(255,69,58,.12);}
   .bell-hint{display:flex;align-items:center;gap:10px;margin:10px 4px 4px;font-size:12px;color:var(--text-3);}
   .bell-hint-icon{font-size:16px;opacity:.9;}
-  /* FlyTime Buzz - global close-finish alert toggle (Teams tab) */
+  /* FlyTime ALL - global close-finish alert toggle (Teams tab) */
   .buzz-card{display:flex;align-items:center;gap:12px;background:var(--card);border:1px solid var(--sep);border-radius:12px;padding:12px 14px;margin:0 0 4px;}
   .ledger-card{background:var(--card);border:1px solid var(--sep);border-radius:12px;padding:12px 14px;margin:0 0 4px;}
   .ledger-grid{display:flex;gap:8px;margin-bottom:10px;}
@@ -925,7 +925,7 @@
       <div class="buzz-title">Never miss a close finish</div>
       <div class="buzz-desc">Get notified whenever a game anywhere enters FlyTime.</div>
     </div>
-    <div class="buzz-switch" id="buzz-switch" onclick="toggleFlyBuzz()"><div class="buzz-knob"></div></div>
+    <div class="buzz-switch" id="buzz-switch" onclick="toggleFlyTimeAll()"><div class="buzz-knob"></div></div>
   </div>
 
   <div class="teams-title">FlyTime accuracy</div>
@@ -2555,8 +2555,8 @@ function fireMatchNotifications(liveMatches){
 // FlyTime alerts. Two independent opt-ins share ONE dedupe set (flytimeAlerted) so a
 // match buzzes at most once when it first crosses INTO FlyTime, even if both apply:
 //   1. Team alert  - a followed team with the bell on.
-//   2. FlyTime Buzz - a global toggle that fires for ANY live match, followed or not.
-// Followed-team matches get the personal alert; every other match gets the global buzz;
+//   2. FlyTime ALL - a global toggle that fires for ANY live match, followed or not.
+// Followed-team matches get the personal alert; every other match gets the global alert;
 // a match that qualifies for both still buzzes once (the team alert wins). On iPhone the
 // notification IS the buzz (iOS has no web vibration); navigator.vibrate is a bonus on Android.
 const flytimeAlerted = new Set(
@@ -2566,49 +2566,58 @@ function saveFlytimeAlerted(){
   try{ localStorage.setItem('scorefly_flytime', JSON.stringify([...flytimeAlerted])); }catch(e){}
 }
 
-// FlyTime Buzz: global opt-in, default OFF. Persisted separately from team bell alerts.
-let flyTimeBuzz = localStorage.getItem('scorefly_flytime_buzz') === 'true';
-function renderFlyBuzz(){
-  const sw = document.getElementById('buzz-switch');
-  if(sw) sw.classList.toggle('on', flyTimeBuzz);
+// FlyTime ALL: global opt-in, default OFF. Persisted separately from team bell alerts.
+const FLYTIME_ALL_KEY = 'scorefly_flytime_all';
+function loadFlyTimeAll(){
+  if(localStorage.getItem(FLYTIME_ALL_KEY) != null)
+    return localStorage.getItem(FLYTIME_ALL_KEY) === 'true';
+  return localStorage.getItem('scorefly_flytime_buzz') === 'true'; // legacy key
 }
-function toggleFlyBuzz(){
+function saveFlyTimeAll(on){
+  try{ localStorage.setItem(FLYTIME_ALL_KEY, on ? 'true' : 'false'); }catch(e){}
+}
+let flyTimeAll = loadFlyTimeAll();
+function renderFlyTimeAll(){
+  const sw = document.getElementById('buzz-switch');
+  if(sw) sw.classList.toggle('on', flyTimeAll);
+}
+function toggleFlyTimeAll(){
   // Turning OFF is always allowed.
-  if(flyTimeBuzz){
-    flyTimeBuzz = false;
-    localStorage.setItem('scorefly_flytime_buzz', 'false');
-    renderFlyBuzz();
+  if(flyTimeAll){
+    flyTimeAll = false;
+    saveFlyTimeAll(false);
+    renderFlyTimeAll();
     return;
   }
   // Turning ON - notifications are required. Ask if we have not decided yet.
   if('Notification' in window && Notification.permission === 'default'){
     Notification.requestPermission().then(perm => {
       const ok = perm === 'granted';
-      flyTimeBuzz = ok;
-      localStorage.setItem('scorefly_flytime_buzz', ok ? 'true' : 'false');
+      flyTimeAll = ok;
+      saveFlyTimeAll(ok);
       if(!ok) alert('Notifications are required for FlyTime ALL.');
-      renderFlyBuzz();
+      renderFlyTimeAll();
     });
     return;
   }
   if('Notification' in window && Notification.permission === 'denied'){
     alert('Notifications are blocked. Turn them on for ScoreFly in your browser settings to use FlyTime ALL.');
-    flyTimeBuzz = false;
-    localStorage.setItem('scorefly_flytime_buzz', 'false');
-    renderFlyBuzz();
+    flyTimeAll = false;
+    saveFlyTimeAll(false);
+    renderFlyTimeAll();
     return;
   }
   // Permission already granted (or Notification unsupported - allow the toggle either way).
-  flyTimeBuzz = true;
-  localStorage.setItem('scorefly_flytime_buzz', 'true');
-  renderFlyBuzz();
+  flyTimeAll = true;
+  saveFlyTimeAll(true);
+  renderFlyTimeAll();
 }
 
 let flyAlertQueue=[];
 let flyAlertTimer=null;
 let flyAlertTimes=[];   // recent send timestamps for the 3-per-15-min cooldown
 
-// Bring the user to the first FlyTime live card when they tap a buzz.
+// Bring the user to the first FlyTime live card when they tap a FlyTime ALL alert.
 function flyTimeNotifClick(){
   try{ window.focus(); }catch(e){}
   try{ goTab('home',null,'nb-home'); }catch(e){}
@@ -2618,8 +2627,8 @@ function flyTimeNotifClick(){
   }catch(e){}
 }
 
-// Send queued FlyTime buzzes. One per match max (deduped on enqueue). Several matches
-// crossing in the same poll collapse into one summary buzz. After 3 buzzes in 15 minutes
+// Send queued FlyTime ALL alerts. One per match max (deduped on enqueue). Several matches
+// crossing in the same poll collapse into one summary alert. After 3 alerts in 15 minutes
 // everything batches into summaries to protect notification quality.
 function flushFlyTimeAlerts(){
   flyAlertTimer=null;
@@ -2649,8 +2658,8 @@ function flushFlyTimeAlerts(){
   }catch(e){}
 }
 
-// Queue a FlyTime buzz the first time a match crosses INTO FlyTime. Gated by either a
-// followed team (bell on) or the global FlyTime Buzz toggle. Sending is debounced so
+// Queue a FlyTime alert the first time a match crosses INTO FlyTime. Gated by either a
+// followed team (bell on) or the global FlyTime ALL toggle. Sending is debounced so
 // simultaneous crossings batch together (see flushFlyTimeAlerts).
 function fireFlyTimeAlert(m){
   if(flytimeAlerted.has(m.id)) return;
@@ -2660,7 +2669,7 @@ function fireFlyTimeAlert(m){
   const followed = alertKeys.size > 0 && [...alertKeys].some(k =>
     h===k || a===k || h.includes(k) || a.includes(k) || k.includes(h) || k.includes(a)
   );
-  if(!followed && !flyTimeBuzz) return;
+  if(!followed && !flyTimeAll) return;
   flytimeAlerted.add(m.id);
   saveFlytimeAlerted();
   flyAlertQueue.push({ id:m.id, home:m.home, away:m.away, hInt:m.hInt, aInt:m.aInt, followed });
@@ -3154,8 +3163,8 @@ function buildFlyModeGrid() {
     if (noFavs) return true;
     const fav = favNames.includes(m.home.toLowerCase()) || favNames.includes(m.away.toLowerCase());
     if (fav) return true;
-    // Rec 2: when FlyBuzz is on, also surface non-followed matches currently in FlyTime.
-    if (flyTimeBuzz && getMatchFly(m.id) === 'flytime') return true;
+    // Rec 2: when FlyTime ALL is on, also surface non-followed matches currently in FlyTime.
+    if (flyTimeAll && getMatchFly(m.id) === 'flytime') return true;
     return false;
   });
   // Rec 3: a match that has entered FlyTime pins to the top and stays pinned until it
@@ -4205,18 +4214,18 @@ function onbEnableNotifs(){
     Notification.requestPermission().then(function(perm){
       if(perm==='granted'){
         // Item 7: teams stay bell-OFF; instead default the global FlyTime ALL toggle ON.
-        flyTimeBuzz = true;
-        localStorage.setItem('scorefly_flytime_buzz', 'true');
-        renderFlyBuzz();
+        flyTimeAll = true;
+        saveFlyTimeAll(true);
+        renderFlyTimeAll();
       }
       onbFinish();
     });
     return;
   }
   if('Notification' in window && Notification.permission==='granted'){
-    flyTimeBuzz = true;
-    localStorage.setItem('scorefly_flytime_buzz', 'true');
-    renderFlyBuzz();
+    flyTimeAll = true;
+    saveFlyTimeAll(true);
+    renderFlyTimeAll();
   }
   onbFinish();
 }
@@ -4237,7 +4246,7 @@ setTimeout(()=>{
   renderHome();
   renderResults();
   renderFavs();
-  renderFlyBuzz();
+  renderFlyTimeAll();
   renderFlyLedger();
   if(localStorage.getItem('scorefly_onboarded')) hideSuggestedSection();
   // Item 7: returning (onboarded) users resume on whichever tab they last used.

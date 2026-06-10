@@ -3,13 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>StatFly QA</title>
+<title>ScoreFly QA</title>
 <meta name="robots" content="noindex,nofollow">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap">
 <style>
-  /* StatFly design tokens (kept in sync with index.html) */
+  /* ScoreFly design tokens (kept in sync with index.html) */
   :root{
     --bg:#000000; --card:#111114; --card2:#1c1c1e;
     --live:#30d158; --upcoming:#ffd60a; --result:#ff453a;
@@ -127,7 +127,7 @@
 
 <script>
 /* -------------------------------------------------------------------------
-   StatFly QA harness.
+   ScoreFly QA harness.
 
    Two buttons:
    - RUN FULL TEST SUITE : ~29 static + logic checks (no network to ESPN).
@@ -263,7 +263,7 @@ function runFileChecks(idx, sw, man){
   // Service worker ---------------------------------------------------------
   if(!sw){ test('Service worker','fail','Could not load sw.js.'); }
   else {
-    var cacheMatch = sw.match(/statfly-v(\d+)/);
+    var cacheMatch = sw.match(/scorefly-v(\d+)/);
     var swOk = [
       /serviceWorker\.register\(\s*['"]sw\.js['"]\s*\)/.test(idx||''),
       !!cacheMatch,
@@ -305,18 +305,18 @@ function runFileChecks(idx, sw, man){
 
   if(idx){
     // Favourites ----------------------------------------------------------
-    var favOk = /'statfly_favs'/.test(idx) && /function saveFavs/.test(idx);
+    var favOk = /'scorefly_favs'/.test(idx) && /function saveFavs/.test(idx);
     test('Favourites', favOk?'pass':'fail',
-        favOk ? "Persisted under 'statfly_favs' via saveFavs()." : "Missing 'statfly_favs' and/or saveFavs().");
+        favOk ? "Persisted under 'scorefly_favs' via saveFavs()." : "Missing 'scorefly_favs' and/or saveFavs().");
 
     // Bell states ---------------------------------------------------------
-    var bellOk = /\.alert\b/.test(idx) && /function toggleAlert/.test(idx) && /'statfly_favs'/.test(idx);
+    var bellOk = /\.alert\b/.test(idx) && /function toggleAlert/.test(idx) && /'scorefly_favs'/.test(idx);
     test('Bell states', bellOk?'pass':'fail',
         bellOk ? 'Per-team .alert flag toggled by toggleAlert(), stored with favourites.'
                : 'Missing .alert flag / toggleAlert() / favourites persistence.');
 
     // FlyTime alert persistence -------------------------------------------
-    var ftKey = /'statfly_flytime'/.test(idx);
+    var ftKey = /'scorefly_flytime'/.test(idx);
     var ftPat = /JSON\.stringify\(\[\.\.\.flytimeAlerted\]\)/.test(idx);
     var ftRt=false;
     try {
@@ -327,15 +327,15 @@ function runFileChecks(idx, sw, man){
       ftRt = back.has('evt1') && back.has('evt2');
     } catch(e){}
     test('FlyTime alert persistence', (ftKey&&ftPat&&ftRt)?'pass':'fail',
-        (ftKey&&ftPat&&ftRt) ? "Alerted-match Set saved to 'statfly_flytime'; Set round-trip verified."
+        (ftKey&&ftPat&&ftRt) ? "Alerted-match Set saved to 'scorefly_flytime'; Set round-trip verified."
                              : 'Missing flytime key / serialize pattern, or Set round-trip failed.');
 
     // Notified + form cache keys ------------------------------------------
-    var ntKey = /'statfly_notified'/.test(idx);
+    var ntKey = /'scorefly_notified'/.test(idx);
     var ntPat = /JSON\.stringify\(\[\.\.\.notifiedMatchIds\]\)/.test(idx);
-    var fcKey = /FORM_CACHE_KEY\s*=\s*'statfly_form_cache_v\d+'/.test(idx);
+    var fcKey = /FORM_CACHE_KEY\s*=\s*'scorefly_form_cache_v\d+'/.test(idx);
     test('Notified + form cache', (ntKey&&ntPat&&fcKey)?'pass':'fail',
-        (ntKey&&ntPat&&fcKey) ? "'statfly_notified' Set persisted; versioned form cache key present."
+        (ntKey&&ntPat&&fcKey) ? "'scorefly_notified' Set persisted; versioned form cache key present."
                               : 'Missing notified key/pattern or versioned form-cache key.');
 
     // ESPN feed arrays empty (no mock data) -------------------------------
@@ -503,9 +503,9 @@ function runLogicChecks(app, idx){
 
   // Onboarding wiring ------------------------------------------------------
   if(idx){
-    var obOk = /id="onboard-overlay"/.test(idx) && /'statfly_onboarded'/.test(idx);
+    var obOk = /id="onboard-overlay"/.test(idx) && /'scorefly_onboarded'/.test(idx);
     test('Onboarding wiring', obOk?'pass':'fail',
-        obOk ? "Onboarding overlay present and gated by 'statfly_onboarded'." : "Missing onboarding overlay or gate flag.");
+        obOk ? "Onboarding overlay present and gated by 'scorefly_onboarded'." : "Missing onboarding overlay or gate flag.");
   }
 
   // espnStatus date sanity (v17 fix) ---------------------------------------
@@ -817,9 +817,9 @@ async function flyRun(app, idx){
   ftest('Notification','Permission state','informational', perm, true, '');
   var hasFn = typeof win.fireFlyTimeAlert==='function';
   ftest('Notification','FlyTime notification function','function', typeof win.fireFlyTimeAlert, hasFn, 'fireFlyTimeAlert is missing');
-  var callOk=true, cErr='', beforeFt=localStorage.getItem('statfly_flytime');
+  var callOk=true, cErr='', beforeFt=localStorage.getItem('scorefly_flytime');
   try { win.fireFlyTimeAlert({id:'__QA_NF_'+Date.now()+'__', home:'Zzz Nonexistent United', away:'Qqq Imaginary City'}); } catch(e){ callOk=false; cErr=e.message; }
-  var afterFt=localStorage.getItem('statfly_flytime');
+  var afterFt=localStorage.getItem('scorefly_flytime');
   ftest('Notification','FlyTime notification callable','no exception', callOk?'ok':'threw', callOk, 'fireFlyTimeAlert threw: '+cErr);
   ftest('Notification','Followed-team filtering','a non-followed team raises no alert', (beforeFt===afterFt)?'history unchanged':'history changed', beforeFt===afterFt, 'A non-followed team was recorded as alerted');
   var bellSrc=/favs\.filter\(f=>f\.alert\)/.test(idx);
@@ -827,24 +827,24 @@ async function flyRun(app, idx){
 
   // ---- Section 8: Storage (real save / reload / re-read; restores after) --
   flygroup('Section 8 - Storage round-trip');
-  var bkKeys=['statfly_favs','statfly_flytime','statfly_notified'], bk={};
+  var bkKeys=['scorefly_favs','scorefly_flytime','scorefly_notified'], bk={};
   bkKeys.forEach(function(kk){ bk[kk]=localStorage.getItem(kk); });
   try {
     var testFav=[{key:'__QA__|__QA__', name:'QA Probe FC', league:'__QA__ League', flag:'', leagueEmoji:'', alert:true}];
-    localStorage.setItem('statfly_favs', JSON.stringify(testFav));
+    localStorage.setItem('scorefly_favs', JSON.stringify(testFav));
     var app2 = await waitForApp(true);                  // genuine page reload
     var d2 = app2.doc;
-    var parsed = JSON.parse(localStorage.getItem('statfly_favs')||'[]'), first = parsed[0]||{};
+    var parsed = JSON.parse(localStorage.getItem('scorefly_favs')||'[]'), first = parsed[0]||{};
     ftest('Storage','Followed teams persist','QA Probe FC after reload', first.name||'(none)', first.name==='QA Probe FC', 'Favourite not restored after reload');
     ftest('Storage','Bell state persist','alert = true after reload', String(first.alert), first.alert===true, 'Bell state not restored');
     var dom = d2.getElementById('team-list-wrap');
     var shows = !!(dom && dom.innerHTML.indexOf('QA Probe FC')>-1), bellOn = !!(dom && /bell-btn on/.test(dom.innerHTML));
     ftest('Storage','App re-reads favourites','team list shows it with bell ON', shows?(bellOn?'shown, bell on':'shown, bell off'):'not shown', shows&&bellOn, 'App did not render the restored favourite/bell');
-    var fset=new Set(['m1','m2']); localStorage.setItem('statfly_flytime', JSON.stringify(Array.from(fset)));
-    var fback=new Set(JSON.parse(localStorage.getItem('statfly_flytime')));
+    var fset=new Set(['m1','m2']); localStorage.setItem('scorefly_flytime', JSON.stringify(Array.from(fset)));
+    var fback=new Set(JSON.parse(localStorage.getItem('scorefly_flytime')));
     ftest('Storage','FlyTime alert history persist','m1, m2 survive', Array.from(fback).join(','), fback.has('m1')&&fback.has('m2'), 'FlyTime history round-trip failed');
-    localStorage.setItem('statfly_notified', JSON.stringify(['n1']));
-    var nback=JSON.parse(localStorage.getItem('statfly_notified'));
+    localStorage.setItem('scorefly_notified', JSON.stringify(['n1']));
+    var nback=JSON.parse(localStorage.getItem('scorefly_notified'));
     ftest('Storage','Notified history persist','n1 survives', (nback||[]).join(','), (nback||[]).indexOf('n1')>-1, 'Notified round-trip failed');
     ftestSkip('Storage','FlyMode state persistence','Not stored by design - Fly Mode always starts closed after reload.');
   } catch(e){

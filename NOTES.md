@@ -1,14 +1,14 @@
-# StatFly Notes
+# ScoreFly Notes
 
 Running log of decisions, dead ends, and things worth remembering.
 
 ## Hosting & deploy
 
-- **Live URL:** <https://hammertymm.github.io/statfly>
-- **Repo:** <https://github.com/Hammertymm/statfly>
+- **Live URL:** <https://scorefly.app> (GitHub Pages: <https://hammertymm.github.io/scorefly>)
+- **Repo:** <https://github.com/Hammertymm/scorefly>
 - **Hosting:** GitHub Pages (Netlify abandoned – credits ran out)
 - **Deploy:** edit files in GitHub via Safari, commit, wait ~30s, refresh phone
-- **Cache:** bump `CACHE` constant in `sw.js` every deploy that touches HTML/CSS/JS/icons. Currently `statfly-v40`.
+- **Cache:** bump `CACHE` constant in `sw.js` every deploy that touches HTML/CSS/JS/icons. Currently `scorefly-v95`.
 
 ## Current feeds (34 live)
 
@@ -140,7 +140,7 @@ Blue cold > white. Overtime outranks FlyTime at match level (kept; not in the V2
   inning >=8. Tennis + cricket deliberately excluded (data not in feed).
 - **FlyTime alert**: one notification on first entry, followed+bell teams only (deliberate
   deviation from spec’s “no filtering” to avoid match-day spam). iOS has no web vibration,
-  so the notification IS the buzz. Dedupe set `flytimeAlerted` (localStorage `statfly_flytime`).
+  so the notification IS the buzz. Dedupe set `flytimeAlerted` (localStorage `scorefly_flytime`).
 - **Drought Blue**: fires independently after basketball 4 min / AFL 12 min with no score
   (`coldMins` in `FLY_TUNING`, wall-clock based), or the older relative rule.
 - **Rivalry marker**: skull beside the league tag on live/upcoming cards. Editable

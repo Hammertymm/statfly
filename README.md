@@ -4,8 +4,7 @@
 
 A mobile-first sports scores web app. Live scores, fixtures, and recent results from 35 leagues — follow any of 619 teams across 19 countries and international competitions. No login, no ads, no clutter.
 
-**Live:** [hammertymm.github.io/statfly](https://hammertymm.github.io/statfly)
-*(custom domain `scorefly.app` coming soon)*
+**Live:** [scorefly.app](https://scorefly.app) · [hammertymm.github.io/scorefly](https://hammertymm.github.io/scorefly)
 
 -----
 
@@ -36,7 +35,7 @@ The score numbers change colour to show what’s *happening* in a game, not just
 - **Blue** — a team has gone cold
 - **White** — even contest
 
-Turn on a team’s bell and ScoreFly sends you one alert the moment its match enters FlyTime, so you never miss a great finish. Switch on **FlyTime Buzz** to get that alert for *any* close game, not just the teams you follow.
+Turn on a team’s bell and ScoreFly sends you one alert the moment its match enters FlyTime, so you never miss a great finish. Switch on **FlyTime ALL** to get that alert for *any* close game, not just the teams you follow.
 
 -----
 
@@ -62,7 +61,7 @@ The searchable follow list goes wider still — **40 competitions, 619 teams and
 
 ScoreFly is a **PWA** (Progressive Web App) — no App Store needed.
 
-1. Open [hammertymm.github.io/statfly](https://hammertymm.github.io/statfly) in Safari (iOS) or Chrome (Android)
+1. Open [scorefly.app](https://scorefly.app) in Safari (iOS) or Chrome (Android)
 1. Tap **Share** → **Add to Home Screen**
 1. Done — it works like a native app and loads instantly, even offline
 

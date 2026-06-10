@@ -1,6 +1,6 @@
 // ScoreFly service worker
 // Bump CACHE on every deploy so devices pick up the new files.
-const CACHE = 'scorefly-v92';
+const CACHE = 'scorefly-v93';
 
 // App shell + icons. Relative paths so it works under the /statfly/ GitHub Pages path.
 const SHELL = [

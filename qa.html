@@ -382,13 +382,10 @@ function runLogicChecks(app, idx){
     t.push(ft({sportKey:'soccer',hInt:1,aInt:1,clockRaw:'85'})===true);
     t.push(ft({sportKey:'soccer',hInt:1,aInt:1,clockRaw:'60'})===false);
     t.push(ft({sportKey:'soccer',hInt:3,aInt:1,clockRaw:'85'})===false);
-    t.push(ft({sportKey:'tennis',period:3,tennisMaxSets:3,tennisSetGamesHome:3,tennisSetGamesAway:3})===true);
-    t.push(ft({sportKey:'tennis',period:3,tennisMaxSets:3,tennisSetGamesHome:4,tennisSetGamesAway:3})===false);
-    t.push(ft({sportKey:'tennis',period:5,tennisMaxSets:5,tennisSetGamesHome:3,tennisSetGamesAway:3})===true);
     t.push(ft({sportKey:'cricket',cricketRunsReq:15,cricketOversLeft:1.5})===true);
     t.push(ft({sportKey:'cricket',cricketRunsReq:25,cricketOversLeft:1})===false);
     test('FlyTime logic', allTrue(t)?'pass':'fail',
-        allTrue(t) ? 'Basketball, football, soccer, tennis, cricket windows correct ('+t.length+' cases).'
+        allTrue(t) ? 'Basketball, football, soccer, cricket windows correct ('+t.length+' cases).'
                    : 'A FlyTime case returned the wrong verdict.');
   } catch(e){ test('FlyTime logic','fail','isFlyTime threw: '+e.message); }
 
@@ -737,10 +734,6 @@ async function flyRun(app, idx){
         'allowed margin '+allowed9.toFixed(2)+', actual 18 -> '+(exp9?'TRUE':'FALSE'),
         act9, act9===exp9, 'isFlyTime disagrees with the possession formula');
   ftest('FlyState','Basketball 0:24 / margin 2','FALSE', bbFT(24,2), bbFT(24,2)===false, 'Allowed margin near the buzzer is only ~1.5');
-  function tnFT(setNum,hg,ag,max){ return ft({sportKey:'tennis', period:setNum, tennisMaxSets:max||3, tennisSetGamesHome:hg, tennisSetGamesAway:ag}); }
-  ftest('FlyState','Tennis Bo3 set 3 at 3-3','TRUE', tnFT(3,3,3,3), tnFT(3,3,3,3)===true, 'Decider set tied 3-3');
-  ftest('FlyState','Tennis Bo5 set 5 at 3-3','TRUE', tnFT(5,3,3,5), tnFT(5,3,3,5)===true, 'Bo5 decider set 3-3');
-  ftest('FlyState','Tennis set 2 at 3-3','FALSE', tnFT(2,3,3,3), tnFT(2,3,3,3)===false, 'Not the decider set');
   function ckFT(req,ov){ return ft({sportKey:'cricket', cricketRunsReq:req, cricketOversLeft:ov}); }
   ftest('FlyState','Cricket T20 15 off 1.5 overs','TRUE', ckFT(15,1.5), ckFT(15,1.5)===true, 'Within 20 runs and 2 overs');
   ftest('FlyState','Cricket T20 25 off 1 over','FALSE', ckFT(25,1), ckFT(25,1)===false, 'Too many runs required');
@@ -864,7 +857,7 @@ async function flyRun(app, idx){
 
   // ---- Section 9: Stress (500 synthetic matches, uses restored app) -------
   flygroup('Section 9 - Stress (500 synthetic matches)');
-  var sports=['basketball','football','hockey','baseball','soccer','australian-football','tennis','cricket'];
+  var sports=['basketball','football','hockey','baseball','soccer','australian-football','cricket'];
   var okMatch=['','flytime','overtime'], ex=0, badState=0, badFT=0, N=500;
   for(var s=0;s<N;s++){
     try {

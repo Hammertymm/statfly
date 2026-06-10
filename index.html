@@ -1035,8 +1035,6 @@ const ESPN_FEEDS = [
   { sport:'basketball', league:'wnba',  label:'WNBA', emoji:'🏀' },
   { sport:'basketball', league:'mens-college-basketball', label:'NCAAM', emoji:'🏀' },
   { sport:'football',   league:'college-football',        label:'NCAAF', emoji:'🏈' },
-  { sport:'tennis',     league:'atp',   label:'ATP', emoji:'🎾' },
-  { sport:'tennis',     league:'wta',   label:'WTA', emoji:'🎾' },
   { sport:'rugby-league', league:'3',   label:'NRL', emoji:'🏉' },
 ];
 
@@ -1054,7 +1052,7 @@ const FEED_LEAGUE_NAME = {
   'arg.1':'Liga Profesional','mex.1':'Liga MX','aus.1':'A-League',
   'irl.1':'League of Ireland','ind.1':'ISL Football','rsa.1':'PSL Football',
   'conmebol.libertadores':'Copa Libertadores','eng.w.1':"Women's Super League",
-  'afl':'AFL','8048':'Indian Premier League','3':'NRL','atp':'ATP Tennis','wta':'WTA Tennis'
+  'afl':'AFL','8048':'Indian Premier League','3':'NRL'
 };
 
 // Loose league-name match: lowercase, drop accents and punctuation/spacing so
@@ -1373,12 +1371,6 @@ function nrlTeam(name) {
   return { name: name, abbr: (name || '').slice(0, 3).toUpperCase() };
 }
 
-function competitorName(c) {
-  return (c.team && (c.team.displayName || c.team.name)) ||
-    (c.athlete && (c.athlete.displayName || c.athlete.shortName || c.athlete.fullName)) ||
-    'Player';
-}
-
 function cricketChaseFields(comp) {
   const reg = (comp.format && comp.format.regulation) || {};
   const maxOvers = reg.overs || null;
@@ -1402,34 +1394,6 @@ function cricketChaseFields(comp) {
   };
 }
 
-function tennisSetGames(comp, home, away) {
-  const maxSets = (comp.format && comp.format.regulation && comp.format.regulation.periods) || 3;
-  const setNum = (comp.status && comp.status.period) || 0;
-  const idx = setNum - 1;
-  const hg = (home.linescores && home.linescores[idx] && home.linescores[idx].value);
-  const ag = (away.linescores && away.linescores[idx] && away.linescores[idx].value);
-  return { tennisMaxSets: maxSets, tennisSetGamesHome: hg, tennisSetGamesAway: ag };
-}
-
-// Tennis tournaments nest matches under groupings; flatten to one event per match.
-function espnEventsFromFeed(json, feed) {
-  if (feed.sport !== 'tennis') return json.events || [];
-  const out = [];
-  (json.events || []).forEach(function(ev) {
-    (ev.groupings || []).forEach(function(grp) {
-      (grp.competitions || []).forEach(function(comp) {
-        out.push({
-          id: comp.id || ev.id,
-          date: comp.date || ev.date,
-          name: ev.name,
-          competitions: [comp]
-        });
-      });
-    });
-  });
-  return out;
-}
-
 function mapEspnEvent(event, feed) {
   const comp        = event.competitions?.[0];
   if (!comp) return null;
@@ -1440,8 +1404,8 @@ function mapEspnEvent(event, feed) {
   const timer       = espnTimer(comp, feed.label, feed.sport);
   const dateLabel   = espnDateLabel(event.date);
   const countdown   = espnCountdown(event.date);
-  let homeName      = competitorName(home);
-  let awayName      = competitorName(away);
+  let homeName      = home.team?.displayName || home.team?.name || 'Home';
+  let awayName      = away.team?.displayName || away.team?.name || 'Away';
   // ESPN sometimes supplies team.uid like "s:40~l:59~t:16" instead of team.id.
   // Also try the competitor's own .id as a last resort.
   function extractId(c){
@@ -1516,7 +1480,6 @@ function mapEspnEvent(event, feed) {
       clockRaw: comp?.status?.displayClock || '',
       isOT:     detectOT(feed, comp),
     };
-    if (feed.sport === 'tennis') Object.assign(live, tennisSetGames(comp, home, away));
     if (feed.sport === 'cricket') Object.assign(live, cricketChaseFields(comp));
     return live;
   }
@@ -1657,16 +1620,6 @@ function momTier(mom) {
 // 20:00 (incl. time-on). Other US sports clocks count DOWN (time remaining).
 const AFL_FLY_Q4_ELAPSED_SEC = 20 * 60;
 
-// Tennis: Bo3 -> 3-3 in set 3; Bo5 -> 3-3 in set 5 (decider set only).
-function isTennisFlyTime(m) {
-  const maxSets = m.tennisMaxSets || 3;
-  const setNum = m.period || 0;
-  if (setNum !== maxSets) return false;
-  const hg = m.tennisSetGamesHome, ag = m.tennisSetGamesAway;
-  if (hg == null || ag == null) return false;
-  return hg === 3 && ag === 3;
-}
-
 // Cricket T20: chasing side needs <=20 runs with <=2 overs left.
 function isCricketFlyTime(m) {
   if (m.cricketRunsReq == null || m.cricketOversLeft == null) return false;
@@ -1693,7 +1646,6 @@ function isFlyTime(m) {
       const minute = parseInt(m.clockRaw, 10) || 0;
       return minute >= 80 && margin <= 1;
     }
-    case 'tennis':              return isTennisFlyTime(m);
     case 'cricket':             return isCricketFlyTime(m);
     default: return false;
   }
@@ -1977,7 +1929,7 @@ async function loadLiveData() {
     const json = await espnFetch(feed.sport, feed.league, win);
     if (!json) return;
     coveredSports.add(feed.label);
-    espnEventsFromFeed(json, feed).forEach(ev => {
+    (json.events || []).forEach(ev => {
       const m = mapEspnEvent(ev, feed);
       if (!m) return;
       const st = espnStatus(ev.competitions?.[0]);
@@ -2063,7 +2015,7 @@ async function refreshLiveFeeds(feeds) {
     const json = await espnFetch(feed.sport, feed.league, { back: 1, fwd: 1 });
     if (!json) return;
     covered.add(feed.label);
-    espnEventsFromFeed(json, feed).forEach(ev => {
+    (json.events || []).forEach(ev => {
       const m = mapEspnEvent(ev, feed);
       if (!m) return;
       const st = espnStatus(ev.competitions?.[0]);
@@ -2150,7 +2102,7 @@ function scheduleNextPoll() {
 }
 
 // - TEAM FORM (last 5 results) -
-// Team sports only. Tennis/cricket excluded because the W/D/L model does not fit.
+// Team sports only. Cricket excluded because the W/D/L model does not fit.
 const FORM_TEAM_SPORTS = new Set([
   'basketball','football','baseball','hockey','soccer','australian-football'
   // rugby-league parked: ESPN does not expose an NRL team-schedule endpoint
@@ -2722,7 +2674,7 @@ const ALL_UPCOMING=[];
 // - RESULTS - populated by ESPN API only
 const ALL_RESULTS=[];
 
-// - CURATED LEAGUES & TEAMS (38 leagues · 20 countries) -
+// - CURATED LEAGUES & TEAMS (36 leagues · 20 countries) -
 const LEAGUES={
   // - TIER 1: massive global audiences -
   'England':     [{n:'Premier League',e:'⚽'},{n:'Championship',e:'⚽'},{n:'Women\'s Super League',e:'⚽'}],
@@ -2746,7 +2698,7 @@ const LEAGUES={
   'Pakistan':    [{n:'Pakistan Super League',e:'🏏'}],
   'New Zealand': [{n:'Super Rugby Pacific',e:'🏉'}],
   // - GLOBAL / MULTI-NATION -
-  'Global':      [{n:'UEFA Champions League',e:'🏆'},{n:'UEFA Europa League',e:'🏆'},{n:'Copa Libertadores',e:'🏆'},{n:'ATP Tennis',e:'🎾'},{n:'WTA Tennis',e:'🎾'},{n:'ICC Cricket (ODI)',e:'🏏'},{n:'ICC Cricket (T20)',e:'🏏'},{n:'Six Nations Rugby',e:'🏉'}],
+  'Global':      [{n:'UEFA Champions League',e:'🏆'},{n:'UEFA Europa League',e:'🏆'},{n:'Copa Libertadores',e:'🏆'},{n:'ICC Cricket (ODI)',e:'🏏'},{n:'ICC Cricket (T20)',e:'🏏'},{n:'Six Nations Rugby',e:'🏉'}],
 };
 
 const TEAMS={
@@ -2806,8 +2758,6 @@ const TEAMS={
   'UEFA Champions League':['AC Milan','Arsenal','Atletico Madrid','Barcelona','Bayern Munich','Benfica','Borussia Dortmund','Chelsea','Inter Milan','Liverpool','Manchester City','Napoli','Paris Saint-Germain','Porto','RB Leipzig','Real Madrid'],
   'UEFA Europa League':   ['Ajax','Atalanta','Bayer Leverkusen','Feyenoord','Lazio','Liverpool','Manchester United','Roma','Sevilla','Sporting CP','Villarreal','West Ham United'],
   'Copa Libertadores':    ['Atletico Mineiro','Boca Juniors','Flamengo','Fluminense','Nacional','Palmeiras','Peñarol','Racing Club','River Plate','Vélez Sársfield'],
-  'ATP Tennis':    ['Alexander Zverev','Andrey Rublev','Ben Shelton','Carlos Alcaraz','Casper Ruud','Daniil Medvedev','Holger Rune','Hubert Hurkacz','Jannik Sinner','Novak Djokovic','Sebastian Korda','Stefanos Tsitsipas','Taylor Fritz','Tommy Paul'],
-  'WTA Tennis':    ['Aryna Sabalenka','Coco Gauff','Elena Rybakina','Iga Swiatek','Jessica Pegula','Karolina Muchova','Madison Keys','Marketa Vondrousova'],
   'ICC Cricket (ODI)': ['Afghanistan','Australia','Bangladesh','England','India','Ireland','New Zealand','Pakistan','South Africa','Sri Lanka','West Indies','Zimbabwe'],
   'ICC Cricket (T20)': ['Afghanistan','Australia','Bangladesh','England','India','Ireland','New Zealand','Pakistan','South Africa','Sri Lanka','West Indies'],
   'Six Nations Rugby': ['England','France','Ireland','Italy','Scotland','Wales'],
@@ -2834,7 +2784,7 @@ function logoImg(src, emoji) {
 // Photo sport icons (exact balls from the brand image, backgrounds already transparent).
 // Keys are JS unicode escapes of the emoji stored in feed.emoji / LEAGUES.e (ASCII-safe).
 // \u26BD soccer  \uD83C\uDFC0 basketball  \uD83C\uDFC8 gridiron(NFL)  \uD83D\uDD34 AFL
-// \u26BE baseball  \uD83C\uDFD2 hockey  \uD83C\uDFCF cricket  \uD83C\uDFBE tennis
+// \u26BE baseball  \uD83C\uDFD2 hockey  \uD83C\uDFCF cricket
 // \uD83C\uDFC9 rugby  \uD83C\uDFC6 cup competitions (use the soccer ball)
 const SPORT_IMGS={
   '\u26BD':'icon-soccer.png',
@@ -2844,7 +2794,6 @@ const SPORT_IMGS={
   '\u26BE':'icon-baseball.png',
   '\uD83C\uDFD2':'icon-hockey.png',
   '\uD83C\uDFCF':'icon-cricket.png',
-  '\uD83C\uDFBE':'icon-tennis.png',
   '\uD83C\uDFC9':'icon-rugby.png',
   '\uD83C\uDFC6':'icon-cup.png'
 };
@@ -3873,7 +3822,7 @@ function flyScoreDebugHTML(m) {
     score = flyV1ScoreForMatch(m);
     tag = eng.tag;
     thr = eng.threshold;
-  } else if (m.sportKey === 'tennis' || m.sportKey === 'cricket') {
+  } else if (m.sportKey === 'cricket') {
     return '<span class="fly-debug-score na">—</span>';
   } else {
     if (m.flyMatchRating == null || m.flyMatchRating === 0) computeFlyMatch(m);

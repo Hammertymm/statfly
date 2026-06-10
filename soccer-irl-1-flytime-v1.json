@@ -1,0 +1,2172 @@
+{
+  "meta": {
+    "sport": "League of Ireland",
+    "league": "irl.1",
+    "engine": "v1-bootstrap",
+    "formula": "close*0.35 + form_balance*0.25 + margin_balance*0.25 + matchup*0.15",
+    "close_margin": 1,
+    "games_sampled": 566,
+    "week_chunk": 5,
+    "built": "2026-06-10"
+  },
+  "matchup_ratings": [
+    {
+      "matchup": "Derry City vs UCD",
+      "games_played": 5,
+      "avg_margin": 4,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "UCD vs Derry City",
+      "games_played": 5,
+      "avg_margin": 4,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Cork vs St Patrick's Athletic",
+      "games_played": 5,
+      "avg_margin": 1.2,
+      "avg_excitement": 74.0
+    },
+    {
+      "matchup": "St Patrick's Athletic vs Cork",
+      "games_played": 5,
+      "avg_margin": 1.2,
+      "avg_excitement": 74.0
+    },
+    {
+      "matchup": "Bohemians vs Finn Harps",
+      "games_played": 9,
+      "avg_margin": 1.33,
+      "avg_excitement": 63.33
+    },
+    {
+      "matchup": "Finn Harps vs Bohemians",
+      "games_played": 9,
+      "avg_margin": 1.33,
+      "avg_excitement": 63.33
+    },
+    {
+      "matchup": "Bohemians vs UCD",
+      "games_played": 4,
+      "avg_margin": 3,
+      "avg_excitement": 52.5
+    },
+    {
+      "matchup": "UCD vs Bohemians",
+      "games_played": 4,
+      "avg_margin": 3,
+      "avg_excitement": 52.5
+    },
+    {
+      "matchup": "Derry City vs Shamrock Rovers",
+      "games_played": 13,
+      "avg_margin": 0.77,
+      "avg_excitement": 76.15
+    },
+    {
+      "matchup": "Shamrock Rovers vs Derry City",
+      "games_played": 13,
+      "avg_margin": 0.77,
+      "avg_excitement": 76.15
+    },
+    {
+      "matchup": "Sligo Rovers vs St Patrick's Athletic",
+      "games_played": 15,
+      "avg_margin": 1.4,
+      "avg_excitement": 58.0
+    },
+    {
+      "matchup": "St Patrick's Athletic vs Sligo Rovers",
+      "games_played": 15,
+      "avg_margin": 1.4,
+      "avg_excitement": 58.0
+    },
+    {
+      "matchup": "Cork vs Waterford",
+      "games_played": 4,
+      "avg_margin": 0.75,
+      "avg_excitement": 92.5
+    },
+    {
+      "matchup": "Waterford vs Cork",
+      "games_played": 4,
+      "avg_margin": 0.75,
+      "avg_excitement": 92.5
+    },
+    {
+      "matchup": "Dundalk vs Finn Harps",
+      "games_played": 7,
+      "avg_margin": 1.57,
+      "avg_excitement": 64.29
+    },
+    {
+      "matchup": "Finn Harps vs Dundalk",
+      "games_played": 7,
+      "avg_margin": 1.57,
+      "avg_excitement": 64.29
+    },
+    {
+      "matchup": "Shamrock Rovers vs Waterford",
+      "games_played": 10,
+      "avg_margin": 2.2,
+      "avg_excitement": 36.0
+    },
+    {
+      "matchup": "Waterford vs Shamrock Rovers",
+      "games_played": 10,
+      "avg_margin": 2.2,
+      "avg_excitement": 36.0
+    },
+    {
+      "matchup": "Dundalk vs UCD",
+      "games_played": 5,
+      "avg_margin": 2.6,
+      "avg_excitement": 32.0
+    },
+    {
+      "matchup": "UCD vs Dundalk",
+      "games_played": 5,
+      "avg_margin": 2.6,
+      "avg_excitement": 32.0
+    },
+    {
+      "matchup": "Cork vs Sligo Rovers",
+      "games_played": 5,
+      "avg_margin": 1.2,
+      "avg_excitement": 60.0
+    },
+    {
+      "matchup": "Sligo Rovers vs Cork",
+      "games_played": 5,
+      "avg_margin": 1.2,
+      "avg_excitement": 60.0
+    },
+    {
+      "matchup": "Derry City vs Waterford",
+      "games_played": 8,
+      "avg_margin": 1.12,
+      "avg_excitement": 71.25
+    },
+    {
+      "matchup": "Waterford vs Derry City",
+      "games_played": 8,
+      "avg_margin": 1.12,
+      "avg_excitement": 71.25
+    },
+    {
+      "matchup": "Bohemians vs Shamrock Rovers",
+      "games_played": 13,
+      "avg_margin": 1.31,
+      "avg_excitement": 65.38
+    },
+    {
+      "matchup": "Shamrock Rovers vs Bohemians",
+      "games_played": 13,
+      "avg_margin": 1.31,
+      "avg_excitement": 65.38
+    },
+    {
+      "matchup": "Dundalk vs Sligo Rovers",
+      "games_played": 14,
+      "avg_margin": 1.57,
+      "avg_excitement": 54.29
+    },
+    {
+      "matchup": "Sligo Rovers vs Dundalk",
+      "games_played": 14,
+      "avg_margin": 1.57,
+      "avg_excitement": 54.29
+    },
+    {
+      "matchup": "Cork vs Dundalk",
+      "games_played": 5,
+      "avg_margin": 2.4,
+      "avg_excitement": 34.0
+    },
+    {
+      "matchup": "Dundalk vs Cork",
+      "games_played": 5,
+      "avg_margin": 2.4,
+      "avg_excitement": 34.0
+    },
+    {
+      "matchup": "Finn Harps vs St Patrick's Athletic",
+      "games_played": 6,
+      "avg_margin": 1.17,
+      "avg_excitement": 65.0
+    },
+    {
+      "matchup": "St Patrick's Athletic vs Finn Harps",
+      "games_played": 6,
+      "avg_margin": 1.17,
+      "avg_excitement": 65.0
+    },
+    {
+      "matchup": "Bohemians vs Waterford",
+      "games_played": 10,
+      "avg_margin": 1.3,
+      "avg_excitement": 66.0
+    },
+    {
+      "matchup": "Waterford vs Bohemians",
+      "games_played": 10,
+      "avg_margin": 1.3,
+      "avg_excitement": 66.0
+    },
+    {
+      "matchup": "St Patrick's Athletic vs UCD",
+      "games_played": 4,
+      "avg_margin": 1.25,
+      "avg_excitement": 70.0
+    },
+    {
+      "matchup": "UCD vs St Patrick's Athletic",
+      "games_played": 4,
+      "avg_margin": 1.25,
+      "avg_excitement": 70.0
+    },
+    {
+      "matchup": "Finn Harps vs Sligo Rovers",
+      "games_played": 8,
+      "avg_margin": 1.25,
+      "avg_excitement": 61.25
+    },
+    {
+      "matchup": "Sligo Rovers vs Finn Harps",
+      "games_played": 8,
+      "avg_margin": 1.25,
+      "avg_excitement": 61.25
+    },
+    {
+      "matchup": "Cork vs Finn Harps",
+      "games_played": 3,
+      "avg_margin": 0.33,
+      "avg_excitement": 96.67
+    },
+    {
+      "matchup": "Finn Harps vs Cork",
+      "games_played": 3,
+      "avg_margin": 0.33,
+      "avg_excitement": 96.67
+    },
+    {
+      "matchup": "Bohemians vs Derry City",
+      "games_played": 11,
+      "avg_margin": 0.64,
+      "avg_excitement": 87.27
+    },
+    {
+      "matchup": "Derry City vs Bohemians",
+      "games_played": 11,
+      "avg_margin": 0.64,
+      "avg_excitement": 87.27
+    },
+    {
+      "matchup": "Sligo Rovers vs UCD",
+      "games_played": 4,
+      "avg_margin": 1.75,
+      "avg_excitement": 30.0
+    },
+    {
+      "matchup": "UCD vs Sligo Rovers",
+      "games_played": 4,
+      "avg_margin": 1.75,
+      "avg_excitement": 30.0
+    },
+    {
+      "matchup": "Dundalk vs Waterford",
+      "games_played": 7,
+      "avg_margin": 1,
+      "avg_excitement": 80.0
+    },
+    {
+      "matchup": "Waterford vs Dundalk",
+      "games_played": 7,
+      "avg_margin": 1,
+      "avg_excitement": 80.0
+    },
+    {
+      "matchup": "Shamrock Rovers vs St Patrick's Athletic",
+      "games_played": 12,
+      "avg_margin": 1.08,
+      "avg_excitement": 71.67
+    },
+    {
+      "matchup": "St Patrick's Athletic vs Shamrock Rovers",
+      "games_played": 12,
+      "avg_margin": 1.08,
+      "avg_excitement": 71.67
+    },
+    {
+      "matchup": "Dundalk vs Shamrock Rovers",
+      "games_played": 11,
+      "avg_margin": 1.55,
+      "avg_excitement": 65.45
+    },
+    {
+      "matchup": "Shamrock Rovers vs Dundalk",
+      "games_played": 11,
+      "avg_margin": 1.55,
+      "avg_excitement": 65.45
+    },
+    {
+      "matchup": "Cork vs Derry City",
+      "games_played": 5,
+      "avg_margin": 1.6,
+      "avg_excitement": 56.0
+    },
+    {
+      "matchup": "Derry City vs Cork",
+      "games_played": 5,
+      "avg_margin": 1.6,
+      "avg_excitement": 56.0
+    },
+    {
+      "matchup": "Bohemians vs Cork",
+      "games_played": 5,
+      "avg_margin": 2,
+      "avg_excitement": 52.0
+    },
+    {
+      "matchup": "Cork vs Bohemians",
+      "games_played": 5,
+      "avg_margin": 2,
+      "avg_excitement": 52.0
+    },
+    {
+      "matchup": "Derry City vs Dundalk",
+      "games_played": 14,
+      "avg_margin": 0.93,
+      "avg_excitement": 75.71
+    },
+    {
+      "matchup": "Dundalk vs Derry City",
+      "games_played": 14,
+      "avg_margin": 0.93,
+      "avg_excitement": 75.71
+    },
+    {
+      "matchup": "St Patrick's Athletic vs Waterford",
+      "games_played": 9,
+      "avg_margin": 1.56,
+      "avg_excitement": 53.33
+    },
+    {
+      "matchup": "Waterford vs St Patrick's Athletic",
+      "games_played": 9,
+      "avg_margin": 1.56,
+      "avg_excitement": 53.33
+    },
+    {
+      "matchup": "Finn Harps vs UCD",
+      "games_played": 4,
+      "avg_margin": 0.25,
+      "avg_excitement": 97.5
+    },
+    {
+      "matchup": "UCD vs Finn Harps",
+      "games_played": 4,
+      "avg_margin": 0.25,
+      "avg_excitement": 97.5
+    },
+    {
+      "matchup": "Shamrock Rovers vs Sligo Rovers",
+      "games_played": 12,
+      "avg_margin": 1.42,
+      "avg_excitement": 56.67
+    },
+    {
+      "matchup": "Sligo Rovers vs Shamrock Rovers",
+      "games_played": 12,
+      "avg_margin": 1.42,
+      "avg_excitement": 56.67
+    },
+    {
+      "matchup": "Sligo Rovers vs Waterford",
+      "games_played": 8,
+      "avg_margin": 1.38,
+      "avg_excitement": 60.0
+    },
+    {
+      "matchup": "Waterford vs Sligo Rovers",
+      "games_played": 8,
+      "avg_margin": 1.38,
+      "avg_excitement": 60.0
+    },
+    {
+      "matchup": "Bohemians vs Dundalk",
+      "games_played": 11,
+      "avg_margin": 0.91,
+      "avg_excitement": 78.18
+    },
+    {
+      "matchup": "Dundalk vs Bohemians",
+      "games_played": 11,
+      "avg_margin": 0.91,
+      "avg_excitement": 78.18
+    },
+    {
+      "matchup": "Cork vs UCD",
+      "games_played": 4,
+      "avg_margin": 1.75,
+      "avg_excitement": 47.5
+    },
+    {
+      "matchup": "UCD vs Cork",
+      "games_played": 4,
+      "avg_margin": 1.75,
+      "avg_excitement": 47.5
+    },
+    {
+      "matchup": "Finn Harps vs Shamrock Rovers",
+      "games_played": 6,
+      "avg_margin": 2.17,
+      "avg_excitement": 31.67
+    },
+    {
+      "matchup": "Shamrock Rovers vs Finn Harps",
+      "games_played": 6,
+      "avg_margin": 2.17,
+      "avg_excitement": 31.67
+    },
+    {
+      "matchup": "Bohemians vs St Patrick's Athletic",
+      "games_played": 13,
+      "avg_margin": 1.23,
+      "avg_excitement": 55.38
+    },
+    {
+      "matchup": "St Patrick's Athletic vs Bohemians",
+      "games_played": 13,
+      "avg_margin": 1.23,
+      "avg_excitement": 55.38
+    },
+    {
+      "matchup": "Shamrock Rovers vs UCD",
+      "games_played": 5,
+      "avg_margin": 1.4,
+      "avg_excitement": 58.0
+    },
+    {
+      "matchup": "UCD vs Shamrock Rovers",
+      "games_played": 5,
+      "avg_margin": 1.4,
+      "avg_excitement": 58.0
+    },
+    {
+      "matchup": "Finn Harps vs Waterford",
+      "games_played": 4,
+      "avg_margin": 1.5,
+      "avg_excitement": 67.5
+    },
+    {
+      "matchup": "Waterford vs Finn Harps",
+      "games_played": 4,
+      "avg_margin": 1.5,
+      "avg_excitement": 67.5
+    },
+    {
+      "matchup": "Derry City vs Sligo Rovers",
+      "games_played": 13,
+      "avg_margin": 0.69,
+      "avg_excitement": 87.69
+    },
+    {
+      "matchup": "Sligo Rovers vs Derry City",
+      "games_played": 13,
+      "avg_margin": 0.69,
+      "avg_excitement": 87.69
+    },
+    {
+      "matchup": "Derry City vs St Patrick's Athletic",
+      "games_played": 10,
+      "avg_margin": 1.3,
+      "avg_excitement": 59.0
+    },
+    {
+      "matchup": "St Patrick's Athletic vs Derry City",
+      "games_played": 10,
+      "avg_margin": 1.3,
+      "avg_excitement": 59.0
+    },
+    {
+      "matchup": "Bohemians vs Sligo Rovers",
+      "games_played": 13,
+      "avg_margin": 1.31,
+      "avg_excitement": 54.62
+    },
+    {
+      "matchup": "Sligo Rovers vs Bohemians",
+      "games_played": 13,
+      "avg_margin": 1.31,
+      "avg_excitement": 54.62
+    },
+    {
+      "matchup": "Derry City vs Finn Harps",
+      "games_played": 7,
+      "avg_margin": 1.14,
+      "avg_excitement": 68.57
+    },
+    {
+      "matchup": "Finn Harps vs Derry City",
+      "games_played": 7,
+      "avg_margin": 1.14,
+      "avg_excitement": 68.57
+    },
+    {
+      "matchup": "Dundalk vs St Patrick's Athletic",
+      "games_played": 11,
+      "avg_margin": 1.64,
+      "avg_excitement": 58.18
+    },
+    {
+      "matchup": "St Patrick's Athletic vs Dundalk",
+      "games_played": 11,
+      "avg_margin": 1.64,
+      "avg_excitement": 58.18
+    },
+    {
+      "matchup": "Cork vs Shamrock Rovers",
+      "games_played": 6,
+      "avg_margin": 2.17,
+      "avg_excitement": 43.33
+    },
+    {
+      "matchup": "Shamrock Rovers vs Cork",
+      "games_played": 6,
+      "avg_margin": 2.17,
+      "avg_excitement": 43.33
+    },
+    {
+      "matchup": "UCD vs Waterford",
+      "games_played": 1,
+      "avg_margin": 2,
+      "avg_excitement": 10.0
+    },
+    {
+      "matchup": "Waterford vs UCD",
+      "games_played": 1,
+      "avg_margin": 2,
+      "avg_excitement": 10.0
+    },
+    {
+      "matchup": "Drogheda United vs Finn Harps",
+      "games_played": 6,
+      "avg_margin": 1.33,
+      "avg_excitement": 51.67
+    },
+    {
+      "matchup": "Finn Harps vs Drogheda United",
+      "games_played": 6,
+      "avg_margin": 1.33,
+      "avg_excitement": 51.67
+    },
+    {
+      "matchup": "Cork vs Shelbourne",
+      "games_played": 5,
+      "avg_margin": 0.8,
+      "avg_excitement": 78.0
+    },
+    {
+      "matchup": "Shelbourne vs Cork",
+      "games_played": 5,
+      "avg_margin": 0.8,
+      "avg_excitement": 78.0
+    },
+    {
+      "matchup": "Dundalk vs Shelbourne",
+      "games_played": 9,
+      "avg_margin": 0.67,
+      "avg_excitement": 93.33
+    },
+    {
+      "matchup": "Shelbourne vs Dundalk",
+      "games_played": 9,
+      "avg_margin": 0.67,
+      "avg_excitement": 93.33
+    },
+    {
+      "matchup": "Shelbourne vs St Patrick's Athletic",
+      "games_played": 10,
+      "avg_margin": 1.4,
+      "avg_excitement": 65.0
+    },
+    {
+      "matchup": "St Patrick's Athletic vs Shelbourne",
+      "games_played": 10,
+      "avg_margin": 1.4,
+      "avg_excitement": 65.0
+    },
+    {
+      "matchup": "Bohemians vs Shelbourne",
+      "games_played": 11,
+      "avg_margin": 0.82,
+      "avg_excitement": 72.73
+    },
+    {
+      "matchup": "Shelbourne vs Bohemians",
+      "games_played": 11,
+      "avg_margin": 0.82,
+      "avg_excitement": 72.73
+    },
+    {
+      "matchup": "Finn Harps vs Shelbourne",
+      "games_played": 2,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "Shelbourne vs Finn Harps",
+      "games_played": 2,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "Shelbourne vs Waterford",
+      "games_played": 4,
+      "avg_margin": 1,
+      "avg_excitement": 72.5
+    },
+    {
+      "matchup": "Waterford vs Shelbourne",
+      "games_played": 4,
+      "avg_margin": 1,
+      "avg_excitement": 72.5
+    },
+    {
+      "matchup": "Shelbourne vs Sligo Rovers",
+      "games_played": 7,
+      "avg_margin": 1,
+      "avg_excitement": 80.0
+    },
+    {
+      "matchup": "Sligo Rovers vs Shelbourne",
+      "games_played": 7,
+      "avg_margin": 1,
+      "avg_excitement": 80.0
+    },
+    {
+      "matchup": "Derry City vs Shelbourne",
+      "games_played": 10,
+      "avg_margin": 0.8,
+      "avg_excitement": 78.0
+    },
+    {
+      "matchup": "Shelbourne vs Derry City",
+      "games_played": 10,
+      "avg_margin": 0.8,
+      "avg_excitement": 78.0
+    },
+    {
+      "matchup": "Shamrock Rovers vs Shelbourne",
+      "games_played": 9,
+      "avg_margin": 0.78,
+      "avg_excitement": 76.67
+    },
+    {
+      "matchup": "Shelbourne vs Shamrock Rovers",
+      "games_played": 9,
+      "avg_margin": 0.78,
+      "avg_excitement": 76.67
+    },
+    {
+      "matchup": "Drogheda United vs Waterford",
+      "games_played": 6,
+      "avg_margin": 2.33,
+      "avg_excitement": 41.67
+    },
+    {
+      "matchup": "Waterford vs Drogheda United",
+      "games_played": 6,
+      "avg_margin": 2.33,
+      "avg_excitement": 41.67
+    },
+    {
+      "matchup": "Derry City vs Longford Town",
+      "games_played": 3,
+      "avg_margin": 1.67,
+      "avg_excitement": 36.67
+    },
+    {
+      "matchup": "Longford Town vs Derry City",
+      "games_played": 3,
+      "avg_margin": 1.67,
+      "avg_excitement": 36.67
+    },
+    {
+      "matchup": "Bohemians vs Longford Town",
+      "games_played": 3,
+      "avg_margin": 1.67,
+      "avg_excitement": 36.67
+    },
+    {
+      "matchup": "Longford Town vs Bohemians",
+      "games_played": 3,
+      "avg_margin": 1.67,
+      "avg_excitement": 36.67
+    },
+    {
+      "matchup": "Drogheda United vs St Patrick's Athletic",
+      "games_played": 8,
+      "avg_margin": 1.25,
+      "avg_excitement": 61.25
+    },
+    {
+      "matchup": "St Patrick's Athletic vs Drogheda United",
+      "games_played": 8,
+      "avg_margin": 1.25,
+      "avg_excitement": 61.25
+    },
+    {
+      "matchup": "Longford Town vs Sligo Rovers",
+      "games_played": 2,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Sligo Rovers vs Longford Town",
+      "games_played": 2,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Drogheda United vs Longford Town",
+      "games_played": 2,
+      "avg_margin": 3,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Longford Town vs Drogheda United",
+      "games_played": 2,
+      "avg_margin": 3,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Derry City vs Drogheda United",
+      "games_played": 11,
+      "avg_margin": 0.82,
+      "avg_excitement": 79.09
+    },
+    {
+      "matchup": "Drogheda United vs Derry City",
+      "games_played": 11,
+      "avg_margin": 0.82,
+      "avg_excitement": 79.09
+    },
+    {
+      "matchup": "Longford Town vs Shamrock Rovers",
+      "games_played": 3,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Shamrock Rovers vs Longford Town",
+      "games_played": 3,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Drogheda United vs Shamrock Rovers",
+      "games_played": 10,
+      "avg_margin": 1.2,
+      "avg_excitement": 74.0
+    },
+    {
+      "matchup": "Shamrock Rovers vs Drogheda United",
+      "games_played": 10,
+      "avg_margin": 1.2,
+      "avg_excitement": 74.0
+    },
+    {
+      "matchup": "Finn Harps vs Longford Town",
+      "games_played": 3,
+      "avg_margin": 2.67,
+      "avg_excitement": 26.67
+    },
+    {
+      "matchup": "Longford Town vs Finn Harps",
+      "games_played": 3,
+      "avg_margin": 2.67,
+      "avg_excitement": 26.67
+    },
+    {
+      "matchup": "Drogheda United vs Dundalk",
+      "games_played": 8,
+      "avg_margin": 1,
+      "avg_excitement": 72.5
+    },
+    {
+      "matchup": "Dundalk vs Drogheda United",
+      "games_played": 8,
+      "avg_margin": 1,
+      "avg_excitement": 72.5
+    },
+    {
+      "matchup": "Longford Town vs Waterford",
+      "games_played": 3,
+      "avg_margin": 1.33,
+      "avg_excitement": 63.33
+    },
+    {
+      "matchup": "Waterford vs Longford Town",
+      "games_played": 3,
+      "avg_margin": 1.33,
+      "avg_excitement": 63.33
+    },
+    {
+      "matchup": "Drogheda United vs Sligo Rovers",
+      "games_played": 9,
+      "avg_margin": 1.89,
+      "avg_excitement": 42.22
+    },
+    {
+      "matchup": "Sligo Rovers vs Drogheda United",
+      "games_played": 9,
+      "avg_margin": 1.89,
+      "avg_excitement": 42.22
+    },
+    {
+      "matchup": "Longford Town vs St Patrick's Athletic",
+      "games_played": 3,
+      "avg_margin": 2.33,
+      "avg_excitement": 30.0
+    },
+    {
+      "matchup": "St Patrick's Athletic vs Longford Town",
+      "games_played": 3,
+      "avg_margin": 2.33,
+      "avg_excitement": 30.0
+    },
+    {
+      "matchup": "Bohemians vs Drogheda United",
+      "games_played": 11,
+      "avg_margin": 0.91,
+      "avg_excitement": 78.18
+    },
+    {
+      "matchup": "Drogheda United vs Bohemians",
+      "games_played": 11,
+      "avg_margin": 0.91,
+      "avg_excitement": 78.18
+    },
+    {
+      "matchup": "Dundalk vs Longford Town",
+      "games_played": 3,
+      "avg_margin": 1,
+      "avg_excitement": 66.67
+    },
+    {
+      "matchup": "Longford Town vs Dundalk",
+      "games_played": 3,
+      "avg_margin": 1,
+      "avg_excitement": 66.67
+    },
+    {
+      "matchup": "Drogheda United vs Shelbourne",
+      "games_played": 8,
+      "avg_margin": 1.75,
+      "avg_excitement": 47.5
+    },
+    {
+      "matchup": "Shelbourne vs Drogheda United",
+      "games_played": 8,
+      "avg_margin": 1.75,
+      "avg_excitement": 47.5
+    },
+    {
+      "matchup": "Shelbourne vs UCD",
+      "games_played": 3,
+      "avg_margin": 0.33,
+      "avg_excitement": 96.67
+    },
+    {
+      "matchup": "UCD vs Shelbourne",
+      "games_played": 3,
+      "avg_margin": 0.33,
+      "avg_excitement": 96.67
+    },
+    {
+      "matchup": "Drogheda United vs UCD",
+      "games_played": 4,
+      "avg_margin": 1.25,
+      "avg_excitement": 70.0
+    },
+    {
+      "matchup": "UCD vs Drogheda United",
+      "games_played": 4,
+      "avg_margin": 1.25,
+      "avg_excitement": 70.0
+    },
+    {
+      "matchup": "Cork vs Drogheda United",
+      "games_played": 3,
+      "avg_margin": 0.67,
+      "avg_excitement": 70.0
+    },
+    {
+      "matchup": "Drogheda United vs Cork",
+      "games_played": 3,
+      "avg_margin": 0.67,
+      "avg_excitement": 70.0
+    },
+    {
+      "matchup": "Galway United FC vs St Patrick's Athletic",
+      "games_played": 4,
+      "avg_margin": 0.75,
+      "avg_excitement": 92.5
+    },
+    {
+      "matchup": "St Patrick's Athletic vs Galway United FC",
+      "games_played": 4,
+      "avg_margin": 0.75,
+      "avg_excitement": 92.5
+    },
+    {
+      "matchup": "Dundalk vs Galway United FC",
+      "games_played": 3,
+      "avg_margin": 1.33,
+      "avg_excitement": 40.0
+    },
+    {
+      "matchup": "Galway United FC vs Dundalk",
+      "games_played": 3,
+      "avg_margin": 1.33,
+      "avg_excitement": 40.0
+    },
+    {
+      "matchup": "Galway United FC vs Waterford",
+      "games_played": 3,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Waterford vs Galway United FC",
+      "games_played": 3,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Galway United FC vs Shelbourne",
+      "games_played": 3,
+      "avg_margin": 0.67,
+      "avg_excitement": 93.33
+    },
+    {
+      "matchup": "Shelbourne vs Galway United FC",
+      "games_played": 3,
+      "avg_margin": 0.67,
+      "avg_excitement": 93.33
+    },
+    {
+      "matchup": "Drogheda United vs Galway United FC",
+      "games_played": 3,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "Galway United FC vs Drogheda United",
+      "games_played": 3,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "Galway United FC vs Shamrock Rovers",
+      "games_played": 4,
+      "avg_margin": 0.75,
+      "avg_excitement": 92.5
+    },
+    {
+      "matchup": "Shamrock Rovers vs Galway United FC",
+      "games_played": 4,
+      "avg_margin": 0.75,
+      "avg_excitement": 92.5
+    },
+    {
+      "matchup": "Derry City vs Galway United FC",
+      "games_played": 3,
+      "avg_margin": 0.67,
+      "avg_excitement": 93.33
+    },
+    {
+      "matchup": "Galway United FC vs Derry City",
+      "games_played": 3,
+      "avg_margin": 0.67,
+      "avg_excitement": 93.33
+    },
+    {
+      "matchup": "Bohemians vs Galway United FC",
+      "games_played": 3,
+      "avg_margin": 1.33,
+      "avg_excitement": 40.0
+    },
+    {
+      "matchup": "Galway United FC vs Bohemians",
+      "games_played": 3,
+      "avg_margin": 1.33,
+      "avg_excitement": 40.0
+    },
+    {
+      "matchup": "Galway United FC vs Sligo Rovers",
+      "games_played": 1,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "Sligo Rovers vs Galway United FC",
+      "games_played": 1,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "Cork vs Galway United FC",
+      "games_played": 1,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "Galway United FC vs Cork",
+      "games_played": 1,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    }
+  ],
+  "matchup_close_rates": [
+    {
+      "matchup": "Derry City vs UCD",
+      "games": 5,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "UCD vs Derry City",
+      "games": 5,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Cork vs St Patrick's Athletic",
+      "games": 5,
+      "close_games": 4,
+      "close_rate": 80.0
+    },
+    {
+      "matchup": "St Patrick's Athletic vs Cork",
+      "games": 5,
+      "close_games": 4,
+      "close_rate": 80.0
+    },
+    {
+      "matchup": "Bohemians vs Finn Harps",
+      "games": 9,
+      "close_games": 6,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Finn Harps vs Bohemians",
+      "games": 9,
+      "close_games": 6,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Bohemians vs UCD",
+      "games": 4,
+      "close_games": 3,
+      "close_rate": 75.0
+    },
+    {
+      "matchup": "UCD vs Bohemians",
+      "games": 4,
+      "close_games": 3,
+      "close_rate": 75.0
+    },
+    {
+      "matchup": "Derry City vs Shamrock Rovers",
+      "games": 13,
+      "close_games": 10,
+      "close_rate": 76.92
+    },
+    {
+      "matchup": "Shamrock Rovers vs Derry City",
+      "games": 13,
+      "close_games": 10,
+      "close_rate": 76.92
+    },
+    {
+      "matchup": "Sligo Rovers vs St Patrick's Athletic",
+      "games": 15,
+      "close_games": 9,
+      "close_rate": 60.0
+    },
+    {
+      "matchup": "St Patrick's Athletic vs Sligo Rovers",
+      "games": 15,
+      "close_games": 9,
+      "close_rate": 60.0
+    },
+    {
+      "matchup": "Cork vs Waterford",
+      "games": 4,
+      "close_games": 4,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Waterford vs Cork",
+      "games": 4,
+      "close_games": 4,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Dundalk vs Finn Harps",
+      "games": 7,
+      "close_games": 5,
+      "close_rate": 71.43
+    },
+    {
+      "matchup": "Finn Harps vs Dundalk",
+      "games": 7,
+      "close_games": 5,
+      "close_rate": 71.43
+    },
+    {
+      "matchup": "Shamrock Rovers vs Waterford",
+      "games": 10,
+      "close_games": 4,
+      "close_rate": 40.0
+    },
+    {
+      "matchup": "Waterford vs Shamrock Rovers",
+      "games": 10,
+      "close_games": 4,
+      "close_rate": 40.0
+    },
+    {
+      "matchup": "Dundalk vs UCD",
+      "games": 5,
+      "close_games": 2,
+      "close_rate": 40.0
+    },
+    {
+      "matchup": "UCD vs Dundalk",
+      "games": 5,
+      "close_games": 2,
+      "close_rate": 40.0
+    },
+    {
+      "matchup": "Cork vs Sligo Rovers",
+      "games": 5,
+      "close_games": 3,
+      "close_rate": 60.0
+    },
+    {
+      "matchup": "Sligo Rovers vs Cork",
+      "games": 5,
+      "close_games": 3,
+      "close_rate": 60.0
+    },
+    {
+      "matchup": "Derry City vs Waterford",
+      "games": 8,
+      "close_games": 6,
+      "close_rate": 75.0
+    },
+    {
+      "matchup": "Waterford vs Derry City",
+      "games": 8,
+      "close_games": 6,
+      "close_rate": 75.0
+    },
+    {
+      "matchup": "Bohemians vs Shamrock Rovers",
+      "games": 13,
+      "close_games": 9,
+      "close_rate": 69.23
+    },
+    {
+      "matchup": "Shamrock Rovers vs Bohemians",
+      "games": 13,
+      "close_games": 9,
+      "close_rate": 69.23
+    },
+    {
+      "matchup": "Dundalk vs Sligo Rovers",
+      "games": 14,
+      "close_games": 8,
+      "close_rate": 57.14
+    },
+    {
+      "matchup": "Sligo Rovers vs Dundalk",
+      "games": 14,
+      "close_games": 8,
+      "close_rate": 57.14
+    },
+    {
+      "matchup": "Cork vs Dundalk",
+      "games": 5,
+      "close_games": 2,
+      "close_rate": 40.0
+    },
+    {
+      "matchup": "Dundalk vs Cork",
+      "games": 5,
+      "close_games": 2,
+      "close_rate": 40.0
+    },
+    {
+      "matchup": "Finn Harps vs St Patrick's Athletic",
+      "games": 6,
+      "close_games": 4,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "St Patrick's Athletic vs Finn Harps",
+      "games": 6,
+      "close_games": 4,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Bohemians vs Waterford",
+      "games": 10,
+      "close_games": 7,
+      "close_rate": 70.0
+    },
+    {
+      "matchup": "Waterford vs Bohemians",
+      "games": 10,
+      "close_games": 7,
+      "close_rate": 70.0
+    },
+    {
+      "matchup": "St Patrick's Athletic vs UCD",
+      "games": 4,
+      "close_games": 3,
+      "close_rate": 75.0
+    },
+    {
+      "matchup": "UCD vs St Patrick's Athletic",
+      "games": 4,
+      "close_games": 3,
+      "close_rate": 75.0
+    },
+    {
+      "matchup": "Finn Harps vs Sligo Rovers",
+      "games": 8,
+      "close_games": 5,
+      "close_rate": 62.5
+    },
+    {
+      "matchup": "Sligo Rovers vs Finn Harps",
+      "games": 8,
+      "close_games": 5,
+      "close_rate": 62.5
+    },
+    {
+      "matchup": "Cork vs Finn Harps",
+      "games": 3,
+      "close_games": 3,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Finn Harps vs Cork",
+      "games": 3,
+      "close_games": 3,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Bohemians vs Derry City",
+      "games": 11,
+      "close_games": 10,
+      "close_rate": 90.91
+    },
+    {
+      "matchup": "Derry City vs Bohemians",
+      "games": 11,
+      "close_games": 10,
+      "close_rate": 90.91
+    },
+    {
+      "matchup": "Sligo Rovers vs UCD",
+      "games": 4,
+      "close_games": 1,
+      "close_rate": 25.0
+    },
+    {
+      "matchup": "UCD vs Sligo Rovers",
+      "games": 4,
+      "close_games": 1,
+      "close_rate": 25.0
+    },
+    {
+      "matchup": "Dundalk vs Waterford",
+      "games": 7,
+      "close_games": 6,
+      "close_rate": 85.71
+    },
+    {
+      "matchup": "Waterford vs Dundalk",
+      "games": 7,
+      "close_games": 6,
+      "close_rate": 85.71
+    },
+    {
+      "matchup": "Shamrock Rovers vs St Patrick's Athletic",
+      "games": 12,
+      "close_games": 9,
+      "close_rate": 75.0
+    },
+    {
+      "matchup": "St Patrick's Athletic vs Shamrock Rovers",
+      "games": 12,
+      "close_games": 9,
+      "close_rate": 75.0
+    },
+    {
+      "matchup": "Dundalk vs Shamrock Rovers",
+      "games": 11,
+      "close_games": 8,
+      "close_rate": 72.73
+    },
+    {
+      "matchup": "Shamrock Rovers vs Dundalk",
+      "games": 11,
+      "close_games": 8,
+      "close_rate": 72.73
+    },
+    {
+      "matchup": "Cork vs Derry City",
+      "games": 5,
+      "close_games": 3,
+      "close_rate": 60.0
+    },
+    {
+      "matchup": "Derry City vs Cork",
+      "games": 5,
+      "close_games": 3,
+      "close_rate": 60.0
+    },
+    {
+      "matchup": "Bohemians vs Cork",
+      "games": 5,
+      "close_games": 3,
+      "close_rate": 60.0
+    },
+    {
+      "matchup": "Cork vs Bohemians",
+      "games": 5,
+      "close_games": 3,
+      "close_rate": 60.0
+    },
+    {
+      "matchup": "Derry City vs Dundalk",
+      "games": 14,
+      "close_games": 11,
+      "close_rate": 78.57
+    },
+    {
+      "matchup": "Dundalk vs Derry City",
+      "games": 14,
+      "close_games": 11,
+      "close_rate": 78.57
+    },
+    {
+      "matchup": "St Patrick's Athletic vs Waterford",
+      "games": 9,
+      "close_games": 5,
+      "close_rate": 55.56
+    },
+    {
+      "matchup": "Waterford vs St Patrick's Athletic",
+      "games": 9,
+      "close_games": 5,
+      "close_rate": 55.56
+    },
+    {
+      "matchup": "Finn Harps vs UCD",
+      "games": 4,
+      "close_games": 4,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "UCD vs Finn Harps",
+      "games": 4,
+      "close_games": 4,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Shamrock Rovers vs Sligo Rovers",
+      "games": 12,
+      "close_games": 7,
+      "close_rate": 58.33
+    },
+    {
+      "matchup": "Sligo Rovers vs Shamrock Rovers",
+      "games": 12,
+      "close_games": 7,
+      "close_rate": 58.33
+    },
+    {
+      "matchup": "Sligo Rovers vs Waterford",
+      "games": 8,
+      "close_games": 5,
+      "close_rate": 62.5
+    },
+    {
+      "matchup": "Waterford vs Sligo Rovers",
+      "games": 8,
+      "close_games": 5,
+      "close_rate": 62.5
+    },
+    {
+      "matchup": "Bohemians vs Dundalk",
+      "games": 11,
+      "close_games": 9,
+      "close_rate": 81.82
+    },
+    {
+      "matchup": "Dundalk vs Bohemians",
+      "games": 11,
+      "close_games": 9,
+      "close_rate": 81.82
+    },
+    {
+      "matchup": "Cork vs UCD",
+      "games": 4,
+      "close_games": 2,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "UCD vs Cork",
+      "games": 4,
+      "close_games": 2,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Finn Harps vs Shamrock Rovers",
+      "games": 6,
+      "close_games": 2,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "Shamrock Rovers vs Finn Harps",
+      "games": 6,
+      "close_games": 2,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "Bohemians vs St Patrick's Athletic",
+      "games": 13,
+      "close_games": 7,
+      "close_rate": 53.85
+    },
+    {
+      "matchup": "St Patrick's Athletic vs Bohemians",
+      "games": 13,
+      "close_games": 7,
+      "close_rate": 53.85
+    },
+    {
+      "matchup": "Shamrock Rovers vs UCD",
+      "games": 5,
+      "close_games": 3,
+      "close_rate": 60.0
+    },
+    {
+      "matchup": "UCD vs Shamrock Rovers",
+      "games": 5,
+      "close_games": 3,
+      "close_rate": 60.0
+    },
+    {
+      "matchup": "Finn Harps vs Waterford",
+      "games": 4,
+      "close_games": 3,
+      "close_rate": 75.0
+    },
+    {
+      "matchup": "Waterford vs Finn Harps",
+      "games": 4,
+      "close_games": 3,
+      "close_rate": 75.0
+    },
+    {
+      "matchup": "Derry City vs Sligo Rovers",
+      "games": 13,
+      "close_games": 12,
+      "close_rate": 92.31
+    },
+    {
+      "matchup": "Sligo Rovers vs Derry City",
+      "games": 13,
+      "close_games": 12,
+      "close_rate": 92.31
+    },
+    {
+      "matchup": "Derry City vs St Patrick's Athletic",
+      "games": 10,
+      "close_games": 6,
+      "close_rate": 60.0
+    },
+    {
+      "matchup": "St Patrick's Athletic vs Derry City",
+      "games": 10,
+      "close_games": 6,
+      "close_rate": 60.0
+    },
+    {
+      "matchup": "Bohemians vs Sligo Rovers",
+      "games": 13,
+      "close_games": 7,
+      "close_rate": 53.85
+    },
+    {
+      "matchup": "Sligo Rovers vs Bohemians",
+      "games": 13,
+      "close_games": 7,
+      "close_rate": 53.85
+    },
+    {
+      "matchup": "Derry City vs Finn Harps",
+      "games": 7,
+      "close_games": 5,
+      "close_rate": 71.43
+    },
+    {
+      "matchup": "Finn Harps vs Derry City",
+      "games": 7,
+      "close_games": 5,
+      "close_rate": 71.43
+    },
+    {
+      "matchup": "Dundalk vs St Patrick's Athletic",
+      "games": 11,
+      "close_games": 7,
+      "close_rate": 63.64
+    },
+    {
+      "matchup": "St Patrick's Athletic vs Dundalk",
+      "games": 11,
+      "close_games": 7,
+      "close_rate": 63.64
+    },
+    {
+      "matchup": "Cork vs Shamrock Rovers",
+      "games": 6,
+      "close_games": 3,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Shamrock Rovers vs Cork",
+      "games": 6,
+      "close_games": 3,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "UCD vs Waterford",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Waterford vs UCD",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Drogheda United vs Finn Harps",
+      "games": 6,
+      "close_games": 3,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Finn Harps vs Drogheda United",
+      "games": 6,
+      "close_games": 3,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Cork vs Shelbourne",
+      "games": 5,
+      "close_games": 4,
+      "close_rate": 80.0
+    },
+    {
+      "matchup": "Shelbourne vs Cork",
+      "games": 5,
+      "close_games": 4,
+      "close_rate": 80.0
+    },
+    {
+      "matchup": "Dundalk vs Shelbourne",
+      "games": 9,
+      "close_games": 9,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Shelbourne vs Dundalk",
+      "games": 9,
+      "close_games": 9,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Shelbourne vs St Patrick's Athletic",
+      "games": 10,
+      "close_games": 7,
+      "close_rate": 70.0
+    },
+    {
+      "matchup": "St Patrick's Athletic vs Shelbourne",
+      "games": 10,
+      "close_games": 7,
+      "close_rate": 70.0
+    },
+    {
+      "matchup": "Bohemians vs Shelbourne",
+      "games": 11,
+      "close_games": 8,
+      "close_rate": 72.73
+    },
+    {
+      "matchup": "Shelbourne vs Bohemians",
+      "games": 11,
+      "close_games": 8,
+      "close_rate": 72.73
+    },
+    {
+      "matchup": "Finn Harps vs Shelbourne",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Shelbourne vs Finn Harps",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Shelbourne vs Waterford",
+      "games": 4,
+      "close_games": 3,
+      "close_rate": 75.0
+    },
+    {
+      "matchup": "Waterford vs Shelbourne",
+      "games": 4,
+      "close_games": 3,
+      "close_rate": 75.0
+    },
+    {
+      "matchup": "Shelbourne vs Sligo Rovers",
+      "games": 7,
+      "close_games": 6,
+      "close_rate": 85.71
+    },
+    {
+      "matchup": "Sligo Rovers vs Shelbourne",
+      "games": 7,
+      "close_games": 6,
+      "close_rate": 85.71
+    },
+    {
+      "matchup": "Derry City vs Shelbourne",
+      "games": 10,
+      "close_games": 8,
+      "close_rate": 80.0
+    },
+    {
+      "matchup": "Shelbourne vs Derry City",
+      "games": 10,
+      "close_games": 8,
+      "close_rate": 80.0
+    },
+    {
+      "matchup": "Shamrock Rovers vs Shelbourne",
+      "games": 9,
+      "close_games": 7,
+      "close_rate": 77.78
+    },
+    {
+      "matchup": "Shelbourne vs Shamrock Rovers",
+      "games": 9,
+      "close_games": 7,
+      "close_rate": 77.78
+    },
+    {
+      "matchup": "Drogheda United vs Waterford",
+      "games": 6,
+      "close_games": 3,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Waterford vs Drogheda United",
+      "games": 6,
+      "close_games": 3,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Derry City vs Longford Town",
+      "games": 3,
+      "close_games": 1,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "Longford Town vs Derry City",
+      "games": 3,
+      "close_games": 1,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "Bohemians vs Longford Town",
+      "games": 3,
+      "close_games": 1,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "Longford Town vs Bohemians",
+      "games": 3,
+      "close_games": 1,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "Drogheda United vs St Patrick's Athletic",
+      "games": 8,
+      "close_games": 5,
+      "close_rate": 62.5
+    },
+    {
+      "matchup": "St Patrick's Athletic vs Drogheda United",
+      "games": 8,
+      "close_games": 5,
+      "close_rate": 62.5
+    },
+    {
+      "matchup": "Longford Town vs Sligo Rovers",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Sligo Rovers vs Longford Town",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Drogheda United vs Longford Town",
+      "games": 2,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Longford Town vs Drogheda United",
+      "games": 2,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Derry City vs Drogheda United",
+      "games": 11,
+      "close_games": 9,
+      "close_rate": 81.82
+    },
+    {
+      "matchup": "Drogheda United vs Derry City",
+      "games": 11,
+      "close_games": 9,
+      "close_rate": 81.82
+    },
+    {
+      "matchup": "Longford Town vs Shamrock Rovers",
+      "games": 3,
+      "close_games": 3,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Shamrock Rovers vs Longford Town",
+      "games": 3,
+      "close_games": 3,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Drogheda United vs Shamrock Rovers",
+      "games": 10,
+      "close_games": 8,
+      "close_rate": 80.0
+    },
+    {
+      "matchup": "Shamrock Rovers vs Drogheda United",
+      "games": 10,
+      "close_games": 8,
+      "close_rate": 80.0
+    },
+    {
+      "matchup": "Finn Harps vs Longford Town",
+      "games": 3,
+      "close_games": 1,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "Longford Town vs Finn Harps",
+      "games": 3,
+      "close_games": 1,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "Drogheda United vs Dundalk",
+      "games": 8,
+      "close_games": 6,
+      "close_rate": 75.0
+    },
+    {
+      "matchup": "Dundalk vs Drogheda United",
+      "games": 8,
+      "close_games": 6,
+      "close_rate": 75.0
+    },
+    {
+      "matchup": "Longford Town vs Waterford",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Waterford vs Longford Town",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Drogheda United vs Sligo Rovers",
+      "games": 9,
+      "close_games": 4,
+      "close_rate": 44.44
+    },
+    {
+      "matchup": "Sligo Rovers vs Drogheda United",
+      "games": 9,
+      "close_games": 4,
+      "close_rate": 44.44
+    },
+    {
+      "matchup": "Longford Town vs St Patrick's Athletic",
+      "games": 3,
+      "close_games": 1,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "St Patrick's Athletic vs Longford Town",
+      "games": 3,
+      "close_games": 1,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "Bohemians vs Drogheda United",
+      "games": 11,
+      "close_games": 9,
+      "close_rate": 81.82
+    },
+    {
+      "matchup": "Drogheda United vs Bohemians",
+      "games": 11,
+      "close_games": 9,
+      "close_rate": 81.82
+    },
+    {
+      "matchup": "Dundalk vs Longford Town",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Longford Town vs Dundalk",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Drogheda United vs Shelbourne",
+      "games": 8,
+      "close_games": 4,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Shelbourne vs Drogheda United",
+      "games": 8,
+      "close_games": 4,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Shelbourne vs UCD",
+      "games": 3,
+      "close_games": 3,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "UCD vs Shelbourne",
+      "games": 3,
+      "close_games": 3,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Drogheda United vs UCD",
+      "games": 4,
+      "close_games": 3,
+      "close_rate": 75.0
+    },
+    {
+      "matchup": "UCD vs Drogheda United",
+      "games": 4,
+      "close_games": 3,
+      "close_rate": 75.0
+    },
+    {
+      "matchup": "Cork vs Drogheda United",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Drogheda United vs Cork",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Galway United FC vs St Patrick's Athletic",
+      "games": 4,
+      "close_games": 4,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "St Patrick's Athletic vs Galway United FC",
+      "games": 4,
+      "close_games": 4,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Dundalk vs Galway United FC",
+      "games": 3,
+      "close_games": 1,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "Galway United FC vs Dundalk",
+      "games": 3,
+      "close_games": 1,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "Galway United FC vs Waterford",
+      "games": 3,
+      "close_games": 3,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Waterford vs Galway United FC",
+      "games": 3,
+      "close_games": 3,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Galway United FC vs Shelbourne",
+      "games": 3,
+      "close_games": 3,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Shelbourne vs Galway United FC",
+      "games": 3,
+      "close_games": 3,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Drogheda United vs Galway United FC",
+      "games": 3,
+      "close_games": 3,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Galway United FC vs Drogheda United",
+      "games": 3,
+      "close_games": 3,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Galway United FC vs Shamrock Rovers",
+      "games": 4,
+      "close_games": 4,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Shamrock Rovers vs Galway United FC",
+      "games": 4,
+      "close_games": 4,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Derry City vs Galway United FC",
+      "games": 3,
+      "close_games": 3,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Galway United FC vs Derry City",
+      "games": 3,
+      "close_games": 3,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Bohemians vs Galway United FC",
+      "games": 3,
+      "close_games": 1,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "Galway United FC vs Bohemians",
+      "games": 3,
+      "close_games": 1,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "Galway United FC vs Sligo Rovers",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Sligo Rovers vs Galway United FC",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Cork vs Galway United FC",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Galway United FC vs Cork",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    }
+  ],
+  "form_strengths": [
+    {
+      "team": "Bohemians",
+      "strength": 65.3
+    },
+    {
+      "team": "Cork",
+      "strength": 56.0
+    },
+    {
+      "team": "Derry City",
+      "strength": 70.0
+    },
+    {
+      "team": "Drogheda United",
+      "strength": 80.7
+    },
+    {
+      "team": "Dundalk",
+      "strength": 56.0
+    },
+    {
+      "team": "Finn Harps",
+      "strength": 52.0
+    },
+    {
+      "team": "Galway United FC",
+      "strength": 76.7
+    },
+    {
+      "team": "Longford Town",
+      "strength": 48.0
+    },
+    {
+      "team": "Shamrock Rovers",
+      "strength": 86.7
+    },
+    {
+      "team": "Shelbourne",
+      "strength": 79.3
+    },
+    {
+      "team": "Sligo Rovers",
+      "strength": 56.7
+    },
+    {
+      "team": "St Patrick's Athletic",
+      "strength": 78.7
+    },
+    {
+      "team": "UCD",
+      "strength": 48.0
+    },
+    {
+      "team": "Waterford",
+      "strength": 58.7
+    }
+  ],
+  "team_margin_ratings": [
+    {
+      "team": "Bohemians",
+      "avg_margin": -0.3
+    },
+    {
+      "team": "Cork",
+      "avg_margin": -0.7
+    },
+    {
+      "team": "Derry City",
+      "avg_margin": -0.5
+    },
+    {
+      "team": "Drogheda United",
+      "avg_margin": 0.8
+    },
+    {
+      "team": "Dundalk",
+      "avg_margin": -0.9
+    },
+    {
+      "team": "Finn Harps",
+      "avg_margin": -1.2
+    },
+    {
+      "team": "Galway United FC",
+      "avg_margin": 0.3
+    },
+    {
+      "team": "Longford Town",
+      "avg_margin": -1.9
+    },
+    {
+      "team": "Shamrock Rovers",
+      "avg_margin": 0.4
+    },
+    {
+      "team": "Shelbourne",
+      "avg_margin": 0.5
+    },
+    {
+      "team": "Sligo Rovers",
+      "avg_margin": -1
+    },
+    {
+      "team": "St Patrick's Athletic",
+      "avg_margin": 0.9
+    },
+    {
+      "team": "UCD",
+      "avg_margin": -2.5
+    },
+    {
+      "team": "Waterford",
+      "avg_margin": -0.6
+    }
+  ]
+}

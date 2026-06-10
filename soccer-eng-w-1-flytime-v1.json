@@ -1,0 +1,2588 @@
+{
+  "meta": {
+    "sport": "WSL",
+    "league": "eng.w.1",
+    "engine": "v1-bootstrap",
+    "formula": "close*0.35 + form_balance*0.25 + margin_balance*0.25 + matchup*0.15",
+    "close_margin": 1,
+    "games_sampled": 600,
+    "week_chunk": 6,
+    "built": "2026-06-10"
+  },
+  "matchup_ratings": [
+    {
+      "matchup": "Brighton & Hove Albion vs Bristol City",
+      "games_played": 4,
+      "avg_margin": 2,
+      "avg_excitement": 45.0
+    },
+    {
+      "matchup": "Bristol City vs Brighton & Hove Albion",
+      "games_played": 4,
+      "avg_margin": 2,
+      "avg_excitement": 45.0
+    },
+    {
+      "matchup": "Manchester City vs Manchester United",
+      "games_played": 9,
+      "avg_margin": 1.22,
+      "avg_excitement": 56.67
+    },
+    {
+      "matchup": "Manchester United vs Manchester City",
+      "games_played": 9,
+      "avg_margin": 1.22,
+      "avg_excitement": 56.67
+    },
+    {
+      "matchup": "Chelsea vs Tottenham Hotspur",
+      "games_played": 6,
+      "avg_margin": 2.17,
+      "avg_excitement": 43.33
+    },
+    {
+      "matchup": "Tottenham Hotspur vs Chelsea",
+      "games_played": 6,
+      "avg_margin": 2.17,
+      "avg_excitement": 43.33
+    },
+    {
+      "matchup": "Birmingham City vs Everton",
+      "games_played": 4,
+      "avg_margin": 1.75,
+      "avg_excitement": 47.5
+    },
+    {
+      "matchup": "Everton vs Birmingham City",
+      "games_played": 4,
+      "avg_margin": 1.75,
+      "avg_excitement": 47.5
+    },
+    {
+      "matchup": "Liverpool vs Reading",
+      "games_played": 3,
+      "avg_margin": 1,
+      "avg_excitement": 66.67
+    },
+    {
+      "matchup": "Reading vs Liverpool",
+      "games_played": 3,
+      "avg_margin": 1,
+      "avg_excitement": 66.67
+    },
+    {
+      "matchup": "Arsenal vs West Ham United",
+      "games_played": 9,
+      "avg_margin": 2.44,
+      "avg_excitement": 36.67
+    },
+    {
+      "matchup": "West Ham United vs Arsenal",
+      "games_played": 9,
+      "avg_margin": 2.44,
+      "avg_excitement": 36.67
+    },
+    {
+      "matchup": "Bristol City vs Everton",
+      "games_played": 4,
+      "avg_margin": 2.5,
+      "avg_excitement": 22.5
+    },
+    {
+      "matchup": "Everton vs Bristol City",
+      "games_played": 4,
+      "avg_margin": 2.5,
+      "avg_excitement": 22.5
+    },
+    {
+      "matchup": "Manchester City vs Reading",
+      "games_played": 4,
+      "avg_margin": 1.75,
+      "avg_excitement": 30.0
+    },
+    {
+      "matchup": "Reading vs Manchester City",
+      "games_played": 4,
+      "avg_margin": 1.75,
+      "avg_excitement": 30.0
+    },
+    {
+      "matchup": "Brighton & Hove Albion vs Chelsea",
+      "games_played": 11,
+      "avg_margin": 1.36,
+      "avg_excitement": 48.18
+    },
+    {
+      "matchup": "Chelsea vs Brighton & Hove Albion",
+      "games_played": 11,
+      "avg_margin": 1.36,
+      "avg_excitement": 48.18
+    },
+    {
+      "matchup": "Liverpool vs Tottenham Hotspur",
+      "games_played": 6,
+      "avg_margin": 0.67,
+      "avg_excitement": 93.33
+    },
+    {
+      "matchup": "Tottenham Hotspur vs Liverpool",
+      "games_played": 6,
+      "avg_margin": 0.67,
+      "avg_excitement": 93.33
+    },
+    {
+      "matchup": "Birmingham City vs West Ham United",
+      "games_played": 5,
+      "avg_margin": 0.6,
+      "avg_excitement": 94.0
+    },
+    {
+      "matchup": "West Ham United vs Birmingham City",
+      "games_played": 5,
+      "avg_margin": 0.6,
+      "avg_excitement": 94.0
+    },
+    {
+      "matchup": "Arsenal vs Manchester United",
+      "games_played": 9,
+      "avg_margin": 1,
+      "avg_excitement": 66.67
+    },
+    {
+      "matchup": "Manchester United vs Arsenal",
+      "games_played": 9,
+      "avg_margin": 1,
+      "avg_excitement": 66.67
+    },
+    {
+      "matchup": "Liverpool vs Manchester United",
+      "games_played": 6,
+      "avg_margin": 2.5,
+      "avg_excitement": 28.33
+    },
+    {
+      "matchup": "Manchester United vs Liverpool",
+      "games_played": 6,
+      "avg_margin": 2.5,
+      "avg_excitement": 28.33
+    },
+    {
+      "matchup": "Arsenal vs Brighton & Hove Albion",
+      "games_played": 8,
+      "avg_margin": 3.62,
+      "avg_excitement": 8.75
+    },
+    {
+      "matchup": "Brighton & Hove Albion vs Arsenal",
+      "games_played": 8,
+      "avg_margin": 3.62,
+      "avg_excitement": 8.75
+    },
+    {
+      "matchup": "Everton vs Manchester City",
+      "games_played": 9,
+      "avg_margin": 1.89,
+      "avg_excitement": 50.0
+    },
+    {
+      "matchup": "Manchester City vs Everton",
+      "games_played": 9,
+      "avg_margin": 1.89,
+      "avg_excitement": 50.0
+    },
+    {
+      "matchup": "Tottenham Hotspur vs West Ham United",
+      "games_played": 10,
+      "avg_margin": 1.1,
+      "avg_excitement": 68.0
+    },
+    {
+      "matchup": "West Ham United vs Tottenham Hotspur",
+      "games_played": 10,
+      "avg_margin": 1.1,
+      "avg_excitement": 68.0
+    },
+    {
+      "matchup": "Bristol City vs Chelsea",
+      "games_played": 5,
+      "avg_margin": 5.2,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Chelsea vs Bristol City",
+      "games_played": 5,
+      "avg_margin": 5.2,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Birmingham City vs Manchester City",
+      "games_played": 4,
+      "avg_margin": 2.5,
+      "avg_excitement": 22.5
+    },
+    {
+      "matchup": "Manchester City vs Birmingham City",
+      "games_played": 4,
+      "avg_margin": 2.5,
+      "avg_excitement": 22.5
+    },
+    {
+      "matchup": "Bristol City vs Liverpool",
+      "games_played": 3,
+      "avg_margin": 0.33,
+      "avg_excitement": 96.67
+    },
+    {
+      "matchup": "Liverpool vs Bristol City",
+      "games_played": 3,
+      "avg_margin": 0.33,
+      "avg_excitement": 96.67
+    },
+    {
+      "matchup": "Manchester United vs Tottenham Hotspur",
+      "games_played": 9,
+      "avg_margin": 2.11,
+      "avg_excitement": 40.0
+    },
+    {
+      "matchup": "Tottenham Hotspur vs Manchester United",
+      "games_played": 9,
+      "avg_margin": 2.11,
+      "avg_excitement": 40.0
+    },
+    {
+      "matchup": "Brighton & Hove Albion vs West Ham United",
+      "games_played": 9,
+      "avg_margin": 1.44,
+      "avg_excitement": 54.44
+    },
+    {
+      "matchup": "West Ham United vs Brighton & Hove Albion",
+      "games_played": 9,
+      "avg_margin": 1.44,
+      "avg_excitement": 54.44
+    },
+    {
+      "matchup": "Everton vs Reading",
+      "games_played": 7,
+      "avg_margin": 1.14,
+      "avg_excitement": 68.57
+    },
+    {
+      "matchup": "Reading vs Everton",
+      "games_played": 7,
+      "avg_margin": 1.14,
+      "avg_excitement": 68.57
+    },
+    {
+      "matchup": "Arsenal vs Chelsea",
+      "games_played": 11,
+      "avg_margin": 1.36,
+      "avg_excitement": 60.91
+    },
+    {
+      "matchup": "Chelsea vs Arsenal",
+      "games_played": 11,
+      "avg_margin": 1.36,
+      "avg_excitement": 60.91
+    },
+    {
+      "matchup": "Brighton & Hove Albion vs Everton",
+      "games_played": 7,
+      "avg_margin": 1.43,
+      "avg_excitement": 65.71
+    },
+    {
+      "matchup": "Everton vs Brighton & Hove Albion",
+      "games_played": 7,
+      "avg_margin": 1.43,
+      "avg_excitement": 65.71
+    },
+    {
+      "matchup": "Manchester United vs Reading",
+      "games_played": 8,
+      "avg_margin": 1.75,
+      "avg_excitement": 38.75
+    },
+    {
+      "matchup": "Reading vs Manchester United",
+      "games_played": 8,
+      "avg_margin": 1.75,
+      "avg_excitement": 38.75
+    },
+    {
+      "matchup": "Birmingham City vs Liverpool",
+      "games_played": 2,
+      "avg_margin": 1,
+      "avg_excitement": 55.0
+    },
+    {
+      "matchup": "Liverpool vs Birmingham City",
+      "games_played": 2,
+      "avg_margin": 1,
+      "avg_excitement": 55.0
+    },
+    {
+      "matchup": "Arsenal vs Manchester City",
+      "games_played": 11,
+      "avg_margin": 1.18,
+      "avg_excitement": 81.82
+    },
+    {
+      "matchup": "Manchester City vs Arsenal",
+      "games_played": 11,
+      "avg_margin": 1.18,
+      "avg_excitement": 81.82
+    },
+    {
+      "matchup": "Bristol City vs Tottenham Hotspur",
+      "games_played": 5,
+      "avg_margin": 0.8,
+      "avg_excitement": 78.0
+    },
+    {
+      "matchup": "Tottenham Hotspur vs Bristol City",
+      "games_played": 5,
+      "avg_margin": 0.8,
+      "avg_excitement": 78.0
+    },
+    {
+      "matchup": "Chelsea vs West Ham United",
+      "games_played": 9,
+      "avg_margin": 3,
+      "avg_excitement": 7.78
+    },
+    {
+      "matchup": "West Ham United vs Chelsea",
+      "games_played": 9,
+      "avg_margin": 3,
+      "avg_excitement": 7.78
+    },
+    {
+      "matchup": "Manchester City vs West Ham United",
+      "games_played": 7,
+      "avg_margin": 2.29,
+      "avg_excitement": 27.14
+    },
+    {
+      "matchup": "West Ham United vs Manchester City",
+      "games_played": 7,
+      "avg_margin": 2.29,
+      "avg_excitement": 27.14
+    },
+    {
+      "matchup": "Birmingham City vs Brighton & Hove Albion",
+      "games_played": 5,
+      "avg_margin": 2,
+      "avg_excitement": 38.0
+    },
+    {
+      "matchup": "Brighton & Hove Albion vs Birmingham City",
+      "games_played": 5,
+      "avg_margin": 2,
+      "avg_excitement": 38.0
+    },
+    {
+      "matchup": "Chelsea vs Manchester United",
+      "games_played": 8,
+      "avg_margin": 1.62,
+      "avg_excitement": 57.5
+    },
+    {
+      "matchup": "Manchester United vs Chelsea",
+      "games_played": 8,
+      "avg_margin": 1.62,
+      "avg_excitement": 57.5
+    },
+    {
+      "matchup": "Bristol City vs Reading",
+      "games_played": 4,
+      "avg_margin": 0.25,
+      "avg_excitement": 97.5
+    },
+    {
+      "matchup": "Reading vs Bristol City",
+      "games_played": 4,
+      "avg_margin": 0.25,
+      "avg_excitement": 97.5
+    },
+    {
+      "matchup": "Everton vs Liverpool",
+      "games_played": 7,
+      "avg_margin": 0.86,
+      "avg_excitement": 81.43
+    },
+    {
+      "matchup": "Liverpool vs Everton",
+      "games_played": 7,
+      "avg_margin": 0.86,
+      "avg_excitement": 81.43
+    },
+    {
+      "matchup": "Arsenal vs Tottenham Hotspur",
+      "games_played": 9,
+      "avg_margin": 2.78,
+      "avg_excitement": 25.56
+    },
+    {
+      "matchup": "Tottenham Hotspur vs Arsenal",
+      "games_played": 9,
+      "avg_margin": 2.78,
+      "avg_excitement": 25.56
+    },
+    {
+      "matchup": "Brighton & Hove Albion vs Manchester United",
+      "games_played": 10,
+      "avg_margin": 2.2,
+      "avg_excitement": 29.0
+    },
+    {
+      "matchup": "Manchester United vs Brighton & Hove Albion",
+      "games_played": 10,
+      "avg_margin": 2.2,
+      "avg_excitement": 29.0
+    },
+    {
+      "matchup": "Bristol City vs Manchester City",
+      "games_played": 5,
+      "avg_margin": 4.2,
+      "avg_excitement": 14.0
+    },
+    {
+      "matchup": "Manchester City vs Bristol City",
+      "games_played": 5,
+      "avg_margin": 4.2,
+      "avg_excitement": 14.0
+    },
+    {
+      "matchup": "Everton vs Tottenham Hotspur",
+      "games_played": 9,
+      "avg_margin": 1.11,
+      "avg_excitement": 73.33
+    },
+    {
+      "matchup": "Tottenham Hotspur vs Everton",
+      "games_played": 9,
+      "avg_margin": 1.11,
+      "avg_excitement": 73.33
+    },
+    {
+      "matchup": "Arsenal vs Liverpool",
+      "games_played": 8,
+      "avg_margin": 1.75,
+      "avg_excitement": 47.5
+    },
+    {
+      "matchup": "Liverpool vs Arsenal",
+      "games_played": 8,
+      "avg_margin": 1.75,
+      "avg_excitement": 47.5
+    },
+    {
+      "matchup": "Birmingham City vs Chelsea",
+      "games_played": 4,
+      "avg_margin": 3.5,
+      "avg_excitement": 17.5
+    },
+    {
+      "matchup": "Chelsea vs Birmingham City",
+      "games_played": 4,
+      "avg_margin": 3.5,
+      "avg_excitement": 17.5
+    },
+    {
+      "matchup": "Reading vs West Ham United",
+      "games_played": 6,
+      "avg_margin": 1,
+      "avg_excitement": 78.33
+    },
+    {
+      "matchup": "West Ham United vs Reading",
+      "games_played": 6,
+      "avg_margin": 1,
+      "avg_excitement": 78.33
+    },
+    {
+      "matchup": "Brighton & Hove Albion vs Reading",
+      "games_played": 7,
+      "avg_margin": 1.14,
+      "avg_excitement": 58.57
+    },
+    {
+      "matchup": "Reading vs Brighton & Hove Albion",
+      "games_played": 7,
+      "avg_margin": 1.14,
+      "avg_excitement": 58.57
+    },
+    {
+      "matchup": "Arsenal vs Bristol City",
+      "games_played": 4,
+      "avg_margin": 3.25,
+      "avg_excitement": 35.0
+    },
+    {
+      "matchup": "Bristol City vs Arsenal",
+      "games_played": 4,
+      "avg_margin": 3.25,
+      "avg_excitement": 35.0
+    },
+    {
+      "matchup": "Liverpool vs Manchester City",
+      "games_played": 6,
+      "avg_margin": 1.83,
+      "avg_excitement": 58.33
+    },
+    {
+      "matchup": "Manchester City vs Liverpool",
+      "games_played": 6,
+      "avg_margin": 1.83,
+      "avg_excitement": 58.33
+    },
+    {
+      "matchup": "Manchester United vs West Ham United",
+      "games_played": 10,
+      "avg_margin": 1.9,
+      "avg_excitement": 39.0
+    },
+    {
+      "matchup": "West Ham United vs Manchester United",
+      "games_played": 10,
+      "avg_margin": 1.9,
+      "avg_excitement": 39.0
+    },
+    {
+      "matchup": "Birmingham City vs Tottenham Hotspur",
+      "games_played": 5,
+      "avg_margin": 0.6,
+      "avg_excitement": 80.0
+    },
+    {
+      "matchup": "Tottenham Hotspur vs Birmingham City",
+      "games_played": 5,
+      "avg_margin": 0.6,
+      "avg_excitement": 80.0
+    },
+    {
+      "matchup": "Chelsea vs Manchester City",
+      "games_played": 11,
+      "avg_margin": 1.45,
+      "avg_excitement": 53.64
+    },
+    {
+      "matchup": "Manchester City vs Chelsea",
+      "games_played": 11,
+      "avg_margin": 1.45,
+      "avg_excitement": 53.64
+    },
+    {
+      "matchup": "Everton vs Manchester United",
+      "games_played": 8,
+      "avg_margin": 1.75,
+      "avg_excitement": 47.5
+    },
+    {
+      "matchup": "Manchester United vs Everton",
+      "games_played": 8,
+      "avg_margin": 1.75,
+      "avg_excitement": 47.5
+    },
+    {
+      "matchup": "Liverpool vs West Ham United",
+      "games_played": 8,
+      "avg_margin": 0.88,
+      "avg_excitement": 65.0
+    },
+    {
+      "matchup": "West Ham United vs Liverpool",
+      "games_played": 8,
+      "avg_margin": 0.88,
+      "avg_excitement": 65.0
+    },
+    {
+      "matchup": "Brighton & Hove Albion vs Tottenham Hotspur",
+      "games_played": 10,
+      "avg_margin": 2.2,
+      "avg_excitement": 43.0
+    },
+    {
+      "matchup": "Tottenham Hotspur vs Brighton & Hove Albion",
+      "games_played": 10,
+      "avg_margin": 2.2,
+      "avg_excitement": 43.0
+    },
+    {
+      "matchup": "Arsenal vs Reading",
+      "games_played": 8,
+      "avg_margin": 2.62,
+      "avg_excitement": 30.0
+    },
+    {
+      "matchup": "Reading vs Arsenal",
+      "games_played": 8,
+      "avg_margin": 2.62,
+      "avg_excitement": 30.0
+    },
+    {
+      "matchup": "Birmingham City vs Bristol City",
+      "games_played": 3,
+      "avg_margin": 2.33,
+      "avg_excitement": 30.0
+    },
+    {
+      "matchup": "Bristol City vs Birmingham City",
+      "games_played": 3,
+      "avg_margin": 2.33,
+      "avg_excitement": 30.0
+    },
+    {
+      "matchup": "Arsenal vs Everton",
+      "games_played": 7,
+      "avg_margin": 1.86,
+      "avg_excitement": 41.43
+    },
+    {
+      "matchup": "Everton vs Arsenal",
+      "games_played": 7,
+      "avg_margin": 1.86,
+      "avg_excitement": 41.43
+    },
+    {
+      "matchup": "Brighton & Hove Albion vs Manchester City",
+      "games_played": 9,
+      "avg_margin": 2.78,
+      "avg_excitement": 33.33
+    },
+    {
+      "matchup": "Manchester City vs Brighton & Hove Albion",
+      "games_played": 9,
+      "avg_margin": 2.78,
+      "avg_excitement": 33.33
+    },
+    {
+      "matchup": "Chelsea vs Liverpool",
+      "games_played": 4,
+      "avg_margin": 2,
+      "avg_excitement": 45.0
+    },
+    {
+      "matchup": "Liverpool vs Chelsea",
+      "games_played": 4,
+      "avg_margin": 2,
+      "avg_excitement": 45.0
+    },
+    {
+      "matchup": "Reading vs Tottenham Hotspur",
+      "games_played": 6,
+      "avg_margin": 0.67,
+      "avg_excitement": 81.67
+    },
+    {
+      "matchup": "Tottenham Hotspur vs Reading",
+      "games_played": 6,
+      "avg_margin": 0.67,
+      "avg_excitement": 81.67
+    },
+    {
+      "matchup": "Bristol City vs Manchester United",
+      "games_played": 4,
+      "avg_margin": 2.5,
+      "avg_excitement": 22.5
+    },
+    {
+      "matchup": "Manchester United vs Bristol City",
+      "games_played": 4,
+      "avg_margin": 2.5,
+      "avg_excitement": 22.5
+    },
+    {
+      "matchup": "Chelsea vs Reading",
+      "games_played": 4,
+      "avg_margin": 2.25,
+      "avg_excitement": 42.5
+    },
+    {
+      "matchup": "Reading vs Chelsea",
+      "games_played": 4,
+      "avg_margin": 2.25,
+      "avg_excitement": 42.5
+    },
+    {
+      "matchup": "Arsenal vs Birmingham City",
+      "games_played": 5,
+      "avg_margin": 2.6,
+      "avg_excitement": 4.0
+    },
+    {
+      "matchup": "Birmingham City vs Arsenal",
+      "games_played": 5,
+      "avg_margin": 2.6,
+      "avg_excitement": 4.0
+    },
+    {
+      "matchup": "Brighton & Hove Albion vs Liverpool",
+      "games_played": 5,
+      "avg_margin": 1.4,
+      "avg_excitement": 72.0
+    },
+    {
+      "matchup": "Liverpool vs Brighton & Hove Albion",
+      "games_played": 5,
+      "avg_margin": 1.4,
+      "avg_excitement": 72.0
+    },
+    {
+      "matchup": "Manchester City vs Tottenham Hotspur",
+      "games_played": 10,
+      "avg_margin": 2.7,
+      "avg_excitement": 24.0
+    },
+    {
+      "matchup": "Tottenham Hotspur vs Manchester City",
+      "games_played": 10,
+      "avg_margin": 2.7,
+      "avg_excitement": 24.0
+    },
+    {
+      "matchup": "Birmingham City vs Reading",
+      "games_played": 4,
+      "avg_margin": 1.5,
+      "avg_excitement": 67.5
+    },
+    {
+      "matchup": "Reading vs Birmingham City",
+      "games_played": 4,
+      "avg_margin": 1.5,
+      "avg_excitement": 67.5
+    },
+    {
+      "matchup": "Chelsea vs Everton",
+      "games_played": 10,
+      "avg_margin": 2.8,
+      "avg_excitement": 16.0
+    },
+    {
+      "matchup": "Everton vs Chelsea",
+      "games_played": 10,
+      "avg_margin": 2.8,
+      "avg_excitement": 16.0
+    },
+    {
+      "matchup": "Birmingham City vs Manchester United",
+      "games_played": 5,
+      "avg_margin": 2.4,
+      "avg_excitement": 20.0
+    },
+    {
+      "matchup": "Manchester United vs Birmingham City",
+      "games_played": 5,
+      "avg_margin": 2.4,
+      "avg_excitement": 20.0
+    },
+    {
+      "matchup": "Aston Villa vs Manchester City",
+      "games_played": 9,
+      "avg_margin": 2.44,
+      "avg_excitement": 36.67
+    },
+    {
+      "matchup": "Manchester City vs Aston Villa",
+      "games_played": 9,
+      "avg_margin": 2.44,
+      "avg_excitement": 36.67
+    },
+    {
+      "matchup": "Aston Villa vs Reading",
+      "games_played": 4,
+      "avg_margin": 1.75,
+      "avg_excitement": 30.0
+    },
+    {
+      "matchup": "Reading vs Aston Villa",
+      "games_played": 4,
+      "avg_margin": 1.75,
+      "avg_excitement": 30.0
+    },
+    {
+      "matchup": "Aston Villa vs Everton",
+      "games_played": 9,
+      "avg_margin": 1.78,
+      "avg_excitement": 51.11
+    },
+    {
+      "matchup": "Everton vs Aston Villa",
+      "games_played": 9,
+      "avg_margin": 1.78,
+      "avg_excitement": 51.11
+    },
+    {
+      "matchup": "Everton vs West Ham United",
+      "games_played": 9,
+      "avg_margin": 1.56,
+      "avg_excitement": 45.56
+    },
+    {
+      "matchup": "West Ham United vs Everton",
+      "games_played": 9,
+      "avg_margin": 1.56,
+      "avg_excitement": 45.56
+    },
+    {
+      "matchup": "Aston Villa vs Brighton & Hove Albion",
+      "games_played": 8,
+      "avg_margin": 1.62,
+      "avg_excitement": 48.75
+    },
+    {
+      "matchup": "Brighton & Hove Albion vs Aston Villa",
+      "games_played": 8,
+      "avg_margin": 1.62,
+      "avg_excitement": 48.75
+    },
+    {
+      "matchup": "Aston Villa vs Birmingham City",
+      "games_played": 2,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Birmingham City vs Aston Villa",
+      "games_played": 2,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Aston Villa vs Manchester United",
+      "games_played": 7,
+      "avg_margin": 2.43,
+      "avg_excitement": 35.71
+    },
+    {
+      "matchup": "Manchester United vs Aston Villa",
+      "games_played": 7,
+      "avg_margin": 2.43,
+      "avg_excitement": 35.71
+    },
+    {
+      "matchup": "Aston Villa vs Bristol City",
+      "games_played": 3,
+      "avg_margin": 2,
+      "avg_excitement": 33.33
+    },
+    {
+      "matchup": "Bristol City vs Aston Villa",
+      "games_played": 3,
+      "avg_margin": 2,
+      "avg_excitement": 33.33
+    },
+    {
+      "matchup": "Bristol City vs West Ham United",
+      "games_played": 4,
+      "avg_margin": 1.5,
+      "avg_excitement": 67.5
+    },
+    {
+      "matchup": "West Ham United vs Bristol City",
+      "games_played": 4,
+      "avg_margin": 1.5,
+      "avg_excitement": 67.5
+    },
+    {
+      "matchup": "Aston Villa vs Tottenham Hotspur",
+      "games_played": 7,
+      "avg_margin": 1.14,
+      "avg_excitement": 68.57
+    },
+    {
+      "matchup": "Tottenham Hotspur vs Aston Villa",
+      "games_played": 7,
+      "avg_margin": 1.14,
+      "avg_excitement": 68.57
+    },
+    {
+      "matchup": "Aston Villa vs Chelsea",
+      "games_played": 8,
+      "avg_margin": 2.38,
+      "avg_excitement": 41.25
+    },
+    {
+      "matchup": "Chelsea vs Aston Villa",
+      "games_played": 8,
+      "avg_margin": 2.38,
+      "avg_excitement": 41.25
+    },
+    {
+      "matchup": "Arsenal vs Aston Villa",
+      "games_played": 5,
+      "avg_margin": 3.2,
+      "avg_excitement": 14.0
+    },
+    {
+      "matchup": "Aston Villa vs Arsenal",
+      "games_played": 5,
+      "avg_margin": 3.2,
+      "avg_excitement": 14.0
+    },
+    {
+      "matchup": "Aston Villa vs Leicester City",
+      "games_played": 7,
+      "avg_margin": 1.86,
+      "avg_excitement": 51.43
+    },
+    {
+      "matchup": "Leicester City vs Aston Villa",
+      "games_played": 7,
+      "avg_margin": 1.86,
+      "avg_excitement": 51.43
+    },
+    {
+      "matchup": "Aston Villa vs West Ham United",
+      "games_played": 6,
+      "avg_margin": 1,
+      "avg_excitement": 78.33
+    },
+    {
+      "matchup": "West Ham United vs Aston Villa",
+      "games_played": 6,
+      "avg_margin": 1,
+      "avg_excitement": 78.33
+    },
+    {
+      "matchup": "Leicester City vs Manchester United",
+      "games_played": 7,
+      "avg_margin": 2.14,
+      "avg_excitement": 28.57
+    },
+    {
+      "matchup": "Manchester United vs Leicester City",
+      "games_played": 7,
+      "avg_margin": 2.14,
+      "avg_excitement": 28.57
+    },
+    {
+      "matchup": "Leicester City vs West Ham United",
+      "games_played": 5,
+      "avg_margin": 1.8,
+      "avg_excitement": 54.0
+    },
+    {
+      "matchup": "West Ham United vs Leicester City",
+      "games_played": 5,
+      "avg_margin": 1.8,
+      "avg_excitement": 54.0
+    },
+    {
+      "matchup": "Leicester City vs Tottenham Hotspur",
+      "games_played": 6,
+      "avg_margin": 1,
+      "avg_excitement": 78.33
+    },
+    {
+      "matchup": "Tottenham Hotspur vs Leicester City",
+      "games_played": 6,
+      "avg_margin": 1,
+      "avg_excitement": 78.33
+    },
+    {
+      "matchup": "Chelsea vs Leicester City",
+      "games_played": 6,
+      "avg_margin": 3.17,
+      "avg_excitement": 11.67
+    },
+    {
+      "matchup": "Leicester City vs Chelsea",
+      "games_played": 6,
+      "avg_margin": 3.17,
+      "avg_excitement": 11.67
+    },
+    {
+      "matchup": "Leicester City vs Manchester City",
+      "games_played": 6,
+      "avg_margin": 2.67,
+      "avg_excitement": 15.0
+    },
+    {
+      "matchup": "Manchester City vs Leicester City",
+      "games_played": 6,
+      "avg_margin": 2.67,
+      "avg_excitement": 15.0
+    },
+    {
+      "matchup": "Brighton & Hove Albion vs Leicester City",
+      "games_played": 6,
+      "avg_margin": 1.17,
+      "avg_excitement": 76.67
+    },
+    {
+      "matchup": "Leicester City vs Brighton & Hove Albion",
+      "games_played": 6,
+      "avg_margin": 1.17,
+      "avg_excitement": 76.67
+    },
+    {
+      "matchup": "Everton vs Leicester City",
+      "games_played": 8,
+      "avg_margin": 1.12,
+      "avg_excitement": 80.0
+    },
+    {
+      "matchup": "Leicester City vs Everton",
+      "games_played": 8,
+      "avg_margin": 1.12,
+      "avg_excitement": 80.0
+    },
+    {
+      "matchup": "Arsenal vs Leicester City",
+      "games_played": 4,
+      "avg_margin": 3.25,
+      "avg_excitement": 17.5
+    },
+    {
+      "matchup": "Leicester City vs Arsenal",
+      "games_played": 4,
+      "avg_margin": 3.25,
+      "avg_excitement": 17.5
+    },
+    {
+      "matchup": "Birmingham City vs Leicester City",
+      "games_played": 2,
+      "avg_margin": 1.5,
+      "avg_excitement": 50.0
+    },
+    {
+      "matchup": "Leicester City vs Birmingham City",
+      "games_played": 2,
+      "avg_margin": 1.5,
+      "avg_excitement": 50.0
+    },
+    {
+      "matchup": "Leicester City vs Reading",
+      "games_played": 3,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Reading vs Leicester City",
+      "games_played": 3,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Aston Villa vs Liverpool",
+      "games_played": 4,
+      "avg_margin": 1.75,
+      "avg_excitement": 47.5
+    },
+    {
+      "matchup": "Liverpool vs Aston Villa",
+      "games_played": 4,
+      "avg_margin": 1.75,
+      "avg_excitement": 47.5
+    },
+    {
+      "matchup": "Leicester City vs Liverpool",
+      "games_played": 4,
+      "avg_margin": 0.75,
+      "avg_excitement": 92.5
+    },
+    {
+      "matchup": "Liverpool vs Leicester City",
+      "games_played": 4,
+      "avg_margin": 0.75,
+      "avg_excitement": 92.5
+    },
+    {
+      "matchup": "Bristol City vs Leicester City",
+      "games_played": 2,
+      "avg_margin": 2.5,
+      "avg_excitement": 5.0
+    },
+    {
+      "matchup": "Leicester City vs Bristol City",
+      "games_played": 2,
+      "avg_margin": 2.5,
+      "avg_excitement": 5.0
+    },
+    {
+      "matchup": "Crystal Palace vs Tottenham Hotspur",
+      "games_played": 2,
+      "avg_margin": 2.5,
+      "avg_excitement": 40.0
+    },
+    {
+      "matchup": "Tottenham Hotspur vs Crystal Palace",
+      "games_played": 2,
+      "avg_margin": 2.5,
+      "avg_excitement": 40.0
+    },
+    {
+      "matchup": "Chelsea vs Crystal Palace",
+      "games_played": 1,
+      "avg_margin": 7,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Crystal Palace vs Chelsea",
+      "games_played": 1,
+      "avg_margin": 7,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Crystal Palace vs Leicester City",
+      "games_played": 1,
+      "avg_margin": 2,
+      "avg_excitement": 10.0
+    },
+    {
+      "matchup": "Leicester City vs Crystal Palace",
+      "games_played": 1,
+      "avg_margin": 2,
+      "avg_excitement": 10.0
+    },
+    {
+      "matchup": "Brighton & Hove Albion vs Crystal Palace",
+      "games_played": 2,
+      "avg_margin": 0.5,
+      "avg_excitement": 95.0
+    },
+    {
+      "matchup": "Crystal Palace vs Brighton & Hove Albion",
+      "games_played": 2,
+      "avg_margin": 0.5,
+      "avg_excitement": 95.0
+    },
+    {
+      "matchup": "Crystal Palace vs Liverpool",
+      "games_played": 2,
+      "avg_margin": 0.5,
+      "avg_excitement": 95.0
+    },
+    {
+      "matchup": "Liverpool vs Crystal Palace",
+      "games_played": 2,
+      "avg_margin": 0.5,
+      "avg_excitement": 95.0
+    },
+    {
+      "matchup": "Crystal Palace vs Manchester City",
+      "games_played": 1,
+      "avg_margin": 3,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Manchester City vs Crystal Palace",
+      "games_played": 1,
+      "avg_margin": 3,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Crystal Palace vs Everton",
+      "games_played": 2,
+      "avg_margin": 1.5,
+      "avg_excitement": 50.0
+    },
+    {
+      "matchup": "Everton vs Crystal Palace",
+      "games_played": 2,
+      "avg_margin": 1.5,
+      "avg_excitement": 50.0
+    },
+    {
+      "matchup": "Aston Villa vs Crystal Palace",
+      "games_played": 2,
+      "avg_margin": 1.5,
+      "avg_excitement": 50.0
+    },
+    {
+      "matchup": "Crystal Palace vs Aston Villa",
+      "games_played": 2,
+      "avg_margin": 1.5,
+      "avg_excitement": 50.0
+    },
+    {
+      "matchup": "Crystal Palace vs West Ham United",
+      "games_played": 1,
+      "avg_margin": 3,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "West Ham United vs Crystal Palace",
+      "games_played": 1,
+      "avg_margin": 3,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Crystal Palace vs Manchester United",
+      "games_played": 2,
+      "avg_margin": 1.5,
+      "avg_excitement": 50.0
+    },
+    {
+      "matchup": "Manchester United vs Crystal Palace",
+      "games_played": 2,
+      "avg_margin": 1.5,
+      "avg_excitement": 50.0
+    },
+    {
+      "matchup": "Arsenal vs Crystal Palace",
+      "games_played": 1,
+      "avg_margin": 5,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Crystal Palace vs Arsenal",
+      "games_played": 1,
+      "avg_margin": 5,
+      "avg_excitement": 0.0
+    }
+  ],
+  "matchup_close_rates": [
+    {
+      "matchup": "Brighton & Hove Albion vs Bristol City",
+      "games": 4,
+      "close_games": 2,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Bristol City vs Brighton & Hove Albion",
+      "games": 4,
+      "close_games": 2,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Manchester City vs Manchester United",
+      "games": 9,
+      "close_games": 5,
+      "close_rate": 55.56
+    },
+    {
+      "matchup": "Manchester United vs Manchester City",
+      "games": 9,
+      "close_games": 5,
+      "close_rate": 55.56
+    },
+    {
+      "matchup": "Chelsea vs Tottenham Hotspur",
+      "games": 6,
+      "close_games": 3,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Tottenham Hotspur vs Chelsea",
+      "games": 6,
+      "close_games": 3,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Birmingham City vs Everton",
+      "games": 4,
+      "close_games": 2,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Everton vs Birmingham City",
+      "games": 4,
+      "close_games": 2,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Liverpool vs Reading",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Reading vs Liverpool",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Arsenal vs West Ham United",
+      "games": 9,
+      "close_games": 4,
+      "close_rate": 44.44
+    },
+    {
+      "matchup": "West Ham United vs Arsenal",
+      "games": 9,
+      "close_games": 4,
+      "close_rate": 44.44
+    },
+    {
+      "matchup": "Bristol City vs Everton",
+      "games": 4,
+      "close_games": 1,
+      "close_rate": 25.0
+    },
+    {
+      "matchup": "Everton vs Bristol City",
+      "games": 4,
+      "close_games": 1,
+      "close_rate": 25.0
+    },
+    {
+      "matchup": "Manchester City vs Reading",
+      "games": 4,
+      "close_games": 1,
+      "close_rate": 25.0
+    },
+    {
+      "matchup": "Reading vs Manchester City",
+      "games": 4,
+      "close_games": 1,
+      "close_rate": 25.0
+    },
+    {
+      "matchup": "Brighton & Hove Albion vs Chelsea",
+      "games": 11,
+      "close_games": 5,
+      "close_rate": 45.45
+    },
+    {
+      "matchup": "Chelsea vs Brighton & Hove Albion",
+      "games": 11,
+      "close_games": 5,
+      "close_rate": 45.45
+    },
+    {
+      "matchup": "Liverpool vs Tottenham Hotspur",
+      "games": 6,
+      "close_games": 6,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Tottenham Hotspur vs Liverpool",
+      "games": 6,
+      "close_games": 6,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Birmingham City vs West Ham United",
+      "games": 5,
+      "close_games": 5,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "West Ham United vs Birmingham City",
+      "games": 5,
+      "close_games": 5,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Arsenal vs Manchester United",
+      "games": 9,
+      "close_games": 6,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Manchester United vs Arsenal",
+      "games": 9,
+      "close_games": 6,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Liverpool vs Manchester United",
+      "games": 6,
+      "close_games": 2,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "Manchester United vs Liverpool",
+      "games": 6,
+      "close_games": 2,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "Arsenal vs Brighton & Hove Albion",
+      "games": 8,
+      "close_games": 1,
+      "close_rate": 12.5
+    },
+    {
+      "matchup": "Brighton & Hove Albion vs Arsenal",
+      "games": 8,
+      "close_games": 1,
+      "close_rate": 12.5
+    },
+    {
+      "matchup": "Everton vs Manchester City",
+      "games": 9,
+      "close_games": 5,
+      "close_rate": 55.56
+    },
+    {
+      "matchup": "Manchester City vs Everton",
+      "games": 9,
+      "close_games": 5,
+      "close_rate": 55.56
+    },
+    {
+      "matchup": "Tottenham Hotspur vs West Ham United",
+      "games": 10,
+      "close_games": 7,
+      "close_rate": 70.0
+    },
+    {
+      "matchup": "West Ham United vs Tottenham Hotspur",
+      "games": 10,
+      "close_games": 7,
+      "close_rate": 70.0
+    },
+    {
+      "matchup": "Bristol City vs Chelsea",
+      "games": 5,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Chelsea vs Bristol City",
+      "games": 5,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Birmingham City vs Manchester City",
+      "games": 4,
+      "close_games": 1,
+      "close_rate": 25.0
+    },
+    {
+      "matchup": "Manchester City vs Birmingham City",
+      "games": 4,
+      "close_games": 1,
+      "close_rate": 25.0
+    },
+    {
+      "matchup": "Bristol City vs Liverpool",
+      "games": 3,
+      "close_games": 3,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Liverpool vs Bristol City",
+      "games": 3,
+      "close_games": 3,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Manchester United vs Tottenham Hotspur",
+      "games": 9,
+      "close_games": 4,
+      "close_rate": 44.44
+    },
+    {
+      "matchup": "Tottenham Hotspur vs Manchester United",
+      "games": 9,
+      "close_games": 4,
+      "close_rate": 44.44
+    },
+    {
+      "matchup": "Brighton & Hove Albion vs West Ham United",
+      "games": 9,
+      "close_games": 5,
+      "close_rate": 55.56
+    },
+    {
+      "matchup": "West Ham United vs Brighton & Hove Albion",
+      "games": 9,
+      "close_games": 5,
+      "close_rate": 55.56
+    },
+    {
+      "matchup": "Everton vs Reading",
+      "games": 7,
+      "close_games": 5,
+      "close_rate": 71.43
+    },
+    {
+      "matchup": "Reading vs Everton",
+      "games": 7,
+      "close_games": 5,
+      "close_rate": 71.43
+    },
+    {
+      "matchup": "Arsenal vs Chelsea",
+      "games": 11,
+      "close_games": 7,
+      "close_rate": 63.64
+    },
+    {
+      "matchup": "Chelsea vs Arsenal",
+      "games": 11,
+      "close_games": 7,
+      "close_rate": 63.64
+    },
+    {
+      "matchup": "Brighton & Hove Albion vs Everton",
+      "games": 7,
+      "close_games": 5,
+      "close_rate": 71.43
+    },
+    {
+      "matchup": "Everton vs Brighton & Hove Albion",
+      "games": 7,
+      "close_games": 5,
+      "close_rate": 71.43
+    },
+    {
+      "matchup": "Manchester United vs Reading",
+      "games": 8,
+      "close_games": 3,
+      "close_rate": 37.5
+    },
+    {
+      "matchup": "Reading vs Manchester United",
+      "games": 8,
+      "close_games": 3,
+      "close_rate": 37.5
+    },
+    {
+      "matchup": "Birmingham City vs Liverpool",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Liverpool vs Birmingham City",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Arsenal vs Manchester City",
+      "games": 11,
+      "close_games": 10,
+      "close_rate": 90.91
+    },
+    {
+      "matchup": "Manchester City vs Arsenal",
+      "games": 11,
+      "close_games": 10,
+      "close_rate": 90.91
+    },
+    {
+      "matchup": "Bristol City vs Tottenham Hotspur",
+      "games": 5,
+      "close_games": 4,
+      "close_rate": 80.0
+    },
+    {
+      "matchup": "Tottenham Hotspur vs Bristol City",
+      "games": 5,
+      "close_games": 4,
+      "close_rate": 80.0
+    },
+    {
+      "matchup": "Chelsea vs West Ham United",
+      "games": 9,
+      "close_games": 1,
+      "close_rate": 11.11
+    },
+    {
+      "matchup": "West Ham United vs Chelsea",
+      "games": 9,
+      "close_games": 1,
+      "close_rate": 11.11
+    },
+    {
+      "matchup": "Manchester City vs West Ham United",
+      "games": 7,
+      "close_games": 2,
+      "close_rate": 28.57
+    },
+    {
+      "matchup": "West Ham United vs Manchester City",
+      "games": 7,
+      "close_games": 2,
+      "close_rate": 28.57
+    },
+    {
+      "matchup": "Birmingham City vs Brighton & Hove Albion",
+      "games": 5,
+      "close_games": 2,
+      "close_rate": 40.0
+    },
+    {
+      "matchup": "Brighton & Hove Albion vs Birmingham City",
+      "games": 5,
+      "close_games": 2,
+      "close_rate": 40.0
+    },
+    {
+      "matchup": "Chelsea vs Manchester United",
+      "games": 8,
+      "close_games": 5,
+      "close_rate": 62.5
+    },
+    {
+      "matchup": "Manchester United vs Chelsea",
+      "games": 8,
+      "close_games": 5,
+      "close_rate": 62.5
+    },
+    {
+      "matchup": "Bristol City vs Reading",
+      "games": 4,
+      "close_games": 4,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Reading vs Bristol City",
+      "games": 4,
+      "close_games": 4,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Everton vs Liverpool",
+      "games": 7,
+      "close_games": 6,
+      "close_rate": 85.71
+    },
+    {
+      "matchup": "Liverpool vs Everton",
+      "games": 7,
+      "close_games": 6,
+      "close_rate": 85.71
+    },
+    {
+      "matchup": "Arsenal vs Tottenham Hotspur",
+      "games": 9,
+      "close_games": 3,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "Tottenham Hotspur vs Arsenal",
+      "games": 9,
+      "close_games": 3,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "Brighton & Hove Albion vs Manchester United",
+      "games": 10,
+      "close_games": 3,
+      "close_rate": 30.0
+    },
+    {
+      "matchup": "Manchester United vs Brighton & Hove Albion",
+      "games": 10,
+      "close_games": 3,
+      "close_rate": 30.0
+    },
+    {
+      "matchup": "Bristol City vs Manchester City",
+      "games": 5,
+      "close_games": 1,
+      "close_rate": 20.0
+    },
+    {
+      "matchup": "Manchester City vs Bristol City",
+      "games": 5,
+      "close_games": 1,
+      "close_rate": 20.0
+    },
+    {
+      "matchup": "Everton vs Tottenham Hotspur",
+      "games": 9,
+      "close_games": 7,
+      "close_rate": 77.78
+    },
+    {
+      "matchup": "Tottenham Hotspur vs Everton",
+      "games": 9,
+      "close_games": 7,
+      "close_rate": 77.78
+    },
+    {
+      "matchup": "Arsenal vs Liverpool",
+      "games": 8,
+      "close_games": 4,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Liverpool vs Arsenal",
+      "games": 8,
+      "close_games": 4,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Birmingham City vs Chelsea",
+      "games": 4,
+      "close_games": 1,
+      "close_rate": 25.0
+    },
+    {
+      "matchup": "Chelsea vs Birmingham City",
+      "games": 4,
+      "close_games": 1,
+      "close_rate": 25.0
+    },
+    {
+      "matchup": "Reading vs West Ham United",
+      "games": 6,
+      "close_games": 5,
+      "close_rate": 83.33
+    },
+    {
+      "matchup": "West Ham United vs Reading",
+      "games": 6,
+      "close_games": 5,
+      "close_rate": 83.33
+    },
+    {
+      "matchup": "Brighton & Hove Albion vs Reading",
+      "games": 7,
+      "close_games": 4,
+      "close_rate": 57.14
+    },
+    {
+      "matchup": "Reading vs Brighton & Hove Albion",
+      "games": 7,
+      "close_games": 4,
+      "close_rate": 57.14
+    },
+    {
+      "matchup": "Arsenal vs Bristol City",
+      "games": 4,
+      "close_games": 2,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Bristol City vs Arsenal",
+      "games": 4,
+      "close_games": 2,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Liverpool vs Manchester City",
+      "games": 6,
+      "close_games": 4,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Manchester City vs Liverpool",
+      "games": 6,
+      "close_games": 4,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Manchester United vs West Ham United",
+      "games": 10,
+      "close_games": 4,
+      "close_rate": 40.0
+    },
+    {
+      "matchup": "West Ham United vs Manchester United",
+      "games": 10,
+      "close_games": 4,
+      "close_rate": 40.0
+    },
+    {
+      "matchup": "Birmingham City vs Tottenham Hotspur",
+      "games": 5,
+      "close_games": 4,
+      "close_rate": 80.0
+    },
+    {
+      "matchup": "Tottenham Hotspur vs Birmingham City",
+      "games": 5,
+      "close_games": 4,
+      "close_rate": 80.0
+    },
+    {
+      "matchup": "Chelsea vs Manchester City",
+      "games": 11,
+      "close_games": 6,
+      "close_rate": 54.55
+    },
+    {
+      "matchup": "Manchester City vs Chelsea",
+      "games": 11,
+      "close_games": 6,
+      "close_rate": 54.55
+    },
+    {
+      "matchup": "Everton vs Manchester United",
+      "games": 8,
+      "close_games": 4,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Manchester United vs Everton",
+      "games": 8,
+      "close_games": 4,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Liverpool vs West Ham United",
+      "games": 8,
+      "close_games": 5,
+      "close_rate": 62.5
+    },
+    {
+      "matchup": "West Ham United vs Liverpool",
+      "games": 8,
+      "close_games": 5,
+      "close_rate": 62.5
+    },
+    {
+      "matchup": "Brighton & Hove Albion vs Tottenham Hotspur",
+      "games": 10,
+      "close_games": 5,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Tottenham Hotspur vs Brighton & Hove Albion",
+      "games": 10,
+      "close_games": 5,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Arsenal vs Reading",
+      "games": 8,
+      "close_games": 3,
+      "close_rate": 37.5
+    },
+    {
+      "matchup": "Reading vs Arsenal",
+      "games": 8,
+      "close_games": 3,
+      "close_rate": 37.5
+    },
+    {
+      "matchup": "Birmingham City vs Bristol City",
+      "games": 3,
+      "close_games": 1,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "Bristol City vs Birmingham City",
+      "games": 3,
+      "close_games": 1,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "Arsenal vs Everton",
+      "games": 7,
+      "close_games": 3,
+      "close_rate": 42.86
+    },
+    {
+      "matchup": "Everton vs Arsenal",
+      "games": 7,
+      "close_games": 3,
+      "close_rate": 42.86
+    },
+    {
+      "matchup": "Brighton & Hove Albion vs Manchester City",
+      "games": 9,
+      "close_games": 4,
+      "close_rate": 44.44
+    },
+    {
+      "matchup": "Manchester City vs Brighton & Hove Albion",
+      "games": 9,
+      "close_games": 4,
+      "close_rate": 44.44
+    },
+    {
+      "matchup": "Chelsea vs Liverpool",
+      "games": 4,
+      "close_games": 2,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Liverpool vs Chelsea",
+      "games": 4,
+      "close_games": 2,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Reading vs Tottenham Hotspur",
+      "games": 6,
+      "close_games": 5,
+      "close_rate": 83.33
+    },
+    {
+      "matchup": "Tottenham Hotspur vs Reading",
+      "games": 6,
+      "close_games": 5,
+      "close_rate": 83.33
+    },
+    {
+      "matchup": "Bristol City vs Manchester United",
+      "games": 4,
+      "close_games": 1,
+      "close_rate": 25.0
+    },
+    {
+      "matchup": "Manchester United vs Bristol City",
+      "games": 4,
+      "close_games": 1,
+      "close_rate": 25.0
+    },
+    {
+      "matchup": "Chelsea vs Reading",
+      "games": 4,
+      "close_games": 2,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Reading vs Chelsea",
+      "games": 4,
+      "close_games": 2,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Arsenal vs Birmingham City",
+      "games": 5,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Birmingham City vs Arsenal",
+      "games": 5,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Brighton & Hove Albion vs Liverpool",
+      "games": 5,
+      "close_games": 4,
+      "close_rate": 80.0
+    },
+    {
+      "matchup": "Liverpool vs Brighton & Hove Albion",
+      "games": 5,
+      "close_games": 4,
+      "close_rate": 80.0
+    },
+    {
+      "matchup": "Manchester City vs Tottenham Hotspur",
+      "games": 10,
+      "close_games": 3,
+      "close_rate": 30.0
+    },
+    {
+      "matchup": "Tottenham Hotspur vs Manchester City",
+      "games": 10,
+      "close_games": 3,
+      "close_rate": 30.0
+    },
+    {
+      "matchup": "Birmingham City vs Reading",
+      "games": 4,
+      "close_games": 3,
+      "close_rate": 75.0
+    },
+    {
+      "matchup": "Reading vs Birmingham City",
+      "games": 4,
+      "close_games": 3,
+      "close_rate": 75.0
+    },
+    {
+      "matchup": "Chelsea vs Everton",
+      "games": 10,
+      "close_games": 2,
+      "close_rate": 20.0
+    },
+    {
+      "matchup": "Everton vs Chelsea",
+      "games": 10,
+      "close_games": 2,
+      "close_rate": 20.0
+    },
+    {
+      "matchup": "Birmingham City vs Manchester United",
+      "games": 5,
+      "close_games": 1,
+      "close_rate": 20.0
+    },
+    {
+      "matchup": "Manchester United vs Birmingham City",
+      "games": 5,
+      "close_games": 1,
+      "close_rate": 20.0
+    },
+    {
+      "matchup": "Aston Villa vs Manchester City",
+      "games": 9,
+      "close_games": 4,
+      "close_rate": 44.44
+    },
+    {
+      "matchup": "Manchester City vs Aston Villa",
+      "games": 9,
+      "close_games": 4,
+      "close_rate": 44.44
+    },
+    {
+      "matchup": "Aston Villa vs Reading",
+      "games": 4,
+      "close_games": 1,
+      "close_rate": 25.0
+    },
+    {
+      "matchup": "Reading vs Aston Villa",
+      "games": 4,
+      "close_games": 1,
+      "close_rate": 25.0
+    },
+    {
+      "matchup": "Aston Villa vs Everton",
+      "games": 9,
+      "close_games": 5,
+      "close_rate": 55.56
+    },
+    {
+      "matchup": "Everton vs Aston Villa",
+      "games": 9,
+      "close_games": 5,
+      "close_rate": 55.56
+    },
+    {
+      "matchup": "Everton vs West Ham United",
+      "games": 9,
+      "close_games": 4,
+      "close_rate": 44.44
+    },
+    {
+      "matchup": "West Ham United vs Everton",
+      "games": 9,
+      "close_games": 4,
+      "close_rate": 44.44
+    },
+    {
+      "matchup": "Aston Villa vs Brighton & Hove Albion",
+      "games": 8,
+      "close_games": 4,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Brighton & Hove Albion vs Aston Villa",
+      "games": 8,
+      "close_games": 4,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Aston Villa vs Birmingham City",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Birmingham City vs Aston Villa",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Aston Villa vs Manchester United",
+      "games": 7,
+      "close_games": 3,
+      "close_rate": 42.86
+    },
+    {
+      "matchup": "Manchester United vs Aston Villa",
+      "games": 7,
+      "close_games": 3,
+      "close_rate": 42.86
+    },
+    {
+      "matchup": "Aston Villa vs Bristol City",
+      "games": 3,
+      "close_games": 1,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "Bristol City vs Aston Villa",
+      "games": 3,
+      "close_games": 1,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "Bristol City vs West Ham United",
+      "games": 4,
+      "close_games": 3,
+      "close_rate": 75.0
+    },
+    {
+      "matchup": "West Ham United vs Bristol City",
+      "games": 4,
+      "close_games": 3,
+      "close_rate": 75.0
+    },
+    {
+      "matchup": "Aston Villa vs Tottenham Hotspur",
+      "games": 7,
+      "close_games": 5,
+      "close_rate": 71.43
+    },
+    {
+      "matchup": "Tottenham Hotspur vs Aston Villa",
+      "games": 7,
+      "close_games": 5,
+      "close_rate": 71.43
+    },
+    {
+      "matchup": "Aston Villa vs Chelsea",
+      "games": 8,
+      "close_games": 4,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Chelsea vs Aston Villa",
+      "games": 8,
+      "close_games": 4,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Arsenal vs Aston Villa",
+      "games": 5,
+      "close_games": 1,
+      "close_rate": 20.0
+    },
+    {
+      "matchup": "Aston Villa vs Arsenal",
+      "games": 5,
+      "close_games": 1,
+      "close_rate": 20.0
+    },
+    {
+      "matchup": "Aston Villa vs Leicester City",
+      "games": 7,
+      "close_games": 4,
+      "close_rate": 57.14
+    },
+    {
+      "matchup": "Leicester City vs Aston Villa",
+      "games": 7,
+      "close_games": 4,
+      "close_rate": 57.14
+    },
+    {
+      "matchup": "Aston Villa vs West Ham United",
+      "games": 6,
+      "close_games": 5,
+      "close_rate": 83.33
+    },
+    {
+      "matchup": "West Ham United vs Aston Villa",
+      "games": 6,
+      "close_games": 5,
+      "close_rate": 83.33
+    },
+    {
+      "matchup": "Leicester City vs Manchester United",
+      "games": 7,
+      "close_games": 2,
+      "close_rate": 28.57
+    },
+    {
+      "matchup": "Manchester United vs Leicester City",
+      "games": 7,
+      "close_games": 2,
+      "close_rate": 28.57
+    },
+    {
+      "matchup": "Leicester City vs West Ham United",
+      "games": 5,
+      "close_games": 3,
+      "close_rate": 60.0
+    },
+    {
+      "matchup": "West Ham United vs Leicester City",
+      "games": 5,
+      "close_games": 3,
+      "close_rate": 60.0
+    },
+    {
+      "matchup": "Leicester City vs Tottenham Hotspur",
+      "games": 6,
+      "close_games": 5,
+      "close_rate": 83.33
+    },
+    {
+      "matchup": "Tottenham Hotspur vs Leicester City",
+      "games": 6,
+      "close_games": 5,
+      "close_rate": 83.33
+    },
+    {
+      "matchup": "Chelsea vs Leicester City",
+      "games": 6,
+      "close_games": 1,
+      "close_rate": 16.67
+    },
+    {
+      "matchup": "Leicester City vs Chelsea",
+      "games": 6,
+      "close_games": 1,
+      "close_rate": 16.67
+    },
+    {
+      "matchup": "Leicester City vs Manchester City",
+      "games": 6,
+      "close_games": 1,
+      "close_rate": 16.67
+    },
+    {
+      "matchup": "Manchester City vs Leicester City",
+      "games": 6,
+      "close_games": 1,
+      "close_rate": 16.67
+    },
+    {
+      "matchup": "Brighton & Hove Albion vs Leicester City",
+      "games": 6,
+      "close_games": 5,
+      "close_rate": 83.33
+    },
+    {
+      "matchup": "Leicester City vs Brighton & Hove Albion",
+      "games": 6,
+      "close_games": 5,
+      "close_rate": 83.33
+    },
+    {
+      "matchup": "Everton vs Leicester City",
+      "games": 8,
+      "close_games": 7,
+      "close_rate": 87.5
+    },
+    {
+      "matchup": "Leicester City vs Everton",
+      "games": 8,
+      "close_games": 7,
+      "close_rate": 87.5
+    },
+    {
+      "matchup": "Arsenal vs Leicester City",
+      "games": 4,
+      "close_games": 1,
+      "close_rate": 25.0
+    },
+    {
+      "matchup": "Leicester City vs Arsenal",
+      "games": 4,
+      "close_games": 1,
+      "close_rate": 25.0
+    },
+    {
+      "matchup": "Birmingham City vs Leicester City",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Leicester City vs Birmingham City",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Leicester City vs Reading",
+      "games": 3,
+      "close_games": 3,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Reading vs Leicester City",
+      "games": 3,
+      "close_games": 3,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Aston Villa vs Liverpool",
+      "games": 4,
+      "close_games": 2,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Liverpool vs Aston Villa",
+      "games": 4,
+      "close_games": 2,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Leicester City vs Liverpool",
+      "games": 4,
+      "close_games": 4,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Liverpool vs Leicester City",
+      "games": 4,
+      "close_games": 4,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Bristol City vs Leicester City",
+      "games": 2,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Leicester City vs Bristol City",
+      "games": 2,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Crystal Palace vs Tottenham Hotspur",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Tottenham Hotspur vs Crystal Palace",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Chelsea vs Crystal Palace",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Crystal Palace vs Chelsea",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Crystal Palace vs Leicester City",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Leicester City vs Crystal Palace",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Brighton & Hove Albion vs Crystal Palace",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Crystal Palace vs Brighton & Hove Albion",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Crystal Palace vs Liverpool",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Liverpool vs Crystal Palace",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Crystal Palace vs Manchester City",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Manchester City vs Crystal Palace",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Crystal Palace vs Everton",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Everton vs Crystal Palace",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Aston Villa vs Crystal Palace",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Crystal Palace vs Aston Villa",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Crystal Palace vs West Ham United",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "West Ham United vs Crystal Palace",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Crystal Palace vs Manchester United",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Manchester United vs Crystal Palace",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Arsenal vs Crystal Palace",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Crystal Palace vs Arsenal",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    }
+  ],
+  "form_strengths": [
+    {
+      "team": "Arsenal",
+      "strength": 88.0
+    },
+    {
+      "team": "Aston Villa",
+      "strength": 48.0
+    },
+    {
+      "team": "Birmingham City",
+      "strength": 48.0
+    },
+    {
+      "team": "Brighton & Hove Albion",
+      "strength": 65.3
+    },
+    {
+      "team": "Bristol City",
+      "strength": 50.0
+    },
+    {
+      "team": "Chelsea",
+      "strength": 86.0
+    },
+    {
+      "team": "Crystal Palace",
+      "strength": 60.7
+    },
+    {
+      "team": "Everton",
+      "strength": 74.0
+    },
+    {
+      "team": "Leicester City",
+      "strength": 58.7
+    },
+    {
+      "team": "Liverpool",
+      "strength": 73.3
+    },
+    {
+      "team": "Manchester City",
+      "strength": 63.3
+    },
+    {
+      "team": "Manchester United",
+      "strength": 72.7
+    },
+    {
+      "team": "Reading",
+      "strength": 61.3
+    },
+    {
+      "team": "Tottenham Hotspur",
+      "strength": 54.0
+    },
+    {
+      "team": "West Ham United",
+      "strength": 66.7
+    }
+  ],
+  "team_margin_ratings": [
+    {
+      "team": "Arsenal",
+      "avg_margin": 2.5
+    },
+    {
+      "team": "Aston Villa",
+      "avg_margin": -1.1
+    },
+    {
+      "team": "Birmingham City",
+      "avg_margin": -1.8
+    },
+    {
+      "team": "Brighton & Hove Albion",
+      "avg_margin": -1.1
+    },
+    {
+      "team": "Bristol City",
+      "avg_margin": -1.7
+    },
+    {
+      "team": "Chelsea",
+      "avg_margin": 1.4
+    },
+    {
+      "team": "Crystal Palace",
+      "avg_margin": -1.5
+    },
+    {
+      "team": "Everton",
+      "avg_margin": 0.4
+    },
+    {
+      "team": "Leicester City",
+      "avg_margin": -1.1
+    },
+    {
+      "team": "Liverpool",
+      "avg_margin": -1
+    },
+    {
+      "team": "Manchester City",
+      "avg_margin": 0.4
+    },
+    {
+      "team": "Manchester United",
+      "avg_margin": 1.4
+    },
+    {
+      "team": "Reading",
+      "avg_margin": -0.8
+    },
+    {
+      "team": "Tottenham Hotspur",
+      "avg_margin": -1
+    },
+    {
+      "team": "West Ham United",
+      "avg_margin": -0.1
+    }
+  ]
+}

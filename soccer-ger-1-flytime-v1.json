@@ -1,0 +1,5468 @@
+{
+  "meta": {
+    "sport": "Bundesliga",
+    "league": "ger.1",
+    "engine": "v1-bootstrap",
+    "formula": "close*0.35 + form_balance*0.25 + margin_balance*0.25 + matchup*0.15",
+    "close_margin": 1,
+    "games_sampled": 500,
+    "week_chunk": 9,
+    "built": "2026-06-10"
+  },
+  "matchup_ratings": [
+    {
+      "matchup": "Bayern Munich vs Hertha Berlin",
+      "games_played": 3,
+      "avg_margin": 2,
+      "avg_excitement": 56.67
+    },
+    {
+      "matchup": "Hertha Berlin vs Bayern Munich",
+      "games_played": 3,
+      "avg_margin": 2,
+      "avg_excitement": 56.67
+    },
+    {
+      "matchup": "Bayer Leverkusen vs SC Paderborn 07",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "SC Paderborn 07 vs Bayer Leverkusen",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Borussia Dortmund vs FC Augsburg",
+      "games_played": 3,
+      "avg_margin": 2.33,
+      "avg_excitement": 30.0
+    },
+    {
+      "matchup": "FC Augsburg vs Borussia Dortmund",
+      "games_played": 3,
+      "avg_margin": 2.33,
+      "avg_excitement": 30.0
+    },
+    {
+      "matchup": "Mainz vs SC Freiburg",
+      "games_played": 4,
+      "avg_margin": 1.5,
+      "avg_excitement": 50.0
+    },
+    {
+      "matchup": "SC Freiburg vs Mainz",
+      "games_played": 4,
+      "avg_margin": 1.5,
+      "avg_excitement": 50.0
+    },
+    {
+      "matchup": "FC Cologne vs VfL Wolfsburg",
+      "games_played": 4,
+      "avg_margin": 1,
+      "avg_excitement": 72.5
+    },
+    {
+      "matchup": "VfL Wolfsburg vs FC Cologne",
+      "games_played": 4,
+      "avg_margin": 1,
+      "avg_excitement": 72.5
+    },
+    {
+      "matchup": "Fortuna D\u00fcsseldorf vs Werder Bremen",
+      "games_played": 1,
+      "avg_margin": 2,
+      "avg_excitement": 10.0
+    },
+    {
+      "matchup": "Werder Bremen vs Fortuna D\u00fcsseldorf",
+      "games_played": 1,
+      "avg_margin": 2,
+      "avg_excitement": 10.0
+    },
+    {
+      "matchup": "Borussia M\u00f6nchengladbach vs Schalke 04",
+      "games_played": 3,
+      "avg_margin": 1,
+      "avg_excitement": 66.67
+    },
+    {
+      "matchup": "Schalke 04 vs Borussia M\u00f6nchengladbach",
+      "games_played": 3,
+      "avg_margin": 1,
+      "avg_excitement": 66.67
+    },
+    {
+      "matchup": "Eintracht Frankfurt vs TSG Hoffenheim",
+      "games_played": 3,
+      "avg_margin": 1.33,
+      "avg_excitement": 63.33
+    },
+    {
+      "matchup": "TSG Hoffenheim vs Eintracht Frankfurt",
+      "games_played": 3,
+      "avg_margin": 1.33,
+      "avg_excitement": 63.33
+    },
+    {
+      "matchup": "1. FC Union Berlin vs RB Leipzig",
+      "games_played": 3,
+      "avg_margin": 2.67,
+      "avg_excitement": 26.67
+    },
+    {
+      "matchup": "RB Leipzig vs 1. FC Union Berlin",
+      "games_played": 3,
+      "avg_margin": 2.67,
+      "avg_excitement": 26.67
+    },
+    {
+      "matchup": "Borussia Dortmund vs FC Cologne",
+      "games_played": 5,
+      "avg_margin": 1.4,
+      "avg_excitement": 58.0
+    },
+    {
+      "matchup": "FC Cologne vs Borussia Dortmund",
+      "games_played": 5,
+      "avg_margin": 1.4,
+      "avg_excitement": 58.0
+    },
+    {
+      "matchup": "1. FC Union Berlin vs FC Augsburg",
+      "games_played": 3,
+      "avg_margin": 0.67,
+      "avg_excitement": 70.0
+    },
+    {
+      "matchup": "FC Augsburg vs 1. FC Union Berlin",
+      "games_played": 3,
+      "avg_margin": 0.67,
+      "avg_excitement": 70.0
+    },
+    {
+      "matchup": "Bayer Leverkusen vs Fortuna D\u00fcsseldorf",
+      "games_played": 1,
+      "avg_margin": 2,
+      "avg_excitement": 10.0
+    },
+    {
+      "matchup": "Fortuna D\u00fcsseldorf vs Bayer Leverkusen",
+      "games_played": 1,
+      "avg_margin": 2,
+      "avg_excitement": 10.0
+    },
+    {
+      "matchup": "Borussia M\u00f6nchengladbach vs Mainz",
+      "games_played": 5,
+      "avg_margin": 0.8,
+      "avg_excitement": 78.0
+    },
+    {
+      "matchup": "Mainz vs Borussia M\u00f6nchengladbach",
+      "games_played": 5,
+      "avg_margin": 0.8,
+      "avg_excitement": 78.0
+    },
+    {
+      "matchup": "SC Freiburg vs SC Paderborn 07",
+      "games_played": 1,
+      "avg_margin": 2,
+      "avg_excitement": 10.0
+    },
+    {
+      "matchup": "SC Paderborn 07 vs SC Freiburg",
+      "games_played": 1,
+      "avg_margin": 2,
+      "avg_excitement": 10.0
+    },
+    {
+      "matchup": "TSG Hoffenheim vs Werder Bremen",
+      "games_played": 4,
+      "avg_margin": 0.75,
+      "avg_excitement": 92.5
+    },
+    {
+      "matchup": "Werder Bremen vs TSG Hoffenheim",
+      "games_played": 4,
+      "avg_margin": 0.75,
+      "avg_excitement": 92.5
+    },
+    {
+      "matchup": "Bayern Munich vs Schalke 04",
+      "games_played": 2,
+      "avg_margin": 5.5,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Schalke 04 vs Bayern Munich",
+      "games_played": 2,
+      "avg_margin": 5.5,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Eintracht Frankfurt vs RB Leipzig",
+      "games_played": 4,
+      "avg_margin": 1.25,
+      "avg_excitement": 70.0
+    },
+    {
+      "matchup": "RB Leipzig vs Eintracht Frankfurt",
+      "games_played": 4,
+      "avg_margin": 1.25,
+      "avg_excitement": 70.0
+    },
+    {
+      "matchup": "Hertha Berlin vs VfL Wolfsburg",
+      "games_played": 3,
+      "avg_margin": 1.33,
+      "avg_excitement": 63.33
+    },
+    {
+      "matchup": "VfL Wolfsburg vs Hertha Berlin",
+      "games_played": 3,
+      "avg_margin": 1.33,
+      "avg_excitement": 63.33
+    },
+    {
+      "matchup": "Borussia M\u00f6nchengladbach vs RB Leipzig",
+      "games_played": 4,
+      "avg_margin": 1.75,
+      "avg_excitement": 47.5
+    },
+    {
+      "matchup": "RB Leipzig vs Borussia M\u00f6nchengladbach",
+      "games_played": 4,
+      "avg_margin": 1.75,
+      "avg_excitement": 47.5
+    },
+    {
+      "matchup": "Bayer Leverkusen vs TSG Hoffenheim",
+      "games_played": 4,
+      "avg_margin": 1.75,
+      "avg_excitement": 47.5
+    },
+    {
+      "matchup": "TSG Hoffenheim vs Bayer Leverkusen",
+      "games_played": 4,
+      "avg_margin": 1.75,
+      "avg_excitement": 47.5
+    },
+    {
+      "matchup": "Bayern Munich vs Mainz",
+      "games_played": 2,
+      "avg_margin": 3.5,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Mainz vs Bayern Munich",
+      "games_played": 2,
+      "avg_margin": 3.5,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "FC Cologne vs SC Freiburg",
+      "games_played": 2,
+      "avg_margin": 0.5,
+      "avg_excitement": 95.0
+    },
+    {
+      "matchup": "SC Freiburg vs FC Cologne",
+      "games_played": 2,
+      "avg_margin": 0.5,
+      "avg_excitement": 95.0
+    },
+    {
+      "matchup": "Hertha Berlin vs Schalke 04",
+      "games_played": 2,
+      "avg_margin": 2,
+      "avg_excitement": 45.0
+    },
+    {
+      "matchup": "Schalke 04 vs Hertha Berlin",
+      "games_played": 2,
+      "avg_margin": 2,
+      "avg_excitement": 45.0
+    },
+    {
+      "matchup": "SC Paderborn 07 vs VfL Wolfsburg",
+      "games_played": 1,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "VfL Wolfsburg vs SC Paderborn 07",
+      "games_played": 1,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "1. FC Union Berlin vs Borussia Dortmund",
+      "games_played": 4,
+      "avg_margin": 2,
+      "avg_excitement": 10.0
+    },
+    {
+      "matchup": "Borussia Dortmund vs 1. FC Union Berlin",
+      "games_played": 4,
+      "avg_margin": 2,
+      "avg_excitement": 10.0
+    },
+    {
+      "matchup": "FC Augsburg vs Werder Bremen",
+      "games_played": 2,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Werder Bremen vs FC Augsburg",
+      "games_played": 2,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Eintracht Frankfurt vs Fortuna D\u00fcsseldorf",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Fortuna D\u00fcsseldorf vs Eintracht Frankfurt",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Fortuna D\u00fcsseldorf vs VfL Wolfsburg",
+      "games_played": 1,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "VfL Wolfsburg vs Fortuna D\u00fcsseldorf",
+      "games_played": 1,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "1. FC Union Berlin vs Werder Bremen",
+      "games_played": 2,
+      "avg_margin": 1.5,
+      "avg_excitement": 50.0
+    },
+    {
+      "matchup": "Werder Bremen vs 1. FC Union Berlin",
+      "games_played": 2,
+      "avg_margin": 1.5,
+      "avg_excitement": 50.0
+    },
+    {
+      "matchup": "Bayer Leverkusen vs Borussia Dortmund",
+      "games_played": 3,
+      "avg_margin": 2,
+      "avg_excitement": 56.67
+    },
+    {
+      "matchup": "Borussia Dortmund vs Bayer Leverkusen",
+      "games_played": 3,
+      "avg_margin": 2,
+      "avg_excitement": 56.67
+    },
+    {
+      "matchup": "Eintracht Frankfurt vs FC Augsburg",
+      "games_played": 2,
+      "avg_margin": 0.5,
+      "avg_excitement": 95.0
+    },
+    {
+      "matchup": "FC Augsburg vs Eintracht Frankfurt",
+      "games_played": 2,
+      "avg_margin": 0.5,
+      "avg_excitement": 95.0
+    },
+    {
+      "matchup": "Borussia M\u00f6nchengladbach vs FC Cologne",
+      "games_played": 4,
+      "avg_margin": 2,
+      "avg_excitement": 27.5
+    },
+    {
+      "matchup": "FC Cologne vs Borussia M\u00f6nchengladbach",
+      "games_played": 4,
+      "avg_margin": 2,
+      "avg_excitement": 27.5
+    },
+    {
+      "matchup": "Hertha Berlin vs Mainz",
+      "games_played": 2,
+      "avg_margin": 0.5,
+      "avg_excitement": 95.0
+    },
+    {
+      "matchup": "Mainz vs Hertha Berlin",
+      "games_played": 2,
+      "avg_margin": 0.5,
+      "avg_excitement": 95.0
+    },
+    {
+      "matchup": "Bayern Munich vs RB Leipzig",
+      "games_played": 4,
+      "avg_margin": 0.75,
+      "avg_excitement": 75.0
+    },
+    {
+      "matchup": "RB Leipzig vs Bayern Munich",
+      "games_played": 4,
+      "avg_margin": 0.75,
+      "avg_excitement": 75.0
+    },
+    {
+      "matchup": "SC Freiburg vs TSG Hoffenheim",
+      "games_played": 3,
+      "avg_margin": 1.33,
+      "avg_excitement": 63.33
+    },
+    {
+      "matchup": "TSG Hoffenheim vs SC Freiburg",
+      "games_played": 3,
+      "avg_margin": 1.33,
+      "avg_excitement": 63.33
+    },
+    {
+      "matchup": "SC Paderborn 07 vs Schalke 04",
+      "games_played": 1,
+      "avg_margin": 4,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Schalke 04 vs SC Paderborn 07",
+      "games_played": 1,
+      "avg_margin": 4,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Mainz vs Schalke 04",
+      "games_played": 2,
+      "avg_margin": 0.5,
+      "avg_excitement": 95.0
+    },
+    {
+      "matchup": "Schalke 04 vs Mainz",
+      "games_played": 2,
+      "avg_margin": 0.5,
+      "avg_excitement": 95.0
+    },
+    {
+      "matchup": "1. FC Union Berlin vs Bayer Leverkusen",
+      "games_played": 3,
+      "avg_margin": 2,
+      "avg_excitement": 33.33
+    },
+    {
+      "matchup": "Bayer Leverkusen vs 1. FC Union Berlin",
+      "games_played": 3,
+      "avg_margin": 2,
+      "avg_excitement": 33.33
+    },
+    {
+      "matchup": "Bayern Munich vs FC Cologne",
+      "games_played": 4,
+      "avg_margin": 1.75,
+      "avg_excitement": 65.0
+    },
+    {
+      "matchup": "FC Cologne vs Bayern Munich",
+      "games_played": 4,
+      "avg_margin": 1.75,
+      "avg_excitement": 65.0
+    },
+    {
+      "matchup": "Hertha Berlin vs SC Paderborn 07",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "SC Paderborn 07 vs Hertha Berlin",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "FC Augsburg vs SC Freiburg",
+      "games_played": 5,
+      "avg_margin": 1.8,
+      "avg_excitement": 40.0
+    },
+    {
+      "matchup": "SC Freiburg vs FC Augsburg",
+      "games_played": 5,
+      "avg_margin": 1.8,
+      "avg_excitement": 40.0
+    },
+    {
+      "matchup": "RB Leipzig vs Werder Bremen",
+      "games_played": 2,
+      "avg_margin": 2.5,
+      "avg_excitement": 5.0
+    },
+    {
+      "matchup": "Werder Bremen vs RB Leipzig",
+      "games_played": 2,
+      "avg_margin": 2.5,
+      "avg_excitement": 5.0
+    },
+    {
+      "matchup": "Borussia M\u00f6nchengladbach vs Fortuna D\u00fcsseldorf",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Fortuna D\u00fcsseldorf vs Borussia M\u00f6nchengladbach",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Borussia Dortmund vs Eintracht Frankfurt",
+      "games_played": 4,
+      "avg_margin": 0.75,
+      "avg_excitement": 75.0
+    },
+    {
+      "matchup": "Eintracht Frankfurt vs Borussia Dortmund",
+      "games_played": 4,
+      "avg_margin": 0.75,
+      "avg_excitement": 75.0
+    },
+    {
+      "matchup": "TSG Hoffenheim vs VfL Wolfsburg",
+      "games_played": 4,
+      "avg_margin": 1.25,
+      "avg_excitement": 52.5
+    },
+    {
+      "matchup": "VfL Wolfsburg vs TSG Hoffenheim",
+      "games_played": 4,
+      "avg_margin": 1.25,
+      "avg_excitement": 52.5
+    },
+    {
+      "matchup": "1. FC Union Berlin vs Eintracht Frankfurt",
+      "games_played": 4,
+      "avg_margin": 1.5,
+      "avg_excitement": 50.0
+    },
+    {
+      "matchup": "Eintracht Frankfurt vs 1. FC Union Berlin",
+      "games_played": 4,
+      "avg_margin": 1.5,
+      "avg_excitement": 50.0
+    },
+    {
+      "matchup": "Bayer Leverkusen vs FC Augsburg",
+      "games_played": 4,
+      "avg_margin": 2.25,
+      "avg_excitement": 25.0
+    },
+    {
+      "matchup": "FC Augsburg vs Bayer Leverkusen",
+      "games_played": 4,
+      "avg_margin": 2.25,
+      "avg_excitement": 25.0
+    },
+    {
+      "matchup": "Mainz vs VfL Wolfsburg",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "VfL Wolfsburg vs Mainz",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "RB Leipzig vs Schalke 04",
+      "games_played": 2,
+      "avg_margin": 3,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Schalke 04 vs RB Leipzig",
+      "games_played": 2,
+      "avg_margin": 3,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Bayern Munich vs SC Paderborn 07",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "SC Paderborn 07 vs Bayern Munich",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Borussia M\u00f6nchengladbach vs TSG Hoffenheim",
+      "games_played": 2,
+      "avg_margin": 2.5,
+      "avg_excitement": 5.0
+    },
+    {
+      "matchup": "TSG Hoffenheim vs Borussia M\u00f6nchengladbach",
+      "games_played": 2,
+      "avg_margin": 2.5,
+      "avg_excitement": 5.0
+    },
+    {
+      "matchup": "Borussia Dortmund vs Werder Bremen",
+      "games_played": 3,
+      "avg_margin": 0.67,
+      "avg_excitement": 93.33
+    },
+    {
+      "matchup": "Werder Bremen vs Borussia Dortmund",
+      "games_played": 3,
+      "avg_margin": 0.67,
+      "avg_excitement": 93.33
+    },
+    {
+      "matchup": "Fortuna D\u00fcsseldorf vs SC Freiburg",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "SC Freiburg vs Fortuna D\u00fcsseldorf",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "FC Cologne vs Hertha Berlin",
+      "games_played": 2,
+      "avg_margin": 3,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Hertha Berlin vs FC Cologne",
+      "games_played": 2,
+      "avg_margin": 3,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Fortuna D\u00fcsseldorf vs Hertha Berlin",
+      "games_played": 1,
+      "avg_margin": 2,
+      "avg_excitement": 10.0
+    },
+    {
+      "matchup": "Hertha Berlin vs Fortuna D\u00fcsseldorf",
+      "games_played": 1,
+      "avg_margin": 2,
+      "avg_excitement": 10.0
+    },
+    {
+      "matchup": "Bayer Leverkusen vs RB Leipzig",
+      "games_played": 3,
+      "avg_margin": 0.33,
+      "avg_excitement": 96.67
+    },
+    {
+      "matchup": "RB Leipzig vs Bayer Leverkusen",
+      "games_played": 3,
+      "avg_margin": 0.33,
+      "avg_excitement": 96.67
+    },
+    {
+      "matchup": "Bayern Munich vs TSG Hoffenheim",
+      "games_played": 4,
+      "avg_margin": 2.5,
+      "avg_excitement": 22.5
+    },
+    {
+      "matchup": "TSG Hoffenheim vs Bayern Munich",
+      "games_played": 4,
+      "avg_margin": 2.5,
+      "avg_excitement": 22.5
+    },
+    {
+      "matchup": "Borussia Dortmund vs SC Freiburg",
+      "games_played": 5,
+      "avg_margin": 1.8,
+      "avg_excitement": 40.0
+    },
+    {
+      "matchup": "SC Freiburg vs Borussia Dortmund",
+      "games_played": 5,
+      "avg_margin": 1.8,
+      "avg_excitement": 40.0
+    },
+    {
+      "matchup": "Mainz vs SC Paderborn 07",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "SC Paderborn 07 vs Mainz",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "FC Cologne vs Schalke 04",
+      "games_played": 2,
+      "avg_margin": 1,
+      "avg_excitement": 55.0
+    },
+    {
+      "matchup": "Schalke 04 vs FC Cologne",
+      "games_played": 2,
+      "avg_margin": 1,
+      "avg_excitement": 55.0
+    },
+    {
+      "matchup": "Borussia M\u00f6nchengladbach vs FC Augsburg",
+      "games_played": 4,
+      "avg_margin": 1.25,
+      "avg_excitement": 70.0
+    },
+    {
+      "matchup": "FC Augsburg vs Borussia M\u00f6nchengladbach",
+      "games_played": 4,
+      "avg_margin": 1.25,
+      "avg_excitement": 70.0
+    },
+    {
+      "matchup": "1. FC Union Berlin vs VfL Wolfsburg",
+      "games_played": 4,
+      "avg_margin": 1.5,
+      "avg_excitement": 50.0
+    },
+    {
+      "matchup": "VfL Wolfsburg vs 1. FC Union Berlin",
+      "games_played": 4,
+      "avg_margin": 1.5,
+      "avg_excitement": 50.0
+    },
+    {
+      "matchup": "Eintracht Frankfurt vs Werder Bremen",
+      "games_played": 4,
+      "avg_margin": 0.25,
+      "avg_excitement": 97.5
+    },
+    {
+      "matchup": "Werder Bremen vs Eintracht Frankfurt",
+      "games_played": 4,
+      "avg_margin": 0.25,
+      "avg_excitement": 97.5
+    },
+    {
+      "matchup": "Bayer Leverkusen vs Eintracht Frankfurt",
+      "games_played": 2,
+      "avg_margin": 3.5,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Eintracht Frankfurt vs Bayer Leverkusen",
+      "games_played": 2,
+      "avg_margin": 3.5,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "1. FC Union Berlin vs SC Freiburg",
+      "games_played": 2,
+      "avg_margin": 1,
+      "avg_excitement": 55.0
+    },
+    {
+      "matchup": "SC Freiburg vs 1. FC Union Berlin",
+      "games_played": 2,
+      "avg_margin": 1,
+      "avg_excitement": 55.0
+    },
+    {
+      "matchup": "Bayern Munich vs FC Augsburg",
+      "games_played": 4,
+      "avg_margin": 1,
+      "avg_excitement": 72.5
+    },
+    {
+      "matchup": "FC Augsburg vs Bayern Munich",
+      "games_played": 4,
+      "avg_margin": 1,
+      "avg_excitement": 72.5
+    },
+    {
+      "matchup": "Fortuna D\u00fcsseldorf vs Mainz",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Mainz vs Fortuna D\u00fcsseldorf",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "RB Leipzig vs VfL Wolfsburg",
+      "games_played": 3,
+      "avg_margin": 1,
+      "avg_excitement": 66.67
+    },
+    {
+      "matchup": "VfL Wolfsburg vs RB Leipzig",
+      "games_played": 3,
+      "avg_margin": 1,
+      "avg_excitement": 66.67
+    },
+    {
+      "matchup": "Hertha Berlin vs Werder Bremen",
+      "games_played": 3,
+      "avg_margin": 1.33,
+      "avg_excitement": 63.33
+    },
+    {
+      "matchup": "Werder Bremen vs Hertha Berlin",
+      "games_played": 3,
+      "avg_margin": 1.33,
+      "avg_excitement": 63.33
+    },
+    {
+      "matchup": "Borussia Dortmund vs Borussia M\u00f6nchengladbach",
+      "games_played": 3,
+      "avg_margin": 1.67,
+      "avg_excitement": 60.0
+    },
+    {
+      "matchup": "Borussia M\u00f6nchengladbach vs Borussia Dortmund",
+      "games_played": 3,
+      "avg_margin": 1.67,
+      "avg_excitement": 60.0
+    },
+    {
+      "matchup": "FC Cologne vs SC Paderborn 07",
+      "games_played": 1,
+      "avg_margin": 3,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "SC Paderborn 07 vs FC Cologne",
+      "games_played": 1,
+      "avg_margin": 3,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Schalke 04 vs TSG Hoffenheim",
+      "games_played": 2,
+      "avg_margin": 2.5,
+      "avg_excitement": 5.0
+    },
+    {
+      "matchup": "TSG Hoffenheim vs Schalke 04",
+      "games_played": 2,
+      "avg_margin": 2.5,
+      "avg_excitement": 5.0
+    },
+    {
+      "matchup": "FC Cologne vs Mainz",
+      "games_played": 3,
+      "avg_margin": 2.67,
+      "avg_excitement": 26.67
+    },
+    {
+      "matchup": "Mainz vs FC Cologne",
+      "games_played": 3,
+      "avg_margin": 2.67,
+      "avg_excitement": 26.67
+    },
+    {
+      "matchup": "1. FC Union Berlin vs Bayern Munich",
+      "games_played": 4,
+      "avg_margin": 1,
+      "avg_excitement": 72.5
+    },
+    {
+      "matchup": "Bayern Munich vs 1. FC Union Berlin",
+      "games_played": 4,
+      "avg_margin": 1,
+      "avg_excitement": 72.5
+    },
+    {
+      "matchup": "Hertha Berlin vs TSG Hoffenheim",
+      "games_played": 3,
+      "avg_margin": 1,
+      "avg_excitement": 66.67
+    },
+    {
+      "matchup": "TSG Hoffenheim vs Hertha Berlin",
+      "games_played": 3,
+      "avg_margin": 1,
+      "avg_excitement": 66.67
+    },
+    {
+      "matchup": "RB Leipzig vs SC Freiburg",
+      "games_played": 4,
+      "avg_margin": 1.5,
+      "avg_excitement": 50.0
+    },
+    {
+      "matchup": "SC Freiburg vs RB Leipzig",
+      "games_played": 4,
+      "avg_margin": 1.5,
+      "avg_excitement": 50.0
+    },
+    {
+      "matchup": "Fortuna D\u00fcsseldorf vs SC Paderborn 07",
+      "games_played": 1,
+      "avg_margin": 2,
+      "avg_excitement": 10.0
+    },
+    {
+      "matchup": "SC Paderborn 07 vs Fortuna D\u00fcsseldorf",
+      "games_played": 1,
+      "avg_margin": 2,
+      "avg_excitement": 10.0
+    },
+    {
+      "matchup": "Borussia Dortmund vs Schalke 04",
+      "games_played": 3,
+      "avg_margin": 1.33,
+      "avg_excitement": 63.33
+    },
+    {
+      "matchup": "Schalke 04 vs Borussia Dortmund",
+      "games_played": 3,
+      "avg_margin": 1.33,
+      "avg_excitement": 63.33
+    },
+    {
+      "matchup": "Bayer Leverkusen vs Werder Bremen",
+      "games_played": 2,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "Werder Bremen vs Bayer Leverkusen",
+      "games_played": 2,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "FC Augsburg vs VfL Wolfsburg",
+      "games_played": 5,
+      "avg_margin": 0.4,
+      "avg_excitement": 96.0
+    },
+    {
+      "matchup": "VfL Wolfsburg vs FC Augsburg",
+      "games_played": 5,
+      "avg_margin": 0.4,
+      "avg_excitement": 96.0
+    },
+    {
+      "matchup": "Borussia M\u00f6nchengladbach vs Eintracht Frankfurt",
+      "games_played": 3,
+      "avg_margin": 1.33,
+      "avg_excitement": 40.0
+    },
+    {
+      "matchup": "Eintracht Frankfurt vs Borussia M\u00f6nchengladbach",
+      "games_played": 3,
+      "avg_margin": 1.33,
+      "avg_excitement": 40.0
+    },
+    {
+      "matchup": "SC Paderborn 07 vs TSG Hoffenheim",
+      "games_played": 1,
+      "avg_margin": 3,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "TSG Hoffenheim vs SC Paderborn 07",
+      "games_played": 1,
+      "avg_margin": 3,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Bayer Leverkusen vs Borussia M\u00f6nchengladbach",
+      "games_played": 4,
+      "avg_margin": 2.25,
+      "avg_excitement": 42.5
+    },
+    {
+      "matchup": "Borussia M\u00f6nchengladbach vs Bayer Leverkusen",
+      "games_played": 4,
+      "avg_margin": 2.25,
+      "avg_excitement": 42.5
+    },
+    {
+      "matchup": "Borussia Dortmund vs VfL Wolfsburg",
+      "games_played": 2,
+      "avg_margin": 2,
+      "avg_excitement": 45.0
+    },
+    {
+      "matchup": "VfL Wolfsburg vs Borussia Dortmund",
+      "games_played": 2,
+      "avg_margin": 2,
+      "avg_excitement": 45.0
+    },
+    {
+      "matchup": "Bayern Munich vs Eintracht Frankfurt",
+      "games_played": 4,
+      "avg_margin": 3.75,
+      "avg_excitement": 17.5
+    },
+    {
+      "matchup": "Eintracht Frankfurt vs Bayern Munich",
+      "games_played": 4,
+      "avg_margin": 3.75,
+      "avg_excitement": 17.5
+    },
+    {
+      "matchup": "Mainz vs RB Leipzig",
+      "games_played": 5,
+      "avg_margin": 2.6,
+      "avg_excitement": 32.0
+    },
+    {
+      "matchup": "RB Leipzig vs Mainz",
+      "games_played": 5,
+      "avg_margin": 2.6,
+      "avg_excitement": 32.0
+    },
+    {
+      "matchup": "SC Freiburg vs Werder Bremen",
+      "games_played": 4,
+      "avg_margin": 0.75,
+      "avg_excitement": 75.0
+    },
+    {
+      "matchup": "Werder Bremen vs SC Freiburg",
+      "games_played": 4,
+      "avg_margin": 0.75,
+      "avg_excitement": 75.0
+    },
+    {
+      "matchup": "1. FC Union Berlin vs Hertha Berlin",
+      "games_played": 3,
+      "avg_margin": 1.67,
+      "avg_excitement": 36.67
+    },
+    {
+      "matchup": "Hertha Berlin vs 1. FC Union Berlin",
+      "games_played": 3,
+      "avg_margin": 1.67,
+      "avg_excitement": 36.67
+    },
+    {
+      "matchup": "FC Cologne vs Fortuna D\u00fcsseldorf",
+      "games_played": 1,
+      "avg_margin": 2,
+      "avg_excitement": 10.0
+    },
+    {
+      "matchup": "Fortuna D\u00fcsseldorf vs FC Cologne",
+      "games_played": 1,
+      "avg_margin": 2,
+      "avg_excitement": 10.0
+    },
+    {
+      "matchup": "FC Augsburg vs Schalke 04",
+      "games_played": 3,
+      "avg_margin": 0.67,
+      "avg_excitement": 93.33
+    },
+    {
+      "matchup": "Schalke 04 vs FC Augsburg",
+      "games_played": 3,
+      "avg_margin": 0.67,
+      "avg_excitement": 93.33
+    },
+    {
+      "matchup": "FC Cologne vs TSG Hoffenheim",
+      "games_played": 4,
+      "avg_margin": 2.25,
+      "avg_excitement": 42.5
+    },
+    {
+      "matchup": "TSG Hoffenheim vs FC Cologne",
+      "games_played": 4,
+      "avg_margin": 2.25,
+      "avg_excitement": 42.5
+    },
+    {
+      "matchup": "Hertha Berlin vs RB Leipzig",
+      "games_played": 4,
+      "avg_margin": 2.5,
+      "avg_excitement": 40.0
+    },
+    {
+      "matchup": "RB Leipzig vs Hertha Berlin",
+      "games_played": 4,
+      "avg_margin": 2.5,
+      "avg_excitement": 40.0
+    },
+    {
+      "matchup": "1. FC Union Berlin vs Mainz",
+      "games_played": 5,
+      "avg_margin": 1.8,
+      "avg_excitement": 54.0
+    },
+    {
+      "matchup": "Mainz vs 1. FC Union Berlin",
+      "games_played": 5,
+      "avg_margin": 1.8,
+      "avg_excitement": 54.0
+    },
+    {
+      "matchup": "FC Augsburg vs SC Paderborn 07",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "SC Paderborn 07 vs FC Augsburg",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Fortuna D\u00fcsseldorf vs Schalke 04",
+      "games_played": 1,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "Schalke 04 vs Fortuna D\u00fcsseldorf",
+      "games_played": 1,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "Bayern Munich vs Borussia Dortmund",
+      "games_played": 4,
+      "avg_margin": 2.25,
+      "avg_excitement": 42.5
+    },
+    {
+      "matchup": "Borussia Dortmund vs Bayern Munich",
+      "games_played": 4,
+      "avg_margin": 2.25,
+      "avg_excitement": 42.5
+    },
+    {
+      "matchup": "Borussia M\u00f6nchengladbach vs Werder Bremen",
+      "games_played": 2,
+      "avg_margin": 3,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Werder Bremen vs Borussia M\u00f6nchengladbach",
+      "games_played": 2,
+      "avg_margin": 3,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Bayer Leverkusen vs VfL Wolfsburg",
+      "games_played": 5,
+      "avg_margin": 1,
+      "avg_excitement": 62.0
+    },
+    {
+      "matchup": "VfL Wolfsburg vs Bayer Leverkusen",
+      "games_played": 5,
+      "avg_margin": 1,
+      "avg_excitement": 62.0
+    },
+    {
+      "matchup": "Eintracht Frankfurt vs SC Freiburg",
+      "games_played": 2,
+      "avg_margin": 0.5,
+      "avg_excitement": 95.0
+    },
+    {
+      "matchup": "SC Freiburg vs Eintracht Frankfurt",
+      "games_played": 2,
+      "avg_margin": 0.5,
+      "avg_excitement": 95.0
+    },
+    {
+      "matchup": "Borussia Dortmund vs SC Paderborn 07",
+      "games_played": 1,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "SC Paderborn 07 vs Borussia Dortmund",
+      "games_played": 1,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "Arminia Bielefeld vs Eintracht Frankfurt",
+      "games_played": 2,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "Eintracht Frankfurt vs Arminia Bielefeld",
+      "games_played": 2,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "SC Freiburg vs VfB Stuttgart",
+      "games_played": 4,
+      "avg_margin": 2,
+      "avg_excitement": 62.5
+    },
+    {
+      "matchup": "VfB Stuttgart vs SC Freiburg",
+      "games_played": 4,
+      "avg_margin": 2,
+      "avg_excitement": 62.5
+    },
+    {
+      "matchup": "Eintracht Frankfurt vs Hertha Berlin",
+      "games_played": 3,
+      "avg_margin": 1,
+      "avg_excitement": 66.67
+    },
+    {
+      "matchup": "Hertha Berlin vs Eintracht Frankfurt",
+      "games_played": 3,
+      "avg_margin": 1,
+      "avg_excitement": 66.67
+    },
+    {
+      "matchup": "Arminia Bielefeld vs FC Cologne",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "FC Cologne vs Arminia Bielefeld",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "1. FC Union Berlin vs Borussia M\u00f6nchengladbach",
+      "games_played": 2,
+      "avg_margin": 0.5,
+      "avg_excitement": 95.0
+    },
+    {
+      "matchup": "Borussia M\u00f6nchengladbach vs 1. FC Union Berlin",
+      "games_played": 2,
+      "avg_margin": 0.5,
+      "avg_excitement": 95.0
+    },
+    {
+      "matchup": "Mainz vs VfB Stuttgart",
+      "games_played": 2,
+      "avg_margin": 2.5,
+      "avg_excitement": 5.0
+    },
+    {
+      "matchup": "VfB Stuttgart vs Mainz",
+      "games_played": 2,
+      "avg_margin": 2.5,
+      "avg_excitement": 5.0
+    },
+    {
+      "matchup": "Schalke 04 vs Werder Bremen",
+      "games_played": 1,
+      "avg_margin": 2,
+      "avg_excitement": 10.0
+    },
+    {
+      "matchup": "Werder Bremen vs Schalke 04",
+      "games_played": 1,
+      "avg_margin": 2,
+      "avg_excitement": 10.0
+    },
+    {
+      "matchup": "SC Freiburg vs VfL Wolfsburg",
+      "games_played": 2,
+      "avg_margin": 1,
+      "avg_excitement": 55.0
+    },
+    {
+      "matchup": "VfL Wolfsburg vs SC Freiburg",
+      "games_played": 2,
+      "avg_margin": 1,
+      "avg_excitement": 55.0
+    },
+    {
+      "matchup": "Bayer Leverkusen vs VfB Stuttgart",
+      "games_played": 2,
+      "avg_margin": 1,
+      "avg_excitement": 55.0
+    },
+    {
+      "matchup": "VfB Stuttgart vs Bayer Leverkusen",
+      "games_played": 2,
+      "avg_margin": 1,
+      "avg_excitement": 55.0
+    },
+    {
+      "matchup": "Arminia Bielefeld vs Werder Bremen",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Werder Bremen vs Arminia Bielefeld",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "FC Augsburg vs RB Leipzig",
+      "games_played": 3,
+      "avg_margin": 1.67,
+      "avg_excitement": 36.67
+    },
+    {
+      "matchup": "RB Leipzig vs FC Augsburg",
+      "games_played": 3,
+      "avg_margin": 1.67,
+      "avg_excitement": 36.67
+    },
+    {
+      "matchup": "Hertha Berlin vs VfB Stuttgart",
+      "games_played": 1,
+      "avg_margin": 2,
+      "avg_excitement": 10.0
+    },
+    {
+      "matchup": "VfB Stuttgart vs Hertha Berlin",
+      "games_played": 1,
+      "avg_margin": 2,
+      "avg_excitement": 10.0
+    },
+    {
+      "matchup": "Bayer Leverkusen vs Mainz",
+      "games_played": 4,
+      "avg_margin": 2,
+      "avg_excitement": 45.0
+    },
+    {
+      "matchup": "Mainz vs Bayer Leverkusen",
+      "games_played": 4,
+      "avg_margin": 2,
+      "avg_excitement": 45.0
+    },
+    {
+      "matchup": "Borussia Dortmund vs TSG Hoffenheim",
+      "games_played": 4,
+      "avg_margin": 1.25,
+      "avg_excitement": 70.0
+    },
+    {
+      "matchup": "TSG Hoffenheim vs Borussia Dortmund",
+      "games_played": 4,
+      "avg_margin": 1.25,
+      "avg_excitement": 70.0
+    },
+    {
+      "matchup": "Arminia Bielefeld vs Bayern Munich",
+      "games_played": 1,
+      "avg_margin": 3,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Bayern Munich vs Arminia Bielefeld",
+      "games_played": 1,
+      "avg_margin": 3,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Borussia M\u00f6nchengladbach vs VfL Wolfsburg",
+      "games_played": 4,
+      "avg_margin": 1.5,
+      "avg_excitement": 50.0
+    },
+    {
+      "matchup": "VfL Wolfsburg vs Borussia M\u00f6nchengladbach",
+      "games_played": 4,
+      "avg_margin": 1.5,
+      "avg_excitement": 50.0
+    },
+    {
+      "matchup": "Eintracht Frankfurt vs FC Cologne",
+      "games_played": 4,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "FC Cologne vs Eintracht Frankfurt",
+      "games_played": 4,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "1. FC Union Berlin vs Schalke 04",
+      "games_played": 2,
+      "avg_margin": 2.5,
+      "avg_excitement": 40.0
+    },
+    {
+      "matchup": "Schalke 04 vs 1. FC Union Berlin",
+      "games_played": 2,
+      "avg_margin": 2.5,
+      "avg_excitement": 40.0
+    },
+    {
+      "matchup": "FC Cologne vs VfB Stuttgart",
+      "games_played": 3,
+      "avg_margin": 0.67,
+      "avg_excitement": 70.0
+    },
+    {
+      "matchup": "VfB Stuttgart vs FC Cologne",
+      "games_played": 3,
+      "avg_margin": 0.67,
+      "avg_excitement": 70.0
+    },
+    {
+      "matchup": "Arminia Bielefeld vs VfL Wolfsburg",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "VfL Wolfsburg vs Arminia Bielefeld",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Schalke 04 vs VfB Stuttgart",
+      "games_played": 2,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "VfB Stuttgart vs Schalke 04",
+      "games_played": 2,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "Arminia Bielefeld vs Borussia Dortmund",
+      "games_played": 2,
+      "avg_margin": 2,
+      "avg_excitement": 10.0
+    },
+    {
+      "matchup": "Borussia Dortmund vs Arminia Bielefeld",
+      "games_played": 2,
+      "avg_margin": 2,
+      "avg_excitement": 10.0
+    },
+    {
+      "matchup": "FC Augsburg vs Mainz",
+      "games_played": 4,
+      "avg_margin": 1.75,
+      "avg_excitement": 47.5
+    },
+    {
+      "matchup": "Mainz vs FC Augsburg",
+      "games_played": 4,
+      "avg_margin": 1.75,
+      "avg_excitement": 47.5
+    },
+    {
+      "matchup": "Bayer Leverkusen vs SC Freiburg",
+      "games_played": 3,
+      "avg_margin": 1.33,
+      "avg_excitement": 63.33
+    },
+    {
+      "matchup": "SC Freiburg vs Bayer Leverkusen",
+      "games_played": 3,
+      "avg_margin": 1.33,
+      "avg_excitement": 63.33
+    },
+    {
+      "matchup": "1. FC Union Berlin vs TSG Hoffenheim",
+      "games_played": 3,
+      "avg_margin": 1.33,
+      "avg_excitement": 40.0
+    },
+    {
+      "matchup": "TSG Hoffenheim vs 1. FC Union Berlin",
+      "games_played": 3,
+      "avg_margin": 1.33,
+      "avg_excitement": 40.0
+    },
+    {
+      "matchup": "FC Cologne vs Werder Bremen",
+      "games_played": 2,
+      "avg_margin": 0.5,
+      "avg_excitement": 95.0
+    },
+    {
+      "matchup": "Werder Bremen vs FC Cologne",
+      "games_played": 2,
+      "avg_margin": 0.5,
+      "avg_excitement": 95.0
+    },
+    {
+      "matchup": "1. FC Union Berlin vs Arminia Bielefeld",
+      "games_played": 2,
+      "avg_margin": 3,
+      "avg_excitement": 35.0
+    },
+    {
+      "matchup": "Arminia Bielefeld vs 1. FC Union Berlin",
+      "games_played": 2,
+      "avg_margin": 3,
+      "avg_excitement": 35.0
+    },
+    {
+      "matchup": "FC Augsburg vs Hertha Berlin",
+      "games_played": 2,
+      "avg_margin": 2.5,
+      "avg_excitement": 5.0
+    },
+    {
+      "matchup": "Hertha Berlin vs FC Augsburg",
+      "games_played": 2,
+      "avg_margin": 2.5,
+      "avg_excitement": 5.0
+    },
+    {
+      "matchup": "Eintracht Frankfurt vs VfB Stuttgart",
+      "games_played": 3,
+      "avg_margin": 0.67,
+      "avg_excitement": 70.0
+    },
+    {
+      "matchup": "VfB Stuttgart vs Eintracht Frankfurt",
+      "games_played": 3,
+      "avg_margin": 0.67,
+      "avg_excitement": 70.0
+    },
+    {
+      "matchup": "Arminia Bielefeld vs Bayer Leverkusen",
+      "games_played": 2,
+      "avg_margin": 2.5,
+      "avg_excitement": 40.0
+    },
+    {
+      "matchup": "Bayer Leverkusen vs Arminia Bielefeld",
+      "games_played": 2,
+      "avg_margin": 2.5,
+      "avg_excitement": 40.0
+    },
+    {
+      "matchup": "Bayern Munich vs Werder Bremen",
+      "games_played": 2,
+      "avg_margin": 2,
+      "avg_excitement": 45.0
+    },
+    {
+      "matchup": "Werder Bremen vs Bayern Munich",
+      "games_played": 2,
+      "avg_margin": 2,
+      "avg_excitement": 45.0
+    },
+    {
+      "matchup": "Schalke 04 vs VfL Wolfsburg",
+      "games_played": 2,
+      "avg_margin": 1,
+      "avg_excitement": 55.0
+    },
+    {
+      "matchup": "VfL Wolfsburg vs Schalke 04",
+      "games_played": 2,
+      "avg_margin": 1,
+      "avg_excitement": 55.0
+    },
+    {
+      "matchup": "TSG Hoffenheim vs VfB Stuttgart",
+      "games_played": 3,
+      "avg_margin": 1,
+      "avg_excitement": 66.67
+    },
+    {
+      "matchup": "VfB Stuttgart vs TSG Hoffenheim",
+      "games_played": 3,
+      "avg_margin": 1,
+      "avg_excitement": 66.67
+    },
+    {
+      "matchup": "Borussia Dortmund vs Hertha Berlin",
+      "games_played": 2,
+      "avg_margin": 2,
+      "avg_excitement": 45.0
+    },
+    {
+      "matchup": "Hertha Berlin vs Borussia Dortmund",
+      "games_played": 2,
+      "avg_margin": 2,
+      "avg_excitement": 45.0
+    },
+    {
+      "matchup": "1. FC Union Berlin vs FC Cologne",
+      "games_played": 3,
+      "avg_margin": 0.67,
+      "avg_excitement": 93.33
+    },
+    {
+      "matchup": "FC Cologne vs 1. FC Union Berlin",
+      "games_played": 3,
+      "avg_margin": 0.67,
+      "avg_excitement": 93.33
+    },
+    {
+      "matchup": "VfL Wolfsburg vs Werder Bremen",
+      "games_played": 3,
+      "avg_margin": 0.67,
+      "avg_excitement": 70.0
+    },
+    {
+      "matchup": "Werder Bremen vs VfL Wolfsburg",
+      "games_played": 3,
+      "avg_margin": 0.67,
+      "avg_excitement": 70.0
+    },
+    {
+      "matchup": "Arminia Bielefeld vs RB Leipzig",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "RB Leipzig vs Arminia Bielefeld",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Bayern Munich vs VfB Stuttgart",
+      "games_played": 2,
+      "avg_margin": 1,
+      "avg_excitement": 55.0
+    },
+    {
+      "matchup": "VfB Stuttgart vs Bayern Munich",
+      "games_played": 2,
+      "avg_margin": 1,
+      "avg_excitement": 55.0
+    },
+    {
+      "matchup": "Bayer Leverkusen vs Hertha Berlin",
+      "games_played": 3,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "Hertha Berlin vs Bayer Leverkusen",
+      "games_played": 3,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "Mainz vs TSG Hoffenheim",
+      "games_played": 3,
+      "avg_margin": 1.67,
+      "avg_excitement": 36.67
+    },
+    {
+      "matchup": "TSG Hoffenheim vs Mainz",
+      "games_played": 3,
+      "avg_margin": 1.67,
+      "avg_excitement": 36.67
+    },
+    {
+      "matchup": "Arminia Bielefeld vs Mainz",
+      "games_played": 2,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Mainz vs Arminia Bielefeld",
+      "games_played": 2,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Borussia M\u00f6nchengladbach vs SC Freiburg",
+      "games_played": 3,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "SC Freiburg vs Borussia M\u00f6nchengladbach",
+      "games_played": 3,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "VfB Stuttgart vs Werder Bremen",
+      "games_played": 2,
+      "avg_margin": 0.5,
+      "avg_excitement": 95.0
+    },
+    {
+      "matchup": "Werder Bremen vs VfB Stuttgart",
+      "games_played": 2,
+      "avg_margin": 0.5,
+      "avg_excitement": 95.0
+    },
+    {
+      "matchup": "Bayer Leverkusen vs Schalke 04",
+      "games_played": 2,
+      "avg_margin": 3.5,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Schalke 04 vs Bayer Leverkusen",
+      "games_played": 2,
+      "avg_margin": 3.5,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "FC Augsburg vs TSG Hoffenheim",
+      "games_played": 4,
+      "avg_margin": 1.75,
+      "avg_excitement": 47.5
+    },
+    {
+      "matchup": "TSG Hoffenheim vs FC Augsburg",
+      "games_played": 4,
+      "avg_margin": 1.75,
+      "avg_excitement": 47.5
+    },
+    {
+      "matchup": "Eintracht Frankfurt vs VfL Wolfsburg",
+      "games_played": 4,
+      "avg_margin": 1,
+      "avg_excitement": 72.5
+    },
+    {
+      "matchup": "VfL Wolfsburg vs Eintracht Frankfurt",
+      "games_played": 4,
+      "avg_margin": 1,
+      "avg_excitement": 72.5
+    },
+    {
+      "matchup": "Borussia Dortmund vs VfB Stuttgart",
+      "games_played": 3,
+      "avg_margin": 3.33,
+      "avg_excitement": 23.33
+    },
+    {
+      "matchup": "VfB Stuttgart vs Borussia Dortmund",
+      "games_played": 3,
+      "avg_margin": 3.33,
+      "avg_excitement": 23.33
+    },
+    {
+      "matchup": "Borussia M\u00f6nchengladbach vs Hertha Berlin",
+      "games_played": 3,
+      "avg_margin": 0.67,
+      "avg_excitement": 93.33
+    },
+    {
+      "matchup": "Hertha Berlin vs Borussia M\u00f6nchengladbach",
+      "games_played": 3,
+      "avg_margin": 0.67,
+      "avg_excitement": 93.33
+    },
+    {
+      "matchup": "Arminia Bielefeld vs SC Freiburg",
+      "games_played": 2,
+      "avg_margin": 1,
+      "avg_excitement": 55.0
+    },
+    {
+      "matchup": "SC Freiburg vs Arminia Bielefeld",
+      "games_played": 2,
+      "avg_margin": 1,
+      "avg_excitement": 55.0
+    },
+    {
+      "matchup": "Bayern Munich vs Borussia M\u00f6nchengladbach",
+      "games_played": 3,
+      "avg_margin": 0.33,
+      "avg_excitement": 96.67
+    },
+    {
+      "matchup": "Borussia M\u00f6nchengladbach vs Bayern Munich",
+      "games_played": 3,
+      "avg_margin": 0.33,
+      "avg_excitement": 96.67
+    },
+    {
+      "matchup": "SpVgg Greuther F\u00fcrth vs VfB Stuttgart",
+      "games_played": 1,
+      "avg_margin": 4,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "VfB Stuttgart vs SpVgg Greuther F\u00fcrth",
+      "games_played": 1,
+      "avg_margin": 4,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "VfL Bochum vs VfL Wolfsburg",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "VfL Wolfsburg vs VfL Bochum",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "RB Leipzig vs VfB Stuttgart",
+      "games_played": 3,
+      "avg_margin": 2.67,
+      "avg_excitement": 26.67
+    },
+    {
+      "matchup": "VfB Stuttgart vs RB Leipzig",
+      "games_played": 3,
+      "avg_margin": 2.67,
+      "avg_excitement": 26.67
+    },
+    {
+      "matchup": "Arminia Bielefeld vs SpVgg Greuther F\u00fcrth",
+      "games_played": 1,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "SpVgg Greuther F\u00fcrth vs Arminia Bielefeld",
+      "games_played": 1,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "Mainz vs VfL Bochum",
+      "games_played": 3,
+      "avg_margin": 1,
+      "avg_excitement": 66.67
+    },
+    {
+      "matchup": "VfL Bochum vs Mainz",
+      "games_played": 3,
+      "avg_margin": 1,
+      "avg_excitement": 66.67
+    },
+    {
+      "matchup": "FC Cologne vs VfL Bochum",
+      "games_played": 3,
+      "avg_margin": 0.33,
+      "avg_excitement": 96.67
+    },
+    {
+      "matchup": "VfL Bochum vs FC Cologne",
+      "games_played": 3,
+      "avg_margin": 0.33,
+      "avg_excitement": 96.67
+    },
+    {
+      "matchup": "Mainz vs SpVgg Greuther F\u00fcrth",
+      "games_played": 1,
+      "avg_margin": 3,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "SpVgg Greuther F\u00fcrth vs Mainz",
+      "games_played": 1,
+      "avg_margin": 3,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "SpVgg Greuther F\u00fcrth vs VfL Wolfsburg",
+      "games_played": 1,
+      "avg_margin": 2,
+      "avg_excitement": 10.0
+    },
+    {
+      "matchup": "VfL Wolfsburg vs SpVgg Greuther F\u00fcrth",
+      "games_played": 1,
+      "avg_margin": 2,
+      "avg_excitement": 10.0
+    },
+    {
+      "matchup": "Hertha Berlin vs VfL Bochum",
+      "games_played": 1,
+      "avg_margin": 2,
+      "avg_excitement": 10.0
+    },
+    {
+      "matchup": "VfL Bochum vs Hertha Berlin",
+      "games_played": 1,
+      "avg_margin": 2,
+      "avg_excitement": 10.0
+    },
+    {
+      "matchup": "Arminia Bielefeld vs Borussia M\u00f6nchengladbach",
+      "games_played": 1,
+      "avg_margin": 2,
+      "avg_excitement": 10.0
+    },
+    {
+      "matchup": "Borussia M\u00f6nchengladbach vs Arminia Bielefeld",
+      "games_played": 1,
+      "avg_margin": 2,
+      "avg_excitement": 10.0
+    },
+    {
+      "matchup": "Hertha Berlin vs SpVgg Greuther F\u00fcrth",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "SpVgg Greuther F\u00fcrth vs Hertha Berlin",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Arminia Bielefeld vs TSG Hoffenheim",
+      "games_played": 1,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "TSG Hoffenheim vs Arminia Bielefeld",
+      "games_played": 1,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "Bayern Munich vs VfL Bochum",
+      "games_played": 3,
+      "avg_margin": 7,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "VfL Bochum vs Bayern Munich",
+      "games_played": 3,
+      "avg_margin": 7,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "FC Cologne vs RB Leipzig",
+      "games_played": 3,
+      "avg_margin": 2,
+      "avg_excitement": 56.67
+    },
+    {
+      "matchup": "RB Leipzig vs FC Cologne",
+      "games_played": 3,
+      "avg_margin": 2,
+      "avg_excitement": 56.67
+    },
+    {
+      "matchup": "Bayern Munich vs SpVgg Greuther F\u00fcrth",
+      "games_played": 1,
+      "avg_margin": 2,
+      "avg_excitement": 10.0
+    },
+    {
+      "matchup": "SpVgg Greuther F\u00fcrth vs Bayern Munich",
+      "games_played": 1,
+      "avg_margin": 2,
+      "avg_excitement": 10.0
+    },
+    {
+      "matchup": "VfB Stuttgart vs VfL Bochum",
+      "games_played": 3,
+      "avg_margin": 2.67,
+      "avg_excitement": 26.67
+    },
+    {
+      "matchup": "VfL Bochum vs VfB Stuttgart",
+      "games_played": 3,
+      "avg_margin": 2.67,
+      "avg_excitement": 26.67
+    },
+    {
+      "matchup": "FC Cologne vs SpVgg Greuther F\u00fcrth",
+      "games_played": 1,
+      "avg_margin": 2,
+      "avg_excitement": 10.0
+    },
+    {
+      "matchup": "SpVgg Greuther F\u00fcrth vs FC Cologne",
+      "games_played": 1,
+      "avg_margin": 2,
+      "avg_excitement": 10.0
+    },
+    {
+      "matchup": "Hertha Berlin vs SC Freiburg",
+      "games_played": 2,
+      "avg_margin": 0.5,
+      "avg_excitement": 95.0
+    },
+    {
+      "matchup": "SC Freiburg vs Hertha Berlin",
+      "games_played": 2,
+      "avg_margin": 0.5,
+      "avg_excitement": 95.0
+    },
+    {
+      "matchup": "RB Leipzig vs VfL Bochum",
+      "games_played": 3,
+      "avg_margin": 2.33,
+      "avg_excitement": 30.0
+    },
+    {
+      "matchup": "VfL Bochum vs RB Leipzig",
+      "games_played": 3,
+      "avg_margin": 2.33,
+      "avg_excitement": 30.0
+    },
+    {
+      "matchup": "Borussia Dortmund vs Mainz",
+      "games_played": 1,
+      "avg_margin": 2,
+      "avg_excitement": 10.0
+    },
+    {
+      "matchup": "Mainz vs Borussia Dortmund",
+      "games_played": 1,
+      "avg_margin": 2,
+      "avg_excitement": 10.0
+    },
+    {
+      "matchup": "SpVgg Greuther F\u00fcrth vs VfL Bochum",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "VfL Bochum vs SpVgg Greuther F\u00fcrth",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Borussia M\u00f6nchengladbach vs VfB Stuttgart",
+      "games_played": 1,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "VfB Stuttgart vs Borussia M\u00f6nchengladbach",
+      "games_played": 1,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "Bayer Leverkusen vs Bayern Munich",
+      "games_played": 3,
+      "avg_margin": 2.67,
+      "avg_excitement": 26.67
+    },
+    {
+      "matchup": "Bayern Munich vs Bayer Leverkusen",
+      "games_played": 3,
+      "avg_margin": 2.67,
+      "avg_excitement": 26.67
+    },
+    {
+      "matchup": "Arminia Bielefeld vs FC Augsburg",
+      "games_played": 1,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "FC Augsburg vs Arminia Bielefeld",
+      "games_played": 1,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "RB Leipzig vs SpVgg Greuther F\u00fcrth",
+      "games_played": 1,
+      "avg_margin": 3,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "SpVgg Greuther F\u00fcrth vs RB Leipzig",
+      "games_played": 1,
+      "avg_margin": 3,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Bayer Leverkusen vs FC Cologne",
+      "games_played": 2,
+      "avg_margin": 1.5,
+      "avg_excitement": 50.0
+    },
+    {
+      "matchup": "FC Cologne vs Bayer Leverkusen",
+      "games_played": 2,
+      "avg_margin": 1.5,
+      "avg_excitement": 50.0
+    },
+    {
+      "matchup": "1. FC Union Berlin vs VfB Stuttgart",
+      "games_played": 3,
+      "avg_margin": 1.33,
+      "avg_excitement": 63.33
+    },
+    {
+      "matchup": "VfB Stuttgart vs 1. FC Union Berlin",
+      "games_played": 3,
+      "avg_margin": 1.33,
+      "avg_excitement": 63.33
+    },
+    {
+      "matchup": "Eintracht Frankfurt vs VfL Bochum",
+      "games_played": 3,
+      "avg_margin": 1.67,
+      "avg_excitement": 36.67
+    },
+    {
+      "matchup": "VfL Bochum vs Eintracht Frankfurt",
+      "games_played": 3,
+      "avg_margin": 1.67,
+      "avg_excitement": 36.67
+    },
+    {
+      "matchup": "SC Freiburg vs SpVgg Greuther F\u00fcrth",
+      "games_played": 1,
+      "avg_margin": 2,
+      "avg_excitement": 10.0
+    },
+    {
+      "matchup": "SpVgg Greuther F\u00fcrth vs SC Freiburg",
+      "games_played": 1,
+      "avg_margin": 2,
+      "avg_excitement": 10.0
+    },
+    {
+      "matchup": "FC Augsburg vs VfB Stuttgart",
+      "games_played": 1,
+      "avg_margin": 3,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "VfB Stuttgart vs FC Augsburg",
+      "games_played": 1,
+      "avg_margin": 3,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Borussia M\u00f6nchengladbach vs VfL Bochum",
+      "games_played": 2,
+      "avg_margin": 1.5,
+      "avg_excitement": 50.0
+    },
+    {
+      "matchup": "VfL Bochum vs Borussia M\u00f6nchengladbach",
+      "games_played": 2,
+      "avg_margin": 1.5,
+      "avg_excitement": 50.0
+    },
+    {
+      "matchup": "Bayern Munich vs SC Freiburg",
+      "games_played": 3,
+      "avg_margin": 3,
+      "avg_excitement": 23.33
+    },
+    {
+      "matchup": "SC Freiburg vs Bayern Munich",
+      "games_played": 3,
+      "avg_margin": 3,
+      "avg_excitement": 23.33
+    },
+    {
+      "matchup": "Arminia Bielefeld vs VfB Stuttgart",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "VfB Stuttgart vs Arminia Bielefeld",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "TSG Hoffenheim vs VfL Bochum",
+      "games_played": 2,
+      "avg_margin": 1.5,
+      "avg_excitement": 50.0
+    },
+    {
+      "matchup": "VfL Bochum vs TSG Hoffenheim",
+      "games_played": 2,
+      "avg_margin": 1.5,
+      "avg_excitement": 50.0
+    },
+    {
+      "matchup": "Borussia Dortmund vs RB Leipzig",
+      "games_played": 2,
+      "avg_margin": 2,
+      "avg_excitement": 45.0
+    },
+    {
+      "matchup": "RB Leipzig vs Borussia Dortmund",
+      "games_played": 2,
+      "avg_margin": 2,
+      "avg_excitement": 45.0
+    },
+    {
+      "matchup": "Eintracht Frankfurt vs SpVgg Greuther F\u00fcrth",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "SpVgg Greuther F\u00fcrth vs Eintracht Frankfurt",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Bayern Munich vs VfL Wolfsburg",
+      "games_played": 1,
+      "avg_margin": 2,
+      "avg_excitement": 10.0
+    },
+    {
+      "matchup": "VfL Wolfsburg vs Bayern Munich",
+      "games_played": 1,
+      "avg_margin": 2,
+      "avg_excitement": 10.0
+    },
+    {
+      "matchup": "SC Freiburg vs VfL Bochum",
+      "games_played": 2,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "VfL Bochum vs SC Freiburg",
+      "games_played": 2,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "VfL Bochum vs Werder Bremen",
+      "games_played": 1,
+      "avg_margin": 2,
+      "avg_excitement": 10.0
+    },
+    {
+      "matchup": "Werder Bremen vs VfL Bochum",
+      "games_played": 1,
+      "avg_margin": 2,
+      "avg_excitement": 10.0
+    },
+    {
+      "matchup": "Schalke 04 vs VfL Bochum",
+      "games_played": 1,
+      "avg_margin": 2,
+      "avg_excitement": 10.0
+    },
+    {
+      "matchup": "VfL Bochum vs Schalke 04",
+      "games_played": 1,
+      "avg_margin": 2,
+      "avg_excitement": 10.0
+    },
+    {
+      "matchup": "VfB Stuttgart vs VfL Wolfsburg",
+      "games_played": 2,
+      "avg_margin": 1.5,
+      "avg_excitement": 50.0
+    },
+    {
+      "matchup": "VfL Wolfsburg vs VfB Stuttgart",
+      "games_played": 2,
+      "avg_margin": 1.5,
+      "avg_excitement": 50.0
+    },
+    {
+      "matchup": "Mainz vs Werder Bremen",
+      "games_played": 2,
+      "avg_margin": 3,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Werder Bremen vs Mainz",
+      "games_played": 2,
+      "avg_margin": 3,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "FC Augsburg vs FC Cologne",
+      "games_played": 2,
+      "avg_margin": 0.5,
+      "avg_excitement": 95.0
+    },
+    {
+      "matchup": "FC Cologne vs FC Augsburg",
+      "games_played": 2,
+      "avg_margin": 0.5,
+      "avg_excitement": 95.0
+    },
+    {
+      "matchup": "1. FC Union Berlin vs VfL Bochum",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "VfL Bochum vs 1. FC Union Berlin",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "1. FC Heidenheim 1846 vs VfL Wolfsburg",
+      "games_played": 1,
+      "avg_margin": 2,
+      "avg_excitement": 10.0
+    },
+    {
+      "matchup": "VfL Wolfsburg vs 1. FC Heidenheim 1846",
+      "games_played": 1,
+      "avg_margin": 2,
+      "avg_excitement": 10.0
+    },
+    {
+      "matchup": "Eintracht Frankfurt vs SV Darmstadt 98",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "SV Darmstadt 98 vs Eintracht Frankfurt",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "1. FC Heidenheim 1846 vs TSG Hoffenheim",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "TSG Hoffenheim vs 1. FC Heidenheim 1846",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "1. FC Union Berlin vs SV Darmstadt 98",
+      "games_played": 1,
+      "avg_margin": 3,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "SV Darmstadt 98 vs 1. FC Union Berlin",
+      "games_played": 1,
+      "avg_margin": 3,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Borussia Dortmund vs VfL Bochum",
+      "games_played": 1,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "VfL Bochum vs Borussia Dortmund",
+      "games_played": 1,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "Eintracht Frankfurt vs Mainz",
+      "games_played": 1,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "Mainz vs Eintracht Frankfurt",
+      "games_played": 1,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "1. FC Heidenheim 1846 vs Borussia Dortmund",
+      "games_played": 1,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "Borussia Dortmund vs 1. FC Heidenheim 1846",
+      "games_played": 1,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "Bayer Leverkusen vs SV Darmstadt 98",
+      "games_played": 1,
+      "avg_margin": 4,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "SV Darmstadt 98 vs Bayer Leverkusen",
+      "games_played": 1,
+      "avg_margin": 4,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "FC Augsburg vs VfL Bochum",
+      "games_played": 1,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "VfL Bochum vs FC Augsburg",
+      "games_played": 1,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "1. FC Heidenheim 1846 vs Werder Bremen",
+      "games_played": 1,
+      "avg_margin": 2,
+      "avg_excitement": 10.0
+    },
+    {
+      "matchup": "Werder Bremen vs 1. FC Heidenheim 1846",
+      "games_played": 1,
+      "avg_margin": 2,
+      "avg_excitement": 10.0
+    },
+    {
+      "matchup": "Borussia M\u00f6nchengladbach vs SV Darmstadt 98",
+      "games_played": 1,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "SV Darmstadt 98 vs Borussia M\u00f6nchengladbach",
+      "games_played": 1,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "SV Darmstadt 98 vs VfB Stuttgart",
+      "games_played": 1,
+      "avg_margin": 2,
+      "avg_excitement": 10.0
+    },
+    {
+      "matchup": "VfB Stuttgart vs SV Darmstadt 98",
+      "games_played": 1,
+      "avg_margin": 2,
+      "avg_excitement": 10.0
+    },
+    {
+      "matchup": "1. FC Heidenheim 1846 vs Bayer Leverkusen",
+      "games_played": 1,
+      "avg_margin": 3,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Bayer Leverkusen vs 1. FC Heidenheim 1846",
+      "games_played": 1,
+      "avg_margin": 3,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "1. FC Heidenheim 1846 vs 1. FC Union Berlin",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "1. FC Union Berlin vs 1. FC Heidenheim 1846",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "SV Darmstadt 98 vs Werder Bremen",
+      "games_played": 1,
+      "avg_margin": 2,
+      "avg_excitement": 10.0
+    },
+    {
+      "matchup": "Werder Bremen vs SV Darmstadt 98",
+      "games_played": 1,
+      "avg_margin": 2,
+      "avg_excitement": 10.0
+    },
+    {
+      "matchup": "FC Augsburg vs SV Darmstadt 98",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "SV Darmstadt 98 vs FC Augsburg",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "1. FC Heidenheim 1846 vs Eintracht Frankfurt",
+      "games_played": 1,
+      "avg_margin": 2,
+      "avg_excitement": 10.0
+    },
+    {
+      "matchup": "Eintracht Frankfurt vs 1. FC Heidenheim 1846",
+      "games_played": 1,
+      "avg_margin": 2,
+      "avg_excitement": 10.0
+    },
+    {
+      "matchup": "RB Leipzig vs SV Darmstadt 98",
+      "games_played": 1,
+      "avg_margin": 2,
+      "avg_excitement": 10.0
+    },
+    {
+      "matchup": "SV Darmstadt 98 vs RB Leipzig",
+      "games_played": 1,
+      "avg_margin": 2,
+      "avg_excitement": 10.0
+    },
+    {
+      "matchup": "1. FC Heidenheim 1846 vs FC Augsburg",
+      "games_played": 1,
+      "avg_margin": 3,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "FC Augsburg vs 1. FC Heidenheim 1846",
+      "games_played": 1,
+      "avg_margin": 3,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Bayern Munich vs SV Darmstadt 98",
+      "games_played": 1,
+      "avg_margin": 8,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "SV Darmstadt 98 vs Bayern Munich",
+      "games_played": 1,
+      "avg_margin": 8,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "1. FC Heidenheim 1846 vs Borussia M\u00f6nchengladbach",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Borussia M\u00f6nchengladbach vs 1. FC Heidenheim 1846",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "SV Darmstadt 98 vs VfL Bochum",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "VfL Bochum vs SV Darmstadt 98",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "1. FC Heidenheim 1846 vs VfB Stuttgart",
+      "games_played": 1,
+      "avg_margin": 2,
+      "avg_excitement": 10.0
+    },
+    {
+      "matchup": "VfB Stuttgart vs 1. FC Heidenheim 1846",
+      "games_played": 1,
+      "avg_margin": 2,
+      "avg_excitement": 10.0
+    },
+    {
+      "matchup": "1. FC Heidenheim 1846 vs Bayern Munich",
+      "games_played": 1,
+      "avg_margin": 2,
+      "avg_excitement": 10.0
+    },
+    {
+      "matchup": "Bayern Munich vs 1. FC Heidenheim 1846",
+      "games_played": 1,
+      "avg_margin": 2,
+      "avg_excitement": 10.0
+    },
+    {
+      "matchup": "Mainz vs SV Darmstadt 98",
+      "games_played": 1,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "SV Darmstadt 98 vs Mainz",
+      "games_played": 1,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    }
+  ],
+  "matchup_close_rates": [
+    {
+      "matchup": "Bayern Munich vs Hertha Berlin",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Hertha Berlin vs Bayern Munich",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Bayer Leverkusen vs SC Paderborn 07",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "SC Paderborn 07 vs Bayer Leverkusen",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Borussia Dortmund vs FC Augsburg",
+      "games": 3,
+      "close_games": 1,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "FC Augsburg vs Borussia Dortmund",
+      "games": 3,
+      "close_games": 1,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "Mainz vs SC Freiburg",
+      "games": 4,
+      "close_games": 2,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "SC Freiburg vs Mainz",
+      "games": 4,
+      "close_games": 2,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "FC Cologne vs VfL Wolfsburg",
+      "games": 4,
+      "close_games": 3,
+      "close_rate": 75.0
+    },
+    {
+      "matchup": "VfL Wolfsburg vs FC Cologne",
+      "games": 4,
+      "close_games": 3,
+      "close_rate": 75.0
+    },
+    {
+      "matchup": "Fortuna D\u00fcsseldorf vs Werder Bremen",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Werder Bremen vs Fortuna D\u00fcsseldorf",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Borussia M\u00f6nchengladbach vs Schalke 04",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Schalke 04 vs Borussia M\u00f6nchengladbach",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Eintracht Frankfurt vs TSG Hoffenheim",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "TSG Hoffenheim vs Eintracht Frankfurt",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "1. FC Union Berlin vs RB Leipzig",
+      "games": 3,
+      "close_games": 1,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "RB Leipzig vs 1. FC Union Berlin",
+      "games": 3,
+      "close_games": 1,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "Borussia Dortmund vs FC Cologne",
+      "games": 5,
+      "close_games": 3,
+      "close_rate": 60.0
+    },
+    {
+      "matchup": "FC Cologne vs Borussia Dortmund",
+      "games": 5,
+      "close_games": 3,
+      "close_rate": 60.0
+    },
+    {
+      "matchup": "1. FC Union Berlin vs FC Augsburg",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "FC Augsburg vs 1. FC Union Berlin",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Bayer Leverkusen vs Fortuna D\u00fcsseldorf",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Fortuna D\u00fcsseldorf vs Bayer Leverkusen",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Borussia M\u00f6nchengladbach vs Mainz",
+      "games": 5,
+      "close_games": 4,
+      "close_rate": 80.0
+    },
+    {
+      "matchup": "Mainz vs Borussia M\u00f6nchengladbach",
+      "games": 5,
+      "close_games": 4,
+      "close_rate": 80.0
+    },
+    {
+      "matchup": "SC Freiburg vs SC Paderborn 07",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "SC Paderborn 07 vs SC Freiburg",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "TSG Hoffenheim vs Werder Bremen",
+      "games": 4,
+      "close_games": 4,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Werder Bremen vs TSG Hoffenheim",
+      "games": 4,
+      "close_games": 4,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Bayern Munich vs Schalke 04",
+      "games": 2,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Schalke 04 vs Bayern Munich",
+      "games": 2,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Eintracht Frankfurt vs RB Leipzig",
+      "games": 4,
+      "close_games": 3,
+      "close_rate": 75.0
+    },
+    {
+      "matchup": "RB Leipzig vs Eintracht Frankfurt",
+      "games": 4,
+      "close_games": 3,
+      "close_rate": 75.0
+    },
+    {
+      "matchup": "Hertha Berlin vs VfL Wolfsburg",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "VfL Wolfsburg vs Hertha Berlin",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Borussia M\u00f6nchengladbach vs RB Leipzig",
+      "games": 4,
+      "close_games": 2,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "RB Leipzig vs Borussia M\u00f6nchengladbach",
+      "games": 4,
+      "close_games": 2,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Bayer Leverkusen vs TSG Hoffenheim",
+      "games": 4,
+      "close_games": 2,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "TSG Hoffenheim vs Bayer Leverkusen",
+      "games": 4,
+      "close_games": 2,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Bayern Munich vs Mainz",
+      "games": 2,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Mainz vs Bayern Munich",
+      "games": 2,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "FC Cologne vs SC Freiburg",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "SC Freiburg vs FC Cologne",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Hertha Berlin vs Schalke 04",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Schalke 04 vs Hertha Berlin",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "SC Paderborn 07 vs VfL Wolfsburg",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "VfL Wolfsburg vs SC Paderborn 07",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "1. FC Union Berlin vs Borussia Dortmund",
+      "games": 4,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Borussia Dortmund vs 1. FC Union Berlin",
+      "games": 4,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "FC Augsburg vs Werder Bremen",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Werder Bremen vs FC Augsburg",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Eintracht Frankfurt vs Fortuna D\u00fcsseldorf",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Fortuna D\u00fcsseldorf vs Eintracht Frankfurt",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Fortuna D\u00fcsseldorf vs VfL Wolfsburg",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "VfL Wolfsburg vs Fortuna D\u00fcsseldorf",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "1. FC Union Berlin vs Werder Bremen",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Werder Bremen vs 1. FC Union Berlin",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Bayer Leverkusen vs Borussia Dortmund",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Borussia Dortmund vs Bayer Leverkusen",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Eintracht Frankfurt vs FC Augsburg",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "FC Augsburg vs Eintracht Frankfurt",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Borussia M\u00f6nchengladbach vs FC Cologne",
+      "games": 4,
+      "close_games": 1,
+      "close_rate": 25.0
+    },
+    {
+      "matchup": "FC Cologne vs Borussia M\u00f6nchengladbach",
+      "games": 4,
+      "close_games": 1,
+      "close_rate": 25.0
+    },
+    {
+      "matchup": "Hertha Berlin vs Mainz",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Mainz vs Hertha Berlin",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Bayern Munich vs RB Leipzig",
+      "games": 4,
+      "close_games": 3,
+      "close_rate": 75.0
+    },
+    {
+      "matchup": "RB Leipzig vs Bayern Munich",
+      "games": 4,
+      "close_games": 3,
+      "close_rate": 75.0
+    },
+    {
+      "matchup": "SC Freiburg vs TSG Hoffenheim",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "TSG Hoffenheim vs SC Freiburg",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "SC Paderborn 07 vs Schalke 04",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Schalke 04 vs SC Paderborn 07",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Mainz vs Schalke 04",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Schalke 04 vs Mainz",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "1. FC Union Berlin vs Bayer Leverkusen",
+      "games": 3,
+      "close_games": 1,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "Bayer Leverkusen vs 1. FC Union Berlin",
+      "games": 3,
+      "close_games": 1,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "Bayern Munich vs FC Cologne",
+      "games": 4,
+      "close_games": 3,
+      "close_rate": 75.0
+    },
+    {
+      "matchup": "FC Cologne vs Bayern Munich",
+      "games": 4,
+      "close_games": 3,
+      "close_rate": 75.0
+    },
+    {
+      "matchup": "Hertha Berlin vs SC Paderborn 07",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "SC Paderborn 07 vs Hertha Berlin",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "FC Augsburg vs SC Freiburg",
+      "games": 5,
+      "close_games": 2,
+      "close_rate": 40.0
+    },
+    {
+      "matchup": "SC Freiburg vs FC Augsburg",
+      "games": 5,
+      "close_games": 2,
+      "close_rate": 40.0
+    },
+    {
+      "matchup": "RB Leipzig vs Werder Bremen",
+      "games": 2,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Werder Bremen vs RB Leipzig",
+      "games": 2,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Borussia M\u00f6nchengladbach vs Fortuna D\u00fcsseldorf",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Fortuna D\u00fcsseldorf vs Borussia M\u00f6nchengladbach",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Borussia Dortmund vs Eintracht Frankfurt",
+      "games": 4,
+      "close_games": 3,
+      "close_rate": 75.0
+    },
+    {
+      "matchup": "Eintracht Frankfurt vs Borussia Dortmund",
+      "games": 4,
+      "close_games": 3,
+      "close_rate": 75.0
+    },
+    {
+      "matchup": "TSG Hoffenheim vs VfL Wolfsburg",
+      "games": 4,
+      "close_games": 2,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "VfL Wolfsburg vs TSG Hoffenheim",
+      "games": 4,
+      "close_games": 2,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "1. FC Union Berlin vs Eintracht Frankfurt",
+      "games": 4,
+      "close_games": 2,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Eintracht Frankfurt vs 1. FC Union Berlin",
+      "games": 4,
+      "close_games": 2,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Bayer Leverkusen vs FC Augsburg",
+      "games": 4,
+      "close_games": 1,
+      "close_rate": 25.0
+    },
+    {
+      "matchup": "FC Augsburg vs Bayer Leverkusen",
+      "games": 4,
+      "close_games": 1,
+      "close_rate": 25.0
+    },
+    {
+      "matchup": "Mainz vs VfL Wolfsburg",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "VfL Wolfsburg vs Mainz",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "RB Leipzig vs Schalke 04",
+      "games": 2,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Schalke 04 vs RB Leipzig",
+      "games": 2,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Bayern Munich vs SC Paderborn 07",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "SC Paderborn 07 vs Bayern Munich",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Borussia M\u00f6nchengladbach vs TSG Hoffenheim",
+      "games": 2,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "TSG Hoffenheim vs Borussia M\u00f6nchengladbach",
+      "games": 2,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Borussia Dortmund vs Werder Bremen",
+      "games": 3,
+      "close_games": 3,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Werder Bremen vs Borussia Dortmund",
+      "games": 3,
+      "close_games": 3,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Fortuna D\u00fcsseldorf vs SC Freiburg",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "SC Freiburg vs Fortuna D\u00fcsseldorf",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "FC Cologne vs Hertha Berlin",
+      "games": 2,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Hertha Berlin vs FC Cologne",
+      "games": 2,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Fortuna D\u00fcsseldorf vs Hertha Berlin",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Hertha Berlin vs Fortuna D\u00fcsseldorf",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Bayer Leverkusen vs RB Leipzig",
+      "games": 3,
+      "close_games": 3,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "RB Leipzig vs Bayer Leverkusen",
+      "games": 3,
+      "close_games": 3,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Bayern Munich vs TSG Hoffenheim",
+      "games": 4,
+      "close_games": 1,
+      "close_rate": 25.0
+    },
+    {
+      "matchup": "TSG Hoffenheim vs Bayern Munich",
+      "games": 4,
+      "close_games": 1,
+      "close_rate": 25.0
+    },
+    {
+      "matchup": "Borussia Dortmund vs SC Freiburg",
+      "games": 5,
+      "close_games": 2,
+      "close_rate": 40.0
+    },
+    {
+      "matchup": "SC Freiburg vs Borussia Dortmund",
+      "games": 5,
+      "close_games": 2,
+      "close_rate": 40.0
+    },
+    {
+      "matchup": "Mainz vs SC Paderborn 07",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "SC Paderborn 07 vs Mainz",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "FC Cologne vs Schalke 04",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Schalke 04 vs FC Cologne",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Borussia M\u00f6nchengladbach vs FC Augsburg",
+      "games": 4,
+      "close_games": 3,
+      "close_rate": 75.0
+    },
+    {
+      "matchup": "FC Augsburg vs Borussia M\u00f6nchengladbach",
+      "games": 4,
+      "close_games": 3,
+      "close_rate": 75.0
+    },
+    {
+      "matchup": "1. FC Union Berlin vs VfL Wolfsburg",
+      "games": 4,
+      "close_games": 2,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "VfL Wolfsburg vs 1. FC Union Berlin",
+      "games": 4,
+      "close_games": 2,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Eintracht Frankfurt vs Werder Bremen",
+      "games": 4,
+      "close_games": 4,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Werder Bremen vs Eintracht Frankfurt",
+      "games": 4,
+      "close_games": 4,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Bayer Leverkusen vs Eintracht Frankfurt",
+      "games": 2,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Eintracht Frankfurt vs Bayer Leverkusen",
+      "games": 2,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "1. FC Union Berlin vs SC Freiburg",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "SC Freiburg vs 1. FC Union Berlin",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Bayern Munich vs FC Augsburg",
+      "games": 4,
+      "close_games": 3,
+      "close_rate": 75.0
+    },
+    {
+      "matchup": "FC Augsburg vs Bayern Munich",
+      "games": 4,
+      "close_games": 3,
+      "close_rate": 75.0
+    },
+    {
+      "matchup": "Fortuna D\u00fcsseldorf vs Mainz",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Mainz vs Fortuna D\u00fcsseldorf",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "RB Leipzig vs VfL Wolfsburg",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "VfL Wolfsburg vs RB Leipzig",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Hertha Berlin vs Werder Bremen",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Werder Bremen vs Hertha Berlin",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Borussia Dortmund vs Borussia M\u00f6nchengladbach",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Borussia M\u00f6nchengladbach vs Borussia Dortmund",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "FC Cologne vs SC Paderborn 07",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "SC Paderborn 07 vs FC Cologne",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Schalke 04 vs TSG Hoffenheim",
+      "games": 2,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "TSG Hoffenheim vs Schalke 04",
+      "games": 2,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "FC Cologne vs Mainz",
+      "games": 3,
+      "close_games": 1,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "Mainz vs FC Cologne",
+      "games": 3,
+      "close_games": 1,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "1. FC Union Berlin vs Bayern Munich",
+      "games": 4,
+      "close_games": 3,
+      "close_rate": 75.0
+    },
+    {
+      "matchup": "Bayern Munich vs 1. FC Union Berlin",
+      "games": 4,
+      "close_games": 3,
+      "close_rate": 75.0
+    },
+    {
+      "matchup": "Hertha Berlin vs TSG Hoffenheim",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "TSG Hoffenheim vs Hertha Berlin",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "RB Leipzig vs SC Freiburg",
+      "games": 4,
+      "close_games": 2,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "SC Freiburg vs RB Leipzig",
+      "games": 4,
+      "close_games": 2,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Fortuna D\u00fcsseldorf vs SC Paderborn 07",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "SC Paderborn 07 vs Fortuna D\u00fcsseldorf",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Borussia Dortmund vs Schalke 04",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Schalke 04 vs Borussia Dortmund",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Bayer Leverkusen vs Werder Bremen",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Werder Bremen vs Bayer Leverkusen",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "FC Augsburg vs VfL Wolfsburg",
+      "games": 5,
+      "close_games": 5,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "VfL Wolfsburg vs FC Augsburg",
+      "games": 5,
+      "close_games": 5,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Borussia M\u00f6nchengladbach vs Eintracht Frankfurt",
+      "games": 3,
+      "close_games": 1,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "Eintracht Frankfurt vs Borussia M\u00f6nchengladbach",
+      "games": 3,
+      "close_games": 1,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "SC Paderborn 07 vs TSG Hoffenheim",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "TSG Hoffenheim vs SC Paderborn 07",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Bayer Leverkusen vs Borussia M\u00f6nchengladbach",
+      "games": 4,
+      "close_games": 2,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Borussia M\u00f6nchengladbach vs Bayer Leverkusen",
+      "games": 4,
+      "close_games": 2,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Borussia Dortmund vs VfL Wolfsburg",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "VfL Wolfsburg vs Borussia Dortmund",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Bayern Munich vs Eintracht Frankfurt",
+      "games": 4,
+      "close_games": 1,
+      "close_rate": 25.0
+    },
+    {
+      "matchup": "Eintracht Frankfurt vs Bayern Munich",
+      "games": 4,
+      "close_games": 1,
+      "close_rate": 25.0
+    },
+    {
+      "matchup": "Mainz vs RB Leipzig",
+      "games": 5,
+      "close_games": 2,
+      "close_rate": 40.0
+    },
+    {
+      "matchup": "RB Leipzig vs Mainz",
+      "games": 5,
+      "close_games": 2,
+      "close_rate": 40.0
+    },
+    {
+      "matchup": "SC Freiburg vs Werder Bremen",
+      "games": 4,
+      "close_games": 3,
+      "close_rate": 75.0
+    },
+    {
+      "matchup": "Werder Bremen vs SC Freiburg",
+      "games": 4,
+      "close_games": 3,
+      "close_rate": 75.0
+    },
+    {
+      "matchup": "1. FC Union Berlin vs Hertha Berlin",
+      "games": 3,
+      "close_games": 1,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "Hertha Berlin vs 1. FC Union Berlin",
+      "games": 3,
+      "close_games": 1,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "FC Cologne vs Fortuna D\u00fcsseldorf",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Fortuna D\u00fcsseldorf vs FC Cologne",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "FC Augsburg vs Schalke 04",
+      "games": 3,
+      "close_games": 3,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Schalke 04 vs FC Augsburg",
+      "games": 3,
+      "close_games": 3,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "FC Cologne vs TSG Hoffenheim",
+      "games": 4,
+      "close_games": 2,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "TSG Hoffenheim vs FC Cologne",
+      "games": 4,
+      "close_games": 2,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Hertha Berlin vs RB Leipzig",
+      "games": 4,
+      "close_games": 2,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "RB Leipzig vs Hertha Berlin",
+      "games": 4,
+      "close_games": 2,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "1. FC Union Berlin vs Mainz",
+      "games": 5,
+      "close_games": 3,
+      "close_rate": 60.0
+    },
+    {
+      "matchup": "Mainz vs 1. FC Union Berlin",
+      "games": 5,
+      "close_games": 3,
+      "close_rate": 60.0
+    },
+    {
+      "matchup": "FC Augsburg vs SC Paderborn 07",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "SC Paderborn 07 vs FC Augsburg",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Fortuna D\u00fcsseldorf vs Schalke 04",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Schalke 04 vs Fortuna D\u00fcsseldorf",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Bayern Munich vs Borussia Dortmund",
+      "games": 4,
+      "close_games": 2,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Borussia Dortmund vs Bayern Munich",
+      "games": 4,
+      "close_games": 2,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Borussia M\u00f6nchengladbach vs Werder Bremen",
+      "games": 2,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Werder Bremen vs Borussia M\u00f6nchengladbach",
+      "games": 2,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Bayer Leverkusen vs VfL Wolfsburg",
+      "games": 5,
+      "close_games": 3,
+      "close_rate": 60.0
+    },
+    {
+      "matchup": "VfL Wolfsburg vs Bayer Leverkusen",
+      "games": 5,
+      "close_games": 3,
+      "close_rate": 60.0
+    },
+    {
+      "matchup": "Eintracht Frankfurt vs SC Freiburg",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "SC Freiburg vs Eintracht Frankfurt",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Borussia Dortmund vs SC Paderborn 07",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "SC Paderborn 07 vs Borussia Dortmund",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Arminia Bielefeld vs Eintracht Frankfurt",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Eintracht Frankfurt vs Arminia Bielefeld",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "SC Freiburg vs VfB Stuttgart",
+      "games": 4,
+      "close_games": 3,
+      "close_rate": 75.0
+    },
+    {
+      "matchup": "VfB Stuttgart vs SC Freiburg",
+      "games": 4,
+      "close_games": 3,
+      "close_rate": 75.0
+    },
+    {
+      "matchup": "Eintracht Frankfurt vs Hertha Berlin",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Hertha Berlin vs Eintracht Frankfurt",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Arminia Bielefeld vs FC Cologne",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "FC Cologne vs Arminia Bielefeld",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "1. FC Union Berlin vs Borussia M\u00f6nchengladbach",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Borussia M\u00f6nchengladbach vs 1. FC Union Berlin",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Mainz vs VfB Stuttgart",
+      "games": 2,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "VfB Stuttgart vs Mainz",
+      "games": 2,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Schalke 04 vs Werder Bremen",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Werder Bremen vs Schalke 04",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "SC Freiburg vs VfL Wolfsburg",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "VfL Wolfsburg vs SC Freiburg",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Bayer Leverkusen vs VfB Stuttgart",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "VfB Stuttgart vs Bayer Leverkusen",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Arminia Bielefeld vs Werder Bremen",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Werder Bremen vs Arminia Bielefeld",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "FC Augsburg vs RB Leipzig",
+      "games": 3,
+      "close_games": 1,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "RB Leipzig vs FC Augsburg",
+      "games": 3,
+      "close_games": 1,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "Hertha Berlin vs VfB Stuttgart",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "VfB Stuttgart vs Hertha Berlin",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Bayer Leverkusen vs Mainz",
+      "games": 4,
+      "close_games": 2,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Mainz vs Bayer Leverkusen",
+      "games": 4,
+      "close_games": 2,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Borussia Dortmund vs TSG Hoffenheim",
+      "games": 4,
+      "close_games": 3,
+      "close_rate": 75.0
+    },
+    {
+      "matchup": "TSG Hoffenheim vs Borussia Dortmund",
+      "games": 4,
+      "close_games": 3,
+      "close_rate": 75.0
+    },
+    {
+      "matchup": "Arminia Bielefeld vs Bayern Munich",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Bayern Munich vs Arminia Bielefeld",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Borussia M\u00f6nchengladbach vs VfL Wolfsburg",
+      "games": 4,
+      "close_games": 2,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "VfL Wolfsburg vs Borussia M\u00f6nchengladbach",
+      "games": 4,
+      "close_games": 2,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Eintracht Frankfurt vs FC Cologne",
+      "games": 4,
+      "close_games": 4,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "FC Cologne vs Eintracht Frankfurt",
+      "games": 4,
+      "close_games": 4,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "1. FC Union Berlin vs Schalke 04",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Schalke 04 vs 1. FC Union Berlin",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "FC Cologne vs VfB Stuttgart",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "VfB Stuttgart vs FC Cologne",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Arminia Bielefeld vs VfL Wolfsburg",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "VfL Wolfsburg vs Arminia Bielefeld",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Schalke 04 vs VfB Stuttgart",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "VfB Stuttgart vs Schalke 04",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Arminia Bielefeld vs Borussia Dortmund",
+      "games": 2,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Borussia Dortmund vs Arminia Bielefeld",
+      "games": 2,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "FC Augsburg vs Mainz",
+      "games": 4,
+      "close_games": 2,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Mainz vs FC Augsburg",
+      "games": 4,
+      "close_games": 2,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Bayer Leverkusen vs SC Freiburg",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "SC Freiburg vs Bayer Leverkusen",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "1. FC Union Berlin vs TSG Hoffenheim",
+      "games": 3,
+      "close_games": 1,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "TSG Hoffenheim vs 1. FC Union Berlin",
+      "games": 3,
+      "close_games": 1,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "FC Cologne vs Werder Bremen",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Werder Bremen vs FC Cologne",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "1. FC Union Berlin vs Arminia Bielefeld",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Arminia Bielefeld vs 1. FC Union Berlin",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "FC Augsburg vs Hertha Berlin",
+      "games": 2,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Hertha Berlin vs FC Augsburg",
+      "games": 2,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Eintracht Frankfurt vs VfB Stuttgart",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "VfB Stuttgart vs Eintracht Frankfurt",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Arminia Bielefeld vs Bayer Leverkusen",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Bayer Leverkusen vs Arminia Bielefeld",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Bayern Munich vs Werder Bremen",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Werder Bremen vs Bayern Munich",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Schalke 04 vs VfL Wolfsburg",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "VfL Wolfsburg vs Schalke 04",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "TSG Hoffenheim vs VfB Stuttgart",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "VfB Stuttgart vs TSG Hoffenheim",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Borussia Dortmund vs Hertha Berlin",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Hertha Berlin vs Borussia Dortmund",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "1. FC Union Berlin vs FC Cologne",
+      "games": 3,
+      "close_games": 3,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "FC Cologne vs 1. FC Union Berlin",
+      "games": 3,
+      "close_games": 3,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "VfL Wolfsburg vs Werder Bremen",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Werder Bremen vs VfL Wolfsburg",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Arminia Bielefeld vs RB Leipzig",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "RB Leipzig vs Arminia Bielefeld",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Bayern Munich vs VfB Stuttgart",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "VfB Stuttgart vs Bayern Munich",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Bayer Leverkusen vs Hertha Berlin",
+      "games": 3,
+      "close_games": 3,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Hertha Berlin vs Bayer Leverkusen",
+      "games": 3,
+      "close_games": 3,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Mainz vs TSG Hoffenheim",
+      "games": 3,
+      "close_games": 1,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "TSG Hoffenheim vs Mainz",
+      "games": 3,
+      "close_games": 1,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "Arminia Bielefeld vs Mainz",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Mainz vs Arminia Bielefeld",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Borussia M\u00f6nchengladbach vs SC Freiburg",
+      "games": 3,
+      "close_games": 3,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "SC Freiburg vs Borussia M\u00f6nchengladbach",
+      "games": 3,
+      "close_games": 3,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "VfB Stuttgart vs Werder Bremen",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Werder Bremen vs VfB Stuttgart",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Bayer Leverkusen vs Schalke 04",
+      "games": 2,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Schalke 04 vs Bayer Leverkusen",
+      "games": 2,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "FC Augsburg vs TSG Hoffenheim",
+      "games": 4,
+      "close_games": 2,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "TSG Hoffenheim vs FC Augsburg",
+      "games": 4,
+      "close_games": 2,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Eintracht Frankfurt vs VfL Wolfsburg",
+      "games": 4,
+      "close_games": 3,
+      "close_rate": 75.0
+    },
+    {
+      "matchup": "VfL Wolfsburg vs Eintracht Frankfurt",
+      "games": 4,
+      "close_games": 3,
+      "close_rate": 75.0
+    },
+    {
+      "matchup": "Borussia Dortmund vs VfB Stuttgart",
+      "games": 3,
+      "close_games": 1,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "VfB Stuttgart vs Borussia Dortmund",
+      "games": 3,
+      "close_games": 1,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "Borussia M\u00f6nchengladbach vs Hertha Berlin",
+      "games": 3,
+      "close_games": 3,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Hertha Berlin vs Borussia M\u00f6nchengladbach",
+      "games": 3,
+      "close_games": 3,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Arminia Bielefeld vs SC Freiburg",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "SC Freiburg vs Arminia Bielefeld",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Bayern Munich vs Borussia M\u00f6nchengladbach",
+      "games": 3,
+      "close_games": 3,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Borussia M\u00f6nchengladbach vs Bayern Munich",
+      "games": 3,
+      "close_games": 3,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "SpVgg Greuther F\u00fcrth vs VfB Stuttgart",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "VfB Stuttgart vs SpVgg Greuther F\u00fcrth",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "VfL Bochum vs VfL Wolfsburg",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "VfL Wolfsburg vs VfL Bochum",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "RB Leipzig vs VfB Stuttgart",
+      "games": 3,
+      "close_games": 1,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "VfB Stuttgart vs RB Leipzig",
+      "games": 3,
+      "close_games": 1,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "Arminia Bielefeld vs SpVgg Greuther F\u00fcrth",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "SpVgg Greuther F\u00fcrth vs Arminia Bielefeld",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Mainz vs VfL Bochum",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "VfL Bochum vs Mainz",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "FC Cologne vs VfL Bochum",
+      "games": 3,
+      "close_games": 3,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "VfL Bochum vs FC Cologne",
+      "games": 3,
+      "close_games": 3,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Mainz vs SpVgg Greuther F\u00fcrth",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "SpVgg Greuther F\u00fcrth vs Mainz",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "SpVgg Greuther F\u00fcrth vs VfL Wolfsburg",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "VfL Wolfsburg vs SpVgg Greuther F\u00fcrth",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Hertha Berlin vs VfL Bochum",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "VfL Bochum vs Hertha Berlin",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Arminia Bielefeld vs Borussia M\u00f6nchengladbach",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Borussia M\u00f6nchengladbach vs Arminia Bielefeld",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Hertha Berlin vs SpVgg Greuther F\u00fcrth",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "SpVgg Greuther F\u00fcrth vs Hertha Berlin",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Arminia Bielefeld vs TSG Hoffenheim",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "TSG Hoffenheim vs Arminia Bielefeld",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Bayern Munich vs VfL Bochum",
+      "games": 3,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "VfL Bochum vs Bayern Munich",
+      "games": 3,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "FC Cologne vs RB Leipzig",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "RB Leipzig vs FC Cologne",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Bayern Munich vs SpVgg Greuther F\u00fcrth",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "SpVgg Greuther F\u00fcrth vs Bayern Munich",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "VfB Stuttgart vs VfL Bochum",
+      "games": 3,
+      "close_games": 1,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "VfL Bochum vs VfB Stuttgart",
+      "games": 3,
+      "close_games": 1,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "FC Cologne vs SpVgg Greuther F\u00fcrth",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "SpVgg Greuther F\u00fcrth vs FC Cologne",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Hertha Berlin vs SC Freiburg",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "SC Freiburg vs Hertha Berlin",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "RB Leipzig vs VfL Bochum",
+      "games": 3,
+      "close_games": 1,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "VfL Bochum vs RB Leipzig",
+      "games": 3,
+      "close_games": 1,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "Borussia Dortmund vs Mainz",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Mainz vs Borussia Dortmund",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "SpVgg Greuther F\u00fcrth vs VfL Bochum",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "VfL Bochum vs SpVgg Greuther F\u00fcrth",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Borussia M\u00f6nchengladbach vs VfB Stuttgart",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "VfB Stuttgart vs Borussia M\u00f6nchengladbach",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Bayer Leverkusen vs Bayern Munich",
+      "games": 3,
+      "close_games": 1,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "Bayern Munich vs Bayer Leverkusen",
+      "games": 3,
+      "close_games": 1,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "Arminia Bielefeld vs FC Augsburg",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "FC Augsburg vs Arminia Bielefeld",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "RB Leipzig vs SpVgg Greuther F\u00fcrth",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "SpVgg Greuther F\u00fcrth vs RB Leipzig",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Bayer Leverkusen vs FC Cologne",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "FC Cologne vs Bayer Leverkusen",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "1. FC Union Berlin vs VfB Stuttgart",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "VfB Stuttgart vs 1. FC Union Berlin",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Eintracht Frankfurt vs VfL Bochum",
+      "games": 3,
+      "close_games": 1,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "VfL Bochum vs Eintracht Frankfurt",
+      "games": 3,
+      "close_games": 1,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "SC Freiburg vs SpVgg Greuther F\u00fcrth",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "SpVgg Greuther F\u00fcrth vs SC Freiburg",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "FC Augsburg vs VfB Stuttgart",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "VfB Stuttgart vs FC Augsburg",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Borussia M\u00f6nchengladbach vs VfL Bochum",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "VfL Bochum vs Borussia M\u00f6nchengladbach",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Bayern Munich vs SC Freiburg",
+      "games": 3,
+      "close_games": 1,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "SC Freiburg vs Bayern Munich",
+      "games": 3,
+      "close_games": 1,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "Arminia Bielefeld vs VfB Stuttgart",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "VfB Stuttgart vs Arminia Bielefeld",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "TSG Hoffenheim vs VfL Bochum",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "VfL Bochum vs TSG Hoffenheim",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Borussia Dortmund vs RB Leipzig",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "RB Leipzig vs Borussia Dortmund",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Eintracht Frankfurt vs SpVgg Greuther F\u00fcrth",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "SpVgg Greuther F\u00fcrth vs Eintracht Frankfurt",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Bayern Munich vs VfL Wolfsburg",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "VfL Wolfsburg vs Bayern Munich",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "SC Freiburg vs VfL Bochum",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "VfL Bochum vs SC Freiburg",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "VfL Bochum vs Werder Bremen",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Werder Bremen vs VfL Bochum",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Schalke 04 vs VfL Bochum",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "VfL Bochum vs Schalke 04",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "VfB Stuttgart vs VfL Wolfsburg",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "VfL Wolfsburg vs VfB Stuttgart",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Mainz vs Werder Bremen",
+      "games": 2,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Werder Bremen vs Mainz",
+      "games": 2,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "FC Augsburg vs FC Cologne",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "FC Cologne vs FC Augsburg",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "1. FC Union Berlin vs VfL Bochum",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "VfL Bochum vs 1. FC Union Berlin",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "1. FC Heidenheim 1846 vs VfL Wolfsburg",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "VfL Wolfsburg vs 1. FC Heidenheim 1846",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Eintracht Frankfurt vs SV Darmstadt 98",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "SV Darmstadt 98 vs Eintracht Frankfurt",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "1. FC Heidenheim 1846 vs TSG Hoffenheim",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "TSG Hoffenheim vs 1. FC Heidenheim 1846",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "1. FC Union Berlin vs SV Darmstadt 98",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "SV Darmstadt 98 vs 1. FC Union Berlin",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Borussia Dortmund vs VfL Bochum",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "VfL Bochum vs Borussia Dortmund",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Eintracht Frankfurt vs Mainz",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Mainz vs Eintracht Frankfurt",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "1. FC Heidenheim 1846 vs Borussia Dortmund",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Borussia Dortmund vs 1. FC Heidenheim 1846",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Bayer Leverkusen vs SV Darmstadt 98",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "SV Darmstadt 98 vs Bayer Leverkusen",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "FC Augsburg vs VfL Bochum",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "VfL Bochum vs FC Augsburg",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "1. FC Heidenheim 1846 vs Werder Bremen",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Werder Bremen vs 1. FC Heidenheim 1846",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Borussia M\u00f6nchengladbach vs SV Darmstadt 98",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "SV Darmstadt 98 vs Borussia M\u00f6nchengladbach",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "SV Darmstadt 98 vs VfB Stuttgart",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "VfB Stuttgart vs SV Darmstadt 98",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "1. FC Heidenheim 1846 vs Bayer Leverkusen",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Bayer Leverkusen vs 1. FC Heidenheim 1846",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "1. FC Heidenheim 1846 vs 1. FC Union Berlin",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "1. FC Union Berlin vs 1. FC Heidenheim 1846",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "SV Darmstadt 98 vs Werder Bremen",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Werder Bremen vs SV Darmstadt 98",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "FC Augsburg vs SV Darmstadt 98",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "SV Darmstadt 98 vs FC Augsburg",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "1. FC Heidenheim 1846 vs Eintracht Frankfurt",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Eintracht Frankfurt vs 1. FC Heidenheim 1846",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "RB Leipzig vs SV Darmstadt 98",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "SV Darmstadt 98 vs RB Leipzig",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "1. FC Heidenheim 1846 vs FC Augsburg",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "FC Augsburg vs 1. FC Heidenheim 1846",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Bayern Munich vs SV Darmstadt 98",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "SV Darmstadt 98 vs Bayern Munich",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "1. FC Heidenheim 1846 vs Borussia M\u00f6nchengladbach",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Borussia M\u00f6nchengladbach vs 1. FC Heidenheim 1846",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "SV Darmstadt 98 vs VfL Bochum",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "VfL Bochum vs SV Darmstadt 98",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "1. FC Heidenheim 1846 vs VfB Stuttgart",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "VfB Stuttgart vs 1. FC Heidenheim 1846",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "1. FC Heidenheim 1846 vs Bayern Munich",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Bayern Munich vs 1. FC Heidenheim 1846",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Mainz vs SV Darmstadt 98",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "SV Darmstadt 98 vs Mainz",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    }
+  ],
+  "form_strengths": [
+    {
+      "team": "1. FC Heidenheim 1846",
+      "strength": 58.7
+    },
+    {
+      "team": "1. FC Union Berlin",
+      "strength": 44.0
+    },
+    {
+      "team": "Arminia Bielefeld",
+      "strength": 67.3
+    },
+    {
+      "team": "Bayer Leverkusen",
+      "strength": 88.0
+    },
+    {
+      "team": "Bayern Munich",
+      "strength": 88.0
+    },
+    {
+      "team": "Borussia Dortmund",
+      "strength": 60.0
+    },
+    {
+      "team": "Borussia M\u00f6nchengladbach",
+      "strength": 73.3
+    },
+    {
+      "team": "Eintracht Frankfurt",
+      "strength": 70.7
+    },
+    {
+      "team": "FC Augsburg",
+      "strength": 65.3
+    },
+    {
+      "team": "FC Cologne",
+      "strength": 52.7
+    },
+    {
+      "team": "Fortuna D\u00fcsseldorf",
+      "strength": 68.0
+    },
+    {
+      "team": "Hertha Berlin",
+      "strength": 68.7
+    },
+    {
+      "team": "Mainz",
+      "strength": 60.7
+    },
+    {
+      "team": "RB Leipzig",
+      "strength": 72.7
+    },
+    {
+      "team": "SC Freiburg",
+      "strength": 55.3
+    },
+    {
+      "team": "SC Paderborn 07",
+      "strength": 57.3
+    },
+    {
+      "team": "SV Darmstadt 98",
+      "strength": 50.7
+    },
+    {
+      "team": "Schalke 04",
+      "strength": 52.0
+    },
+    {
+      "team": "SpVgg Greuther F\u00fcrth",
+      "strength": 48.0
+    },
+    {
+      "team": "TSG Hoffenheim",
+      "strength": 60.7
+    },
+    {
+      "team": "VfB Stuttgart",
+      "strength": 65.3
+    },
+    {
+      "team": "VfL Bochum",
+      "strength": 66.7
+    },
+    {
+      "team": "VfL Wolfsburg",
+      "strength": 52.0
+    },
+    {
+      "team": "Werder Bremen",
+      "strength": 60.0
+    }
+  ],
+  "team_margin_ratings": [
+    {
+      "team": "1. FC Heidenheim 1846",
+      "avg_margin": -0.7
+    },
+    {
+      "team": "1. FC Union Berlin",
+      "avg_margin": -1.8
+    },
+    {
+      "team": "Arminia Bielefeld",
+      "avg_margin": -0.9
+    },
+    {
+      "team": "Bayer Leverkusen",
+      "avg_margin": 2.3
+    },
+    {
+      "team": "Bayern Munich",
+      "avg_margin": 2.8
+    },
+    {
+      "team": "Borussia Dortmund",
+      "avg_margin": 0.3
+    },
+    {
+      "team": "Borussia M\u00f6nchengladbach",
+      "avg_margin": 0
+    },
+    {
+      "team": "Eintracht Frankfurt",
+      "avg_margin": 0.5
+    },
+    {
+      "team": "FC Augsburg",
+      "avg_margin": -0.3
+    },
+    {
+      "team": "FC Cologne",
+      "avg_margin": -1.3
+    },
+    {
+      "team": "Fortuna D\u00fcsseldorf",
+      "avg_margin": -0.6
+    },
+    {
+      "team": "Hertha Berlin",
+      "avg_margin": -0.1
+    },
+    {
+      "team": "Mainz",
+      "avg_margin": -1
+    },
+    {
+      "team": "RB Leipzig",
+      "avg_margin": 1.9
+    },
+    {
+      "team": "SC Freiburg",
+      "avg_margin": -0.9
+    },
+    {
+      "team": "SC Paderborn 07",
+      "avg_margin": -1.2
+    },
+    {
+      "team": "SV Darmstadt 98",
+      "avg_margin": -1.7
+    },
+    {
+      "team": "Schalke 04",
+      "avg_margin": -1.3
+    },
+    {
+      "team": "SpVgg Greuther F\u00fcrth",
+      "avg_margin": -1.7
+    },
+    {
+      "team": "TSG Hoffenheim",
+      "avg_margin": 0.4
+    },
+    {
+      "team": "VfB Stuttgart",
+      "avg_margin": 1
+    },
+    {
+      "team": "VfL Bochum",
+      "avg_margin": -0.9
+    },
+    {
+      "team": "VfL Wolfsburg",
+      "avg_margin": -0.7
+    },
+    {
+      "team": "Werder Bremen",
+      "avg_margin": 0
+    }
+  ]
+}

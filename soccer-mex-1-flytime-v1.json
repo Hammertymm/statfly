@@ -1,0 +1,4332 @@
+{
+  "meta": {
+    "sport": "Liga MX",
+    "league": "mex.1",
+    "engine": "v1-bootstrap",
+    "formula": "close*0.35 + form_balance*0.25 + margin_balance*0.25 + matchup*0.15",
+    "close_margin": 1,
+    "games_sampled": 600,
+    "week_chunk": 9,
+    "built": "2026-06-10"
+  },
+  "matchup_ratings": [
+    {
+      "matchup": "Guadalajara vs Puebla",
+      "games_played": 4,
+      "avg_margin": 1,
+      "avg_excitement": 72.5
+    },
+    {
+      "matchup": "Puebla vs Guadalajara",
+      "games_played": 4,
+      "avg_margin": 1,
+      "avg_excitement": 72.5
+    },
+    {
+      "matchup": "Atlas vs Santos",
+      "games_played": 2,
+      "avg_margin": 0.5,
+      "avg_excitement": 95.0
+    },
+    {
+      "matchup": "Santos vs Atlas",
+      "games_played": 2,
+      "avg_margin": 0.5,
+      "avg_excitement": 95.0
+    },
+    {
+      "matchup": "Cruz Azul vs Quer\u00e9taro",
+      "games_played": 5,
+      "avg_margin": 2,
+      "avg_excitement": 24.0
+    },
+    {
+      "matchup": "Quer\u00e9taro vs Cruz Azul",
+      "games_played": 5,
+      "avg_margin": 2,
+      "avg_excitement": 24.0
+    },
+    {
+      "matchup": "Am\u00e9rica vs Tijuana",
+      "games_played": 3,
+      "avg_margin": 1.33,
+      "avg_excitement": 40.0
+    },
+    {
+      "matchup": "Tijuana vs Am\u00e9rica",
+      "games_played": 3,
+      "avg_margin": 1.33,
+      "avg_excitement": 40.0
+    },
+    {
+      "matchup": "Club Atl\u00e9tico Morelia vs Pachuca",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Pachuca vs Club Atl\u00e9tico Morelia",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Necaxa vs Veracruz",
+      "games_played": 1,
+      "avg_margin": 7,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Veracruz vs Necaxa",
+      "games_played": 1,
+      "avg_margin": 7,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Le\u00f3n vs Monterrey",
+      "games_played": 4,
+      "avg_margin": 2,
+      "avg_excitement": 45.0
+    },
+    {
+      "matchup": "Monterrey vs Le\u00f3n",
+      "games_played": 4,
+      "avg_margin": 2,
+      "avg_excitement": 45.0
+    },
+    {
+      "matchup": "Pumas UNAM vs Tigres UANL",
+      "games_played": 5,
+      "avg_margin": 0.8,
+      "avg_excitement": 78.0
+    },
+    {
+      "matchup": "Tigres UANL vs Pumas UNAM",
+      "games_played": 5,
+      "avg_margin": 0.8,
+      "avg_excitement": 78.0
+    },
+    {
+      "matchup": "FC Juarez vs Toluca",
+      "games_played": 2,
+      "avg_margin": 1.5,
+      "avg_excitement": 50.0
+    },
+    {
+      "matchup": "Toluca vs FC Juarez",
+      "games_played": 2,
+      "avg_margin": 1.5,
+      "avg_excitement": 50.0
+    },
+    {
+      "matchup": "Club Atl\u00e9tico Morelia vs Monterrey",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Monterrey vs Club Atl\u00e9tico Morelia",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Atlas vs Veracruz",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Veracruz vs Atlas",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Pumas UNAM vs Tijuana",
+      "games_played": 2,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Tijuana vs Pumas UNAM",
+      "games_played": 2,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Cruz Azul vs FC Juarez",
+      "games_played": 4,
+      "avg_margin": 1.75,
+      "avg_excitement": 47.5
+    },
+    {
+      "matchup": "FC Juarez vs Cruz Azul",
+      "games_played": 4,
+      "avg_margin": 1.75,
+      "avg_excitement": 47.5
+    },
+    {
+      "matchup": "Pachuca vs Quer\u00e9taro",
+      "games_played": 4,
+      "avg_margin": 0.75,
+      "avg_excitement": 75.0
+    },
+    {
+      "matchup": "Quer\u00e9taro vs Pachuca",
+      "games_played": 4,
+      "avg_margin": 0.75,
+      "avg_excitement": 75.0
+    },
+    {
+      "matchup": "Necaxa vs Tigres UANL",
+      "games_played": 4,
+      "avg_margin": 1.25,
+      "avg_excitement": 52.5
+    },
+    {
+      "matchup": "Tigres UANL vs Necaxa",
+      "games_played": 4,
+      "avg_margin": 1.25,
+      "avg_excitement": 52.5
+    },
+    {
+      "matchup": "Atl\u00e9tico de San Luis vs Guadalajara",
+      "games_played": 1,
+      "avg_margin": 3,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Guadalajara vs Atl\u00e9tico de San Luis",
+      "games_played": 1,
+      "avg_margin": 3,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Am\u00e9rica vs Toluca",
+      "games_played": 4,
+      "avg_margin": 0.75,
+      "avg_excitement": 75.0
+    },
+    {
+      "matchup": "Toluca vs Am\u00e9rica",
+      "games_played": 4,
+      "avg_margin": 0.75,
+      "avg_excitement": 75.0
+    },
+    {
+      "matchup": "Puebla vs Santos",
+      "games_played": 3,
+      "avg_margin": 1.67,
+      "avg_excitement": 36.67
+    },
+    {
+      "matchup": "Santos vs Puebla",
+      "games_played": 3,
+      "avg_margin": 1.67,
+      "avg_excitement": 36.67
+    },
+    {
+      "matchup": "Pachuca vs Puebla",
+      "games_played": 5,
+      "avg_margin": 1.2,
+      "avg_excitement": 74.0
+    },
+    {
+      "matchup": "Puebla vs Pachuca",
+      "games_played": 5,
+      "avg_margin": 1.2,
+      "avg_excitement": 74.0
+    },
+    {
+      "matchup": "Atlas vs Cruz Azul",
+      "games_played": 2,
+      "avg_margin": 1.5,
+      "avg_excitement": 50.0
+    },
+    {
+      "matchup": "Cruz Azul vs Atlas",
+      "games_played": 2,
+      "avg_margin": 1.5,
+      "avg_excitement": 50.0
+    },
+    {
+      "matchup": "Atl\u00e9tico de San Luis vs Tigres UANL",
+      "games_played": 5,
+      "avg_margin": 2,
+      "avg_excitement": 38.0
+    },
+    {
+      "matchup": "Tigres UANL vs Atl\u00e9tico de San Luis",
+      "games_played": 5,
+      "avg_margin": 2,
+      "avg_excitement": 38.0
+    },
+    {
+      "matchup": "Guadalajara vs Le\u00f3n",
+      "games_played": 3,
+      "avg_margin": 2,
+      "avg_excitement": 33.33
+    },
+    {
+      "matchup": "Le\u00f3n vs Guadalajara",
+      "games_played": 3,
+      "avg_margin": 2,
+      "avg_excitement": 33.33
+    },
+    {
+      "matchup": "Am\u00e9rica vs Club Atl\u00e9tico Morelia",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Club Atl\u00e9tico Morelia vs Am\u00e9rica",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Monterrey vs Toluca",
+      "games_played": 5,
+      "avg_margin": 1.2,
+      "avg_excitement": 60.0
+    },
+    {
+      "matchup": "Toluca vs Monterrey",
+      "games_played": 5,
+      "avg_margin": 1.2,
+      "avg_excitement": 60.0
+    },
+    {
+      "matchup": "Pumas UNAM vs Veracruz",
+      "games_played": 1,
+      "avg_margin": 2,
+      "avg_excitement": 10.0
+    },
+    {
+      "matchup": "Veracruz vs Pumas UNAM",
+      "games_played": 1,
+      "avg_margin": 2,
+      "avg_excitement": 10.0
+    },
+    {
+      "matchup": "Necaxa vs Santos",
+      "games_played": 4,
+      "avg_margin": 2.25,
+      "avg_excitement": 25.0
+    },
+    {
+      "matchup": "Santos vs Necaxa",
+      "games_played": 4,
+      "avg_margin": 2.25,
+      "avg_excitement": 25.0
+    },
+    {
+      "matchup": "FC Juarez vs Quer\u00e9taro",
+      "games_played": 4,
+      "avg_margin": 1,
+      "avg_excitement": 72.5
+    },
+    {
+      "matchup": "Quer\u00e9taro vs FC Juarez",
+      "games_played": 4,
+      "avg_margin": 1,
+      "avg_excitement": 72.5
+    },
+    {
+      "matchup": "Atl\u00e9tico de San Luis vs Veracruz",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Veracruz vs Atl\u00e9tico de San Luis",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Club Atl\u00e9tico Morelia vs Pumas UNAM",
+      "games_played": 1,
+      "avg_margin": 2,
+      "avg_excitement": 10.0
+    },
+    {
+      "matchup": "Pumas UNAM vs Club Atl\u00e9tico Morelia",
+      "games_played": 1,
+      "avg_margin": 2,
+      "avg_excitement": 10.0
+    },
+    {
+      "matchup": "Monterrey vs Santos",
+      "games_played": 3,
+      "avg_margin": 1.33,
+      "avg_excitement": 63.33
+    },
+    {
+      "matchup": "Santos vs Monterrey",
+      "games_played": 3,
+      "avg_margin": 1.33,
+      "avg_excitement": 63.33
+    },
+    {
+      "matchup": "Le\u00f3n vs Quer\u00e9taro",
+      "games_played": 6,
+      "avg_margin": 2,
+      "avg_excitement": 45.0
+    },
+    {
+      "matchup": "Quer\u00e9taro vs Le\u00f3n",
+      "games_played": 6,
+      "avg_margin": 2,
+      "avg_excitement": 45.0
+    },
+    {
+      "matchup": "Cruz Azul vs Puebla",
+      "games_played": 3,
+      "avg_margin": 0.33,
+      "avg_excitement": 96.67
+    },
+    {
+      "matchup": "Puebla vs Cruz Azul",
+      "games_played": 3,
+      "avg_margin": 0.33,
+      "avg_excitement": 96.67
+    },
+    {
+      "matchup": "Atlas vs Pachuca",
+      "games_played": 5,
+      "avg_margin": 1.6,
+      "avg_excitement": 42.0
+    },
+    {
+      "matchup": "Pachuca vs Atlas",
+      "games_played": 5,
+      "avg_margin": 1.6,
+      "avg_excitement": 42.0
+    },
+    {
+      "matchup": "Am\u00e9rica vs Tigres UANL",
+      "games_played": 3,
+      "avg_margin": 1,
+      "avg_excitement": 66.67
+    },
+    {
+      "matchup": "Tigres UANL vs Am\u00e9rica",
+      "games_played": 3,
+      "avg_margin": 1,
+      "avg_excitement": 66.67
+    },
+    {
+      "matchup": "Tijuana vs Toluca",
+      "games_played": 6,
+      "avg_margin": 2.17,
+      "avg_excitement": 20.0
+    },
+    {
+      "matchup": "Toluca vs Tijuana",
+      "games_played": 6,
+      "avg_margin": 2.17,
+      "avg_excitement": 20.0
+    },
+    {
+      "matchup": "Guadalajara vs Necaxa",
+      "games_played": 6,
+      "avg_margin": 1.5,
+      "avg_excitement": 73.33
+    },
+    {
+      "matchup": "Necaxa vs Guadalajara",
+      "games_played": 6,
+      "avg_margin": 1.5,
+      "avg_excitement": 73.33
+    },
+    {
+      "matchup": "Atlas vs Tigres UANL",
+      "games_played": 4,
+      "avg_margin": 0.5,
+      "avg_excitement": 77.5
+    },
+    {
+      "matchup": "Tigres UANL vs Atlas",
+      "games_played": 4,
+      "avg_margin": 0.5,
+      "avg_excitement": 77.5
+    },
+    {
+      "matchup": "Atl\u00e9tico de San Luis vs Club Atl\u00e9tico Morelia",
+      "games_played": 1,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "Club Atl\u00e9tico Morelia vs Atl\u00e9tico de San Luis",
+      "games_played": 1,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "Quer\u00e9taro vs Veracruz",
+      "games_played": 1,
+      "avg_margin": 5,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Veracruz vs Quer\u00e9taro",
+      "games_played": 1,
+      "avg_margin": 5,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Am\u00e9rica vs Pachuca",
+      "games_played": 4,
+      "avg_margin": 1.75,
+      "avg_excitement": 47.5
+    },
+    {
+      "matchup": "Pachuca vs Am\u00e9rica",
+      "games_played": 4,
+      "avg_margin": 1.75,
+      "avg_excitement": 47.5
+    },
+    {
+      "matchup": "Le\u00f3n vs Santos",
+      "games_played": 6,
+      "avg_margin": 0.67,
+      "avg_excitement": 81.67
+    },
+    {
+      "matchup": "Santos vs Le\u00f3n",
+      "games_played": 6,
+      "avg_margin": 0.67,
+      "avg_excitement": 81.67
+    },
+    {
+      "matchup": "Necaxa vs Toluca",
+      "games_played": 3,
+      "avg_margin": 1,
+      "avg_excitement": 66.67
+    },
+    {
+      "matchup": "Toluca vs Necaxa",
+      "games_played": 3,
+      "avg_margin": 1,
+      "avg_excitement": 66.67
+    },
+    {
+      "matchup": "Cruz Azul vs Tijuana",
+      "games_played": 4,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Tijuana vs Cruz Azul",
+      "games_played": 4,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "FC Juarez vs Puebla",
+      "games_played": 5,
+      "avg_margin": 0.8,
+      "avg_excitement": 92.0
+    },
+    {
+      "matchup": "Puebla vs FC Juarez",
+      "games_played": 5,
+      "avg_margin": 0.8,
+      "avg_excitement": 92.0
+    },
+    {
+      "matchup": "Monterrey vs Pumas UNAM",
+      "games_played": 3,
+      "avg_margin": 1,
+      "avg_excitement": 66.67
+    },
+    {
+      "matchup": "Pumas UNAM vs Monterrey",
+      "games_played": 3,
+      "avg_margin": 1,
+      "avg_excitement": 66.67
+    },
+    {
+      "matchup": "Club Atl\u00e9tico Morelia vs Veracruz",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Veracruz vs Club Atl\u00e9tico Morelia",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Am\u00e9rica vs Atlas",
+      "games_played": 5,
+      "avg_margin": 1.6,
+      "avg_excitement": 56.0
+    },
+    {
+      "matchup": "Atlas vs Am\u00e9rica",
+      "games_played": 5,
+      "avg_margin": 1.6,
+      "avg_excitement": 56.0
+    },
+    {
+      "matchup": "Necaxa vs Tijuana",
+      "games_played": 5,
+      "avg_margin": 1.4,
+      "avg_excitement": 58.0
+    },
+    {
+      "matchup": "Tijuana vs Necaxa",
+      "games_played": 5,
+      "avg_margin": 1.4,
+      "avg_excitement": 58.0
+    },
+    {
+      "matchup": "Atl\u00e9tico de San Luis vs Pachuca",
+      "games_played": 4,
+      "avg_margin": 1.75,
+      "avg_excitement": 30.0
+    },
+    {
+      "matchup": "Pachuca vs Atl\u00e9tico de San Luis",
+      "games_played": 4,
+      "avg_margin": 1.75,
+      "avg_excitement": 30.0
+    },
+    {
+      "matchup": "Le\u00f3n vs Tigres UANL",
+      "games_played": 5,
+      "avg_margin": 0.2,
+      "avg_excitement": 98.0
+    },
+    {
+      "matchup": "Tigres UANL vs Le\u00f3n",
+      "games_played": 5,
+      "avg_margin": 0.2,
+      "avg_excitement": 98.0
+    },
+    {
+      "matchup": "Cruz Azul vs Guadalajara",
+      "games_played": 4,
+      "avg_margin": 1,
+      "avg_excitement": 72.5
+    },
+    {
+      "matchup": "Guadalajara vs Cruz Azul",
+      "games_played": 4,
+      "avg_margin": 1,
+      "avg_excitement": 72.5
+    },
+    {
+      "matchup": "Pumas UNAM vs Toluca",
+      "games_played": 6,
+      "avg_margin": 0.5,
+      "avg_excitement": 95.0
+    },
+    {
+      "matchup": "Toluca vs Pumas UNAM",
+      "games_played": 6,
+      "avg_margin": 0.5,
+      "avg_excitement": 95.0
+    },
+    {
+      "matchup": "Puebla vs Quer\u00e9taro",
+      "games_played": 6,
+      "avg_margin": 0.33,
+      "avg_excitement": 96.67
+    },
+    {
+      "matchup": "Quer\u00e9taro vs Puebla",
+      "games_played": 6,
+      "avg_margin": 0.33,
+      "avg_excitement": 96.67
+    },
+    {
+      "matchup": "FC Juarez vs Monterrey",
+      "games_played": 5,
+      "avg_margin": 1.4,
+      "avg_excitement": 58.0
+    },
+    {
+      "matchup": "Monterrey vs FC Juarez",
+      "games_played": 5,
+      "avg_margin": 1.4,
+      "avg_excitement": 58.0
+    },
+    {
+      "matchup": "Atl\u00e9tico de San Luis vs Puebla",
+      "games_played": 5,
+      "avg_margin": 1.2,
+      "avg_excitement": 60.0
+    },
+    {
+      "matchup": "Puebla vs Atl\u00e9tico de San Luis",
+      "games_played": 5,
+      "avg_margin": 1.2,
+      "avg_excitement": 60.0
+    },
+    {
+      "matchup": "Cruz Azul vs Veracruz",
+      "games_played": 1,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "Veracruz vs Cruz Azul",
+      "games_played": 1,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "Tigres UANL vs Tijuana",
+      "games_played": 2,
+      "avg_margin": 1.5,
+      "avg_excitement": 50.0
+    },
+    {
+      "matchup": "Tijuana vs Tigres UANL",
+      "games_played": 2,
+      "avg_margin": 1.5,
+      "avg_excitement": 50.0
+    },
+    {
+      "matchup": "Monterrey vs Necaxa",
+      "games_played": 2,
+      "avg_margin": 1.5,
+      "avg_excitement": 50.0
+    },
+    {
+      "matchup": "Necaxa vs Monterrey",
+      "games_played": 2,
+      "avg_margin": 1.5,
+      "avg_excitement": 50.0
+    },
+    {
+      "matchup": "Atlas vs Guadalajara",
+      "games_played": 6,
+      "avg_margin": 1.17,
+      "avg_excitement": 76.67
+    },
+    {
+      "matchup": "Guadalajara vs Atlas",
+      "games_played": 6,
+      "avg_margin": 1.17,
+      "avg_excitement": 76.67
+    },
+    {
+      "matchup": "FC Juarez vs Le\u00f3n",
+      "games_played": 4,
+      "avg_margin": 1.25,
+      "avg_excitement": 70.0
+    },
+    {
+      "matchup": "Le\u00f3n vs FC Juarez",
+      "games_played": 4,
+      "avg_margin": 1.25,
+      "avg_excitement": 70.0
+    },
+    {
+      "matchup": "Am\u00e9rica vs Pumas UNAM",
+      "games_played": 6,
+      "avg_margin": 1.17,
+      "avg_excitement": 65.0
+    },
+    {
+      "matchup": "Pumas UNAM vs Am\u00e9rica",
+      "games_played": 6,
+      "avg_margin": 1.17,
+      "avg_excitement": 65.0
+    },
+    {
+      "matchup": "Club Atl\u00e9tico Morelia vs Toluca",
+      "games_played": 1,
+      "avg_margin": 2,
+      "avg_excitement": 10.0
+    },
+    {
+      "matchup": "Toluca vs Club Atl\u00e9tico Morelia",
+      "games_played": 1,
+      "avg_margin": 2,
+      "avg_excitement": 10.0
+    },
+    {
+      "matchup": "Pachuca vs Santos",
+      "games_played": 7,
+      "avg_margin": 0.86,
+      "avg_excitement": 71.43
+    },
+    {
+      "matchup": "Santos vs Pachuca",
+      "games_played": 7,
+      "avg_margin": 0.86,
+      "avg_excitement": 71.43
+    },
+    {
+      "matchup": "Atlas vs Toluca",
+      "games_played": 4,
+      "avg_margin": 1,
+      "avg_excitement": 72.5
+    },
+    {
+      "matchup": "Toluca vs Atlas",
+      "games_played": 4,
+      "avg_margin": 1,
+      "avg_excitement": 72.5
+    },
+    {
+      "matchup": "Club Atl\u00e9tico Morelia vs Guadalajara",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Guadalajara vs Club Atl\u00e9tico Morelia",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Atl\u00e9tico de San Luis vs Santos",
+      "games_played": 4,
+      "avg_margin": 1.75,
+      "avg_excitement": 47.5
+    },
+    {
+      "matchup": "Santos vs Atl\u00e9tico de San Luis",
+      "games_played": 4,
+      "avg_margin": 1.75,
+      "avg_excitement": 47.5
+    },
+    {
+      "matchup": "Monterrey vs Puebla",
+      "games_played": 5,
+      "avg_margin": 0.8,
+      "avg_excitement": 78.0
+    },
+    {
+      "matchup": "Puebla vs Monterrey",
+      "games_played": 5,
+      "avg_margin": 0.8,
+      "avg_excitement": 78.0
+    },
+    {
+      "matchup": "Le\u00f3n vs Necaxa",
+      "games_played": 4,
+      "avg_margin": 1.25,
+      "avg_excitement": 52.5
+    },
+    {
+      "matchup": "Necaxa vs Le\u00f3n",
+      "games_played": 4,
+      "avg_margin": 1.25,
+      "avg_excitement": 52.5
+    },
+    {
+      "matchup": "Pachuca vs Tijuana",
+      "games_played": 4,
+      "avg_margin": 2.75,
+      "avg_excitement": 20.0
+    },
+    {
+      "matchup": "Tijuana vs Pachuca",
+      "games_played": 4,
+      "avg_margin": 2.75,
+      "avg_excitement": 20.0
+    },
+    {
+      "matchup": "Am\u00e9rica vs Quer\u00e9taro",
+      "games_played": 3,
+      "avg_margin": 0.67,
+      "avg_excitement": 93.33
+    },
+    {
+      "matchup": "Quer\u00e9taro vs Am\u00e9rica",
+      "games_played": 3,
+      "avg_margin": 0.67,
+      "avg_excitement": 93.33
+    },
+    {
+      "matchup": "Cruz Azul vs Pumas UNAM",
+      "games_played": 5,
+      "avg_margin": 1.4,
+      "avg_excitement": 58.0
+    },
+    {
+      "matchup": "Pumas UNAM vs Cruz Azul",
+      "games_played": 5,
+      "avg_margin": 1.4,
+      "avg_excitement": 58.0
+    },
+    {
+      "matchup": "FC Juarez vs Veracruz",
+      "games_played": 1,
+      "avg_margin": 2,
+      "avg_excitement": 10.0
+    },
+    {
+      "matchup": "Veracruz vs FC Juarez",
+      "games_played": 1,
+      "avg_margin": 2,
+      "avg_excitement": 10.0
+    },
+    {
+      "matchup": "Necaxa vs Quer\u00e9taro",
+      "games_played": 5,
+      "avg_margin": 1.2,
+      "avg_excitement": 74.0
+    },
+    {
+      "matchup": "Quer\u00e9taro vs Necaxa",
+      "games_played": 5,
+      "avg_margin": 1.2,
+      "avg_excitement": 74.0
+    },
+    {
+      "matchup": "Puebla vs Tigres UANL",
+      "games_played": 4,
+      "avg_margin": 0.75,
+      "avg_excitement": 92.5
+    },
+    {
+      "matchup": "Tigres UANL vs Puebla",
+      "games_played": 4,
+      "avg_margin": 0.75,
+      "avg_excitement": 92.5
+    },
+    {
+      "matchup": "Guadalajara vs Pachuca",
+      "games_played": 4,
+      "avg_margin": 1.25,
+      "avg_excitement": 52.5
+    },
+    {
+      "matchup": "Pachuca vs Guadalajara",
+      "games_played": 4,
+      "avg_margin": 1.25,
+      "avg_excitement": 52.5
+    },
+    {
+      "matchup": "Atlas vs Le\u00f3n",
+      "games_played": 5,
+      "avg_margin": 0.8,
+      "avg_excitement": 64.0
+    },
+    {
+      "matchup": "Le\u00f3n vs Atlas",
+      "games_played": 5,
+      "avg_margin": 0.8,
+      "avg_excitement": 64.0
+    },
+    {
+      "matchup": "Am\u00e9rica vs FC Juarez",
+      "games_played": 4,
+      "avg_margin": 0.5,
+      "avg_excitement": 95.0
+    },
+    {
+      "matchup": "FC Juarez vs Am\u00e9rica",
+      "games_played": 4,
+      "avg_margin": 0.5,
+      "avg_excitement": 95.0
+    },
+    {
+      "matchup": "Santos vs Veracruz",
+      "games_played": 1,
+      "avg_margin": 5,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Veracruz vs Santos",
+      "games_played": 1,
+      "avg_margin": 5,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Cruz Azul vs Monterrey",
+      "games_played": 5,
+      "avg_margin": 0.6,
+      "avg_excitement": 94.0
+    },
+    {
+      "matchup": "Monterrey vs Cruz Azul",
+      "games_played": 5,
+      "avg_margin": 0.6,
+      "avg_excitement": 94.0
+    },
+    {
+      "matchup": "Club Atl\u00e9tico Morelia vs Tijuana",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Tijuana vs Club Atl\u00e9tico Morelia",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Atl\u00e9tico de San Luis vs Toluca",
+      "games_played": 5,
+      "avg_margin": 1.4,
+      "avg_excitement": 58.0
+    },
+    {
+      "matchup": "Toluca vs Atl\u00e9tico de San Luis",
+      "games_played": 5,
+      "avg_margin": 1.4,
+      "avg_excitement": 58.0
+    },
+    {
+      "matchup": "Le\u00f3n vs Puebla",
+      "games_played": 4,
+      "avg_margin": 1.25,
+      "avg_excitement": 70.0
+    },
+    {
+      "matchup": "Puebla vs Le\u00f3n",
+      "games_played": 4,
+      "avg_margin": 1.25,
+      "avg_excitement": 70.0
+    },
+    {
+      "matchup": "Atlas vs Quer\u00e9taro",
+      "games_played": 4,
+      "avg_margin": 1.5,
+      "avg_excitement": 50.0
+    },
+    {
+      "matchup": "Quer\u00e9taro vs Atlas",
+      "games_played": 4,
+      "avg_margin": 1.5,
+      "avg_excitement": 50.0
+    },
+    {
+      "matchup": "Cruz Azul vs Pachuca",
+      "games_played": 5,
+      "avg_margin": 1.2,
+      "avg_excitement": 60.0
+    },
+    {
+      "matchup": "Pachuca vs Cruz Azul",
+      "games_played": 5,
+      "avg_margin": 1.2,
+      "avg_excitement": 60.0
+    },
+    {
+      "matchup": "FC Juarez vs Necaxa",
+      "games_played": 4,
+      "avg_margin": 1,
+      "avg_excitement": 72.5
+    },
+    {
+      "matchup": "Necaxa vs FC Juarez",
+      "games_played": 4,
+      "avg_margin": 1,
+      "avg_excitement": 72.5
+    },
+    {
+      "matchup": "Monterrey vs Tigres UANL",
+      "games_played": 6,
+      "avg_margin": 1.83,
+      "avg_excitement": 23.33
+    },
+    {
+      "matchup": "Tigres UANL vs Monterrey",
+      "games_played": 6,
+      "avg_margin": 1.83,
+      "avg_excitement": 23.33
+    },
+    {
+      "matchup": "Am\u00e9rica vs Guadalajara",
+      "games_played": 8,
+      "avg_margin": 1.5,
+      "avg_excitement": 67.5
+    },
+    {
+      "matchup": "Guadalajara vs Am\u00e9rica",
+      "games_played": 8,
+      "avg_margin": 1.5,
+      "avg_excitement": 67.5
+    },
+    {
+      "matchup": "Pumas UNAM vs Santos",
+      "games_played": 4,
+      "avg_margin": 2,
+      "avg_excitement": 45.0
+    },
+    {
+      "matchup": "Santos vs Pumas UNAM",
+      "games_played": 4,
+      "avg_margin": 2,
+      "avg_excitement": 45.0
+    },
+    {
+      "matchup": "Atl\u00e9tico de San Luis vs Tijuana",
+      "games_played": 4,
+      "avg_margin": 1.25,
+      "avg_excitement": 70.0
+    },
+    {
+      "matchup": "Tijuana vs Atl\u00e9tico de San Luis",
+      "games_played": 4,
+      "avg_margin": 1.25,
+      "avg_excitement": 70.0
+    },
+    {
+      "matchup": "Toluca vs Veracruz",
+      "games_played": 1,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "Veracruz vs Toluca",
+      "games_played": 1,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "Club Atl\u00e9tico Morelia vs Necaxa",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Necaxa vs Club Atl\u00e9tico Morelia",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Le\u00f3n vs Veracruz",
+      "games_played": 1,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "Veracruz vs Le\u00f3n",
+      "games_played": 1,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "Am\u00e9rica vs Cruz Azul",
+      "games_played": 5,
+      "avg_margin": 2.8,
+      "avg_excitement": 30.0
+    },
+    {
+      "matchup": "Cruz Azul vs Am\u00e9rica",
+      "games_played": 5,
+      "avg_margin": 2.8,
+      "avg_excitement": 30.0
+    },
+    {
+      "matchup": "Santos vs Tigres UANL",
+      "games_played": 5,
+      "avg_margin": 1.8,
+      "avg_excitement": 40.0
+    },
+    {
+      "matchup": "Tigres UANL vs Santos",
+      "games_played": 5,
+      "avg_margin": 1.8,
+      "avg_excitement": 40.0
+    },
+    {
+      "matchup": "Guadalajara vs Pumas UNAM",
+      "games_played": 5,
+      "avg_margin": 0.4,
+      "avg_excitement": 82.0
+    },
+    {
+      "matchup": "Pumas UNAM vs Guadalajara",
+      "games_played": 5,
+      "avg_margin": 0.4,
+      "avg_excitement": 82.0
+    },
+    {
+      "matchup": "Atlas vs Tijuana",
+      "games_played": 3,
+      "avg_margin": 0.67,
+      "avg_excitement": 70.0
+    },
+    {
+      "matchup": "Tijuana vs Atlas",
+      "games_played": 3,
+      "avg_margin": 0.67,
+      "avg_excitement": 70.0
+    },
+    {
+      "matchup": "Puebla vs Toluca",
+      "games_played": 3,
+      "avg_margin": 1.67,
+      "avg_excitement": 60.0
+    },
+    {
+      "matchup": "Toluca vs Puebla",
+      "games_played": 3,
+      "avg_margin": 1.67,
+      "avg_excitement": 60.0
+    },
+    {
+      "matchup": "Atl\u00e9tico de San Luis vs FC Juarez",
+      "games_played": 5,
+      "avg_margin": 1,
+      "avg_excitement": 76.0
+    },
+    {
+      "matchup": "FC Juarez vs Atl\u00e9tico de San Luis",
+      "games_played": 5,
+      "avg_margin": 1,
+      "avg_excitement": 76.0
+    },
+    {
+      "matchup": "Monterrey vs Quer\u00e9taro",
+      "games_played": 2,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Quer\u00e9taro vs Monterrey",
+      "games_played": 2,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Atlas vs Puebla",
+      "games_played": 5,
+      "avg_margin": 0.8,
+      "avg_excitement": 92.0
+    },
+    {
+      "matchup": "Puebla vs Atlas",
+      "games_played": 5,
+      "avg_margin": 0.8,
+      "avg_excitement": 92.0
+    },
+    {
+      "matchup": "Am\u00e9rica vs Mazatl\u00e1n FC",
+      "games_played": 5,
+      "avg_margin": 2.4,
+      "avg_excitement": 20.0
+    },
+    {
+      "matchup": "Mazatl\u00e1n FC vs Am\u00e9rica",
+      "games_played": 5,
+      "avg_margin": 2.4,
+      "avg_excitement": 20.0
+    },
+    {
+      "matchup": "Quer\u00e9taro vs Toluca",
+      "games_played": 5,
+      "avg_margin": 1.8,
+      "avg_excitement": 40.0
+    },
+    {
+      "matchup": "Toluca vs Quer\u00e9taro",
+      "games_played": 5,
+      "avg_margin": 1.8,
+      "avg_excitement": 40.0
+    },
+    {
+      "matchup": "Monterrey vs Tijuana",
+      "games_played": 5,
+      "avg_margin": 1.2,
+      "avg_excitement": 60.0
+    },
+    {
+      "matchup": "Tijuana vs Monterrey",
+      "games_played": 5,
+      "avg_margin": 1.2,
+      "avg_excitement": 60.0
+    },
+    {
+      "matchup": "FC Juarez vs Santos",
+      "games_played": 5,
+      "avg_margin": 2,
+      "avg_excitement": 24.0
+    },
+    {
+      "matchup": "Santos vs FC Juarez",
+      "games_played": 5,
+      "avg_margin": 2,
+      "avg_excitement": 24.0
+    },
+    {
+      "matchup": "Puebla vs Pumas UNAM",
+      "games_played": 5,
+      "avg_margin": 1.8,
+      "avg_excitement": 40.0
+    },
+    {
+      "matchup": "Pumas UNAM vs Puebla",
+      "games_played": 5,
+      "avg_margin": 1.8,
+      "avg_excitement": 40.0
+    },
+    {
+      "matchup": "Guadalajara vs Tigres UANL",
+      "games_played": 4,
+      "avg_margin": 2.25,
+      "avg_excitement": 25.0
+    },
+    {
+      "matchup": "Tigres UANL vs Guadalajara",
+      "games_played": 4,
+      "avg_margin": 2.25,
+      "avg_excitement": 25.0
+    },
+    {
+      "matchup": "Atl\u00e9tico de San Luis vs Necaxa",
+      "games_played": 4,
+      "avg_margin": 2,
+      "avg_excitement": 45.0
+    },
+    {
+      "matchup": "Necaxa vs Atl\u00e9tico de San Luis",
+      "games_played": 4,
+      "avg_margin": 2,
+      "avg_excitement": 45.0
+    },
+    {
+      "matchup": "Atlas vs Monterrey",
+      "games_played": 4,
+      "avg_margin": 1.75,
+      "avg_excitement": 47.5
+    },
+    {
+      "matchup": "Monterrey vs Atlas",
+      "games_played": 4,
+      "avg_margin": 1.75,
+      "avg_excitement": 47.5
+    },
+    {
+      "matchup": "Guadalajara vs Quer\u00e9taro",
+      "games_played": 3,
+      "avg_margin": 0.67,
+      "avg_excitement": 93.33
+    },
+    {
+      "matchup": "Quer\u00e9taro vs Guadalajara",
+      "games_played": 3,
+      "avg_margin": 0.67,
+      "avg_excitement": 93.33
+    },
+    {
+      "matchup": "Am\u00e9rica vs Puebla",
+      "games_played": 4,
+      "avg_margin": 1.25,
+      "avg_excitement": 70.0
+    },
+    {
+      "matchup": "Puebla vs Am\u00e9rica",
+      "games_played": 4,
+      "avg_margin": 1.25,
+      "avg_excitement": 70.0
+    },
+    {
+      "matchup": "Mazatl\u00e1n FC vs Tijuana",
+      "games_played": 4,
+      "avg_margin": 0.5,
+      "avg_excitement": 95.0
+    },
+    {
+      "matchup": "Tijuana vs Mazatl\u00e1n FC",
+      "games_played": 4,
+      "avg_margin": 0.5,
+      "avg_excitement": 95.0
+    },
+    {
+      "matchup": "Atlas vs Mazatl\u00e1n FC",
+      "games_played": 5,
+      "avg_margin": 0.8,
+      "avg_excitement": 78.0
+    },
+    {
+      "matchup": "Mazatl\u00e1n FC vs Atlas",
+      "games_played": 5,
+      "avg_margin": 0.8,
+      "avg_excitement": 78.0
+    },
+    {
+      "matchup": "Atl\u00e9tico de San Luis vs Pumas UNAM",
+      "games_played": 5,
+      "avg_margin": 2,
+      "avg_excitement": 38.0
+    },
+    {
+      "matchup": "Pumas UNAM vs Atl\u00e9tico de San Luis",
+      "games_played": 5,
+      "avg_margin": 2,
+      "avg_excitement": 38.0
+    },
+    {
+      "matchup": "Monterrey vs Pachuca",
+      "games_played": 3,
+      "avg_margin": 0.67,
+      "avg_excitement": 70.0
+    },
+    {
+      "matchup": "Pachuca vs Monterrey",
+      "games_played": 3,
+      "avg_margin": 0.67,
+      "avg_excitement": 70.0
+    },
+    {
+      "matchup": "Necaxa vs Puebla",
+      "games_played": 4,
+      "avg_margin": 0.75,
+      "avg_excitement": 92.5
+    },
+    {
+      "matchup": "Puebla vs Necaxa",
+      "games_played": 4,
+      "avg_margin": 0.75,
+      "avg_excitement": 92.5
+    },
+    {
+      "matchup": "Cruz Azul vs Mazatl\u00e1n FC",
+      "games_played": 3,
+      "avg_margin": 1,
+      "avg_excitement": 66.67
+    },
+    {
+      "matchup": "Mazatl\u00e1n FC vs Cruz Azul",
+      "games_played": 3,
+      "avg_margin": 1,
+      "avg_excitement": 66.67
+    },
+    {
+      "matchup": "Quer\u00e9taro vs Tigres UANL",
+      "games_played": 4,
+      "avg_margin": 3,
+      "avg_excitement": 17.5
+    },
+    {
+      "matchup": "Tigres UANL vs Quer\u00e9taro",
+      "games_played": 4,
+      "avg_margin": 3,
+      "avg_excitement": 17.5
+    },
+    {
+      "matchup": "Santos vs Toluca",
+      "games_played": 2,
+      "avg_margin": 1.5,
+      "avg_excitement": 50.0
+    },
+    {
+      "matchup": "Toluca vs Santos",
+      "games_played": 2,
+      "avg_margin": 1.5,
+      "avg_excitement": 50.0
+    },
+    {
+      "matchup": "Atl\u00e9tico de San Luis vs Monterrey",
+      "games_played": 2,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Monterrey vs Atl\u00e9tico de San Luis",
+      "games_played": 2,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Le\u00f3n vs Pumas UNAM",
+      "games_played": 1,
+      "avg_margin": 2,
+      "avg_excitement": 10.0
+    },
+    {
+      "matchup": "Pumas UNAM vs Le\u00f3n",
+      "games_played": 1,
+      "avg_margin": 2,
+      "avg_excitement": 10.0
+    },
+    {
+      "matchup": "Pachuca vs Toluca",
+      "games_played": 5,
+      "avg_margin": 1.8,
+      "avg_excitement": 54.0
+    },
+    {
+      "matchup": "Toluca vs Pachuca",
+      "games_played": 5,
+      "avg_margin": 1.8,
+      "avg_excitement": 54.0
+    },
+    {
+      "matchup": "Atlas vs FC Juarez",
+      "games_played": 3,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "FC Juarez vs Atlas",
+      "games_played": 3,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Guadalajara vs Mazatl\u00e1n FC",
+      "games_played": 3,
+      "avg_margin": 1.33,
+      "avg_excitement": 63.33
+    },
+    {
+      "matchup": "Mazatl\u00e1n FC vs Guadalajara",
+      "games_played": 3,
+      "avg_margin": 1.33,
+      "avg_excitement": 63.33
+    },
+    {
+      "matchup": "Necaxa vs Pumas UNAM",
+      "games_played": 4,
+      "avg_margin": 1.5,
+      "avg_excitement": 50.0
+    },
+    {
+      "matchup": "Pumas UNAM vs Necaxa",
+      "games_played": 4,
+      "avg_margin": 1.5,
+      "avg_excitement": 50.0
+    },
+    {
+      "matchup": "Atl\u00e9tico de San Luis vs Le\u00f3n",
+      "games_played": 4,
+      "avg_margin": 1.5,
+      "avg_excitement": 50.0
+    },
+    {
+      "matchup": "Le\u00f3n vs Atl\u00e9tico de San Luis",
+      "games_played": 4,
+      "avg_margin": 1.5,
+      "avg_excitement": 50.0
+    },
+    {
+      "matchup": "FC Juarez vs Tijuana",
+      "games_played": 3,
+      "avg_margin": 1.67,
+      "avg_excitement": 60.0
+    },
+    {
+      "matchup": "Tijuana vs FC Juarez",
+      "games_played": 3,
+      "avg_margin": 1.67,
+      "avg_excitement": 60.0
+    },
+    {
+      "matchup": "Le\u00f3n vs Mazatl\u00e1n FC",
+      "games_played": 4,
+      "avg_margin": 2,
+      "avg_excitement": 45.0
+    },
+    {
+      "matchup": "Mazatl\u00e1n FC vs Le\u00f3n",
+      "games_played": 4,
+      "avg_margin": 2,
+      "avg_excitement": 45.0
+    },
+    {
+      "matchup": "Atlas vs Necaxa",
+      "games_played": 3,
+      "avg_margin": 1.67,
+      "avg_excitement": 60.0
+    },
+    {
+      "matchup": "Necaxa vs Atlas",
+      "games_played": 3,
+      "avg_margin": 1.67,
+      "avg_excitement": 60.0
+    },
+    {
+      "matchup": "Cruz Azul vs Toluca",
+      "games_played": 3,
+      "avg_margin": 2.33,
+      "avg_excitement": 30.0
+    },
+    {
+      "matchup": "Toluca vs Cruz Azul",
+      "games_played": 3,
+      "avg_margin": 2.33,
+      "avg_excitement": 30.0
+    },
+    {
+      "matchup": "FC Juarez vs Pachuca",
+      "games_played": 3,
+      "avg_margin": 0.67,
+      "avg_excitement": 93.33
+    },
+    {
+      "matchup": "Pachuca vs FC Juarez",
+      "games_played": 3,
+      "avg_margin": 0.67,
+      "avg_excitement": 93.33
+    },
+    {
+      "matchup": "Guadalajara vs Tijuana",
+      "games_played": 3,
+      "avg_margin": 0.67,
+      "avg_excitement": 93.33
+    },
+    {
+      "matchup": "Tijuana vs Guadalajara",
+      "games_played": 3,
+      "avg_margin": 0.67,
+      "avg_excitement": 93.33
+    },
+    {
+      "matchup": "Santos vs Tijuana",
+      "games_played": 5,
+      "avg_margin": 1.6,
+      "avg_excitement": 42.0
+    },
+    {
+      "matchup": "Tijuana vs Santos",
+      "games_played": 5,
+      "avg_margin": 1.6,
+      "avg_excitement": 42.0
+    },
+    {
+      "matchup": "Atl\u00e9tico de San Luis vs Quer\u00e9taro",
+      "games_played": 4,
+      "avg_margin": 1.25,
+      "avg_excitement": 70.0
+    },
+    {
+      "matchup": "Quer\u00e9taro vs Atl\u00e9tico de San Luis",
+      "games_played": 4,
+      "avg_margin": 1.25,
+      "avg_excitement": 70.0
+    },
+    {
+      "matchup": "FC Juarez vs Mazatl\u00e1n FC",
+      "games_played": 5,
+      "avg_margin": 1.2,
+      "avg_excitement": 60.0
+    },
+    {
+      "matchup": "Mazatl\u00e1n FC vs FC Juarez",
+      "games_played": 5,
+      "avg_margin": 1.2,
+      "avg_excitement": 60.0
+    },
+    {
+      "matchup": "Cruz Azul vs Tigres UANL",
+      "games_played": 4,
+      "avg_margin": 1.25,
+      "avg_excitement": 52.5
+    },
+    {
+      "matchup": "Tigres UANL vs Cruz Azul",
+      "games_played": 4,
+      "avg_margin": 1.25,
+      "avg_excitement": 52.5
+    },
+    {
+      "matchup": "Am\u00e9rica vs Le\u00f3n",
+      "games_played": 4,
+      "avg_margin": 0.25,
+      "avg_excitement": 97.5
+    },
+    {
+      "matchup": "Le\u00f3n vs Am\u00e9rica",
+      "games_played": 4,
+      "avg_margin": 0.25,
+      "avg_excitement": 97.5
+    },
+    {
+      "matchup": "FC Juarez vs Tigres UANL",
+      "games_played": 2,
+      "avg_margin": 0.5,
+      "avg_excitement": 95.0
+    },
+    {
+      "matchup": "Tigres UANL vs FC Juarez",
+      "games_played": 2,
+      "avg_margin": 0.5,
+      "avg_excitement": 95.0
+    },
+    {
+      "matchup": "Mazatl\u00e1n FC vs Monterrey",
+      "games_played": 4,
+      "avg_margin": 0.25,
+      "avg_excitement": 97.5
+    },
+    {
+      "matchup": "Monterrey vs Mazatl\u00e1n FC",
+      "games_played": 4,
+      "avg_margin": 0.25,
+      "avg_excitement": 97.5
+    },
+    {
+      "matchup": "Pachuca vs Pumas UNAM",
+      "games_played": 2,
+      "avg_margin": 0.5,
+      "avg_excitement": 95.0
+    },
+    {
+      "matchup": "Pumas UNAM vs Pachuca",
+      "games_played": 2,
+      "avg_margin": 0.5,
+      "avg_excitement": 95.0
+    },
+    {
+      "matchup": "Atl\u00e9tico de San Luis vs Mazatl\u00e1n FC",
+      "games_played": 3,
+      "avg_margin": 2,
+      "avg_excitement": 56.67
+    },
+    {
+      "matchup": "Mazatl\u00e1n FC vs Atl\u00e9tico de San Luis",
+      "games_played": 3,
+      "avg_margin": 2,
+      "avg_excitement": 56.67
+    },
+    {
+      "matchup": "Guadalajara vs Monterrey",
+      "games_played": 5,
+      "avg_margin": 0.8,
+      "avg_excitement": 78.0
+    },
+    {
+      "matchup": "Monterrey vs Guadalajara",
+      "games_played": 5,
+      "avg_margin": 0.8,
+      "avg_excitement": 78.0
+    },
+    {
+      "matchup": "Necaxa vs Pachuca",
+      "games_played": 4,
+      "avg_margin": 1.5,
+      "avg_excitement": 67.5
+    },
+    {
+      "matchup": "Pachuca vs Necaxa",
+      "games_played": 4,
+      "avg_margin": 1.5,
+      "avg_excitement": 67.5
+    },
+    {
+      "matchup": "Le\u00f3n vs Toluca",
+      "games_played": 3,
+      "avg_margin": 0.33,
+      "avg_excitement": 96.67
+    },
+    {
+      "matchup": "Toluca vs Le\u00f3n",
+      "games_played": 3,
+      "avg_margin": 0.33,
+      "avg_excitement": 96.67
+    },
+    {
+      "matchup": "Mazatl\u00e1n FC vs Santos",
+      "games_played": 4,
+      "avg_margin": 2,
+      "avg_excitement": 45.0
+    },
+    {
+      "matchup": "Santos vs Mazatl\u00e1n FC",
+      "games_played": 4,
+      "avg_margin": 2,
+      "avg_excitement": 45.0
+    },
+    {
+      "matchup": "Quer\u00e9taro vs Tijuana",
+      "games_played": 4,
+      "avg_margin": 0.75,
+      "avg_excitement": 75.0
+    },
+    {
+      "matchup": "Tijuana vs Quer\u00e9taro",
+      "games_played": 4,
+      "avg_margin": 0.75,
+      "avg_excitement": 75.0
+    },
+    {
+      "matchup": "Tigres UANL vs Toluca",
+      "games_played": 4,
+      "avg_margin": 1.25,
+      "avg_excitement": 52.5
+    },
+    {
+      "matchup": "Toluca vs Tigres UANL",
+      "games_played": 4,
+      "avg_margin": 1.25,
+      "avg_excitement": 52.5
+    },
+    {
+      "matchup": "Cruz Azul vs Santos",
+      "games_played": 4,
+      "avg_margin": 1.5,
+      "avg_excitement": 50.0
+    },
+    {
+      "matchup": "Santos vs Cruz Azul",
+      "games_played": 4,
+      "avg_margin": 1.5,
+      "avg_excitement": 50.0
+    },
+    {
+      "matchup": "Cruz Azul vs Necaxa",
+      "games_played": 3,
+      "avg_margin": 2,
+      "avg_excitement": 33.33
+    },
+    {
+      "matchup": "Necaxa vs Cruz Azul",
+      "games_played": 3,
+      "avg_margin": 2,
+      "avg_excitement": 33.33
+    },
+    {
+      "matchup": "FC Juarez vs Guadalajara",
+      "games_played": 3,
+      "avg_margin": 1.67,
+      "avg_excitement": 60.0
+    },
+    {
+      "matchup": "Guadalajara vs FC Juarez",
+      "games_played": 3,
+      "avg_margin": 1.67,
+      "avg_excitement": 60.0
+    },
+    {
+      "matchup": "Pumas UNAM vs Quer\u00e9taro",
+      "games_played": 3,
+      "avg_margin": 2.33,
+      "avg_excitement": 30.0
+    },
+    {
+      "matchup": "Quer\u00e9taro vs Pumas UNAM",
+      "games_played": 3,
+      "avg_margin": 2.33,
+      "avg_excitement": 30.0
+    },
+    {
+      "matchup": "Guadalajara vs Santos",
+      "games_played": 2,
+      "avg_margin": 0.5,
+      "avg_excitement": 95.0
+    },
+    {
+      "matchup": "Santos vs Guadalajara",
+      "games_played": 2,
+      "avg_margin": 0.5,
+      "avg_excitement": 95.0
+    },
+    {
+      "matchup": "Mazatl\u00e1n FC vs Toluca",
+      "games_played": 2,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "Toluca vs Mazatl\u00e1n FC",
+      "games_played": 2,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "Puebla vs Tijuana",
+      "games_played": 3,
+      "avg_margin": 1,
+      "avg_excitement": 66.67
+    },
+    {
+      "matchup": "Tijuana vs Puebla",
+      "games_played": 3,
+      "avg_margin": 1,
+      "avg_excitement": 66.67
+    },
+    {
+      "matchup": "Mazatl\u00e1n FC vs Tigres UANL",
+      "games_played": 3,
+      "avg_margin": 2,
+      "avg_excitement": 33.33
+    },
+    {
+      "matchup": "Tigres UANL vs Mazatl\u00e1n FC",
+      "games_played": 3,
+      "avg_margin": 2,
+      "avg_excitement": 33.33
+    },
+    {
+      "matchup": "Atl\u00e9tico de San Luis vs Cruz Azul",
+      "games_played": 3,
+      "avg_margin": 1,
+      "avg_excitement": 66.67
+    },
+    {
+      "matchup": "Cruz Azul vs Atl\u00e9tico de San Luis",
+      "games_played": 3,
+      "avg_margin": 1,
+      "avg_excitement": 66.67
+    },
+    {
+      "matchup": "Mazatl\u00e1n FC vs Pumas UNAM",
+      "games_played": 1,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "Pumas UNAM vs Mazatl\u00e1n FC",
+      "games_played": 1,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "Am\u00e9rica vs Atl\u00e9tico de San Luis",
+      "games_played": 2,
+      "avg_margin": 2,
+      "avg_excitement": 45.0
+    },
+    {
+      "matchup": "Atl\u00e9tico de San Luis vs Am\u00e9rica",
+      "games_played": 2,
+      "avg_margin": 2,
+      "avg_excitement": 45.0
+    },
+    {
+      "matchup": "FC Juarez vs Pumas UNAM",
+      "games_played": 3,
+      "avg_margin": 2,
+      "avg_excitement": 33.33
+    },
+    {
+      "matchup": "Pumas UNAM vs FC Juarez",
+      "games_played": 3,
+      "avg_margin": 2,
+      "avg_excitement": 33.33
+    },
+    {
+      "matchup": "Guadalajara vs Toluca",
+      "games_played": 3,
+      "avg_margin": 0.67,
+      "avg_excitement": 70.0
+    },
+    {
+      "matchup": "Toluca vs Guadalajara",
+      "games_played": 3,
+      "avg_margin": 0.67,
+      "avg_excitement": 70.0
+    },
+    {
+      "matchup": "Pachuca vs Tigres UANL",
+      "games_played": 3,
+      "avg_margin": 1,
+      "avg_excitement": 66.67
+    },
+    {
+      "matchup": "Tigres UANL vs Pachuca",
+      "games_played": 3,
+      "avg_margin": 1,
+      "avg_excitement": 66.67
+    },
+    {
+      "matchup": "Mazatl\u00e1n FC vs Quer\u00e9taro",
+      "games_played": 3,
+      "avg_margin": 1,
+      "avg_excitement": 66.67
+    },
+    {
+      "matchup": "Quer\u00e9taro vs Mazatl\u00e1n FC",
+      "games_played": 3,
+      "avg_margin": 1,
+      "avg_excitement": 66.67
+    },
+    {
+      "matchup": "Le\u00f3n vs Pachuca",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Pachuca vs Le\u00f3n",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Atlas vs Pumas UNAM",
+      "games_played": 2,
+      "avg_margin": 0.5,
+      "avg_excitement": 95.0
+    },
+    {
+      "matchup": "Pumas UNAM vs Atlas",
+      "games_played": 2,
+      "avg_margin": 0.5,
+      "avg_excitement": 95.0
+    },
+    {
+      "matchup": "Quer\u00e9taro vs Santos",
+      "games_played": 1,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "Santos vs Quer\u00e9taro",
+      "games_played": 1,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "Am\u00e9rica vs Necaxa",
+      "games_played": 3,
+      "avg_margin": 0.67,
+      "avg_excitement": 93.33
+    },
+    {
+      "matchup": "Necaxa vs Am\u00e9rica",
+      "games_played": 3,
+      "avg_margin": 0.67,
+      "avg_excitement": 93.33
+    },
+    {
+      "matchup": "Atlas vs Atl\u00e9tico de San Luis",
+      "games_played": 3,
+      "avg_margin": 1.67,
+      "avg_excitement": 36.67
+    },
+    {
+      "matchup": "Atl\u00e9tico de San Luis vs Atlas",
+      "games_played": 3,
+      "avg_margin": 1.67,
+      "avg_excitement": 36.67
+    },
+    {
+      "matchup": "Am\u00e9rica vs Santos",
+      "games_played": 3,
+      "avg_margin": 1.33,
+      "avg_excitement": 63.33
+    },
+    {
+      "matchup": "Santos vs Am\u00e9rica",
+      "games_played": 3,
+      "avg_margin": 1.33,
+      "avg_excitement": 63.33
+    },
+    {
+      "matchup": "Cruz Azul vs Le\u00f3n",
+      "games_played": 3,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Le\u00f3n vs Cruz Azul",
+      "games_played": 3,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Mazatl\u00e1n FC vs Necaxa",
+      "games_played": 2,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "Necaxa vs Mazatl\u00e1n FC",
+      "games_played": 2,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "Le\u00f3n vs Tijuana",
+      "games_played": 3,
+      "avg_margin": 0.67,
+      "avg_excitement": 93.33
+    },
+    {
+      "matchup": "Tijuana vs Le\u00f3n",
+      "games_played": 3,
+      "avg_margin": 0.67,
+      "avg_excitement": 93.33
+    },
+    {
+      "matchup": "Mazatl\u00e1n FC vs Puebla",
+      "games_played": 2,
+      "avg_margin": 0.5,
+      "avg_excitement": 95.0
+    },
+    {
+      "matchup": "Puebla vs Mazatl\u00e1n FC",
+      "games_played": 2,
+      "avg_margin": 0.5,
+      "avg_excitement": 95.0
+    },
+    {
+      "matchup": "Am\u00e9rica vs Monterrey",
+      "games_played": 2,
+      "avg_margin": 2,
+      "avg_excitement": 45.0
+    },
+    {
+      "matchup": "Monterrey vs Am\u00e9rica",
+      "games_played": 2,
+      "avg_margin": 2,
+      "avg_excitement": 45.0
+    },
+    {
+      "matchup": "Mazatl\u00e1n FC vs Pachuca",
+      "games_played": 1,
+      "avg_margin": 3,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Pachuca vs Mazatl\u00e1n FC",
+      "games_played": 1,
+      "avg_margin": 3,
+      "avg_excitement": 0.0
+    }
+  ],
+  "matchup_close_rates": [
+    {
+      "matchup": "Guadalajara vs Puebla",
+      "games": 4,
+      "close_games": 3,
+      "close_rate": 75.0
+    },
+    {
+      "matchup": "Puebla vs Guadalajara",
+      "games": 4,
+      "close_games": 3,
+      "close_rate": 75.0
+    },
+    {
+      "matchup": "Atlas vs Santos",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Santos vs Atlas",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Cruz Azul vs Quer\u00e9taro",
+      "games": 5,
+      "close_games": 1,
+      "close_rate": 20.0
+    },
+    {
+      "matchup": "Quer\u00e9taro vs Cruz Azul",
+      "games": 5,
+      "close_games": 1,
+      "close_rate": 20.0
+    },
+    {
+      "matchup": "Am\u00e9rica vs Tijuana",
+      "games": 3,
+      "close_games": 1,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "Tijuana vs Am\u00e9rica",
+      "games": 3,
+      "close_games": 1,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "Club Atl\u00e9tico Morelia vs Pachuca",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Pachuca vs Club Atl\u00e9tico Morelia",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Necaxa vs Veracruz",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Veracruz vs Necaxa",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Le\u00f3n vs Monterrey",
+      "games": 4,
+      "close_games": 2,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Monterrey vs Le\u00f3n",
+      "games": 4,
+      "close_games": 2,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Pumas UNAM vs Tigres UANL",
+      "games": 5,
+      "close_games": 4,
+      "close_rate": 80.0
+    },
+    {
+      "matchup": "Tigres UANL vs Pumas UNAM",
+      "games": 5,
+      "close_games": 4,
+      "close_rate": 80.0
+    },
+    {
+      "matchup": "FC Juarez vs Toluca",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Toluca vs FC Juarez",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Club Atl\u00e9tico Morelia vs Monterrey",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Monterrey vs Club Atl\u00e9tico Morelia",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Atlas vs Veracruz",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Veracruz vs Atlas",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Pumas UNAM vs Tijuana",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Tijuana vs Pumas UNAM",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Cruz Azul vs FC Juarez",
+      "games": 4,
+      "close_games": 2,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "FC Juarez vs Cruz Azul",
+      "games": 4,
+      "close_games": 2,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Pachuca vs Quer\u00e9taro",
+      "games": 4,
+      "close_games": 3,
+      "close_rate": 75.0
+    },
+    {
+      "matchup": "Quer\u00e9taro vs Pachuca",
+      "games": 4,
+      "close_games": 3,
+      "close_rate": 75.0
+    },
+    {
+      "matchup": "Necaxa vs Tigres UANL",
+      "games": 4,
+      "close_games": 2,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Tigres UANL vs Necaxa",
+      "games": 4,
+      "close_games": 2,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Atl\u00e9tico de San Luis vs Guadalajara",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Guadalajara vs Atl\u00e9tico de San Luis",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Am\u00e9rica vs Toluca",
+      "games": 4,
+      "close_games": 3,
+      "close_rate": 75.0
+    },
+    {
+      "matchup": "Toluca vs Am\u00e9rica",
+      "games": 4,
+      "close_games": 3,
+      "close_rate": 75.0
+    },
+    {
+      "matchup": "Puebla vs Santos",
+      "games": 3,
+      "close_games": 1,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "Santos vs Puebla",
+      "games": 3,
+      "close_games": 1,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "Pachuca vs Puebla",
+      "games": 5,
+      "close_games": 4,
+      "close_rate": 80.0
+    },
+    {
+      "matchup": "Puebla vs Pachuca",
+      "games": 5,
+      "close_games": 4,
+      "close_rate": 80.0
+    },
+    {
+      "matchup": "Atlas vs Cruz Azul",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Cruz Azul vs Atlas",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Atl\u00e9tico de San Luis vs Tigres UANL",
+      "games": 5,
+      "close_games": 2,
+      "close_rate": 40.0
+    },
+    {
+      "matchup": "Tigres UANL vs Atl\u00e9tico de San Luis",
+      "games": 5,
+      "close_games": 2,
+      "close_rate": 40.0
+    },
+    {
+      "matchup": "Guadalajara vs Le\u00f3n",
+      "games": 3,
+      "close_games": 1,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "Le\u00f3n vs Guadalajara",
+      "games": 3,
+      "close_games": 1,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "Am\u00e9rica vs Club Atl\u00e9tico Morelia",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Club Atl\u00e9tico Morelia vs Am\u00e9rica",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Monterrey vs Toluca",
+      "games": 5,
+      "close_games": 3,
+      "close_rate": 60.0
+    },
+    {
+      "matchup": "Toluca vs Monterrey",
+      "games": 5,
+      "close_games": 3,
+      "close_rate": 60.0
+    },
+    {
+      "matchup": "Pumas UNAM vs Veracruz",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Veracruz vs Pumas UNAM",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Necaxa vs Santos",
+      "games": 4,
+      "close_games": 1,
+      "close_rate": 25.0
+    },
+    {
+      "matchup": "Santos vs Necaxa",
+      "games": 4,
+      "close_games": 1,
+      "close_rate": 25.0
+    },
+    {
+      "matchup": "FC Juarez vs Quer\u00e9taro",
+      "games": 4,
+      "close_games": 3,
+      "close_rate": 75.0
+    },
+    {
+      "matchup": "Quer\u00e9taro vs FC Juarez",
+      "games": 4,
+      "close_games": 3,
+      "close_rate": 75.0
+    },
+    {
+      "matchup": "Atl\u00e9tico de San Luis vs Veracruz",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Veracruz vs Atl\u00e9tico de San Luis",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Club Atl\u00e9tico Morelia vs Pumas UNAM",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Pumas UNAM vs Club Atl\u00e9tico Morelia",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Monterrey vs Santos",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Santos vs Monterrey",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Le\u00f3n vs Quer\u00e9taro",
+      "games": 6,
+      "close_games": 3,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Quer\u00e9taro vs Le\u00f3n",
+      "games": 6,
+      "close_games": 3,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Cruz Azul vs Puebla",
+      "games": 3,
+      "close_games": 3,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Puebla vs Cruz Azul",
+      "games": 3,
+      "close_games": 3,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Atlas vs Pachuca",
+      "games": 5,
+      "close_games": 2,
+      "close_rate": 40.0
+    },
+    {
+      "matchup": "Pachuca vs Atlas",
+      "games": 5,
+      "close_games": 2,
+      "close_rate": 40.0
+    },
+    {
+      "matchup": "Am\u00e9rica vs Tigres UANL",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Tigres UANL vs Am\u00e9rica",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Tijuana vs Toluca",
+      "games": 6,
+      "close_games": 1,
+      "close_rate": 16.67
+    },
+    {
+      "matchup": "Toluca vs Tijuana",
+      "games": 6,
+      "close_games": 1,
+      "close_rate": 16.67
+    },
+    {
+      "matchup": "Guadalajara vs Necaxa",
+      "games": 6,
+      "close_games": 5,
+      "close_rate": 83.33
+    },
+    {
+      "matchup": "Necaxa vs Guadalajara",
+      "games": 6,
+      "close_games": 5,
+      "close_rate": 83.33
+    },
+    {
+      "matchup": "Atlas vs Tigres UANL",
+      "games": 4,
+      "close_games": 3,
+      "close_rate": 75.0
+    },
+    {
+      "matchup": "Tigres UANL vs Atlas",
+      "games": 4,
+      "close_games": 3,
+      "close_rate": 75.0
+    },
+    {
+      "matchup": "Atl\u00e9tico de San Luis vs Club Atl\u00e9tico Morelia",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Club Atl\u00e9tico Morelia vs Atl\u00e9tico de San Luis",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Quer\u00e9taro vs Veracruz",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Veracruz vs Quer\u00e9taro",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Am\u00e9rica vs Pachuca",
+      "games": 4,
+      "close_games": 2,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Pachuca vs Am\u00e9rica",
+      "games": 4,
+      "close_games": 2,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Le\u00f3n vs Santos",
+      "games": 6,
+      "close_games": 5,
+      "close_rate": 83.33
+    },
+    {
+      "matchup": "Santos vs Le\u00f3n",
+      "games": 6,
+      "close_games": 5,
+      "close_rate": 83.33
+    },
+    {
+      "matchup": "Necaxa vs Toluca",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Toluca vs Necaxa",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Cruz Azul vs Tijuana",
+      "games": 4,
+      "close_games": 4,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Tijuana vs Cruz Azul",
+      "games": 4,
+      "close_games": 4,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "FC Juarez vs Puebla",
+      "games": 5,
+      "close_games": 5,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Puebla vs FC Juarez",
+      "games": 5,
+      "close_games": 5,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Monterrey vs Pumas UNAM",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Pumas UNAM vs Monterrey",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Club Atl\u00e9tico Morelia vs Veracruz",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Veracruz vs Club Atl\u00e9tico Morelia",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Am\u00e9rica vs Atlas",
+      "games": 5,
+      "close_games": 3,
+      "close_rate": 60.0
+    },
+    {
+      "matchup": "Atlas vs Am\u00e9rica",
+      "games": 5,
+      "close_games": 3,
+      "close_rate": 60.0
+    },
+    {
+      "matchup": "Necaxa vs Tijuana",
+      "games": 5,
+      "close_games": 3,
+      "close_rate": 60.0
+    },
+    {
+      "matchup": "Tijuana vs Necaxa",
+      "games": 5,
+      "close_games": 3,
+      "close_rate": 60.0
+    },
+    {
+      "matchup": "Atl\u00e9tico de San Luis vs Pachuca",
+      "games": 4,
+      "close_games": 1,
+      "close_rate": 25.0
+    },
+    {
+      "matchup": "Pachuca vs Atl\u00e9tico de San Luis",
+      "games": 4,
+      "close_games": 1,
+      "close_rate": 25.0
+    },
+    {
+      "matchup": "Le\u00f3n vs Tigres UANL",
+      "games": 5,
+      "close_games": 5,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Tigres UANL vs Le\u00f3n",
+      "games": 5,
+      "close_games": 5,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Cruz Azul vs Guadalajara",
+      "games": 4,
+      "close_games": 3,
+      "close_rate": 75.0
+    },
+    {
+      "matchup": "Guadalajara vs Cruz Azul",
+      "games": 4,
+      "close_games": 3,
+      "close_rate": 75.0
+    },
+    {
+      "matchup": "Pumas UNAM vs Toluca",
+      "games": 6,
+      "close_games": 6,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Toluca vs Pumas UNAM",
+      "games": 6,
+      "close_games": 6,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Puebla vs Quer\u00e9taro",
+      "games": 6,
+      "close_games": 6,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Quer\u00e9taro vs Puebla",
+      "games": 6,
+      "close_games": 6,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "FC Juarez vs Monterrey",
+      "games": 5,
+      "close_games": 3,
+      "close_rate": 60.0
+    },
+    {
+      "matchup": "Monterrey vs FC Juarez",
+      "games": 5,
+      "close_games": 3,
+      "close_rate": 60.0
+    },
+    {
+      "matchup": "Atl\u00e9tico de San Luis vs Puebla",
+      "games": 5,
+      "close_games": 3,
+      "close_rate": 60.0
+    },
+    {
+      "matchup": "Puebla vs Atl\u00e9tico de San Luis",
+      "games": 5,
+      "close_games": 3,
+      "close_rate": 60.0
+    },
+    {
+      "matchup": "Cruz Azul vs Veracruz",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Veracruz vs Cruz Azul",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Tigres UANL vs Tijuana",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Tijuana vs Tigres UANL",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Monterrey vs Necaxa",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Necaxa vs Monterrey",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Atlas vs Guadalajara",
+      "games": 6,
+      "close_games": 5,
+      "close_rate": 83.33
+    },
+    {
+      "matchup": "Guadalajara vs Atlas",
+      "games": 6,
+      "close_games": 5,
+      "close_rate": 83.33
+    },
+    {
+      "matchup": "FC Juarez vs Le\u00f3n",
+      "games": 4,
+      "close_games": 3,
+      "close_rate": 75.0
+    },
+    {
+      "matchup": "Le\u00f3n vs FC Juarez",
+      "games": 4,
+      "close_games": 3,
+      "close_rate": 75.0
+    },
+    {
+      "matchup": "Am\u00e9rica vs Pumas UNAM",
+      "games": 6,
+      "close_games": 4,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Pumas UNAM vs Am\u00e9rica",
+      "games": 6,
+      "close_games": 4,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Club Atl\u00e9tico Morelia vs Toluca",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Toluca vs Club Atl\u00e9tico Morelia",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Pachuca vs Santos",
+      "games": 7,
+      "close_games": 5,
+      "close_rate": 71.43
+    },
+    {
+      "matchup": "Santos vs Pachuca",
+      "games": 7,
+      "close_games": 5,
+      "close_rate": 71.43
+    },
+    {
+      "matchup": "Atlas vs Toluca",
+      "games": 4,
+      "close_games": 3,
+      "close_rate": 75.0
+    },
+    {
+      "matchup": "Toluca vs Atlas",
+      "games": 4,
+      "close_games": 3,
+      "close_rate": 75.0
+    },
+    {
+      "matchup": "Club Atl\u00e9tico Morelia vs Guadalajara",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Guadalajara vs Club Atl\u00e9tico Morelia",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Atl\u00e9tico de San Luis vs Santos",
+      "games": 4,
+      "close_games": 2,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Santos vs Atl\u00e9tico de San Luis",
+      "games": 4,
+      "close_games": 2,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Monterrey vs Puebla",
+      "games": 5,
+      "close_games": 4,
+      "close_rate": 80.0
+    },
+    {
+      "matchup": "Puebla vs Monterrey",
+      "games": 5,
+      "close_games": 4,
+      "close_rate": 80.0
+    },
+    {
+      "matchup": "Le\u00f3n vs Necaxa",
+      "games": 4,
+      "close_games": 2,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Necaxa vs Le\u00f3n",
+      "games": 4,
+      "close_games": 2,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Pachuca vs Tijuana",
+      "games": 4,
+      "close_games": 1,
+      "close_rate": 25.0
+    },
+    {
+      "matchup": "Tijuana vs Pachuca",
+      "games": 4,
+      "close_games": 1,
+      "close_rate": 25.0
+    },
+    {
+      "matchup": "Am\u00e9rica vs Quer\u00e9taro",
+      "games": 3,
+      "close_games": 3,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Quer\u00e9taro vs Am\u00e9rica",
+      "games": 3,
+      "close_games": 3,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Cruz Azul vs Pumas UNAM",
+      "games": 5,
+      "close_games": 3,
+      "close_rate": 60.0
+    },
+    {
+      "matchup": "Pumas UNAM vs Cruz Azul",
+      "games": 5,
+      "close_games": 3,
+      "close_rate": 60.0
+    },
+    {
+      "matchup": "FC Juarez vs Veracruz",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Veracruz vs FC Juarez",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Necaxa vs Quer\u00e9taro",
+      "games": 5,
+      "close_games": 4,
+      "close_rate": 80.0
+    },
+    {
+      "matchup": "Quer\u00e9taro vs Necaxa",
+      "games": 5,
+      "close_games": 4,
+      "close_rate": 80.0
+    },
+    {
+      "matchup": "Puebla vs Tigres UANL",
+      "games": 4,
+      "close_games": 4,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Tigres UANL vs Puebla",
+      "games": 4,
+      "close_games": 4,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Guadalajara vs Pachuca",
+      "games": 4,
+      "close_games": 2,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Pachuca vs Guadalajara",
+      "games": 4,
+      "close_games": 2,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Atlas vs Le\u00f3n",
+      "games": 5,
+      "close_games": 3,
+      "close_rate": 60.0
+    },
+    {
+      "matchup": "Le\u00f3n vs Atlas",
+      "games": 5,
+      "close_games": 3,
+      "close_rate": 60.0
+    },
+    {
+      "matchup": "Am\u00e9rica vs FC Juarez",
+      "games": 4,
+      "close_games": 4,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "FC Juarez vs Am\u00e9rica",
+      "games": 4,
+      "close_games": 4,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Santos vs Veracruz",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Veracruz vs Santos",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Cruz Azul vs Monterrey",
+      "games": 5,
+      "close_games": 5,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Monterrey vs Cruz Azul",
+      "games": 5,
+      "close_games": 5,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Club Atl\u00e9tico Morelia vs Tijuana",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Tijuana vs Club Atl\u00e9tico Morelia",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Atl\u00e9tico de San Luis vs Toluca",
+      "games": 5,
+      "close_games": 3,
+      "close_rate": 60.0
+    },
+    {
+      "matchup": "Toluca vs Atl\u00e9tico de San Luis",
+      "games": 5,
+      "close_games": 3,
+      "close_rate": 60.0
+    },
+    {
+      "matchup": "Le\u00f3n vs Puebla",
+      "games": 4,
+      "close_games": 3,
+      "close_rate": 75.0
+    },
+    {
+      "matchup": "Puebla vs Le\u00f3n",
+      "games": 4,
+      "close_games": 3,
+      "close_rate": 75.0
+    },
+    {
+      "matchup": "Atlas vs Quer\u00e9taro",
+      "games": 4,
+      "close_games": 2,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Quer\u00e9taro vs Atlas",
+      "games": 4,
+      "close_games": 2,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Cruz Azul vs Pachuca",
+      "games": 5,
+      "close_games": 3,
+      "close_rate": 60.0
+    },
+    {
+      "matchup": "Pachuca vs Cruz Azul",
+      "games": 5,
+      "close_games": 3,
+      "close_rate": 60.0
+    },
+    {
+      "matchup": "FC Juarez vs Necaxa",
+      "games": 4,
+      "close_games": 3,
+      "close_rate": 75.0
+    },
+    {
+      "matchup": "Necaxa vs FC Juarez",
+      "games": 4,
+      "close_games": 3,
+      "close_rate": 75.0
+    },
+    {
+      "matchup": "Monterrey vs Tigres UANL",
+      "games": 6,
+      "close_games": 1,
+      "close_rate": 16.67
+    },
+    {
+      "matchup": "Tigres UANL vs Monterrey",
+      "games": 6,
+      "close_games": 1,
+      "close_rate": 16.67
+    },
+    {
+      "matchup": "Am\u00e9rica vs Guadalajara",
+      "games": 8,
+      "close_games": 6,
+      "close_rate": 75.0
+    },
+    {
+      "matchup": "Guadalajara vs Am\u00e9rica",
+      "games": 8,
+      "close_games": 6,
+      "close_rate": 75.0
+    },
+    {
+      "matchup": "Pumas UNAM vs Santos",
+      "games": 4,
+      "close_games": 2,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Santos vs Pumas UNAM",
+      "games": 4,
+      "close_games": 2,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Atl\u00e9tico de San Luis vs Tijuana",
+      "games": 4,
+      "close_games": 3,
+      "close_rate": 75.0
+    },
+    {
+      "matchup": "Tijuana vs Atl\u00e9tico de San Luis",
+      "games": 4,
+      "close_games": 3,
+      "close_rate": 75.0
+    },
+    {
+      "matchup": "Toluca vs Veracruz",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Veracruz vs Toluca",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Club Atl\u00e9tico Morelia vs Necaxa",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Necaxa vs Club Atl\u00e9tico Morelia",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Le\u00f3n vs Veracruz",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Veracruz vs Le\u00f3n",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Am\u00e9rica vs Cruz Azul",
+      "games": 5,
+      "close_games": 2,
+      "close_rate": 40.0
+    },
+    {
+      "matchup": "Cruz Azul vs Am\u00e9rica",
+      "games": 5,
+      "close_games": 2,
+      "close_rate": 40.0
+    },
+    {
+      "matchup": "Santos vs Tigres UANL",
+      "games": 5,
+      "close_games": 2,
+      "close_rate": 40.0
+    },
+    {
+      "matchup": "Tigres UANL vs Santos",
+      "games": 5,
+      "close_games": 2,
+      "close_rate": 40.0
+    },
+    {
+      "matchup": "Guadalajara vs Pumas UNAM",
+      "games": 5,
+      "close_games": 4,
+      "close_rate": 80.0
+    },
+    {
+      "matchup": "Pumas UNAM vs Guadalajara",
+      "games": 5,
+      "close_games": 4,
+      "close_rate": 80.0
+    },
+    {
+      "matchup": "Atlas vs Tijuana",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Tijuana vs Atlas",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Puebla vs Toluca",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Toluca vs Puebla",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Atl\u00e9tico de San Luis vs FC Juarez",
+      "games": 5,
+      "close_games": 4,
+      "close_rate": 80.0
+    },
+    {
+      "matchup": "FC Juarez vs Atl\u00e9tico de San Luis",
+      "games": 5,
+      "close_games": 4,
+      "close_rate": 80.0
+    },
+    {
+      "matchup": "Monterrey vs Quer\u00e9taro",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Quer\u00e9taro vs Monterrey",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Atlas vs Puebla",
+      "games": 5,
+      "close_games": 5,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Puebla vs Atlas",
+      "games": 5,
+      "close_games": 5,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Am\u00e9rica vs Mazatl\u00e1n FC",
+      "games": 5,
+      "close_games": 1,
+      "close_rate": 20.0
+    },
+    {
+      "matchup": "Mazatl\u00e1n FC vs Am\u00e9rica",
+      "games": 5,
+      "close_games": 1,
+      "close_rate": 20.0
+    },
+    {
+      "matchup": "Quer\u00e9taro vs Toluca",
+      "games": 5,
+      "close_games": 2,
+      "close_rate": 40.0
+    },
+    {
+      "matchup": "Toluca vs Quer\u00e9taro",
+      "games": 5,
+      "close_games": 2,
+      "close_rate": 40.0
+    },
+    {
+      "matchup": "Monterrey vs Tijuana",
+      "games": 5,
+      "close_games": 3,
+      "close_rate": 60.0
+    },
+    {
+      "matchup": "Tijuana vs Monterrey",
+      "games": 5,
+      "close_games": 3,
+      "close_rate": 60.0
+    },
+    {
+      "matchup": "FC Juarez vs Santos",
+      "games": 5,
+      "close_games": 1,
+      "close_rate": 20.0
+    },
+    {
+      "matchup": "Santos vs FC Juarez",
+      "games": 5,
+      "close_games": 1,
+      "close_rate": 20.0
+    },
+    {
+      "matchup": "Puebla vs Pumas UNAM",
+      "games": 5,
+      "close_games": 2,
+      "close_rate": 40.0
+    },
+    {
+      "matchup": "Pumas UNAM vs Puebla",
+      "games": 5,
+      "close_games": 2,
+      "close_rate": 40.0
+    },
+    {
+      "matchup": "Guadalajara vs Tigres UANL",
+      "games": 4,
+      "close_games": 1,
+      "close_rate": 25.0
+    },
+    {
+      "matchup": "Tigres UANL vs Guadalajara",
+      "games": 4,
+      "close_games": 1,
+      "close_rate": 25.0
+    },
+    {
+      "matchup": "Atl\u00e9tico de San Luis vs Necaxa",
+      "games": 4,
+      "close_games": 2,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Necaxa vs Atl\u00e9tico de San Luis",
+      "games": 4,
+      "close_games": 2,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Atlas vs Monterrey",
+      "games": 4,
+      "close_games": 2,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Monterrey vs Atlas",
+      "games": 4,
+      "close_games": 2,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Guadalajara vs Quer\u00e9taro",
+      "games": 3,
+      "close_games": 3,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Quer\u00e9taro vs Guadalajara",
+      "games": 3,
+      "close_games": 3,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Am\u00e9rica vs Puebla",
+      "games": 4,
+      "close_games": 3,
+      "close_rate": 75.0
+    },
+    {
+      "matchup": "Puebla vs Am\u00e9rica",
+      "games": 4,
+      "close_games": 3,
+      "close_rate": 75.0
+    },
+    {
+      "matchup": "Mazatl\u00e1n FC vs Tijuana",
+      "games": 4,
+      "close_games": 4,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Tijuana vs Mazatl\u00e1n FC",
+      "games": 4,
+      "close_games": 4,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Atlas vs Mazatl\u00e1n FC",
+      "games": 5,
+      "close_games": 4,
+      "close_rate": 80.0
+    },
+    {
+      "matchup": "Mazatl\u00e1n FC vs Atlas",
+      "games": 5,
+      "close_games": 4,
+      "close_rate": 80.0
+    },
+    {
+      "matchup": "Atl\u00e9tico de San Luis vs Pumas UNAM",
+      "games": 5,
+      "close_games": 2,
+      "close_rate": 40.0
+    },
+    {
+      "matchup": "Pumas UNAM vs Atl\u00e9tico de San Luis",
+      "games": 5,
+      "close_games": 2,
+      "close_rate": 40.0
+    },
+    {
+      "matchup": "Monterrey vs Pachuca",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Pachuca vs Monterrey",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Necaxa vs Puebla",
+      "games": 4,
+      "close_games": 4,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Puebla vs Necaxa",
+      "games": 4,
+      "close_games": 4,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Cruz Azul vs Mazatl\u00e1n FC",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Mazatl\u00e1n FC vs Cruz Azul",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Quer\u00e9taro vs Tigres UANL",
+      "games": 4,
+      "close_games": 1,
+      "close_rate": 25.0
+    },
+    {
+      "matchup": "Tigres UANL vs Quer\u00e9taro",
+      "games": 4,
+      "close_games": 1,
+      "close_rate": 25.0
+    },
+    {
+      "matchup": "Santos vs Toluca",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Toluca vs Santos",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Atl\u00e9tico de San Luis vs Monterrey",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Monterrey vs Atl\u00e9tico de San Luis",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Le\u00f3n vs Pumas UNAM",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Pumas UNAM vs Le\u00f3n",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Pachuca vs Toluca",
+      "games": 5,
+      "close_games": 3,
+      "close_rate": 60.0
+    },
+    {
+      "matchup": "Toluca vs Pachuca",
+      "games": 5,
+      "close_games": 3,
+      "close_rate": 60.0
+    },
+    {
+      "matchup": "Atlas vs FC Juarez",
+      "games": 3,
+      "close_games": 3,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "FC Juarez vs Atlas",
+      "games": 3,
+      "close_games": 3,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Guadalajara vs Mazatl\u00e1n FC",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Mazatl\u00e1n FC vs Guadalajara",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Necaxa vs Pumas UNAM",
+      "games": 4,
+      "close_games": 2,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Pumas UNAM vs Necaxa",
+      "games": 4,
+      "close_games": 2,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Atl\u00e9tico de San Luis vs Le\u00f3n",
+      "games": 4,
+      "close_games": 2,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Le\u00f3n vs Atl\u00e9tico de San Luis",
+      "games": 4,
+      "close_games": 2,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "FC Juarez vs Tijuana",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Tijuana vs FC Juarez",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Le\u00f3n vs Mazatl\u00e1n FC",
+      "games": 4,
+      "close_games": 2,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Mazatl\u00e1n FC vs Le\u00f3n",
+      "games": 4,
+      "close_games": 2,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Atlas vs Necaxa",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Necaxa vs Atlas",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Cruz Azul vs Toluca",
+      "games": 3,
+      "close_games": 1,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "Toluca vs Cruz Azul",
+      "games": 3,
+      "close_games": 1,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "FC Juarez vs Pachuca",
+      "games": 3,
+      "close_games": 3,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Pachuca vs FC Juarez",
+      "games": 3,
+      "close_games": 3,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Guadalajara vs Tijuana",
+      "games": 3,
+      "close_games": 3,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Tijuana vs Guadalajara",
+      "games": 3,
+      "close_games": 3,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Santos vs Tijuana",
+      "games": 5,
+      "close_games": 2,
+      "close_rate": 40.0
+    },
+    {
+      "matchup": "Tijuana vs Santos",
+      "games": 5,
+      "close_games": 2,
+      "close_rate": 40.0
+    },
+    {
+      "matchup": "Atl\u00e9tico de San Luis vs Quer\u00e9taro",
+      "games": 4,
+      "close_games": 3,
+      "close_rate": 75.0
+    },
+    {
+      "matchup": "Quer\u00e9taro vs Atl\u00e9tico de San Luis",
+      "games": 4,
+      "close_games": 3,
+      "close_rate": 75.0
+    },
+    {
+      "matchup": "FC Juarez vs Mazatl\u00e1n FC",
+      "games": 5,
+      "close_games": 3,
+      "close_rate": 60.0
+    },
+    {
+      "matchup": "Mazatl\u00e1n FC vs FC Juarez",
+      "games": 5,
+      "close_games": 3,
+      "close_rate": 60.0
+    },
+    {
+      "matchup": "Cruz Azul vs Tigres UANL",
+      "games": 4,
+      "close_games": 2,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Tigres UANL vs Cruz Azul",
+      "games": 4,
+      "close_games": 2,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Am\u00e9rica vs Le\u00f3n",
+      "games": 4,
+      "close_games": 4,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Le\u00f3n vs Am\u00e9rica",
+      "games": 4,
+      "close_games": 4,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "FC Juarez vs Tigres UANL",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Tigres UANL vs FC Juarez",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Mazatl\u00e1n FC vs Monterrey",
+      "games": 4,
+      "close_games": 4,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Monterrey vs Mazatl\u00e1n FC",
+      "games": 4,
+      "close_games": 4,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Pachuca vs Pumas UNAM",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Pumas UNAM vs Pachuca",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Atl\u00e9tico de San Luis vs Mazatl\u00e1n FC",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Mazatl\u00e1n FC vs Atl\u00e9tico de San Luis",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Guadalajara vs Monterrey",
+      "games": 5,
+      "close_games": 4,
+      "close_rate": 80.0
+    },
+    {
+      "matchup": "Monterrey vs Guadalajara",
+      "games": 5,
+      "close_games": 4,
+      "close_rate": 80.0
+    },
+    {
+      "matchup": "Necaxa vs Pachuca",
+      "games": 4,
+      "close_games": 3,
+      "close_rate": 75.0
+    },
+    {
+      "matchup": "Pachuca vs Necaxa",
+      "games": 4,
+      "close_games": 3,
+      "close_rate": 75.0
+    },
+    {
+      "matchup": "Le\u00f3n vs Toluca",
+      "games": 3,
+      "close_games": 3,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Toluca vs Le\u00f3n",
+      "games": 3,
+      "close_games": 3,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Mazatl\u00e1n FC vs Santos",
+      "games": 4,
+      "close_games": 2,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Santos vs Mazatl\u00e1n FC",
+      "games": 4,
+      "close_games": 2,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Quer\u00e9taro vs Tijuana",
+      "games": 4,
+      "close_games": 3,
+      "close_rate": 75.0
+    },
+    {
+      "matchup": "Tijuana vs Quer\u00e9taro",
+      "games": 4,
+      "close_games": 3,
+      "close_rate": 75.0
+    },
+    {
+      "matchup": "Tigres UANL vs Toluca",
+      "games": 4,
+      "close_games": 2,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Toluca vs Tigres UANL",
+      "games": 4,
+      "close_games": 2,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Cruz Azul vs Santos",
+      "games": 4,
+      "close_games": 2,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Santos vs Cruz Azul",
+      "games": 4,
+      "close_games": 2,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Cruz Azul vs Necaxa",
+      "games": 3,
+      "close_games": 1,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "Necaxa vs Cruz Azul",
+      "games": 3,
+      "close_games": 1,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "FC Juarez vs Guadalajara",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Guadalajara vs FC Juarez",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Pumas UNAM vs Quer\u00e9taro",
+      "games": 3,
+      "close_games": 1,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "Quer\u00e9taro vs Pumas UNAM",
+      "games": 3,
+      "close_games": 1,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "Guadalajara vs Santos",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Santos vs Guadalajara",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Mazatl\u00e1n FC vs Toluca",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Toluca vs Mazatl\u00e1n FC",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Puebla vs Tijuana",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Tijuana vs Puebla",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Mazatl\u00e1n FC vs Tigres UANL",
+      "games": 3,
+      "close_games": 1,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "Tigres UANL vs Mazatl\u00e1n FC",
+      "games": 3,
+      "close_games": 1,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "Atl\u00e9tico de San Luis vs Cruz Azul",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Cruz Azul vs Atl\u00e9tico de San Luis",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Mazatl\u00e1n FC vs Pumas UNAM",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Pumas UNAM vs Mazatl\u00e1n FC",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Am\u00e9rica vs Atl\u00e9tico de San Luis",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Atl\u00e9tico de San Luis vs Am\u00e9rica",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "FC Juarez vs Pumas UNAM",
+      "games": 3,
+      "close_games": 1,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "Pumas UNAM vs FC Juarez",
+      "games": 3,
+      "close_games": 1,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "Guadalajara vs Toluca",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Toluca vs Guadalajara",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Pachuca vs Tigres UANL",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Tigres UANL vs Pachuca",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Mazatl\u00e1n FC vs Quer\u00e9taro",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Quer\u00e9taro vs Mazatl\u00e1n FC",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Le\u00f3n vs Pachuca",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Pachuca vs Le\u00f3n",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Atlas vs Pumas UNAM",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Pumas UNAM vs Atlas",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Quer\u00e9taro vs Santos",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Santos vs Quer\u00e9taro",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Am\u00e9rica vs Necaxa",
+      "games": 3,
+      "close_games": 3,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Necaxa vs Am\u00e9rica",
+      "games": 3,
+      "close_games": 3,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Atlas vs Atl\u00e9tico de San Luis",
+      "games": 3,
+      "close_games": 1,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "Atl\u00e9tico de San Luis vs Atlas",
+      "games": 3,
+      "close_games": 1,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "Am\u00e9rica vs Santos",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Santos vs Am\u00e9rica",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Cruz Azul vs Le\u00f3n",
+      "games": 3,
+      "close_games": 3,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Le\u00f3n vs Cruz Azul",
+      "games": 3,
+      "close_games": 3,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Mazatl\u00e1n FC vs Necaxa",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Necaxa vs Mazatl\u00e1n FC",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Le\u00f3n vs Tijuana",
+      "games": 3,
+      "close_games": 3,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Tijuana vs Le\u00f3n",
+      "games": 3,
+      "close_games": 3,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Mazatl\u00e1n FC vs Puebla",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Puebla vs Mazatl\u00e1n FC",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Am\u00e9rica vs Monterrey",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Monterrey vs Am\u00e9rica",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Mazatl\u00e1n FC vs Pachuca",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Pachuca vs Mazatl\u00e1n FC",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    }
+  ],
+  "form_strengths": [
+    {
+      "team": "Am\u00e9rica",
+      "strength": 81.3
+    },
+    {
+      "team": "Atlas",
+      "strength": 54.7
+    },
+    {
+      "team": "Atl\u00e9tico de San Luis",
+      "strength": 82.0
+    },
+    {
+      "team": "Club Atl\u00e9tico Morelia",
+      "strength": 72.0
+    },
+    {
+      "team": "Cruz Azul",
+      "strength": 86.0
+    },
+    {
+      "team": "FC Juarez",
+      "strength": 68.0
+    },
+    {
+      "team": "Guadalajara",
+      "strength": 67.3
+    },
+    {
+      "team": "Le\u00f3n",
+      "strength": 72.0
+    },
+    {
+      "team": "Mazatl\u00e1n FC",
+      "strength": 64.0
+    },
+    {
+      "team": "Monterrey",
+      "strength": 72.7
+    },
+    {
+      "team": "Necaxa",
+      "strength": 52.0
+    },
+    {
+      "team": "Pachuca",
+      "strength": 65.3
+    },
+    {
+      "team": "Puebla",
+      "strength": 66.7
+    },
+    {
+      "team": "Pumas UNAM",
+      "strength": 57.3
+    },
+    {
+      "team": "Quer\u00e9taro",
+      "strength": 56.0
+    },
+    {
+      "team": "Santos",
+      "strength": 48.0
+    },
+    {
+      "team": "Tigres UANL",
+      "strength": 78.7
+    },
+    {
+      "team": "Tijuana",
+      "strength": 64.0
+    },
+    {
+      "team": "Toluca",
+      "strength": 74.0
+    },
+    {
+      "team": "Veracruz",
+      "strength": 52.0
+    }
+  ],
+  "team_margin_ratings": [
+    {
+      "team": "Am\u00e9rica",
+      "avg_margin": 0.9
+    },
+    {
+      "team": "Atlas",
+      "avg_margin": -0.9
+    },
+    {
+      "team": "Atl\u00e9tico de San Luis",
+      "avg_margin": 0.4
+    },
+    {
+      "team": "Club Atl\u00e9tico Morelia",
+      "avg_margin": 0.3
+    },
+    {
+      "team": "Cruz Azul",
+      "avg_margin": 1.7
+    },
+    {
+      "team": "FC Juarez",
+      "avg_margin": -0.9
+    },
+    {
+      "team": "Guadalajara",
+      "avg_margin": 0.6
+    },
+    {
+      "team": "Le\u00f3n",
+      "avg_margin": 0.2
+    },
+    {
+      "team": "Mazatl\u00e1n FC",
+      "avg_margin": -0.5
+    },
+    {
+      "team": "Monterrey",
+      "avg_margin": 0.6
+    },
+    {
+      "team": "Necaxa",
+      "avg_margin": -1
+    },
+    {
+      "team": "Pachuca",
+      "avg_margin": -0.3
+    },
+    {
+      "team": "Puebla",
+      "avg_margin": -1
+    },
+    {
+      "team": "Pumas UNAM",
+      "avg_margin": 0
+    },
+    {
+      "team": "Quer\u00e9taro",
+      "avg_margin": -0.7
+    },
+    {
+      "team": "Santos",
+      "avg_margin": -0.8
+    },
+    {
+      "team": "Tigres UANL",
+      "avg_margin": 0.4
+    },
+    {
+      "team": "Tijuana",
+      "avg_margin": -0.4
+    },
+    {
+      "team": "Toluca",
+      "avg_margin": 1.4
+    },
+    {
+      "team": "Veracruz",
+      "avg_margin": -1.7
+    }
+  ]
+}

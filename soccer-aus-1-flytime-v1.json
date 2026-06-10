@@ -1,0 +1,1996 @@
+{
+  "meta": {
+    "sport": "A-League",
+    "league": "aus.1",
+    "engine": "v1-bootstrap",
+    "formula": "close*0.35 + form_balance*0.25 + margin_balance*0.25 + matchup*0.15",
+    "close_margin": 1,
+    "games_sampled": 600,
+    "week_chunk": 6,
+    "built": "2026-06-10"
+  },
+  "matchup_ratings": [
+    {
+      "matchup": "Adelaide United vs Sydney FC",
+      "games_played": 11,
+      "avg_margin": 1.18,
+      "avg_excitement": 75.45
+    },
+    {
+      "matchup": "Sydney FC vs Adelaide United",
+      "games_played": 11,
+      "avg_margin": 1.18,
+      "avg_excitement": 75.45
+    },
+    {
+      "matchup": "Central Coast Mariners vs Western Sydney Wanderers",
+      "games_played": 9,
+      "avg_margin": 1.33,
+      "avg_excitement": 55.56
+    },
+    {
+      "matchup": "Western Sydney Wanderers vs Central Coast Mariners",
+      "games_played": 9,
+      "avg_margin": 1.33,
+      "avg_excitement": 55.56
+    },
+    {
+      "matchup": "Melbourne City FC vs Melbourne Victory",
+      "games_played": 12,
+      "avg_margin": 1.67,
+      "avg_excitement": 60.0
+    },
+    {
+      "matchup": "Melbourne Victory vs Melbourne City FC",
+      "games_played": 12,
+      "avg_margin": 1.67,
+      "avg_excitement": 60.0
+    },
+    {
+      "matchup": "Wellington Phoenix FC vs Western United",
+      "games_played": 10,
+      "avg_margin": 1.4,
+      "avg_excitement": 58.0
+    },
+    {
+      "matchup": "Western United vs Wellington Phoenix FC",
+      "games_played": 10,
+      "avg_margin": 1.4,
+      "avg_excitement": 58.0
+    },
+    {
+      "matchup": "Brisbane Roar vs Perth Glory",
+      "games_played": 9,
+      "avg_margin": 1.22,
+      "avg_excitement": 64.44
+    },
+    {
+      "matchup": "Perth Glory vs Brisbane Roar",
+      "games_played": 9,
+      "avg_margin": 1.22,
+      "avg_excitement": 64.44
+    },
+    {
+      "matchup": "Melbourne Victory vs Western Sydney Wanderers",
+      "games_played": 6,
+      "avg_margin": 1.17,
+      "avg_excitement": 65.0
+    },
+    {
+      "matchup": "Western Sydney Wanderers vs Melbourne Victory",
+      "games_played": 6,
+      "avg_margin": 1.17,
+      "avg_excitement": 65.0
+    },
+    {
+      "matchup": "Perth Glory vs Western United",
+      "games_played": 7,
+      "avg_margin": 1.14,
+      "avg_excitement": 68.57
+    },
+    {
+      "matchup": "Western United vs Perth Glory",
+      "games_played": 7,
+      "avg_margin": 1.14,
+      "avg_excitement": 68.57
+    },
+    {
+      "matchup": "Central Coast Mariners vs Newcastle Jets",
+      "games_played": 9,
+      "avg_margin": 1.11,
+      "avg_excitement": 73.33
+    },
+    {
+      "matchup": "Newcastle Jets vs Central Coast Mariners",
+      "games_played": 9,
+      "avg_margin": 1.11,
+      "avg_excitement": 73.33
+    },
+    {
+      "matchup": "Adelaide United vs Melbourne City FC",
+      "games_played": 10,
+      "avg_margin": 1.4,
+      "avg_excitement": 65.0
+    },
+    {
+      "matchup": "Melbourne City FC vs Adelaide United",
+      "games_played": 10,
+      "avg_margin": 1.4,
+      "avg_excitement": 65.0
+    },
+    {
+      "matchup": "Sydney FC vs Wellington Phoenix FC",
+      "games_played": 9,
+      "avg_margin": 0.78,
+      "avg_excitement": 84.44
+    },
+    {
+      "matchup": "Wellington Phoenix FC vs Sydney FC",
+      "games_played": 9,
+      "avg_margin": 0.78,
+      "avg_excitement": 84.44
+    },
+    {
+      "matchup": "Brisbane Roar vs Melbourne Victory",
+      "games_played": 7,
+      "avg_margin": 1.71,
+      "avg_excitement": 42.86
+    },
+    {
+      "matchup": "Melbourne Victory vs Brisbane Roar",
+      "games_played": 7,
+      "avg_margin": 1.71,
+      "avg_excitement": 42.86
+    },
+    {
+      "matchup": "Adelaide United vs Newcastle Jets",
+      "games_played": 9,
+      "avg_margin": 1.33,
+      "avg_excitement": 71.11
+    },
+    {
+      "matchup": "Newcastle Jets vs Adelaide United",
+      "games_played": 9,
+      "avg_margin": 1.33,
+      "avg_excitement": 71.11
+    },
+    {
+      "matchup": "Sydney FC vs Western Sydney Wanderers",
+      "games_played": 10,
+      "avg_margin": 1,
+      "avg_excitement": 76.0
+    },
+    {
+      "matchup": "Western Sydney Wanderers vs Sydney FC",
+      "games_played": 10,
+      "avg_margin": 1,
+      "avg_excitement": 76.0
+    },
+    {
+      "matchup": "Perth Glory vs Wellington Phoenix FC",
+      "games_played": 9,
+      "avg_margin": 1.33,
+      "avg_excitement": 55.56
+    },
+    {
+      "matchup": "Wellington Phoenix FC vs Perth Glory",
+      "games_played": 9,
+      "avg_margin": 1.33,
+      "avg_excitement": 55.56
+    },
+    {
+      "matchup": "Melbourne City FC vs Western United",
+      "games_played": 13,
+      "avg_margin": 1.23,
+      "avg_excitement": 76.92
+    },
+    {
+      "matchup": "Western United vs Melbourne City FC",
+      "games_played": 13,
+      "avg_margin": 1.23,
+      "avg_excitement": 76.92
+    },
+    {
+      "matchup": "Newcastle Jets vs Sydney FC",
+      "games_played": 7,
+      "avg_margin": 1.57,
+      "avg_excitement": 54.29
+    },
+    {
+      "matchup": "Sydney FC vs Newcastle Jets",
+      "games_played": 7,
+      "avg_margin": 1.57,
+      "avg_excitement": 54.29
+    },
+    {
+      "matchup": "Brisbane Roar vs Western Sydney Wanderers",
+      "games_played": 10,
+      "avg_margin": 0.6,
+      "avg_excitement": 87.0
+    },
+    {
+      "matchup": "Western Sydney Wanderers vs Brisbane Roar",
+      "games_played": 10,
+      "avg_margin": 0.6,
+      "avg_excitement": 87.0
+    },
+    {
+      "matchup": "Melbourne Victory vs Western United",
+      "games_played": 9,
+      "avg_margin": 1.22,
+      "avg_excitement": 64.44
+    },
+    {
+      "matchup": "Western United vs Melbourne Victory",
+      "games_played": 9,
+      "avg_margin": 1.22,
+      "avg_excitement": 64.44
+    },
+    {
+      "matchup": "Melbourne City FC vs Wellington Phoenix FC",
+      "games_played": 7,
+      "avg_margin": 1.14,
+      "avg_excitement": 68.57
+    },
+    {
+      "matchup": "Wellington Phoenix FC vs Melbourne City FC",
+      "games_played": 7,
+      "avg_margin": 1.14,
+      "avg_excitement": 68.57
+    },
+    {
+      "matchup": "Central Coast Mariners vs Perth Glory",
+      "games_played": 12,
+      "avg_margin": 0.83,
+      "avg_excitement": 74.17
+    },
+    {
+      "matchup": "Perth Glory vs Central Coast Mariners",
+      "games_played": 12,
+      "avg_margin": 0.83,
+      "avg_excitement": 74.17
+    },
+    {
+      "matchup": "Central Coast Mariners vs Melbourne City FC",
+      "games_played": 9,
+      "avg_margin": 1.11,
+      "avg_excitement": 65.56
+    },
+    {
+      "matchup": "Melbourne City FC vs Central Coast Mariners",
+      "games_played": 9,
+      "avg_margin": 1.11,
+      "avg_excitement": 65.56
+    },
+    {
+      "matchup": "Newcastle Jets vs Perth Glory",
+      "games_played": 11,
+      "avg_margin": 1,
+      "avg_excitement": 77.27
+    },
+    {
+      "matchup": "Perth Glory vs Newcastle Jets",
+      "games_played": 11,
+      "avg_margin": 1,
+      "avg_excitement": 77.27
+    },
+    {
+      "matchup": "Western Sydney Wanderers vs Western United",
+      "games_played": 10,
+      "avg_margin": 1.2,
+      "avg_excitement": 81.0
+    },
+    {
+      "matchup": "Western United vs Western Sydney Wanderers",
+      "games_played": 10,
+      "avg_margin": 1.2,
+      "avg_excitement": 81.0
+    },
+    {
+      "matchup": "Melbourne Victory vs Wellington Phoenix FC",
+      "games_played": 9,
+      "avg_margin": 1,
+      "avg_excitement": 66.67
+    },
+    {
+      "matchup": "Wellington Phoenix FC vs Melbourne Victory",
+      "games_played": 9,
+      "avg_margin": 1,
+      "avg_excitement": 66.67
+    },
+    {
+      "matchup": "Adelaide United vs Brisbane Roar",
+      "games_played": 9,
+      "avg_margin": 1.11,
+      "avg_excitement": 65.56
+    },
+    {
+      "matchup": "Brisbane Roar vs Adelaide United",
+      "games_played": 9,
+      "avg_margin": 1.11,
+      "avg_excitement": 65.56
+    },
+    {
+      "matchup": "Adelaide United vs Central Coast Mariners",
+      "games_played": 11,
+      "avg_margin": 2.09,
+      "avg_excitement": 40.91
+    },
+    {
+      "matchup": "Central Coast Mariners vs Adelaide United",
+      "games_played": 11,
+      "avg_margin": 2.09,
+      "avg_excitement": 40.91
+    },
+    {
+      "matchup": "Newcastle Jets vs Western United",
+      "games_played": 9,
+      "avg_margin": 1.11,
+      "avg_excitement": 65.56
+    },
+    {
+      "matchup": "Western United vs Newcastle Jets",
+      "games_played": 9,
+      "avg_margin": 1.11,
+      "avg_excitement": 65.56
+    },
+    {
+      "matchup": "Brisbane Roar vs Melbourne City FC",
+      "games_played": 10,
+      "avg_margin": 2,
+      "avg_excitement": 52.0
+    },
+    {
+      "matchup": "Melbourne City FC vs Brisbane Roar",
+      "games_played": 10,
+      "avg_margin": 2,
+      "avg_excitement": 52.0
+    },
+    {
+      "matchup": "Melbourne Victory vs Sydney FC",
+      "games_played": 11,
+      "avg_margin": 1.73,
+      "avg_excitement": 44.55
+    },
+    {
+      "matchup": "Sydney FC vs Melbourne Victory",
+      "games_played": 11,
+      "avg_margin": 1.73,
+      "avg_excitement": 44.55
+    },
+    {
+      "matchup": "Melbourne City FC vs Western Sydney Wanderers",
+      "games_played": 8,
+      "avg_margin": 1.38,
+      "avg_excitement": 51.25
+    },
+    {
+      "matchup": "Western Sydney Wanderers vs Melbourne City FC",
+      "games_played": 8,
+      "avg_margin": 1.38,
+      "avg_excitement": 51.25
+    },
+    {
+      "matchup": "Brisbane Roar vs Wellington Phoenix FC",
+      "games_played": 9,
+      "avg_margin": 1.11,
+      "avg_excitement": 73.33
+    },
+    {
+      "matchup": "Wellington Phoenix FC vs Brisbane Roar",
+      "games_played": 9,
+      "avg_margin": 1.11,
+      "avg_excitement": 73.33
+    },
+    {
+      "matchup": "Adelaide United vs Melbourne Victory",
+      "games_played": 12,
+      "avg_margin": 1.17,
+      "avg_excitement": 65.0
+    },
+    {
+      "matchup": "Melbourne Victory vs Adelaide United",
+      "games_played": 12,
+      "avg_margin": 1.17,
+      "avg_excitement": 65.0
+    },
+    {
+      "matchup": "Perth Glory vs Sydney FC",
+      "games_played": 8,
+      "avg_margin": 1.25,
+      "avg_excitement": 61.25
+    },
+    {
+      "matchup": "Sydney FC vs Perth Glory",
+      "games_played": 8,
+      "avg_margin": 1.25,
+      "avg_excitement": 61.25
+    },
+    {
+      "matchup": "Central Coast Mariners vs Western United",
+      "games_played": 7,
+      "avg_margin": 1.71,
+      "avg_excitement": 52.86
+    },
+    {
+      "matchup": "Western United vs Central Coast Mariners",
+      "games_played": 7,
+      "avg_margin": 1.71,
+      "avg_excitement": 52.86
+    },
+    {
+      "matchup": "Melbourne Victory vs Perth Glory",
+      "games_played": 8,
+      "avg_margin": 1.5,
+      "avg_excitement": 50.0
+    },
+    {
+      "matchup": "Perth Glory vs Melbourne Victory",
+      "games_played": 8,
+      "avg_margin": 1.5,
+      "avg_excitement": 50.0
+    },
+    {
+      "matchup": "Brisbane Roar vs Central Coast Mariners",
+      "games_played": 8,
+      "avg_margin": 1.62,
+      "avg_excitement": 48.75
+    },
+    {
+      "matchup": "Central Coast Mariners vs Brisbane Roar",
+      "games_played": 8,
+      "avg_margin": 1.62,
+      "avg_excitement": 48.75
+    },
+    {
+      "matchup": "Newcastle Jets vs Western Sydney Wanderers",
+      "games_played": 11,
+      "avg_margin": 0.82,
+      "avg_excitement": 72.73
+    },
+    {
+      "matchup": "Western Sydney Wanderers vs Newcastle Jets",
+      "games_played": 11,
+      "avg_margin": 0.82,
+      "avg_excitement": 72.73
+    },
+    {
+      "matchup": "Sydney FC vs Western United",
+      "games_played": 10,
+      "avg_margin": 1.6,
+      "avg_excitement": 42.0
+    },
+    {
+      "matchup": "Western United vs Sydney FC",
+      "games_played": 10,
+      "avg_margin": 1.6,
+      "avg_excitement": 42.0
+    },
+    {
+      "matchup": "Adelaide United vs Wellington Phoenix FC",
+      "games_played": 7,
+      "avg_margin": 1.14,
+      "avg_excitement": 68.57
+    },
+    {
+      "matchup": "Wellington Phoenix FC vs Adelaide United",
+      "games_played": 7,
+      "avg_margin": 1.14,
+      "avg_excitement": 68.57
+    },
+    {
+      "matchup": "Melbourne City FC vs Perth Glory",
+      "games_played": 10,
+      "avg_margin": 2,
+      "avg_excitement": 38.0
+    },
+    {
+      "matchup": "Perth Glory vs Melbourne City FC",
+      "games_played": 10,
+      "avg_margin": 2,
+      "avg_excitement": 38.0
+    },
+    {
+      "matchup": "Wellington Phoenix FC vs Western Sydney Wanderers",
+      "games_played": 9,
+      "avg_margin": 1.22,
+      "avg_excitement": 56.67
+    },
+    {
+      "matchup": "Western Sydney Wanderers vs Wellington Phoenix FC",
+      "games_played": 9,
+      "avg_margin": 1.22,
+      "avg_excitement": 56.67
+    },
+    {
+      "matchup": "Brisbane Roar vs Sydney FC",
+      "games_played": 11,
+      "avg_margin": 1.18,
+      "avg_excitement": 69.09
+    },
+    {
+      "matchup": "Sydney FC vs Brisbane Roar",
+      "games_played": 11,
+      "avg_margin": 1.18,
+      "avg_excitement": 69.09
+    },
+    {
+      "matchup": "Brisbane Roar vs Western United",
+      "games_played": 7,
+      "avg_margin": 1,
+      "avg_excitement": 80.0
+    },
+    {
+      "matchup": "Western United vs Brisbane Roar",
+      "games_played": 7,
+      "avg_margin": 1,
+      "avg_excitement": 80.0
+    },
+    {
+      "matchup": "Central Coast Mariners vs Sydney FC",
+      "games_played": 10,
+      "avg_margin": 1.7,
+      "avg_excitement": 48.0
+    },
+    {
+      "matchup": "Sydney FC vs Central Coast Mariners",
+      "games_played": 10,
+      "avg_margin": 1.7,
+      "avg_excitement": 48.0
+    },
+    {
+      "matchup": "Perth Glory vs Western Sydney Wanderers",
+      "games_played": 9,
+      "avg_margin": 1.44,
+      "avg_excitement": 62.22
+    },
+    {
+      "matchup": "Western Sydney Wanderers vs Perth Glory",
+      "games_played": 9,
+      "avg_margin": 1.44,
+      "avg_excitement": 62.22
+    },
+    {
+      "matchup": "Melbourne City FC vs Newcastle Jets",
+      "games_played": 8,
+      "avg_margin": 2,
+      "avg_excitement": 36.25
+    },
+    {
+      "matchup": "Newcastle Jets vs Melbourne City FC",
+      "games_played": 8,
+      "avg_margin": 2,
+      "avg_excitement": 36.25
+    },
+    {
+      "matchup": "Adelaide United vs Western Sydney Wanderers",
+      "games_played": 9,
+      "avg_margin": 1,
+      "avg_excitement": 82.22
+    },
+    {
+      "matchup": "Western Sydney Wanderers vs Adelaide United",
+      "games_played": 9,
+      "avg_margin": 1,
+      "avg_excitement": 82.22
+    },
+    {
+      "matchup": "Brisbane Roar vs Newcastle Jets",
+      "games_played": 9,
+      "avg_margin": 1.22,
+      "avg_excitement": 72.22
+    },
+    {
+      "matchup": "Newcastle Jets vs Brisbane Roar",
+      "games_played": 9,
+      "avg_margin": 1.22,
+      "avg_excitement": 72.22
+    },
+    {
+      "matchup": "Melbourne City FC vs Sydney FC",
+      "games_played": 6,
+      "avg_margin": 1.33,
+      "avg_excitement": 63.33
+    },
+    {
+      "matchup": "Sydney FC vs Melbourne City FC",
+      "games_played": 6,
+      "avg_margin": 1.33,
+      "avg_excitement": 63.33
+    },
+    {
+      "matchup": "Central Coast Mariners vs Wellington Phoenix FC",
+      "games_played": 9,
+      "avg_margin": 1,
+      "avg_excitement": 74.44
+    },
+    {
+      "matchup": "Wellington Phoenix FC vs Central Coast Mariners",
+      "games_played": 9,
+      "avg_margin": 1,
+      "avg_excitement": 74.44
+    },
+    {
+      "matchup": "Melbourne Victory vs Newcastle Jets",
+      "games_played": 9,
+      "avg_margin": 1.56,
+      "avg_excitement": 61.11
+    },
+    {
+      "matchup": "Newcastle Jets vs Melbourne Victory",
+      "games_played": 9,
+      "avg_margin": 1.56,
+      "avg_excitement": 61.11
+    },
+    {
+      "matchup": "Adelaide United vs Perth Glory",
+      "games_played": 9,
+      "avg_margin": 1.11,
+      "avg_excitement": 65.56
+    },
+    {
+      "matchup": "Perth Glory vs Adelaide United",
+      "games_played": 9,
+      "avg_margin": 1.11,
+      "avg_excitement": 65.56
+    },
+    {
+      "matchup": "Central Coast Mariners vs Melbourne Victory",
+      "games_played": 8,
+      "avg_margin": 0.38,
+      "avg_excitement": 96.25
+    },
+    {
+      "matchup": "Melbourne Victory vs Central Coast Mariners",
+      "games_played": 8,
+      "avg_margin": 0.38,
+      "avg_excitement": 96.25
+    },
+    {
+      "matchup": "Newcastle Jets vs Wellington Phoenix FC",
+      "games_played": 10,
+      "avg_margin": 2,
+      "avg_excitement": 45.0
+    },
+    {
+      "matchup": "Wellington Phoenix FC vs Newcastle Jets",
+      "games_played": 10,
+      "avg_margin": 2,
+      "avg_excitement": 45.0
+    },
+    {
+      "matchup": "Adelaide United vs Western United",
+      "games_played": 7,
+      "avg_margin": 1.14,
+      "avg_excitement": 68.57
+    },
+    {
+      "matchup": "Western United vs Adelaide United",
+      "games_played": 7,
+      "avg_margin": 1.14,
+      "avg_excitement": 68.57
+    },
+    {
+      "matchup": "Macarthur FC vs Western Sydney Wanderers",
+      "games_played": 8,
+      "avg_margin": 1.62,
+      "avg_excitement": 48.75
+    },
+    {
+      "matchup": "Western Sydney Wanderers vs Macarthur FC",
+      "games_played": 8,
+      "avg_margin": 1.62,
+      "avg_excitement": 48.75
+    },
+    {
+      "matchup": "Central Coast Mariners vs Macarthur FC",
+      "games_played": 9,
+      "avg_margin": 1.11,
+      "avg_excitement": 65.56
+    },
+    {
+      "matchup": "Macarthur FC vs Central Coast Mariners",
+      "games_played": 9,
+      "avg_margin": 1.11,
+      "avg_excitement": 65.56
+    },
+    {
+      "matchup": "Macarthur FC vs Wellington Phoenix FC",
+      "games_played": 9,
+      "avg_margin": 1.33,
+      "avg_excitement": 63.33
+    },
+    {
+      "matchup": "Wellington Phoenix FC vs Macarthur FC",
+      "games_played": 9,
+      "avg_margin": 1.33,
+      "avg_excitement": 63.33
+    },
+    {
+      "matchup": "Macarthur FC vs Newcastle Jets",
+      "games_played": 9,
+      "avg_margin": 0.89,
+      "avg_excitement": 75.56
+    },
+    {
+      "matchup": "Newcastle Jets vs Macarthur FC",
+      "games_played": 9,
+      "avg_margin": 0.89,
+      "avg_excitement": 75.56
+    },
+    {
+      "matchup": "Macarthur FC vs Sydney FC",
+      "games_played": 8,
+      "avg_margin": 1.88,
+      "avg_excitement": 46.25
+    },
+    {
+      "matchup": "Sydney FC vs Macarthur FC",
+      "games_played": 8,
+      "avg_margin": 1.88,
+      "avg_excitement": 46.25
+    },
+    {
+      "matchup": "Brisbane Roar vs Macarthur FC",
+      "games_played": 7,
+      "avg_margin": 1,
+      "avg_excitement": 60.0
+    },
+    {
+      "matchup": "Macarthur FC vs Brisbane Roar",
+      "games_played": 7,
+      "avg_margin": 1,
+      "avg_excitement": 60.0
+    },
+    {
+      "matchup": "Adelaide United vs Macarthur FC",
+      "games_played": 8,
+      "avg_margin": 1.75,
+      "avg_excitement": 47.5
+    },
+    {
+      "matchup": "Macarthur FC vs Adelaide United",
+      "games_played": 8,
+      "avg_margin": 1.75,
+      "avg_excitement": 47.5
+    },
+    {
+      "matchup": "Macarthur FC vs Western United",
+      "games_played": 8,
+      "avg_margin": 0.62,
+      "avg_excitement": 85.0
+    },
+    {
+      "matchup": "Western United vs Macarthur FC",
+      "games_played": 8,
+      "avg_margin": 0.62,
+      "avg_excitement": 85.0
+    },
+    {
+      "matchup": "Macarthur FC vs Melbourne City FC",
+      "games_played": 5,
+      "avg_margin": 2.2,
+      "avg_excitement": 36.0
+    },
+    {
+      "matchup": "Melbourne City FC vs Macarthur FC",
+      "games_played": 5,
+      "avg_margin": 2.2,
+      "avg_excitement": 36.0
+    },
+    {
+      "matchup": "Macarthur FC vs Perth Glory",
+      "games_played": 7,
+      "avg_margin": 1.86,
+      "avg_excitement": 51.43
+    },
+    {
+      "matchup": "Perth Glory vs Macarthur FC",
+      "games_played": 7,
+      "avg_margin": 1.86,
+      "avg_excitement": 51.43
+    },
+    {
+      "matchup": "Macarthur FC vs Melbourne Victory",
+      "games_played": 5,
+      "avg_margin": 1,
+      "avg_excitement": 76.0
+    },
+    {
+      "matchup": "Melbourne Victory vs Macarthur FC",
+      "games_played": 5,
+      "avg_margin": 1,
+      "avg_excitement": 76.0
+    },
+    {
+      "matchup": "Auckland FC vs Brisbane Roar",
+      "games_played": 1,
+      "avg_margin": 2,
+      "avg_excitement": 10.0
+    },
+    {
+      "matchup": "Brisbane Roar vs Auckland FC",
+      "games_played": 1,
+      "avg_margin": 2,
+      "avg_excitement": 10.0
+    },
+    {
+      "matchup": "Auckland FC vs Sydney FC",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Sydney FC vs Auckland FC",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Auckland FC vs Wellington Phoenix FC",
+      "games_played": 2,
+      "avg_margin": 1.5,
+      "avg_excitement": 50.0
+    },
+    {
+      "matchup": "Wellington Phoenix FC vs Auckland FC",
+      "games_played": 2,
+      "avg_margin": 1.5,
+      "avg_excitement": 50.0
+    },
+    {
+      "matchup": "Auckland FC vs Macarthur FC",
+      "games_played": 2,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Macarthur FC vs Auckland FC",
+      "games_played": 2,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Auckland FC vs Newcastle Jets",
+      "games_played": 1,
+      "avg_margin": 2,
+      "avg_excitement": 10.0
+    },
+    {
+      "matchup": "Newcastle Jets vs Auckland FC",
+      "games_played": 1,
+      "avg_margin": 2,
+      "avg_excitement": 10.0
+    },
+    {
+      "matchup": "Auckland FC vs Melbourne City FC",
+      "games_played": 2,
+      "avg_margin": 1.5,
+      "avg_excitement": 50.0
+    },
+    {
+      "matchup": "Melbourne City FC vs Auckland FC",
+      "games_played": 2,
+      "avg_margin": 1.5,
+      "avg_excitement": 50.0
+    },
+    {
+      "matchup": "Auckland FC vs Western United",
+      "games_played": 1,
+      "avg_margin": 4,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Western United vs Auckland FC",
+      "games_played": 1,
+      "avg_margin": 4,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Auckland FC vs Central Coast Mariners",
+      "games_played": 1,
+      "avg_margin": 3,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Central Coast Mariners vs Auckland FC",
+      "games_played": 1,
+      "avg_margin": 3,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Auckland FC vs Melbourne Victory",
+      "games_played": 1,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "Melbourne Victory vs Auckland FC",
+      "games_played": 1,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "Auckland FC vs Perth Glory",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Perth Glory vs Auckland FC",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Adelaide United vs Auckland FC",
+      "games_played": 1,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "Auckland FC vs Adelaide United",
+      "games_played": 1,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "Auckland FC vs Western Sydney Wanderers",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Western Sydney Wanderers vs Auckland FC",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    }
+  ],
+  "matchup_close_rates": [
+    {
+      "matchup": "Adelaide United vs Sydney FC",
+      "games": 11,
+      "close_games": 9,
+      "close_rate": 81.82
+    },
+    {
+      "matchup": "Sydney FC vs Adelaide United",
+      "games": 11,
+      "close_games": 9,
+      "close_rate": 81.82
+    },
+    {
+      "matchup": "Central Coast Mariners vs Western Sydney Wanderers",
+      "games": 9,
+      "close_games": 5,
+      "close_rate": 55.56
+    },
+    {
+      "matchup": "Western Sydney Wanderers vs Central Coast Mariners",
+      "games": 9,
+      "close_games": 5,
+      "close_rate": 55.56
+    },
+    {
+      "matchup": "Melbourne City FC vs Melbourne Victory",
+      "games": 12,
+      "close_games": 8,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Melbourne Victory vs Melbourne City FC",
+      "games": 12,
+      "close_games": 8,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Wellington Phoenix FC vs Western United",
+      "games": 10,
+      "close_games": 6,
+      "close_rate": 60.0
+    },
+    {
+      "matchup": "Western United vs Wellington Phoenix FC",
+      "games": 10,
+      "close_games": 6,
+      "close_rate": 60.0
+    },
+    {
+      "matchup": "Brisbane Roar vs Perth Glory",
+      "games": 9,
+      "close_games": 6,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Perth Glory vs Brisbane Roar",
+      "games": 9,
+      "close_games": 6,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Melbourne Victory vs Western Sydney Wanderers",
+      "games": 6,
+      "close_games": 4,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Western Sydney Wanderers vs Melbourne Victory",
+      "games": 6,
+      "close_games": 4,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Perth Glory vs Western United",
+      "games": 7,
+      "close_games": 5,
+      "close_rate": 71.43
+    },
+    {
+      "matchup": "Western United vs Perth Glory",
+      "games": 7,
+      "close_games": 5,
+      "close_rate": 71.43
+    },
+    {
+      "matchup": "Central Coast Mariners vs Newcastle Jets",
+      "games": 9,
+      "close_games": 7,
+      "close_rate": 77.78
+    },
+    {
+      "matchup": "Newcastle Jets vs Central Coast Mariners",
+      "games": 9,
+      "close_games": 7,
+      "close_rate": 77.78
+    },
+    {
+      "matchup": "Adelaide United vs Melbourne City FC",
+      "games": 10,
+      "close_games": 7,
+      "close_rate": 70.0
+    },
+    {
+      "matchup": "Melbourne City FC vs Adelaide United",
+      "games": 10,
+      "close_games": 7,
+      "close_rate": 70.0
+    },
+    {
+      "matchup": "Sydney FC vs Wellington Phoenix FC",
+      "games": 9,
+      "close_games": 8,
+      "close_rate": 88.89
+    },
+    {
+      "matchup": "Wellington Phoenix FC vs Sydney FC",
+      "games": 9,
+      "close_games": 8,
+      "close_rate": 88.89
+    },
+    {
+      "matchup": "Brisbane Roar vs Melbourne Victory",
+      "games": 7,
+      "close_games": 3,
+      "close_rate": 42.86
+    },
+    {
+      "matchup": "Melbourne Victory vs Brisbane Roar",
+      "games": 7,
+      "close_games": 3,
+      "close_rate": 42.86
+    },
+    {
+      "matchup": "Adelaide United vs Newcastle Jets",
+      "games": 9,
+      "close_games": 7,
+      "close_rate": 77.78
+    },
+    {
+      "matchup": "Newcastle Jets vs Adelaide United",
+      "games": 9,
+      "close_games": 7,
+      "close_rate": 77.78
+    },
+    {
+      "matchup": "Sydney FC vs Western Sydney Wanderers",
+      "games": 10,
+      "close_games": 8,
+      "close_rate": 80.0
+    },
+    {
+      "matchup": "Western Sydney Wanderers vs Sydney FC",
+      "games": 10,
+      "close_games": 8,
+      "close_rate": 80.0
+    },
+    {
+      "matchup": "Perth Glory vs Wellington Phoenix FC",
+      "games": 9,
+      "close_games": 5,
+      "close_rate": 55.56
+    },
+    {
+      "matchup": "Wellington Phoenix FC vs Perth Glory",
+      "games": 9,
+      "close_games": 5,
+      "close_rate": 55.56
+    },
+    {
+      "matchup": "Melbourne City FC vs Western United",
+      "games": 13,
+      "close_games": 11,
+      "close_rate": 84.62
+    },
+    {
+      "matchup": "Western United vs Melbourne City FC",
+      "games": 13,
+      "close_games": 11,
+      "close_rate": 84.62
+    },
+    {
+      "matchup": "Newcastle Jets vs Sydney FC",
+      "games": 7,
+      "close_games": 4,
+      "close_rate": 57.14
+    },
+    {
+      "matchup": "Sydney FC vs Newcastle Jets",
+      "games": 7,
+      "close_games": 4,
+      "close_rate": 57.14
+    },
+    {
+      "matchup": "Brisbane Roar vs Western Sydney Wanderers",
+      "games": 10,
+      "close_games": 9,
+      "close_rate": 90.0
+    },
+    {
+      "matchup": "Western Sydney Wanderers vs Brisbane Roar",
+      "games": 10,
+      "close_games": 9,
+      "close_rate": 90.0
+    },
+    {
+      "matchup": "Melbourne Victory vs Western United",
+      "games": 9,
+      "close_games": 6,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Western United vs Melbourne Victory",
+      "games": 9,
+      "close_games": 6,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Melbourne City FC vs Wellington Phoenix FC",
+      "games": 7,
+      "close_games": 5,
+      "close_rate": 71.43
+    },
+    {
+      "matchup": "Wellington Phoenix FC vs Melbourne City FC",
+      "games": 7,
+      "close_games": 5,
+      "close_rate": 71.43
+    },
+    {
+      "matchup": "Central Coast Mariners vs Perth Glory",
+      "games": 12,
+      "close_games": 9,
+      "close_rate": 75.0
+    },
+    {
+      "matchup": "Perth Glory vs Central Coast Mariners",
+      "games": 12,
+      "close_games": 9,
+      "close_rate": 75.0
+    },
+    {
+      "matchup": "Central Coast Mariners vs Melbourne City FC",
+      "games": 9,
+      "close_games": 6,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Melbourne City FC vs Central Coast Mariners",
+      "games": 9,
+      "close_games": 6,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Newcastle Jets vs Perth Glory",
+      "games": 11,
+      "close_games": 9,
+      "close_rate": 81.82
+    },
+    {
+      "matchup": "Perth Glory vs Newcastle Jets",
+      "games": 11,
+      "close_games": 9,
+      "close_rate": 81.82
+    },
+    {
+      "matchup": "Western Sydney Wanderers vs Western United",
+      "games": 10,
+      "close_games": 9,
+      "close_rate": 90.0
+    },
+    {
+      "matchup": "Western United vs Western Sydney Wanderers",
+      "games": 10,
+      "close_games": 9,
+      "close_rate": 90.0
+    },
+    {
+      "matchup": "Melbourne Victory vs Wellington Phoenix FC",
+      "games": 9,
+      "close_games": 6,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Wellington Phoenix FC vs Melbourne Victory",
+      "games": 9,
+      "close_games": 6,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Adelaide United vs Brisbane Roar",
+      "games": 9,
+      "close_games": 6,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Brisbane Roar vs Adelaide United",
+      "games": 9,
+      "close_games": 6,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Adelaide United vs Central Coast Mariners",
+      "games": 11,
+      "close_games": 5,
+      "close_rate": 45.45
+    },
+    {
+      "matchup": "Central Coast Mariners vs Adelaide United",
+      "games": 11,
+      "close_games": 5,
+      "close_rate": 45.45
+    },
+    {
+      "matchup": "Newcastle Jets vs Western United",
+      "games": 9,
+      "close_games": 6,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Western United vs Newcastle Jets",
+      "games": 9,
+      "close_games": 6,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Brisbane Roar vs Melbourne City FC",
+      "games": 10,
+      "close_games": 6,
+      "close_rate": 60.0
+    },
+    {
+      "matchup": "Melbourne City FC vs Brisbane Roar",
+      "games": 10,
+      "close_games": 6,
+      "close_rate": 60.0
+    },
+    {
+      "matchup": "Melbourne Victory vs Sydney FC",
+      "games": 11,
+      "close_games": 5,
+      "close_rate": 45.45
+    },
+    {
+      "matchup": "Sydney FC vs Melbourne Victory",
+      "games": 11,
+      "close_games": 5,
+      "close_rate": 45.45
+    },
+    {
+      "matchup": "Melbourne City FC vs Western Sydney Wanderers",
+      "games": 8,
+      "close_games": 4,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Western Sydney Wanderers vs Melbourne City FC",
+      "games": 8,
+      "close_games": 4,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Brisbane Roar vs Wellington Phoenix FC",
+      "games": 9,
+      "close_games": 7,
+      "close_rate": 77.78
+    },
+    {
+      "matchup": "Wellington Phoenix FC vs Brisbane Roar",
+      "games": 9,
+      "close_games": 7,
+      "close_rate": 77.78
+    },
+    {
+      "matchup": "Adelaide United vs Melbourne Victory",
+      "games": 12,
+      "close_games": 8,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Melbourne Victory vs Adelaide United",
+      "games": 12,
+      "close_games": 8,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Perth Glory vs Sydney FC",
+      "games": 8,
+      "close_games": 5,
+      "close_rate": 62.5
+    },
+    {
+      "matchup": "Sydney FC vs Perth Glory",
+      "games": 8,
+      "close_games": 5,
+      "close_rate": 62.5
+    },
+    {
+      "matchup": "Central Coast Mariners vs Western United",
+      "games": 7,
+      "close_games": 4,
+      "close_rate": 57.14
+    },
+    {
+      "matchup": "Western United vs Central Coast Mariners",
+      "games": 7,
+      "close_games": 4,
+      "close_rate": 57.14
+    },
+    {
+      "matchup": "Melbourne Victory vs Perth Glory",
+      "games": 8,
+      "close_games": 4,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Perth Glory vs Melbourne Victory",
+      "games": 8,
+      "close_games": 4,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Brisbane Roar vs Central Coast Mariners",
+      "games": 8,
+      "close_games": 4,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Central Coast Mariners vs Brisbane Roar",
+      "games": 8,
+      "close_games": 4,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Newcastle Jets vs Western Sydney Wanderers",
+      "games": 11,
+      "close_games": 8,
+      "close_rate": 72.73
+    },
+    {
+      "matchup": "Western Sydney Wanderers vs Newcastle Jets",
+      "games": 11,
+      "close_games": 8,
+      "close_rate": 72.73
+    },
+    {
+      "matchup": "Sydney FC vs Western United",
+      "games": 10,
+      "close_games": 4,
+      "close_rate": 40.0
+    },
+    {
+      "matchup": "Western United vs Sydney FC",
+      "games": 10,
+      "close_games": 4,
+      "close_rate": 40.0
+    },
+    {
+      "matchup": "Adelaide United vs Wellington Phoenix FC",
+      "games": 7,
+      "close_games": 5,
+      "close_rate": 71.43
+    },
+    {
+      "matchup": "Wellington Phoenix FC vs Adelaide United",
+      "games": 7,
+      "close_games": 5,
+      "close_rate": 71.43
+    },
+    {
+      "matchup": "Melbourne City FC vs Perth Glory",
+      "games": 10,
+      "close_games": 4,
+      "close_rate": 40.0
+    },
+    {
+      "matchup": "Perth Glory vs Melbourne City FC",
+      "games": 10,
+      "close_games": 4,
+      "close_rate": 40.0
+    },
+    {
+      "matchup": "Wellington Phoenix FC vs Western Sydney Wanderers",
+      "games": 9,
+      "close_games": 5,
+      "close_rate": 55.56
+    },
+    {
+      "matchup": "Western Sydney Wanderers vs Wellington Phoenix FC",
+      "games": 9,
+      "close_games": 5,
+      "close_rate": 55.56
+    },
+    {
+      "matchup": "Brisbane Roar vs Sydney FC",
+      "games": 11,
+      "close_games": 8,
+      "close_rate": 72.73
+    },
+    {
+      "matchup": "Sydney FC vs Brisbane Roar",
+      "games": 11,
+      "close_games": 8,
+      "close_rate": 72.73
+    },
+    {
+      "matchup": "Brisbane Roar vs Western United",
+      "games": 7,
+      "close_games": 6,
+      "close_rate": 85.71
+    },
+    {
+      "matchup": "Western United vs Brisbane Roar",
+      "games": 7,
+      "close_games": 6,
+      "close_rate": 85.71
+    },
+    {
+      "matchup": "Central Coast Mariners vs Sydney FC",
+      "games": 10,
+      "close_games": 5,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Sydney FC vs Central Coast Mariners",
+      "games": 10,
+      "close_games": 5,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Perth Glory vs Western Sydney Wanderers",
+      "games": 9,
+      "close_games": 6,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Western Sydney Wanderers vs Perth Glory",
+      "games": 9,
+      "close_games": 6,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Melbourne City FC vs Newcastle Jets",
+      "games": 8,
+      "close_games": 3,
+      "close_rate": 37.5
+    },
+    {
+      "matchup": "Newcastle Jets vs Melbourne City FC",
+      "games": 8,
+      "close_games": 3,
+      "close_rate": 37.5
+    },
+    {
+      "matchup": "Adelaide United vs Western Sydney Wanderers",
+      "games": 9,
+      "close_games": 8,
+      "close_rate": 88.89
+    },
+    {
+      "matchup": "Western Sydney Wanderers vs Adelaide United",
+      "games": 9,
+      "close_games": 8,
+      "close_rate": 88.89
+    },
+    {
+      "matchup": "Brisbane Roar vs Newcastle Jets",
+      "games": 9,
+      "close_games": 7,
+      "close_rate": 77.78
+    },
+    {
+      "matchup": "Newcastle Jets vs Brisbane Roar",
+      "games": 9,
+      "close_games": 7,
+      "close_rate": 77.78
+    },
+    {
+      "matchup": "Melbourne City FC vs Sydney FC",
+      "games": 6,
+      "close_games": 4,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Sydney FC vs Melbourne City FC",
+      "games": 6,
+      "close_games": 4,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Central Coast Mariners vs Wellington Phoenix FC",
+      "games": 9,
+      "close_games": 7,
+      "close_rate": 77.78
+    },
+    {
+      "matchup": "Wellington Phoenix FC vs Central Coast Mariners",
+      "games": 9,
+      "close_games": 7,
+      "close_rate": 77.78
+    },
+    {
+      "matchup": "Melbourne Victory vs Newcastle Jets",
+      "games": 9,
+      "close_games": 6,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Newcastle Jets vs Melbourne Victory",
+      "games": 9,
+      "close_games": 6,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Adelaide United vs Perth Glory",
+      "games": 9,
+      "close_games": 6,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Perth Glory vs Adelaide United",
+      "games": 9,
+      "close_games": 6,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Central Coast Mariners vs Melbourne Victory",
+      "games": 8,
+      "close_games": 8,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Melbourne Victory vs Central Coast Mariners",
+      "games": 8,
+      "close_games": 8,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Newcastle Jets vs Wellington Phoenix FC",
+      "games": 10,
+      "close_games": 5,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Wellington Phoenix FC vs Newcastle Jets",
+      "games": 10,
+      "close_games": 5,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Adelaide United vs Western United",
+      "games": 7,
+      "close_games": 5,
+      "close_rate": 71.43
+    },
+    {
+      "matchup": "Western United vs Adelaide United",
+      "games": 7,
+      "close_games": 5,
+      "close_rate": 71.43
+    },
+    {
+      "matchup": "Macarthur FC vs Western Sydney Wanderers",
+      "games": 8,
+      "close_games": 4,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Western Sydney Wanderers vs Macarthur FC",
+      "games": 8,
+      "close_games": 4,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Central Coast Mariners vs Macarthur FC",
+      "games": 9,
+      "close_games": 6,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Macarthur FC vs Central Coast Mariners",
+      "games": 9,
+      "close_games": 6,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Macarthur FC vs Wellington Phoenix FC",
+      "games": 9,
+      "close_games": 6,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Wellington Phoenix FC vs Macarthur FC",
+      "games": 9,
+      "close_games": 6,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Macarthur FC vs Newcastle Jets",
+      "games": 9,
+      "close_games": 7,
+      "close_rate": 77.78
+    },
+    {
+      "matchup": "Newcastle Jets vs Macarthur FC",
+      "games": 9,
+      "close_games": 7,
+      "close_rate": 77.78
+    },
+    {
+      "matchup": "Macarthur FC vs Sydney FC",
+      "games": 8,
+      "close_games": 4,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Sydney FC vs Macarthur FC",
+      "games": 8,
+      "close_games": 4,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Brisbane Roar vs Macarthur FC",
+      "games": 7,
+      "close_games": 4,
+      "close_rate": 57.14
+    },
+    {
+      "matchup": "Macarthur FC vs Brisbane Roar",
+      "games": 7,
+      "close_games": 4,
+      "close_rate": 57.14
+    },
+    {
+      "matchup": "Adelaide United vs Macarthur FC",
+      "games": 8,
+      "close_games": 4,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Macarthur FC vs Adelaide United",
+      "games": 8,
+      "close_games": 4,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Macarthur FC vs Western United",
+      "games": 8,
+      "close_games": 7,
+      "close_rate": 87.5
+    },
+    {
+      "matchup": "Western United vs Macarthur FC",
+      "games": 8,
+      "close_games": 7,
+      "close_rate": 87.5
+    },
+    {
+      "matchup": "Macarthur FC vs Melbourne City FC",
+      "games": 5,
+      "close_games": 2,
+      "close_rate": 40.0
+    },
+    {
+      "matchup": "Melbourne City FC vs Macarthur FC",
+      "games": 5,
+      "close_games": 2,
+      "close_rate": 40.0
+    },
+    {
+      "matchup": "Macarthur FC vs Perth Glory",
+      "games": 7,
+      "close_games": 4,
+      "close_rate": 57.14
+    },
+    {
+      "matchup": "Perth Glory vs Macarthur FC",
+      "games": 7,
+      "close_games": 4,
+      "close_rate": 57.14
+    },
+    {
+      "matchup": "Macarthur FC vs Melbourne Victory",
+      "games": 5,
+      "close_games": 4,
+      "close_rate": 80.0
+    },
+    {
+      "matchup": "Melbourne Victory vs Macarthur FC",
+      "games": 5,
+      "close_games": 4,
+      "close_rate": 80.0
+    },
+    {
+      "matchup": "Auckland FC vs Brisbane Roar",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Brisbane Roar vs Auckland FC",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Auckland FC vs Sydney FC",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Sydney FC vs Auckland FC",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Auckland FC vs Wellington Phoenix FC",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Wellington Phoenix FC vs Auckland FC",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Auckland FC vs Macarthur FC",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Macarthur FC vs Auckland FC",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Auckland FC vs Newcastle Jets",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Newcastle Jets vs Auckland FC",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Auckland FC vs Melbourne City FC",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Melbourne City FC vs Auckland FC",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Auckland FC vs Western United",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Western United vs Auckland FC",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Auckland FC vs Central Coast Mariners",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Central Coast Mariners vs Auckland FC",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Auckland FC vs Melbourne Victory",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Melbourne Victory vs Auckland FC",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Auckland FC vs Perth Glory",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Perth Glory vs Auckland FC",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Adelaide United vs Auckland FC",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Auckland FC vs Adelaide United",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Auckland FC vs Western Sydney Wanderers",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Western Sydney Wanderers vs Auckland FC",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    }
+  ],
+  "form_strengths": [
+    {
+      "team": "Adelaide United",
+      "strength": 77.3
+    },
+    {
+      "team": "Auckland FC",
+      "strength": 83.3
+    },
+    {
+      "team": "Brisbane Roar",
+      "strength": 64.0
+    },
+    {
+      "team": "Central Coast Mariners",
+      "strength": 54.7
+    },
+    {
+      "team": "Macarthur FC",
+      "strength": 72.0
+    },
+    {
+      "team": "Melbourne City FC",
+      "strength": 60.0
+    },
+    {
+      "team": "Melbourne Victory",
+      "strength": 74.0
+    },
+    {
+      "team": "Newcastle Jets",
+      "strength": 54.7
+    },
+    {
+      "team": "Perth Glory",
+      "strength": 54.7
+    },
+    {
+      "team": "Sydney FC",
+      "strength": 66.0
+    },
+    {
+      "team": "Wellington Phoenix FC",
+      "strength": 64.0
+    },
+    {
+      "team": "Western Sydney Wanderers",
+      "strength": 72.7
+    },
+    {
+      "team": "Western United",
+      "strength": 73.3
+    }
+  ],
+  "team_margin_ratings": [
+    {
+      "team": "Adelaide United",
+      "avg_margin": 0.5
+    },
+    {
+      "team": "Auckland FC",
+      "avg_margin": 0.4
+    },
+    {
+      "team": "Brisbane Roar",
+      "avg_margin": -0.9
+    },
+    {
+      "team": "Central Coast Mariners",
+      "avg_margin": -0.2
+    },
+    {
+      "team": "Macarthur FC",
+      "avg_margin": 0.5
+    },
+    {
+      "team": "Melbourne City FC",
+      "avg_margin": 0.3
+    },
+    {
+      "team": "Melbourne Victory",
+      "avg_margin": 0.3
+    },
+    {
+      "team": "Newcastle Jets",
+      "avg_margin": -0.3
+    },
+    {
+      "team": "Perth Glory",
+      "avg_margin": -1.2
+    },
+    {
+      "team": "Sydney FC",
+      "avg_margin": 0.8
+    },
+    {
+      "team": "Wellington Phoenix FC",
+      "avg_margin": -0.6
+    },
+    {
+      "team": "Western Sydney Wanderers",
+      "avg_margin": 0.4
+    },
+    {
+      "team": "Western United",
+      "avg_margin": 0.6
+    }
+  ]
+}

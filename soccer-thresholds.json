@@ -1,0 +1,200 @@
+[
+  {
+    "league_key": "usa.1",
+    "slug": "usa-1",
+    "file": "soccer-usa-1-flytime-v1.json",
+    "tag": "MLS",
+    "threshold": 96,
+    "games": 600,
+    "teams": 29
+  },
+  {
+    "league_key": "eng.1",
+    "slug": "eng-1",
+    "file": "soccer-eng-1-flytime-v1.json",
+    "tag": "EPL",
+    "threshold": 96,
+    "games": 600,
+    "teams": 27
+  },
+  {
+    "league_key": "esp.1",
+    "slug": "esp-1",
+    "file": "soccer-esp-1-flytime-v1.json",
+    "tag": "LIGA",
+    "threshold": 96,
+    "games": 600,
+    "teams": 27
+  },
+  {
+    "league_key": "ger.1",
+    "slug": "ger-1",
+    "file": "soccer-ger-1-flytime-v1.json",
+    "tag": "BUN",
+    "threshold": 92,
+    "games": 500,
+    "teams": 24
+  },
+  {
+    "league_key": "ita.1",
+    "slug": "ita-1",
+    "file": "soccer-ita-1-flytime-v1.json",
+    "tag": "SER",
+    "threshold": 95,
+    "games": 600,
+    "teams": 30
+  },
+  {
+    "league_key": "fra.1",
+    "slug": "fra-1",
+    "file": "soccer-fra-1-flytime-v1.json",
+    "tag": "L1",
+    "threshold": 95,
+    "games": 600,
+    "teams": 27
+  },
+  {
+    "league_key": "eng.2",
+    "slug": "eng-2",
+    "file": "soccer-eng-2-flytime-v1.json",
+    "tag": "CH",
+    "threshold": 98,
+    "games": 600,
+    "teams": 41
+  },
+  {
+    "league_key": "ned.1",
+    "slug": "ned-1",
+    "file": "soccer-ned-1-flytime-v1.json",
+    "tag": "ERE",
+    "threshold": 88,
+    "games": 600,
+    "teams": 25
+  },
+  {
+    "league_key": "por.1",
+    "slug": "por-1",
+    "file": "soccer-por-1-flytime-v1.json",
+    "tag": "POR",
+    "threshold": 97,
+    "games": 600,
+    "teams": 27
+  },
+  {
+    "league_key": "sco.1",
+    "slug": "sco-1",
+    "file": "soccer-sco-1-flytime-v1.json",
+    "tag": "SCO",
+    "threshold": 85,
+    "games": 552,
+    "teams": 14
+  },
+  {
+    "league_key": "tur.1",
+    "slug": "tur-1",
+    "file": "soccer-tur-1-flytime-v1.json",
+    "tag": "TUR",
+    "threshold": 95,
+    "games": 600,
+    "teams": 30
+  },
+  {
+    "league_key": "bra.1",
+    "slug": "bra-1",
+    "file": "soccer-bra-1-flytime-v1.json",
+    "tag": "BRA",
+    "threshold": 97,
+    "games": 599,
+    "teams": 29
+  },
+  {
+    "league_key": "arg.1",
+    "slug": "arg-1",
+    "file": "soccer-arg-1-flytime-v1.json",
+    "tag": "ARG",
+    "threshold": 98,
+    "games": 569,
+    "teams": 32
+  },
+  {
+    "league_key": "mex.1",
+    "slug": "mex-1",
+    "file": "soccer-mex-1-flytime-v1.json",
+    "tag": "MX",
+    "threshold": 90,
+    "games": 600,
+    "teams": 20
+  },
+  {
+    "league_key": "aus.1",
+    "slug": "aus-1",
+    "file": "soccer-aus-1-flytime-v1.json",
+    "tag": "ALE",
+    "threshold": 85,
+    "games": 600,
+    "teams": 13
+  },
+  {
+    "league_key": "irl.1",
+    "slug": "irl-1",
+    "file": "soccer-irl-1-flytime-v1.json",
+    "tag": "IRL",
+    "threshold": 80,
+    "games": 566,
+    "teams": 14
+  },
+  {
+    "league_key": "ind.1",
+    "slug": "ind-1",
+    "file": "soccer-ind-1-flytime-v1.json",
+    "tag": "ISL",
+    "threshold": 85,
+    "games": 595,
+    "teams": 14
+  },
+  {
+    "league_key": "rsa.1",
+    "slug": "rsa-1",
+    "file": "soccer-rsa-1-flytime-v1.json",
+    "tag": "PSL",
+    "threshold": 95,
+    "games": 600,
+    "teams": 24
+  },
+  {
+    "league_key": "eng.w.1",
+    "slug": "eng-w-1",
+    "file": "soccer-eng-w-1-flytime-v1.json",
+    "tag": "WSL",
+    "threshold": 78,
+    "games": 600,
+    "teams": 15
+  },
+  {
+    "league_key": "uefa.champions",
+    "slug": "uefa-champions",
+    "file": "soccer-uefa-champions-flytime-v1.json",
+    "tag": "UCL",
+    "threshold": 93,
+    "games": 600,
+    "teams": 80
+  },
+  {
+    "league_key": "uefa.europa",
+    "slug": "uefa-europa",
+    "file": "soccer-uefa-europa-flytime-v1.json",
+    "tag": "UEL",
+    "threshold": 95,
+    "games": 600,
+    "teams": 118
+  },
+  {
+    "league_key": "conmebol.libertadores",
+    "slug": "conmebol-libertadores",
+    "file": "soccer-conmebol-libertadores-flytime-v1.json",
+    "tag": "LIB",
+    "threshold": 96,
+    "games": 576,
+    "teams": 86
+  }
+]

@@ -1,6 +1,6 @@
 // ScoreFly service worker
 // Bump CACHE on every deploy so devices pick up the new files.
-const CACHE = 'scorefly-v91';
+const CACHE = 'scorefly-v92';
 
 // App shell + icons. Relative paths so it works under the /statfly/ GitHub Pages path.
 const SHELL = [
@@ -37,7 +37,29 @@ const SHELL = [
   './mlb-flytime-v1.json',
   './nhl-flytime-v1.json',
   './ncaaf-flytime-v1.json',
-  './nrl-flytime-v1.json'
+  './nrl-flytime-v1.json',
+  './soccer-usa-1-flytime-v1.json',
+  './soccer-eng-1-flytime-v1.json',
+  './soccer-esp-1-flytime-v1.json',
+  './soccer-ger-1-flytime-v1.json',
+  './soccer-ita-1-flytime-v1.json',
+  './soccer-fra-1-flytime-v1.json',
+  './soccer-eng-2-flytime-v1.json',
+  './soccer-ned-1-flytime-v1.json',
+  './soccer-por-1-flytime-v1.json',
+  './soccer-sco-1-flytime-v1.json',
+  './soccer-tur-1-flytime-v1.json',
+  './soccer-bra-1-flytime-v1.json',
+  './soccer-arg-1-flytime-v1.json',
+  './soccer-mex-1-flytime-v1.json',
+  './soccer-aus-1-flytime-v1.json',
+  './soccer-irl-1-flytime-v1.json',
+  './soccer-ind-1-flytime-v1.json',
+  './soccer-rsa-1-flytime-v1.json',
+  './soccer-eng-w-1-flytime-v1.json',
+  './soccer-uefa-champions-flytime-v1.json',
+  './soccer-uefa-europa-flytime-v1.json',
+  './soccer-conmebol-libertadores-flytime-v1.json'
 ];
 
 // Install: pre-cache the shell, then activate immediately.

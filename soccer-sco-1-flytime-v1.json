@@ -1,0 +1,2292 @@
+{
+  "meta": {
+    "sport": "Scottish Prem",
+    "league": "sco.1",
+    "engine": "v1-bootstrap",
+    "formula": "close*0.35 + form_balance*0.25 + margin_balance*0.25 + matchup*0.15",
+    "close_margin": 1,
+    "games_sampled": 552,
+    "week_chunk": 6,
+    "built": "2026-06-10"
+  },
+  "matchup_ratings": [
+    {
+      "matchup": "Celtic vs St Johnstone",
+      "games_played": 7,
+      "avg_margin": 3,
+      "avg_excitement": 20.0
+    },
+    {
+      "matchup": "St Johnstone vs Celtic",
+      "games_played": 7,
+      "avg_margin": 3,
+      "avg_excitement": 20.0
+    },
+    {
+      "matchup": "Hibernian vs St Mirren",
+      "games_played": 10,
+      "avg_margin": 1.4,
+      "avg_excitement": 65.0
+    },
+    {
+      "matchup": "St Mirren vs Hibernian",
+      "games_played": 10,
+      "avg_margin": 1.4,
+      "avg_excitement": 65.0
+    },
+    {
+      "matchup": "Livingston vs Motherwell",
+      "games_played": 6,
+      "avg_margin": 1.33,
+      "avg_excitement": 63.33
+    },
+    {
+      "matchup": "Motherwell vs Livingston",
+      "games_played": 6,
+      "avg_margin": 1.33,
+      "avg_excitement": 63.33
+    },
+    {
+      "matchup": "Hamilton Academical vs Ross County",
+      "games_played": 3,
+      "avg_margin": 1.67,
+      "avg_excitement": 36.67
+    },
+    {
+      "matchup": "Ross County vs Hamilton Academical",
+      "games_played": 3,
+      "avg_margin": 1.67,
+      "avg_excitement": 36.67
+    },
+    {
+      "matchup": "Kilmarnock vs Rangers",
+      "games_played": 6,
+      "avg_margin": 2.33,
+      "avg_excitement": 41.67
+    },
+    {
+      "matchup": "Rangers vs Kilmarnock",
+      "games_played": 6,
+      "avg_margin": 2.33,
+      "avg_excitement": 41.67
+    },
+    {
+      "matchup": "Aberdeen vs Heart of Midlothian",
+      "games_played": 6,
+      "avg_margin": 0.83,
+      "avg_excitement": 80.0
+    },
+    {
+      "matchup": "Heart of Midlothian vs Aberdeen",
+      "games_played": 6,
+      "avg_margin": 0.83,
+      "avg_excitement": 80.0
+    },
+    {
+      "matchup": "Celtic vs Motherwell",
+      "games_played": 8,
+      "avg_margin": 2,
+      "avg_excitement": 36.25
+    },
+    {
+      "matchup": "Motherwell vs Celtic",
+      "games_played": 8,
+      "avg_margin": 2,
+      "avg_excitement": 36.25
+    },
+    {
+      "matchup": "Livingston vs St Johnstone",
+      "games_played": 6,
+      "avg_margin": 1.33,
+      "avg_excitement": 63.33
+    },
+    {
+      "matchup": "St Johnstone vs Livingston",
+      "games_played": 6,
+      "avg_margin": 1.33,
+      "avg_excitement": 63.33
+    },
+    {
+      "matchup": "Hamilton Academical vs Kilmarnock",
+      "games_played": 5,
+      "avg_margin": 1.2,
+      "avg_excitement": 60.0
+    },
+    {
+      "matchup": "Kilmarnock vs Hamilton Academical",
+      "games_played": 5,
+      "avg_margin": 1.2,
+      "avg_excitement": 60.0
+    },
+    {
+      "matchup": "Heart of Midlothian vs Ross County",
+      "games_played": 4,
+      "avg_margin": 0.25,
+      "avg_excitement": 97.5
+    },
+    {
+      "matchup": "Ross County vs Heart of Midlothian",
+      "games_played": 4,
+      "avg_margin": 0.25,
+      "avg_excitement": 97.5
+    },
+    {
+      "matchup": "Hibernian vs Rangers",
+      "games_played": 8,
+      "avg_margin": 1.25,
+      "avg_excitement": 78.75
+    },
+    {
+      "matchup": "Rangers vs Hibernian",
+      "games_played": 8,
+      "avg_margin": 1.25,
+      "avg_excitement": 78.75
+    },
+    {
+      "matchup": "Aberdeen vs St Mirren",
+      "games_played": 10,
+      "avg_margin": 1.5,
+      "avg_excitement": 57.0
+    },
+    {
+      "matchup": "St Mirren vs Aberdeen",
+      "games_played": 10,
+      "avg_margin": 1.5,
+      "avg_excitement": 57.0
+    },
+    {
+      "matchup": "Hamilton Academical vs Motherwell",
+      "games_played": 2,
+      "avg_margin": 2.5,
+      "avg_excitement": 5.0
+    },
+    {
+      "matchup": "Motherwell vs Hamilton Academical",
+      "games_played": 2,
+      "avg_margin": 2.5,
+      "avg_excitement": 5.0
+    },
+    {
+      "matchup": "Hibernian vs St Johnstone",
+      "games_played": 8,
+      "avg_margin": 1.25,
+      "avg_excitement": 61.25
+    },
+    {
+      "matchup": "St Johnstone vs Hibernian",
+      "games_played": 8,
+      "avg_margin": 1.25,
+      "avg_excitement": 61.25
+    },
+    {
+      "matchup": "Aberdeen vs Kilmarnock",
+      "games_played": 6,
+      "avg_margin": 1.83,
+      "avg_excitement": 35.0
+    },
+    {
+      "matchup": "Kilmarnock vs Aberdeen",
+      "games_played": 6,
+      "avg_margin": 1.83,
+      "avg_excitement": 35.0
+    },
+    {
+      "matchup": "Livingston vs Ross County",
+      "games_played": 6,
+      "avg_margin": 1.5,
+      "avg_excitement": 50.0
+    },
+    {
+      "matchup": "Ross County vs Livingston",
+      "games_played": 6,
+      "avg_margin": 1.5,
+      "avg_excitement": 50.0
+    },
+    {
+      "matchup": "Rangers vs St Mirren",
+      "games_played": 8,
+      "avg_margin": 1.38,
+      "avg_excitement": 68.75
+    },
+    {
+      "matchup": "St Mirren vs Rangers",
+      "games_played": 8,
+      "avg_margin": 1.38,
+      "avg_excitement": 68.75
+    },
+    {
+      "matchup": "Celtic vs Heart of Midlothian",
+      "games_played": 7,
+      "avg_margin": 2,
+      "avg_excitement": 30.0
+    },
+    {
+      "matchup": "Heart of Midlothian vs Celtic",
+      "games_played": 7,
+      "avg_margin": 2,
+      "avg_excitement": 30.0
+    },
+    {
+      "matchup": "Aberdeen vs Ross County",
+      "games_played": 8,
+      "avg_margin": 1.38,
+      "avg_excitement": 51.25
+    },
+    {
+      "matchup": "Ross County vs Aberdeen",
+      "games_played": 8,
+      "avg_margin": 1.38,
+      "avg_excitement": 51.25
+    },
+    {
+      "matchup": "Hamilton Academical vs Heart of Midlothian",
+      "games_played": 1,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "Heart of Midlothian vs Hamilton Academical",
+      "games_played": 1,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "Livingston vs St Mirren",
+      "games_played": 6,
+      "avg_margin": 0.83,
+      "avg_excitement": 91.67
+    },
+    {
+      "matchup": "St Mirren vs Livingston",
+      "games_played": 6,
+      "avg_margin": 0.83,
+      "avg_excitement": 91.67
+    },
+    {
+      "matchup": "Hibernian vs Motherwell",
+      "games_played": 10,
+      "avg_margin": 1.7,
+      "avg_excitement": 48.0
+    },
+    {
+      "matchup": "Motherwell vs Hibernian",
+      "games_played": 10,
+      "avg_margin": 1.7,
+      "avg_excitement": 48.0
+    },
+    {
+      "matchup": "Kilmarnock vs St Johnstone",
+      "games_played": 8,
+      "avg_margin": 1.25,
+      "avg_excitement": 70.0
+    },
+    {
+      "matchup": "St Johnstone vs Kilmarnock",
+      "games_played": 8,
+      "avg_margin": 1.25,
+      "avg_excitement": 70.0
+    },
+    {
+      "matchup": "Celtic vs Rangers",
+      "games_played": 7,
+      "avg_margin": 2,
+      "avg_excitement": 40.0
+    },
+    {
+      "matchup": "Rangers vs Celtic",
+      "games_played": 7,
+      "avg_margin": 2,
+      "avg_excitement": 40.0
+    },
+    {
+      "matchup": "Celtic vs Hamilton Academical",
+      "games_played": 3,
+      "avg_margin": 1.67,
+      "avg_excitement": 60.0
+    },
+    {
+      "matchup": "Hamilton Academical vs Celtic",
+      "games_played": 3,
+      "avg_margin": 1.67,
+      "avg_excitement": 60.0
+    },
+    {
+      "matchup": "Aberdeen vs St Johnstone",
+      "games_played": 9,
+      "avg_margin": 0.67,
+      "avg_excitement": 93.33
+    },
+    {
+      "matchup": "St Johnstone vs Aberdeen",
+      "games_played": 9,
+      "avg_margin": 0.67,
+      "avg_excitement": 93.33
+    },
+    {
+      "matchup": "Heart of Midlothian vs Motherwell",
+      "games_played": 7,
+      "avg_margin": 1.71,
+      "avg_excitement": 42.86
+    },
+    {
+      "matchup": "Motherwell vs Heart of Midlothian",
+      "games_played": 7,
+      "avg_margin": 1.71,
+      "avg_excitement": 42.86
+    },
+    {
+      "matchup": "Hibernian vs Kilmarnock",
+      "games_played": 6,
+      "avg_margin": 0.83,
+      "avg_excitement": 80.0
+    },
+    {
+      "matchup": "Kilmarnock vs Hibernian",
+      "games_played": 6,
+      "avg_margin": 0.83,
+      "avg_excitement": 80.0
+    },
+    {
+      "matchup": "Livingston vs Rangers",
+      "games_played": 6,
+      "avg_margin": 1.83,
+      "avg_excitement": 23.33
+    },
+    {
+      "matchup": "Rangers vs Livingston",
+      "games_played": 6,
+      "avg_margin": 1.83,
+      "avg_excitement": 23.33
+    },
+    {
+      "matchup": "Ross County vs St Mirren",
+      "games_played": 8,
+      "avg_margin": 0.88,
+      "avg_excitement": 82.5
+    },
+    {
+      "matchup": "St Mirren vs Ross County",
+      "games_played": 8,
+      "avg_margin": 0.88,
+      "avg_excitement": 82.5
+    },
+    {
+      "matchup": "Aberdeen vs Livingston",
+      "games_played": 6,
+      "avg_margin": 2.5,
+      "avg_excitement": 28.33
+    },
+    {
+      "matchup": "Livingston vs Aberdeen",
+      "games_played": 6,
+      "avg_margin": 2.5,
+      "avg_excitement": 28.33
+    },
+    {
+      "matchup": "Motherwell vs Ross County",
+      "games_played": 7,
+      "avg_margin": 2.29,
+      "avg_excitement": 47.14
+    },
+    {
+      "matchup": "Ross County vs Motherwell",
+      "games_played": 7,
+      "avg_margin": 2.29,
+      "avg_excitement": 47.14
+    },
+    {
+      "matchup": "Hamilton Academical vs St Mirren",
+      "games_played": 2,
+      "avg_margin": 0.5,
+      "avg_excitement": 95.0
+    },
+    {
+      "matchup": "St Mirren vs Hamilton Academical",
+      "games_played": 2,
+      "avg_margin": 0.5,
+      "avg_excitement": 95.0
+    },
+    {
+      "matchup": "Rangers vs St Johnstone",
+      "games_played": 8,
+      "avg_margin": 2,
+      "avg_excitement": 45.0
+    },
+    {
+      "matchup": "St Johnstone vs Rangers",
+      "games_played": 8,
+      "avg_margin": 2,
+      "avg_excitement": 45.0
+    },
+    {
+      "matchup": "Celtic vs Kilmarnock",
+      "games_played": 6,
+      "avg_margin": 3.33,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Kilmarnock vs Celtic",
+      "games_played": 6,
+      "avg_margin": 3.33,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Heart of Midlothian vs Hibernian",
+      "games_played": 5,
+      "avg_margin": 0.4,
+      "avg_excitement": 96.0
+    },
+    {
+      "matchup": "Hibernian vs Heart of Midlothian",
+      "games_played": 5,
+      "avg_margin": 0.4,
+      "avg_excitement": 96.0
+    },
+    {
+      "matchup": "Celtic vs Hibernian",
+      "games_played": 9,
+      "avg_margin": 1.78,
+      "avg_excitement": 43.33
+    },
+    {
+      "matchup": "Hibernian vs Celtic",
+      "games_played": 9,
+      "avg_margin": 1.78,
+      "avg_excitement": 43.33
+    },
+    {
+      "matchup": "Hamilton Academical vs Livingston",
+      "games_played": 4,
+      "avg_margin": 1,
+      "avg_excitement": 72.5
+    },
+    {
+      "matchup": "Livingston vs Hamilton Academical",
+      "games_played": 4,
+      "avg_margin": 1,
+      "avg_excitement": 72.5
+    },
+    {
+      "matchup": "Kilmarnock vs Ross County",
+      "games_played": 5,
+      "avg_margin": 1,
+      "avg_excitement": 76.0
+    },
+    {
+      "matchup": "Ross County vs Kilmarnock",
+      "games_played": 5,
+      "avg_margin": 1,
+      "avg_excitement": 76.0
+    },
+    {
+      "matchup": "Aberdeen vs Rangers",
+      "games_played": 8,
+      "avg_margin": 1.88,
+      "avg_excitement": 55.0
+    },
+    {
+      "matchup": "Rangers vs Aberdeen",
+      "games_played": 8,
+      "avg_margin": 1.88,
+      "avg_excitement": 55.0
+    },
+    {
+      "matchup": "Motherwell vs St Johnstone",
+      "games_played": 11,
+      "avg_margin": 0.91,
+      "avg_excitement": 84.55
+    },
+    {
+      "matchup": "St Johnstone vs Motherwell",
+      "games_played": 11,
+      "avg_margin": 0.91,
+      "avg_excitement": 84.55
+    },
+    {
+      "matchup": "Heart of Midlothian vs St Mirren",
+      "games_played": 7,
+      "avg_margin": 1.57,
+      "avg_excitement": 54.29
+    },
+    {
+      "matchup": "St Mirren vs Heart of Midlothian",
+      "games_played": 7,
+      "avg_margin": 1.57,
+      "avg_excitement": 54.29
+    },
+    {
+      "matchup": "Aberdeen vs Hibernian",
+      "games_played": 10,
+      "avg_margin": 1.7,
+      "avg_excitement": 41.0
+    },
+    {
+      "matchup": "Hibernian vs Aberdeen",
+      "games_played": 10,
+      "avg_margin": 1.7,
+      "avg_excitement": 41.0
+    },
+    {
+      "matchup": "Heart of Midlothian vs Kilmarnock",
+      "games_played": 7,
+      "avg_margin": 1.14,
+      "avg_excitement": 68.57
+    },
+    {
+      "matchup": "Kilmarnock vs Heart of Midlothian",
+      "games_played": 7,
+      "avg_margin": 1.14,
+      "avg_excitement": 68.57
+    },
+    {
+      "matchup": "Motherwell vs St Mirren",
+      "games_played": 7,
+      "avg_margin": 1.14,
+      "avg_excitement": 68.57
+    },
+    {
+      "matchup": "St Mirren vs Motherwell",
+      "games_played": 7,
+      "avg_margin": 1.14,
+      "avg_excitement": 68.57
+    },
+    {
+      "matchup": "Ross County vs St Johnstone",
+      "games_played": 9,
+      "avg_margin": 0.67,
+      "avg_excitement": 85.56
+    },
+    {
+      "matchup": "St Johnstone vs Ross County",
+      "games_played": 9,
+      "avg_margin": 0.67,
+      "avg_excitement": 85.56
+    },
+    {
+      "matchup": "Celtic vs Livingston",
+      "games_played": 8,
+      "avg_margin": 1.5,
+      "avg_excitement": 58.75
+    },
+    {
+      "matchup": "Livingston vs Celtic",
+      "games_played": 8,
+      "avg_margin": 1.5,
+      "avg_excitement": 58.75
+    },
+    {
+      "matchup": "Hamilton Academical vs Rangers",
+      "games_played": 3,
+      "avg_margin": 5,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Rangers vs Hamilton Academical",
+      "games_played": 3,
+      "avg_margin": 5,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Celtic vs Ross County",
+      "games_played": 9,
+      "avg_margin": 3.11,
+      "avg_excitement": 15.56
+    },
+    {
+      "matchup": "Ross County vs Celtic",
+      "games_played": 9,
+      "avg_margin": 3.11,
+      "avg_excitement": 15.56
+    },
+    {
+      "matchup": "Hamilton Academical vs Hibernian",
+      "games_played": 3,
+      "avg_margin": 1.67,
+      "avg_excitement": 60.0
+    },
+    {
+      "matchup": "Hibernian vs Hamilton Academical",
+      "games_played": 3,
+      "avg_margin": 1.67,
+      "avg_excitement": 60.0
+    },
+    {
+      "matchup": "Kilmarnock vs Livingston",
+      "games_played": 6,
+      "avg_margin": 1.5,
+      "avg_excitement": 61.67
+    },
+    {
+      "matchup": "Livingston vs Kilmarnock",
+      "games_played": 6,
+      "avg_margin": 1.5,
+      "avg_excitement": 61.67
+    },
+    {
+      "matchup": "Aberdeen vs Motherwell",
+      "games_played": 9,
+      "avg_margin": 1.56,
+      "avg_excitement": 53.33
+    },
+    {
+      "matchup": "Motherwell vs Aberdeen",
+      "games_played": 9,
+      "avg_margin": 1.56,
+      "avg_excitement": 53.33
+    },
+    {
+      "matchup": "St Johnstone vs St Mirren",
+      "games_played": 8,
+      "avg_margin": 1.12,
+      "avg_excitement": 62.5
+    },
+    {
+      "matchup": "St Mirren vs St Johnstone",
+      "games_played": 8,
+      "avg_margin": 1.12,
+      "avg_excitement": 62.5
+    },
+    {
+      "matchup": "Heart of Midlothian vs Rangers",
+      "games_played": 9,
+      "avg_margin": 1.44,
+      "avg_excitement": 62.22
+    },
+    {
+      "matchup": "Rangers vs Heart of Midlothian",
+      "games_played": 9,
+      "avg_margin": 1.44,
+      "avg_excitement": 62.22
+    },
+    {
+      "matchup": "Hibernian vs Ross County",
+      "games_played": 11,
+      "avg_margin": 1.27,
+      "avg_excitement": 55.45
+    },
+    {
+      "matchup": "Ross County vs Hibernian",
+      "games_played": 11,
+      "avg_margin": 1.27,
+      "avg_excitement": 55.45
+    },
+    {
+      "matchup": "Kilmarnock vs St Mirren",
+      "games_played": 6,
+      "avg_margin": 0.5,
+      "avg_excitement": 95.0
+    },
+    {
+      "matchup": "St Mirren vs Kilmarnock",
+      "games_played": 6,
+      "avg_margin": 0.5,
+      "avg_excitement": 95.0
+    },
+    {
+      "matchup": "Heart of Midlothian vs Livingston",
+      "games_played": 8,
+      "avg_margin": 1,
+      "avg_excitement": 72.5
+    },
+    {
+      "matchup": "Livingston vs Heart of Midlothian",
+      "games_played": 8,
+      "avg_margin": 1,
+      "avg_excitement": 72.5
+    },
+    {
+      "matchup": "Hamilton Academical vs St Johnstone",
+      "games_played": 3,
+      "avg_margin": 1,
+      "avg_excitement": 66.67
+    },
+    {
+      "matchup": "St Johnstone vs Hamilton Academical",
+      "games_played": 3,
+      "avg_margin": 1,
+      "avg_excitement": 66.67
+    },
+    {
+      "matchup": "Aberdeen vs Celtic",
+      "games_played": 7,
+      "avg_margin": 1.14,
+      "avg_excitement": 78.57
+    },
+    {
+      "matchup": "Celtic vs Aberdeen",
+      "games_played": 7,
+      "avg_margin": 1.14,
+      "avg_excitement": 78.57
+    },
+    {
+      "matchup": "Motherwell vs Rangers",
+      "games_played": 7,
+      "avg_margin": 2,
+      "avg_excitement": 50.0
+    },
+    {
+      "matchup": "Rangers vs Motherwell",
+      "games_played": 7,
+      "avg_margin": 2,
+      "avg_excitement": 50.0
+    },
+    {
+      "matchup": "Celtic vs St Mirren",
+      "games_played": 7,
+      "avg_margin": 2.57,
+      "avg_excitement": 24.29
+    },
+    {
+      "matchup": "St Mirren vs Celtic",
+      "games_played": 7,
+      "avg_margin": 2.57,
+      "avg_excitement": 24.29
+    },
+    {
+      "matchup": "Aberdeen vs Hamilton Academical",
+      "games_played": 4,
+      "avg_margin": 1,
+      "avg_excitement": 72.5
+    },
+    {
+      "matchup": "Hamilton Academical vs Aberdeen",
+      "games_played": 4,
+      "avg_margin": 1,
+      "avg_excitement": 72.5
+    },
+    {
+      "matchup": "Hibernian vs Livingston",
+      "games_played": 7,
+      "avg_margin": 1.57,
+      "avg_excitement": 54.29
+    },
+    {
+      "matchup": "Livingston vs Hibernian",
+      "games_played": 7,
+      "avg_margin": 1.57,
+      "avg_excitement": 54.29
+    },
+    {
+      "matchup": "Kilmarnock vs Motherwell",
+      "games_played": 6,
+      "avg_margin": 0.67,
+      "avg_excitement": 81.67
+    },
+    {
+      "matchup": "Motherwell vs Kilmarnock",
+      "games_played": 6,
+      "avg_margin": 0.67,
+      "avg_excitement": 81.67
+    },
+    {
+      "matchup": "Rangers vs Ross County",
+      "games_played": 10,
+      "avg_margin": 2.9,
+      "avg_excitement": 15.0
+    },
+    {
+      "matchup": "Ross County vs Rangers",
+      "games_played": 10,
+      "avg_margin": 2.9,
+      "avg_excitement": 15.0
+    },
+    {
+      "matchup": "Heart of Midlothian vs St Johnstone",
+      "games_played": 6,
+      "avg_margin": 0.83,
+      "avg_excitement": 91.67
+    },
+    {
+      "matchup": "St Johnstone vs Heart of Midlothian",
+      "games_played": 6,
+      "avg_margin": 0.83,
+      "avg_excitement": 91.67
+    },
+    {
+      "matchup": "Dundee United vs Rangers",
+      "games_played": 6,
+      "avg_margin": 1.33,
+      "avg_excitement": 75.0
+    },
+    {
+      "matchup": "Rangers vs Dundee United",
+      "games_played": 6,
+      "avg_margin": 1.33,
+      "avg_excitement": 75.0
+    },
+    {
+      "matchup": "Dundee United vs St Mirren",
+      "games_played": 7,
+      "avg_margin": 1.14,
+      "avg_excitement": 68.57
+    },
+    {
+      "matchup": "St Mirren vs Dundee United",
+      "games_played": 7,
+      "avg_margin": 1.14,
+      "avg_excitement": 68.57
+    },
+    {
+      "matchup": "Dundee United vs Hamilton Academical",
+      "games_played": 3,
+      "avg_margin": 0.33,
+      "avg_excitement": 96.67
+    },
+    {
+      "matchup": "Hamilton Academical vs Dundee United",
+      "games_played": 3,
+      "avg_margin": 0.33,
+      "avg_excitement": 96.67
+    },
+    {
+      "matchup": "Dundee United vs Livingston",
+      "games_played": 5,
+      "avg_margin": 1,
+      "avg_excitement": 76.0
+    },
+    {
+      "matchup": "Livingston vs Dundee United",
+      "games_played": 5,
+      "avg_margin": 1,
+      "avg_excitement": 76.0
+    },
+    {
+      "matchup": "Aberdeen vs Dundee United",
+      "games_played": 7,
+      "avg_margin": 1.29,
+      "avg_excitement": 67.14
+    },
+    {
+      "matchup": "Dundee United vs Aberdeen",
+      "games_played": 7,
+      "avg_margin": 1.29,
+      "avg_excitement": 67.14
+    },
+    {
+      "matchup": "Dundee United vs St Johnstone",
+      "games_played": 6,
+      "avg_margin": 0.83,
+      "avg_excitement": 80.0
+    },
+    {
+      "matchup": "St Johnstone vs Dundee United",
+      "games_played": 6,
+      "avg_margin": 0.83,
+      "avg_excitement": 80.0
+    },
+    {
+      "matchup": "Dundee United vs Ross County",
+      "games_played": 7,
+      "avg_margin": 1.14,
+      "avg_excitement": 68.57
+    },
+    {
+      "matchup": "Ross County vs Dundee United",
+      "games_played": 7,
+      "avg_margin": 1.14,
+      "avg_excitement": 68.57
+    },
+    {
+      "matchup": "Dundee United vs Hibernian",
+      "games_played": 5,
+      "avg_margin": 1,
+      "avg_excitement": 76.0
+    },
+    {
+      "matchup": "Hibernian vs Dundee United",
+      "games_played": 5,
+      "avg_margin": 1,
+      "avg_excitement": 76.0
+    },
+    {
+      "matchup": "Dundee United vs Kilmarnock",
+      "games_played": 4,
+      "avg_margin": 1.5,
+      "avg_excitement": 50.0
+    },
+    {
+      "matchup": "Kilmarnock vs Dundee United",
+      "games_played": 4,
+      "avg_margin": 1.5,
+      "avg_excitement": 50.0
+    },
+    {
+      "matchup": "Dundee United vs Motherwell",
+      "games_played": 7,
+      "avg_margin": 0.71,
+      "avg_excitement": 92.86
+    },
+    {
+      "matchup": "Motherwell vs Dundee United",
+      "games_played": 7,
+      "avg_margin": 0.71,
+      "avg_excitement": 92.86
+    },
+    {
+      "matchup": "Celtic vs Dundee United",
+      "games_played": 5,
+      "avg_margin": 3.4,
+      "avg_excitement": 14.0
+    },
+    {
+      "matchup": "Dundee United vs Celtic",
+      "games_played": 5,
+      "avg_margin": 3.4,
+      "avg_excitement": 14.0
+    },
+    {
+      "matchup": "Celtic vs Dundee",
+      "games_played": 4,
+      "avg_margin": 2.75,
+      "avg_excitement": 20.0
+    },
+    {
+      "matchup": "Dundee vs Celtic",
+      "games_played": 4,
+      "avg_margin": 2.75,
+      "avg_excitement": 20.0
+    },
+    {
+      "matchup": "Dundee vs Hibernian",
+      "games_played": 3,
+      "avg_margin": 1,
+      "avg_excitement": 66.67
+    },
+    {
+      "matchup": "Hibernian vs Dundee",
+      "games_played": 3,
+      "avg_margin": 1,
+      "avg_excitement": 66.67
+    },
+    {
+      "matchup": "Dundee United vs Heart of Midlothian",
+      "games_played": 5,
+      "avg_margin": 1.8,
+      "avg_excitement": 40.0
+    },
+    {
+      "matchup": "Heart of Midlothian vs Dundee United",
+      "games_played": 5,
+      "avg_margin": 1.8,
+      "avg_excitement": 40.0
+    },
+    {
+      "matchup": "Dundee vs Motherwell",
+      "games_played": 4,
+      "avg_margin": 2,
+      "avg_excitement": 45.0
+    },
+    {
+      "matchup": "Motherwell vs Dundee",
+      "games_played": 4,
+      "avg_margin": 2,
+      "avg_excitement": 45.0
+    },
+    {
+      "matchup": "Dundee vs Livingston",
+      "games_played": 1,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "Livingston vs Dundee",
+      "games_played": 1,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "Dundee vs Dundee United",
+      "games_played": 2,
+      "avg_margin": 0.5,
+      "avg_excitement": 95.0
+    },
+    {
+      "matchup": "Dundee United vs Dundee",
+      "games_played": 2,
+      "avg_margin": 0.5,
+      "avg_excitement": 95.0
+    },
+    {
+      "matchup": "Dundee vs Rangers",
+      "games_played": 5,
+      "avg_margin": 1.8,
+      "avg_excitement": 40.0
+    },
+    {
+      "matchup": "Rangers vs Dundee",
+      "games_played": 5,
+      "avg_margin": 1.8,
+      "avg_excitement": 40.0
+    },
+    {
+      "matchup": "Dundee vs St Johnstone",
+      "games_played": 3,
+      "avg_margin": 1.33,
+      "avg_excitement": 63.33
+    },
+    {
+      "matchup": "St Johnstone vs Dundee",
+      "games_played": 3,
+      "avg_margin": 1.33,
+      "avg_excitement": 63.33
+    },
+    {
+      "matchup": "Aberdeen vs Dundee",
+      "games_played": 3,
+      "avg_margin": 1.67,
+      "avg_excitement": 60.0
+    },
+    {
+      "matchup": "Dundee vs Aberdeen",
+      "games_played": 3,
+      "avg_margin": 1.67,
+      "avg_excitement": 60.0
+    },
+    {
+      "matchup": "Dundee vs Heart of Midlothian",
+      "games_played": 5,
+      "avg_margin": 1.6,
+      "avg_excitement": 42.0
+    },
+    {
+      "matchup": "Heart of Midlothian vs Dundee",
+      "games_played": 5,
+      "avg_margin": 1.6,
+      "avg_excitement": 42.0
+    },
+    {
+      "matchup": "Dundee vs Ross County",
+      "games_played": 4,
+      "avg_margin": 2.5,
+      "avg_excitement": 22.5
+    },
+    {
+      "matchup": "Ross County vs Dundee",
+      "games_played": 4,
+      "avg_margin": 2.5,
+      "avg_excitement": 22.5
+    },
+    {
+      "matchup": "Dundee vs St Mirren",
+      "games_played": 4,
+      "avg_margin": 1.25,
+      "avg_excitement": 52.5
+    },
+    {
+      "matchup": "St Mirren vs Dundee",
+      "games_played": 4,
+      "avg_margin": 1.25,
+      "avg_excitement": 52.5
+    },
+    {
+      "matchup": "Dundee vs Kilmarnock",
+      "games_played": 4,
+      "avg_margin": 0.5,
+      "avg_excitement": 95.0
+    },
+    {
+      "matchup": "Kilmarnock vs Dundee",
+      "games_played": 4,
+      "avg_margin": 0.5,
+      "avg_excitement": 95.0
+    }
+  ],
+  "matchup_close_rates": [
+    {
+      "matchup": "Celtic vs St Johnstone",
+      "games": 7,
+      "close_games": 2,
+      "close_rate": 28.57
+    },
+    {
+      "matchup": "St Johnstone vs Celtic",
+      "games": 7,
+      "close_games": 2,
+      "close_rate": 28.57
+    },
+    {
+      "matchup": "Hibernian vs St Mirren",
+      "games": 10,
+      "close_games": 7,
+      "close_rate": 70.0
+    },
+    {
+      "matchup": "St Mirren vs Hibernian",
+      "games": 10,
+      "close_games": 7,
+      "close_rate": 70.0
+    },
+    {
+      "matchup": "Livingston vs Motherwell",
+      "games": 6,
+      "close_games": 4,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Motherwell vs Livingston",
+      "games": 6,
+      "close_games": 4,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Hamilton Academical vs Ross County",
+      "games": 3,
+      "close_games": 1,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "Ross County vs Hamilton Academical",
+      "games": 3,
+      "close_games": 1,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "Kilmarnock vs Rangers",
+      "games": 6,
+      "close_games": 3,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Rangers vs Kilmarnock",
+      "games": 6,
+      "close_games": 3,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Aberdeen vs Heart of Midlothian",
+      "games": 6,
+      "close_games": 5,
+      "close_rate": 83.33
+    },
+    {
+      "matchup": "Heart of Midlothian vs Aberdeen",
+      "games": 6,
+      "close_games": 5,
+      "close_rate": 83.33
+    },
+    {
+      "matchup": "Celtic vs Motherwell",
+      "games": 8,
+      "close_games": 3,
+      "close_rate": 37.5
+    },
+    {
+      "matchup": "Motherwell vs Celtic",
+      "games": 8,
+      "close_games": 3,
+      "close_rate": 37.5
+    },
+    {
+      "matchup": "Livingston vs St Johnstone",
+      "games": 6,
+      "close_games": 4,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "St Johnstone vs Livingston",
+      "games": 6,
+      "close_games": 4,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Hamilton Academical vs Kilmarnock",
+      "games": 5,
+      "close_games": 3,
+      "close_rate": 60.0
+    },
+    {
+      "matchup": "Kilmarnock vs Hamilton Academical",
+      "games": 5,
+      "close_games": 3,
+      "close_rate": 60.0
+    },
+    {
+      "matchup": "Heart of Midlothian vs Ross County",
+      "games": 4,
+      "close_games": 4,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Ross County vs Heart of Midlothian",
+      "games": 4,
+      "close_games": 4,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Hibernian vs Rangers",
+      "games": 8,
+      "close_games": 7,
+      "close_rate": 87.5
+    },
+    {
+      "matchup": "Rangers vs Hibernian",
+      "games": 8,
+      "close_games": 7,
+      "close_rate": 87.5
+    },
+    {
+      "matchup": "Aberdeen vs St Mirren",
+      "games": 10,
+      "close_games": 6,
+      "close_rate": 60.0
+    },
+    {
+      "matchup": "St Mirren vs Aberdeen",
+      "games": 10,
+      "close_games": 6,
+      "close_rate": 60.0
+    },
+    {
+      "matchup": "Hamilton Academical vs Motherwell",
+      "games": 2,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Motherwell vs Hamilton Academical",
+      "games": 2,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Hibernian vs St Johnstone",
+      "games": 8,
+      "close_games": 5,
+      "close_rate": 62.5
+    },
+    {
+      "matchup": "St Johnstone vs Hibernian",
+      "games": 8,
+      "close_games": 5,
+      "close_rate": 62.5
+    },
+    {
+      "matchup": "Aberdeen vs Kilmarnock",
+      "games": 6,
+      "close_games": 2,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "Kilmarnock vs Aberdeen",
+      "games": 6,
+      "close_games": 2,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "Livingston vs Ross County",
+      "games": 6,
+      "close_games": 3,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Ross County vs Livingston",
+      "games": 6,
+      "close_games": 3,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Rangers vs St Mirren",
+      "games": 8,
+      "close_games": 6,
+      "close_rate": 75.0
+    },
+    {
+      "matchup": "St Mirren vs Rangers",
+      "games": 8,
+      "close_games": 6,
+      "close_rate": 75.0
+    },
+    {
+      "matchup": "Celtic vs Heart of Midlothian",
+      "games": 7,
+      "close_games": 2,
+      "close_rate": 28.57
+    },
+    {
+      "matchup": "Heart of Midlothian vs Celtic",
+      "games": 7,
+      "close_games": 2,
+      "close_rate": 28.57
+    },
+    {
+      "matchup": "Aberdeen vs Ross County",
+      "games": 8,
+      "close_games": 4,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Ross County vs Aberdeen",
+      "games": 8,
+      "close_games": 4,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Hamilton Academical vs Heart of Midlothian",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Heart of Midlothian vs Hamilton Academical",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Livingston vs St Mirren",
+      "games": 6,
+      "close_games": 6,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "St Mirren vs Livingston",
+      "games": 6,
+      "close_games": 6,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Hibernian vs Motherwell",
+      "games": 10,
+      "close_games": 5,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Motherwell vs Hibernian",
+      "games": 10,
+      "close_games": 5,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Kilmarnock vs St Johnstone",
+      "games": 8,
+      "close_games": 6,
+      "close_rate": 75.0
+    },
+    {
+      "matchup": "St Johnstone vs Kilmarnock",
+      "games": 8,
+      "close_games": 6,
+      "close_rate": 75.0
+    },
+    {
+      "matchup": "Celtic vs Rangers",
+      "games": 7,
+      "close_games": 3,
+      "close_rate": 42.86
+    },
+    {
+      "matchup": "Rangers vs Celtic",
+      "games": 7,
+      "close_games": 3,
+      "close_rate": 42.86
+    },
+    {
+      "matchup": "Celtic vs Hamilton Academical",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Hamilton Academical vs Celtic",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Aberdeen vs St Johnstone",
+      "games": 9,
+      "close_games": 9,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "St Johnstone vs Aberdeen",
+      "games": 9,
+      "close_games": 9,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Heart of Midlothian vs Motherwell",
+      "games": 7,
+      "close_games": 3,
+      "close_rate": 42.86
+    },
+    {
+      "matchup": "Motherwell vs Heart of Midlothian",
+      "games": 7,
+      "close_games": 3,
+      "close_rate": 42.86
+    },
+    {
+      "matchup": "Hibernian vs Kilmarnock",
+      "games": 6,
+      "close_games": 5,
+      "close_rate": 83.33
+    },
+    {
+      "matchup": "Kilmarnock vs Hibernian",
+      "games": 6,
+      "close_games": 5,
+      "close_rate": 83.33
+    },
+    {
+      "matchup": "Livingston vs Rangers",
+      "games": 6,
+      "close_games": 1,
+      "close_rate": 16.67
+    },
+    {
+      "matchup": "Rangers vs Livingston",
+      "games": 6,
+      "close_games": 1,
+      "close_rate": 16.67
+    },
+    {
+      "matchup": "Ross County vs St Mirren",
+      "games": 8,
+      "close_games": 7,
+      "close_rate": 87.5
+    },
+    {
+      "matchup": "St Mirren vs Ross County",
+      "games": 8,
+      "close_games": 7,
+      "close_rate": 87.5
+    },
+    {
+      "matchup": "Aberdeen vs Livingston",
+      "games": 6,
+      "close_games": 2,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "Livingston vs Aberdeen",
+      "games": 6,
+      "close_games": 2,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "Motherwell vs Ross County",
+      "games": 7,
+      "close_games": 4,
+      "close_rate": 57.14
+    },
+    {
+      "matchup": "Ross County vs Motherwell",
+      "games": 7,
+      "close_games": 4,
+      "close_rate": 57.14
+    },
+    {
+      "matchup": "Hamilton Academical vs St Mirren",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "St Mirren vs Hamilton Academical",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Rangers vs St Johnstone",
+      "games": 8,
+      "close_games": 4,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "St Johnstone vs Rangers",
+      "games": 8,
+      "close_games": 4,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Celtic vs Kilmarnock",
+      "games": 6,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Kilmarnock vs Celtic",
+      "games": 6,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Heart of Midlothian vs Hibernian",
+      "games": 5,
+      "close_games": 5,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Hibernian vs Heart of Midlothian",
+      "games": 5,
+      "close_games": 5,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Celtic vs Hibernian",
+      "games": 9,
+      "close_games": 4,
+      "close_rate": 44.44
+    },
+    {
+      "matchup": "Hibernian vs Celtic",
+      "games": 9,
+      "close_games": 4,
+      "close_rate": 44.44
+    },
+    {
+      "matchup": "Hamilton Academical vs Livingston",
+      "games": 4,
+      "close_games": 3,
+      "close_rate": 75.0
+    },
+    {
+      "matchup": "Livingston vs Hamilton Academical",
+      "games": 4,
+      "close_games": 3,
+      "close_rate": 75.0
+    },
+    {
+      "matchup": "Kilmarnock vs Ross County",
+      "games": 5,
+      "close_games": 4,
+      "close_rate": 80.0
+    },
+    {
+      "matchup": "Ross County vs Kilmarnock",
+      "games": 5,
+      "close_games": 4,
+      "close_rate": 80.0
+    },
+    {
+      "matchup": "Aberdeen vs Rangers",
+      "games": 8,
+      "close_games": 5,
+      "close_rate": 62.5
+    },
+    {
+      "matchup": "Rangers vs Aberdeen",
+      "games": 8,
+      "close_games": 5,
+      "close_rate": 62.5
+    },
+    {
+      "matchup": "Motherwell vs St Johnstone",
+      "games": 11,
+      "close_games": 10,
+      "close_rate": 90.91
+    },
+    {
+      "matchup": "St Johnstone vs Motherwell",
+      "games": 11,
+      "close_games": 10,
+      "close_rate": 90.91
+    },
+    {
+      "matchup": "Heart of Midlothian vs St Mirren",
+      "games": 7,
+      "close_games": 4,
+      "close_rate": 57.14
+    },
+    {
+      "matchup": "St Mirren vs Heart of Midlothian",
+      "games": 7,
+      "close_games": 4,
+      "close_rate": 57.14
+    },
+    {
+      "matchup": "Aberdeen vs Hibernian",
+      "games": 10,
+      "close_games": 4,
+      "close_rate": 40.0
+    },
+    {
+      "matchup": "Hibernian vs Aberdeen",
+      "games": 10,
+      "close_games": 4,
+      "close_rate": 40.0
+    },
+    {
+      "matchup": "Heart of Midlothian vs Kilmarnock",
+      "games": 7,
+      "close_games": 5,
+      "close_rate": 71.43
+    },
+    {
+      "matchup": "Kilmarnock vs Heart of Midlothian",
+      "games": 7,
+      "close_games": 5,
+      "close_rate": 71.43
+    },
+    {
+      "matchup": "Motherwell vs St Mirren",
+      "games": 7,
+      "close_games": 5,
+      "close_rate": 71.43
+    },
+    {
+      "matchup": "St Mirren vs Motherwell",
+      "games": 7,
+      "close_games": 5,
+      "close_rate": 71.43
+    },
+    {
+      "matchup": "Ross County vs St Johnstone",
+      "games": 9,
+      "close_games": 8,
+      "close_rate": 88.89
+    },
+    {
+      "matchup": "St Johnstone vs Ross County",
+      "games": 9,
+      "close_games": 8,
+      "close_rate": 88.89
+    },
+    {
+      "matchup": "Celtic vs Livingston",
+      "games": 8,
+      "close_games": 5,
+      "close_rate": 62.5
+    },
+    {
+      "matchup": "Livingston vs Celtic",
+      "games": 8,
+      "close_games": 5,
+      "close_rate": 62.5
+    },
+    {
+      "matchup": "Hamilton Academical vs Rangers",
+      "games": 3,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Rangers vs Hamilton Academical",
+      "games": 3,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Celtic vs Ross County",
+      "games": 9,
+      "close_games": 2,
+      "close_rate": 22.22
+    },
+    {
+      "matchup": "Ross County vs Celtic",
+      "games": 9,
+      "close_games": 2,
+      "close_rate": 22.22
+    },
+    {
+      "matchup": "Hamilton Academical vs Hibernian",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Hibernian vs Hamilton Academical",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Kilmarnock vs Livingston",
+      "games": 6,
+      "close_games": 4,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Livingston vs Kilmarnock",
+      "games": 6,
+      "close_games": 4,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Aberdeen vs Motherwell",
+      "games": 9,
+      "close_games": 5,
+      "close_rate": 55.56
+    },
+    {
+      "matchup": "Motherwell vs Aberdeen",
+      "games": 9,
+      "close_games": 5,
+      "close_rate": 55.56
+    },
+    {
+      "matchup": "St Johnstone vs St Mirren",
+      "games": 8,
+      "close_games": 5,
+      "close_rate": 62.5
+    },
+    {
+      "matchup": "St Mirren vs St Johnstone",
+      "games": 8,
+      "close_games": 5,
+      "close_rate": 62.5
+    },
+    {
+      "matchup": "Heart of Midlothian vs Rangers",
+      "games": 9,
+      "close_games": 6,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Rangers vs Heart of Midlothian",
+      "games": 9,
+      "close_games": 6,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Hibernian vs Ross County",
+      "games": 11,
+      "close_games": 6,
+      "close_rate": 54.55
+    },
+    {
+      "matchup": "Ross County vs Hibernian",
+      "games": 11,
+      "close_games": 6,
+      "close_rate": 54.55
+    },
+    {
+      "matchup": "Kilmarnock vs St Mirren",
+      "games": 6,
+      "close_games": 6,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "St Mirren vs Kilmarnock",
+      "games": 6,
+      "close_games": 6,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Heart of Midlothian vs Livingston",
+      "games": 8,
+      "close_games": 6,
+      "close_rate": 75.0
+    },
+    {
+      "matchup": "Livingston vs Heart of Midlothian",
+      "games": 8,
+      "close_games": 6,
+      "close_rate": 75.0
+    },
+    {
+      "matchup": "Hamilton Academical vs St Johnstone",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "St Johnstone vs Hamilton Academical",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Aberdeen vs Celtic",
+      "games": 7,
+      "close_games": 6,
+      "close_rate": 85.71
+    },
+    {
+      "matchup": "Celtic vs Aberdeen",
+      "games": 7,
+      "close_games": 6,
+      "close_rate": 85.71
+    },
+    {
+      "matchup": "Motherwell vs Rangers",
+      "games": 7,
+      "close_games": 4,
+      "close_rate": 57.14
+    },
+    {
+      "matchup": "Rangers vs Motherwell",
+      "games": 7,
+      "close_games": 4,
+      "close_rate": 57.14
+    },
+    {
+      "matchup": "Celtic vs St Mirren",
+      "games": 7,
+      "close_games": 2,
+      "close_rate": 28.57
+    },
+    {
+      "matchup": "St Mirren vs Celtic",
+      "games": 7,
+      "close_games": 2,
+      "close_rate": 28.57
+    },
+    {
+      "matchup": "Aberdeen vs Hamilton Academical",
+      "games": 4,
+      "close_games": 3,
+      "close_rate": 75.0
+    },
+    {
+      "matchup": "Hamilton Academical vs Aberdeen",
+      "games": 4,
+      "close_games": 3,
+      "close_rate": 75.0
+    },
+    {
+      "matchup": "Hibernian vs Livingston",
+      "games": 7,
+      "close_games": 4,
+      "close_rate": 57.14
+    },
+    {
+      "matchup": "Livingston vs Hibernian",
+      "games": 7,
+      "close_games": 4,
+      "close_rate": 57.14
+    },
+    {
+      "matchup": "Kilmarnock vs Motherwell",
+      "games": 6,
+      "close_games": 5,
+      "close_rate": 83.33
+    },
+    {
+      "matchup": "Motherwell vs Kilmarnock",
+      "games": 6,
+      "close_games": 5,
+      "close_rate": 83.33
+    },
+    {
+      "matchup": "Rangers vs Ross County",
+      "games": 10,
+      "close_games": 2,
+      "close_rate": 20.0
+    },
+    {
+      "matchup": "Ross County vs Rangers",
+      "games": 10,
+      "close_games": 2,
+      "close_rate": 20.0
+    },
+    {
+      "matchup": "Heart of Midlothian vs St Johnstone",
+      "games": 6,
+      "close_games": 6,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "St Johnstone vs Heart of Midlothian",
+      "games": 6,
+      "close_games": 6,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Dundee United vs Rangers",
+      "games": 6,
+      "close_games": 5,
+      "close_rate": 83.33
+    },
+    {
+      "matchup": "Rangers vs Dundee United",
+      "games": 6,
+      "close_games": 5,
+      "close_rate": 83.33
+    },
+    {
+      "matchup": "Dundee United vs St Mirren",
+      "games": 7,
+      "close_games": 5,
+      "close_rate": 71.43
+    },
+    {
+      "matchup": "St Mirren vs Dundee United",
+      "games": 7,
+      "close_games": 5,
+      "close_rate": 71.43
+    },
+    {
+      "matchup": "Dundee United vs Hamilton Academical",
+      "games": 3,
+      "close_games": 3,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Hamilton Academical vs Dundee United",
+      "games": 3,
+      "close_games": 3,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Dundee United vs Livingston",
+      "games": 5,
+      "close_games": 4,
+      "close_rate": 80.0
+    },
+    {
+      "matchup": "Livingston vs Dundee United",
+      "games": 5,
+      "close_games": 4,
+      "close_rate": 80.0
+    },
+    {
+      "matchup": "Aberdeen vs Dundee United",
+      "games": 7,
+      "close_games": 5,
+      "close_rate": 71.43
+    },
+    {
+      "matchup": "Dundee United vs Aberdeen",
+      "games": 7,
+      "close_games": 5,
+      "close_rate": 71.43
+    },
+    {
+      "matchup": "Dundee United vs St Johnstone",
+      "games": 6,
+      "close_games": 5,
+      "close_rate": 83.33
+    },
+    {
+      "matchup": "St Johnstone vs Dundee United",
+      "games": 6,
+      "close_games": 5,
+      "close_rate": 83.33
+    },
+    {
+      "matchup": "Dundee United vs Ross County",
+      "games": 7,
+      "close_games": 5,
+      "close_rate": 71.43
+    },
+    {
+      "matchup": "Ross County vs Dundee United",
+      "games": 7,
+      "close_games": 5,
+      "close_rate": 71.43
+    },
+    {
+      "matchup": "Dundee United vs Hibernian",
+      "games": 5,
+      "close_games": 4,
+      "close_rate": 80.0
+    },
+    {
+      "matchup": "Hibernian vs Dundee United",
+      "games": 5,
+      "close_games": 4,
+      "close_rate": 80.0
+    },
+    {
+      "matchup": "Dundee United vs Kilmarnock",
+      "games": 4,
+      "close_games": 2,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Kilmarnock vs Dundee United",
+      "games": 4,
+      "close_games": 2,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Dundee United vs Motherwell",
+      "games": 7,
+      "close_games": 7,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Motherwell vs Dundee United",
+      "games": 7,
+      "close_games": 7,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Celtic vs Dundee United",
+      "games": 5,
+      "close_games": 1,
+      "close_rate": 20.0
+    },
+    {
+      "matchup": "Dundee United vs Celtic",
+      "games": 5,
+      "close_games": 1,
+      "close_rate": 20.0
+    },
+    {
+      "matchup": "Celtic vs Dundee",
+      "games": 4,
+      "close_games": 1,
+      "close_rate": 25.0
+    },
+    {
+      "matchup": "Dundee vs Celtic",
+      "games": 4,
+      "close_games": 1,
+      "close_rate": 25.0
+    },
+    {
+      "matchup": "Dundee vs Hibernian",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Hibernian vs Dundee",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Dundee United vs Heart of Midlothian",
+      "games": 5,
+      "close_games": 2,
+      "close_rate": 40.0
+    },
+    {
+      "matchup": "Heart of Midlothian vs Dundee United",
+      "games": 5,
+      "close_games": 2,
+      "close_rate": 40.0
+    },
+    {
+      "matchup": "Dundee vs Motherwell",
+      "games": 4,
+      "close_games": 2,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Motherwell vs Dundee",
+      "games": 4,
+      "close_games": 2,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Dundee vs Livingston",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Livingston vs Dundee",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Dundee vs Dundee United",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Dundee United vs Dundee",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Dundee vs Rangers",
+      "games": 5,
+      "close_games": 2,
+      "close_rate": 40.0
+    },
+    {
+      "matchup": "Rangers vs Dundee",
+      "games": 5,
+      "close_games": 2,
+      "close_rate": 40.0
+    },
+    {
+      "matchup": "Dundee vs St Johnstone",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "St Johnstone vs Dundee",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Aberdeen vs Dundee",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Dundee vs Aberdeen",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Dundee vs Heart of Midlothian",
+      "games": 5,
+      "close_games": 2,
+      "close_rate": 40.0
+    },
+    {
+      "matchup": "Heart of Midlothian vs Dundee",
+      "games": 5,
+      "close_games": 2,
+      "close_rate": 40.0
+    },
+    {
+      "matchup": "Dundee vs Ross County",
+      "games": 4,
+      "close_games": 1,
+      "close_rate": 25.0
+    },
+    {
+      "matchup": "Ross County vs Dundee",
+      "games": 4,
+      "close_games": 1,
+      "close_rate": 25.0
+    },
+    {
+      "matchup": "Dundee vs St Mirren",
+      "games": 4,
+      "close_games": 2,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "St Mirren vs Dundee",
+      "games": 4,
+      "close_games": 2,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Dundee vs Kilmarnock",
+      "games": 4,
+      "close_games": 4,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Kilmarnock vs Dundee",
+      "games": 4,
+      "close_games": 4,
+      "close_rate": 100.0
+    }
+  ],
+  "form_strengths": [
+    {
+      "team": "Aberdeen",
+      "strength": 56.0
+    },
+    {
+      "team": "Celtic",
+      "strength": 86.0
+    },
+    {
+      "team": "Dundee",
+      "strength": 66.0
+    },
+    {
+      "team": "Dundee United",
+      "strength": 66.7
+    },
+    {
+      "team": "Hamilton Academical",
+      "strength": 56.0
+    },
+    {
+      "team": "Heart of Midlothian",
+      "strength": 64.7
+    },
+    {
+      "team": "Hibernian",
+      "strength": 79.3
+    },
+    {
+      "team": "Kilmarnock",
+      "strength": 66.7
+    },
+    {
+      "team": "Livingston",
+      "strength": 58.7
+    },
+    {
+      "team": "Motherwell",
+      "strength": 72.7
+    },
+    {
+      "team": "Rangers",
+      "strength": 88.7
+    },
+    {
+      "team": "Ross County",
+      "strength": 55.3
+    },
+    {
+      "team": "St Johnstone",
+      "strength": 59.3
+    },
+    {
+      "team": "St Mirren",
+      "strength": 75.3
+    }
+  ],
+  "team_margin_ratings": [
+    {
+      "team": "Aberdeen",
+      "avg_margin": 0.1
+    },
+    {
+      "team": "Celtic",
+      "avg_margin": 2.6
+    },
+    {
+      "team": "Dundee",
+      "avg_margin": -0.1
+    },
+    {
+      "team": "Dundee United",
+      "avg_margin": 0.4
+    },
+    {
+      "team": "Hamilton Academical",
+      "avg_margin": -0.5
+    },
+    {
+      "team": "Heart of Midlothian",
+      "avg_margin": 0
+    },
+    {
+      "team": "Hibernian",
+      "avg_margin": 0
+    },
+    {
+      "team": "Kilmarnock",
+      "avg_margin": -0.9
+    },
+    {
+      "team": "Livingston",
+      "avg_margin": -1.3
+    },
+    {
+      "team": "Motherwell",
+      "avg_margin": -0.7
+    },
+    {
+      "team": "Rangers",
+      "avg_margin": 1.3
+    },
+    {
+      "team": "Ross County",
+      "avg_margin": -1.5
+    },
+    {
+      "team": "St Johnstone",
+      "avg_margin": -0.3
+    },
+    {
+      "team": "St Mirren",
+      "avg_margin": -0.4
+    }
+  ]
+}

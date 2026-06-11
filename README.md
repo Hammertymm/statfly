@@ -1,8 +1,8 @@
-# ScoreFly ⚡
+# ScoreFly
 
 **Scores Anywhere. Simple.**
 
-A mobile-first sports scores web app. Live scores, fixtures, and recent results from 35 leagues — follow any of 619 teams across 19 countries and international competitions. No login, no ads, no clutter.
+A mobile-first sports scores web app. Live scores, fixtures, and recent results from 42 league feeds — follow any of 619 teams across 20 countries and international competitions. No login, no ads, no clutter.
 
 **Live:** [scorefly.app](https://scorefly.app) · [hammertymm.github.io/scorefly](https://hammertymm.github.io/scorefly)
 
@@ -19,13 +19,15 @@ Follow your favourite teams and see everything in one feed.
 |**Teams**   |Search and follow teams. Manage alerts.               |
 |**Fly Mode**|Full-screen scores designed for glancing across a room|
 
-Toggle between **My Teams** and **All** on any tab. In My Teams, the window widens to 30 days back and forward so you never miss one of your teams’ games.
+Toggle between **My Teams** and **All** on any tab. In My Teams, the window widens to 30 days back and forward so you never miss one of your teams' games.
+
+When any game is live anywhere, a green **LIVE** pill appears in the header on every tab. Tap it to jump to the Feed.
 
 -----
 
 ## FlyState — momentum at a glance
 
-The score numbers change colour to show what’s *happening* in a game, not just the score:
+The score numbers change colour to show what's *happening* in a game, not just the score:
 
 - **Green** — FlyTime: a close, late finish worth watching
 - **Purple** — a comeback is underway
@@ -35,25 +37,19 @@ The score numbers change colour to show what’s *happening* in a game, not just
 - **Blue** — a team has gone cold
 - **White** — even contest
 
-Turn on a team’s bell and ScoreFly sends you one alert the moment its match enters FlyTime, so you never miss a great finish. Switch on **FlyTime ALL** to get that alert for *any* close game, not just the teams you follow.
+Coloured **fly icons** on cards show FlyTime status: green = live in FlyTime, yellow = upcoming and predicted close, red = finished after reaching FlyTime.
+
+Turn on a team's bell and ScoreFly sends you one alert the moment its match enters FlyTime. Switch on **FlyTime ALL** to get that alert for *any* close game, not just the teams you follow.
+
+Tap the **+** beside any team on a card or in search to follow it without leaving the screen.
 
 -----
 
 ## Leagues covered
 
-ScoreFly pulls live data for **35 league feeds**:
+ScoreFly pulls live data for **42 league feeds** across soccer, US/Canada major leagues, AFL, NRL, cricket, tennis, and more. The searchable follow list covers **619 teams and players**.
 
-**US / Canada** — NFL, NBA, MLB, NHL, MLS, WNBA, NCAAM, NCAAF
-
-**Soccer — Europe** — Premier League, La Liga, Bundesliga, Serie A, Ligue 1, Championship, Eredivisie, Primeira Liga, Scottish Premiership, Süper Lig, Champions League, Europa League, Women’s Super League
-
-**Soccer — Americas** — Brasileirao, Liga Profesional, Liga MX, Copa Libertadores
-
-**Soccer — Other** — A-League, League of Ireland, Indian Super League, PSL (South Africa)
-
-**Other** — AFL, NRL, IPL cricket, international cricket, ATP tennis, WTA tennis
-
-The searchable follow list goes wider still — **40 competitions, 619 teams and players in total** — adding the Big Bash League, NBL, Super Rugby Pacific, Six Nations, Copa do Brasil, the Pakistan Super League and more for following teams.
+See `SCOREFLY.md` for the full league list.
 
 -----
 
@@ -63,23 +59,23 @@ ScoreFly is a **PWA** (Progressive Web App) — no App Store needed.
 
 1. Open [scorefly.app](https://scorefly.app) in Safari (iOS) or Chrome (Android)
 1. Tap **Share** → **Add to Home Screen**
-1. Done — it works like a native app and loads instantly, even offline
+1. Done — it works like a native app and loads instantly from cache
 
 -----
 
 ## How it works
 
-- **Data:** ESPN’s unofficial public scoreboard API. No API key required.
-- **CORS proxies:** Browser fetches rotate through `corsproxy.io`, `allorigins`, `codetabs`, and `thingproxy`. The last working proxy is tried first; if it fails, the rest race and the winner is remembered.
-- **Polling:** Scores refresh every **12 seconds while games are live**, with a full sweep every ~3 minutes to catch kickoffs and finishes. When nothing is live, it sweeps every 60 seconds.
-- **Storage:** Followed teams and alert preferences are saved in `localStorage` — nothing leaves your device.
-- **Offline:** The app shell is cached by the service worker so it loads instantly every time.
+- **Data:** ESPN's unofficial public scoreboard API. No API key required.
+- **CORS proxies:** Browser fetches rotate through public proxies; the last working proxy is tried first.
+- **Polling:** Scores refresh every **12 seconds while games are live**, with a full sweep every ~3 minutes. When nothing is live, it sweeps every 60 seconds.
+- **Storage:** Followed teams and alert preferences stay in `localStorage` on your device.
+- **Offline:** The app shell and FlyTime research tables are cached by the service worker.
 
 -----
 
 ## Fly Mode
 
-Tap the logo button in the bottom nav to enter Fly Mode — a full-screen scoreboard showing only your followed teams’ live matches. Brightness slider at the bottom. Tap anywhere to exit. (The rivalry skull marker appears on upcoming fixtures in the feed, not on live games or Fly Mode.)
+Tap the logo button in the bottom nav to enter Fly Mode — a full-screen scoreboard for your followed teams' live matches (plus FlyTime ALL games when that toggle is on). Brightness slider at the bottom. Tap anywhere to exit.
 
 Designed for putting your phone on the table and watching scores update from across the room.
 
@@ -88,24 +84,24 @@ Designed for putting your phone on the table and watching scores update from acr
 ## Files
 
 ```
-index.html      Main app (all HTML, CSS, and JS in one file)
-sw.js           Service worker — offline caching
-manifest.json   PWA manifest — makes it installable
-icon192.png     App icon (192x192)
-icon512.png     App icon (512x512)
-icon-*.png      Per-sport fallback icons
-README.md       This file
+index.html           Main app (all HTML, CSS, and JS in one file)
+sw.js                Service worker — offline caching (currently scorefly-v96)
+manifest.json        PWA manifest
+*-flytime-v1.json    Offline FlyTime predictor tables (per sport/league)
+icon192.png / icon512.png
+README.md            This file
+SCOREFLY.md          Full source-of-truth spec for developers
 ```
 
 -----
 
 ## Tech
 
-- Vanilla HTML, CSS, and JavaScript — no frameworks, no build tools, no dependencies
-- Single self-contained file
+- Vanilla HTML, CSS, and JavaScript — no frameworks, no build tools
+- Single self-contained app file
 - Installable PWA with offline support
-- Pure black UI, Inter typeface, brand colour `#30d158`
+- Pure black UI, Inter typeface, brand colour `#06f03c`
 
 -----
 
-*Data from ESPN’s public API — not affiliated with ESPN.*
+*Data from ESPN's public API — not affiliated with ESPN.*

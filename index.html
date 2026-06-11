@@ -34,8 +34,20 @@
   .brand-mark{width:46px;height:46px;flex-shrink:0;display:block;border-radius:50%;}
   .wordmark{font-size:27px;font-weight:700;letter-spacing:-.6px;line-height:1;}
   .wordmark span{color:var(--live);}
-  .header-tagline{font-size:12px;font-weight:600;color:var(--text);letter-spacing:.1px;white-space:nowrap;line-height:1;margin-bottom:12px;}
+  .header-right{display:flex;flex-direction:column;align-items:flex-end;gap:5px;margin-bottom:12px;}
+  .header-tagline{font-size:12px;font-weight:600;color:var(--text);letter-spacing:.1px;white-space:nowrap;line-height:1;}
   .header-tagline em{color:var(--live);font-style:normal;font-weight:700;}
+  /* Item 16: one global LIVE pill - visible on every tab when any game is live */
+  .global-live{
+    display:none;align-items:center;gap:5px;font-family:inherit;
+    font-size:10px;font-weight:800;letter-spacing:.55px;text-transform:uppercase;
+    color:var(--live);background:rgba(6,240,60,0.12);
+    border:1px solid rgba(6,240,60,0.45);border-radius:999px;
+    padding:4px 10px;cursor:pointer;-webkit-tap-highlight-color:transparent;
+  }
+  .global-live.visible{display:inline-flex;}
+  .global-live:active{opacity:.75;}
+  .global-live-dot{width:6px;height:6px;border-radius:50%;background:var(--live);animation:pulse 1.2s infinite;flex-shrink:0;}
   .tabs{display:flex;border-bottom:1px solid var(--sep);}
   .tab{flex:1;text-align:center;padding:9px 0 10px;font-size:14px;font-weight:600;color:var(--text-3);cursor:pointer;border-bottom:3px solid transparent;margin-bottom:-1px;transition:color .15s;}
   .tab.active{color:var(--text);border-bottom-color:var(--live);font-weight:700;}
@@ -89,6 +101,17 @@
   .card-body{display:flex;align-items:stretch;padding:12px 14px 11px;gap:10px;}
   .card-teams{flex:1;display:flex;flex-direction:column;gap:14px;}
   .team-row{display:flex;align-items:center;gap:10px;}
+  /* Item 14: discreet per-team quick-add */
+  .qa-btn{
+    flex-shrink:0;width:22px;height:22px;border-radius:50%;
+    border:1px solid rgba(6,240,60,0.5);background:transparent;color:var(--live);
+    font-size:15px;font-weight:700;line-height:1;padding:0;cursor:pointer;
+    font-family:inherit;display:inline-flex;align-items:center;justify-content:center;
+    -webkit-tap-highlight-color:transparent;
+  }
+  .qa-btn:active{background:rgba(6,240,60,0.15);}
+  .qa-btn-row{width:26px;height:26px;font-size:17px;}
+  .qa-btn-static{pointer-events:none;opacity:.85;}
   .t-logo{width:18px;height:18px;border-radius:50%;background:rgba(255,255,255,.10);display:flex;align-items:center;justify-content:center;font-size:11px;flex-shrink:0;}
   .t-logo img{width:15px;height:15px;object-fit:contain;border-radius:2px;display:block;}
   .t-name{font-size:14px;font-weight:600;letter-spacing:-.2px;text-transform:uppercase;flex:1;line-height:1.1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
@@ -226,6 +249,33 @@
   .ledger-sub{font-size:12px;color:var(--text-3);margin-bottom:8px;}
   .ledger-empty{font-size:13px;color:var(--text-3);line-height:1.4;}
   .ledger-reset{display:inline-block;font-size:12px;font-weight:600;color:var(--blue);cursor:pointer;}
+  /* FlyTime Lab debug dashboard (Teams tab) */
+  .fly-lab-badge{font-size:9px;font-weight:800;letter-spacing:.5px;color:#000;background:var(--upcoming);padding:2px 6px;border-radius:4px;margin-left:6px;vertical-align:middle;}
+  .fly-lab-card{padding:12px 14px 14px;}
+  .fly-lab-sec{font-size:10px;font-weight:700;letter-spacing:.55px;text-transform:uppercase;color:var(--text-3);margin:14px 0 8px;}
+  .fly-lab-sec:first-child{margin-top:0;}
+  .fly-lab-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin-bottom:4px;}
+  .fly-lab-grid.wide{grid-template-columns:repeat(2,1fr);}
+  .fly-lab-stat{background:#1c1c1e;border:1px solid var(--sep);border-radius:10px;padding:8px 6px;text-align:center;}
+  .fly-lab-num{font-size:20px;font-weight:800;line-height:1;color:var(--live);font-variant-numeric:tabular-nums;}
+  .fly-lab-num.warn{color:var(--upcoming);}
+  .fly-lab-num.bad{color:var(--result);}
+  .fly-lab-num.dim{color:var(--text-2);}
+  .fly-lab-lbl{font-size:10px;color:var(--text-3);margin-top:4px;line-height:1.2;}
+  .fly-lab-note{font-size:12px;color:var(--text-2);line-height:1.45;margin:6px 0 2px;}
+  .fly-lab-note.warn{color:var(--upcoming);}
+  .fly-lab-bar{height:6px;background:rgba(255,255,255,.08);border-radius:3px;margin:6px 0 4px;overflow:hidden;}
+  .fly-lab-bar-fill{height:100%;background:var(--live);border-radius:3px;}
+  .fly-lab-bar-fill.warn{background:var(--upcoming);}
+  .fly-lab-log{margin-top:6px;max-height:220px;overflow-y:auto;border:1px solid var(--sep);border-radius:10px;}
+  .fly-lab-row{display:flex;align-items:flex-start;gap:8px;padding:8px 10px;border-bottom:1px solid var(--sep);font-size:11px;line-height:1.35;}
+  .fly-lab-row:last-child{border-bottom:none;}
+  .fly-lab-icons{flex-shrink:0;display:flex;gap:3px;font-size:13px;line-height:1;}
+  .fly-lab-match{flex:1;min-width:0;color:var(--text);}
+  .fly-lab-meta{flex-shrink:0;text-align:right;color:var(--text-3);font-variant-numeric:tabular-nums;}
+  .fly-lab-eng-row{display:flex;justify-content:space-between;gap:8px;padding:5px 0;border-bottom:1px solid rgba(255,255,255,.05);font-size:11px;color:var(--text-2);}
+  .fly-lab-eng-row:last-child{border-bottom:none;}
+  .fly-lab-actions{display:flex;gap:12px;margin-top:10px;}
   .buzz-icon{font-size:22px;line-height:1;flex-shrink:0;}
   .buzz-text{flex:1;min-width:0;}
   .buzz-title{font-size:14px;font-weight:700;letter-spacing:-.2px;color:var(--text);}
@@ -238,8 +288,16 @@
   .onb-overlay { display: none; position: fixed; inset: 0; background: #000; z-index: 300; overflow-y: auto; }
   .onb-overlay.active { display: block; }
   .onb-inner { max-width: 430px; margin: 0 auto; min-height: 100%; display: flex; flex-direction: column; padding: 0 22px; box-sizing: border-box; }
+  .onb-progress { padding: 14px 0 6px; flex-shrink: 0; }
+  .onb-dots { display: flex; gap: 7px; justify-content: center; }
+  .onb-dot { width: 7px; height: 7px; border-radius: 50%; background: rgba(255,255,255,0.18); transition: background .2s, transform .2s; }
+  .onb-dot.active { background: var(--live); transform: scale(1.15); }
   .onb-step { flex: 1; display: flex; flex-direction: column; }
   #onb-step-1, #onb-step-3 { padding: 0; }
+  .onb-hero-caption { font-size: 14px; line-height: 1.45; color: var(--text-3); text-align: center; margin: -4px 0 10px; padding: 0 8px; }
+  .onb-notif-copy { padding: 18px 4px 8px; text-align: center; }
+  .onb-notif-copy .onb-h { margin: 0 0 6px; font-size: 24px; }
+  .onb-notif-copy .onb-sub { margin-bottom: 0; max-width: 300px; margin-left: auto; margin-right: auto; }
   .onb-hero { display: block; width: calc(100% + 44px); margin: 0 -22px; cursor: pointer; }
   .onb-hero-btn { position: sticky; bottom: 14px; margin: 14px 0; z-index: 2; }
   .onb-hero-actions { position: sticky; bottom: 14px; margin: 14px 0; z-index: 2; }
@@ -257,7 +315,7 @@
   #onb-step-fly .onb-h { margin-top: 0; }
   #onb-step-fly .onb-sub { max-width: 320px; }
   .onb-fly-badge { display: inline-block; background: var(--live); color: #000; font-weight: 800; font-size: 15px; letter-spacing: 1px; padding: 8px 18px; border-radius: 999px; margin-bottom: 20px; animation: flyPulse 1.6s ease-in-out infinite; }
-  .onb-h { font-size: 28px; font-weight: 700; letter-spacing: -.5px; margin: 50px 0 6px; }
+  .onb-h { font-size: 28px; font-weight: 700; letter-spacing: -.5px; margin: 28px 0 6px; }
   .onb-sub { font-size: 15px; line-height: 1.45; color: var(--text-3); margin-bottom: 22px; }
   .onb-label { font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: .5px; color: var(--text-3); margin: 22px 0 10px; }
   .onb-count { font-size: 13px; color: var(--live); font-weight: 600; margin-top: 16px; text-align: center; min-height: 18px; }
@@ -764,7 +822,13 @@
 <div class="header">
   <div class="header-top">
     <div class="brand" onclick="enterFlyMode()"><img class="brand-mark" src="icon192.png" alt="ScoreFly logo"><div class="wordmark">Score<span>Fly</span></div></div>
-    <div class="header-tagline">Scores Anywhere. <em>Simple.</em></div>
+    <div class="header-right">
+      <button type="button" class="global-live" id="global-live" onclick="globalLiveTap()" aria-hidden="true">
+        <span class="global-live-dot"></span>
+        <span id="global-live-text">LIVE</span>
+      </button>
+      <div class="header-tagline">Scores Anywhere. <em>Simple.</em></div>
+    </div>
   </div>
   <div class="tabs">
     <div class="tab active" onclick="goTab('home',this,'nb-home')">Feed</div>
@@ -807,10 +871,18 @@
 <!-- ONBOARDING: first-run only. Shown by startOnboarding(); hidden once finished. -->
 <div class="onb-overlay" id="onboard-overlay">
   <div class="onb-inner">
+    <div class="onb-progress" id="onb-progress" aria-hidden="true">
+      <div class="onb-dots">
+        <span class="onb-dot" data-step="1"></span>
+        <span class="onb-dot" data-step="2"></span>
+        <span class="onb-dot" data-step="3"></span>
+      </div>
+    </div>
 
     <!-- Step 1: Welcome -->
     <div class="onb-step" id="onb-step-1">
-      <img class="onb-hero" src="onboard-hero.png" alt="ScoreFly" onclick="onbGoStep(2)">
+      <img class="onb-hero" src="onboard-hero.png" alt="ScoreFly - we tell you when it matters" onclick="onbGoStep(2)">
+      <p class="onb-hero-caption">Follow your teams. We flag the close finishes worth watching.</p>
       <button class="onb-btn onb-btn-primary onb-hero-btn" onclick="onbGoStep(2)">Choose My Teams</button>
     </div>
 
@@ -856,7 +928,11 @@
 
     <!-- Step 3: Notifications -->
     <div class="onb-step" id="onb-step-3" style="display:none">
-      <img class="onb-hero" src="onboard-notif.png" alt="Activate FlyTime">
+      <div class="onb-notif-copy">
+        <div class="onb-h">Never miss FlyTime</div>
+        <div class="onb-sub">One alert when a game hits the final stretch worth watching. You can turn this on later in Teams.</div>
+      </div>
+      <img class="onb-hero" src="onboard-notif.png" alt="Enable FlyTime notifications">
       <div class="onb-hero-actions">
         <button class="onb-btn onb-btn-primary" onclick="onbEnableNotifs()">Enable Notifications</button>
         <button class="onb-btn onb-btn-text" onclick="onbFinish()">Maybe later</button>
@@ -928,8 +1004,10 @@
     <div class="buzz-switch" id="buzz-switch" onclick="toggleFlyTimeAll()"><div class="buzz-knob"></div></div>
   </div>
 
-  <div class="teams-title">FlyTime accuracy</div>
-  <div class="ledger-card" id="fly-ledger-wrap"></div>
+  <div id="fly-lab-section">
+    <div class="teams-title">FlyTime Lab<span class="fly-lab-badge">DEBUG</span></div>
+    <div class="ledger-card fly-lab-card" id="fly-ledger-wrap"></div>
+  </div>
 
   <div id="suggested-section" style="display:none"><div class="teams-title">Suggested for you</div>
   <div id="suggested-wrap"></div></div>
@@ -1541,6 +1619,27 @@ function renderFreshness() {
   }
 }
 
+// Item 16: global LIVE pill in the header (all tabs).
+function updateGlobalLiveIndicator() {
+  const el = document.getElementById('global-live');
+  const txt = document.getElementById('global-live-text');
+  if (!el || !txt) return;
+  const n = ALL_LIVE.length;
+  if (n > 0) {
+    el.classList.add('visible');
+    el.setAttribute('aria-hidden', 'false');
+    txt.textContent = n === 1 ? '1 LIVE' : (n + ' LIVE');
+  } else {
+    el.classList.remove('visible');
+    el.setAttribute('aria-hidden', 'true');
+  }
+}
+
+function globalLiveTap() {
+  goTab('home', null, 'nb-home');
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
 // - SCORE FLASH + FLYSTATE ENGINE -
 // lastScores: tracks prev scores for the flash animation on score change.
 // flyState:   per-match momentum + resolved FlyState for each side.
@@ -1651,6 +1750,36 @@ function isFlyTime(m) {
   }
 }
 
+// Blowout buffer: once a game has entered FlyTime, unpin it if the margin blows out
+// (roughly 2x the FlyTime close-game threshold). The after-match stamp is kept.
+const FLY_BLOWOUT_MARGIN = {
+  basketball: 16,
+  football: 16,
+  hockey: 3,
+  baseball: 5,
+  'australian-football': 24,
+  'rugby-league': 24,
+  soccer: 3
+};
+
+function flyTimeMargin(m) {
+  return Math.abs((m.hInt || 0) - (m.aInt || 0));
+}
+
+function isFlyTimeBlowout(m) {
+  if (!m || !matchHadFlyTime(m.id)) return false;
+  const max = FLY_BLOWOUT_MARGIN[m.sportKey];
+  if (max == null) return false;
+  return flyTimeMargin(m) > max;
+}
+
+function isFlyTimePinned(m) {
+  if (!m || !m.id) return false;
+  if (isFlyTime(m)) return true;
+  if (!matchHadFlyTime(m.id)) return false;
+  return !isFlyTimeBlowout(m);
+}
+
 // After-match Fly stamp: remember which matches ever entered FlyTime, so completed
 // matches can show a small validation stamp on Results. Stored id->timestamp and pruned
 // past the results window so it never grows without bound.
@@ -1670,6 +1799,9 @@ function markFlyTimeMatch(id){
 function matchHadFlyTime(id){ return Object.prototype.hasOwnProperty.call(flyTimeMatches, id); }
 
 // --- FlyTime predictor ledger (Item 6) ---
+// DEBUG: set DEBUG_FLY false before public release (hides card scores + Teams lab).
+const DEBUG_FLY = true;
+const DEBUG_FLYSCORES = DEBUG_FLY;
 // Records, per match: was it PREDICTED FlyTime-worthy (yellow fly), and did it actually
 // REACH FlyTime live. Lets the predictor be tuned against a real hit-rate instead of
 // guesswork. Pruned to 35 days. Separate store from the after-match stamp above.
@@ -1689,18 +1821,38 @@ function ledgerPredict(m){
   if(!m || !m.id || !m.isFlyMatch) return;
   const e = flyLedger[m.id];
   if(e && e.p) return;
-  flyLedger[m.id] = { p:1, a:(e&&e.a)?1:0, h:m.home||'', w:m.away||'', lg:m.league||'', t:(e&&e.t)||Date.now() };
+  var eng = usesFlyV1Engine(m) ? 'v1' : 'leg';
+  var thr = null;
+  if (eng === 'v1') {
+    var v1e = flyV1Engines[flyV1Key(m)];
+    thr = v1e ? v1e.threshold : null;
+  } else {
+    var cthr = CLOSE_MARGIN[m.sportKey];
+    var haveBoth = fmCloseProfile(m.homeMargins, cthr) !== null && fmCloseProfile(m.awayMargins, cthr) !== null;
+    thr = haveBoth ? FLYMATCH_THRESHOLD : FLYMATCH_THRESHOLD_NODATA;
+  }
+  flyLedger[m.id] = {
+    p:1, a:(e&&e.a)?1:0, fin:(e&&e.fin)?1:0, stamp:(e&&e.stamp)?1:0,
+    h:m.home||'', w:m.away||'', lg:m.league||'', sk:m.sportKey||'',
+    r:m.flyMatchRating||0, eng:eng, thr:thr,
+    t:(e&&e.t)||Date.now()
+  };
   saveFlyLedger();
-  if(typeof renderFlyLedger === 'function') renderFlyLedger();
+  if(typeof renderFlyDashboard === 'function') renderFlyDashboard();
 }
-// Record that a live match actually entered FlyTime. Called from updateFlyState.
 function ledgerAchieved(m){
   if(!m || !m.id) return;
   const e = flyLedger[m.id];
   if(e && e.a) return;
-  flyLedger[m.id] = { p:(e&&e.p)?1:0, a:1, h:m.home||(e&&e.h)||'', w:m.away||(e&&e.w)||'', lg:m.league||(e&&e.lg)||'', t:(e&&e.t)||Date.now() };
+  flyLedger[m.id] = {
+    p:(e&&e.p)?1:0, a:1, fin:(e&&e.fin)?1:0, stamp:1,
+    h:m.home||(e&&e.h)||'', w:m.away||(e&&e.w)||'', lg:m.league||(e&&e.lg)||'',
+    sk:m.sportKey||(e&&e.sk)||'', r:(e&&e.r)||m.flyMatchRating||0,
+    eng:(e&&e.eng)||'', thr:(e&&e.thr)||null,
+    t:(e&&e.t)||Date.now(), at:Date.now()
+  };
   saveFlyLedger();
-  if(typeof renderFlyLedger === 'function') renderFlyLedger();
+  if(typeof renderFlyDashboard === 'function') renderFlyDashboard();
 }
 function flyLedgerStats(){
   let predicted=0, achieved=0, hit=0, total=0;
@@ -1713,42 +1865,216 @@ function flyLedgerStats(){
   }
   return { predicted, achieved, hit, total, falseAlarm:predicted-hit, missed:achieved-hit };
 }
-function resetFlyLedger(){ flyLedger = {}; saveFlyLedger(); renderFlyLedger(); }
-function renderFlyLedger(){
-  const el = document.getElementById('fly-ledger-wrap');
-  if(!el) return;
-  // Predictor input health: how many upcoming games actually have the margin
-  // history the close-led model needs (both teams, 3+ recent games). If this is
-  // low, few/no yellow flies is a DATA problem (schedules not loading), not a
-  // threshold problem.
-  let covG = 0, covTot = 0;
+function resetFlyLedger(){ flyLedger = {}; saveFlyLedger(); renderFlyDashboard(); }
+
+function syncFlyLedgerFromResults(){
+  var changed = false;
+  (ALL_RESULTS || []).forEach(function(m){
+    if(!m || !m.id) return;
+    var e = flyLedger[m.id];
+    if(!e) return;
+    var stamp = matchHadFlyTime(m.id) ? 1 : 0;
+    if(!e.fin || e.stamp !== stamp){
+      e.fin = 1;
+      e.stamp = stamp;
+      changed = true;
+    }
+  });
+  if(changed) saveFlyLedger();
+}
+
+function flyDashboardMarginCov(){
+  var covG = 0, covTot = 0;
   try {
     (ALL_UPCOMING || []).forEach(function(m){
       if(!FORM_TEAM_SPORTS.has(m.sportKey)) return;
       covTot++;
-      const thr = CLOSE_MARGIN[m.sportKey];
+      var thr = CLOSE_MARGIN[m.sportKey];
       if(fmCloseProfile(m.homeMargins, thr) !== null && fmCloseProfile(m.awayMargins, thr) !== null) covG++;
     });
   } catch(e){}
-  const covLine = '<div class="ledger-sub">Margin data ready for ' + covG + ' of ' + covTot + ' upcoming games.</div>';
-  const s = flyLedgerStats();
-  if(!s.total){
-    el.innerHTML = '<div class="ledger-empty">No matches tracked yet. Predicted and actual FlyTime games are logged automatically on match days.</div>' + covLine;
+  return { covG:covG, covTot:covTot };
+}
+
+function flyDashboardInputHealth(){
+  var v1Loaded = 0, v1Total = Object.keys(FLY_V1_REGISTRY).length;
+  var v1Scored = 0, v1Eligible = 0, legacyScored = 0, legacyEligible = 0;
+  Object.keys(flyV1Engines).forEach(function(k){ if(flyV1Engines[k] && flyV1Engines[k].idx) v1Loaded++; });
+  (ALL_UPCOMING || []).forEach(function(m){
+    if(usesFlyV1Engine(m)){
+      v1Eligible++;
+      if(flyV1ScoreForMatch(m) !== null) v1Scored++;
+    } else if(m.sportKey !== 'cricket' && m.sportKey !== 'tennis'){
+      legacyEligible++;
+      if(m.flyMatchRating != null && m.flyMatchRating > 0) legacyScored++;
+    }
+  });
+  return { v1Loaded:v1Loaded, v1Total:v1Total, v1Scored:v1Scored, v1Eligible:v1Eligible, legacyScored:legacyScored, legacyEligible:legacyEligible };
+}
+
+function flyDashboardLive(){
+  var greenNow = 0, predLive = 0, predLiveGreen = 0, yellowUp = 0, upTotal = (ALL_UPCOMING||[]).length;
+  (ALL_LIVE || []).forEach(function(m){
+    if(getMatchFly(m.id) === 'flytime' || isFlyTime(m)) greenNow++;
+    var e = flyLedger[m.id];
+    if(e && e.p){
+      predLive++;
+      if(e.a || matchHadFlyTime(m.id) || getMatchFly(m.id) === 'flytime') predLiveGreen++;
+    }
+  });
+  (ALL_UPCOMING || []).forEach(function(m){ if(m.isFlyMatch) yellowUp++; });
+  return { liveTotal:(ALL_LIVE||[]).length, greenNow:greenNow, predLive:predLive, predLiveGreen:predLiveGreen, yellowUp:yellowUp, upTotal:upTotal };
+}
+
+function flyDashboardFinished(){
+  var predFin = 0, predFinGreen = 0, predFinNoGreen = 0, unpredStamp = 0;
+  for(var k in flyLedger){
+    var e = flyLedger[k]; if(!e || !e.fin) continue;
+    if(e.p){
+      predFin++;
+      if(e.stamp || e.a) predFinGreen++;
+      else predFinNoGreen++;
+    } else if(e.stamp || e.a) unpredStamp++;
+  }
+  return { predFin:predFin, predFinGreen:predFinGreen, predFinNoGreen:predFinNoGreen, unpredStamp:unpredStamp };
+}
+
+function flyDashEsc(s){
+  return (s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/"/g,'&quot;');
+}
+
+function renderFlyDashboard(){
+  var section = document.getElementById('fly-lab-section');
+  var el = document.getElementById('fly-ledger-wrap');
+  if(!el) return;
+  if(!DEBUG_FLY){
+    if(section) section.style.display = 'none';
     return;
   }
-  const precision = s.predicted ? Math.round(100 * s.hit / s.predicted) : 0;
-  const recall    = s.achieved  ? Math.round(100 * s.hit / s.achieved)  : 0;
-  el.innerHTML = ''
-    + '<div class="ledger-grid">'
-    +   '<div class="ledger-cell"><div class="ledger-num">' + s.predicted + '</div><div class="ledger-lbl">predicted</div></div>'
-    +   '<div class="ledger-cell"><div class="ledger-num">' + s.achieved + '</div><div class="ledger-lbl">reached</div></div>'
-    +   '<div class="ledger-cell"><div class="ledger-num">' + s.hit + '</div><div class="ledger-lbl">correct</div></div>'
-    + '</div>'
-    + '<div class="ledger-rates">Of predicted, ' + precision + '% reached FlyTime. Of those that reached, ' + recall + '% were predicted.</div>'
-    + '<div class="ledger-sub">' + s.falseAlarm + ' over-flagged, ' + s.missed + ' missed, ' + s.total + ' tracked.</div>'
-    + covLine
-    + '<div class="ledger-reset" onclick="resetFlyLedger()">Reset log</div>';
+  if(section) section.style.display = '';
+  syncFlyLedgerFromResults();
+  var live = flyDashboardLive();
+  var fin = flyDashboardFinished();
+  var cov = flyDashboardMarginCov();
+  var inp = flyDashboardInputHealth();
+  var s = flyLedgerStats();
+  var precision = s.predicted ? Math.round(100 * s.hit / s.predicted) : 0;
+  var recall = s.achieved ? Math.round(100 * s.hit / s.achieved) : 0;
+  var stampTotal = 0;
+  try { stampTotal = Object.keys(flyTimeMatches).length; } catch(e){}
+  var fresh = lastUpdateMs ? Math.floor((Date.now() - lastUpdateMs) / 60000) : null;
+  var freshTxt = fresh === null ? 'never' : (fresh < 1 ? 'just now' : fresh + 'm ago');
+
+  var html = '';
+  html += '<div class="fly-lab-sec">Live right now</div>';
+  html += '<div class="fly-lab-grid">';
+  html += '<div class="fly-lab-stat"><div class="fly-lab-num dim">' + live.liveTotal + '</div><div class="fly-lab-lbl">games live</div></div>';
+  html += '<div class="fly-lab-stat"><div class="fly-lab-num">' + live.greenNow + '</div><div class="fly-lab-lbl">green now</div></div>';
+  html += '<div class="fly-lab-stat"><div class="fly-lab-num warn">' + live.yellowUp + '</div><div class="fly-lab-lbl">yellow upcoming</div></div>';
+  html += '</div>';
+  if(live.predLive > 0){
+    html += '<div class="fly-lab-note">Of ' + live.predLive + ' predicted-yellow now live, <strong>' + live.predLiveGreen + '</strong> have gone green.</div>';
+  }
+  html += '<div class="fly-lab-note">Poll: ' + freshTxt + (lastPollFailed ? ' (reconnecting)' : '') + ' · Red stamps stored: ' + stampTotal + '</div>';
+
+  html += '<div class="fly-lab-sec">Yellow to green accuracy</div>';
+  html += '<div class="fly-lab-grid">';
+  html += '<div class="fly-lab-stat"><div class="fly-lab-num warn">' + s.predicted + '</div><div class="fly-lab-lbl">yellow predicted</div></div>';
+  html += '<div class="fly-lab-stat"><div class="fly-lab-num">' + s.achieved + '</div><div class="fly-lab-lbl">went green live</div></div>';
+  html += '<div class="fly-lab-stat"><div class="fly-lab-num">' + s.hit + '</div><div class="fly-lab-lbl">correct (Y+G)</div></div>';
+  html += '</div>';
+  html += '<div class="fly-lab-grid wide">';
+  html += '<div class="fly-lab-stat"><div class="fly-lab-num bad">' + s.falseAlarm + '</div><div class="fly-lab-lbl">false alarms</div></div>';
+  html += '<div class="fly-lab-stat"><div class="fly-lab-num bad">' + s.missed + '</div><div class="fly-lab-lbl">missed (G no Y)</div></div>';
+  html += '</div>';
+  if(s.predicted){
+    html += '<div class="fly-lab-note">Precision: ' + precision + '% of yellows went green · Recall: ' + recall + '% of greens were yellow</div>';
+    html += '<div class="fly-lab-bar"><div class="fly-lab-bar-fill" style="width:' + precision + '%"></div></div>';
+  } else {
+    html += '<div class="fly-lab-note">No predictions logged yet. Yellow flies on upcoming games build the ledger automatically.</div>';
+  }
+  if(s.achieved === 0 && s.predicted > 0){
+    html += '<div class="fly-lab-note warn">Zero greens recorded while predicted. Keep the app open during close finishes - iOS suspends background polling.</div>';
+  }
+
+  html += '<div class="fly-lab-sec">Finished games (ledger)</div>';
+  html += '<div class="fly-lab-grid">';
+  html += '<div class="fly-lab-stat"><div class="fly-lab-num warn">' + fin.predFin + '</div><div class="fly-lab-lbl">predicted finished</div></div>';
+  html += '<div class="fly-lab-stat"><div class="fly-lab-num">' + fin.predFinGreen + '</div><div class="fly-lab-lbl">got red stamp</div></div>';
+  html += '<div class="fly-lab-stat"><div class="fly-lab-num bad">' + fin.predFinNoGreen + '</div><div class="fly-lab-lbl">predicted, no FT</div></div>';
+  html += '</div>';
+  if(fin.unpredStamp > 0){
+    html += '<div class="fly-lab-note">' + fin.unpredStamp + ' finished with red stamp but no yellow prediction.</div>';
+  }
+
+  html += '<div class="fly-lab-sec">Predictor input health</div>';
+  html += '<div class="fly-lab-note">V1 tables loaded: ' + inp.v1Loaded + ' / ' + inp.v1Total + ' sports</div>';
+  html += '<div class="fly-lab-note">V1 score ready: ' + inp.v1Scored + ' / ' + inp.v1Eligible + ' upcoming · Legacy score: ' + inp.legacyScored + ' / ' + inp.legacyEligible + '</div>';
+  html += '<div class="fly-lab-note">Margin data (legacy): ' + cov.covG + ' / ' + cov.covTot + ' upcoming with both teams</div>';
+  if(cov.covTot > 0 && cov.covG < cov.covTot * 0.3){
+    html += '<div class="fly-lab-note warn">Low margin coverage - legacy yellow tuning may be blind. Check form fetch / proxies.</div>';
+  }
+
+  var engRows = [];
+  Object.keys(FLY_V1_REGISTRY).forEach(function(key){
+    var cfg = FLY_V1_REGISTRY[key];
+    var eng = flyV1Engines[key];
+    var yc = 0;
+    (ALL_UPCOMING||[]).forEach(function(m){ if(flyV1Key(m) === key && m.isFlyMatch) yc++; });
+    if(eng && eng.idx) engRows.push({ tag:cfg.tag, thr:cfg.threshold, yellow:yc, ok:true });
+    else if(!eng || !eng.idx) engRows.push({ tag:cfg.tag, thr:cfg.threshold, yellow:yc, ok:false });
+  });
+  engRows.sort(function(a,b){ return b.yellow - a.yellow; });
+  var topEng = engRows.filter(function(r){ return r.yellow > 0 || !r.ok; }).slice(0, 8);
+  if(topEng.length){
+    html += '<div class="fly-lab-sec">Engine snapshot</div>';
+    topEng.forEach(function(r){
+      html += '<div class="fly-lab-eng-row"><span>' + flyDashEsc(r.tag) + (r.ok ? '' : ' (not loaded)') + ' · thr ' + r.thr + '</span><span>' + r.yellow + ' yellow</span></div>';
+    });
+  }
+
+  var log = [];
+  for(var id in flyLedger){
+    var e = flyLedger[id];
+    if(!e) continue;
+    log.push({ id:id, e:e, t:e.t||0 });
+  }
+  log.sort(function(a,b){ return b.t - a.t; });
+  log = log.slice(0, 18);
+  html += '<div class="fly-lab-sec">Recent matches</div>';
+  if(!log.length){
+    html += '<div class="ledger-empty">Ledger empty. Browse upcoming games on a match day to populate.</div>';
+  } else {
+    html += '<div class="fly-lab-log">';
+    log.forEach(function(row){
+      var e = row.e;
+      var y = e.p ? 'Y' : '-';
+      var g = e.a ? 'G' : '-';
+      var r = e.stamp ? 'R' : '-';
+      var icons = '<span class="fly-lab-icons" title="Yellow/Green/Red stamp">';
+      icons += '<span style="color:' + (e.p ? 'var(--upcoming)' : 'var(--text-3)') + '">' + y + '</span>';
+      icons += '<span style="color:' + ((e.a) ? 'var(--live)' : 'var(--text-3)') + '">' + g + '</span>';
+      icons += '<span style="color:' + (e.stamp ? 'var(--result)' : 'var(--text-3)') + '">' + r + '</span></span>';
+      var meta = (e.eng || '?').toUpperCase();
+      if(e.r) meta += ' ' + e.r;
+      if(e.thr) meta += '/' + e.thr;
+      html += '<div class="fly-lab-row">' + icons +
+        '<div class="fly-lab-match">' + flyDashEsc(e.h) + ' vs ' + flyDashEsc(e.w) + '</div>' +
+        '<div class="fly-lab-meta">' + meta + '</div></div>';
+    });
+    html += '</div>';
+    html += '<div class="fly-lab-note">Y=yellow predicted · G=went green live · R=red stamp on results</div>';
+  }
+
+  html += '<div class="fly-lab-actions">';
+  html += '<span class="ledger-reset" onclick="resetFlyLedger()">Reset ledger</span>';
+  html += '<span class="ledger-reset" onclick="forceRefresh().then(function(){ renderFlyDashboard(); })">Refresh now</span>';
+  html += '</div>';
+
+  el.innerHTML = html;
 }
+
+function renderFlyLedger(){ renderFlyDashboard(); }
 
 function updateFlyState(m) {
   const id   = m.id;
@@ -1759,8 +2085,8 @@ function updateFlyState(m) {
   const now  = Date.now();
 
   // Match-level states are clock-driven each poll. OT outranks FlyTime. Once FlyTime
-  // is reached it locks on (matchHadFlyTime) until the match leaves the live list.
-  const matchState = m.isOT ? 'overtime' : ((isFlyTime(m) || matchHadFlyTime(id)) ? 'flytime' : '');
+  // is reached it locks on until the match finishes or blows out (see FLY_BLOWOUT_MARGIN).
+  const matchState = m.isOT ? 'overtime' : (isFlyTimePinned(m) ? 'flytime' : '');
   if(isFlyTime(m)){ markFlyTimeMatch(id); ledgerAchieved(m); }
 
   if (!prev) {
@@ -1834,7 +2160,7 @@ function getFlyClass(matchId, side) {
 function getMatchFly(matchId) {
   const s = flyState[matchId];
   if (s && s.match === 'overtime') return 'overtime';
-  if (matchHadFlyTime(matchId) || (s && s.match === 'flytime')) return 'flytime';
+  if (s && s.match === 'flytime') return 'flytime';
   return '';
 }
 
@@ -1908,6 +2234,7 @@ function hydrateSnapshot() {
     runFlyMatchSweep();
     ALL_UPCOMING.sort((a, b) => (a.eventMs || 0) - (b.eventMs || 0));
     lastUpdateMs = snap.ts;  // freshness line shows the snapshot's true age
+    updateGlobalLiveIndicator();
     return true;
   } catch (e) { return false; }
 }
@@ -2401,6 +2728,7 @@ function goTab(id,tabEl,navId){
   currentTabIdx = idx >= 0 ? idx : currentTabIdx;
   try{ localStorage.setItem('scorefly_last_tab', id); }catch(e){}
   window.scrollTo({top:0,behavior:'instant'});
+  if(id === 'settings' && typeof renderFlyDashboard === 'function') renderFlyDashboard();
 }
 
 // - SWIPE BETWEEN TABS -
@@ -2782,6 +3110,46 @@ const FLAG={
 };
 
 // - CARD BUILDERS -
+function escAttr(s) {
+  return (s || '').replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/'/g, '&#39;');
+}
+
+function isTeamFollowed(name, league) {
+  return favs.some(function(f) { return f.key === name + '|' + league; });
+}
+
+// Item 14: discreet + on feed cards for teams not yet followed.
+function teamQuickAddBtn(teamName, m) {
+  const league = m.sport;
+  if (isTeamFollowed(teamName, league)) return '';
+  const key = teamName + '|' + league;
+  return '<button type="button" class="qa-btn" data-fav-key="' + escAttr(key) + '" onclick="quickAddFromBtn(this,event)" aria-label="Follow team">+</button>';
+}
+
+function quickAddFromBtn(btn, evt) {
+  if (evt) { evt.stopPropagation(); evt.preventDefault(); }
+  const key = btn.getAttribute('data-fav-key');
+  if (key) quickAddTeam(key);
+}
+
+function quickAddTeam(key) {
+  const item = indexEntryForKey(key);
+  if (!item || item.type !== 'team') return;
+  if (favs.some(function(f) { return f.key === key; })) return;
+  favs.push({
+    key: item.favKey,
+    name: item.name,
+    league: item.league,
+    leagueEmoji: item.leagueEmoji,
+    flag: item.countryFlag || item.flag,
+    alert: false
+  });
+  saveFavs();
+  renderFavs();
+  renderHome();
+  renderResults();
+}
+
 function logoImg(src, emoji) {
   // No-crest fallback: show only the leading sport icon, not the whole league
   // label. Callers pass the league string (icon + name), so a logo-less team
@@ -2828,13 +3196,13 @@ function buildLiveCard(m){
   const sico=lparts[0];
   const ltxt=lparts.slice(1).join(' ');
   const fly=flyTimeIcon(m,'live');
-  const ftLocked=matchHadFlyTime(m.id)?' flytime-locked':'';
+  const ftLocked=isFlyTimePinned(m)?' flytime-locked':'';
   return`<div class="card live${ftLocked}" data-match-id="${m.id}">
     <div class="card-meta"><span class="league-tag"><span class="sport-icon">${renderSportIcon(sico)}</span><span class="lg-badge">${ltxt}</span></span><span class="card-right">${flyScoreDebugHTML(m)}${fly}<span class="live-badge"><span class="bdot"></span>LIVE ${m.timer}</span></span></div>
     <div class="card-body">
       <div class="card-teams">
-        <div class="team-row"><div class="t-logo">${logoImg(m.homeLogo,m.league)}</div><div class="t-name">${displayTeamName(m.home)}</div></div>
-        <div class="team-row"><div class="t-logo">${logoImg(m.awayLogo,m.league)}</div><div class="t-name">${displayTeamName(m.away)}</div></div>
+        <div class="team-row"><div class="t-logo">${logoImg(m.homeLogo,m.league)}</div><div class="t-name">${displayTeamName(m.home)}</div>${teamQuickAddBtn(m.home,m)}</div>
+        <div class="team-row"><div class="t-logo">${logoImg(m.awayLogo,m.league)}</div><div class="t-name">${displayTeamName(m.away)}</div>${teamQuickAddBtn(m.away,m)}</div>
       </div>
       <div class="scores-col"><div class="${sc} ${getFlyClass(m.id,'home')}" data-fk="${m.id}|h|s">${m.homeScore}</div><div class="${sc} ${getFlyClass(m.id,'away')}" data-fk="${m.id}|a|s">${m.awayScore}</div></div>
     </div>
@@ -2853,11 +3221,11 @@ function buildUpcomingCard(m){
     <div class="upcoming-body">
       <div class="up-teams">
         <div class="team-row">
-          <div class="row-top"><div class="t-logo">${logoImg(m.homeLogo,m.league)}</div><div class="t-name">${displayTeamName(m.home)}</div></div>
+          <div class="row-top"><div class="t-logo">${logoImg(m.homeLogo,m.league)}</div><div class="t-name">${displayTeamName(m.home)}</div>${teamQuickAddBtn(m.home,m)}</div>
           ${hForm}
         </div>
         <div class="team-row">
-          <div class="row-top"><div class="t-logo">${logoImg(m.awayLogo,m.league)}</div><div class="t-name">${displayTeamName(m.away)}</div></div>
+          <div class="row-top"><div class="t-logo">${logoImg(m.awayLogo,m.league)}</div><div class="t-name">${displayTeamName(m.away)}</div>${teamQuickAddBtn(m.away,m)}</div>
           ${aForm}
         </div>
       </div>
@@ -2968,7 +3336,7 @@ function renderHome(){
   } else {
     // FlyTime-locked live games pin to the top of the feed (no separate section).
     liveFilt=liveFilt.slice().sort(function(a,b){
-      var pa=matchHadFlyTime(a.id)?1:0, pb=matchHadFlyTime(b.id)?1:0;
+      var pa=isFlyTimePinned(a)?1:0, pb=isFlyTimePinned(b)?1:0;
       if(pa!==pb) return pb-pa;
       return (a.startMs||0)-(b.startMs||0);
     });
@@ -2980,6 +3348,8 @@ function renderHome(){
     uw.innerHTML=upFilt.length?upFilt.map(buildUpcomingCard).join(''):`<div class="section-empty">${upEmpty}</div>`;
   }
   flyCrossfade();
+  updateGlobalLiveIndicator();
+  if(typeof renderFlyDashboard === 'function') renderFlyDashboard();
 }
 
 function renderResults(){
@@ -3129,22 +3499,18 @@ function renderSuggested(){
   if(!items.length){ if(section) section.style.display='none'; return; }
   if(section) section.style.display='';
   wrap.innerHTML=`<div class="team-list">${items.map(s=>{
-    const key=(s.name+'|'+s.league).replace(/'/g,"\'");
+    const key=(s.name+'|'+s.league).replace(/'/g,"\\'");
     return `<div class="tli">
       <div class="tli-flag">${s.flag}</div>
       <div class="tli-sport">${sportImg(s.leagueEmoji,18)}</div>
       <div class="tli-info"><div class="tli-name">${s.name}</div><div class="tli-lg">${s.league}</div></div>
-      <button class="follow-btn" onclick="followSuggested('${key}')">Follow</button>
+      <button type="button" class="qa-btn" data-fav-key="${escAttr(key)}" onclick="quickAddFromBtn(this,event)" aria-label="Follow ${escAttr(s.name)}">+</button>
     </div>`;
   }).join('')}</div>`;
 }
 
 function followSuggested(key){
-  const s=SUGGESTED.find(x=>x.name+'|'+x.league===key);
-  if(!s)return;
-  if(favs.some(f=>f.key===key))return;
-  favs.push({key,name:s.name,league:s.league,leagueEmoji:s.leagueEmoji,flag:s.flag,alert:false});
-  saveFavs();renderFavs();renderHome();renderResults();
+  quickAddTeam(key);
 }
 
 // - FLY MODE -
@@ -3171,8 +3537,8 @@ function buildFlyModeGrid() {
   // completes (drops out of ALL_LIVE), even if FlyTime conditions later fluctuate.
   // Within each group, earliest start first.
   live = live.slice().sort((a, b) => {
-    const pa = matchHadFlyTime(a.id) ? 1 : 0;
-    const pb = matchHadFlyTime(b.id) ? 1 : 0;
+    const pa = isFlyTimePinned(a) ? 1 : 0;
+    const pb = isFlyTimePinned(b) ? 1 : 0;
     if (pa !== pb) return pb - pa;
     return (a.startMs || 0) - (b.startMs || 0);
   });
@@ -3347,8 +3713,8 @@ function renderSearchMatches(matches) {
     const alreadyAdded = item.type === 'team' && favs.some(f => f.key === item.favKey);
     const badge = item.type === 'team'
       ? (alreadyAdded
-          ? `<span class="gsr-added">✓ Added</span>`
-          : `<span class="gsr-add">+ Add</span>`)
+          ? `<span class="gsr-added">&#10003; Added</span>`
+          : `<button type="button" class="qa-btn qa-btn-row" onclick="gsrQuickAdd(event,${idx})" aria-label="Follow ${escAttr(item.name)}">+</button>`)
       : `<span class="gsr-badge-icon">${sportImg(item.emoji,16)}</span>`;
 
     return `<div class="gsr-item" data-idx="${idx}" onclick="gsrTap(this)">
@@ -3367,6 +3733,19 @@ function renderSearchMatches(matches) {
   resultsDiv.classList.add('visible');
 }
 
+function gsrQuickAdd(evt, idx) {
+  evt.stopPropagation();
+  const resultsDiv = document.getElementById('global-search-results');
+  const matches = resultsDiv._matches || [];
+  const item = matches[idx];
+  if (!item || item.type !== 'team') return;
+  if (favs.some(f => f.key === item.favKey)) return;
+  quickAddTeam(item.favKey);
+  document.getElementById('global-search').value = '';
+  document.getElementById('global-search-clear').classList.remove('visible');
+  renderSearchMatches(matches);
+}
+
 function gsrTap(el) {
   const resultsDiv = document.getElementById('global-search-results');
   const matches = resultsDiv._matches || [];
@@ -3375,15 +3754,7 @@ function gsrTap(el) {
   if (!item || item.type !== 'team') return;
   const already = favs.some(f => f.key === item.favKey);
   if (already) return;
-  favs.push({
-    key: item.favKey,
-    name: item.name,
-    league: item.league,
-    leagueEmoji: item.leagueEmoji,
-    flag: item.countryFlag,
-    alert: false
-  });
-  saveFavs(); renderFavs(); renderHome(); renderResults();
+  quickAddTeam(item.favKey);
   // Item 4: clear the search box after adding, but keep the results list visible
   // so several teams can be added in a row.
   document.getElementById('global-search').value = '';
@@ -3561,7 +3932,6 @@ function fmImportanceScore(notes, seasonType){
 
 // --- FlyTime Engine v1 (offline JSON tables per sport) ---
 // Formula: close*0.35 + form_balance*0.25 + margin_balance*0.25 + matchup*0.15
-const DEBUG_FLYSCORES = true;
 const flyV1Engines = {}; // keyed sportKey|leagueKey -> { idx, threshold, nameMap, tag }
 
 const FLY_V1_REGISTRY = {
@@ -3842,7 +4212,7 @@ function flyScoreDebugHTML(m) {
   const qual = thr != null
     ? (score >= thr ? ' qual' : '')
     : (m.isFlyMatch ? ' qual' : '');
-  return '<span class="fly-debug-score' + qual + '">' + tag + ' ' + (Math.round(score * 10) / 10) + '</span>';
+  return '<span class="fly-debug-score' + qual + '">' + tag + ' ' + (Math.round(score * 10) / 10) + (thr != null ? '/' + thr : '') + '</span>';
 }
 
 // FlyTime traffic light: one coloured fly per card, in the fixed top-right slot.
@@ -4049,7 +4419,17 @@ function onbGoStep(n){
   for(var i=0;i<steps.length;i++){ steps[i].style.display='none'; }
   var target=document.getElementById('onb-step-'+n);
   if(target) target.style.display='flex';
+  onbUpdateProgress(n);
   if(n===2){ onbRefresh(); }
+}
+
+function onbUpdateProgress(step){
+  var prog=document.getElementById('onb-progress');
+  if(prog) prog.setAttribute('aria-hidden','false');
+  document.querySelectorAll('.onb-dot').forEach(function(d){
+    var s=parseInt(d.getAttribute('data-step'),10);
+    d.classList.toggle('active', s <= step);
+  });
 }
 
 // Has the user picked their first team yet? Drives example-vs-suggestion view.
@@ -4081,7 +4461,7 @@ function onbSearch(query){
   resultsDiv.innerHTML=matches.map(function(item,idx){
     var alreadyAdded=item.type==='team' && favs.some(function(f){return f.key===item.favKey;});
     var badge = item.type==='team'
-      ? (alreadyAdded ? '<span class="gsr-added">&#10003; Added</span>' : '<span class="gsr-add">+ Add</span>')
+      ? (alreadyAdded ? '<span class="gsr-added">&#10003; Added</span>' : '<button type="button" class="qa-btn qa-btn-row" onclick="onbQuickAdd(event,'+idx+')" aria-label="Follow team">+</button>')
       : '<span class="gsr-badge-icon">'+sportImg(item.emoji,16)+'</span>';
     return '<div class="gsr-item" data-idx="'+idx+'" onclick="onbTap(this)">'+
       '<div class="gsr-flag">'+item.flag+'</div>'+
@@ -4090,6 +4470,17 @@ function onbSearch(query){
   }).join('');
   resultsDiv._matches=matches;
   resultsDiv.classList.add('visible');
+}
+
+function onbQuickAdd(evt, idx){
+  evt.stopPropagation();
+  var resultsDiv=document.getElementById('onb-results');
+  var matches=resultsDiv._matches || [];
+  var item=matches[idx];
+  if(!item || item.type!=='team') return;
+  if(favs.some(function(f){return f.key===item.favKey;})) return;
+  onbAddTeam(item);
+  onbSearch(document.getElementById('onb-search').value);
 }
 
 function onbTap(el){
@@ -4135,7 +4526,7 @@ function onbRenderExamples(){
       '<div class="onb-pick-flag">'+s.flag+'</div>'+
       '<div class="onb-pick-info"><div class="onb-pick-name">'+s.name+'</div>'+
       '<div class="onb-pick-league">'+s.league+'</div></div>'+
-      '</div>';
+      '<span class="qa-btn qa-btn-static">+</span></div>';
   }).join('');
 }
 

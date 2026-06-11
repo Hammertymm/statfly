@@ -1,4 +1,4 @@
-# ScoreFly — Version History (V1 → V76)
+# ScoreFly — Version History (V1 → v96)
 
 **Sources:** reconstructed from SCOREFLY.md’s changelog, the v69–v75 session handover, and the v76 session.
 
@@ -86,6 +86,12 @@ No changelog exists for these. What the later entries imply was already present 
 **v67** — Onboarding recommendation engine made data-driven (added `METRO_TEAMS`) and upgraded to the 2-local / 2-same-country / 2-same-league spec; yellow-fly calibration fix (match importance changed from an averaged term to an additive bonus; threshold lowered 3.5 → 3.0).
 
 **v68** — Single-hero onboarding (`onboard-hero.png`) → choose teams → notifications; `MAJOR_CLUBS` expanded with ~50 household names; local picks surfaced in authored prominence order.
+
+-----
+
+## v96 — Backlog completion (current)
+
+**v96** — Global LIVE header pill (`#global-live`); per-team `+` quick-add on cards/search/onboarding; onboarding progress dots and copy polish; FlyTime blowout buffer (`FLY_BLOWOUT_MARGIN`); `DEBUG_FLYSCORES` off. `sw.js` -> v96.
 
 -----
 

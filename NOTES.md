@@ -8,7 +8,7 @@ Running log of decisions, dead ends, and things worth remembering.
 - **Repo:** <https://github.com/Hammertymm/scorefly>
 - **Hosting:** GitHub Pages (Netlify abandoned – credits ran out)
 - **Deploy:** edit files in GitHub via Safari, commit, wait ~30s, refresh phone
-- **Cache:** bump `CACHE` constant in `sw.js` every deploy that touches HTML/CSS/JS/icons. Currently `scorefly-v95`.
+- **Cache:** bump `CACHE` constant in `sw.js` every deploy that touches HTML/CSS/JS/icons. Currently `scorefly-v97`.
 
 ## Current feeds (34 live)
 
@@ -222,7 +222,6 @@ Removed Formula 1 and Golf Majors from the Teams tab discovery (`LEAGUES['Global
 - `loadLiveData()` now refreshes Fly Mode grid if the overlay is open, so scores update during 60s polling without re-entering.
 - Added `startMs` field to live match objects (computed from `event.date`) to support time-based sort.
 - Logo refresh: new circular Superman-fly base64 swapped in both `.brand-mark` (header) and `.nb-flymode > img` (tab bar). Old base64 fully removed.
-- Saved `statfly_splash.png` as a project asset for future use (not wired into the app).
 
 ### v25 – 14 new soccer slugs
 
@@ -279,7 +278,22 @@ Files in repo: `index.html`, `sw.js`, `manifest.json`, `icon192.png`, `icon512.p
 
 `.nojekyll` and `feed-research.html` were added in v25 for a research tester that didn’t end up being used (Safari caching issue). Both can be deleted when convenient – neither is needed for the app.
 
-## Open items (full list)
+## v97 - FlyTime Lab dashboard (Jun 2026)
+
+- `DEBUG_FLY` master switch (true): card flyscores + Teams tab FlyTime Lab dashboard.
+- FlyTime Lab: live green/yellow counts, yellow-to-green accuracy, finished-game red stamps, V1 engine health, recent match log (Y/G/R).
+- Ledger now stores rating, engine type, threshold per prediction.
+- Set `DEBUG_FLY = false` before public release.
+
+## v96 - backlog completion (Jun 2026)
+
+- Global LIVE pill in header (`#global-live`) on all tabs when `ALL_LIVE.length > 0`.
+- Per-team `+` quick-add on live/upcoming cards, search results, onboarding picks, suggested teams.
+- Onboarding polish: 3-step progress dots, hero caption, notifications headline.
+- FlyTime blowout buffer: `FLY_BLOWOUT_MARGIN` releases pin/green lock; after-match stamp kept.
+- `DEBUG_FLYSCORES` set to false for production.
+
+## Open items (remaining)
 
 ### Verify on live match days
 

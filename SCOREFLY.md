@@ -4,7 +4,7 @@ Mobile-first sports scores app. Pure black UI, Apple-style typography, single se
 
 **Tagline:** Scores Anywhere. Simple.
 **Brand colour:** `#06f03c` (electric green; swapped from `#30d158` in the v69-v74 pixel-match pass)
-**Current file:** `index.html` (cache `scorefly-v95`)
+**Current file:** `index.html` (cache `scorefly-v96`)
 **Live URL:** [scorefly.app](https://scorefly.app) · [hammertymm.github.io/scorefly](https://hammertymm.github.io/scorefly)
 **Repo:** [github.com/Hammertymm/scorefly](https://github.com/Hammertymm/scorefly)
 
@@ -331,7 +331,7 @@ Pure black `#000000` everywhere. No dark grey, no gradients.
 
 Repo files: `index.html`, `sw.js`, `manifest.json`, `icon192.png`, `icon512.png`, `icon-*.png` (per-sport fallback icons), `fly-green.png`, `fly-yellow.png`, `fly-red.png`, `knob.png` (brightness slider), `onboard-hero.png`, `onboard-notif.png`, `supafly-*.png`, `README.md`, `NOTES.md`, `SCOREFLY.md`, `VERSION HISTORY.md`, `CNAME`, `.nojekyll`. (`supafly-score.png` is precached but unused since the v78 onboarding swap.)
 
-Steps: edit in GitHub web UI, commit, wait ~30s for Pages rebuild, refresh on phone. **Every deploy that touches HTML/CSS/JS/icons: bump `CACHE` in `sw.js` to a higher number.** Current: **`scorefly-v95`**. For an installed PWA, removing + re-adding the Home Screen icon forces a stale cache to clear.
+Steps: edit in GitHub web UI, commit, wait ~30s for Pages rebuild, refresh on phone. **Every deploy that touches HTML/CSS/JS/icons: bump `CACHE` in `sw.js` to a higher number.** Current: **`scorefly-v96`**. For an installed PWA, removing + re-adding the Home Screen icon forces a stale cache to clear.
 
 -----
 
@@ -341,16 +341,17 @@ Steps: edit in GitHub web UI, commit, wait ~30s for Pages rebuild, refresh on ph
 
 *Numbering note:* these are JRod’s working item numbers, not unique IDs - “1” is reused (live-first ordering AND the sticky FlyTime pin) and the rejected set ran long. Treat the description as the key and the number as a loose label. (Code comments such as “Item 16” point back to this list.)
 
-*Building (8):*
+*Built (v96):*
 
-- **(4) Auto-clear search box after add** - clear the search field once a team is followed.
-- **(7) Tab memory** - remember the last tab; default to My Teams on first launch, fall back to All when My Teams is empty.
-- **(5) Six suggested teams, new logic - BUILT (v67).** `onbGetSuggestions` rewritten to the spec: 2 Local (same metro, a DIFFERENT league than the anchor, household names first), 2 Same country (different sport, biggest names), 2 Same league (biggest names; the rivals-first slot was dropped in v78 with the rivalry system); falls back to 4 country / 2 league when the anchor has no metro. Data comes from `METRO_TEAMS` (a name->metro side-car for US/Canada/Australia/NZ multi-sport cities; `teamState` reads it). Verified against example anchors. Remaining: judge quality on more anchors; extend metros / `MAJOR_CLUBS` if gaps show.
-- **(15) Pull-to-refresh** - pull-down on the Feed to force a poll; build carefully around the existing tab-swipe gesture so the two do not fight.
-- **(16) Clean global LIVE indicator** - one tidy global LIVE indicator; keep the per-card timer and the freshness line.
-- **(17) Last-scores cache for instant startup paint - HIGHEST VALUE.** *Mostly already built - verify, do not rebuild.* The INSTANT FEED SNAPSHOT system exists: `saveSnapshot()` stashes `ALL_LIVE/UPCOMING/RESULTS` to `localStorage` (`scorefly_snapshot_v1`) after each refresh; `hydrateSnapshot()` repaints on boot (TTL 6h for upcoming/results, live trusted only if snapshot < 15 min old). Remaining work: confirm it paints instantly on a real device and tune TTLs.
-- **(1) Sticky FlyTime pin** - keep Fly Time games pinned at top until the match finishes, instead of dropping out the moment `isFlyTime` stops being met mid-game. Open dependency: blowout buffer (see sub-points). Touches `isFlyTime` / `updateFlyState` / `renderHome`.
-- **(14) Discreet per-team “+” quick-add button** - MOCKUPS FIRST, before any code.
+- **(4) Auto-clear search box after add** - built: clears search after add; results list stays for multi-add.
+- **(7) Tab memory** - built: `scorefly_last_tab` restores last tab for returning users.
+- **(5) Six suggested teams** - built v67 (`onbGetSuggestions`); rivals-first slot dropped v78.
+- **(15) Pull-to-refresh** - built on Feed and Results.
+- **(16) Clean global LIVE indicator** - built v96: `#global-live` header pill on all tabs when any game is live; tap jumps to Feed.
+- **(17) Last-scores cache** - built: `saveSnapshot` / `hydrateSnapshot` instant boot paint (6h / 15 min TTLs).
+- **(1) Sticky FlyTime pin** - built with blowout buffer v96 (`FLY_BLOWOUT_MARGIN` unpins blowouts; after-match stamp kept).
+- **(14) Per-team quick-add** - built v96: circular `+` on cards, search, onboarding picks, suggested teams.
+- **(2) Onboarding polish** - built v96: progress dots, hero caption, notifications headline.
 
 *Keep / verify only, no build (6):*
 
@@ -360,17 +361,12 @@ Steps: edit in GitHub web UI, commit, wait ~30s for Pages rebuild, refresh on ph
 
 - 2-screen onboarding (keep 4 screens), inline “Added” tick, separate Upcoming screen, FlyTime visual teardown, confidence tiers, activations counter, 5-tab nav (nav stays locked: Feed / Results / My Teams + the Fly Mode button).
 
-*Design-first tasks (need JRod’s eyes before code):*
+*Design-first tasks:* All built in v96.
 
-- **(2) Onboarding quality redesign** - all 4 screens, same structure, better execution (not a new flow; see Onboarding section, v51).
-- **(14) Quick-add “+” button** - mockups first.
+*Settled sub-points:*
 
-*Open sub-points to settle at build time:*
-
-- **Blowout buffer (1)** - when a pinned game becomes a blowout, downgrade/unpin vs hold to the finish.
+- **Blowout buffer (1) - SETTLED v96.** Unpin when margin exceeds `FLY_BLOWOUT_MARGIN`; stamp retained.
 - **“State” data location (5) - SETTLED.** Lives in `METRO_TEAMS` (a side-car name->metro map), not on the `TEAMS` strings. `teamState(item)` reads `item.state` then `TEAM_METRO[item.name]` (exact-name, city granularity). Only multi-sport metros are tagged; everything else falls back to country.
-
-*Recommended order (low-risk first):* one batch deploy of the small UI wins (4, 7, 16, and the 6-team logic in 5); then the score cache (17) on its own since it touches the data layer; then pull-to-refresh (15) and the sticky FlyTime pin (1). The two design-heavy tasks (14 mockups, 2 onboarding) run in parallel - they need JRod’s input before code.
 
 **Verify on live match days**
 
@@ -443,7 +439,8 @@ Steps: edit in GitHub web UI, commit, wait ~30s for Pages rebuild, refresh on ph
 
 ## Version history
 
-**v83** (current) — FlyMatch two-tier threshold + margin-data visibility. The v80 hard gate had over-corrected to ZERO yellow flies (per-team margin data does not reliably load), so the gate was replaced with a data-aware two-tier threshold: bar 62 when both teams have margin history (close-led), bar 82 (`FLYMATCH_THRESHOLD_NODATA`) when missing - so very-even matchups and finals still flag (never zero) but average games do not (never the old flood). Added a “Margin data ready for X of Y upcoming games” readout to the FlyTime accuracy ledger and wired it to refresh after each form load, to reveal whether the predictor’s input data is actually loading. `sw.js` -> v83.
+**v96** (current) - Backlog batch: global LIVE pill, quick-add `+`, onboarding polish, FlyTime blowout buffer, `DEBUG_FLYSCORES` off. `sw.js` -> v96.
+**v83** — FlyMatch two-tier threshold + margin-data visibility. The v80 hard gate had over-corrected to ZERO yellow flies (per-team margin data does not reliably load), so the gate was replaced with a data-aware two-tier threshold: bar 62 when both teams have margin history (close-led), bar 82 (`FLYMATCH_THRESHOLD_NODATA`) when missing - so very-even matchups and finals still flag (never zero) but average games do not (never the old flood). Added a “Margin data ready for X of Y upcoming games” readout to the FlyTime accuracy ledger and wired it to refresh after each form load, to reveal whether the predictor’s input data is actually loading. `sw.js` -> v83.
 **v82** — Live/finished classification fix. `espnStatus` rewritten to trust ESPN `status.type.state` (pre/in/post) instead of a status-name allowlist + start-time guess. Fixed (a) NRL games flipping straight to “finished” at kickoff (their half-based status names were not on the allowlist) and (b) games showing as live AND finished at once around tip-off. Added `pruneResultsOfLive()` so a match is never in both lists. `sw.js` -> v82.
 **v81** — Period terminology + uppercase timers + Fly Mode separators + portrait lock. (1) `espnTimer` period labels fixed: WNBA/NCAAF -> Q1-Q4, NCAAM -> H1/H2 (college halves), plus a sport-based fallback so no league shows a bare number; both timer boxes set `text-transform: uppercase` (Btm->BTM, Inn->INN). (2) Fly Mode gains a stronger between-match divider (`--fly-sep` 0.25 vs the 0.12 seam). (3) Tab pages locked to portrait via a `.rotate-lock` overlay on phone-sized landscape; Fly Mode stays the one landscape view. `sw.js` -> v81.
 **v80** — FlyMatch gate + sharper competitiveness. Added a hard gate requiring BOTH teams to have recent margin history before flagging (so competitiveness alone could not float every game over the line), and steepened competitiveness via `FLYMATCH_COMP_GAP` (0.5) so real mismatches reach 0. Correct in principle but later proved too strict given flaky margin data (see v83). `sw.js` -> v80.

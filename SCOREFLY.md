@@ -60,7 +60,7 @@ First-run flow triggered when `scorefly_onboarded` is not set in localStorage. F
 
 1. **Welcome** — SupaFly (welcome pose) + ScoreFly wordmark + tagline + the value hook (“Too much sport, not enough time. ScoreFly shows you which games are worth watching right now.”). Button -> `onbGoStep('fly')`.
 1. **Meet FlyTime** (`onb-step-fly`) — SupaFly (pointing pose) + a pulsing green `FLYTIME` badge + a black-box explanation. Exists to make FlyTime memorable; no thresholds revealed.
-1. **Pick your teams** — search-only until the first team is followed. After first pick, a single flat list of up to 7 country-scoped suggestions appears in the overlay (cross-sport discovery + one same-league marquee). No mascot (kept uncluttered).
+1. **Pick your teams** — search for a team or tap **Quick Start with Global Starter Pack** (Liverpool, Knicks, Real Madrid, Maple Leafs, Collingwood). Starter pack follows all five and goes to notifications. Search path: after first pick, two authored/smart recommendations under “Because you follow [team]”, then **Continue** to notifications. No mascot (kept uncluttered).
 1. **Notifications** — SupaFly (here’s-the-score pose) + opt-in step; grants bell alert for all followed teams on approval.
 
 SupaFly assets: `supafly-welcome.png`, `supafly-pointing.png`, `supafly-score.png`, `supafly-thumbsup.png` (thumbsup bundled, reserved for later). Transparent PNGs on pure black, pre-cached in `sw.js`.
@@ -69,11 +69,11 @@ On finish: sets `scorefly_onboarded = '1'`, drops user into their feed.
 
 **Suggested for you** (Teams tab) is unused — suggestions live only in the onboarding overlay. `renderSuggested()` always hides the Teams-tab section.
 
-Onboarding suggestion engine (`onbGetSuggestions`), anchored on `favs[0]` (re-syncs on add/remove):
+Onboarding recommendation engine (`onbGetSuggestions` + `ONB_RECIPES`), two slots, anchored on `favs[0]`:
 
-1. Up to 6 — same country as anchor, different league (cross-sport preferred; one per league; no padding for thin countries e.g. England)
-1. +1 — most popular team still in the anchor's league (`LEAGUE_MARQUEES` ordering, `MAJOR_CLUBS` fallback)
-1. If `favs` becomes empty, suggestions hide and step 2 returns to search-only copy
+1. Authored recipe per anchor when defined (metro / cricket substitutes for missing national soccer sides)
+1. Fallback — metro cross-sport (`METRO_TEAMS`), then same-country cross-league marquees
+1. If `favs` becomes empty, step 2 resets to search + starter pack
 
 -----
 

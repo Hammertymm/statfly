@@ -318,7 +318,11 @@
   .onb-bell { font-size: 54px; text-align: center; margin: 64px 0 4px; }
   .onb-btn { display: block; width: 100%; border: none; border-radius: 14px; font-family: inherit; font-size: 17px; font-weight: 600; padding: 16px; cursor: pointer; -webkit-tap-highlight-color: rgba(255,255,255,0.08); }
   .onb-btn-primary { background: var(--live); color: #000; margin-bottom: 16px; }
-  #onb-step-2 .onb-btn-primary { margin-top: auto; }
+  #onb-step-2 { min-height: 100%; }
+  .onb-step2-scroll { flex: 1 1 auto; min-height: 0; }
+  .onb-step2-actions { margin-top: auto; flex-shrink: 0; padding-bottom: 24px; }
+  #onb-step-2 .onb-btn-primary { margin-top: 12px; margin-bottom: 0; }
+  #onb-step-2.onb-has-suggestions .onb-sub { margin-bottom: 14px; }
   .onb-btn-text { background: none; color: var(--text-3); font-size: 15px; padding: 12px; margin-bottom: 24px; }
   .follow-btn{background:transparent;border:1px solid rgba(6,240,60,0.55);color:var(--live);font-size:12px;font-weight:600;padding:6px 14px;border-radius:14px;cursor:pointer;font-family:inherit;transition:background .15s,transform .1s;}
   .follow-btn:active{background:rgba(6,240,60,.12);transform:scale(.97);}
@@ -330,13 +334,20 @@
   .onb-pick-info{flex:1;min-width:0;}
   .onb-pick-name{font-size:14px;font-weight:600;color:var(--text);}
   .onb-pick-league{font-size:11px;color:var(--text-3);margin-top:1px;}
-  .onb-sugg-list{margin-bottom:16px;}
+  .onb-sugg-list{margin-bottom:12px;}
+  .onb-pick-logo{width:26px;height:26px;border-radius:6px;background:rgba(255,255,255,0.92);padding:2px;display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 0 0 1px rgba(255,255,255,0.06);}
+  .onb-pick-logo img{width:100%;height:100%;object-fit:contain;display:block;filter:contrast(1.1) saturate(1.08);}
   .onb-pick-card.followed{border-color:var(--live);background:rgba(6,240,60,0.05);}
   .onb-sugg-sub{font-size:12px;color:var(--text-3);margin:-4px 0 10px;}
   .onb-divider{display:flex;align-items:center;gap:12px;margin:20px 0 16px;color:var(--text-3);font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:.4px;}
   .onb-divider::before,.onb-divider::after{content:'';flex:1;height:1px;background:var(--sep);}
-  .onb-starter-btn{background:transparent;border:1px solid rgba(6,240,60,0.45);color:var(--live);}
+  #onb-step-2 .onb-h { font-size: 22px; margin: 16px 0 6px; letter-spacing: -.3px; }
+  .onb-starter-btn{background:transparent;border:1px solid rgba(6,240,60,0.45);color:var(--live);display:flex;flex-direction:column;align-items:center;gap:10px;padding:14px 16px 12px;line-height:1.3;}
   .onb-starter-btn:active{background:rgba(6,240,60,0.08);}
+  .onb-starter-title{font-size:15px;font-weight:600;}
+  .onb-starter-logos{display:flex;gap:10px;justify-content:center;align-items:center;}
+  .onb-starter-logo{width:34px;height:34px;border-radius:8px;background:rgba(255,255,255,0.92);padding:4px;display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 0 0 1px rgba(255,255,255,0.06);}
+  .onb-starter-logo img,.onb-starter-logo .team-crest{width:100%;height:100%;object-fit:contain;display:block;filter:contrast(1.1) saturate(1.08);}
   #onb-step-1 .onb-hero-caption{display:none;}
   #onb-step-3 .onb-notif-top{font-size:14px;line-height:1.45;color:var(--text-3);text-align:center;padding:12px 8px 0;margin:0;}
   #onb-step-3 .onb-notif-hero{margin-top:4px;}
@@ -959,6 +970,7 @@
 
     <!-- Step 2: Team pick — search or global starter pack -->
     <div class="onb-step" id="onb-step-2" style="display:none">
+      <div class="onb-step2-scroll">
       <div class="onb-h" id="onb-step2-h">Choose a team you care about</div>
       <div class="onb-sub" id="onb-step2-sub">Search for a team, club, franchise, or national side you already follow.</div>
 
@@ -976,17 +988,26 @@
 
       <div id="onb-starter-wrap">
         <div class="onb-divider">or</div>
-        <button type="button" class="onb-btn onb-starter-btn" onclick="onbQuickStart()">Quick Start with Global Starter Pack</button>
+        <button type="button" class="onb-btn onb-starter-btn" onclick="onbQuickStart()">
+          <span class="onb-starter-title">Quick Start with Global Starter Pack</span>
+          <div class="onb-starter-logos" id="onb-starter-logos" aria-hidden="true"></div>
+        </button>
       </div>
 
       <div id="onb-suggestions-wrap" style="display:none">
         <div class="onb-label" id="onb-sugg-label"></div>
         <div class="onb-sugg-sub">Recommended teams</div>
         <div class="onb-sugg-list" id="onb-sugg-grid"></div>
+        <div class="onb-divider">or</div>
+        <div class="onb-label">Global Starter Pack</div>
+        <div class="onb-sugg-list" id="onb-starter-grid"></div>
+      </div>
       </div>
 
-      <div class="onb-count" id="onb-count"></div>
-      <button class="onb-btn onb-btn-primary" id="onb-step2-btn" onclick="onbGoStep(3)">Skip for now</button>
+      <div class="onb-step2-actions">
+        <div class="onb-count" id="onb-count"></div>
+        <button class="onb-btn onb-btn-primary" id="onb-step2-btn" onclick="onbGoStep(3)">Skip for now</button>
+      </div>
     </div>
 
     <!-- Step 3: Activate FlyTime notifications -->
@@ -4439,28 +4460,29 @@ const GLOBAL_STARTER_PACK = [
   'Collingwood Magpies|AFL'
 ];
 
-// Authored two-team recommendations (favKey -> [favKey, favKey]). National soccer
-// sides are substituted with cricket / club marquees where missing from the dataset.
-const ONB_RECIPES = {
-  'Adelaide Crows|AFL':              ['Australia|ICC Cricket (T20)', 'Melbourne Storm|NRL'],
-  'Liverpool|Premier League':        ['England|ICC Cricket (T20)', 'Leeds United|Championship'],
-  'New York Knicks|NBA':             ['New York Yankees|MLB', 'New York Giants|NFL'],
-  'Toronto Maple Leafs|NHL':         ['Toronto Raptors|NBA', 'Toronto Blue Jays|MLB'],
-  'Collingwood Magpies|AFL':         ['Australia|ICC Cricket (T20)', 'Melbourne Storm|NRL'],
-  'Real Madrid|La Liga':             ['Barcelona|La Liga', 'Atletico Madrid|La Liga'],
-  'Manchester United|Premier League':['England|ICC Cricket (T20)', 'Leeds United|Championship'],
-  'Manchester City|Premier League':  ['England|ICC Cricket (T20)', 'Leeds United|Championship'],
-  'Arsenal|Premier League':          ['England|ICC Cricket (T20)', 'Leeds United|Championship'],
-  'Chelsea|Premier League':          ['England|ICC Cricket (T20)', 'Leeds United|Championship'],
-  'Hawthorn Hawks|AFL':              ['Australia|ICC Cricket (T20)', 'Melbourne Storm|NRL'],
-  'Richmond Tigers|AFL':             ['Australia|ICC Cricket (T20)', 'Melbourne Storm|NRL'],
-  'Sydney Swans|AFL':                ['Australia|ICC Cricket (T20)', 'Sydney Roosters|NRL'],
-  'Brisbane Lions|AFL':              ['Australia|ICC Cricket (T20)', 'Brisbane Broncos|NRL'],
-  'Los Angeles Lakers|NBA':          ['Los Angeles Dodgers|MLB', 'Los Angeles Rams|NFL'],
-  'Boston Celtics|NBA':              ['Boston Red Sox|MLB', 'New England Patriots|NFL'],
-  'Chicago Bulls|NBA':               ['Chicago Cubs|MLB', 'Chicago Bears|NFL'],
-  'Dallas Mavericks|NBA':            ['Dallas Cowboys|NFL', 'Texas Rangers|MLB']
+// ESPN crest URLs for the starter-pack preview row (same teams as GLOBAL_STARTER_PACK).
+const STARTER_PACK_LOGOS = {
+  'Liverpool|Premier League':       'https://a.espncdn.com/i/teamlogos/soccer/500/364.png',
+  'New York Knicks|NBA':            'https://a.espncdn.com/i/teamlogos/nba/500/18.png',
+  'Real Madrid|La Liga':            'https://a.espncdn.com/i/teamlogos/soccer/500/86.png',
+  'Toronto Maple Leafs|NHL':        'https://a.espncdn.com/i/teamlogos/nhl/500/10.png',
+  'Collingwood Magpies|AFL':        'https://a.espncdn.com/i/teamlogos/afl/500/coll.png'
 };
+
+function onbRenderStarterPack(){
+  var el=document.getElementById('onb-starter-logos');
+  if(!el) return;
+  el.innerHTML=GLOBAL_STARTER_PACK.map(function(key){
+    var item=onbEntryForKey(key);
+    var logo=STARTER_PACK_LOGOS[key]||'';
+    var emoji=item?(item.emoji||item.leagueEmoji):'';
+    var fallback=sportImg(emoji,22);
+    var inner=logo
+      ? '<img class="team-crest" src="'+logo+'" alt="" onerror="this.style.display=\'none\';this.nextSibling.style.display=\'\'"><span style="display:none">'+fallback+'</span>'
+      : fallback;
+    return '<div class="onb-starter-logo" title="'+(item?item.name:'')+'">'+inner+'</div>';
+  }).join('');
+}
 
 function onbEntryForKey(key){
   if(!searchIndex) searchIndex = buildSearchIndex();
@@ -4472,7 +4494,7 @@ function onbEntryForName(name){
   return searchIndex.find(function(it){ return it.type === 'team' && it.name === name; }) || null;
 }
 
-// Two recommendations after the anchor pick: recipe first, then metro / country fallbacks.
+// Two same-country suggestions after the anchor pick (one per league where possible).
 function onbGetSuggestions(picked){
   if(!searchIndex) searchIndex = buildSearchIndex();
   var TARGET = 2, out = [], seen = {};
@@ -4488,55 +4510,63 @@ function onbGetSuggestions(picked){
   function majorSort(a, b){
     return (isMajorClub(b.name) ? 1 : 0) - (isMajorClub(a.name) ? 1 : 0);
   }
-
-  var recipe = ONB_RECIPES[picked.favKey];
-  if(recipe){
-    for(var r = 0; r < recipe.length && out.length < TARGET; r++){
-      push(onbEntryForKey(recipe[r]));
+  function take(cands, n){
+    cands = cands.filter(function(it){ return !seen[it.favKey]; });
+    cands.sort(function(a, b){
+      var aCross = a.emoji !== pSport ? 1 : 0;
+      var bCross = b.emoji !== pSport ? 1 : 0;
+      if(bCross !== aCross) return bCross - aCross;
+      return majorSort(a, b);
+    });
+    var added = 0, usedL = {};
+    for(var i = 0; i < cands.length && added < n; i++){
+      if(!usedL[cands[i].league] && push(cands[i])){ usedL[cands[i].league] = true; added++; }
     }
   }
 
+  var teams    = searchIndex.filter(function(it){ return it.type === 'team'; });
+  var pCountry = leagueCountry(picked.league);
   var pLeague  = picked.league;
   var pSport   = picked.emoji || picked.leagueEmoji;
-  var pCountry = leagueCountry(picked.league);
-  var pState   = teamState(picked);
-  var teams    = searchIndex.filter(function(it){ return it.type === 'team'; });
+  var sameCountry = function(it){ return leagueCountry(it.league) === pCountry; };
 
-  // Metro cross-sport / cross-league (e.g. Knicks -> Yankees).
-  if(out.length < TARGET && pState){
-    var metroCands = (METRO_TEAMS[pState] || []).map(function(nm){ return onbEntryForName(nm); })
-      .filter(function(it){ return it && it.league !== pLeague && !seen[it.favKey]; });
-    metroCands.sort(function(a, b){
-      var aCross = a.emoji !== pSport ? 1 : 0;
-      var bCross = b.emoji !== pSport ? 1 : 0;
-      if(bCross !== aCross) return bCross - aCross;
-      return majorSort(a, b);
-    });
-    for(var m = 0; m < metroCands.length && out.length < TARGET; m++){
-      push(metroCands[m]);
-    }
-  }
+  take(teams.filter(function(it){
+    return sameCountry(it) && it.league !== pLeague;
+  }), TARGET);
 
-  // Same country, different sport or league.
   if(out.length < TARGET){
-    var countryCands = teams.filter(function(it){
-      return leagueCountry(it.league) === pCountry && it.league !== pLeague && !seen[it.favKey];
+    var sameLeague = teams.filter(function(it){ return it.league === pLeague && !seen[it.favKey]; });
+    sameLeague.sort(function(a, b){
+      return leaguePopularityScore(b.name, pLeague) - leaguePopularityScore(a.name, pLeague);
     });
-    countryCands.sort(function(a, b){
-      var aCross = a.emoji !== pSport ? 1 : 0;
-      var bCross = b.emoji !== pSport ? 1 : 0;
-      if(bCross !== aCross) return bCross - aCross;
-      return majorSort(a, b);
-    });
-    var usedL = {};
-    for(var c = 0; c < countryCands.length && out.length < TARGET; c++){
-      if(!usedL[countryCands[c].league] && push(countryCands[c])){
-        usedL[countryCands[c].league] = true;
-      }
+    for(var s = 0; s < sameLeague.length && out.length < TARGET; s++){
+      push(sameLeague[s]);
     }
   }
 
   return out;
+}
+
+function onbStarterLogoHtml(favKey){
+  var logo=STARTER_PACK_LOGOS[favKey]||'';
+  var item=onbEntryForKey(favKey);
+  var emoji=item?(item.emoji||item.leagueEmoji):'';
+  var fallback=sportImg(emoji,18);
+  if(logo){
+    return '<div class="onb-pick-logo"><img class="team-crest" src="'+logo+'" alt="" onerror="this.style.display=\'none\';this.nextSibling.style.display=\'\'"><span style="display:none">'+fallback+'</span></div>';
+  }
+  return '<div class="onb-pick-flag">'+fallback+'</div>';
+}
+
+function onbPickCardHtml(it, idx, source){
+  var followed=favs.some(function(f){return f.key===it.favKey;});
+  var badge=source==='starter' ? onbStarterLogoHtml(it.favKey) : '<div class="onb-pick-flag">'+sportImg(it.emoji||it.leagueEmoji,18)+'</div>';
+  return '<div class="onb-pick-card'+(followed?' followed':'')+'" data-source="'+source+'" data-idx="'+idx+'" onclick="onbPickTap(this)">'+
+    badge+
+    '<div class="onb-pick-info"><div class="onb-pick-name">'+it.name+'</div>'+
+    '<div class="onb-pick-league">'+it.league+'</div></div>'+
+    (followed ? '<span class="gsr-added">&#10003; Added</span>' : '<span class="qa-btn qa-btn-static">+</span>')+
+    '</div>';
 }
 
 function onbQuickStart(){
@@ -4563,15 +4593,40 @@ function isOnboardingActive(){
   return overlay && overlay.classList.contains('active');
 }
 
+var onbCachedSuggestions=null;
+var onbCachedAnchorKey=null;
+
+function onbResetOnboardingCache(){
+  onbCachedSuggestions=null;
+  onbCachedAnchorKey=null;
+}
+
+function onbSetSearchMode(searching){
+  var suggWrap=document.getElementById('onb-suggestions-wrap');
+  var starter=document.getElementById('onb-starter-wrap');
+  if(searching){
+    if(suggWrap) suggWrap.style.display='none';
+    if(starter) starter.style.display='none';
+    return;
+  }
+  if(favs.length){
+    if(suggWrap) suggWrap.style.display='block';
+    if(starter) starter.style.display='none';
+  } else {
+    if(suggWrap) suggWrap.style.display='none';
+    if(starter) starter.style.display='';
+  }
+}
+
 function onbResetStep2Copy(){
   var h=document.getElementById('onb-step2-h');
   var sub=document.getElementById('onb-step2-sub');
-  var starter=document.getElementById('onb-starter-wrap');
-  var searchBlock=document.getElementById('onb-search-block');
+  var step2=document.getElementById('onb-step-2');
   if(h) h.textContent='Choose a team you care about';
   if(sub) sub.textContent='Search for a team, club, franchise, or national side you already follow.';
-  if(starter) starter.style.display='';
-  if(searchBlock) searchBlock.style.display='';
+  onbSetSearchMode(false);
+  if(step2) step2.classList.remove('onb-has-suggestions');
+  onbResetOnboardingCache();
 }
 
 function onbSyncSuggestions(){
@@ -4584,15 +4639,29 @@ function onbSyncSuggestions(){
     onbResetStep2Copy();
     return;
   }
-  onbShowSuggestions(favToPickItem(favs[0]));
+  onbEnterPostPickMode();
+}
+
+function onbEnterPostPickMode(){
+  var picked=favToPickItem(favs[0]);
+  var lbl=document.getElementById('onb-sugg-label');
+  var sub=document.getElementById('onb-step2-sub');
+  var step2=document.getElementById('onb-step-2');
+  if(lbl) lbl.textContent='Because you follow '+picked.name;
+  if(sub) sub.textContent='Add another team if you like, or continue when you\u2019re ready.';
+  if(step2) step2.classList.add('onb-has-suggestions');
+  onbSetSearchMode(false);
+  onbRenderSuggestions();
 }
 
 function startOnboarding(){
   var suggWrap=document.getElementById('onb-suggestions-wrap');
   if(suggWrap) suggWrap.style.display='none';
   onbResetStep2Copy();
+  onbResetOnboardingCache();
   onbGoStep(1);
   onbRefresh();
+  onbRenderStarterPack();
   document.getElementById('onboard-overlay').classList.add('active');
 }
 
@@ -4601,7 +4670,7 @@ function onbGoStep(n){
   for(var i=0;i<steps.length;i++){ steps[i].style.display='none'; }
   var target=document.getElementById('onb-step-'+n);
   if(target) target.style.display='flex';
-  if(n===2){ onbRefresh(); }
+  if(n===2){ onbRefresh(); onbRenderStarterPack(); }
 }
 
 // Search inside onboarding. Mirrors globalSearch/gsrTap but targets the
@@ -4613,8 +4682,11 @@ function onbSearch(query){
   if(!query.trim()){
     resultsDiv.classList.remove('visible');
     resultsDiv.innerHTML='';
+    onbSetSearchMode(false);
+    if(favs.length) onbRenderSuggestions();
     return;
   }
+  onbSetSearchMode(true);
   if(!searchIndex) searchIndex=buildSearchIndex();
   var q=query.toLowerCase();
   var matches=searchIndex.filter(function(item){
@@ -4648,8 +4720,7 @@ function onbQuickAdd(evt, idx){
   var item=matches[idx];
   if(!item || item.type!=='team') return;
   if(favs.some(function(f){return f.key===item.favKey;})) return;
-  onbAddTeam(item);
-  onbSearch(document.getElementById('onb-search').value);
+  onbAddTeam(item, true);
 }
 
 function onbTap(el){
@@ -4658,17 +4729,17 @@ function onbTap(el){
   var item=matches[parseInt(el.getAttribute('data-idx'))];
   if(!item || item.type!=='team') return;
   if(favs.some(function(f){return f.key===item.favKey;})) return;
-  onbAddTeam(item);
-  onbSearch(document.getElementById('onb-search').value); // refresh to show Added
+  onbAddTeam(item, true);
 }
 
 // Shared add path for onboarding search / suggestion taps.
-function onbAddTeam(item){
+function onbAddTeam(item, fromSearch){
   if(favs.some(function(f){return f.key===item.favKey;})) return;
-  var wasEmpty = !favs.length;
+  var wasEmpty=!favs.length;
   favs.push({key:item.favKey,name:item.name,league:item.league,leagueEmoji:item.leagueEmoji,flag:item.countryFlag||item.flag,alert:false});
   saveFavs(); renderFavs(); renderHome(); renderResults();
-  if(wasEmpty) onbClearSearch();
+  if(fromSearch) onbClearSearch();
+  else if(wasEmpty) onbClearSearch();
   onbSyncSuggestions();
   onbRefresh();
 }
@@ -4678,49 +4749,50 @@ function onbClearSearch(){
   document.getElementById('onb-search-clear').classList.remove('visible');
   var r=document.getElementById('onb-results');
   r.classList.remove('visible'); r.innerHTML='';
-}
-
-// Show two recommendations after the first search pick.
-function onbShowSuggestions(picked){
-  var suggWrap=document.getElementById('onb-suggestions-wrap');
-  var starter=document.getElementById('onb-starter-wrap');
-  var lbl=document.getElementById('onb-sugg-label');
-  var searchBlock=document.getElementById('onb-search-block');
-  if(starter) starter.style.display='none';
-  if(searchBlock) searchBlock.style.display='none';
-  if(suggWrap) suggWrap.style.display='block';
-  if(lbl) lbl.textContent='Because you follow '+picked.name;
-  onbRenderSuggestions();
+  onbSetSearchMode(false);
+  if(favs.length) onbRenderSuggestions();
 }
 
 function onbRenderSuggestions(){
   var grid=document.getElementById('onb-sugg-grid');
-  if(!grid || !favs.length) return;
-  var suggestions=onbGetSuggestions(favToPickItem(favs[0]));
-  if(!suggestions.length){
-    grid.innerHTML='<div class="section-empty" style="padding:4px 0">No suggestions — search above to add more.</div>';
-    return;
+  var starterGrid=document.getElementById('onb-starter-grid');
+  if(!grid || !starterGrid || !favs.length) return;
+
+  var anchorKey=favs[0].key;
+  if(anchorKey!==onbCachedAnchorKey || !onbCachedSuggestions){
+    onbCachedAnchorKey=anchorKey;
+    onbCachedSuggestions=onbGetSuggestions(favToPickItem(favs[0]));
   }
-  grid.innerHTML=suggestions.map(function(s,idx){
-    var it=s.entry;
-    var followed=favs.some(function(f){return f.key===it.favKey;});
-    return '<div class="onb-pick-card'+(followed?' followed':'')+'" data-idx="'+idx+'" onclick="onbSuggTap(this)">'+
-      '<div class="onb-pick-flag">'+sportImg(it.emoji||it.leagueEmoji,18)+'</div>'+
-      '<div class="onb-pick-info"><div class="onb-pick-name">'+it.name+'</div>'+
-      '<div class="onb-pick-league">'+it.league+'</div></div>'+
-      (followed ? '<span class="gsr-added">&#10003;</span>' : '<span class="qa-btn qa-btn-static">+</span>')+
-      '</div>';
-  }).join('');
+  var suggestions=onbCachedSuggestions;
+  if(!suggestions.length){
+    grid.innerHTML='<div class="section-empty" style="padding:4px 0">No local suggestions for this team.</div>';
+  } else {
+    grid.innerHTML=suggestions.map(function(s,idx){
+      return onbPickCardHtml(s.entry, idx, 'country');
+    }).join('');
+  }
   grid._suggestions=suggestions;
+
+  var starterEntries=GLOBAL_STARTER_PACK.map(function(key){ return onbEntryForKey(key); }).filter(Boolean);
+  starterGrid.innerHTML=starterEntries.map(function(it,idx){
+    return onbPickCardHtml(it, idx, 'starter');
+  }).join('');
+  starterGrid._entries=starterEntries;
 }
 
-function onbSuggTap(el){
-  var grid=document.getElementById('onb-sugg-grid');
-  var list=grid._suggestions || [];
-  var s=list[parseInt(el.getAttribute('data-idx'))];
-  if(!s) return;
-  var it=s.entry;
-  if(favs.some(function(f){return f.key===it.favKey;})) return; // already following
+function onbPickTap(el){
+  var source=el.getAttribute('data-source');
+  var idx=parseInt(el.getAttribute('data-idx'),10);
+  var it=null;
+  if(source==='starter'){
+    var starterGrid=document.getElementById('onb-starter-grid');
+    it=(starterGrid && starterGrid._entries) ? starterGrid._entries[idx] : null;
+  } else {
+    var grid=document.getElementById('onb-sugg-grid');
+    var s=(grid && grid._suggestions) ? grid._suggestions[idx] : null;
+    it=s ? s.entry : null;
+  }
+  if(!it || favs.some(function(f){return f.key===it.favKey;})) return;
   onbAddTeam(it);
 }
 
@@ -4758,6 +4830,8 @@ function onbEnableNotifs(){
 
 function onbFinish(){
   localStorage.setItem('scorefly_onboarded','1');
+  onbClearSearch();
+  onbResetOnboardingCache();
   hideSuggestedSection();
   document.getElementById('onboard-overlay').classList.remove('active');
   // If they followed anyone, drop them straight into their own feed.

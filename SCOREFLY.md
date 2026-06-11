@@ -60,7 +60,7 @@ First-run flow triggered when `scorefly_onboarded` is not set in localStorage. F
 
 1. **Welcome** — SupaFly (welcome pose) + ScoreFly wordmark + tagline + the value hook (“Too much sport, not enough time. ScoreFly shows you which games are worth watching right now.”). Button -> `onbGoStep('fly')`.
 1. **Meet FlyTime** (`onb-step-fly`) — SupaFly (pointing pose) + a pulsing green `FLYTIME` badge + a black-box explanation. Exists to make FlyTime memorable; no thresholds revealed.
-1. **Pick your teams** — search for a team or tap **Quick Start with Global Starter Pack** (Liverpool, Knicks, Real Madrid, Maple Leafs, Collingwood). Starter pack follows all five and goes to notifications. Search path: after first pick, two authored/smart recommendations under “Because you follow [team]”, then **Continue** to notifications. No mascot (kept uncluttered).
+1. **Pick your teams** — search for a team or tap **Quick Start with Global Starter Pack** (one tap, all five). Search path: after first pick, two same-country recommendations under “Because you follow [team]”, then the five Global Starter Pack teams as individual cards, then **Continue** to notifications. No mascot (kept uncluttered).
 1. **Notifications** — SupaFly (here’s-the-score pose) + opt-in step; grants bell alert for all followed teams on approval.
 
 SupaFly assets: `supafly-welcome.png`, `supafly-pointing.png`, `supafly-score.png`, `supafly-thumbsup.png` (thumbsup bundled, reserved for later). Transparent PNGs on pure black, pre-cached in `sw.js`.
@@ -69,11 +69,11 @@ On finish: sets `scorefly_onboarded = '1'`, drops user into their feed.
 
 **Suggested for you** (Teams tab) is unused — suggestions live only in the onboarding overlay. `renderSuggested()` always hides the Teams-tab section.
 
-Onboarding recommendation engine (`onbGetSuggestions` + `ONB_RECIPES`), two slots, anchored on `favs[0]`:
+Onboarding recommendation engine (`onbGetSuggestions`), two slots anchored on `favs[0]`:
 
-1. Authored recipe per anchor when defined (metro / cricket substitutes for missing national soccer sides)
-1. Fallback — metro cross-sport (`METRO_TEAMS`), then same-country cross-league marquees
-1. If `favs` becomes empty, step 2 resets to search + starter pack
+1. Two same-country picks (one per league where possible; same-league marquees backfill single-league countries)
+1. After those, the five Global Starter Pack teams always show as individual add cards
+1. If `favs` becomes empty, step 2 resets to search + one-tap starter pack
 
 -----
 

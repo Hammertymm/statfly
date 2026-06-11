@@ -8,7 +8,7 @@ Running log of decisions, dead ends, and things worth remembering.
 - **Repo:** <https://github.com/Hammertymm/scorefly>
 - **Hosting:** GitHub Pages (Netlify abandoned – credits ran out)
 - **Deploy:** edit files in GitHub via Safari, commit, wait ~30s, refresh phone
-- **Cache:** bump `CACHE` constant in `sw.js` every deploy that touches HTML/CSS/JS/icons. Currently `scorefly-v101`.
+- **Cache:** bump `CACHE` constant in `sw.js` every deploy that touches HTML/CSS/JS/icons. Currently `scorefly-v105`.
 
 ## Current feeds (34 live)
 

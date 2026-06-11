@@ -3045,13 +3045,31 @@ let flyAlertQueue=[];
 let flyAlertTimer=null;
 let flyAlertTimes=[];   // recent send timestamps for the 3-per-15-min cooldown
 
-// Bring the user to the first FlyTime live card when they tap a FlyTime ALL alert.
+// FlyTime alert tap target: open/focus the app on the Feed tab.
 function flyTimeNotifClick(){
   try{ window.focus(); }catch(e){}
+  var overlay=document.getElementById('onboard-overlay');
+  if(overlay) overlay.classList.remove('active');
   try{ goTab('home',null,'nb-home'); }catch(e){}
+}
+
+function showFlyTimeNotification(title, body, tag){
+  var opts={ body:body, icon:'icon192.png', tag:tag, data:{ nav:'feed' } };
+  if('serviceWorker' in navigator){
+    navigator.serviceWorker.ready.then(function(reg){
+      return reg.showNotification(title, opts);
+    }).catch(function(){
+      showFlyTimeNotificationFallback(title, body, tag);
+    });
+    return;
+  }
+  showFlyTimeNotificationFallback(title, body, tag);
+}
+
+function showFlyTimeNotificationFallback(title, body, tag){
   try{
-    var el=document.querySelector('.card.live.flytime-locked');
-    if(el) el.scrollIntoView({behavior:'smooth',block:'start'});
+    var note=new Notification(title, { body:body, icon:'icon192.png', tag:tag });
+    note.onclick=function(){ flyTimeNotifClick(); try{ note.close(); }catch(e){} };
   }catch(e){}
 }
 
@@ -3080,10 +3098,7 @@ function flushFlyTimeAlerts(){
     tag='scorefly-flytime-batch';
   }
   flyAlertTimes.push(now);
-  try{
-    const note=new Notification(title, { body, icon:'icon192.png', tag });
-    note.onclick=function(){ flyTimeNotifClick(); try{ note.close(); }catch(e){} };
-  }catch(e){}
+  showFlyTimeNotification(title, body, tag);
 }
 
 // Queue a FlyTime alert the first time a match crosses INTO FlyTime. Gated by either a
@@ -4868,14 +4883,20 @@ setTimeout(()=>{
   renderFlyTimeAll();
   renderFlyLedger();
   if(localStorage.getItem('scorefly_onboarded')) hideSuggestedSection();
-  // Item 7: returning (onboarded) users resume on whichever tab they last used.
-  try{
-    var _navById = {home:'nb-home', results:'nb-results', settings:'nb-settings'};
-    var _lt = localStorage.getItem('scorefly_last_tab');
-    if(_lt && localStorage.getItem('scorefly_onboarded') && _navById[_lt]){
-      goTab(_lt, null, _navById[_lt]);
-    }
-  }catch(e){}
+  // Opened from a FlyTime notification tap (SW opens #feed when the app was closed).
+  if(location.hash === '#feed'){
+    history.replaceState(null, '', location.pathname + location.search);
+    flyTimeNotifClick();
+  } else {
+    // Returning (onboarded) users resume on whichever tab they last used.
+    try{
+      var _navById = {home:'nb-home', results:'nb-results', settings:'nb-settings'};
+      var _lt = localStorage.getItem('scorefly_last_tab');
+      if(_lt && localStorage.getItem('scorefly_onboarded') && _navById[_lt]){
+        goTab(_lt, null, _navById[_lt]);
+      }
+    }catch(e){}
+  }
   pollTick(); // first run does a full sweep, then self-schedules; corrects the snapshot
   setInterval(()=>{ if(!document.hidden) renderFreshness(); }, 30000);
   document.addEventListener('visibilitychange', () => {
@@ -4888,6 +4909,9 @@ setTimeout(()=>{
 
 // Register service worker for PWA / offline support
 if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.addEventListener('message', function(e){
+    if(e.data && e.data.type === 'scorefly-nav-feed') flyTimeNotifClick();
+  });
   window.addEventListener('load', () => {
     navigator.serviceWorker.register('sw.js')
       .then(() => dlog('ScoreFly: SW registered'))

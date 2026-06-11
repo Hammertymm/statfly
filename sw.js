@@ -1,6 +1,6 @@
 // ScoreFly service worker
 // Bump CACHE on every deploy so devices pick up the new files.
-const CACHE = 'scorefly-v106';
+const CACHE = 'scorefly-v107';
 
 // App shell + icons. Relative paths so it works under the /scorefly/ GitHub Pages path.
 const SHELL = [
@@ -118,6 +118,27 @@ self.addEventListener('fetch', event => {
         }
         return res;
       }).catch(() => caches.match('./index.html'));
+    })
+  );
+});
+
+// FlyTime notification tap: focus an open ScoreFly window on the Feed tab, or launch one.
+self.addEventListener('notificationclick', event => {
+  const nav = event.notification.data && event.notification.data.nav;
+  event.notification.close();
+  if (nav !== 'feed') return;
+
+  const feedUrl = new URL('./index.html#feed', self.location.href).href;
+
+  event.waitUntil(
+    self.clients.matchAll({ type: 'window', includeUncontrolled: true }).then(clients => {
+      for (const client of clients) {
+        if ('focus' in client) {
+          client.postMessage({ type: 'scorefly-nav-feed' });
+          return client.focus();
+        }
+      }
+      if (self.clients.openWindow) return self.clients.openWindow(feedUrl);
     })
   );
 });

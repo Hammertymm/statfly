@@ -157,7 +157,7 @@ Score lines use Fly Mode 3-letter codes (`abbrev`). Sending is **debounced**: `f
 - **Batching** — several matches crossing in one poll collapse into one summary alert: “🪰 FlyTime / N games worth watching / Open ScoreFly”.
 - **Cooldown** — after 3 alerts in 15 minutes (`flyAlertTimes`), everything batches into summaries until the window clears.
 - **No exit alert** — fires only on entry, never when Fly Time ends.
-- **Tap** — `flyTimeNotifClick` focuses the app, switches to Feed, scrolls to the FlyTime section.
+- **Tap** — `flyTimeNotifClick` focuses the app and switches to Feed; service worker `notificationclick` handles taps when the app was in the background or closed.
 
 Delivery uses page-context `new Notification` (reliable while the app is open or backgrounded). True closed-app background push needs a service-worker push subscription — not built; native-track item.
 

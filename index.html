@@ -403,7 +403,7 @@
     gap: 0;
     width: 100%;
     min-height: 0;
-    --status-h: 34px;
+    --status-h: 28px;
     --fly-sep: rgba(255,255,255,0.25);
     transition: filter 0.1s;
   }
@@ -455,7 +455,7 @@
   .flymode-inner[data-count="5"],
   .flymode-inner[data-count="6"] { padding: 4px 6px; }
   .flymode-inner[data-count="7"],
-  .flymode-inner[data-count="8"] { --status-h: 26px; padding: 3px 5px; }
+  .flymode-inner[data-count="8"] { --status-h: 22px; padding: 3px 5px; }
   .flymode-inner[data-count="5"] .flymode-half,
   .flymode-inner[data-count="6"] .flymode-half { gap: 4px; padding: 5px 4px; }
   .flymode-inner[data-count="7"] .flymode-half,
@@ -510,6 +510,7 @@
   .flymode-board {
     flex: 1 1 auto;
     min-height: 0;
+    position: relative;
     display: flex;
     flex-direction: row;
     align-items: stretch;
@@ -524,7 +525,7 @@
     align-items: center;
     justify-content: center;
     gap: 6px;
-    padding: 8px 6px;
+    padding: 8px 6px calc(var(--status-h, 28px) + 6px);
     overflow: hidden;
     transition: background-color 2.5s ease, border-color 2.5s ease;
   }
@@ -581,25 +582,27 @@
     max-width: 100%;
   }
 
-  /* Status pill — centred row beneath the scores. */
+  /* Status pill — single row, centred between scores directly underneath. */
   .flymode-status {
-    flex-shrink: 0;
-    align-self: center;
+    position: absolute;
+    left: 50%;
+    bottom: 5px;
+    transform: translateX(-50%);
     font-family: 'Overpass', 'Inter', monospace;
     font-variant-numeric: tabular-nums;
-    font-size: clamp(14px, calc((100vh - 96px) / var(--rows, 1) * 0.12), 24px);
+    font-size: clamp(12px, calc((100vh - 96px) / var(--rows, 1) * 0.11), 22px);
     font-weight: 800;
     color: #ffffff;
-    letter-spacing: 0.5px;
+    letter-spacing: 0.4px;
     text-transform: uppercase;
     text-align: center;
-    line-height: 1.1;
-    padding: 4px 10px 6px;
+    line-height: 1;
+    padding: 3px 8px;
     border: 1px solid rgba(255,255,255,0.35);
-    border-radius: 10px;
+    border-radius: 8px;
     background: #000;
     white-space: nowrap;
-    margin-bottom: 3px;
+    z-index: 4;
   }
   .flymode-status.ot      { color: var(--result); border-color: var(--result); }
   .flymode-status.flytime { color: var(--live);   border-color: var(--live); }
@@ -3769,14 +3772,9 @@ function buildFlyModeGrid() {
     grid.innerHTML = '<div class="flymode-empty">No live matches</div>';
     return;
   }
-  // Split-tiles layout: two half-tiles for scores; timer centred underneath.
+  // Split-tiles layout: two half-tiles for scores; timer in one row beneath them.
   grid.innerHTML = live.map(m => {
-    // Status text. Server returns like "Q3 11:35" - we render as two lines if it has a space.
-    const timer = (m.timer || '').trim();
-    const parts = timer.split(/\s+/);
-    const badge = (parts.length >= 2)
-      ? (parts[0] + '<br>' + parts.slice(1).join(' '))
-      : timer;
+    const badge = (m.timer || '').trim();
     const mf = getMatchFly(m.id); // '' | 'flytime' | 'overtime'
     const statusCls = mf === 'overtime' ? ' ot' : (mf === 'flytime' ? ' flytime' : '');
     // Per-side FlyState class drives BOTH the number colour and the tile wash.
@@ -3801,8 +3799,8 @@ function buildFlyModeGrid() {
       +       '<div class="flymode-team">' + awayCode + '</div>'
       +       '<div class="flymode-score away ' + aCls + '" data-fk="' + m.id + '|a|fms">' + m.awayScore + '</div>'
       +     '</div>'
+      +     '<div class="flymode-status' + statusCls + '">' + badge + '</div>'
       +   '</div>'
-      +   '<div class="flymode-status' + statusCls + '">' + badge + '</div>'
       + '</div>';
   }).join('');
   flyCrossfade();

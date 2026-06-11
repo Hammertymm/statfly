@@ -1,6 +1,6 @@
 // ScoreFly service worker
 // Bump CACHE on every deploy so devices pick up the new files.
-const CACHE = 'scorefly-v107';
+const CACHE = 'scorefly-v108';
 
 // App shell + icons. Relative paths so it works under the /scorefly/ GitHub Pages path.
 const SHELL = [
@@ -59,7 +59,8 @@ const SHELL = [
   './soccer-eng-w-1-flytime-v1.json',
   './soccer-uefa-champions-flytime-v1.json',
   './soccer-uefa-europa-flytime-v1.json',
-  './soccer-conmebol-libertadores-flytime-v1.json'
+  './soccer-conmebol-libertadores-flytime-v1.json',
+  './team-halo-config.json'
 ];
 
 // Install: pre-cache the shell, then activate immediately.

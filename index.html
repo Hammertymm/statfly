@@ -112,8 +112,26 @@
   .qa-btn:active{background:rgba(6,240,60,0.15);}
   .qa-btn-row{width:26px;height:26px;font-size:17px;}
   .qa-btn-static{pointer-events:none;opacity:.85;}
-  .t-logo{width:24px;height:24px;border-radius:6px;background:rgba(255,255,255,0.12);display:flex;align-items:center;justify-content:center;font-size:11px;flex-shrink:0;padding:2px;box-shadow:0 0 0 1px rgba(255,255,255,0.08);}
-  .t-logo img,.t-logo .team-crest{width:100%;height:100%;object-fit:contain;display:block;filter:brightness(1.08) contrast(1.05);}
+  /* Adaptive Team Halo System V1.1 — logo is the hero; invisible depth + optional team tint */
+  .team-logo-halo{
+    position:relative;display:flex;align-items:center;justify-content:center;flex-shrink:0;
+    --halo-r:255;--halo-g:255;--halo-b:255;--halo-strength:0;
+  }
+  .team-logo-halo.t-logo{width:24px;height:24px;font-size:11px;padding:2px;}
+  .team-logo-halo.onb-pick-logo{width:26px;height:26px;padding:2px;}
+  .team-logo-halo.onb-starter-logo{width:34px;height:34px;padding:4px;}
+  .team-logo-halo[data-contrast-lift]::before{
+    content:'';position:absolute;inset:-35%;border-radius:50%;pointer-events:none;z-index:0;
+    background:radial-gradient(circle,rgba(255,255,255,0.08) 0%,transparent 70%);
+  }
+  .team-logo-halo img.team-crest,.team-logo-halo .team-crest{
+    position:relative;z-index:1;width:100%;height:100%;object-fit:contain;display:block;
+    filter:
+      drop-shadow(0 0 8px rgba(var(--halo-r),var(--halo-g),var(--halo-b),calc(var(--halo-strength) * 0.85)))
+      drop-shadow(0 0 14px rgba(var(--halo-r),var(--halo-g),var(--halo-b),calc(var(--halo-strength) * 0.45)))
+      drop-shadow(0 0 6px rgba(255,255,255,0.08))
+      drop-shadow(0 0 12px rgba(255,255,255,0.04));
+  }
   .t-name{font-size:14px;font-weight:600;letter-spacing:-.2px;text-transform:uppercase;flex:1;line-height:1.1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
   .t-name.dim{color:var(--text-3);}
   .scores-col{display:flex;flex-direction:column;align-items:flex-end;justify-content:space-around;min-width:42px;gap:14px;}
@@ -335,8 +353,6 @@
   .onb-pick-name{font-size:14px;font-weight:600;color:var(--text);}
   .onb-pick-league{font-size:11px;color:var(--text-3);margin-top:1px;}
   .onb-sugg-list{margin-bottom:12px;}
-  .onb-pick-logo{width:26px;height:26px;border-radius:6px;background:rgba(255,255,255,0.12);padding:2px;display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 0 0 1px rgba(255,255,255,0.08);}
-  .onb-pick-logo img{width:100%;height:100%;object-fit:contain;display:block;filter:brightness(1.08) contrast(1.05);}
   .onb-pick-card.followed{border-color:var(--live);background:rgba(6,240,60,0.05);}
   .onb-sugg-sub{font-size:12px;color:var(--text-3);margin:-4px 0 10px;}
   .onb-divider{display:flex;align-items:center;gap:12px;margin:20px 0 16px;color:var(--text-3);font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:.4px;}
@@ -346,8 +362,6 @@
   .onb-starter-btn:active{background:rgba(6,240,60,0.08);}
   .onb-starter-title{font-size:15px;font-weight:600;}
   .onb-starter-logos{display:flex;gap:10px;justify-content:center;align-items:center;}
-  .onb-starter-logo{width:34px;height:34px;border-radius:8px;background:rgba(255,255,255,0.12);padding:4px;display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 0 0 1px rgba(255,255,255,0.08);}
-  .onb-starter-logo img,.onb-starter-logo .team-crest{width:100%;height:100%;object-fit:contain;display:block;filter:brightness(1.08) contrast(1.05);}
   #onb-step-1 .onb-hero-caption{display:none;}
   #onb-step-3 .onb-notif-top{font-size:14px;line-height:1.45;color:var(--text-3);text-align:center;padding:12px 8px 0;margin:0;}
   #onb-step-3 .onb-notif-hero{margin-top:4px;}
@@ -389,17 +403,16 @@
     gap: 0;
     width: 100%;
     min-height: 0;
-    --seam-gut: 56px;
+    --status-h: 34px;
     --fly-sep: rgba(255,255,255,0.25);
     transition: filter 0.1s;
   }
   .flymode-inner[data-count="1"] { grid-template-rows: 1fr; --rows: 1; }
-  .flymode-inner[data-count="2"] { grid-template-rows: repeat(2, 1fr); --rows: 2; --seam-gut: 58px; }
-  /* Two live games: keep scores inside each half so seam pills and card borders stay clear. */
+  .flymode-inner[data-count="2"] { grid-template-rows: repeat(2, 1fr); --rows: 2; }
+  /* Two live games: keep scores inside each half so card borders stay clear. */
   .flymode-inner[data-count="2"] .flymode-half { overflow: hidden; }
   .flymode-inner[data-count="2"] .flymode-team { font-size: clamp(14px, 4vw, 28px); }
   .flymode-inner[data-count="2"] .flymode-status { padding: 4px 8px; font-size: clamp(11px, calc((100vh - 96px) / var(--rows, 2) * 0.1), 20px); }
-  .flymode-inner[data-count="4"] { --seam-gut: 40px; }
   .flymode-inner[data-count="4"] .flymode-half { overflow: hidden; gap: 4px; padding: 6px 4px; }
   .flymode-inner[data-count="4"] .flymode-team { font-size: clamp(11px, 3.2vw, 20px); letter-spacing: 1px; }
   .flymode-inner[data-count="4"] .flymode-status { padding: 3px 7px; font-size: clamp(9px, calc((100vh - 96px) / var(--rows, 2) * 0.09), 16px); }
@@ -438,11 +451,11 @@
   .flymode-inner[data-count="6"] .flymode-card:nth-child(even),
   .flymode-inner[data-count="7"] .flymode-card:nth-child(even),
   .flymode-inner[data-count="8"] .flymode-card:nth-child(even) { border-left: 1px solid var(--fly-sep); }
-  /* 5+ matches: tighter seam gutter and type so eight boards stay readable. */
+  /* 5+ matches: tighter type so eight boards stay readable. */
   .flymode-inner[data-count="5"],
-  .flymode-inner[data-count="6"] { --seam-gut: 34px; padding: 4px 6px; }
+  .flymode-inner[data-count="6"] { padding: 4px 6px; }
   .flymode-inner[data-count="7"],
-  .flymode-inner[data-count="8"] { --seam-gut: 28px; padding: 3px 5px; }
+  .flymode-inner[data-count="8"] { --status-h: 26px; padding: 3px 5px; }
   .flymode-inner[data-count="5"] .flymode-half,
   .flymode-inner[data-count="6"] .flymode-half { gap: 4px; padding: 5px 4px; }
   .flymode-inner[data-count="7"] .flymode-half,
@@ -475,15 +488,14 @@
 
   .flymode-grid { display: contents; }
 
-  /* SPLIT TILES (v58): each match is a row of two equal half-tiles meeting at a
-     centre seam. In an active FlyState the half fills with a DARK wash of that
-     side's colour and the number glows; the period/clock floats in a pill on the
-     seam. Neutral games stay pure black. */
+  /* SPLIT TILES: two half-tiles for team code + score; period/clock sits in its
+     own centred row underneath (no overlap with the numbers). */
   .flymode-card {
     background: transparent;
     border: none;
     border-top: 1px solid var(--fly-sep);
     display: flex;
+    flex-direction: column;
     align-items: stretch;
     padding: 0;
     position: relative;
@@ -494,6 +506,14 @@
   }
   /* No top border on first card (cleaner top edge) */
   .flymode-card:first-child { border-top: none; }
+
+  .flymode-board {
+    flex: 1 1 auto;
+    min-height: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+  }
 
   /* The two half-tiles. Each is a centred column: team code over score. */
   .flymode-half {
@@ -508,9 +528,7 @@
     overflow: hidden;
     transition: background-color 2.5s ease, border-color 2.5s ease;
   }
-  /* The home half carries the seam line; the pill floats on top of it. */
-  .flymode-half.home { border-right: 1px solid rgba(255,255,255,0.2); padding-right: var(--seam-gut, 44px); }
-  .flymode-half.away { padding-left: var(--seam-gut, 44px); }
+  .flymode-half.home { border-right: 1px solid rgba(255,255,255,0.2); }
 
   /* Dark state washes - low alpha so the board stays black-first. The class is
      the same one getFlyClass() already puts on the score, so wash and number
@@ -553,7 +571,7 @@
     --len: 1;
     --half-vw: 40;
     --h-budget: 18vh;
-    font-size: clamp(28px, min(var(--h-budget), calc((var(--half-vw) * 1vw - var(--seam-gut, 0px) - 10px) * 1.15 / var(--len))), 300px);
+    font-size: clamp(28px, min(var(--h-budget), calc((var(--half-vw) * 1vw - 10px) * 1.15 / var(--len))), 300px);
     font-weight: 900;
     letter-spacing: -2px;
     line-height: 0.9;
@@ -563,12 +581,10 @@
     max-width: 100%;
   }
 
-  /* Status pill floating on the seam, dead centre of the card. */
+  /* Status pill — centred row beneath the scores. */
   .flymode-status {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
+    flex-shrink: 0;
+    align-self: center;
     font-family: 'Overpass', 'Inter', monospace;
     font-variant-numeric: tabular-nums;
     font-size: clamp(14px, calc((100vh - 96px) / var(--rows, 1) * 0.12), 24px);
@@ -578,12 +594,12 @@
     text-transform: uppercase;
     text-align: center;
     line-height: 1.1;
-    padding: 6px 10px;
+    padding: 4px 10px 6px;
     border: 1px solid rgba(255,255,255,0.35);
     border-radius: 10px;
     background: #000;
     white-space: nowrap;
-    z-index: 4;
+    margin-bottom: 3px;
   }
   .flymode-status.ot      { color: var(--result); border-color: var(--result); }
   .flymode-status.flytime { color: var(--live);   border-color: var(--live); }
@@ -591,8 +607,8 @@
   /* PORTRAIT */
   @media (orientation: portrait) {
     /* Side-by-side: each half is ~44vw wide; height shared across the live rows. */
-    .flymode-score { --half-vw: 44; --h-budget: calc((100vh - 90px) / var(--rows, 1) * 0.58); }
-    .flymode-inner[data-count="2"] .flymode-score { --h-budget: calc((100vh - 90px) / var(--rows, 2) * 0.46); }
+    .flymode-score { --half-vw: 44; --h-budget: calc((100vh - 90px - var(--rows, 1) * var(--status-h, 34px)) / var(--rows, 1) * 0.62); }
+    .flymode-inner[data-count="2"] .flymode-score { --h-budget: calc((100vh - 90px - var(--rows, 2) * var(--status-h, 34px)) / var(--rows, 2) * 0.50); }
     /* 2-column grids (4-8): each half is ~22vw; scale height budget to row count. */
     .flymode-inner[data-count="4"] .flymode-score,
     .flymode-inner[data-count="5"] .flymode-score,
@@ -600,16 +616,15 @@
     .flymode-inner[data-count="7"] .flymode-score,
     .flymode-inner[data-count="8"] .flymode-score {
       --half-vw: 22;
-      --h-budget: calc((100vh - 90px) / var(--rows, 1) * 0.52);
+      --h-budget: calc((100vh - 90px - var(--rows, 1) * var(--status-h, 34px)) / var(--rows, 1) * 0.54);
     }
-    .flymode-inner[data-count="4"] .flymode-score { --h-budget: calc((100vh - 90px) / var(--rows, 2) * 0.44); }
+    .flymode-inner[data-count="4"] .flymode-score { --h-budget: calc((100vh - 90px - var(--rows, 2) * var(--status-h, 34px)) / var(--rows, 2) * 0.46); }
     .flymode-inner[data-count="7"] .flymode-score,
     .flymode-inner[data-count="8"] .flymode-score {
-      --h-budget: calc((100vh - 90px) / var(--rows, 1) * 0.52);
+      --h-budget: calc((100vh - 90px - var(--rows, 1) * var(--status-h, 26px)) / var(--rows, 1) * 0.52);
     }
     /* SINGLE match: stack the two tiles top/bottom (full width) for a hero number. */
-    .flymode-inner[data-count="1"] { --seam-gut: 0px; }
-    .flymode-inner[data-count="1"] .flymode-card { flex-direction: column; }
+    .flymode-inner[data-count="1"] .flymode-board { flex-direction: column; }
     .flymode-inner[data-count="1"] .flymode-half {
       flex: 1 1 50%;
       min-height: 0;
@@ -620,21 +635,20 @@
     }
     .flymode-inner[data-count="1"] .flymode-card.flytime .flymode-half.home { border-bottom-color: rgba(6,240,60,0.35); }
     .flymode-inner[data-count="1"] .flymode-card.ot      .flymode-half.home { border-bottom-color: rgba(255,69,58,0.35); }
-    .flymode-inner[data-count="1"] .flymode-score { --half-vw: 92; --h-budget: calc((100vh - 120px) / 2 * 0.74); }
+    .flymode-inner[data-count="1"] .flymode-score { --half-vw: 92; --h-budget: calc((100vh - 120px - var(--status-h, 34px)) / 2 * 0.72); }
   }
   /* LANDSCAPE */
   @media (orientation: landscape) {
     /* Multi (2+) is two columns, so each half is only ~21vw wide. */
-    .flymode-inner { --seam-gut: 46px; padding: 4px 10px; }
-    .flymode-inner[data-count="1"] { --seam-gut: 60px; padding: 6px 8px; }
-    .flymode-score { --half-vw: 20; --h-budget: calc((100vh - 80px) / var(--rows, 1) * 0.58); }
-    .flymode-inner[data-count="2"] { --seam-gut: 44px; }
-    .flymode-inner[data-count="2"] .flymode-score { --half-vw: 16; --h-budget: calc((100vh - 80px) * 0.50); }
+    .flymode-inner { padding: 4px 10px; }
+    .flymode-inner[data-count="1"] { padding: 6px 8px; }
+    .flymode-score { --half-vw: 20; --h-budget: calc((100vh - 80px - var(--rows, 1) * var(--status-h, 34px)) / var(--rows, 1) * 0.58); }
+    .flymode-inner[data-count="2"] .flymode-score { --half-vw: 16; --h-budget: calc((100vh - 80px - var(--status-h, 34px)) * 0.48); }
     .flymode-inner[data-count="2"] .flymode-half.home { padding-left: 4px; }
     .flymode-inner[data-count="2"] .flymode-half.away { padding-right: 4px; }
-    .flymode-inner[data-count="4"] .flymode-score { --half-vw: 15; --h-budget: calc((100vh - 80px) / var(--rows, 2) * 0.42); }
+    .flymode-inner[data-count="4"] .flymode-score { --half-vw: 15; --h-budget: calc((100vh - 80px - var(--rows, 2) * var(--status-h, 34px)) / var(--rows, 2) * 0.44); }
     /* SINGLE match fills the whole wide screen: each half is ~46vw, full height. */
-    .flymode-inner[data-count="1"] .flymode-score { --half-vw: 46; --h-budget: calc((100vh - 110px) * 0.86); }
+    .flymode-inner[data-count="1"] .flymode-score { --half-vw: 46; --h-budget: calc((100vh - 110px - var(--status-h, 34px)) * 0.82); }
     /* Column dividers on 2-column grids (2 side-by-side, or 4-8). */
     .flymode-inner[data-count="2"] .flymode-card:nth-child(even),
     .flymode-inner[data-count="4"] .flymode-card:nth-child(even),
@@ -648,13 +662,9 @@
     .flymode-inner[data-count="6"] .flymode-card:nth-child(-n+2),
     .flymode-inner[data-count="7"] .flymode-card:nth-child(-n+2),
     .flymode-inner[data-count="8"] .flymode-card:nth-child(-n+2) { border-top: none; }
-    .flymode-inner[data-count="5"],
-    .flymode-inner[data-count="6"] { --seam-gut: 30px; }
-    .flymode-inner[data-count="7"],
-    .flymode-inner[data-count="8"] { --seam-gut: 24px; }
     .flymode-inner[data-count="7"] .flymode-score,
     .flymode-inner[data-count="8"] .flymode-score {
-      --h-budget: calc((100vh - 80px) / var(--rows, 1) * 0.58);
+      --h-budget: calc((100vh - 80px - var(--rows, 1) * var(--status-h, 26px)) / var(--rows, 1) * 0.56);
     }
   }
 
@@ -3005,6 +3015,22 @@ function saveFlyTimeAll(on){
   try{ localStorage.setItem(FLYTIME_ALL_KEY, on ? 'true' : 'false'); }catch(e){}
 }
 let flyTimeAll = loadFlyTimeAll();
+
+// When the user grants notification permission, turn on every followed team bell
+// plus FlyTime ALL so the opt-in actually does something.
+function applyNotificationDefaults(){
+  var changed = false;
+  favs.forEach(function(f){
+    if(!f.alert){ f.alert = true; changed = true; }
+  });
+  if(changed) saveFavs();
+  if(!flyTimeAll){
+    flyTimeAll = true;
+    saveFlyTimeAll(true);
+  }
+  renderFavs();
+  renderFlyTimeAll();
+}
 function renderFlyTimeAll(){
   const sw = document.getElementById('buzz-switch');
   if(sw) sw.classList.toggle('on', flyTimeAll);
@@ -3020,11 +3046,14 @@ function toggleFlyTimeAll(){
   // Turning ON - notifications are required. Ask if we have not decided yet.
   if('Notification' in window && Notification.permission === 'default'){
     Notification.requestPermission().then(perm => {
-      const ok = perm === 'granted';
-      flyTimeAll = ok;
-      saveFlyTimeAll(ok);
-      if(!ok) alert('Notifications are required for FlyTime ALL.');
-      renderFlyTimeAll();
+      if(perm === 'granted'){
+        applyNotificationDefaults();
+      } else {
+        flyTimeAll = false;
+        saveFlyTimeAll(false);
+        renderFlyTimeAll();
+        alert('Notifications are required for FlyTime ALL.');
+      }
     });
     return;
   }
@@ -3265,13 +3294,114 @@ function quickAddTeam(key) {
   renderResults();
 }
 
-function logoImg(src, emoji) {
+// Adaptive Team Halo System V1.1 — metadata-driven logo treatment (offline JSON).
+const TEAM_HALO_INDEX = { byName: {}, byEspnId: {} };
+
+function hexToRgb(hex) {
+  const h = String(hex || '').replace('#', '');
+  if (h.length !== 6) return null;
+  const n = parseInt(h, 16);
+  if (isNaN(n)) return null;
+  return { r: (n >> 16) & 255, g: (n >> 8) & 255, b: n & 255 };
+}
+
+function indexTeamHaloConfig(data) {
+  TEAM_HALO_INDEX.byName = {};
+  TEAM_HALO_INDEX.byEspnId = {};
+  (data && data.teams || []).forEach(function(entry) {
+    (entry.names || []).forEach(function(name) {
+      TEAM_HALO_INDEX.byName[String(name).toLowerCase()] = entry;
+    });
+    (entry.espnIds || []).forEach(function(id) {
+      TEAM_HALO_INDEX.byEspnId[String(id)] = entry;
+    });
+  });
+}
+
+function resolveTeamHalo(teamId, teamName) {
+  // Name first — ESPN ids can collide across leagues (e.g. NBA/MLB both use "4").
+  if (teamName && TEAM_HALO_INDEX.byName[String(teamName).toLowerCase()]) {
+    return TEAM_HALO_INDEX.byName[String(teamName).toLowerCase()];
+  }
+  if (teamId && TEAM_HALO_INDEX.byEspnId[String(teamId)]) {
+    return TEAM_HALO_INDEX.byEspnId[String(teamId)];
+  }
+  return null;
+}
+
+function teamHaloStyle(cfg) {
+  if (!cfg || !cfg.haloColor) return '';
+  const rgb = hexToRgb(cfg.haloColor);
+  if (!rgb) return '';
+  const strength = Math.min(0.12, Math.max(0, cfg.haloStrength == null ? 0.10 : cfg.haloStrength));
+  return '--halo-r:' + rgb.r + ';--halo-g:' + rgb.g + ';--halo-b:' + rgb.b + ';--halo-strength:' + strength;
+}
+
+function teamHaloAttrs(cfg, probe) {
+  const attrs = [];
+  const style = teamHaloStyle(cfg);
+  if (style) attrs.push('style="' + style + '"');
+  if (cfg && cfg.needsContrastLift) attrs.push('data-contrast-lift');
+  else if (probe) attrs.push('data-halo-probe');
+  return attrs.join(' ');
+}
+
+function sampleLogoBrightness(img) {
+  try {
+    const w = 16, h = 16;
+    const canvas = document.createElement('canvas');
+    canvas.width = w;
+    canvas.height = h;
+    const ctx = canvas.getContext('2d', { willReadFrequently: true });
+    if (!ctx) return 1;
+    ctx.drawImage(img, 0, 0, w, h);
+    const data = ctx.getImageData(0, 0, w, h).data;
+    let sum = 0, count = 0;
+    for (let i = 0; i < data.length; i += 4) {
+      if (data[i + 3] < 16) continue;
+      sum += (0.2126 * data[i] + 0.7152 * data[i + 1] + 0.0722 * data[i + 2]) / 255;
+      count++;
+    }
+    return count ? sum / count : 1;
+  } catch (e) {
+    return 1;
+  }
+}
+
+function probeTeamLogoContrast(img) {
+  const wrap = img && img.closest('.team-logo-halo');
+  if (!wrap || !wrap.hasAttribute('data-halo-probe')) return;
+  wrap.removeAttribute('data-halo-probe');
+  if (wrap.hasAttribute('data-contrast-lift')) return;
+  if (sampleLogoBrightness(img) < 0.30) wrap.setAttribute('data-contrast-lift', '');
+}
+
+function attachTeamHaloProbe(img) {
+  if (!img) return;
+  const run = function() { probeTeamLogoContrast(img); };
+  if (img.complete && img.naturalWidth) run();
+  else img.addEventListener('load', run, { once: true });
+}
+
+function loadTeamHaloConfig() {
+  return fetch('./team-halo-config.json')
+    .then(function(r) { return r.ok ? r.json() : null; })
+    .then(function(data) { if (data) indexTeamHaloConfig(data); })
+    .catch(function() {});
+}
+
+function logoImg(src, emoji, teamId, teamName, sizeClass) {
   // No-crest fallback: show only the leading sport icon, not the whole league
   // label. Callers pass the league string (icon + name), so a logo-less team
   // would otherwise dump the league name into the tiny logo slot.
   const fallback = (emoji || '').split(' ')[0];
-  if (src) return `<img class="team-crest" src="${src}" alt="" onerror="this.style.display='none';this.nextSibling.style.display=''"><span style="display:none">${fallback}</span>`;
-  return fallback;
+  const cls = 'team-logo-halo ' + (sizeClass || 't-logo');
+  const cfg = resolveTeamHalo(teamId, teamName);
+  if (!src) return '<div class="' + cls + '">' + fallback + '</div>';
+  const attrs = teamHaloAttrs(cfg, true);
+  const onload = 'attachTeamHaloProbe(this)';
+  const inner = '<img class="team-crest" src="' + escAttr(src) + '" alt="" onload="' + onload + '" onerror="this.style.display=\'none\';this.nextSibling.style.display=\'\'"><span style="display:none">' + fallback + '</span>';
+  return '<div class="' + cls + '"' + (attrs ? ' ' + attrs : '') + '>' + inner + '</div>';
 }
 // Photo sport icons (exact balls from the brand image, backgrounds already transparent).
 // Keys are JS unicode escapes of the emoji stored in feed.emoji / LEAGUES.e (ASCII-safe).
@@ -3316,8 +3446,8 @@ function buildLiveCard(m){
     <div class="card-meta"><span class="league-tag"><span class="sport-icon">${renderSportIcon(sico)}</span><span class="lg-badge">${ltxt}</span></span><span class="card-right">${flyScoreDebugHTML(m)}${fly}<span class="live-badge"><span class="bdot"></span>LIVE ${m.timer}</span></span></div>
     <div class="card-body">
       <div class="card-teams">
-        <div class="team-row"><div class="t-logo">${logoImg(m.homeLogo,m.league)}</div><div class="t-name">${displayTeamName(m.home)}</div>${teamQuickAddBtn(m.home,m)}</div>
-        <div class="team-row"><div class="t-logo">${logoImg(m.awayLogo,m.league)}</div><div class="t-name">${displayTeamName(m.away)}</div>${teamQuickAddBtn(m.away,m)}</div>
+        <div class="team-row">${logoImg(m.homeLogo,m.league,m.homeId,m.home)}<div class="t-name">${displayTeamName(m.home)}</div>${teamQuickAddBtn(m.home,m)}</div>
+        <div class="team-row">${logoImg(m.awayLogo,m.league,m.awayId,m.away)}<div class="t-name">${displayTeamName(m.away)}</div>${teamQuickAddBtn(m.away,m)}</div>
       </div>
       <div class="scores-col"><div class="${sc} ${getFlyClass(m.id,'home')}" data-fk="${m.id}|h|s">${m.homeScore}</div><div class="${sc} ${getFlyClass(m.id,'away')}" data-fk="${m.id}|a|s">${m.awayScore}</div></div>
     </div>
@@ -3336,11 +3466,11 @@ function buildUpcomingCard(m){
     <div class="upcoming-body">
       <div class="up-teams">
         <div class="team-row">
-          <div class="row-top"><div class="t-logo">${logoImg(m.homeLogo,m.league)}</div><div class="t-name">${displayTeamName(m.home)}</div>${teamQuickAddBtn(m.home,m)}</div>
+          <div class="row-top">${logoImg(m.homeLogo,m.league,m.homeId,m.home)}<div class="t-name">${displayTeamName(m.home)}</div>${teamQuickAddBtn(m.home,m)}</div>
           ${hForm}
         </div>
         <div class="team-row">
-          <div class="row-top"><div class="t-logo">${logoImg(m.awayLogo,m.league)}</div><div class="t-name">${displayTeamName(m.away)}</div>${teamQuickAddBtn(m.away,m)}</div>
+          <div class="row-top">${logoImg(m.awayLogo,m.league,m.awayId,m.away)}<div class="t-name">${displayTeamName(m.away)}</div>${teamQuickAddBtn(m.away,m)}</div>
           ${aForm}
         </div>
       </div>
@@ -3372,8 +3502,8 @@ function buildResultCard(m){
     <div class="card-meta"><span class="league-tag"><span class="sport-icon">${renderSportIcon(sico)}</span><span class="lg-badge">${ltxt}</span></span><span class="card-right">${flyScoreDebugHTML(m)}${flyStamp}<span class="ft-badge">FT · ${m.date}</span></span></div>
     <div class="card-body">
       <div class="card-teams">
-        <div class="team-row"><div class="t-logo">${logoImg(m.homeLogo,m.league)}</div><div class="t-name ${hw?'':'dim'}">${displayTeamName(m.home)}</div></div>
-        <div class="team-row"><div class="t-logo">${logoImg(m.awayLogo,m.league)}</div><div class="t-name ${hw?'dim':''}">${displayTeamName(m.away)}</div></div>
+        <div class="team-row">${logoImg(m.homeLogo,m.league,m.homeId,m.home)}<div class="t-name ${hw?'':'dim'}">${displayTeamName(m.home)}</div></div>
+        <div class="team-row">${logoImg(m.awayLogo,m.league,m.awayId,m.away)}<div class="t-name ${hw?'dim':''}">${displayTeamName(m.away)}</div></div>
       </div>
       <div class="scores-col"><div class="${sc} ${hw?'':'dim'}">${m.homeScore}</div><div class="${sc} ${hw?'dim':''}">${m.awayScore}</div></div>
     </div>
@@ -3512,8 +3642,8 @@ function toggleAlert(key){
   if(turningOn && 'Notification' in window && Notification.permission==='default'){
     Notification.requestPermission().then(perm=>{
       if(perm==='granted'){
-        fav.alert=true;
-        saveFavs();renderFavs();
+        applyNotificationDefaults();
+        playBellTone();
         new Notification('ScoreFly',{
           body:`Alerts on for ${fav.name}. We'll notify you when they play.`,
           icon:'icon192.png'
@@ -3639,7 +3769,7 @@ function buildFlyModeGrid() {
     grid.innerHTML = '<div class="flymode-empty">No live matches</div>';
     return;
   }
-  // Split-tiles layout: two half-tiles per match meeting at a centre seam pill.
+  // Split-tiles layout: two half-tiles for scores; timer centred underneath.
   grid.innerHTML = live.map(m => {
     // Status text. Server returns like "Q3 11:35" - we render as two lines if it has a space.
     const timer = (m.timer || '').trim();
@@ -3662,13 +3792,15 @@ function buildFlyModeGrid() {
     return ''
       + '<div class="flymode-card' + statusCls + '" style="--len:' + sLen + '">'
       +   markerBox
-      +   '<div class="flymode-half home ' + hCls + '" data-fk="' + m.id + '|h|fmh">'
-      +     '<div class="flymode-team">' + homeCode + '</div>'
-      +     '<div class="flymode-score home ' + hCls + '" data-fk="' + m.id + '|h|fms">' + m.homeScore + '</div>'
-      +   '</div>'
-      +   '<div class="flymode-half away ' + aCls + '" data-fk="' + m.id + '|a|fmh">'
-      +     '<div class="flymode-team">' + awayCode + '</div>'
-      +     '<div class="flymode-score away ' + aCls + '" data-fk="' + m.id + '|a|fms">' + m.awayScore + '</div>'
+      +   '<div class="flymode-board">'
+      +     '<div class="flymode-half home ' + hCls + '" data-fk="' + m.id + '|h|fmh">'
+      +       '<div class="flymode-team">' + homeCode + '</div>'
+      +       '<div class="flymode-score home ' + hCls + '" data-fk="' + m.id + '|h|fms">' + m.homeScore + '</div>'
+      +     '</div>'
+      +     '<div class="flymode-half away ' + aCls + '" data-fk="' + m.id + '|a|fmh">'
+      +       '<div class="flymode-team">' + awayCode + '</div>'
+      +       '<div class="flymode-score away ' + aCls + '" data-fk="' + m.id + '|a|fms">' + m.awayScore + '</div>'
+      +     '</div>'
       +   '</div>'
       +   '<div class="flymode-status' + statusCls + '">' + badge + '</div>'
       + '</div>';
@@ -4510,11 +4642,9 @@ function onbRenderStarterPack(){
     var item=onbEntryForKey(key);
     var logo=STARTER_PACK_LOGOS[key]||'';
     var emoji=item?(item.emoji||item.leagueEmoji):'';
-    var fallback=sportImg(emoji,22);
-    var inner=logo
-      ? '<img class="team-crest" src="'+logo+'" alt="" onerror="this.style.display=\'none\';this.nextSibling.style.display=\'\'"><span style="display:none">'+fallback+'</span>'
-      : fallback;
-    return '<div class="onb-starter-logo" title="'+(item?item.name:'')+'">'+inner+'</div>';
+    var name=item?item.name:'';
+    var halo=logoImg(logo, emoji, '', name, 'onb-starter-logo');
+    return '<div title="'+escAttr(name)+'">'+halo+'</div>';
   }).join('');
 }
 
@@ -4587,7 +4717,7 @@ function onbStarterLogoHtml(favKey){
   var emoji=item?(item.emoji||item.leagueEmoji):'';
   var fallback=sportImg(emoji,18);
   if(logo){
-    return '<div class="onb-pick-logo"><img class="team-crest" src="'+logo+'" alt="" onerror="this.style.display=\'none\';this.nextSibling.style.display=\'\'"><span style="display:none">'+fallback+'</span></div>';
+    return logoImg(logo, emoji, '', item ? item.name : '', 'onb-pick-logo');
   }
   return '<div class="onb-pick-flag">'+fallback+'</div>';
 }
@@ -4839,25 +4969,18 @@ function onbRefresh(){
   if(btn) btn.textContent = 'Continue';
 }
 
-// Notifications step: request permission once. On grant, turn the bell on for
-// every team just followed so the opt-in actually does something.
+// Notifications step: request permission once. On grant, turn every team bell
+// and FlyTime ALL on so the opt-in actually does something.
 function onbEnableNotifs(){
   if('Notification' in window && Notification.permission==='default'){
     Notification.requestPermission().then(function(perm){
-      if(perm==='granted'){
-        // Item 7: teams stay bell-OFF; instead default the global FlyTime ALL toggle ON.
-        flyTimeAll = true;
-        saveFlyTimeAll(true);
-        renderFlyTimeAll();
-      }
+      if(perm==='granted') applyNotificationDefaults();
       onbFinish();
     });
     return;
   }
   if('Notification' in window && Notification.permission==='granted'){
-    flyTimeAll = true;
-    saveFlyTimeAll(true);
-    renderFlyTimeAll();
+    applyNotificationDefaults();
   }
   onbFinish();
 }
@@ -4877,11 +5000,14 @@ setTimeout(()=>{
   hydrateSnapshot();    // paint the last-known scores instantly, before any network
   loadFlyV1Engines();   // AFL + NFL FlyTime v1 tables (offline JSON)
   applyInitialFilter(); // returning users with teams land on My Teams
-  renderHome();
-  renderResults();
-  renderFavs();
-  renderFlyTimeAll();
-  renderFlyLedger();
+  function bootUI(){
+    renderHome();
+    renderResults();
+    renderFavs();
+    renderFlyTimeAll();
+    renderFlyLedger();
+  }
+  loadTeamHaloConfig().then(bootUI).catch(bootUI); // halo metadata before first paint
   if(localStorage.getItem('scorefly_onboarded')) hideSuggestedSection();
   // Opened from a FlyTime notification tap (SW opens #feed when the app was closed).
   if(location.hash === '#feed'){

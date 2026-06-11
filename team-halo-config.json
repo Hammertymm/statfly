@@ -1,0 +1,525 @@
+{
+  "version": "1.1",
+  "teams": [
+    {
+      "teamId": "knicks",
+      "names": ["New York Knicks"],
+      "espnIds": ["18"],
+      "haloColor": "#006BB6",
+      "haloStrength": 0.10,
+      "needsContrastLift": false,
+      "dominantColor": "#006BB6",
+      "secondaryColor": "#F58426"
+    },
+    {
+      "teamId": "lakers",
+      "names": ["Los Angeles Lakers"],
+      "espnIds": ["13"],
+      "haloColor": "#FDB927",
+      "haloStrength": 0.10,
+      "needsContrastLift": false,
+      "dominantColor": "#552583",
+      "secondaryColor": "#FDB927"
+    },
+    {
+      "teamId": "celtics",
+      "names": ["Boston Celtics"],
+      "espnIds": ["2"],
+      "haloColor": "#007A33",
+      "haloStrength": 0.10,
+      "needsContrastLift": false,
+      "dominantColor": "#007A33",
+      "secondaryColor": "#BA9653"
+    },
+    {
+      "teamId": "thunder",
+      "names": ["Oklahoma City Thunder"],
+      "espnIds": ["25"],
+      "haloColor": "#EF3B24",
+      "haloStrength": 0.10,
+      "needsContrastLift": false,
+      "dominantColor": "#007AC1",
+      "secondaryColor": "#EF3B24"
+    },
+    {
+      "teamId": "spurs",
+      "names": ["San Antonio Spurs"],
+      "espnIds": ["24"],
+      "haloColor": "#C4CED4",
+      "haloStrength": 0.10,
+      "needsContrastLift": true,
+      "dominantColor": "#C4CED4",
+      "secondaryColor": "#000000"
+    },
+    {
+      "teamId": "nets",
+      "names": ["Brooklyn Nets"],
+      "espnIds": ["17"],
+      "haloColor": "#FFFFFF",
+      "haloStrength": 0.08,
+      "needsContrastLift": true,
+      "dominantColor": "#000000",
+      "secondaryColor": "#FFFFFF"
+    },
+    {
+      "teamId": "aces",
+      "names": ["Las Vegas Aces"],
+      "espnIds": ["130927"],
+      "haloColor": "#C4CED4",
+      "haloStrength": 0.10,
+      "needsContrastLift": true,
+      "dominantColor": "#000000",
+      "secondaryColor": "#C4CED4"
+    },
+    {
+      "teamId": "mercury",
+      "names": ["Phoenix Mercury"],
+      "espnIds": ["130928"],
+      "haloColor": "#E56020",
+      "haloStrength": 0.10,
+      "needsContrastLift": false,
+      "dominantColor": "#E56020",
+      "secondaryColor": "#1D1160"
+    },
+    {
+      "teamId": "fever",
+      "names": ["Indiana Fever"],
+      "espnIds": ["130926"],
+      "haloColor": "#FFD700",
+      "haloStrength": 0.10,
+      "needsContrastLift": false,
+      "dominantColor": "#002D62",
+      "secondaryColor": "#FFD700"
+    },
+    {
+      "teamId": "raiders",
+      "names": ["Las Vegas Raiders", "Oakland Raiders"],
+      "espnIds": ["13"],
+      "haloColor": "#A5ACAF",
+      "haloStrength": 0.10,
+      "needsContrastLift": true,
+      "dominantColor": "#000000",
+      "secondaryColor": "#A5ACAF"
+    },
+    {
+      "teamId": "white-sox",
+      "names": ["Chicago White Sox"],
+      "espnIds": ["4"],
+      "haloColor": "#C4CED4",
+      "haloStrength": 0.10,
+      "needsContrastLift": true,
+      "dominantColor": "#27251F",
+      "secondaryColor": "#C4CED4"
+    },
+    {
+      "teamId": "warriors",
+      "names": ["Golden State Warriors"],
+      "espnIds": ["9"],
+      "haloColor": "#1D428A",
+      "haloStrength": 0.10,
+      "needsContrastLift": false,
+      "dominantColor": "#1D428A",
+      "secondaryColor": "#FFC72C"
+    },
+    {
+      "teamId": "heat",
+      "names": ["Miami Heat"],
+      "espnIds": ["14"],
+      "haloColor": "#98002E",
+      "haloStrength": 0.10,
+      "needsContrastLift": false,
+      "dominantColor": "#98002E",
+      "secondaryColor": "#F9A01B"
+    },
+    {
+      "teamId": "bulls",
+      "names": ["Chicago Bulls"],
+      "espnIds": ["4"],
+      "haloColor": "#CE1141",
+      "haloStrength": 0.10,
+      "needsContrastLift": false,
+      "dominantColor": "#CE1141",
+      "secondaryColor": "#000000"
+    },
+    {
+      "teamId": "rockets",
+      "names": ["Houston Rockets"],
+      "espnIds": ["10"],
+      "haloColor": "#CE1141",
+      "haloStrength": 0.10,
+      "needsContrastLift": false,
+      "dominantColor": "#CE1141",
+      "secondaryColor": "#000000"
+    },
+    {
+      "teamId": "mavericks",
+      "names": ["Dallas Mavericks"],
+      "espnIds": ["6"],
+      "haloColor": "#00538C",
+      "haloStrength": 0.10,
+      "needsContrastLift": false,
+      "dominantColor": "#00538C",
+      "secondaryColor": "#B8C4CA"
+    },
+    {
+      "teamId": "suns",
+      "names": ["Phoenix Suns"],
+      "espnIds": ["21"],
+      "haloColor": "#E56020",
+      "haloStrength": 0.10,
+      "needsContrastLift": false,
+      "dominantColor": "#1D1160",
+      "secondaryColor": "#E56020"
+    },
+    {
+      "teamId": "nuggets",
+      "names": ["Denver Nuggets"],
+      "espnIds": ["7"],
+      "haloColor": "#0E2240",
+      "haloStrength": 0.10,
+      "needsContrastLift": false,
+      "dominantColor": "#0E2240",
+      "secondaryColor": "#FEC524"
+    },
+    {
+      "teamId": "bucks",
+      "names": ["Milwaukee Bucks"],
+      "espnIds": ["15"],
+      "haloColor": "#00471B",
+      "haloStrength": 0.10,
+      "needsContrastLift": false,
+      "dominantColor": "#00471B",
+      "secondaryColor": "#EEE1C6"
+    },
+    {
+      "teamId": "sixers",
+      "names": ["Philadelphia 76ers"],
+      "espnIds": ["20"],
+      "haloColor": "#006BB6",
+      "haloStrength": 0.10,
+      "needsContrastLift": false,
+      "dominantColor": "#006BB6",
+      "secondaryColor": "#ED174C"
+    },
+    {
+      "teamId": "cavaliers",
+      "names": ["Cleveland Cavaliers"],
+      "espnIds": ["5"],
+      "haloColor": "#860038",
+      "haloStrength": 0.10,
+      "needsContrastLift": false,
+      "dominantColor": "#860038",
+      "secondaryColor": "#FDBB30"
+    },
+    {
+      "teamId": "pistons",
+      "names": ["Detroit Pistons"],
+      "espnIds": ["8"],
+      "haloColor": "#C8102E",
+      "haloStrength": 0.10,
+      "needsContrastLift": false,
+      "dominantColor": "#C8102E",
+      "secondaryColor": "#1D42BA"
+    },
+    {
+      "teamId": "hawks",
+      "names": ["Atlanta Hawks"],
+      "espnIds": ["1"],
+      "haloColor": "#E03A3E",
+      "haloStrength": 0.10,
+      "needsContrastLift": false,
+      "dominantColor": "#E03A3E",
+      "secondaryColor": "#C1D32F"
+    },
+    {
+      "teamId": "hornets",
+      "names": ["Charlotte Hornets"],
+      "espnIds": ["30"],
+      "haloColor": "#1D1160",
+      "haloStrength": 0.10,
+      "needsContrastLift": false,
+      "dominantColor": "#1D1160",
+      "secondaryColor": "#00788C"
+    },
+    {
+      "teamId": "magic",
+      "names": ["Orlando Magic"],
+      "espnIds": ["19"],
+      "haloColor": "#0077C0",
+      "haloStrength": 0.10,
+      "needsContrastLift": false,
+      "dominantColor": "#0077C0",
+      "secondaryColor": "#C4CED4"
+    },
+    {
+      "teamId": "pacers",
+      "names": ["Indiana Pacers"],
+      "espnIds": ["11"],
+      "haloColor": "#002D62",
+      "haloStrength": 0.10,
+      "needsContrastLift": false,
+      "dominantColor": "#002D62",
+      "secondaryColor": "#FDBB30"
+    },
+    {
+      "teamId": "grizzlies",
+      "names": ["Memphis Grizzlies"],
+      "espnIds": ["29"],
+      "haloColor": "#5D76A9",
+      "haloStrength": 0.10,
+      "needsContrastLift": false,
+      "dominantColor": "#5D76A9",
+      "secondaryColor": "#12173F"
+    },
+    {
+      "teamId": "pelicans",
+      "names": ["New Orleans Pelicans"],
+      "espnIds": ["3"],
+      "haloColor": "#0C2340",
+      "haloStrength": 0.10,
+      "needsContrastLift": false,
+      "dominantColor": "#0C2340",
+      "secondaryColor": "#C8102E"
+    },
+    {
+      "teamId": "timberwolves",
+      "names": ["Minnesota Timberwolves"],
+      "espnIds": ["16"],
+      "haloColor": "#0C2340",
+      "haloStrength": 0.10,
+      "needsContrastLift": false,
+      "dominantColor": "#0C2340",
+      "secondaryColor": "#236192"
+    },
+    {
+      "teamId": "blazers",
+      "names": ["Portland Trail Blazers"],
+      "espnIds": ["22"],
+      "haloColor": "#E03A3E",
+      "haloStrength": 0.10,
+      "needsContrastLift": false,
+      "dominantColor": "#E03A3E",
+      "secondaryColor": "#000000"
+    },
+    {
+      "teamId": "kings",
+      "names": ["Sacramento Kings"],
+      "espnIds": ["23"],
+      "haloColor": "#5A2D81",
+      "haloStrength": 0.10,
+      "needsContrastLift": false,
+      "dominantColor": "#5A2D81",
+      "secondaryColor": "#63727A"
+    },
+    {
+      "teamId": "raptors",
+      "names": ["Toronto Raptors"],
+      "espnIds": ["28"],
+      "haloColor": "#CE1141",
+      "haloStrength": 0.10,
+      "needsContrastLift": false,
+      "dominantColor": "#CE1141",
+      "secondaryColor": "#000000"
+    },
+    {
+      "teamId": "jazz",
+      "names": ["Utah Jazz"],
+      "espnIds": ["26"],
+      "haloColor": "#002B5C",
+      "haloStrength": 0.10,
+      "needsContrastLift": false,
+      "dominantColor": "#002B5C",
+      "secondaryColor": "#F9A01B"
+    },
+    {
+      "teamId": "wizards",
+      "names": ["Washington Wizards"],
+      "espnIds": ["27"],
+      "haloColor": "#002B5C",
+      "haloStrength": 0.10,
+      "needsContrastLift": false,
+      "dominantColor": "#002B5C",
+      "secondaryColor": "#E31837"
+    },
+    {
+      "teamId": "clippers",
+      "names": ["Los Angeles Clippers"],
+      "espnIds": ["12"],
+      "haloColor": "#C8102E",
+      "haloStrength": 0.10,
+      "needsContrastLift": false,
+      "dominantColor": "#C8102E",
+      "secondaryColor": "#1D428A"
+    },
+    {
+      "teamId": "liberty",
+      "names": ["New York Liberty"],
+      "espnIds": ["130929"],
+      "haloColor": "#86CEBC",
+      "haloStrength": 0.10,
+      "needsContrastLift": false,
+      "dominantColor": "#86CEBC",
+      "secondaryColor": "#000000"
+    },
+    {
+      "teamId": "storm",
+      "names": ["Seattle Storm"],
+      "espnIds": ["130930"],
+      "haloColor": "#2C5234",
+      "haloStrength": 0.10,
+      "needsContrastLift": false,
+      "dominantColor": "#2C5234",
+      "secondaryColor": "#FFC600"
+    },
+    {
+      "teamId": "steelers",
+      "names": ["Pittsburgh Steelers"],
+      "espnIds": ["23"],
+      "haloColor": "#FFB612",
+      "haloStrength": 0.10,
+      "needsContrastLift": true,
+      "dominantColor": "#101820",
+      "secondaryColor": "#FFB612"
+    },
+    {
+      "teamId": "ravens",
+      "names": ["Baltimore Ravens"],
+      "espnIds": ["33"],
+      "haloColor": "#9E7C0C",
+      "haloStrength": 0.10,
+      "needsContrastLift": true,
+      "dominantColor": "#241773",
+      "secondaryColor": "#9E7C0C"
+    },
+    {
+      "teamId": "saints",
+      "names": ["New Orleans Saints"],
+      "espnIds": ["18"],
+      "haloColor": "#D3BC8D",
+      "haloStrength": 0.10,
+      "needsContrastLift": true,
+      "dominantColor": "#101820",
+      "secondaryColor": "#D3BC8D"
+    },
+    {
+      "teamId": "yankees",
+      "names": ["New York Yankees"],
+      "espnIds": ["10"],
+      "haloColor": "#C4CED4",
+      "haloStrength": 0.10,
+      "needsContrastLift": true,
+      "dominantColor": "#003087",
+      "secondaryColor": "#C4CED4"
+    },
+    {
+      "teamId": "liverpool",
+      "names": ["Liverpool"],
+      "espnIds": ["364"],
+      "haloColor": "#C8102E",
+      "haloStrength": 0.10,
+      "needsContrastLift": false,
+      "dominantColor": "#C8102E",
+      "secondaryColor": "#00B2A9"
+    },
+    {
+      "teamId": "real-madrid",
+      "names": ["Real Madrid"],
+      "espnIds": ["86"],
+      "haloColor": "#FEBE10",
+      "haloStrength": 0.10,
+      "needsContrastLift": false,
+      "dominantColor": "#FEBE10",
+      "secondaryColor": "#00529F"
+    },
+    {
+      "teamId": "maple-leafs",
+      "names": ["Toronto Maple Leafs"],
+      "espnIds": ["10"],
+      "haloColor": "#00205B",
+      "haloStrength": 0.10,
+      "needsContrastLift": false,
+      "dominantColor": "#00205B",
+      "secondaryColor": "#FFFFFF"
+    },
+    {
+      "teamId": "collingwood",
+      "names": ["Collingwood Magpies"],
+      "espnIds": [],
+      "haloColor": "#000000",
+      "haloStrength": 0.08,
+      "needsContrastLift": true,
+      "dominantColor": "#000000",
+      "secondaryColor": "#FFFFFF"
+    },
+    {
+      "teamId": "rangers",
+      "names": ["Texas Rangers", "New York Rangers"],
+      "espnIds": ["13", "3"],
+      "haloColor": "#003278",
+      "haloStrength": 0.10,
+      "needsContrastLift": false,
+      "dominantColor": "#003278",
+      "secondaryColor": "#C0111F"
+    },
+    {
+      "teamId": "celtic-fc",
+      "names": ["Celtic"],
+      "espnIds": ["256"],
+      "haloColor": "#009B48",
+      "haloStrength": 0.10,
+      "needsContrastLift": false,
+      "dominantColor": "#009B48",
+      "secondaryColor": "#FFFFFF"
+    },
+    {
+      "teamId": "barcelona",
+      "names": ["Barcelona"],
+      "espnIds": ["83"],
+      "haloColor": "#A50044",
+      "haloStrength": 0.10,
+      "needsContrastLift": false,
+      "dominantColor": "#A50044",
+      "secondaryColor": "#004D98"
+    },
+    {
+      "teamId": "manchester-united",
+      "names": ["Manchester United"],
+      "espnIds": ["360"],
+      "haloColor": "#DA291C",
+      "haloStrength": 0.10,
+      "needsContrastLift": false,
+      "dominantColor": "#DA291C",
+      "secondaryColor": "#FBE122"
+    },
+    {
+      "teamId": "manchester-city",
+      "names": ["Manchester City"],
+      "espnIds": ["382"],
+      "haloColor": "#6CABDD",
+      "haloStrength": 0.10,
+      "needsContrastLift": false,
+      "dominantColor": "#6CABDD",
+      "secondaryColor": "#1C2C5B"
+    },
+    {
+      "teamId": "arsenal",
+      "names": ["Arsenal"],
+      "espnIds": ["359"],
+      "haloColor": "#EF0107",
+      "haloStrength": 0.10,
+      "needsContrastLift": false,
+      "dominantColor": "#EF0107",
+      "secondaryColor": "#FFFFFF"
+    },
+    {
+      "teamId": "chelsea",
+      "names": ["Chelsea"],
+      "espnIds": ["363"],
+      "haloColor": "#034694",
+      "haloStrength": 0.10,
+      "needsContrastLift": false,
+      "dominantColor": "#034694",
+      "secondaryColor": "#FFFFFF"
+    }
+  ]
+}

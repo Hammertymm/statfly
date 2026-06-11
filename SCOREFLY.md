@@ -4,7 +4,7 @@ Mobile-first sports scores app. Pure black UI, Apple-style typography, single se
 
 **Tagline:** Scores Anywhere. Simple.
 **Brand colour:** `#06f03c` (electric green; swapped from `#30d158` in the v69-v74 pixel-match pass)
-**Current file:** `index.html` (cache `scorefly-v96`)
+**Current file:** `index.html` (cache `scorefly-v115`)
 **Live URL:** [scorefly.app](https://scorefly.app) · [hammertymm.github.io/scorefly](https://hammertymm.github.io/scorefly)
 **Repo:** [github.com/Hammertymm/scorefly](https://github.com/Hammertymm/scorefly)
 
@@ -40,13 +40,13 @@ The `/mnt/project/` copy of `index.html` goes stale between sessions — the use
 
 ## What it does
 
-Follow favourite teams across 42 leagues / 20 countries; see live scores, upcoming fixtures, and recent results in one feed (windows are view-dependent; see Request window). No login, no ads.
+Follow favourite teams across 47 league feeds / 20 countries; see live scores, upcoming fixtures, and recent results in one feed (windows are view-dependent; see Request window). No login, no ads.
 
 |Tab    |Shows                                                                                                                                                                                                 |
 |-------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |Feed   |“Worth watching now” FlyTime section pinned on top (shown only when a live game is in Fly Time), then live matches + upcoming fixtures (All: next 14 days / My Teams: next 30). My Teams / All toggle.|
 |Results|Completed matches (All: last 7 days / My Teams: last 30). My Teams / All toggle.                                                                                                                      |
-|Teams  |Follow/manage teams. Global search. **FlyTime ALL** toggle (global close-finish alerts; renamed from “FlyTime Buzz” in v77). FlyTime accuracy ledger.                                                 |
+|Teams  |Follow/manage teams. Global search. **FlyTime ALL** toggle (global close-finish alerts; renamed from “FlyTime Buzz” in v77). **FlyTime Lab** dashboard (enable via `?flylab=1`, persists in localStorage).                                                 |
 
 A fourth bottom-nav button opens **Fly Mode**: full-screen live scores for followed teams, for glancing across a room.
 
@@ -116,12 +116,19 @@ A single coloured fly icon sits in the FIXED top-right slot of every card (and F
 - **Green** (`fly-green.png`) - live AND currently in Fly Time (`getMatchFly(id)==='flytime'`).
 - **Yellow** (`fly-yellow.png`) - upcoming AND predicted to reach Fly Time (`m.isFlyMatch`).
 - **Red** (`fly-red.png`) - finished AND reached Fly Time while live (`matchHadFlyTime(id)`).
+- **Blue** (diagnostic only, FlyTime Lab) - yellow predicted, then reached FlyTime live (Y→G hit). Not shown on user-facing cards.
 
 One fly per card max; none shown if no FlyTime state. Resolved by `flyTimeIcon(m, status)` where status is `'live'|'upcoming'|'result'`. Icons are external PNGs (cropped from the brand SupaFly mark, circular, transparent) pre-cached in `sw.js` - not inline base64.
 
 This REPLACED and retired: the green `FLYTIME` bottom banner (`flyTimeBannerHTML`/`.flytime-banner`), the green `FlyTime` results pill (`.fly-stamp`), and the old SupaFly “FlyMatch” corner badge (`fm-stamp`, was driven by `isFlyMatch`). `buildMarkers` is now rivalry-skull-only. Per the locked spec, FlyTime on a card is communicated by the fly icon ONLY - no text labels, banners, ribbons, pills, extra badges, or extra borders.
 
-### FlyMatch predictor (`computeFlyMatch`) - drives the yellow fly
+### FlyTime Engine v1 (primary yellow-fly predictor, Jun 2026)
+
+For **45 of 47 feeds**, the yellow fly is driven by offline research tables (`*-flytime-v1.json`), keyed in `FLY_V1_REGISTRY`. Each league has a calibrated threshold (typically 65-98). Formula: `close*0.35 + form_balance*0.25 + margin_balance*0.25 + matchup*0.15`. Tables built from ESPN historical scoreboards via `scripts/build_flytime_v1.py` / `scripts/calibrate_flytime.py`. Cricket feeds use live `isFlyTime` rules only.
+
+Tune per-league thresholds using **FlyTime Lab** (`?flylab=1` once; persists as `scorefly_fly_lab`). The lab shows yellow/green/red/blue counts per league and suggests threshold adjustments.
+
+### Legacy FlyMatch predictor (`computeFlyMatch`) - cricket fallback
 
 Rebuilt in **v78** as a **close-game-led** model; the old popularity / team-quality / rivalry model was scrapped. A yellow fly now means “this upcoming game is likely to be CLOSE”, NOT “these teams are famous”. Runs every sweep on `ALL_UPCOMING` (+ `ALL_LIVE`), reads only fields already on the match (no extra network), sets `m.flyMatchRating` (0-100) and `m.isFlyMatch`.
 
@@ -169,11 +176,13 @@ When any live game is in Fly Time, `renderHome` lifts those matches out of the l
 
 Every match the app observes entering Fly Time is recorded id->timestamp in `flyTimeMatches` (`scorefly_flytime_matches`), pruned past 35 days. When such a match appears on Results, `buildResultCard` shows the **red fly icon** in the corner (`flyTimeIcon(m,'result')`, v66 - replaced the green `.fly-stamp` text pill). The match id is the ESPN event id, stable from live to final. Limitation: only stamps matches the app actually watched go live (not retroactive, per-device) - full historical stamping is the parked FlyTime learning system (native track).
 
-### FlyTime accuracy ledger (v77) + the detection-zero problem
+### FlyTime Lab (v97+, production via `?flylab=1`)
 
-The Teams tab carries a **FlyTime accuracy ledger** (`#fly-ledger-wrap`, `renderFlyLedger`, store `scorefly_fly_ledger_v1`). Per match it records whether it was PREDICTED FlyTime-worthy (yellow, via `ledgerPredict` in `computeFlyMatch`) and whether it actually REACHED FlyTime live (via `ledgerAchieved`, called from `updateFlyState` when `isFlyTime` fires). `flyLedgerStats()` returns `{predicted, achieved, hit, total, falseAlarm, missed}`; reset via `resetFlyLedger()`. v83 added a **“Margin data ready for X of Y upcoming games”** line to this panel (predictor-input health - see FlyMatch KNOWN ISSUE).
+The Teams tab carries a **FlyTime Lab** dashboard (`renderFlyDashboard`, store `scorefly_fly_ledger_v1`). Enable via `?flylab=1` once (persists as `scorefly_fly_lab`); `DEBUG_FLY = false` in production. Per match it records whether it was PREDICTED FlyTime-worthy (yellow, via `ledgerPredict` in `computeFlyMatch`) and whether it actually REACHED FlyTime live (via `ledgerAchieved`, called from `updateFlyState` when `isFlyTime` fires). `flyLedgerStats()` returns `{predicted, achieved, hit, total, falseAlarm, missed}`; reset via `resetFlyLedger()`. v83 added a **“Margin data ready for X of Y upcoming games”** line to this panel (predictor-input health - see FlyMatch KNOWN ISSUE).
 
-**The hard truth as of v83:** the ledger has read **predicted=many / reached=0**, and zero red flies have ever appeared. Red flies, the ledger “reached” count and FlyTime ALL all fire from one place - `isFlyTime(m)` returning true during a live poll - and that has apparently never happened. The code path is wired correctly and the fields it needs (`period`, `clockSec`, `hInt`, `aInt`) are populated, so the most likely cause is that detection only fires while the app is **open and actively polling during a game’s final minutes** (iOS suspends backgrounded web apps). It has never been confirmed against a real live close finish. **Until detection is confirmed working, the ledger cannot validate the yellow predictor (every prediction looks like a false alarm), so threshold tuning is blind.** Top priority is to watch one close finish with the app open and confirm a green fly appears live and a red fly on Results after.
+**Fly naming:** yellow = upcoming prediction, green = live FlyTime, red = finished after FlyTime, blue = diagnostic Y→G hit (lab only). Per-league stats via `flyDashboardPerLeague()`; tune thresholds in `FLY_V1_REGISTRY`.
+
+**Live verification (ongoing):** watch close finishes with the app open. Prior ledger runs read **predicted=many / reached=0**; and zero red flies have ever appeared. Red flies, the ledger “reached” count and FlyTime ALL all fire from one place - `isFlyTime(m)` returning true during a live poll - and that has apparently never happened. The code path is wired correctly and the fields it needs (`period`, `clockSec`, `hInt`, `aInt`) are populated, so the most likely cause is that detection only fires while the app is **open and actively polling during a game’s final minutes** (iOS suspends backgrounded web apps). It has never been confirmed against a real live close finish. **Until detection is confirmed working, the ledger cannot validate the yellow predictor (every prediction looks like a false alarm), so threshold tuning is blind.** Top priority is to watch one close finish with the app open and confirm a green fly appears live and a red fly on Results after.
 
 ### Functions / where to look
 
@@ -196,7 +205,7 @@ The hand-curated rivalry system was deleted entirely in v78 (JRod: “rare, just
 
 -----
 
-## Data layer (42 leagues, ESPN unofficial API)
+## Data layer (47 feeds, ESPN unofficial API)
 
 No API key. Fetched direct from the browser via rotating CORS proxies. **ESPN-only doctrine. No mock data.** `ALL_LIVE`, `ALL_UPCOMING`, `ALL_RESULTS` start empty.
 
@@ -231,7 +240,7 @@ Single self-rescheduling loop — no overlapping intervals.
 
 `espnStatus(comp)` decides live / finished / upcoming. **v82 rewrote it to trust ESPN’s authoritative `status.type.state` (`pre` / `in` / `post`)** instead of matching a short allowlist of status NAMES and falling back to “start time has passed = finished”. The old logic caused two bugs: NRL games went straight to “finished” the moment they kicked off (their `STATUS_FIRST_HALF` / `STATUS_SECOND_HALF` names were not on the allowlist), and a game at tip-off briefly showed as both live and finished (a scheduled game whose start time had just passed was mis-stamped finished at 0-0). The name/time logic remains only as a fallback when `state` is missing. v82 also added `pruneResultsOfLive()` (called in both the full sweep and fast lane) so a match can never sit in `ALL_LIVE` and `ALL_RESULTS` at once.
 
-### Leagues (42 total, 20 countries)
+### Leagues (47 ESPN feeds, 20 countries in discovery)
 
 **England (3):** Premier League, Championship, Women’s Super League
 **Spain (1):** La Liga
@@ -254,7 +263,7 @@ Single self-rescheduling loop — no overlapping intervals.
 **USA (5):** NFL, NBA, MLB, NHL, MLS
 **Global (8):** UEFA Champions League, UEFA Europa League, Copa Libertadores, ATP Tennis, WTA Tennis, ICC Cricket ODI, ICC Cricket T20, Six Nations Rugby
 
-**619 teams / players total.**
+**746 teams / players total** in the searchable follow list. See `ESPN_FEEDS` in `index.html` for the authoritative 47-feed list (US/CA 10, soccer 31, AFL, NRL, cricket 2, rugby union 2).
 
 ### Confirmed NOT viable (do not retry)
 
@@ -328,9 +337,9 @@ Pure black `#000000` everywhere. No dark grey, no gradients.
 
 ## Deployment (GitHub Pages, edit-on-phone)
 
-Repo files: `index.html`, `sw.js`, `manifest.json`, `icon192.png`, `icon512.png`, `icon-*.png` (per-sport fallback icons), `fly-green.png`, `fly-yellow.png`, `fly-red.png`, `knob.png` (brightness slider), `onboard-hero.png`, `onboard-notif.png`, `supafly-*.png`, `README.md`, `NOTES.md`, `SCOREFLY.md`, `VERSION HISTORY.md`, `CNAME`, `.nojekyll`. (`supafly-score.png` is precached but unused since the v78 onboarding swap.)
+Repo files: `index.html`, `sw.js`, `manifest.json`, `icon192.png`, `icon512.png`, `icon-*.png` (per-sport fallback icons), `fly-green.png`, `fly-yellow.png`, `fly-red.png`, `knob.png` (brightness slider), `onboard-hero.png`, `onboard-notif.png`, `supafly-*.png`, `team-halo-config.json`, `*-flytime-v1.json` (45 league tables), `scripts/` (FlyTime build/calibration tools), `README.md`, `NOTES.md`, `SCOREFLY.md`, `VERSION HISTORY.md`, `CNAME`, `.nojekyll`.
 
-Steps: edit in GitHub web UI, commit, wait ~30s for Pages rebuild, refresh on phone. **Every deploy that touches HTML/CSS/JS/icons: bump `CACHE` in `sw.js` to a higher number.** Current: **`scorefly-v96`**. For an installed PWA, removing + re-adding the Home Screen icon forces a stale cache to clear.
+Steps: edit in GitHub web UI, commit, wait ~30s for Pages rebuild, refresh on phone. **Every deploy that touches HTML/CSS/JS/icons: bump `CACHE` in `sw.js` to a higher number.** Current: **`scorefly-v115`**. For an installed PWA, removing + re-adding the Home Screen icon forces a stale cache to clear.
 
 -----
 
@@ -382,7 +391,7 @@ Steps: edit in GitHub web UI, commit, wait ~30s for Pages rebuild, refresh on ph
 
 - Placeholder/TBD fixtures (e.g. “Spurs/Thunder” before a playoff series): render cleanly but have no real teams. Open question: hide or keep?
 - iPad/tablet layout unchecked. PWA install on Android untested.
-- WNBL (Australian women’s basketball) is not in the app at all - no entry in `LEAGUES`/`TEAMS`/feeds, so it is not searchable. Adding it is a new-league task (needs a working ESPN endpoint - ESPN coverage of WNBL is unconfirmed - plus a team list), not a search-index fix.
+- Men's **NBL** (Australia) is live (`basketball/nbl`). **WNBL** (Australian women’s basketball) is not in the app at all - no entry in `LEAGUES`/`TEAMS`/feeds, so it is not searchable. Adding it is a new-league task (needs a working ESPN endpoint - ESPN coverage of WNBL is unconfirmed - plus a team list), not a search-index fix.
 
 **Optional code cleanup (low priority)**
 
@@ -395,7 +404,7 @@ Steps: edit in GitHub web UI, commit, wait ~30s for Pages rebuild, refresh on ph
 
 |Decision                       |Outcome                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
 |-------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|Onboarding recommendations     |Anchor team -> 6 picks: 2 Local (same metro, different league), 2 Same country (different sport, household names), 2 Same league (biggest names; rivals-first dropped v78); 4 country / 2 league fallback when no metro. Pure client function over the in-memory team list - no backend, no DB, no caching (619 teams = instant).                                                                                                                                                                                                                 |
+|Onboarding recommendations     |Anchor team -> 6 picks: 2 Local (same metro, different league), 2 Same country (different sport, household names), 2 Same league (biggest names; rivals-first dropped v78); 4 country / 2 league fallback when no metro. Pure client function over the in-memory team list - no backend, no DB, no caching (746 teams = instant).                                                                                                                                                                                                                 |
 |Team geo data                  |Stored in a `METRO_TEAMS` side-car (name->metro), NOT on the `TEAMS` strings. Only multi-sport metros tagged (US/CA/AU/NZ); Positions 1-2 are effectively a US+AU feature, elsewhere falls back to country. Metro/city granularity, not state (state too broad).                                                                                                                                                                                                                                                                                  |
 |Onboarding screen              |Single hero/splash (`onboard-hero.png`) -> “Choose My Teams” -> team picker -> notifications. CODED v68. Supersedes the 4-screen flow (welcome + Meet FlyTime retired). Teams followed bell-off; notifications step turns alerts on for all followed teams when granted.                                                                                                                                                                                                                                                                          |
 |FlyMatch predictor (yellow fly)|Close-game-led since v78 (popularity/quality/rivalry model scrapped): close-margin profile (45) + competitiveness (30) + form (10), importance added on top. v80 added a hard “both teams need margins” gate + sharper competitiveness; that over-corrected to ZERO flies because margin data does not reliably load, so v83 replaced it with a two-tier threshold (62 when both teams have margins, 82 when missing) - never a flood, never a hard zero. Dials: `FLYMATCH_THRESHOLD` 62, `FLYMATCH_THRESHOLD_NODATA` 82, `FLYMATCH_COMP_GAP` 0.5.|
@@ -438,7 +447,10 @@ Steps: edit in GitHub web UI, commit, wait ~30s for Pages rebuild, refresh on ph
 
 ## Version history
 
-**v96** (current) - Backlog batch: global LIVE pill, quick-add `+`, onboarding polish, FlyTime blowout buffer, `DEBUG_FLYSCORES` off. `sw.js` -> v96.
+**v115** (current) - NBL live feed (`basketball/nbl`) + `nbl-flytime-v1.json`; FlyTime Lab via `?flylab=1`; fly terminology (yellow/green/red/blue); `DEBUG_FLY = false`. `sw.js` -> v115.
+**v112** - 13 new ESPN leagues (J1, League One/Two, CSL, Belgian, Swiss, Greek, Serie B, Saudi, Russian, CFL, URC, Top 14) with FlyTime v1 tables.
+**v97-v111** - FlyTime v1 engines for all major sports/soccer; tennis removed; StatFly->ScoreFly docs; onboarding redesign; FlyMode up to 8 games; team halos; notification defaults; global LIVE pill; quick-add `+`.
+**v96** - Backlog batch: global LIVE pill, quick-add `+`, onboarding polish, FlyTime blowout buffer, `DEBUG_FLYSCORES` off. `sw.js` -> v96.
 **v83** — FlyMatch two-tier threshold + margin-data visibility. The v80 hard gate had over-corrected to ZERO yellow flies (per-team margin data does not reliably load), so the gate was replaced with a data-aware two-tier threshold: bar 62 when both teams have margin history (close-led), bar 82 (`FLYMATCH_THRESHOLD_NODATA`) when missing - so very-even matchups and finals still flag (never zero) but average games do not (never the old flood). Added a “Margin data ready for X of Y upcoming games” readout to the FlyTime accuracy ledger and wired it to refresh after each form load, to reveal whether the predictor’s input data is actually loading. `sw.js` -> v83.
 **v82** — Live/finished classification fix. `espnStatus` rewritten to trust ESPN `status.type.state` (pre/in/post) instead of a status-name allowlist + start-time guess. Fixed (a) NRL games flipping straight to “finished” at kickoff (their half-based status names were not on the allowlist) and (b) games showing as live AND finished at once around tip-off. Added `pruneResultsOfLive()` so a match is never in both lists. `sw.js` -> v82.
 **v81** — Period terminology + uppercase timers + Fly Mode separators + portrait lock. (1) `espnTimer` period labels fixed: WNBA/NCAAF -> Q1-Q4, NCAAM -> H1/H2 (college halves), plus a sport-based fallback so no league shows a bare number; both timer boxes set `text-transform: uppercase` (Btm->BTM, Inn->INN). (2) Fly Mode gains a stronger between-match divider (`--fly-sep` 0.25 vs the 0.12 seam). (3) Tab pages locked to portrait via a `.rotate-lock` overlay on phone-sized landscape; Fly Mode stays the one landscape view. `sw.js` -> v81.

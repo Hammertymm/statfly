@@ -47,7 +47,7 @@ Tap the **+** beside any team on a card or in search to follow it without leavin
 
 ## Leagues covered
 
-ScoreFly pulls live data for **47 league feeds** across soccer, US/Canada major leagues, AFL, NRL, NBL, cricket, tennis, and more. The searchable follow list covers **746 teams and players**.
+ScoreFly pulls live data for **47 league feeds** across soccer, US/Canada major leagues, AFL, NRL, NBL, cricket, rugby union, and more. The searchable follow list covers **746 teams and players**.
 
 See `SCOREFLY.md` for the full league list.
 
@@ -85,7 +85,7 @@ Designed for putting your phone on the table and watching scores update from acr
 
 ```
 index.html           Main app (all HTML, CSS, and JS in one file)
-sw.js                Service worker — offline caching (currently scorefly-v96)
+sw.js                Service worker — offline caching (currently scorefly-v115)
 manifest.json        PWA manifest
 *-flytime-v1.json    Offline FlyTime predictor tables (per sport/league)
 icon192.png / icon512.png

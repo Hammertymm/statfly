@@ -8,17 +8,15 @@ Running log of decisions, dead ends, and things worth remembering.
 - **Repo:** <https://github.com/Hammertymm/scorefly>
 - **Hosting:** GitHub Pages (Netlify abandoned – credits ran out)
 - **Deploy:** edit files in GitHub via Safari, commit, wait ~30s, refresh phone
-- **Cache:** bump `CACHE` constant in `sw.js` every deploy that touches HTML/CSS/JS/icons. Currently `scorefly-v107`.
+- **Cache:** bump `CACHE` constant in `sw.js` every deploy that touches HTML/CSS/JS/icons. Currently `scorefly-v115`.
 
-## Current feeds (34 live)
+## Current feeds (47 live)
 
-**US/CA (8):** NBA, NFL, MLB, NHL, MLS, WNBA, NCAAM, NCAAF
-**Soccer Europe (12):** EPL, La Liga, Bundesliga, Serie A, Ligue 1, Championship, Eredivisie, Primeira Liga, Scottish Premiership, Super Lig, UCL, UEL, WSL
-**Soccer Americas (4):** Brasileirao, Liga Profesional, Liga MX, Libertadores
-**Soccer other (4):** A-League, League of Ireland, ISL, PSL
-**Australian (1):** AFL
+**US/CA (10):** NBA, NFL, MLB, NHL, MLS, WNBA, NBL, NCAAM, NCAAF, CFL
+**Soccer (31):** EPL, La Liga, Bundesliga, Serie A, Ligue 1, Championship, Eredivisie, Primeira Liga, Scottish Premiership, Super Lig, UCL, UEL, WSL, Brasileirao, Liga Profesional, Liga MX, Libertadores, J1 League, League One, League Two, Chinese Super League, Belgian Pro League, Swiss Super League, Greek Super League, Serie B, Saudi Pro League, Russian Premier League, A-League, League of Ireland, ISL, PSL
+**Australian (2):** AFL, NRL
 **Cricket (2):** IPL, International cricket
-**Tennis (2):** ATP, WTA
+**Rugby union (2):** URC, Top 14
 
 ## Data sources
 
@@ -65,21 +63,27 @@ Soccer other:
 - ISL: `soccer/ind.1`
 - PSL: `soccer/rsa.1`
 
-Other:
+Australian / rugby:
 
 - AFL: `australian-football/afl`
+- NRL: `rugby-league/3`
+- NBL: `basketball/nbl`
+- URC: `rugby/270557`
+- Top 14: `rugby/270559`
+- CFL: `football/cfl`
+
+Cricket:
+
 - IPL: `cricket/8048`
 - International cricket: `cricket/23694`
-- ATP: `tennis/atp`
-- WTA: `tennis/wta`
 
-### Slugs added v25 – not yet observed live
+Soccer added Jun 2026 (13 leagues): `jpn.1`, `eng.3`, `eng.4`, `chn.1`, `bel.1`, `sui.1`, `gre.1`, `ita.2`, `ksa.1`, `rus.1` — each has a calibrated `*-flytime-v1.json` table.
 
-All 14 of: Championship, Eredivisie, Primeira Liga, Scottish Premiership, Super Lig, Brasileirao, Liga Profesional, Liga MX, A-League, League of Ireland, ISL, PSL, Libertadores, WSL. Based on ESPN’s `<country>.<tier>` convention or URLs confirmed via search results. None tested with live matches.
+### Slugs still worth spot-checking on match days
 
-Higher risk: `ind.1` (ISL, Sept-April), `rsa.1` (PSL, Aug-May), `conmebol.libertadores` (longer slug, may need `.cup` suffix).
+Higher risk: `ind.1` (ISL, Sept-April), `rsa.1` (PSL, Aug-May), `conmebol.libertadores` (longer slug). Newer Jun 2026 slugs (`chn.1`, `rus.1`, etc.) not yet verified on live match days.
 
-To audit a specific slug: search for a known team in that league (e.g. “Boca Juniors” for arg.1, “Bohemian” for irl.1). If you can follow it but never see matches, the slug is dead.
+To audit a slug: follow a known team in that league; if matches never appear in Feed/Results, the slug is dead.
 
 ### Cricket league IDs tested (May 2026)
 
@@ -98,8 +102,9 @@ To audit a specific slug: search for a known team in that league (e.g. “Boca J
 
 ### Endpoints tested and NOT viable
 
-- **NRL** – tested `rugby/3`, `rugby/nrl`, `rugby-league/nrl`, `rugby/league/3`, `rugby/270557`. All proxies return either HTTP 403 or 0 events with no league metadata. ESPN’s website shows NRL but the public API does not expose it. Would need a paid API (API-Sports, SportsRadar) or alternative free source (TheSportsDB).
 - **NASCAR** – `nascar-cup-series` tested in v21, 5/5 proxies dead. Removed in v22.
+- **Tennis** – ATP/WTA removed from feeds (tournament-shaped data; removed Jun 2026).
+- **Old NRL slugs** – `rugby/3`, `rugby/nrl`, etc. were dead; live feed is `rugby-league/3` (wired with FlyTime v1 table).
 
 ### Sports dropped by user (not technical failures)
 
@@ -111,10 +116,9 @@ To audit a specific slug: search for a known team in that league (e.g. “Boca J
 
 These leagues stay in the Teams tab discovery list even though no feed currently backs them. Searching for an alternative free source (TheSportsDB, league-specific APIs, etc). If a user follows a team in one of these, their card just won’t show up in Feed/Results until a feed is wired.
 
-- **NRL** (Australia) – ESPN dead (see above). Highest priority since user keeps asking.
 - **Big Bash League** (Australia) – ESPN `cricket/8044` works Dec-Jan only. Consider seasonal toggle.
-- **Super Rugby Pacific** (Australia + New Zealand) – shared list. No source yet.
-- **WNBL** (Australia women's basketball) – no ESPN endpoint; distinct from US WNBA which is live.
+- **Super Rugby Pacific** (Australia + New Zealand) – shared list. No source yet (URC and Top 14 are live separately).
+- **WNBL** (Australia women's basketball) – no ESPN endpoint; distinct from men's **NBL** which is live.
 - **Pakistan Super League** (Pakistan cricket) – no source yet.
 - **SA T20 Cricket** (South Africa) – no source yet.
 - **Copa do Brasil** (Brazil) – no source yet (Brasileirao is live).
@@ -274,16 +278,22 @@ Both header logo (`.brand-mark`) and tab bar fly (`.nb-flymode > img`) replaced 
 
 ## Repo state (current)
 
-Files in repo: `index.html`, `sw.js`, `manifest.json`, `icon192.png`, `icon512.png`, `README.md`, `NOTES.md`, `.nojekyll`, `feed-research.html`
+Core app: `index.html`, `sw.js`, `manifest.json`, `icon192.png`, `icon512.png`, `team-halo-config.json`, `CNAME`, `.nojekyll`
 
-`.nojekyll` and `feed-research.html` were added in v25 for a research tester that didn’t end up being used (Safari caching issue). Both can be deleted when convenient – neither is needed for the app.
+FlyTime v1 tables: 45 `*-flytime-v1.json` files (one per league in `FLY_V1_REGISTRY`; cricket feeds use live rules only).
 
-## v97 - FlyTime Lab dashboard (Jun 2026)
+Build scripts: `scripts/build_flytime_v1.py`, `scripts/build_soccer_flytime.py`, `scripts/calibrate_flytime.py`, `scripts/report_new_league_thresholds.py`, and related research tools.
 
-- `DEBUG_FLY` master switch (true): card flyscores + Teams tab FlyTime Lab dashboard.
-- FlyTime Lab: live green/yellow counts, yellow-to-green accuracy, finished-game red stamps, V1 engine health, recent match log (Y/G/R).
-- Ledger now stores rating, engine type, threshold per prediction.
-- Set `DEBUG_FLY = false` before public release.
+Docs: `README.md`, `NOTES.md`, `SCOREFLY.md`, `VERSION HISTORY.md`
+
+`.nojekyll` and `feed-research.html` were added in v25 for a research tester that didn’t end up being used (Safari caching issue). (if present) can be deleted when convenient.
+
+## v97–v115 (Jun 2026)
+
+- **v97** — FlyTime Lab dashboard on Teams tab; ledger stores rating, engine type, threshold.
+- **v98–v111** — FlyTime v1 engines rolled out for all major sports and soccer leagues; tennis removed from feeds; StatFly→ScoreFly rebrand in docs; onboarding redesign; FlyMode up to 8 games; team halos; notification defaults.
+- **v112** — 13 new ESPN leagues (J1, League One/Two, CSL, Belgian, Swiss, Greek, Serie B, Saudi, Russian, CFL, URC, Top 14) with FlyTime v1 tables.
+- **v115** — Australian NBL live feed (`basketball/nbl`) + `nbl-flytime-v1.json`; FlyTime Lab enabled in production via `?flylab=1` (persists in localStorage); `DEBUG_FLY = false`; fly terminology aligned (yellow/green/red/blue).
 
 ## v96 - backlog completion (Jun 2026)
 
@@ -295,38 +305,28 @@ Files in repo: `index.html`, `sw.js`, `manifest.json`, `icon192.png`, `icon512.p
 
 ## Open items (remaining)
 
-### Verify on live match days
+### Verify on live match days (highest priority)
 
-- AFL parser on next live match
-- Cricket parser on live IPL match
-- 14 v25 soccer slugs (highest priority next session)
+- **FlyTime yellow/green/red flies** — watch close finishes with the app open; confirm yellow on upcoming, green live, red on Results. Use FlyTime Lab (`?flylab=1` → Teams tab) to tune per-league thresholds in `FLY_V1_REGISTRY`.
+- **NBL** — first live season test of new `basketball/nbl` feed + threshold 70.
+- **13 Jun 2026 soccer/rugby/CFL slugs** — spot-check on match days.
+- AFL parser, cricket parser, FlyTime notifications on iPhone PWA.
 
-### FlyState V2 – pending live verification (all changes so far are static/simulated only)
+### FlyState momentum – pending live verification
 
-- **Group 2 calibration (highest priority).** Watch real games, compare the colour mix to
-  the V2 targets (Orange common, Red rare, less White), then adjust the tuning block.
-  Until done, Groups 1-3 are not production-ready.
-- FlyTime alert: confirm one notification fires on the installed iPhone PWA for a
-  followed+bell team in a close late game (needs notification permission granted).
-- Basketball possession FlyTime: may feel loose at the 5:00 mark (allows ~18 pts); tune if so.
-- Drought Blue: confirm basketball 4 min / AFL 12 min behave live; watch for false Blue
-  after halftime / long stoppages (wall-clock based).
-- Rivalry skull: confirm it shows on a rival fixture and not on neighbours. Skull is a
-  colour emoji (slightly off the pure-black aesthetic) – swap for a custom mark if wanted.
-- Adaptive polling: confirm a FlyTime game refreshes faster while cold-load feels unchanged.
-- AFL TV labels: confirm codes render on a live AFL match (relies on ESPN team names
-  containing the matched words).
+- Watch real games; compare colour mix to targets (Orange common, Red rare, less White); adjust `MOM_*` tuning block if needed.
+- Drought Blue: confirm basketball 4 min / AFL 12 min behave live; watch for false Blue after halftime.
+- AFL TV labels on live AFL match.
 
 ### Pre-existing dead suggestions in search UI
 
 Discovery lists still surface leagues with no feeds:
 
 - ‘Global’ list: Formula 1, ICC Cricket (ODI), ICC Cricket (T20), Six Nations Rugby, Golf Majors
-- Australia: NRL, Big Bash League, Super Rugby Pacific, NBL
+- Australia: Big Bash League, Super Rugby Pacific (NRL and NBL are now live)
 - South Africa: SA T20 Cricket
 - Pakistan: Pakistan Super League
 - New Zealand: Super Rugby Pacific
-- England: WSL is NOW backed by `eng.w.1` – verify it shows real matches
 
 User has not asked for a cleanup sweep. Mention if it comes up.
 
@@ -337,15 +337,14 @@ Delete `feed-research.html` and `.nojekyll` when convenient.
 ### More sports / leagues
 
 - **Cheap ESPN adds** (same `ESPN_FEEDS` pattern): Bundesliga 2 (`ger.2`), Eredivisie 2 (`ned.2`), USL Championship, NWSL, more ESPN+ soccer.
-- **NRL** – confirmed dead via ESPN, skip.
 - **NASCAR** – confirmed dead, skip.
 - **GAA** – no API, would require scraping (user excluded anyway).
 - **BBL** – works on `cricket/8044` Dec-Jan only. Could add seasonally.
 
 ### Performance (only if cold load feels slow)
 
-- Cold load is now 34 feeds x up to 4 proxies = up to 136 HTTP requests. Previously flagged 44 as a watch point.
-- Adaptive polling (v40) increases request volume during FlyTime windows only (20s instead of 60s). Bounded and brief, but worth watching if many matches hit FlyTime at once.
+- Cold load is now 47 feeds x up to 4 proxies = up to 188 HTTP requests.
+- Tiered polling: 12s fast lane while live, full sweep every ~3 min or 60s idle.
 - Options if slow: parallelise smarter (fan-out + cancel on first success per feed), per-feed timeout (currently 10s), lazy-load some feeds (only fetch when user follows a team in that league).
 - Don’t optimise unless user reports it feels slow.
 

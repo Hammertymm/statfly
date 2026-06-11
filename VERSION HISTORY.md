@@ -1,4 +1,4 @@
-# ScoreFly — Version History (V1 → v96)
+# ScoreFly — Version History (V1 → v115)
 
 **Sources:** reconstructed from SCOREFLY.md’s changelog, the v69–v75 session handover, and the v76 session.
 
@@ -89,7 +89,15 @@ No changelog exists for these. What the later entries imply was already present 
 
 -----
 
-## v96 — Backlog completion (current)
+## v97 – v115 — FlyTime v1 rollout, league expansion, NBL (current)
+
+**v115** — Australian NBL live feed (`basketball/nbl`) + `nbl-flytime-v1.json` (threshold 70); FlyTime Lab enabled in production via `?flylab=1` (persists in localStorage); fly terminology aligned (yellow/green/red/blue); `DEBUG_FLY = false`. `sw.js` -> v115.
+
+**v112** — 13 new ESPN-backed leagues with FlyTime v1 tables: J1 League, League One, League Two, Chinese Super League, Belgian Pro League, Swiss Super League, Greek Super League, Serie B, Saudi Pro League, Russian Premier League, CFL, URC, Top 14. Rugby union support. `sw.js` -> v112.
+
+**v97–v111** — FlyTime v1 engines rolled out for all major sports and soccer leagues; tennis removed from feeds; StatFly→ScoreFly rebrand in docs; onboarding redesign (global starter pack, search-first flow); FlyMode auto-scales up to 8 live games; adaptive team halos (`team-halo-config.json`); FlyMode timers centred below scores; notification defaults (all bells + FlyTime ALL on when permission granted); FlyTime notification tap routes to Feed via service worker; League of Ireland threshold tune; MLB extras green-fly fix.
+
+## v96 — Backlog completion
 
 **v96** — Global LIVE header pill (`#global-live`); per-team `+` quick-add on cards/search/onboarding; onboarding progress dots and copy polish; FlyTime blowout buffer (`FLY_BLOWOUT_MARGIN`); `DEBUG_FLYSCORES` off. `sw.js` -> v96.
 
@@ -113,7 +121,7 @@ No changelog exists for these. What the later entries imply was already present 
 1. WNBA made searchable/followable (added to USA group, 13 teams) — fixed the Atlanta Dream bug.
 1. Red fly on Results for matches that hit FlyTime (confirmed already in place).
 
-**v76 (current) — UI alignment & polish, 6 CSS/markup tweaks** *(no JavaScript changed):*
+**v76 — UI alignment & polish, 6 CSS/markup tweaks** *(no JavaScript changed):*
 
 - **#1** Freshness band tightened (bottom padding 7 → 3px); still Feed-only.
 - **#3** Upcoming team names aligned to live/results cards (logo gap 8 → 10); form dots aligned flush under the name (indent 30 → 28).

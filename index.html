@@ -364,7 +364,15 @@
   .onb-starter-logos{display:flex;gap:10px;justify-content:center;align-items:center;}
   #onb-step-1 .onb-hero-caption{display:none;}
   #onb-step-3 .onb-notif-top{font-size:14px;line-height:1.45;color:var(--text-3);text-align:center;padding:12px 8px 0;margin:0;}
-  #onb-step-3 .onb-notif-hero{margin-top:4px;}
+  /* Crop the baked-in footer fly/line from onboard-notif.png above the buttons. */
+  #onb-step-3 .onb-notif-hero{
+    margin-top:4px;
+    display:block;
+    width:calc(100% + 44px);
+    height:min(58vh, 500px);
+    object-fit:cover;
+    object-position:top center;
+  }
 
   /* -- COMPACT RESULTS TOGGLE -- */
 
@@ -2199,7 +2207,8 @@ function updateFlyState(m) {
 
   // Match-level states are clock-driven each poll. OT outranks FlyTime. Once FlyTime
   // is reached it locks on until the match finishes or blows out (see FLY_BLOWOUT_MARGIN).
-  const matchState = m.isOT ? 'overtime' : (isFlyTimePinned(m) ? 'flytime' : '');
+  // FlyTime beats OT when both apply (e.g. a tied MLB extra-inning game).
+  const matchState = m.isOT && !isFlyTime(m) ? 'overtime' : (isFlyTimePinned(m) ? 'flytime' : '');
   if(isFlyTime(m)){ markFlyTimeMatch(id); ledgerAchieved(m); }
 
   if (!prev) {
@@ -4229,7 +4238,7 @@ const FLY_V1_REGISTRY = {
   'soccer|arg.1':                           { file: 'soccer-arg-1-flytime-v1.json',     threshold: 98, tag: 'ARG' },
   'soccer|mex.1':                           { file: 'soccer-mex-1-flytime-v1.json',     threshold: 90, tag: 'MX' },
   'soccer|aus.1':                           { file: 'soccer-aus-1-flytime-v1.json',     threshold: 85, tag: 'ALE' },
-  'soccer|irl.1':                           { file: 'soccer-irl-1-flytime-v1.json',     threshold: 80, tag: 'IRL' },
+  'soccer|irl.1':                           { file: 'soccer-irl-1-flytime-v1.json',     threshold: 90, tag: 'IRL' },
   'soccer|ind.1':                           { file: 'soccer-ind-1-flytime-v1.json',     threshold: 85, tag: 'ISL' },
   'soccer|rsa.1':                           { file: 'soccer-rsa-1-flytime-v1.json',     threshold: 95, tag: 'PSL' },
   'soccer|eng.w.1':                         { file: 'soccer-eng-w-1-flytime-v1.json',   threshold: 78, tag: 'WSL' },

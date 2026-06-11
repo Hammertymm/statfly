@@ -1,0 +1,2955 @@
+{
+  "meta": {
+    "sport": "URC",
+    "engine": "v1-bootstrap",
+    "formula": "close*0.35 + form_balance*0.25 + margin_balance*0.25 + matchup*0.15",
+    "close_margin": 12,
+    "games_sampled": 300,
+    "week_chunk": 8,
+    "built": "2026-06-11"
+  },
+  "matchup_ratings": [
+    {
+      "matchup": "Benetton Treviso vs Glasgow Warriors",
+      "games_played": 5,
+      "avg_margin": 23,
+      "avg_excitement": 24.83
+    },
+    {
+      "matchup": "Glasgow Warriors vs Benetton Treviso",
+      "games_played": 5,
+      "avg_margin": 23,
+      "avg_excitement": 24.83
+    },
+    {
+      "matchup": "Leinster vs Zebre",
+      "games_played": 2,
+      "avg_margin": 14,
+      "avg_excitement": 53.33
+    },
+    {
+      "matchup": "Zebre vs Leinster",
+      "games_played": 2,
+      "avg_margin": 14,
+      "avg_excitement": 53.33
+    },
+    {
+      "matchup": "Bulls vs Lions",
+      "games_played": 5,
+      "avg_margin": 11.6,
+      "avg_excitement": 48.33
+    },
+    {
+      "matchup": "Lions vs Bulls",
+      "games_played": 5,
+      "avg_margin": 11.6,
+      "avg_excitement": 48.33
+    },
+    {
+      "matchup": "Cardiff Blues vs Munster",
+      "games_played": 1,
+      "avg_margin": 7,
+      "avg_excitement": 94.17
+    },
+    {
+      "matchup": "Munster vs Cardiff Blues",
+      "games_played": 1,
+      "avg_margin": 7,
+      "avg_excitement": 94.17
+    },
+    {
+      "matchup": "Ospreys vs Scarlets",
+      "games_played": 5,
+      "avg_margin": 11.4,
+      "avg_excitement": 48.5
+    },
+    {
+      "matchup": "Scarlets vs Ospreys",
+      "games_played": 5,
+      "avg_margin": 11.4,
+      "avg_excitement": 48.5
+    },
+    {
+      "matchup": "Dragons vs Edinburgh",
+      "games_played": 2,
+      "avg_margin": 21.5,
+      "avg_excitement": 47.08
+    },
+    {
+      "matchup": "Edinburgh vs Dragons",
+      "games_played": 2,
+      "avg_margin": 21.5,
+      "avg_excitement": 47.08
+    },
+    {
+      "matchup": "Connacht vs Ulster",
+      "games_played": 6,
+      "avg_margin": 7.67,
+      "avg_excitement": 81.94
+    },
+    {
+      "matchup": "Ulster vs Connacht",
+      "games_played": 6,
+      "avg_margin": 7.67,
+      "avg_excitement": 81.94
+    },
+    {
+      "matchup": "Sharks vs Zebre",
+      "games_played": 3,
+      "avg_margin": 2.67,
+      "avg_excitement": 97.78
+    },
+    {
+      "matchup": "Zebre vs Sharks",
+      "games_played": 3,
+      "avg_margin": 2.67,
+      "avg_excitement": 97.78
+    },
+    {
+      "matchup": "Benetton Treviso vs Leinster",
+      "games_played": 3,
+      "avg_margin": 30.33,
+      "avg_excitement": 4.72
+    },
+    {
+      "matchup": "Leinster vs Benetton Treviso",
+      "games_played": 3,
+      "avg_margin": 30.33,
+      "avg_excitement": 4.72
+    },
+    {
+      "matchup": "Cardiff Blues vs Glasgow Warriors",
+      "games_played": 3,
+      "avg_margin": 16,
+      "avg_excitement": 40.0
+    },
+    {
+      "matchup": "Glasgow Warriors vs Cardiff Blues",
+      "games_played": 3,
+      "avg_margin": 16,
+      "avg_excitement": 40.0
+    },
+    {
+      "matchup": "Scarlets vs Ulster",
+      "games_played": 2,
+      "avg_margin": 9,
+      "avg_excitement": 57.5
+    },
+    {
+      "matchup": "Ulster vs Scarlets",
+      "games_played": 2,
+      "avg_margin": 9,
+      "avg_excitement": 57.5
+    },
+    {
+      "matchup": "Connacht vs Stormers",
+      "games_played": 1,
+      "avg_margin": 23,
+      "avg_excitement": 10.83
+    },
+    {
+      "matchup": "Stormers vs Connacht",
+      "games_played": 1,
+      "avg_margin": 23,
+      "avg_excitement": 10.83
+    },
+    {
+      "matchup": "Bulls vs Edinburgh",
+      "games_played": 3,
+      "avg_margin": 5.33,
+      "avg_excitement": 95.56
+    },
+    {
+      "matchup": "Edinburgh vs Bulls",
+      "games_played": 3,
+      "avg_margin": 5.33,
+      "avg_excitement": 95.56
+    },
+    {
+      "matchup": "Lions vs Ospreys",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 99.17
+    },
+    {
+      "matchup": "Ospreys vs Lions",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 99.17
+    },
+    {
+      "matchup": "Dragons vs Munster",
+      "games_played": 3,
+      "avg_margin": 18.67,
+      "avg_excitement": 37.78
+    },
+    {
+      "matchup": "Munster vs Dragons",
+      "games_played": 3,
+      "avg_margin": 18.67,
+      "avg_excitement": 37.78
+    },
+    {
+      "matchup": "Bulls vs Connacht",
+      "games_played": 3,
+      "avg_margin": 18,
+      "avg_excitement": 15.0
+    },
+    {
+      "matchup": "Connacht vs Bulls",
+      "games_played": 3,
+      "avg_margin": 18,
+      "avg_excitement": 15.0
+    },
+    {
+      "matchup": "Cardiff Blues vs Lions",
+      "games_played": 2,
+      "avg_margin": 8,
+      "avg_excitement": 58.33
+    },
+    {
+      "matchup": "Lions vs Cardiff Blues",
+      "games_played": 2,
+      "avg_margin": 8,
+      "avg_excitement": 58.33
+    },
+    {
+      "matchup": "Leinster vs Ulster",
+      "games_played": 4,
+      "avg_margin": 6,
+      "avg_excitement": 95.0
+    },
+    {
+      "matchup": "Ulster vs Leinster",
+      "games_played": 4,
+      "avg_margin": 6,
+      "avg_excitement": 95.0
+    },
+    {
+      "matchup": "Edinburgh vs Stormers",
+      "games_played": 3,
+      "avg_margin": 23,
+      "avg_excitement": 10.83
+    },
+    {
+      "matchup": "Stormers vs Edinburgh",
+      "games_played": 3,
+      "avg_margin": 23,
+      "avg_excitement": 10.83
+    },
+    {
+      "matchup": "Glasgow Warriors vs Ospreys",
+      "games_played": 3,
+      "avg_margin": 8,
+      "avg_excitement": 70.0
+    },
+    {
+      "matchup": "Ospreys vs Glasgow Warriors",
+      "games_played": 3,
+      "avg_margin": 8,
+      "avg_excitement": 70.0
+    },
+    {
+      "matchup": "Munster vs Zebre",
+      "games_played": 3,
+      "avg_margin": 13.67,
+      "avg_excitement": 41.94
+    },
+    {
+      "matchup": "Zebre vs Munster",
+      "games_played": 3,
+      "avg_margin": 13.67,
+      "avg_excitement": 41.94
+    },
+    {
+      "matchup": "Benetton Treviso vs Scarlets",
+      "games_played": 3,
+      "avg_margin": 4.67,
+      "avg_excitement": 96.11
+    },
+    {
+      "matchup": "Scarlets vs Benetton Treviso",
+      "games_played": 3,
+      "avg_margin": 4.67,
+      "avg_excitement": 96.11
+    },
+    {
+      "matchup": "Dragons vs Sharks",
+      "games_played": 3,
+      "avg_margin": 19.67,
+      "avg_excitement": 60.28
+    },
+    {
+      "matchup": "Sharks vs Dragons",
+      "games_played": 3,
+      "avg_margin": 19.67,
+      "avg_excitement": 60.28
+    },
+    {
+      "matchup": "Edinburgh vs Lions",
+      "games_played": 3,
+      "avg_margin": 12.67,
+      "avg_excitement": 66.11
+    },
+    {
+      "matchup": "Lions vs Edinburgh",
+      "games_played": 3,
+      "avg_margin": 12.67,
+      "avg_excitement": 66.11
+    },
+    {
+      "matchup": "Connacht vs Munster",
+      "games_played": 4,
+      "avg_margin": 7.75,
+      "avg_excitement": 76.04
+    },
+    {
+      "matchup": "Munster vs Connacht",
+      "games_played": 4,
+      "avg_margin": 7.75,
+      "avg_excitement": 76.04
+    },
+    {
+      "matchup": "Stormers vs Zebre",
+      "games_played": 3,
+      "avg_margin": 24,
+      "avg_excitement": 10.0
+    },
+    {
+      "matchup": "Zebre vs Stormers",
+      "games_played": 3,
+      "avg_margin": 24,
+      "avg_excitement": 10.0
+    },
+    {
+      "matchup": "Leinster vs Sharks",
+      "games_played": 2,
+      "avg_margin": 20.5,
+      "avg_excitement": 12.92
+    },
+    {
+      "matchup": "Sharks vs Leinster",
+      "games_played": 2,
+      "avg_margin": 20.5,
+      "avg_excitement": 12.92
+    },
+    {
+      "matchup": "Cardiff Blues vs Scarlets",
+      "games_played": 6,
+      "avg_margin": 6.5,
+      "avg_excitement": 94.58
+    },
+    {
+      "matchup": "Scarlets vs Cardiff Blues",
+      "games_played": 6,
+      "avg_margin": 6.5,
+      "avg_excitement": 94.58
+    },
+    {
+      "matchup": "Bulls vs Glasgow Warriors",
+      "games_played": 1,
+      "avg_margin": 14,
+      "avg_excitement": 18.33
+    },
+    {
+      "matchup": "Glasgow Warriors vs Bulls",
+      "games_played": 1,
+      "avg_margin": 14,
+      "avg_excitement": 18.33
+    },
+    {
+      "matchup": "Ospreys vs Ulster",
+      "games_played": 3,
+      "avg_margin": 18.67,
+      "avg_excitement": 37.78
+    },
+    {
+      "matchup": "Ulster vs Ospreys",
+      "games_played": 3,
+      "avg_margin": 18.67,
+      "avg_excitement": 37.78
+    },
+    {
+      "matchup": "Benetton Treviso vs Dragons",
+      "games_played": 2,
+      "avg_margin": 15,
+      "avg_excitement": 52.5
+    },
+    {
+      "matchup": "Dragons vs Benetton Treviso",
+      "games_played": 2,
+      "avg_margin": 15,
+      "avg_excitement": 52.5
+    },
+    {
+      "matchup": "Connacht vs Leinster",
+      "games_played": 5,
+      "avg_margin": 14,
+      "avg_excitement": 60.33
+    },
+    {
+      "matchup": "Leinster vs Connacht",
+      "games_played": 5,
+      "avg_margin": 14,
+      "avg_excitement": 60.33
+    },
+    {
+      "matchup": "Ospreys vs Stormers",
+      "games_played": 2,
+      "avg_margin": 6.5,
+      "avg_excitement": 59.58
+    },
+    {
+      "matchup": "Stormers vs Ospreys",
+      "games_played": 2,
+      "avg_margin": 6.5,
+      "avg_excitement": 59.58
+    },
+    {
+      "matchup": "Lions vs Ulster",
+      "games_played": 3,
+      "avg_margin": 7.33,
+      "avg_excitement": 70.56
+    },
+    {
+      "matchup": "Ulster vs Lions",
+      "games_played": 3,
+      "avg_margin": 7.33,
+      "avg_excitement": 70.56
+    },
+    {
+      "matchup": "Glasgow Warriors vs Sharks",
+      "games_played": 2,
+      "avg_margin": 16,
+      "avg_excitement": 51.67
+    },
+    {
+      "matchup": "Sharks vs Glasgow Warriors",
+      "games_played": 2,
+      "avg_margin": 16,
+      "avg_excitement": 51.67
+    },
+    {
+      "matchup": "Benetton Treviso vs Edinburgh",
+      "games_played": 5,
+      "avg_margin": 14.8,
+      "avg_excitement": 59.67
+    },
+    {
+      "matchup": "Edinburgh vs Benetton Treviso",
+      "games_played": 5,
+      "avg_margin": 14.8,
+      "avg_excitement": 59.67
+    },
+    {
+      "matchup": "Cardiff Blues vs Dragons",
+      "games_played": 6,
+      "avg_margin": 12.17,
+      "avg_excitement": 66.53
+    },
+    {
+      "matchup": "Dragons vs Cardiff Blues",
+      "games_played": 6,
+      "avg_margin": 12.17,
+      "avg_excitement": 66.53
+    },
+    {
+      "matchup": "Bulls vs Munster",
+      "games_played": 1,
+      "avg_margin": 14,
+      "avg_excitement": 18.33
+    },
+    {
+      "matchup": "Munster vs Bulls",
+      "games_played": 1,
+      "avg_margin": 14,
+      "avg_excitement": 18.33
+    },
+    {
+      "matchup": "Scarlets vs Zebre",
+      "games_played": 2,
+      "avg_margin": 23,
+      "avg_excitement": 10.83
+    },
+    {
+      "matchup": "Zebre vs Scarlets",
+      "games_played": 2,
+      "avg_margin": 23,
+      "avg_excitement": 10.83
+    },
+    {
+      "matchup": "Benetton Treviso vs Bulls",
+      "games_played": 2,
+      "avg_margin": 12,
+      "avg_excitement": 55.0
+    },
+    {
+      "matchup": "Bulls vs Benetton Treviso",
+      "games_played": 2,
+      "avg_margin": 12,
+      "avg_excitement": 55.0
+    },
+    {
+      "matchup": "Connacht vs Scarlets",
+      "games_played": 3,
+      "avg_margin": 13,
+      "avg_excitement": 42.5
+    },
+    {
+      "matchup": "Scarlets vs Connacht",
+      "games_played": 3,
+      "avg_margin": 13,
+      "avg_excitement": 42.5
+    },
+    {
+      "matchup": "Edinburgh vs Zebre",
+      "games_played": 4,
+      "avg_margin": 9,
+      "avg_excitement": 75.0
+    },
+    {
+      "matchup": "Zebre vs Edinburgh",
+      "games_played": 4,
+      "avg_margin": 9,
+      "avg_excitement": 75.0
+    },
+    {
+      "matchup": "Leinster vs Munster",
+      "games_played": 6,
+      "avg_margin": 10.17,
+      "avg_excitement": 56.53
+    },
+    {
+      "matchup": "Munster vs Leinster",
+      "games_played": 6,
+      "avg_margin": 10.17,
+      "avg_excitement": 56.53
+    },
+    {
+      "matchup": "Cardiff Blues vs Stormers",
+      "games_played": 2,
+      "avg_margin": 6.5,
+      "avg_excitement": 94.58
+    },
+    {
+      "matchup": "Stormers vs Cardiff Blues",
+      "games_played": 2,
+      "avg_margin": 6.5,
+      "avg_excitement": 94.58
+    },
+    {
+      "matchup": "Dragons vs Ospreys",
+      "games_played": 3,
+      "avg_margin": 8,
+      "avg_excitement": 70.0
+    },
+    {
+      "matchup": "Ospreys vs Dragons",
+      "games_played": 3,
+      "avg_margin": 8,
+      "avg_excitement": 70.0
+    },
+    {
+      "matchup": "Leinster vs Scarlets",
+      "games_played": 2,
+      "avg_margin": 39.5,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Scarlets vs Leinster",
+      "games_played": 2,
+      "avg_margin": 39.5,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Lions vs Stormers",
+      "games_played": 5,
+      "avg_margin": 13.8,
+      "avg_excitement": 60.5
+    },
+    {
+      "matchup": "Stormers vs Lions",
+      "games_played": 5,
+      "avg_margin": 13.8,
+      "avg_excitement": 60.5
+    },
+    {
+      "matchup": "Munster vs Ulster",
+      "games_played": 4,
+      "avg_margin": 3,
+      "avg_excitement": 97.5
+    },
+    {
+      "matchup": "Ulster vs Munster",
+      "games_played": 4,
+      "avg_margin": 3,
+      "avg_excitement": 97.5
+    },
+    {
+      "matchup": "Dragons vs Zebre",
+      "games_played": 3,
+      "avg_margin": 19,
+      "avg_excitement": 60.83
+    },
+    {
+      "matchup": "Zebre vs Dragons",
+      "games_played": 3,
+      "avg_margin": 19,
+      "avg_excitement": 60.83
+    },
+    {
+      "matchup": "Connacht vs Ospreys",
+      "games_played": 2,
+      "avg_margin": 5.5,
+      "avg_excitement": 95.42
+    },
+    {
+      "matchup": "Ospreys vs Connacht",
+      "games_played": 2,
+      "avg_margin": 5.5,
+      "avg_excitement": 95.42
+    },
+    {
+      "matchup": "Bulls vs Sharks",
+      "games_played": 5,
+      "avg_margin": 17.4,
+      "avg_excitement": 43.5
+    },
+    {
+      "matchup": "Sharks vs Bulls",
+      "games_played": 5,
+      "avg_margin": 17.4,
+      "avg_excitement": 43.5
+    },
+    {
+      "matchup": "Cardiff Blues vs Edinburgh",
+      "games_played": 2,
+      "avg_margin": 13.5,
+      "avg_excitement": 53.75
+    },
+    {
+      "matchup": "Edinburgh vs Cardiff Blues",
+      "games_played": 2,
+      "avg_margin": 13.5,
+      "avg_excitement": 53.75
+    },
+    {
+      "matchup": "Scarlets vs Stormers",
+      "games_played": 2,
+      "avg_margin": 31,
+      "avg_excitement": 4.17
+    },
+    {
+      "matchup": "Stormers vs Scarlets",
+      "games_played": 2,
+      "avg_margin": 31,
+      "avg_excitement": 4.17
+    },
+    {
+      "matchup": "Ulster vs Zebre",
+      "games_played": 3,
+      "avg_margin": 8.67,
+      "avg_excitement": 69.44
+    },
+    {
+      "matchup": "Zebre vs Ulster",
+      "games_played": 3,
+      "avg_margin": 8.67,
+      "avg_excitement": 69.44
+    },
+    {
+      "matchup": "Bulls vs Ospreys",
+      "games_played": 2,
+      "avg_margin": 13.5,
+      "avg_excitement": 53.75
+    },
+    {
+      "matchup": "Ospreys vs Bulls",
+      "games_played": 2,
+      "avg_margin": 13.5,
+      "avg_excitement": 53.75
+    },
+    {
+      "matchup": "Glasgow Warriors vs Leinster",
+      "games_played": 2,
+      "avg_margin": 26.5,
+      "avg_excitement": 7.92
+    },
+    {
+      "matchup": "Leinster vs Glasgow Warriors",
+      "games_played": 2,
+      "avg_margin": 26.5,
+      "avg_excitement": 7.92
+    },
+    {
+      "matchup": "Dragons vs Lions",
+      "games_played": 3,
+      "avg_margin": 12.33,
+      "avg_excitement": 66.39
+    },
+    {
+      "matchup": "Lions vs Dragons",
+      "games_played": 3,
+      "avg_margin": 12.33,
+      "avg_excitement": 66.39
+    },
+    {
+      "matchup": "Cardiff Blues vs Sharks",
+      "games_played": 2,
+      "avg_margin": 27.5,
+      "avg_excitement": 7.08
+    },
+    {
+      "matchup": "Sharks vs Cardiff Blues",
+      "games_played": 2,
+      "avg_margin": 27.5,
+      "avg_excitement": 7.08
+    },
+    {
+      "matchup": "Ospreys vs Sharks",
+      "games_played": 2,
+      "avg_margin": 14.5,
+      "avg_excitement": 17.92
+    },
+    {
+      "matchup": "Sharks vs Ospreys",
+      "games_played": 2,
+      "avg_margin": 14.5,
+      "avg_excitement": 17.92
+    },
+    {
+      "matchup": "Edinburgh vs Munster",
+      "games_played": 2,
+      "avg_margin": 13.5,
+      "avg_excitement": 53.75
+    },
+    {
+      "matchup": "Munster vs Edinburgh",
+      "games_played": 2,
+      "avg_margin": 13.5,
+      "avg_excitement": 53.75
+    },
+    {
+      "matchup": "Dragons vs Stormers",
+      "games_played": 1,
+      "avg_margin": 8,
+      "avg_excitement": 93.33
+    },
+    {
+      "matchup": "Stormers vs Dragons",
+      "games_played": 1,
+      "avg_margin": 8,
+      "avg_excitement": 93.33
+    },
+    {
+      "matchup": "Glasgow Warriors vs Zebre",
+      "games_played": 2,
+      "avg_margin": 29,
+      "avg_excitement": 5.83
+    },
+    {
+      "matchup": "Zebre vs Glasgow Warriors",
+      "games_played": 2,
+      "avg_margin": 29,
+      "avg_excitement": 5.83
+    },
+    {
+      "matchup": "Benetton Treviso vs Connacht",
+      "games_played": 3,
+      "avg_margin": 10.33,
+      "avg_excitement": 68.06
+    },
+    {
+      "matchup": "Connacht vs Benetton Treviso",
+      "games_played": 3,
+      "avg_margin": 10.33,
+      "avg_excitement": 68.06
+    },
+    {
+      "matchup": "Bulls vs Cardiff Blues",
+      "games_played": 2,
+      "avg_margin": 21,
+      "avg_excitement": 47.5
+    },
+    {
+      "matchup": "Cardiff Blues vs Bulls",
+      "games_played": 2,
+      "avg_margin": 21,
+      "avg_excitement": 47.5
+    },
+    {
+      "matchup": "Lions vs Scarlets",
+      "games_played": 2,
+      "avg_margin": 9,
+      "avg_excitement": 57.5
+    },
+    {
+      "matchup": "Scarlets vs Lions",
+      "games_played": 2,
+      "avg_margin": 9,
+      "avg_excitement": 57.5
+    },
+    {
+      "matchup": "Lions vs Sharks",
+      "games_played": 5,
+      "avg_margin": 17.2,
+      "avg_excitement": 43.67
+    },
+    {
+      "matchup": "Sharks vs Lions",
+      "games_played": 5,
+      "avg_margin": 17.2,
+      "avg_excitement": 43.67
+    },
+    {
+      "matchup": "Bulls vs Stormers",
+      "games_played": 5,
+      "avg_margin": 7.6,
+      "avg_excitement": 79.67
+    },
+    {
+      "matchup": "Stormers vs Bulls",
+      "games_played": 5,
+      "avg_margin": 7.6,
+      "avg_excitement": 79.67
+    },
+    {
+      "matchup": "Edinburgh vs Glasgow Warriors",
+      "games_played": 6,
+      "avg_margin": 8.67,
+      "avg_excitement": 81.11
+    },
+    {
+      "matchup": "Glasgow Warriors vs Edinburgh",
+      "games_played": 6,
+      "avg_margin": 8.67,
+      "avg_excitement": 81.11
+    },
+    {
+      "matchup": "Benetton Treviso vs Zebre",
+      "games_played": 6,
+      "avg_margin": 16.33,
+      "avg_excitement": 51.39
+    },
+    {
+      "matchup": "Zebre vs Benetton Treviso",
+      "games_played": 6,
+      "avg_margin": 16.33,
+      "avg_excitement": 51.39
+    },
+    {
+      "matchup": "Cardiff Blues vs Ospreys",
+      "games_played": 3,
+      "avg_margin": 3,
+      "avg_excitement": 97.5
+    },
+    {
+      "matchup": "Ospreys vs Cardiff Blues",
+      "games_played": 3,
+      "avg_margin": 3,
+      "avg_excitement": 97.5
+    },
+    {
+      "matchup": "Dragons vs Scarlets",
+      "games_played": 3,
+      "avg_margin": 11.33,
+      "avg_excitement": 43.89
+    },
+    {
+      "matchup": "Scarlets vs Dragons",
+      "games_played": 3,
+      "avg_margin": 11.33,
+      "avg_excitement": 43.89
+    },
+    {
+      "matchup": "Bulls vs Dragons",
+      "games_played": 2,
+      "avg_margin": 18,
+      "avg_excitement": 15.0
+    },
+    {
+      "matchup": "Dragons vs Bulls",
+      "games_played": 2,
+      "avg_margin": 18,
+      "avg_excitement": 15.0
+    },
+    {
+      "matchup": "Lions vs Munster",
+      "games_played": 2,
+      "avg_margin": 18.5,
+      "avg_excitement": 49.58
+    },
+    {
+      "matchup": "Munster vs Lions",
+      "games_played": 2,
+      "avg_margin": 18.5,
+      "avg_excitement": 49.58
+    },
+    {
+      "matchup": "Benetton Treviso vs Ulster",
+      "games_played": 2,
+      "avg_margin": 8.5,
+      "avg_excitement": 57.92
+    },
+    {
+      "matchup": "Ulster vs Benetton Treviso",
+      "games_played": 2,
+      "avg_margin": 8.5,
+      "avg_excitement": 57.92
+    },
+    {
+      "matchup": "Connacht vs Sharks",
+      "games_played": 3,
+      "avg_margin": 6.33,
+      "avg_excitement": 94.72
+    },
+    {
+      "matchup": "Sharks vs Connacht",
+      "games_played": 3,
+      "avg_margin": 6.33,
+      "avg_excitement": 94.72
+    },
+    {
+      "matchup": "Leinster vs Ospreys",
+      "games_played": 2,
+      "avg_margin": 4,
+      "avg_excitement": 96.67
+    },
+    {
+      "matchup": "Ospreys vs Leinster",
+      "games_played": 2,
+      "avg_margin": 4,
+      "avg_excitement": 96.67
+    },
+    {
+      "matchup": "Glasgow Warriors vs Stormers",
+      "games_played": 3,
+      "avg_margin": 9.67,
+      "avg_excitement": 91.94
+    },
+    {
+      "matchup": "Stormers vs Glasgow Warriors",
+      "games_played": 3,
+      "avg_margin": 9.67,
+      "avg_excitement": 91.94
+    },
+    {
+      "matchup": "Stormers vs Ulster",
+      "games_played": 1,
+      "avg_margin": 30,
+      "avg_excitement": 5.0
+    },
+    {
+      "matchup": "Ulster vs Stormers",
+      "games_played": 1,
+      "avg_margin": 30,
+      "avg_excitement": 5.0
+    },
+    {
+      "matchup": "Bulls vs Scarlets",
+      "games_played": 3,
+      "avg_margin": 17.33,
+      "avg_excitement": 62.22
+    },
+    {
+      "matchup": "Scarlets vs Bulls",
+      "games_played": 3,
+      "avg_margin": 17.33,
+      "avg_excitement": 62.22
+    },
+    {
+      "matchup": "Benetton Treviso vs Munster",
+      "games_played": 2,
+      "avg_margin": 5,
+      "avg_excitement": 95.83
+    },
+    {
+      "matchup": "Munster vs Benetton Treviso",
+      "games_played": 2,
+      "avg_margin": 5,
+      "avg_excitement": 95.83
+    },
+    {
+      "matchup": "Dragons vs Glasgow Warriors",
+      "games_played": 3,
+      "avg_margin": 24,
+      "avg_excitement": 10.0
+    },
+    {
+      "matchup": "Glasgow Warriors vs Dragons",
+      "games_played": 3,
+      "avg_margin": 24,
+      "avg_excitement": 10.0
+    },
+    {
+      "matchup": "Cardiff Blues vs Leinster",
+      "games_played": 3,
+      "avg_margin": 18.33,
+      "avg_excitement": 14.72
+    },
+    {
+      "matchup": "Leinster vs Cardiff Blues",
+      "games_played": 3,
+      "avg_margin": 18.33,
+      "avg_excitement": 14.72
+    },
+    {
+      "matchup": "Edinburgh vs Sharks",
+      "games_played": 2,
+      "avg_margin": 6.5,
+      "avg_excitement": 94.58
+    },
+    {
+      "matchup": "Sharks vs Edinburgh",
+      "games_played": 2,
+      "avg_margin": 6.5,
+      "avg_excitement": 94.58
+    },
+    {
+      "matchup": "Connacht vs Lions",
+      "games_played": 2,
+      "avg_margin": 21.5,
+      "avg_excitement": 12.08
+    },
+    {
+      "matchup": "Lions vs Connacht",
+      "games_played": 2,
+      "avg_margin": 21.5,
+      "avg_excitement": 12.08
+    },
+    {
+      "matchup": "Benetton Treviso vs Cardiff Blues",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 99.17
+    },
+    {
+      "matchup": "Cardiff Blues vs Benetton Treviso",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 99.17
+    },
+    {
+      "matchup": "Munster vs Sharks",
+      "games_played": 2,
+      "avg_margin": 15,
+      "avg_excitement": 17.5
+    },
+    {
+      "matchup": "Sharks vs Munster",
+      "games_played": 2,
+      "avg_margin": 15,
+      "avg_excitement": 17.5
+    },
+    {
+      "matchup": "Ospreys vs Zebre",
+      "games_played": 2,
+      "avg_margin": 4,
+      "avg_excitement": 96.67
+    },
+    {
+      "matchup": "Zebre vs Ospreys",
+      "games_played": 2,
+      "avg_margin": 4,
+      "avg_excitement": 96.67
+    },
+    {
+      "matchup": "Connacht vs Glasgow Warriors",
+      "games_played": 2,
+      "avg_margin": 5.5,
+      "avg_excitement": 95.42
+    },
+    {
+      "matchup": "Glasgow Warriors vs Connacht",
+      "games_played": 2,
+      "avg_margin": 5.5,
+      "avg_excitement": 95.42
+    },
+    {
+      "matchup": "Bulls vs Ulster",
+      "games_played": 2,
+      "avg_margin": 16.5,
+      "avg_excitement": 51.25
+    },
+    {
+      "matchup": "Ulster vs Bulls",
+      "games_played": 2,
+      "avg_margin": 16.5,
+      "avg_excitement": 51.25
+    },
+    {
+      "matchup": "Bulls vs Zebre",
+      "games_played": 1,
+      "avg_margin": 25,
+      "avg_excitement": 9.17
+    },
+    {
+      "matchup": "Zebre vs Bulls",
+      "games_played": 1,
+      "avg_margin": 25,
+      "avg_excitement": 9.17
+    },
+    {
+      "matchup": "Edinburgh vs Leinster",
+      "games_played": 2,
+      "avg_margin": 5.5,
+      "avg_excitement": 95.42
+    },
+    {
+      "matchup": "Leinster vs Edinburgh",
+      "games_played": 2,
+      "avg_margin": 5.5,
+      "avg_excitement": 95.42
+    },
+    {
+      "matchup": "Benetton Treviso vs Lions",
+      "games_played": 1,
+      "avg_margin": 5,
+      "avg_excitement": 95.83
+    },
+    {
+      "matchup": "Lions vs Benetton Treviso",
+      "games_played": 1,
+      "avg_margin": 5,
+      "avg_excitement": 95.83
+    },
+    {
+      "matchup": "Benetton Treviso vs Stormers",
+      "games_played": 1,
+      "avg_margin": 3,
+      "avg_excitement": 97.5
+    },
+    {
+      "matchup": "Stormers vs Benetton Treviso",
+      "games_played": 1,
+      "avg_margin": 3,
+      "avg_excitement": 97.5
+    },
+    {
+      "matchup": "Connacht vs Edinburgh",
+      "games_played": 1,
+      "avg_margin": 3,
+      "avg_excitement": 97.5
+    },
+    {
+      "matchup": "Edinburgh vs Connacht",
+      "games_played": 1,
+      "avg_margin": 3,
+      "avg_excitement": 97.5
+    },
+    {
+      "matchup": "Dragons vs Leinster",
+      "games_played": 2,
+      "avg_margin": 25.5,
+      "avg_excitement": 8.75
+    },
+    {
+      "matchup": "Leinster vs Dragons",
+      "games_played": 2,
+      "avg_margin": 25.5,
+      "avg_excitement": 8.75
+    },
+    {
+      "matchup": "Cardiff Blues vs Zebre",
+      "games_played": 2,
+      "avg_margin": 2.5,
+      "avg_excitement": 97.92
+    },
+    {
+      "matchup": "Zebre vs Cardiff Blues",
+      "games_played": 2,
+      "avg_margin": 2.5,
+      "avg_excitement": 97.92
+    },
+    {
+      "matchup": "Munster vs Stormers",
+      "games_played": 2,
+      "avg_margin": 11,
+      "avg_excitement": 55.83
+    },
+    {
+      "matchup": "Stormers vs Munster",
+      "games_played": 2,
+      "avg_margin": 11,
+      "avg_excitement": 55.83
+    },
+    {
+      "matchup": "Lions vs Zebre",
+      "games_played": 2,
+      "avg_margin": 21.5,
+      "avg_excitement": 47.08
+    },
+    {
+      "matchup": "Zebre vs Lions",
+      "games_played": 2,
+      "avg_margin": 21.5,
+      "avg_excitement": 47.08
+    },
+    {
+      "matchup": "Glasgow Warriors vs Ulster",
+      "games_played": 2,
+      "avg_margin": 7,
+      "avg_excitement": 59.17
+    },
+    {
+      "matchup": "Ulster vs Glasgow Warriors",
+      "games_played": 2,
+      "avg_margin": 7,
+      "avg_excitement": 59.17
+    },
+    {
+      "matchup": "Glasgow Warriors vs Munster",
+      "games_played": 2,
+      "avg_margin": 7,
+      "avg_excitement": 94.17
+    },
+    {
+      "matchup": "Munster vs Glasgow Warriors",
+      "games_played": 2,
+      "avg_margin": 7,
+      "avg_excitement": 94.17
+    },
+    {
+      "matchup": "Edinburgh vs Ulster",
+      "games_played": 1,
+      "avg_margin": 3,
+      "avg_excitement": 97.5
+    },
+    {
+      "matchup": "Ulster vs Edinburgh",
+      "games_played": 1,
+      "avg_margin": 3,
+      "avg_excitement": 97.5
+    },
+    {
+      "matchup": "Benetton Treviso vs Ospreys",
+      "games_played": 2,
+      "avg_margin": 24,
+      "avg_excitement": 45.0
+    },
+    {
+      "matchup": "Ospreys vs Benetton Treviso",
+      "games_played": 2,
+      "avg_margin": 24,
+      "avg_excitement": 45.0
+    },
+    {
+      "matchup": "Sharks vs Stormers",
+      "games_played": 4,
+      "avg_margin": 3.75,
+      "avg_excitement": 96.88
+    },
+    {
+      "matchup": "Stormers vs Sharks",
+      "games_played": 4,
+      "avg_margin": 3.75,
+      "avg_excitement": 96.88
+    },
+    {
+      "matchup": "Munster vs Scarlets",
+      "games_played": 2,
+      "avg_margin": 28,
+      "avg_excitement": 6.67
+    },
+    {
+      "matchup": "Scarlets vs Munster",
+      "games_played": 2,
+      "avg_margin": 28,
+      "avg_excitement": 6.67
+    },
+    {
+      "matchup": "Cardiff Blues vs Connacht",
+      "games_played": 2,
+      "avg_margin": 4.5,
+      "avg_excitement": 96.25
+    },
+    {
+      "matchup": "Connacht vs Cardiff Blues",
+      "games_played": 2,
+      "avg_margin": 4.5,
+      "avg_excitement": 96.25
+    },
+    {
+      "matchup": "Edinburgh vs Ospreys",
+      "games_played": 2,
+      "avg_margin": 6.5,
+      "avg_excitement": 94.58
+    },
+    {
+      "matchup": "Ospreys vs Edinburgh",
+      "games_played": 2,
+      "avg_margin": 6.5,
+      "avg_excitement": 94.58
+    },
+    {
+      "matchup": "Dragons vs Ulster",
+      "games_played": 1,
+      "avg_margin": 23,
+      "avg_excitement": 10.83
+    },
+    {
+      "matchup": "Ulster vs Dragons",
+      "games_played": 1,
+      "avg_margin": 23,
+      "avg_excitement": 10.83
+    },
+    {
+      "matchup": "Munster vs Ospreys",
+      "games_played": 2,
+      "avg_margin": 16.5,
+      "avg_excitement": 51.25
+    },
+    {
+      "matchup": "Ospreys vs Munster",
+      "games_played": 2,
+      "avg_margin": 16.5,
+      "avg_excitement": 51.25
+    },
+    {
+      "matchup": "Sharks vs Ulster",
+      "games_played": 1,
+      "avg_margin": 10,
+      "avg_excitement": 91.67
+    },
+    {
+      "matchup": "Ulster vs Sharks",
+      "games_played": 1,
+      "avg_margin": 10,
+      "avg_excitement": 91.67
+    },
+    {
+      "matchup": "Bulls vs Leinster",
+      "games_played": 1,
+      "avg_margin": 33,
+      "avg_excitement": 2.5
+    },
+    {
+      "matchup": "Leinster vs Bulls",
+      "games_played": 1,
+      "avg_margin": 33,
+      "avg_excitement": 2.5
+    },
+    {
+      "matchup": "Benetton Treviso vs Sharks",
+      "games_played": 1,
+      "avg_margin": 28,
+      "avg_excitement": 6.67
+    },
+    {
+      "matchup": "Sharks vs Benetton Treviso",
+      "games_played": 1,
+      "avg_margin": 28,
+      "avg_excitement": 6.67
+    },
+    {
+      "matchup": "Leinster vs Lions",
+      "games_played": 1,
+      "avg_margin": 18,
+      "avg_excitement": 15.0
+    },
+    {
+      "matchup": "Lions vs Leinster",
+      "games_played": 1,
+      "avg_margin": 18,
+      "avg_excitement": 15.0
+    },
+    {
+      "matchup": "Connacht vs Dragons",
+      "games_played": 1,
+      "avg_margin": 24,
+      "avg_excitement": 10.0
+    },
+    {
+      "matchup": "Dragons vs Connacht",
+      "games_played": 1,
+      "avg_margin": 24,
+      "avg_excitement": 10.0
+    },
+    {
+      "matchup": "Cardiff Blues vs Ulster",
+      "games_played": 1,
+      "avg_margin": 2,
+      "avg_excitement": 98.33
+    },
+    {
+      "matchup": "Ulster vs Cardiff Blues",
+      "games_played": 1,
+      "avg_margin": 2,
+      "avg_excitement": 98.33
+    },
+    {
+      "matchup": "Glasgow Warriors vs Scarlets",
+      "games_played": 1,
+      "avg_margin": 2,
+      "avg_excitement": 98.33
+    },
+    {
+      "matchup": "Scarlets vs Glasgow Warriors",
+      "games_played": 1,
+      "avg_margin": 2,
+      "avg_excitement": 98.33
+    },
+    {
+      "matchup": "Edinburgh vs Scarlets",
+      "games_played": 1,
+      "avg_margin": 6,
+      "avg_excitement": 95.0
+    },
+    {
+      "matchup": "Scarlets vs Edinburgh",
+      "games_played": 1,
+      "avg_margin": 6,
+      "avg_excitement": 95.0
+    },
+    {
+      "matchup": "Leinster vs Stormers",
+      "games_played": 1,
+      "avg_margin": 24,
+      "avg_excitement": 10.0
+    },
+    {
+      "matchup": "Stormers vs Leinster",
+      "games_played": 1,
+      "avg_margin": 24,
+      "avg_excitement": 10.0
+    }
+  ],
+  "matchup_close_rates": [
+    {
+      "matchup": "Benetton Treviso vs Glasgow Warriors",
+      "games": 5,
+      "close_games": 1,
+      "close_rate": 20.0
+    },
+    {
+      "matchup": "Glasgow Warriors vs Benetton Treviso",
+      "games": 5,
+      "close_games": 1,
+      "close_rate": 20.0
+    },
+    {
+      "matchup": "Leinster vs Zebre",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Zebre vs Leinster",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Bulls vs Lions",
+      "games": 5,
+      "close_games": 2,
+      "close_rate": 40.0
+    },
+    {
+      "matchup": "Lions vs Bulls",
+      "games": 5,
+      "close_games": 2,
+      "close_rate": 40.0
+    },
+    {
+      "matchup": "Cardiff Blues vs Munster",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Munster vs Cardiff Blues",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Ospreys vs Scarlets",
+      "games": 5,
+      "close_games": 2,
+      "close_rate": 40.0
+    },
+    {
+      "matchup": "Scarlets vs Ospreys",
+      "games": 5,
+      "close_games": 2,
+      "close_rate": 40.0
+    },
+    {
+      "matchup": "Dragons vs Edinburgh",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Edinburgh vs Dragons",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Connacht vs Ulster",
+      "games": 6,
+      "close_games": 5,
+      "close_rate": 83.33
+    },
+    {
+      "matchup": "Ulster vs Connacht",
+      "games": 6,
+      "close_games": 5,
+      "close_rate": 83.33
+    },
+    {
+      "matchup": "Sharks vs Zebre",
+      "games": 3,
+      "close_games": 3,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Zebre vs Sharks",
+      "games": 3,
+      "close_games": 3,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Benetton Treviso vs Leinster",
+      "games": 3,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Leinster vs Benetton Treviso",
+      "games": 3,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Cardiff Blues vs Glasgow Warriors",
+      "games": 3,
+      "close_games": 1,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "Glasgow Warriors vs Cardiff Blues",
+      "games": 3,
+      "close_games": 1,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "Scarlets vs Ulster",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Ulster vs Scarlets",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Connacht vs Stormers",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Stormers vs Connacht",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Bulls vs Edinburgh",
+      "games": 3,
+      "close_games": 3,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Edinburgh vs Bulls",
+      "games": 3,
+      "close_games": 3,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Lions vs Ospreys",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Ospreys vs Lions",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Dragons vs Munster",
+      "games": 3,
+      "close_games": 1,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "Munster vs Dragons",
+      "games": 3,
+      "close_games": 1,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "Bulls vs Connacht",
+      "games": 3,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Connacht vs Bulls",
+      "games": 3,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Cardiff Blues vs Lions",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Lions vs Cardiff Blues",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Leinster vs Ulster",
+      "games": 4,
+      "close_games": 4,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Ulster vs Leinster",
+      "games": 4,
+      "close_games": 4,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Edinburgh vs Stormers",
+      "games": 3,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Stormers vs Edinburgh",
+      "games": 3,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Glasgow Warriors vs Ospreys",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Ospreys vs Glasgow Warriors",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Munster vs Zebre",
+      "games": 3,
+      "close_games": 1,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "Zebre vs Munster",
+      "games": 3,
+      "close_games": 1,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "Benetton Treviso vs Scarlets",
+      "games": 3,
+      "close_games": 3,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Scarlets vs Benetton Treviso",
+      "games": 3,
+      "close_games": 3,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Dragons vs Sharks",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Sharks vs Dragons",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Edinburgh vs Lions",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Lions vs Edinburgh",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Connacht vs Munster",
+      "games": 4,
+      "close_games": 3,
+      "close_rate": 75.0
+    },
+    {
+      "matchup": "Munster vs Connacht",
+      "games": 4,
+      "close_games": 3,
+      "close_rate": 75.0
+    },
+    {
+      "matchup": "Stormers vs Zebre",
+      "games": 3,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Zebre vs Stormers",
+      "games": 3,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Leinster vs Sharks",
+      "games": 2,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Sharks vs Leinster",
+      "games": 2,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Cardiff Blues vs Scarlets",
+      "games": 6,
+      "close_games": 6,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Scarlets vs Cardiff Blues",
+      "games": 6,
+      "close_games": 6,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Bulls vs Glasgow Warriors",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Glasgow Warriors vs Bulls",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Ospreys vs Ulster",
+      "games": 3,
+      "close_games": 1,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "Ulster vs Ospreys",
+      "games": 3,
+      "close_games": 1,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "Benetton Treviso vs Dragons",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Dragons vs Benetton Treviso",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Connacht vs Leinster",
+      "games": 5,
+      "close_games": 3,
+      "close_rate": 60.0
+    },
+    {
+      "matchup": "Leinster vs Connacht",
+      "games": 5,
+      "close_games": 3,
+      "close_rate": 60.0
+    },
+    {
+      "matchup": "Ospreys vs Stormers",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Stormers vs Ospreys",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Lions vs Ulster",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Ulster vs Lions",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Glasgow Warriors vs Sharks",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Sharks vs Glasgow Warriors",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Benetton Treviso vs Edinburgh",
+      "games": 5,
+      "close_games": 3,
+      "close_rate": 60.0
+    },
+    {
+      "matchup": "Edinburgh vs Benetton Treviso",
+      "games": 5,
+      "close_games": 3,
+      "close_rate": 60.0
+    },
+    {
+      "matchup": "Cardiff Blues vs Dragons",
+      "games": 6,
+      "close_games": 4,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Dragons vs Cardiff Blues",
+      "games": 6,
+      "close_games": 4,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Bulls vs Munster",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Munster vs Bulls",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Scarlets vs Zebre",
+      "games": 2,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Zebre vs Scarlets",
+      "games": 2,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Benetton Treviso vs Bulls",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Bulls vs Benetton Treviso",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Connacht vs Scarlets",
+      "games": 3,
+      "close_games": 1,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "Scarlets vs Connacht",
+      "games": 3,
+      "close_games": 1,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "Edinburgh vs Zebre",
+      "games": 4,
+      "close_games": 3,
+      "close_rate": 75.0
+    },
+    {
+      "matchup": "Zebre vs Edinburgh",
+      "games": 4,
+      "close_games": 3,
+      "close_rate": 75.0
+    },
+    {
+      "matchup": "Leinster vs Munster",
+      "games": 6,
+      "close_games": 3,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Munster vs Leinster",
+      "games": 6,
+      "close_games": 3,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Cardiff Blues vs Stormers",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Stormers vs Cardiff Blues",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Dragons vs Ospreys",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Ospreys vs Dragons",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Leinster vs Scarlets",
+      "games": 2,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Scarlets vs Leinster",
+      "games": 2,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Lions vs Stormers",
+      "games": 5,
+      "close_games": 3,
+      "close_rate": 60.0
+    },
+    {
+      "matchup": "Stormers vs Lions",
+      "games": 5,
+      "close_games": 3,
+      "close_rate": 60.0
+    },
+    {
+      "matchup": "Munster vs Ulster",
+      "games": 4,
+      "close_games": 4,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Ulster vs Munster",
+      "games": 4,
+      "close_games": 4,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Dragons vs Zebre",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Zebre vs Dragons",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Connacht vs Ospreys",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Ospreys vs Connacht",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Bulls vs Sharks",
+      "games": 5,
+      "close_games": 2,
+      "close_rate": 40.0
+    },
+    {
+      "matchup": "Sharks vs Bulls",
+      "games": 5,
+      "close_games": 2,
+      "close_rate": 40.0
+    },
+    {
+      "matchup": "Cardiff Blues vs Edinburgh",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Edinburgh vs Cardiff Blues",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Scarlets vs Stormers",
+      "games": 2,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Stormers vs Scarlets",
+      "games": 2,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Ulster vs Zebre",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Zebre vs Ulster",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Bulls vs Ospreys",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Ospreys vs Bulls",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Glasgow Warriors vs Leinster",
+      "games": 2,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Leinster vs Glasgow Warriors",
+      "games": 2,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Dragons vs Lions",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Lions vs Dragons",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Cardiff Blues vs Sharks",
+      "games": 2,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Sharks vs Cardiff Blues",
+      "games": 2,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Ospreys vs Sharks",
+      "games": 2,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Sharks vs Ospreys",
+      "games": 2,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Edinburgh vs Munster",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Munster vs Edinburgh",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Dragons vs Stormers",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Stormers vs Dragons",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Glasgow Warriors vs Zebre",
+      "games": 2,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Zebre vs Glasgow Warriors",
+      "games": 2,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Benetton Treviso vs Connacht",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Connacht vs Benetton Treviso",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Bulls vs Cardiff Blues",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Cardiff Blues vs Bulls",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Lions vs Scarlets",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Scarlets vs Lions",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Lions vs Sharks",
+      "games": 5,
+      "close_games": 2,
+      "close_rate": 40.0
+    },
+    {
+      "matchup": "Sharks vs Lions",
+      "games": 5,
+      "close_games": 2,
+      "close_rate": 40.0
+    },
+    {
+      "matchup": "Bulls vs Stormers",
+      "games": 5,
+      "close_games": 4,
+      "close_rate": 80.0
+    },
+    {
+      "matchup": "Stormers vs Bulls",
+      "games": 5,
+      "close_games": 4,
+      "close_rate": 80.0
+    },
+    {
+      "matchup": "Edinburgh vs Glasgow Warriors",
+      "games": 6,
+      "close_games": 5,
+      "close_rate": 83.33
+    },
+    {
+      "matchup": "Glasgow Warriors vs Edinburgh",
+      "games": 6,
+      "close_games": 5,
+      "close_rate": 83.33
+    },
+    {
+      "matchup": "Benetton Treviso vs Zebre",
+      "games": 6,
+      "close_games": 3,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Zebre vs Benetton Treviso",
+      "games": 6,
+      "close_games": 3,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Cardiff Blues vs Ospreys",
+      "games": 3,
+      "close_games": 3,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Ospreys vs Cardiff Blues",
+      "games": 3,
+      "close_games": 3,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Dragons vs Scarlets",
+      "games": 3,
+      "close_games": 1,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "Scarlets vs Dragons",
+      "games": 3,
+      "close_games": 1,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "Bulls vs Dragons",
+      "games": 2,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Dragons vs Bulls",
+      "games": 2,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Lions vs Munster",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Munster vs Lions",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Benetton Treviso vs Ulster",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Ulster vs Benetton Treviso",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Connacht vs Sharks",
+      "games": 3,
+      "close_games": 3,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Sharks vs Connacht",
+      "games": 3,
+      "close_games": 3,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Leinster vs Ospreys",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Ospreys vs Leinster",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Glasgow Warriors vs Stormers",
+      "games": 3,
+      "close_games": 3,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Stormers vs Glasgow Warriors",
+      "games": 3,
+      "close_games": 3,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Stormers vs Ulster",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Ulster vs Stormers",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Bulls vs Scarlets",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Scarlets vs Bulls",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Benetton Treviso vs Munster",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Munster vs Benetton Treviso",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Dragons vs Glasgow Warriors",
+      "games": 3,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Glasgow Warriors vs Dragons",
+      "games": 3,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Cardiff Blues vs Leinster",
+      "games": 3,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Leinster vs Cardiff Blues",
+      "games": 3,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Edinburgh vs Sharks",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Sharks vs Edinburgh",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Connacht vs Lions",
+      "games": 2,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Lions vs Connacht",
+      "games": 2,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Benetton Treviso vs Cardiff Blues",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Cardiff Blues vs Benetton Treviso",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Munster vs Sharks",
+      "games": 2,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Sharks vs Munster",
+      "games": 2,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Ospreys vs Zebre",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Zebre vs Ospreys",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Connacht vs Glasgow Warriors",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Glasgow Warriors vs Connacht",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Bulls vs Ulster",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Ulster vs Bulls",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Bulls vs Zebre",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Zebre vs Bulls",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Edinburgh vs Leinster",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Leinster vs Edinburgh",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Benetton Treviso vs Lions",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Lions vs Benetton Treviso",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Benetton Treviso vs Stormers",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Stormers vs Benetton Treviso",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Connacht vs Edinburgh",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Edinburgh vs Connacht",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Dragons vs Leinster",
+      "games": 2,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Leinster vs Dragons",
+      "games": 2,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Cardiff Blues vs Zebre",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Zebre vs Cardiff Blues",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Munster vs Stormers",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Stormers vs Munster",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Lions vs Zebre",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Zebre vs Lions",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Glasgow Warriors vs Ulster",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Ulster vs Glasgow Warriors",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Glasgow Warriors vs Munster",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Munster vs Glasgow Warriors",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Edinburgh vs Ulster",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Ulster vs Edinburgh",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Benetton Treviso vs Ospreys",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Ospreys vs Benetton Treviso",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Sharks vs Stormers",
+      "games": 4,
+      "close_games": 4,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Stormers vs Sharks",
+      "games": 4,
+      "close_games": 4,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Munster vs Scarlets",
+      "games": 2,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Scarlets vs Munster",
+      "games": 2,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Cardiff Blues vs Connacht",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Connacht vs Cardiff Blues",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Edinburgh vs Ospreys",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Ospreys vs Edinburgh",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Dragons vs Ulster",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Ulster vs Dragons",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Munster vs Ospreys",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Ospreys vs Munster",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Sharks vs Ulster",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Ulster vs Sharks",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Bulls vs Leinster",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Leinster vs Bulls",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Benetton Treviso vs Sharks",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Sharks vs Benetton Treviso",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Leinster vs Lions",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Lions vs Leinster",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Connacht vs Dragons",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Dragons vs Connacht",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Cardiff Blues vs Ulster",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Ulster vs Cardiff Blues",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Glasgow Warriors vs Scarlets",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Scarlets vs Glasgow Warriors",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Edinburgh vs Scarlets",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Scarlets vs Edinburgh",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Leinster vs Stormers",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Stormers vs Leinster",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    }
+  ],
+  "form_strengths": [
+    {
+      "team": "Benetton Treviso",
+      "strength": 76.0
+    },
+    {
+      "team": "Bulls",
+      "strength": 74.7
+    },
+    {
+      "team": "Cardiff Blues",
+      "strength": 67.3
+    },
+    {
+      "team": "Connacht",
+      "strength": 78.0
+    },
+    {
+      "team": "Dragons",
+      "strength": 52.0
+    },
+    {
+      "team": "Edinburgh",
+      "strength": 65.3
+    },
+    {
+      "team": "Glasgow Warriors",
+      "strength": 80.7
+    },
+    {
+      "team": "Leinster",
+      "strength": 86.0
+    },
+    {
+      "team": "Lions",
+      "strength": 62.7
+    },
+    {
+      "team": "Munster",
+      "strength": 61.3
+    },
+    {
+      "team": "Ospreys",
+      "strength": 78.0
+    },
+    {
+      "team": "Scarlets",
+      "strength": 67.3
+    },
+    {
+      "team": "Sharks",
+      "strength": 86.0
+    },
+    {
+      "team": "Stormers",
+      "strength": 68.0
+    },
+    {
+      "team": "Ulster",
+      "strength": 72.7
+    },
+    {
+      "team": "Zebre",
+      "strength": 80.0
+    }
+  ],
+  "team_margin_ratings": [
+    {
+      "team": "Benetton Treviso",
+      "avg_margin": -0.1
+    },
+    {
+      "team": "Bulls",
+      "avg_margin": 3.5
+    },
+    {
+      "team": "Cardiff Blues",
+      "avg_margin": -5.3
+    },
+    {
+      "team": "Connacht",
+      "avg_margin": -2.3
+    },
+    {
+      "team": "Dragons",
+      "avg_margin": -12.2
+    },
+    {
+      "team": "Edinburgh",
+      "avg_margin": 3.4
+    },
+    {
+      "team": "Glasgow Warriors",
+      "avg_margin": 8.5
+    },
+    {
+      "team": "Leinster",
+      "avg_margin": 16.4
+    },
+    {
+      "team": "Lions",
+      "avg_margin": -4.3
+    },
+    {
+      "team": "Munster",
+      "avg_margin": -2.6
+    },
+    {
+      "team": "Ospreys",
+      "avg_margin": -1.1
+    },
+    {
+      "team": "Scarlets",
+      "avg_margin": 2.5
+    },
+    {
+      "team": "Sharks",
+      "avg_margin": 3.6
+    },
+    {
+      "team": "Stormers",
+      "avg_margin": -3.9
+    },
+    {
+      "team": "Ulster",
+      "avg_margin": -1.3
+    },
+    {
+      "team": "Zebre",
+      "avg_margin": -4.6
+    }
+  ]
+}

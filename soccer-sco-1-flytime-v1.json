@@ -5,9 +5,9 @@
     "engine": "v1-bootstrap",
     "formula": "close*0.35 + form_balance*0.25 + margin_balance*0.25 + matchup*0.15",
     "close_margin": 1,
-    "games_sampled": 552,
+    "games_sampled": 551,
     "week_chunk": 6,
-    "built": "2026-06-10"
+    "built": "2026-06-11"
   },
   "matchup_ratings": [
     {
@@ -276,15 +276,15 @@
     },
     {
       "matchup": "Kilmarnock vs St Johnstone",
-      "games_played": 8,
-      "avg_margin": 1.25,
-      "avg_excitement": 70.0
+      "games_played": 7,
+      "avg_margin": 1,
+      "avg_excitement": 80.0
     },
     {
       "matchup": "St Johnstone vs Kilmarnock",
-      "games_played": 8,
-      "avg_margin": 1.25,
-      "avg_excitement": 70.0
+      "games_played": 7,
+      "avg_margin": 1,
+      "avg_excitement": 80.0
     },
     {
       "matchup": "Celtic vs Rangers",
@@ -1358,15 +1358,15 @@
     },
     {
       "matchup": "Kilmarnock vs St Johnstone",
-      "games": 8,
+      "games": 7,
       "close_games": 6,
-      "close_rate": 75.0
+      "close_rate": 85.71
     },
     {
       "matchup": "St Johnstone vs Kilmarnock",
-      "games": 8,
+      "games": 7,
       "close_games": 6,
-      "close_rate": 75.0
+      "close_rate": 85.71
     },
     {
       "matchup": "Celtic vs Rangers",

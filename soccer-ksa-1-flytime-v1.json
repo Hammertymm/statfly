@@ -1,0 +1,4860 @@
+{
+  "meta": {
+    "sport": "Saudi Pro League",
+    "league": "ksa.1",
+    "engine": "v1-bootstrap",
+    "formula": "close*0.35 + form_balance*0.25 + margin_balance*0.25 + matchup*0.15",
+    "close_margin": 1,
+    "games_sampled": 300,
+    "week_chunk": 9,
+    "built": "2026-06-11"
+  },
+  "matchup_ratings": [
+    {
+      "matchup": "Al Fayha vs Damac",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Damac vs Al Fayha",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Al Hilal vs Al Khaleej",
+      "games_played": 3,
+      "avg_margin": 1.33,
+      "avg_excitement": 63.33
+    },
+    {
+      "matchup": "Al Khaleej vs Al Hilal",
+      "games_played": 3,
+      "avg_margin": 1.33,
+      "avg_excitement": 63.33
+    },
+    {
+      "matchup": "Al Adalah vs Al Ittihad",
+      "games_played": 1,
+      "avg_margin": 3,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Al Ittihad vs Al Adalah",
+      "games_played": 1,
+      "avg_margin": 3,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Al Ettifaq vs Al Tai",
+      "games_played": 2,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Al Tai vs Al Ettifaq",
+      "games_played": 2,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Al Batin vs Al Shabab",
+      "games_played": 1,
+      "avg_margin": 3,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Al Shabab vs Al Batin",
+      "games_played": 1,
+      "avg_margin": 3,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Al Fateh vs Al Taawoun",
+      "games_played": 3,
+      "avg_margin": 1.33,
+      "avg_excitement": 40.0
+    },
+    {
+      "matchup": "Al Taawoun vs Al Fateh",
+      "games_played": 3,
+      "avg_margin": 1.33,
+      "avg_excitement": 40.0
+    },
+    {
+      "matchup": "Abha vs Al Raed",
+      "games_played": 2,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Al Raed vs Abha",
+      "games_played": 2,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Al Nassr vs Al Wehda",
+      "games_played": 2,
+      "avg_margin": 1.5,
+      "avg_excitement": 50.0
+    },
+    {
+      "matchup": "Al Wehda vs Al Nassr",
+      "games_played": 2,
+      "avg_margin": 1.5,
+      "avg_excitement": 50.0
+    },
+    {
+      "matchup": "Al Batin vs Al Fateh",
+      "games_played": 1,
+      "avg_margin": 5,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Al Fateh vs Al Batin",
+      "games_played": 1,
+      "avg_margin": 5,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Al Fayha vs Al Hilal",
+      "games_played": 3,
+      "avg_margin": 1.67,
+      "avg_excitement": 36.67
+    },
+    {
+      "matchup": "Al Hilal vs Al Fayha",
+      "games_played": 3,
+      "avg_margin": 1.67,
+      "avg_excitement": 36.67
+    },
+    {
+      "matchup": "Al Raed vs Al Wehdat",
+      "games_played": 1,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "Al Wehdat vs Al Raed",
+      "games_played": 1,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "Al Raed vs Al Wehda",
+      "games_played": 2,
+      "avg_margin": 0.5,
+      "avg_excitement": 95.0
+    },
+    {
+      "matchup": "Al Wehda vs Al Raed",
+      "games_played": 2,
+      "avg_margin": 0.5,
+      "avg_excitement": 95.0
+    },
+    {
+      "matchup": "Abha vs Al Shabab",
+      "games_played": 2,
+      "avg_margin": 2.5,
+      "avg_excitement": 40.0
+    },
+    {
+      "matchup": "Al Shabab vs Abha",
+      "games_played": 2,
+      "avg_margin": 2.5,
+      "avg_excitement": 40.0
+    },
+    {
+      "matchup": "Al Adalah vs Al Tai",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Al Tai vs Al Adalah",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Al Khaleej vs Damac",
+      "games_played": 3,
+      "avg_margin": 1.33,
+      "avg_excitement": 63.33
+    },
+    {
+      "matchup": "Damac vs Al Khaleej",
+      "games_played": 3,
+      "avg_margin": 1.33,
+      "avg_excitement": 63.33
+    },
+    {
+      "matchup": "Al Nassr vs Al Taawoun",
+      "games_played": 2,
+      "avg_margin": 1.5,
+      "avg_excitement": 50.0
+    },
+    {
+      "matchup": "Al Taawoun vs Al Nassr",
+      "games_played": 2,
+      "avg_margin": 1.5,
+      "avg_excitement": 50.0
+    },
+    {
+      "matchup": "Al Ettifaq vs Al Ittihad",
+      "games_played": 1,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "Al Ittihad vs Al Ettifaq",
+      "games_played": 1,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "Al Fateh vs Al Hilal",
+      "games_played": 2,
+      "avg_margin": 1.5,
+      "avg_excitement": 50.0
+    },
+    {
+      "matchup": "Al Hilal vs Al Fateh",
+      "games_played": 2,
+      "avg_margin": 1.5,
+      "avg_excitement": 50.0
+    },
+    {
+      "matchup": "Al Adalah vs Al Khaleej",
+      "games_played": 1,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "Al Khaleej vs Al Adalah",
+      "games_played": 1,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "Al Shabab vs Al Tai",
+      "games_played": 2,
+      "avg_margin": 3,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Al Tai vs Al Shabab",
+      "games_played": 2,
+      "avg_margin": 3,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Abha vs Al Wehda",
+      "games_played": 2,
+      "avg_margin": 2.5,
+      "avg_excitement": 40.0
+    },
+    {
+      "matchup": "Al Wehda vs Abha",
+      "games_played": 2,
+      "avg_margin": 2.5,
+      "avg_excitement": 40.0
+    },
+    {
+      "matchup": "Al Batin vs Al Ettifaq",
+      "games_played": 1,
+      "avg_margin": 3,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Al Ettifaq vs Al Batin",
+      "games_played": 1,
+      "avg_margin": 3,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Al Ittihad vs Al Raed",
+      "games_played": 2,
+      "avg_margin": 2,
+      "avg_excitement": 45.0
+    },
+    {
+      "matchup": "Al Raed vs Al Ittihad",
+      "games_played": 2,
+      "avg_margin": 2,
+      "avg_excitement": 45.0
+    },
+    {
+      "matchup": "Al Fayha vs Al Taawoun",
+      "games_played": 2,
+      "avg_margin": 0.5,
+      "avg_excitement": 95.0
+    },
+    {
+      "matchup": "Al Taawoun vs Al Fayha",
+      "games_played": 2,
+      "avg_margin": 0.5,
+      "avg_excitement": 95.0
+    },
+    {
+      "matchup": "Al Nassr vs Damac",
+      "games_played": 2,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Damac vs Al Nassr",
+      "games_played": 2,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Al Fateh vs Al Tai",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Al Tai vs Al Fateh",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Al Adalah vs Al Shabab",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Al Shabab vs Al Adalah",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Al Batin vs Al Nassr",
+      "games_played": 1,
+      "avg_margin": 4,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Al Nassr vs Al Batin",
+      "games_played": 1,
+      "avg_margin": 4,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Al Ettifaq vs Al Raed",
+      "games_played": 2,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Al Raed vs Al Ettifaq",
+      "games_played": 2,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Al Ittihad vs Al Khaleej",
+      "games_played": 2,
+      "avg_margin": 2.5,
+      "avg_excitement": 5.0
+    },
+    {
+      "matchup": "Al Khaleej vs Al Ittihad",
+      "games_played": 2,
+      "avg_margin": 2.5,
+      "avg_excitement": 5.0
+    },
+    {
+      "matchup": "Abha vs Al Fayha",
+      "games_played": 2,
+      "avg_margin": 0.5,
+      "avg_excitement": 95.0
+    },
+    {
+      "matchup": "Al Fayha vs Abha",
+      "games_played": 2,
+      "avg_margin": 0.5,
+      "avg_excitement": 95.0
+    },
+    {
+      "matchup": "Al Taawoun vs Damac",
+      "games_played": 2,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "Damac vs Al Taawoun",
+      "games_played": 2,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "Al Hilal vs Al Wehda",
+      "games_played": 1,
+      "avg_margin": 3,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Al Wehda vs Al Hilal",
+      "games_played": 1,
+      "avg_margin": 3,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Al Adalah vs Al Raed",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Al Raed vs Al Adalah",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Al Tai vs Damac",
+      "games_played": 2,
+      "avg_margin": 1.5,
+      "avg_excitement": 50.0
+    },
+    {
+      "matchup": "Damac vs Al Tai",
+      "games_played": 2,
+      "avg_margin": 1.5,
+      "avg_excitement": 50.0
+    },
+    {
+      "matchup": "Al Batin vs Al Khaleej",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Al Khaleej vs Al Batin",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Al Ettifaq vs Al Wehda",
+      "games_played": 2,
+      "avg_margin": 0.5,
+      "avg_excitement": 95.0
+    },
+    {
+      "matchup": "Al Wehda vs Al Ettifaq",
+      "games_played": 2,
+      "avg_margin": 0.5,
+      "avg_excitement": 95.0
+    },
+    {
+      "matchup": "Al Fayha vs Al Shabab",
+      "games_played": 2,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Al Shabab vs Al Fayha",
+      "games_played": 2,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Al Hilal vs Al Taawoun",
+      "games_played": 2,
+      "avg_margin": 1.5,
+      "avg_excitement": 50.0
+    },
+    {
+      "matchup": "Al Taawoun vs Al Hilal",
+      "games_played": 2,
+      "avg_margin": 1.5,
+      "avg_excitement": 50.0
+    },
+    {
+      "matchup": "Abha vs Al Fateh",
+      "games_played": 2,
+      "avg_margin": 3,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Al Fateh vs Abha",
+      "games_played": 2,
+      "avg_margin": 3,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Al Ittihad vs Al Nassr",
+      "games_played": 1,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "Al Nassr vs Al Ittihad",
+      "games_played": 1,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "Al Taawoun vs Al Wehda",
+      "games_played": 3,
+      "avg_margin": 2,
+      "avg_excitement": 33.33
+    },
+    {
+      "matchup": "Al Wehda vs Al Taawoun",
+      "games_played": 3,
+      "avg_margin": 2,
+      "avg_excitement": 33.33
+    },
+    {
+      "matchup": "Al Khaleej vs Al Tai",
+      "games_played": 1,
+      "avg_margin": 3,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Al Tai vs Al Khaleej",
+      "games_played": 1,
+      "avg_margin": 3,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Al Batin vs Damac",
+      "games_played": 1,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "Damac vs Al Batin",
+      "games_played": 1,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "Al Ettifaq vs Al Hilal",
+      "games_played": 3,
+      "avg_margin": 1.33,
+      "avg_excitement": 40.0
+    },
+    {
+      "matchup": "Al Hilal vs Al Ettifaq",
+      "games_played": 3,
+      "avg_margin": 1.33,
+      "avg_excitement": 40.0
+    },
+    {
+      "matchup": "Al Raed vs Al Shabab",
+      "games_played": 2,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Al Shabab vs Al Raed",
+      "games_played": 2,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Abha vs Al Nassr",
+      "games_played": 2,
+      "avg_margin": 1.5,
+      "avg_excitement": 50.0
+    },
+    {
+      "matchup": "Al Nassr vs Abha",
+      "games_played": 2,
+      "avg_margin": 1.5,
+      "avg_excitement": 50.0
+    },
+    {
+      "matchup": "Al Adalah vs Al Fayha",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Al Fayha vs Al Adalah",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Al Fateh vs Al Ittihad",
+      "games_played": 3,
+      "avg_margin": 1.67,
+      "avg_excitement": 36.67
+    },
+    {
+      "matchup": "Al Ittihad vs Al Fateh",
+      "games_played": 3,
+      "avg_margin": 1.67,
+      "avg_excitement": 36.67
+    },
+    {
+      "matchup": "Al Raed vs Al Tai",
+      "games_played": 1,
+      "avg_margin": 2,
+      "avg_excitement": 10.0
+    },
+    {
+      "matchup": "Al Tai vs Al Raed",
+      "games_played": 1,
+      "avg_margin": 2,
+      "avg_excitement": 10.0
+    },
+    {
+      "matchup": "Al Hilal vs Al Shabab",
+      "games_played": 2,
+      "avg_margin": 1,
+      "avg_excitement": 55.0
+    },
+    {
+      "matchup": "Al Shabab vs Al Hilal",
+      "games_played": 2,
+      "avg_margin": 1,
+      "avg_excitement": 55.0
+    },
+    {
+      "matchup": "Al Batin vs Al Wehda",
+      "games_played": 1,
+      "avg_margin": 2,
+      "avg_excitement": 10.0
+    },
+    {
+      "matchup": "Al Wehda vs Al Batin",
+      "games_played": 1,
+      "avg_margin": 2,
+      "avg_excitement": 10.0
+    },
+    {
+      "matchup": "Abha vs Al Taawoun",
+      "games_played": 2,
+      "avg_margin": 1.5,
+      "avg_excitement": 50.0
+    },
+    {
+      "matchup": "Al Taawoun vs Abha",
+      "games_played": 2,
+      "avg_margin": 1.5,
+      "avg_excitement": 50.0
+    },
+    {
+      "matchup": "Al Ittihad vs Damac",
+      "games_played": 1,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "Damac vs Al Ittihad",
+      "games_played": 1,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "Al Ettifaq vs Al Fayha",
+      "games_played": 2,
+      "avg_margin": 1.5,
+      "avg_excitement": 50.0
+    },
+    {
+      "matchup": "Al Fayha vs Al Ettifaq",
+      "games_played": 2,
+      "avg_margin": 1.5,
+      "avg_excitement": 50.0
+    },
+    {
+      "matchup": "Al Fateh vs Al Khaleej",
+      "games_played": 3,
+      "avg_margin": 1.33,
+      "avg_excitement": 63.33
+    },
+    {
+      "matchup": "Al Khaleej vs Al Fateh",
+      "games_played": 3,
+      "avg_margin": 1.33,
+      "avg_excitement": 63.33
+    },
+    {
+      "matchup": "Al Adalah vs Al Nassr",
+      "games_played": 1,
+      "avg_margin": 3,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Al Nassr vs Al Adalah",
+      "games_played": 1,
+      "avg_margin": 3,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Al Hilal vs Al Tai",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Al Tai vs Al Hilal",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Al Fateh vs Al Raed",
+      "games_played": 3,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Al Raed vs Al Fateh",
+      "games_played": 3,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Al Khaleej vs Al Shabab",
+      "games_played": 3,
+      "avg_margin": 2.33,
+      "avg_excitement": 30.0
+    },
+    {
+      "matchup": "Al Shabab vs Al Khaleej",
+      "games_played": 3,
+      "avg_margin": 2.33,
+      "avg_excitement": 30.0
+    },
+    {
+      "matchup": "Abha vs Al Batin",
+      "games_played": 1,
+      "avg_margin": 2,
+      "avg_excitement": 10.0
+    },
+    {
+      "matchup": "Al Batin vs Abha",
+      "games_played": 1,
+      "avg_margin": 2,
+      "avg_excitement": 10.0
+    },
+    {
+      "matchup": "Al Fayha vs Al Nassr",
+      "games_played": 3,
+      "avg_margin": 3,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Al Nassr vs Al Fayha",
+      "games_played": 3,
+      "avg_margin": 3,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Al Adalah vs Damac",
+      "games_played": 1,
+      "avg_margin": 2,
+      "avg_excitement": 10.0
+    },
+    {
+      "matchup": "Damac vs Al Adalah",
+      "games_played": 1,
+      "avg_margin": 2,
+      "avg_excitement": 10.0
+    },
+    {
+      "matchup": "Al Ettifaq vs Al Taawoun",
+      "games_played": 2,
+      "avg_margin": 0.5,
+      "avg_excitement": 95.0
+    },
+    {
+      "matchup": "Al Taawoun vs Al Ettifaq",
+      "games_played": 2,
+      "avg_margin": 0.5,
+      "avg_excitement": 95.0
+    },
+    {
+      "matchup": "Al Ittihad vs Al Wehda",
+      "games_played": 3,
+      "avg_margin": 3.33,
+      "avg_excitement": 23.33
+    },
+    {
+      "matchup": "Al Wehda vs Al Ittihad",
+      "games_played": 3,
+      "avg_margin": 3.33,
+      "avg_excitement": 23.33
+    },
+    {
+      "matchup": "Al Fayha vs Al Khaleej",
+      "games_played": 3,
+      "avg_margin": 1,
+      "avg_excitement": 66.67
+    },
+    {
+      "matchup": "Al Khaleej vs Al Fayha",
+      "games_played": 3,
+      "avg_margin": 1,
+      "avg_excitement": 66.67
+    },
+    {
+      "matchup": "Al Ettifaq vs Damac",
+      "games_played": 2,
+      "avg_margin": 1,
+      "avg_excitement": 55.0
+    },
+    {
+      "matchup": "Damac vs Al Ettifaq",
+      "games_played": 2,
+      "avg_margin": 1,
+      "avg_excitement": 55.0
+    },
+    {
+      "matchup": "Al Adalah vs Al Taawoun",
+      "games_played": 1,
+      "avg_margin": 3,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Al Taawoun vs Al Adalah",
+      "games_played": 1,
+      "avg_margin": 3,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Abha vs Al Tai",
+      "games_played": 2,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Al Tai vs Abha",
+      "games_played": 2,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Al Nassr vs Al Raed",
+      "games_played": 3,
+      "avg_margin": 1.67,
+      "avg_excitement": 36.67
+    },
+    {
+      "matchup": "Al Raed vs Al Nassr",
+      "games_played": 3,
+      "avg_margin": 1.67,
+      "avg_excitement": 36.67
+    },
+    {
+      "matchup": "Al Batin vs Al Hilal",
+      "games_played": 1,
+      "avg_margin": 2,
+      "avg_excitement": 10.0
+    },
+    {
+      "matchup": "Al Hilal vs Al Batin",
+      "games_played": 1,
+      "avg_margin": 2,
+      "avg_excitement": 10.0
+    },
+    {
+      "matchup": "Al Wehda vs Damac",
+      "games_played": 3,
+      "avg_margin": 1,
+      "avg_excitement": 66.67
+    },
+    {
+      "matchup": "Damac vs Al Wehda",
+      "games_played": 3,
+      "avg_margin": 1,
+      "avg_excitement": 66.67
+    },
+    {
+      "matchup": "Abha vs Al Adalah",
+      "games_played": 1,
+      "avg_margin": 2,
+      "avg_excitement": 10.0
+    },
+    {
+      "matchup": "Al Adalah vs Abha",
+      "games_played": 1,
+      "avg_margin": 2,
+      "avg_excitement": 10.0
+    },
+    {
+      "matchup": "Al Ettifaq vs Al Khaleej",
+      "games_played": 2,
+      "avg_margin": 0.5,
+      "avg_excitement": 95.0
+    },
+    {
+      "matchup": "Al Khaleej vs Al Ettifaq",
+      "games_played": 2,
+      "avg_margin": 0.5,
+      "avg_excitement": 95.0
+    },
+    {
+      "matchup": "Al Batin vs Al Raed",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Al Raed vs Al Batin",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Al Fateh vs Al Shabab",
+      "games_played": 1,
+      "avg_margin": 3,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Al Shabab vs Al Fateh",
+      "games_played": 1,
+      "avg_margin": 3,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Al Fayha vs Al Tai",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Al Tai vs Al Fayha",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Al Ittihad vs Al Taawoun",
+      "games_played": 3,
+      "avg_margin": 1.33,
+      "avg_excitement": 63.33
+    },
+    {
+      "matchup": "Al Taawoun vs Al Ittihad",
+      "games_played": 3,
+      "avg_margin": 1.33,
+      "avg_excitement": 63.33
+    },
+    {
+      "matchup": "Al Hilal vs Al Nassr",
+      "games_played": 2,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "Al Nassr vs Al Hilal",
+      "games_played": 2,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "Al Fateh vs Al Fayha",
+      "games_played": 2,
+      "avg_margin": 1,
+      "avg_excitement": 55.0
+    },
+    {
+      "matchup": "Al Fayha vs Al Fateh",
+      "games_played": 2,
+      "avg_margin": 1,
+      "avg_excitement": 55.0
+    },
+    {
+      "matchup": "Al Adalah vs Al Wehda",
+      "games_played": 1,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "Al Wehda vs Al Adalah",
+      "games_played": 1,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "Al Ettifaq vs Al Shabab",
+      "games_played": 2,
+      "avg_margin": 2,
+      "avg_excitement": 45.0
+    },
+    {
+      "matchup": "Al Shabab vs Al Ettifaq",
+      "games_played": 2,
+      "avg_margin": 2,
+      "avg_excitement": 45.0
+    },
+    {
+      "matchup": "Abha vs Al Ittihad",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Al Ittihad vs Abha",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Al Batin vs Al Tai",
+      "games_played": 1,
+      "avg_margin": 4,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Al Tai vs Al Batin",
+      "games_played": 1,
+      "avg_margin": 4,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Al Raed vs Al Taawoun",
+      "games_played": 2,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Al Taawoun vs Al Raed",
+      "games_played": 2,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Al Hilal vs Damac",
+      "games_played": 3,
+      "avg_margin": 0.33,
+      "avg_excitement": 96.67
+    },
+    {
+      "matchup": "Damac vs Al Hilal",
+      "games_played": 3,
+      "avg_margin": 0.33,
+      "avg_excitement": 96.67
+    },
+    {
+      "matchup": "Al Khaleej vs Al Nassr",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Al Nassr vs Al Khaleej",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Al Raed vs Damac",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Damac vs Al Raed",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Al Hilal vs Al Ittihad",
+      "games_played": 3,
+      "avg_margin": 1.33,
+      "avg_excitement": 63.33
+    },
+    {
+      "matchup": "Al Ittihad vs Al Hilal",
+      "games_played": 3,
+      "avg_margin": 1.33,
+      "avg_excitement": 63.33
+    },
+    {
+      "matchup": "Al Shabab vs Al Wehda",
+      "games_played": 3,
+      "avg_margin": 1.67,
+      "avg_excitement": 36.67
+    },
+    {
+      "matchup": "Al Wehda vs Al Shabab",
+      "games_played": 3,
+      "avg_margin": 1.67,
+      "avg_excitement": 36.67
+    },
+    {
+      "matchup": "Al Adalah vs Al Fateh",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Al Fateh vs Al Adalah",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Al Nassr vs Al Tai",
+      "games_played": 2,
+      "avg_margin": 1.5,
+      "avg_excitement": 50.0
+    },
+    {
+      "matchup": "Al Tai vs Al Nassr",
+      "games_played": 2,
+      "avg_margin": 1.5,
+      "avg_excitement": 50.0
+    },
+    {
+      "matchup": "Al Khaleej vs Al Taawoun",
+      "games_played": 3,
+      "avg_margin": 1,
+      "avg_excitement": 66.67
+    },
+    {
+      "matchup": "Al Taawoun vs Al Khaleej",
+      "games_played": 3,
+      "avg_margin": 1,
+      "avg_excitement": 66.67
+    },
+    {
+      "matchup": "Al Batin vs Al Fayha",
+      "games_played": 1,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "Al Fayha vs Al Batin",
+      "games_played": 1,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "Abha vs Al Ettifaq",
+      "games_played": 2,
+      "avg_margin": 1.5,
+      "avg_excitement": 50.0
+    },
+    {
+      "matchup": "Al Ettifaq vs Abha",
+      "games_played": 2,
+      "avg_margin": 1.5,
+      "avg_excitement": 50.0
+    },
+    {
+      "matchup": "Al Ittihad vs Al Shabab",
+      "games_played": 1,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "Al Shabab vs Al Ittihad",
+      "games_played": 1,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "Al Hilal vs Al Raed",
+      "games_played": 2,
+      "avg_margin": 2,
+      "avg_excitement": 45.0
+    },
+    {
+      "matchup": "Al Raed vs Al Hilal",
+      "games_played": 2,
+      "avg_margin": 2,
+      "avg_excitement": 45.0
+    },
+    {
+      "matchup": "Al Ettifaq vs Al Fateh",
+      "games_played": 3,
+      "avg_margin": 1.33,
+      "avg_excitement": 63.33
+    },
+    {
+      "matchup": "Al Fateh vs Al Ettifaq",
+      "games_played": 3,
+      "avg_margin": 1.33,
+      "avg_excitement": 63.33
+    },
+    {
+      "matchup": "Al Taawoun vs Al Tai",
+      "games_played": 2,
+      "avg_margin": 2.5,
+      "avg_excitement": 5.0
+    },
+    {
+      "matchup": "Al Tai vs Al Taawoun",
+      "games_played": 2,
+      "avg_margin": 2.5,
+      "avg_excitement": 5.0
+    },
+    {
+      "matchup": "Abha vs Damac",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Damac vs Abha",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Al Ahli vs Al Hazem",
+      "games_played": 1,
+      "avg_margin": 2,
+      "avg_excitement": 10.0
+    },
+    {
+      "matchup": "Al Hazem vs Al Ahli",
+      "games_played": 1,
+      "avg_margin": 2,
+      "avg_excitement": 10.0
+    },
+    {
+      "matchup": "Al Riyadh vs Al Wehda",
+      "games_played": 2,
+      "avg_margin": 0.5,
+      "avg_excitement": 95.0
+    },
+    {
+      "matchup": "Al Wehda vs Al Riyadh",
+      "games_played": 2,
+      "avg_margin": 0.5,
+      "avg_excitement": 95.0
+    },
+    {
+      "matchup": "Abha vs Al Hilal",
+      "games_played": 1,
+      "avg_margin": 2,
+      "avg_excitement": 10.0
+    },
+    {
+      "matchup": "Al Hilal vs Abha",
+      "games_played": 1,
+      "avg_margin": 2,
+      "avg_excitement": 10.0
+    },
+    {
+      "matchup": "Al Ettifaq vs Al Nassr",
+      "games_played": 2,
+      "avg_margin": 2,
+      "avg_excitement": 45.0
+    },
+    {
+      "matchup": "Al Nassr vs Al Ettifaq",
+      "games_played": 2,
+      "avg_margin": 2,
+      "avg_excitement": 45.0
+    },
+    {
+      "matchup": "Al Okhdood vs Al Shabab",
+      "games_played": 2,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "Al Shabab vs Al Okhdood",
+      "games_played": 2,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "Al Riyadh vs Damac",
+      "games_played": 2,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "Damac vs Al Riyadh",
+      "games_played": 2,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "Al Ahli vs Al Khaleej",
+      "games_played": 2,
+      "avg_margin": 2.5,
+      "avg_excitement": 5.0
+    },
+    {
+      "matchup": "Al Khaleej vs Al Ahli",
+      "games_played": 2,
+      "avg_margin": 2.5,
+      "avg_excitement": 5.0
+    },
+    {
+      "matchup": "Al Fateh vs Al Okhdood",
+      "games_played": 2,
+      "avg_margin": 2,
+      "avg_excitement": 10.0
+    },
+    {
+      "matchup": "Al Okhdood vs Al Fateh",
+      "games_played": 2,
+      "avg_margin": 2,
+      "avg_excitement": 10.0
+    },
+    {
+      "matchup": "Al Ettifaq vs Al Hazem",
+      "games_played": 1,
+      "avg_margin": 2,
+      "avg_excitement": 10.0
+    },
+    {
+      "matchup": "Al Hazem vs Al Ettifaq",
+      "games_played": 1,
+      "avg_margin": 2,
+      "avg_excitement": 10.0
+    },
+    {
+      "matchup": "Al Ittihad vs Al Tai",
+      "games_played": 1,
+      "avg_margin": 2,
+      "avg_excitement": 10.0
+    },
+    {
+      "matchup": "Al Tai vs Al Ittihad",
+      "games_played": 1,
+      "avg_margin": 2,
+      "avg_excitement": 10.0
+    },
+    {
+      "matchup": "Al Tai vs Al Wehda",
+      "games_played": 1,
+      "avg_margin": 3,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Al Wehda vs Al Tai",
+      "games_played": 1,
+      "avg_margin": 3,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Al Ahli vs Al Okhdood",
+      "games_played": 2,
+      "avg_margin": 0.5,
+      "avg_excitement": 95.0
+    },
+    {
+      "matchup": "Al Okhdood vs Al Ahli",
+      "games_played": 2,
+      "avg_margin": 0.5,
+      "avg_excitement": 95.0
+    },
+    {
+      "matchup": "Al Ittihad vs Al Riyadh",
+      "games_played": 2,
+      "avg_margin": 2.5,
+      "avg_excitement": 40.0
+    },
+    {
+      "matchup": "Al Riyadh vs Al Ittihad",
+      "games_played": 2,
+      "avg_margin": 2.5,
+      "avg_excitement": 40.0
+    },
+    {
+      "matchup": "Al Fayha vs Al Hazem",
+      "games_played": 1,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "Al Hazem vs Al Fayha",
+      "games_played": 1,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "Al Fateh vs Al Nassr",
+      "games_played": 1,
+      "avg_margin": 5,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Al Nassr vs Al Fateh",
+      "games_played": 1,
+      "avg_margin": 5,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Al Shabab vs Damac",
+      "games_played": 2,
+      "avg_margin": 0.5,
+      "avg_excitement": 95.0
+    },
+    {
+      "matchup": "Damac vs Al Shabab",
+      "games_played": 2,
+      "avg_margin": 0.5,
+      "avg_excitement": 95.0
+    },
+    {
+      "matchup": "Al Raed vs Al Riyadh",
+      "games_played": 2,
+      "avg_margin": 2,
+      "avg_excitement": 45.0
+    },
+    {
+      "matchup": "Al Riyadh vs Al Raed",
+      "games_played": 2,
+      "avg_margin": 2,
+      "avg_excitement": 45.0
+    },
+    {
+      "matchup": "Al Okhdood vs Al Taawoun",
+      "games_played": 2,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Al Taawoun vs Al Okhdood",
+      "games_played": 2,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Al Fateh vs Damac",
+      "games_played": 1,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "Damac vs Al Fateh",
+      "games_played": 1,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "Al Ahli vs Al Tai",
+      "games_played": 1,
+      "avg_margin": 2,
+      "avg_excitement": 10.0
+    },
+    {
+      "matchup": "Al Tai vs Al Ahli",
+      "games_played": 1,
+      "avg_margin": 2,
+      "avg_excitement": 10.0
+    },
+    {
+      "matchup": "Al Hazem vs Al Khaleej",
+      "games_played": 1,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "Al Khaleej vs Al Hazem",
+      "games_played": 1,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "Al Nassr vs Al Shabab",
+      "games_played": 2,
+      "avg_margin": 2.5,
+      "avg_excitement": 40.0
+    },
+    {
+      "matchup": "Al Shabab vs Al Nassr",
+      "games_played": 2,
+      "avg_margin": 2.5,
+      "avg_excitement": 40.0
+    },
+    {
+      "matchup": "Al Fayha vs Al Raed",
+      "games_played": 2,
+      "avg_margin": 2.5,
+      "avg_excitement": 40.0
+    },
+    {
+      "matchup": "Al Raed vs Al Fayha",
+      "games_played": 2,
+      "avg_margin": 2.5,
+      "avg_excitement": 40.0
+    },
+    {
+      "matchup": "Al Okhdood vs Al Riyadh",
+      "games_played": 2,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Al Riyadh vs Al Okhdood",
+      "games_played": 2,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Al Ahli vs Al Fateh",
+      "games_played": 2,
+      "avg_margin": 2.5,
+      "avg_excitement": 40.0
+    },
+    {
+      "matchup": "Al Fateh vs Al Ahli",
+      "games_played": 2,
+      "avg_margin": 2.5,
+      "avg_excitement": 40.0
+    },
+    {
+      "matchup": "Al Hazem vs Al Nassr",
+      "games_played": 1,
+      "avg_margin": 4,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Al Nassr vs Al Hazem",
+      "games_played": 1,
+      "avg_margin": 4,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Al Ittihad vs Al Okhdood",
+      "games_played": 2,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Al Okhdood vs Al Ittihad",
+      "games_played": 2,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Al Hilal vs Al Riyadh",
+      "games_played": 2,
+      "avg_margin": 4,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Al Riyadh vs Al Hilal",
+      "games_played": 2,
+      "avg_margin": 4,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Al Hazem vs Al Tai",
+      "games_played": 1,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "Al Tai vs Al Hazem",
+      "games_played": 1,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "Al Ahli vs Al Taawoun",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Al Taawoun vs Al Ahli",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Al Hazem vs Al Shabab",
+      "games_played": 1,
+      "avg_margin": 3,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Al Shabab vs Al Hazem",
+      "games_played": 1,
+      "avg_margin": 3,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Al Khaleej vs Al Okhdood",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Al Okhdood vs Al Khaleej",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Al Fayha vs Al Riyadh",
+      "games_played": 2,
+      "avg_margin": 2,
+      "avg_excitement": 10.0
+    },
+    {
+      "matchup": "Al Riyadh vs Al Fayha",
+      "games_played": 2,
+      "avg_margin": 2,
+      "avg_excitement": 10.0
+    },
+    {
+      "matchup": "Al Ahli vs Al Nassr",
+      "games_played": 2,
+      "avg_margin": 0.5,
+      "avg_excitement": 95.0
+    },
+    {
+      "matchup": "Al Nassr vs Al Ahli",
+      "games_played": 2,
+      "avg_margin": 0.5,
+      "avg_excitement": 95.0
+    },
+    {
+      "matchup": "Al Fayha vs Al Ittihad",
+      "games_played": 1,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "Al Ittihad vs Al Fayha",
+      "games_played": 1,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "Al Hazem vs Al Taawoun",
+      "games_played": 1,
+      "avg_margin": 2,
+      "avg_excitement": 10.0
+    },
+    {
+      "matchup": "Al Taawoun vs Al Hazem",
+      "games_played": 1,
+      "avg_margin": 2,
+      "avg_excitement": 10.0
+    },
+    {
+      "matchup": "Abha vs Al Riyadh",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Al Riyadh vs Abha",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Al Fateh vs Al Wehda",
+      "games_played": 1,
+      "avg_margin": 4,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Al Wehda vs Al Fateh",
+      "games_played": 1,
+      "avg_margin": 4,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Al Okhdood vs Al Raed",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Al Raed vs Al Okhdood",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Al Ahli vs Al Ettifaq",
+      "games_played": 1,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "Al Ettifaq vs Al Ahli",
+      "games_played": 1,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "Al Hazem vs Damac",
+      "games_played": 1,
+      "avg_margin": 3,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Damac vs Al Hazem",
+      "games_played": 1,
+      "avg_margin": 3,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Al Riyadh vs Al Shabab",
+      "games_played": 1,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "Al Shabab vs Al Riyadh",
+      "games_played": 1,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "Al Ahli vs Al Ittihad",
+      "games_played": 2,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Al Ittihad vs Al Ahli",
+      "games_played": 2,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Al Hilal vs Al Okhdood",
+      "games_played": 2,
+      "avg_margin": 3,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Al Okhdood vs Al Hilal",
+      "games_played": 2,
+      "avg_margin": 3,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Al Khaleej vs Al Raed",
+      "games_played": 2,
+      "avg_margin": 2,
+      "avg_excitement": 45.0
+    },
+    {
+      "matchup": "Al Raed vs Al Khaleej",
+      "games_played": 2,
+      "avg_margin": 2,
+      "avg_excitement": 45.0
+    },
+    {
+      "matchup": "Al Fayha vs Al Wehda",
+      "games_played": 2,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "Al Wehda vs Al Fayha",
+      "games_played": 2,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "Al Fayha vs Al Okhdood",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Al Okhdood vs Al Fayha",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Al Hazem vs Al Raed",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Al Raed vs Al Hazem",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Al Ahli vs Al Wehda",
+      "games_played": 1,
+      "avg_margin": 2,
+      "avg_excitement": 10.0
+    },
+    {
+      "matchup": "Al Wehda vs Al Ahli",
+      "games_played": 1,
+      "avg_margin": 2,
+      "avg_excitement": 10.0
+    },
+    {
+      "matchup": "Al Ettifaq vs Al Riyadh",
+      "games_played": 2,
+      "avg_margin": 0.5,
+      "avg_excitement": 95.0
+    },
+    {
+      "matchup": "Al Riyadh vs Al Ettifaq",
+      "games_played": 2,
+      "avg_margin": 0.5,
+      "avg_excitement": 95.0
+    },
+    {
+      "matchup": "Al Okhdood vs Damac",
+      "games_played": 2,
+      "avg_margin": 2,
+      "avg_excitement": 10.0
+    },
+    {
+      "matchup": "Damac vs Al Okhdood",
+      "games_played": 2,
+      "avg_margin": 2,
+      "avg_excitement": 10.0
+    },
+    {
+      "matchup": "Al Hazem vs Al Ittihad",
+      "games_played": 1,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "Al Ittihad vs Al Hazem",
+      "games_played": 1,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "Al Riyadh vs Al Tai",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Al Tai vs Al Riyadh",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Al Ahli vs Al Hilal",
+      "games_played": 2,
+      "avg_margin": 1.5,
+      "avg_excitement": 50.0
+    },
+    {
+      "matchup": "Al Hilal vs Al Ahli",
+      "games_played": 2,
+      "avg_margin": 1.5,
+      "avg_excitement": 50.0
+    },
+    {
+      "matchup": "Al Ahli vs Al Orobah",
+      "games_played": 1,
+      "avg_margin": 2,
+      "avg_excitement": 10.0
+    },
+    {
+      "matchup": "Al Orobah vs Al Ahli",
+      "games_played": 1,
+      "avg_margin": 2,
+      "avg_excitement": 10.0
+    },
+    {
+      "matchup": "Al Fateh vs Al Qadsiah",
+      "games_played": 1,
+      "avg_margin": 3,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Al Qadsiah vs Al Fateh",
+      "games_played": 1,
+      "avg_margin": 3,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Al Ittihad vs Al Kholood",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Al Kholood vs Al Ittihad",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Al Qadsiah vs Al Raed",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Al Raed vs Al Qadsiah",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Al Ettifaq vs Al Okhdood",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Al Okhdood vs Al Ettifaq",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Al Orobah vs Al Wehda",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Al Wehda vs Al Orobah",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Al Kholood vs Al Riyadh",
+      "games_played": 1,
+      "avg_margin": 2,
+      "avg_excitement": 10.0
+    },
+    {
+      "matchup": "Al Riyadh vs Al Kholood",
+      "games_played": 1,
+      "avg_margin": 2,
+      "avg_excitement": 10.0
+    },
+    {
+      "matchup": "Al Qadsiah vs Al Shabab",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Al Shabab vs Al Qadsiah",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Al Kholood vs Al Orobah",
+      "games_played": 1,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "Al Orobah vs Al Kholood",
+      "games_played": 1,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "Al Okhdood vs Al Qadsiah",
+      "games_played": 1,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "Al Qadsiah vs Al Okhdood",
+      "games_played": 1,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "Al Fateh vs Al Orobah",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Al Orobah vs Al Fateh",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Al Kholood vs Al Wehda",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Al Wehda vs Al Kholood",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Al Ahli vs Damac",
+      "games_played": 1,
+      "avg_margin": 2,
+      "avg_excitement": 10.0
+    },
+    {
+      "matchup": "Damac vs Al Ahli",
+      "games_played": 1,
+      "avg_margin": 2,
+      "avg_excitement": 10.0
+    },
+    {
+      "matchup": "Al Shabab vs Al Taawoun",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Al Taawoun vs Al Shabab",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Al Ahli vs Al Qadsiah",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Al Qadsiah vs Al Ahli",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Al Orobah vs Damac",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Damac vs Al Orobah",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Al Hilal vs Al Kholood",
+      "games_played": 1,
+      "avg_margin": 2,
+      "avg_excitement": 10.0
+    },
+    {
+      "matchup": "Al Kholood vs Al Hilal",
+      "games_played": 1,
+      "avg_margin": 2,
+      "avg_excitement": 10.0
+    },
+    {
+      "matchup": "Al Khaleej vs Al Kholood",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Al Kholood vs Al Khaleej",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Al Qadsiah vs Al Riyadh",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Al Riyadh vs Al Qadsiah",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Al Nassr vs Al Orobah",
+      "games_played": 1,
+      "avg_margin": 3,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Al Orobah vs Al Nassr",
+      "games_played": 1,
+      "avg_margin": 3,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Al Ittihad vs Al Qadsiah",
+      "games_played": 1,
+      "avg_margin": 2,
+      "avg_excitement": 10.0
+    },
+    {
+      "matchup": "Al Qadsiah vs Al Ittihad",
+      "games_played": 1,
+      "avg_margin": 2,
+      "avg_excitement": 10.0
+    },
+    {
+      "matchup": "Al Fateh vs Al Kholood",
+      "games_played": 1,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "Al Kholood vs Al Fateh",
+      "games_played": 1,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "Al Ettifaq vs Al Orobah",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Al Orobah vs Al Ettifaq",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Al Orobah vs Al Shabab",
+      "games_played": 1,
+      "avg_margin": 3,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Al Shabab vs Al Orobah",
+      "games_played": 1,
+      "avg_margin": 3,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Al Khaleej vs Al Wehda",
+      "games_played": 1,
+      "avg_margin": 2,
+      "avg_excitement": 10.0
+    },
+    {
+      "matchup": "Al Wehda vs Al Khaleej",
+      "games_played": 1,
+      "avg_margin": 2,
+      "avg_excitement": 10.0
+    },
+    {
+      "matchup": "Al Qadsiah vs Damac",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Damac vs Al Qadsiah",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Al Kholood vs Al Nassr",
+      "games_played": 1,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "Al Nassr vs Al Kholood",
+      "games_played": 1,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "Al Okhdood vs Al Orobah",
+      "games_played": 1,
+      "avg_margin": 4,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Al Orobah vs Al Okhdood",
+      "games_played": 1,
+      "avg_margin": 4,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Al Kholood vs Al Taawoun",
+      "games_played": 1,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "Al Taawoun vs Al Kholood",
+      "games_played": 1,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "Al Ettifaq vs Al Qadsiah",
+      "games_played": 1,
+      "avg_margin": 2,
+      "avg_excitement": 10.0
+    },
+    {
+      "matchup": "Al Qadsiah vs Al Ettifaq",
+      "games_played": 1,
+      "avg_margin": 2,
+      "avg_excitement": 10.0
+    },
+    {
+      "matchup": "Al Fayha vs Al Qadsiah",
+      "games_played": 1,
+      "avg_margin": 2,
+      "avg_excitement": 10.0
+    },
+    {
+      "matchup": "Al Qadsiah vs Al Fayha",
+      "games_played": 1,
+      "avg_margin": 2,
+      "avg_excitement": 10.0
+    },
+    {
+      "matchup": "Al Kholood vs Al Shabab",
+      "games_played": 1,
+      "avg_margin": 2,
+      "avg_excitement": 10.0
+    },
+    {
+      "matchup": "Al Shabab vs Al Kholood",
+      "games_played": 1,
+      "avg_margin": 2,
+      "avg_excitement": 10.0
+    },
+    {
+      "matchup": "Al Ittihad vs Al Orobah",
+      "games_played": 1,
+      "avg_margin": 2,
+      "avg_excitement": 10.0
+    },
+    {
+      "matchup": "Al Orobah vs Al Ittihad",
+      "games_played": 1,
+      "avg_margin": 2,
+      "avg_excitement": 10.0
+    },
+    {
+      "matchup": "Al Ahli vs Al Raed",
+      "games_played": 1,
+      "avg_margin": 2,
+      "avg_excitement": 10.0
+    },
+    {
+      "matchup": "Al Raed vs Al Ahli",
+      "games_played": 1,
+      "avg_margin": 2,
+      "avg_excitement": 10.0
+    },
+    {
+      "matchup": "Al Nassr vs Al Riyadh",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Al Riyadh vs Al Nassr",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Al Ahli vs Al Fayha",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Al Fayha vs Al Ahli",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Al Nassr vs Al Qadsiah",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Al Qadsiah vs Al Nassr",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Al Orobah vs Al Raed",
+      "games_played": 1,
+      "avg_margin": 2,
+      "avg_excitement": 10.0
+    },
+    {
+      "matchup": "Al Raed vs Al Orobah",
+      "games_played": 1,
+      "avg_margin": 2,
+      "avg_excitement": 10.0
+    },
+    {
+      "matchup": "Al Kholood vs Damac",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Damac vs Al Kholood",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Al Fayha vs Al Orobah",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Al Orobah vs Al Fayha",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    }
+  ],
+  "matchup_close_rates": [
+    {
+      "matchup": "Al Fayha vs Damac",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Damac vs Al Fayha",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Al Hilal vs Al Khaleej",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Al Khaleej vs Al Hilal",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Al Adalah vs Al Ittihad",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Al Ittihad vs Al Adalah",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Al Ettifaq vs Al Tai",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Al Tai vs Al Ettifaq",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Al Batin vs Al Shabab",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Al Shabab vs Al Batin",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Al Fateh vs Al Taawoun",
+      "games": 3,
+      "close_games": 1,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "Al Taawoun vs Al Fateh",
+      "games": 3,
+      "close_games": 1,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "Abha vs Al Raed",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Al Raed vs Abha",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Al Nassr vs Al Wehda",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Al Wehda vs Al Nassr",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Al Batin vs Al Fateh",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Al Fateh vs Al Batin",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Al Fayha vs Al Hilal",
+      "games": 3,
+      "close_games": 1,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "Al Hilal vs Al Fayha",
+      "games": 3,
+      "close_games": 1,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "Al Raed vs Al Wehdat",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Al Wehdat vs Al Raed",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Al Raed vs Al Wehda",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Al Wehda vs Al Raed",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Abha vs Al Shabab",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Al Shabab vs Abha",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Al Adalah vs Al Tai",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Al Tai vs Al Adalah",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Al Khaleej vs Damac",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Damac vs Al Khaleej",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Al Nassr vs Al Taawoun",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Al Taawoun vs Al Nassr",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Al Ettifaq vs Al Ittihad",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Al Ittihad vs Al Ettifaq",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Al Fateh vs Al Hilal",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Al Hilal vs Al Fateh",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Al Adalah vs Al Khaleej",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Al Khaleej vs Al Adalah",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Al Shabab vs Al Tai",
+      "games": 2,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Al Tai vs Al Shabab",
+      "games": 2,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Abha vs Al Wehda",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Al Wehda vs Abha",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Al Batin vs Al Ettifaq",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Al Ettifaq vs Al Batin",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Al Ittihad vs Al Raed",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Al Raed vs Al Ittihad",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Al Fayha vs Al Taawoun",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Al Taawoun vs Al Fayha",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Al Nassr vs Damac",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Damac vs Al Nassr",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Al Fateh vs Al Tai",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Al Tai vs Al Fateh",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Al Adalah vs Al Shabab",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Al Shabab vs Al Adalah",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Al Batin vs Al Nassr",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Al Nassr vs Al Batin",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Al Ettifaq vs Al Raed",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Al Raed vs Al Ettifaq",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Al Ittihad vs Al Khaleej",
+      "games": 2,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Al Khaleej vs Al Ittihad",
+      "games": 2,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Abha vs Al Fayha",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Al Fayha vs Abha",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Al Taawoun vs Damac",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Damac vs Al Taawoun",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Al Hilal vs Al Wehda",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Al Wehda vs Al Hilal",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Al Adalah vs Al Raed",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Al Raed vs Al Adalah",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Al Tai vs Damac",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Damac vs Al Tai",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Al Batin vs Al Khaleej",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Al Khaleej vs Al Batin",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Al Ettifaq vs Al Wehda",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Al Wehda vs Al Ettifaq",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Al Fayha vs Al Shabab",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Al Shabab vs Al Fayha",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Al Hilal vs Al Taawoun",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Al Taawoun vs Al Hilal",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Abha vs Al Fateh",
+      "games": 2,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Al Fateh vs Abha",
+      "games": 2,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Al Ittihad vs Al Nassr",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Al Nassr vs Al Ittihad",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Al Taawoun vs Al Wehda",
+      "games": 3,
+      "close_games": 1,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "Al Wehda vs Al Taawoun",
+      "games": 3,
+      "close_games": 1,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "Al Khaleej vs Al Tai",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Al Tai vs Al Khaleej",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Al Batin vs Damac",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Damac vs Al Batin",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Al Ettifaq vs Al Hilal",
+      "games": 3,
+      "close_games": 1,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "Al Hilal vs Al Ettifaq",
+      "games": 3,
+      "close_games": 1,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "Al Raed vs Al Shabab",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Al Shabab vs Al Raed",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Abha vs Al Nassr",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Al Nassr vs Abha",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Al Adalah vs Al Fayha",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Al Fayha vs Al Adalah",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Al Fateh vs Al Ittihad",
+      "games": 3,
+      "close_games": 1,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "Al Ittihad vs Al Fateh",
+      "games": 3,
+      "close_games": 1,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "Al Raed vs Al Tai",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Al Tai vs Al Raed",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Al Hilal vs Al Shabab",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Al Shabab vs Al Hilal",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Al Batin vs Al Wehda",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Al Wehda vs Al Batin",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Abha vs Al Taawoun",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Al Taawoun vs Abha",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Al Ittihad vs Damac",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Damac vs Al Ittihad",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Al Ettifaq vs Al Fayha",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Al Fayha vs Al Ettifaq",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Al Fateh vs Al Khaleej",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Al Khaleej vs Al Fateh",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Al Adalah vs Al Nassr",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Al Nassr vs Al Adalah",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Al Hilal vs Al Tai",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Al Tai vs Al Hilal",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Al Fateh vs Al Raed",
+      "games": 3,
+      "close_games": 3,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Al Raed vs Al Fateh",
+      "games": 3,
+      "close_games": 3,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Al Khaleej vs Al Shabab",
+      "games": 3,
+      "close_games": 1,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "Al Shabab vs Al Khaleej",
+      "games": 3,
+      "close_games": 1,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "Abha vs Al Batin",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Al Batin vs Abha",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Al Fayha vs Al Nassr",
+      "games": 3,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Al Nassr vs Al Fayha",
+      "games": 3,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Al Adalah vs Damac",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Damac vs Al Adalah",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Al Ettifaq vs Al Taawoun",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Al Taawoun vs Al Ettifaq",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Al Ittihad vs Al Wehda",
+      "games": 3,
+      "close_games": 1,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "Al Wehda vs Al Ittihad",
+      "games": 3,
+      "close_games": 1,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "Al Fayha vs Al Khaleej",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Al Khaleej vs Al Fayha",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Al Ettifaq vs Damac",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Damac vs Al Ettifaq",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Al Adalah vs Al Taawoun",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Al Taawoun vs Al Adalah",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Abha vs Al Tai",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Al Tai vs Abha",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Al Nassr vs Al Raed",
+      "games": 3,
+      "close_games": 1,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "Al Raed vs Al Nassr",
+      "games": 3,
+      "close_games": 1,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "Al Batin vs Al Hilal",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Al Hilal vs Al Batin",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Al Wehda vs Damac",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Damac vs Al Wehda",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Abha vs Al Adalah",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Al Adalah vs Abha",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Al Ettifaq vs Al Khaleej",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Al Khaleej vs Al Ettifaq",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Al Batin vs Al Raed",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Al Raed vs Al Batin",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Al Fateh vs Al Shabab",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Al Shabab vs Al Fateh",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Al Fayha vs Al Tai",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Al Tai vs Al Fayha",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Al Ittihad vs Al Taawoun",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Al Taawoun vs Al Ittihad",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Al Hilal vs Al Nassr",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Al Nassr vs Al Hilal",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Al Fateh vs Al Fayha",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Al Fayha vs Al Fateh",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Al Adalah vs Al Wehda",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Al Wehda vs Al Adalah",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Al Ettifaq vs Al Shabab",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Al Shabab vs Al Ettifaq",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Abha vs Al Ittihad",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Al Ittihad vs Abha",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Al Batin vs Al Tai",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Al Tai vs Al Batin",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Al Raed vs Al Taawoun",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Al Taawoun vs Al Raed",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Al Hilal vs Damac",
+      "games": 3,
+      "close_games": 3,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Damac vs Al Hilal",
+      "games": 3,
+      "close_games": 3,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Al Khaleej vs Al Nassr",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Al Nassr vs Al Khaleej",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Al Raed vs Damac",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Damac vs Al Raed",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Al Hilal vs Al Ittihad",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Al Ittihad vs Al Hilal",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Al Shabab vs Al Wehda",
+      "games": 3,
+      "close_games": 1,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "Al Wehda vs Al Shabab",
+      "games": 3,
+      "close_games": 1,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "Al Adalah vs Al Fateh",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Al Fateh vs Al Adalah",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Al Nassr vs Al Tai",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Al Tai vs Al Nassr",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Al Khaleej vs Al Taawoun",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Al Taawoun vs Al Khaleej",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Al Batin vs Al Fayha",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Al Fayha vs Al Batin",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Abha vs Al Ettifaq",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Al Ettifaq vs Abha",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Al Ittihad vs Al Shabab",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Al Shabab vs Al Ittihad",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Al Hilal vs Al Raed",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Al Raed vs Al Hilal",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Al Ettifaq vs Al Fateh",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Al Fateh vs Al Ettifaq",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Al Taawoun vs Al Tai",
+      "games": 2,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Al Tai vs Al Taawoun",
+      "games": 2,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Abha vs Damac",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Damac vs Abha",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Al Ahli vs Al Hazem",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Al Hazem vs Al Ahli",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Al Riyadh vs Al Wehda",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Al Wehda vs Al Riyadh",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Abha vs Al Hilal",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Al Hilal vs Abha",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Al Ettifaq vs Al Nassr",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Al Nassr vs Al Ettifaq",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Al Okhdood vs Al Shabab",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Al Shabab vs Al Okhdood",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Al Riyadh vs Damac",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Damac vs Al Riyadh",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Al Ahli vs Al Khaleej",
+      "games": 2,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Al Khaleej vs Al Ahli",
+      "games": 2,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Al Fateh vs Al Okhdood",
+      "games": 2,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Al Okhdood vs Al Fateh",
+      "games": 2,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Al Ettifaq vs Al Hazem",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Al Hazem vs Al Ettifaq",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Al Ittihad vs Al Tai",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Al Tai vs Al Ittihad",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Al Tai vs Al Wehda",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Al Wehda vs Al Tai",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Al Ahli vs Al Okhdood",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Al Okhdood vs Al Ahli",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Al Ittihad vs Al Riyadh",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Al Riyadh vs Al Ittihad",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Al Fayha vs Al Hazem",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Al Hazem vs Al Fayha",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Al Fateh vs Al Nassr",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Al Nassr vs Al Fateh",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Al Shabab vs Damac",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Damac vs Al Shabab",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Al Raed vs Al Riyadh",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Al Riyadh vs Al Raed",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Al Okhdood vs Al Taawoun",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Al Taawoun vs Al Okhdood",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Al Fateh vs Damac",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Damac vs Al Fateh",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Al Ahli vs Al Tai",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Al Tai vs Al Ahli",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Al Hazem vs Al Khaleej",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Al Khaleej vs Al Hazem",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Al Nassr vs Al Shabab",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Al Shabab vs Al Nassr",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Al Fayha vs Al Raed",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Al Raed vs Al Fayha",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Al Okhdood vs Al Riyadh",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Al Riyadh vs Al Okhdood",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Al Ahli vs Al Fateh",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Al Fateh vs Al Ahli",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Al Hazem vs Al Nassr",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Al Nassr vs Al Hazem",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Al Ittihad vs Al Okhdood",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Al Okhdood vs Al Ittihad",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Al Hilal vs Al Riyadh",
+      "games": 2,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Al Riyadh vs Al Hilal",
+      "games": 2,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Al Hazem vs Al Tai",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Al Tai vs Al Hazem",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Al Ahli vs Al Taawoun",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Al Taawoun vs Al Ahli",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Al Hazem vs Al Shabab",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Al Shabab vs Al Hazem",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Al Khaleej vs Al Okhdood",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Al Okhdood vs Al Khaleej",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Al Fayha vs Al Riyadh",
+      "games": 2,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Al Riyadh vs Al Fayha",
+      "games": 2,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Al Ahli vs Al Nassr",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Al Nassr vs Al Ahli",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Al Fayha vs Al Ittihad",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Al Ittihad vs Al Fayha",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Al Hazem vs Al Taawoun",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Al Taawoun vs Al Hazem",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Abha vs Al Riyadh",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Al Riyadh vs Abha",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Al Fateh vs Al Wehda",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Al Wehda vs Al Fateh",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Al Okhdood vs Al Raed",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Al Raed vs Al Okhdood",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Al Ahli vs Al Ettifaq",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Al Ettifaq vs Al Ahli",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Al Hazem vs Damac",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Damac vs Al Hazem",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Al Riyadh vs Al Shabab",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Al Shabab vs Al Riyadh",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Al Ahli vs Al Ittihad",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Al Ittihad vs Al Ahli",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Al Hilal vs Al Okhdood",
+      "games": 2,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Al Okhdood vs Al Hilal",
+      "games": 2,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Al Khaleej vs Al Raed",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Al Raed vs Al Khaleej",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Al Fayha vs Al Wehda",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Al Wehda vs Al Fayha",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Al Fayha vs Al Okhdood",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Al Okhdood vs Al Fayha",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Al Hazem vs Al Raed",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Al Raed vs Al Hazem",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Al Ahli vs Al Wehda",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Al Wehda vs Al Ahli",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Al Ettifaq vs Al Riyadh",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Al Riyadh vs Al Ettifaq",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Al Okhdood vs Damac",
+      "games": 2,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Damac vs Al Okhdood",
+      "games": 2,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Al Hazem vs Al Ittihad",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Al Ittihad vs Al Hazem",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Al Riyadh vs Al Tai",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Al Tai vs Al Riyadh",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Al Ahli vs Al Hilal",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Al Hilal vs Al Ahli",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Al Ahli vs Al Orobah",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Al Orobah vs Al Ahli",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Al Fateh vs Al Qadsiah",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Al Qadsiah vs Al Fateh",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Al Ittihad vs Al Kholood",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Al Kholood vs Al Ittihad",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Al Qadsiah vs Al Raed",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Al Raed vs Al Qadsiah",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Al Ettifaq vs Al Okhdood",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Al Okhdood vs Al Ettifaq",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Al Orobah vs Al Wehda",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Al Wehda vs Al Orobah",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Al Kholood vs Al Riyadh",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Al Riyadh vs Al Kholood",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Al Qadsiah vs Al Shabab",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Al Shabab vs Al Qadsiah",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Al Kholood vs Al Orobah",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Al Orobah vs Al Kholood",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Al Okhdood vs Al Qadsiah",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Al Qadsiah vs Al Okhdood",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Al Fateh vs Al Orobah",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Al Orobah vs Al Fateh",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Al Kholood vs Al Wehda",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Al Wehda vs Al Kholood",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Al Ahli vs Damac",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Damac vs Al Ahli",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Al Shabab vs Al Taawoun",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Al Taawoun vs Al Shabab",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Al Ahli vs Al Qadsiah",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Al Qadsiah vs Al Ahli",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Al Orobah vs Damac",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Damac vs Al Orobah",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Al Hilal vs Al Kholood",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Al Kholood vs Al Hilal",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Al Khaleej vs Al Kholood",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Al Kholood vs Al Khaleej",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Al Qadsiah vs Al Riyadh",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Al Riyadh vs Al Qadsiah",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Al Nassr vs Al Orobah",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Al Orobah vs Al Nassr",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Al Ittihad vs Al Qadsiah",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Al Qadsiah vs Al Ittihad",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Al Fateh vs Al Kholood",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Al Kholood vs Al Fateh",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Al Ettifaq vs Al Orobah",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Al Orobah vs Al Ettifaq",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Al Orobah vs Al Shabab",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Al Shabab vs Al Orobah",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Al Khaleej vs Al Wehda",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Al Wehda vs Al Khaleej",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Al Qadsiah vs Damac",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Damac vs Al Qadsiah",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Al Kholood vs Al Nassr",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Al Nassr vs Al Kholood",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Al Okhdood vs Al Orobah",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Al Orobah vs Al Okhdood",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Al Kholood vs Al Taawoun",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Al Taawoun vs Al Kholood",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Al Ettifaq vs Al Qadsiah",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Al Qadsiah vs Al Ettifaq",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Al Fayha vs Al Qadsiah",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Al Qadsiah vs Al Fayha",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Al Kholood vs Al Shabab",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Al Shabab vs Al Kholood",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Al Ittihad vs Al Orobah",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Al Orobah vs Al Ittihad",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Al Ahli vs Al Raed",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Al Raed vs Al Ahli",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Al Nassr vs Al Riyadh",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Al Riyadh vs Al Nassr",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Al Ahli vs Al Fayha",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Al Fayha vs Al Ahli",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Al Nassr vs Al Qadsiah",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Al Qadsiah vs Al Nassr",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Al Orobah vs Al Raed",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Al Raed vs Al Orobah",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Al Kholood vs Damac",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Damac vs Al Kholood",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Al Fayha vs Al Orobah",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Al Orobah vs Al Fayha",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    }
+  ],
+  "form_strengths": [
+    {
+      "team": "Abha",
+      "strength": 67.3
+    },
+    {
+      "team": "Al Adalah",
+      "strength": 65.3
+    },
+    {
+      "team": "Al Ahli",
+      "strength": 80.7
+    },
+    {
+      "team": "Al Batin",
+      "strength": 48.0
+    },
+    {
+      "team": "Al Ettifaq",
+      "strength": 54.0
+    },
+    {
+      "team": "Al Fateh",
+      "strength": 54.0
+    },
+    {
+      "team": "Al Fayha",
+      "strength": 52.0
+    },
+    {
+      "team": "Al Hazem",
+      "strength": 60.7
+    },
+    {
+      "team": "Al Hilal",
+      "strength": 66.7
+    },
+    {
+      "team": "Al Ittihad",
+      "strength": 88.0
+    },
+    {
+      "team": "Al Khaleej",
+      "strength": 87.3
+    },
+    {
+      "team": "Al Kholood",
+      "strength": 54.0
+    },
+    {
+      "team": "Al Nassr",
+      "strength": 65.3
+    },
+    {
+      "team": "Al Okhdood",
+      "strength": 62.0
+    },
+    {
+      "team": "Al Orobah",
+      "strength": 63.3
+    },
+    {
+      "team": "Al Qadsiah",
+      "strength": 91.3
+    },
+    {
+      "team": "Al Raed",
+      "strength": 70.7
+    },
+    {
+      "team": "Al Riyadh",
+      "strength": 56.7
+    },
+    {
+      "team": "Al Shabab",
+      "strength": 78.0
+    },
+    {
+      "team": "Al Taawoun",
+      "strength": 64.7
+    },
+    {
+      "team": "Al Tai",
+      "strength": 63.3
+    },
+    {
+      "team": "Al Wehda",
+      "strength": 65.3
+    },
+    {
+      "team": "Damac",
+      "strength": 80.0
+    }
+  ],
+  "team_margin_ratings": [
+    {
+      "team": "Abha",
+      "avg_margin": -0.9
+    },
+    {
+      "team": "Al Adalah",
+      "avg_margin": -1
+    },
+    {
+      "team": "Al Ahli",
+      "avg_margin": 0.4
+    },
+    {
+      "team": "Al Batin",
+      "avg_margin": -1.9
+    },
+    {
+      "team": "Al Ettifaq",
+      "avg_margin": -0.7
+    },
+    {
+      "team": "Al Fateh",
+      "avg_margin": -0.9
+    },
+    {
+      "team": "Al Fayha",
+      "avg_margin": -1
+    },
+    {
+      "team": "Al Hazem",
+      "avg_margin": -1.3
+    },
+    {
+      "team": "Al Hilal",
+      "avg_margin": 1.5
+    },
+    {
+      "team": "Al Ittihad",
+      "avg_margin": 1.7
+    },
+    {
+      "team": "Al Khaleej",
+      "avg_margin": 0
+    },
+    {
+      "team": "Al Kholood",
+      "avg_margin": -0.7
+    },
+    {
+      "team": "Al Nassr",
+      "avg_margin": 1.2
+    },
+    {
+      "team": "Al Okhdood",
+      "avg_margin": 0
+    },
+    {
+      "team": "Al Orobah",
+      "avg_margin": -1
+    },
+    {
+      "team": "Al Qadsiah",
+      "avg_margin": 0.4
+    },
+    {
+      "team": "Al Raed",
+      "avg_margin": 0
+    },
+    {
+      "team": "Al Riyadh",
+      "avg_margin": -0.2
+    },
+    {
+      "team": "Al Shabab",
+      "avg_margin": 0.9
+    },
+    {
+      "team": "Al Taawoun",
+      "avg_margin": 0
+    },
+    {
+      "team": "Al Tai",
+      "avg_margin": -1.2
+    },
+    {
+      "team": "Al Wehda",
+      "avg_margin": -1.2
+    },
+    {
+      "team": "Damac",
+      "avg_margin": 0
+    }
+  ]
+}

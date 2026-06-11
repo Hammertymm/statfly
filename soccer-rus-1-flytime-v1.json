@@ -1,0 +1,5564 @@
+{
+  "meta": {
+    "sport": "Russian Premier League",
+    "league": "rus.1",
+    "engine": "v1-bootstrap",
+    "formula": "close*0.35 + form_balance*0.25 + margin_balance*0.25 + matchup*0.15",
+    "close_margin": 1,
+    "games_sampled": 600,
+    "week_chunk": 8,
+    "built": "2026-06-11"
+  },
+  "matchup_ratings": [
+    {
+      "matchup": "FC Ural Ekaterinburg vs Rostov",
+      "games_played": 4,
+      "avg_margin": 0.25,
+      "avg_excitement": 97.5
+    },
+    {
+      "matchup": "Rostov vs FC Ural Ekaterinburg",
+      "games_played": 4,
+      "avg_margin": 0.25,
+      "avg_excitement": 97.5
+    },
+    {
+      "matchup": "Krylia Sovetov vs Lokomotiv Moscow",
+      "games_played": 5,
+      "avg_margin": 0.8,
+      "avg_excitement": 78.0
+    },
+    {
+      "matchup": "Lokomotiv Moscow vs Krylia Sovetov",
+      "games_played": 5,
+      "avg_margin": 0.8,
+      "avg_excitement": 78.0
+    },
+    {
+      "matchup": "Dinamo Moscow vs Spartak Moscow",
+      "games_played": 6,
+      "avg_margin": 0.33,
+      "avg_excitement": 96.67
+    },
+    {
+      "matchup": "Spartak Moscow vs Dinamo Moscow",
+      "games_played": 6,
+      "avg_margin": 0.33,
+      "avg_excitement": 96.67
+    },
+    {
+      "matchup": "Krasnodar vs Zenit St Petersburg",
+      "games_played": 6,
+      "avg_margin": 1,
+      "avg_excitement": 66.67
+    },
+    {
+      "matchup": "Zenit St Petersburg vs Krasnodar",
+      "games_played": 6,
+      "avg_margin": 1,
+      "avg_excitement": 66.67
+    },
+    {
+      "matchup": "FC Arsenal Tula vs FC Tambov",
+      "games_played": 2,
+      "avg_margin": 0.5,
+      "avg_excitement": 95.0
+    },
+    {
+      "matchup": "FC Tambov vs FC Arsenal Tula",
+      "games_played": 2,
+      "avg_margin": 0.5,
+      "avg_excitement": 95.0
+    },
+    {
+      "matchup": "CSKA Moscow vs Rubin Kazan",
+      "games_played": 5,
+      "avg_margin": 0.6,
+      "avg_excitement": 94.0
+    },
+    {
+      "matchup": "Rubin Kazan vs CSKA Moscow",
+      "games_played": 5,
+      "avg_margin": 0.6,
+      "avg_excitement": 94.0
+    },
+    {
+      "matchup": "FC Ufa vs Sochi",
+      "games_played": 3,
+      "avg_margin": 0.67,
+      "avg_excitement": 70.0
+    },
+    {
+      "matchup": "Sochi vs FC Ufa",
+      "games_played": 3,
+      "avg_margin": 0.67,
+      "avg_excitement": 70.0
+    },
+    {
+      "matchup": "Akhmat Grozny vs Gazovik Orenburg",
+      "games_played": 3,
+      "avg_margin": 2,
+      "avg_excitement": 56.67
+    },
+    {
+      "matchup": "Gazovik Orenburg vs Akhmat Grozny",
+      "games_played": 3,
+      "avg_margin": 2,
+      "avg_excitement": 56.67
+    },
+    {
+      "matchup": "FC Tambov vs Gazovik Orenburg",
+      "games_played": 1,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "Gazovik Orenburg vs FC Tambov",
+      "games_played": 1,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "Dinamo Moscow vs Zenit St Petersburg",
+      "games_played": 6,
+      "avg_margin": 1.83,
+      "avg_excitement": 35.0
+    },
+    {
+      "matchup": "Zenit St Petersburg vs Dinamo Moscow",
+      "games_played": 6,
+      "avg_margin": 1.83,
+      "avg_excitement": 35.0
+    },
+    {
+      "matchup": "Krasnodar vs Rubin Kazan",
+      "games_played": 4,
+      "avg_margin": 1.75,
+      "avg_excitement": 30.0
+    },
+    {
+      "matchup": "Rubin Kazan vs Krasnodar",
+      "games_played": 4,
+      "avg_margin": 1.75,
+      "avg_excitement": 30.0
+    },
+    {
+      "matchup": "FC Arsenal Tula vs FC Ufa",
+      "games_played": 2,
+      "avg_margin": 0.5,
+      "avg_excitement": 95.0
+    },
+    {
+      "matchup": "FC Ufa vs FC Arsenal Tula",
+      "games_played": 2,
+      "avg_margin": 0.5,
+      "avg_excitement": 95.0
+    },
+    {
+      "matchup": "FC Ural Ekaterinburg vs Lokomotiv Moscow",
+      "games_played": 4,
+      "avg_margin": 1.5,
+      "avg_excitement": 50.0
+    },
+    {
+      "matchup": "Lokomotiv Moscow vs FC Ural Ekaterinburg",
+      "games_played": 4,
+      "avg_margin": 1.5,
+      "avg_excitement": 50.0
+    },
+    {
+      "matchup": "CSKA Moscow vs Sochi",
+      "games_played": 4,
+      "avg_margin": 1.25,
+      "avg_excitement": 52.5
+    },
+    {
+      "matchup": "Sochi vs CSKA Moscow",
+      "games_played": 4,
+      "avg_margin": 1.25,
+      "avg_excitement": 52.5
+    },
+    {
+      "matchup": "Akhmat Grozny vs Spartak Moscow",
+      "games_played": 4,
+      "avg_margin": 0.75,
+      "avg_excitement": 75.0
+    },
+    {
+      "matchup": "Spartak Moscow vs Akhmat Grozny",
+      "games_played": 4,
+      "avg_margin": 0.75,
+      "avg_excitement": 75.0
+    },
+    {
+      "matchup": "Krylia Sovetov vs Rostov",
+      "games_played": 4,
+      "avg_margin": 2,
+      "avg_excitement": 45.0
+    },
+    {
+      "matchup": "Rostov vs Krylia Sovetov",
+      "games_played": 4,
+      "avg_margin": 2,
+      "avg_excitement": 45.0
+    },
+    {
+      "matchup": "Gazovik Orenburg vs Sochi",
+      "games_played": 3,
+      "avg_margin": 2,
+      "avg_excitement": 33.33
+    },
+    {
+      "matchup": "Sochi vs Gazovik Orenburg",
+      "games_played": 3,
+      "avg_margin": 2,
+      "avg_excitement": 33.33
+    },
+    {
+      "matchup": "FC Ural Ekaterinburg vs Krylia Sovetov",
+      "games_played": 3,
+      "avg_margin": 1.67,
+      "avg_excitement": 36.67
+    },
+    {
+      "matchup": "Krylia Sovetov vs FC Ural Ekaterinburg",
+      "games_played": 3,
+      "avg_margin": 1.67,
+      "avg_excitement": 36.67
+    },
+    {
+      "matchup": "FC Tambov vs Krasnodar",
+      "games_played": 2,
+      "avg_margin": 1.5,
+      "avg_excitement": 50.0
+    },
+    {
+      "matchup": "Krasnodar vs FC Tambov",
+      "games_played": 2,
+      "avg_margin": 1.5,
+      "avg_excitement": 50.0
+    },
+    {
+      "matchup": "Akhmat Grozny vs Zenit St Petersburg",
+      "games_played": 6,
+      "avg_margin": 0.67,
+      "avg_excitement": 81.67
+    },
+    {
+      "matchup": "Zenit St Petersburg vs Akhmat Grozny",
+      "games_played": 6,
+      "avg_margin": 0.67,
+      "avg_excitement": 81.67
+    },
+    {
+      "matchup": "FC Arsenal Tula vs Rubin Kazan",
+      "games_played": 2,
+      "avg_margin": 1.5,
+      "avg_excitement": 50.0
+    },
+    {
+      "matchup": "Rubin Kazan vs FC Arsenal Tula",
+      "games_played": 2,
+      "avg_margin": 1.5,
+      "avg_excitement": 50.0
+    },
+    {
+      "matchup": "FC Ufa vs Rostov",
+      "games_played": 2,
+      "avg_margin": 1.5,
+      "avg_excitement": 50.0
+    },
+    {
+      "matchup": "Rostov vs FC Ufa",
+      "games_played": 2,
+      "avg_margin": 1.5,
+      "avg_excitement": 50.0
+    },
+    {
+      "matchup": "Dinamo Moscow vs Lokomotiv Moscow",
+      "games_played": 5,
+      "avg_margin": 1.4,
+      "avg_excitement": 58.0
+    },
+    {
+      "matchup": "Lokomotiv Moscow vs Dinamo Moscow",
+      "games_played": 5,
+      "avg_margin": 1.4,
+      "avg_excitement": 58.0
+    },
+    {
+      "matchup": "CSKA Moscow vs Spartak Moscow",
+      "games_played": 6,
+      "avg_margin": 1,
+      "avg_excitement": 66.67
+    },
+    {
+      "matchup": "Spartak Moscow vs CSKA Moscow",
+      "games_played": 6,
+      "avg_margin": 1,
+      "avg_excitement": 66.67
+    },
+    {
+      "matchup": "Dinamo Moscow vs FC Tambov",
+      "games_played": 2,
+      "avg_margin": 1.5,
+      "avg_excitement": 50.0
+    },
+    {
+      "matchup": "FC Tambov vs Dinamo Moscow",
+      "games_played": 2,
+      "avg_margin": 1.5,
+      "avg_excitement": 50.0
+    },
+    {
+      "matchup": "FC Ufa vs Zenit St Petersburg",
+      "games_played": 3,
+      "avg_margin": 2.33,
+      "avg_excitement": 53.33
+    },
+    {
+      "matchup": "Zenit St Petersburg vs FC Ufa",
+      "games_played": 3,
+      "avg_margin": 2.33,
+      "avg_excitement": 53.33
+    },
+    {
+      "matchup": "Krasnodar vs Lokomotiv Moscow",
+      "games_played": 6,
+      "avg_margin": 2,
+      "avg_excitement": 45.0
+    },
+    {
+      "matchup": "Lokomotiv Moscow vs Krasnodar",
+      "games_played": 6,
+      "avg_margin": 2,
+      "avg_excitement": 45.0
+    },
+    {
+      "matchup": "Akhmat Grozny vs CSKA Moscow",
+      "games_played": 4,
+      "avg_margin": 2.5,
+      "avg_excitement": 5.0
+    },
+    {
+      "matchup": "CSKA Moscow vs Akhmat Grozny",
+      "games_played": 4,
+      "avg_margin": 2.5,
+      "avg_excitement": 5.0
+    },
+    {
+      "matchup": "Krylia Sovetov vs Spartak Moscow",
+      "games_played": 5,
+      "avg_margin": 2.6,
+      "avg_excitement": 18.0
+    },
+    {
+      "matchup": "Spartak Moscow vs Krylia Sovetov",
+      "games_played": 5,
+      "avg_margin": 2.6,
+      "avg_excitement": 18.0
+    },
+    {
+      "matchup": "Rostov vs Rubin Kazan",
+      "games_played": 5,
+      "avg_margin": 2,
+      "avg_excitement": 38.0
+    },
+    {
+      "matchup": "Rubin Kazan vs Rostov",
+      "games_played": 5,
+      "avg_margin": 2,
+      "avg_excitement": 38.0
+    },
+    {
+      "matchup": "FC Arsenal Tula vs Gazovik Orenburg",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Gazovik Orenburg vs FC Arsenal Tula",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "FC Ural Ekaterinburg vs Sochi",
+      "games_played": 5,
+      "avg_margin": 1.6,
+      "avg_excitement": 42.0
+    },
+    {
+      "matchup": "Sochi vs FC Ural Ekaterinburg",
+      "games_played": 5,
+      "avg_margin": 1.6,
+      "avg_excitement": 42.0
+    },
+    {
+      "matchup": "Dinamo Moscow vs Krylia Sovetov",
+      "games_played": 4,
+      "avg_margin": 1,
+      "avg_excitement": 72.5
+    },
+    {
+      "matchup": "Krylia Sovetov vs Dinamo Moscow",
+      "games_played": 4,
+      "avg_margin": 1,
+      "avg_excitement": 72.5
+    },
+    {
+      "matchup": "FC Ufa vs Gazovik Orenburg",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Gazovik Orenburg vs FC Ufa",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Rubin Kazan vs Sochi",
+      "games_played": 1,
+      "avg_margin": 3,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Sochi vs Rubin Kazan",
+      "games_played": 1,
+      "avg_margin": 3,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Lokomotiv Moscow vs Rostov",
+      "games_played": 5,
+      "avg_margin": 0.8,
+      "avg_excitement": 92.0
+    },
+    {
+      "matchup": "Rostov vs Lokomotiv Moscow",
+      "games_played": 5,
+      "avg_margin": 0.8,
+      "avg_excitement": 92.0
+    },
+    {
+      "matchup": "Akhmat Grozny vs FC Tambov",
+      "games_played": 2,
+      "avg_margin": 0.5,
+      "avg_excitement": 95.0
+    },
+    {
+      "matchup": "FC Tambov vs Akhmat Grozny",
+      "games_played": 2,
+      "avg_margin": 0.5,
+      "avg_excitement": 95.0
+    },
+    {
+      "matchup": "FC Ural Ekaterinburg vs Krasnodar",
+      "games_played": 2,
+      "avg_margin": 2,
+      "avg_excitement": 10.0
+    },
+    {
+      "matchup": "Krasnodar vs FC Ural Ekaterinburg",
+      "games_played": 2,
+      "avg_margin": 2,
+      "avg_excitement": 10.0
+    },
+    {
+      "matchup": "CSKA Moscow vs FC Arsenal Tula",
+      "games_played": 3,
+      "avg_margin": 1.67,
+      "avg_excitement": 60.0
+    },
+    {
+      "matchup": "FC Arsenal Tula vs CSKA Moscow",
+      "games_played": 3,
+      "avg_margin": 1.67,
+      "avg_excitement": 60.0
+    },
+    {
+      "matchup": "Spartak Moscow vs Zenit St Petersburg",
+      "games_played": 7,
+      "avg_margin": 1.71,
+      "avg_excitement": 52.86
+    },
+    {
+      "matchup": "Zenit St Petersburg vs Spartak Moscow",
+      "games_played": 7,
+      "avg_margin": 1.71,
+      "avg_excitement": 52.86
+    },
+    {
+      "matchup": "FC Arsenal Tula vs Zenit St Petersburg",
+      "games_played": 4,
+      "avg_margin": 1.25,
+      "avg_excitement": 52.5
+    },
+    {
+      "matchup": "Zenit St Petersburg vs FC Arsenal Tula",
+      "games_played": 4,
+      "avg_margin": 1.25,
+      "avg_excitement": 52.5
+    },
+    {
+      "matchup": "FC Ural Ekaterinburg vs Spartak Moscow",
+      "games_played": 5,
+      "avg_margin": 1,
+      "avg_excitement": 76.0
+    },
+    {
+      "matchup": "Spartak Moscow vs FC Ural Ekaterinburg",
+      "games_played": 5,
+      "avg_margin": 1,
+      "avg_excitement": 76.0
+    },
+    {
+      "matchup": "Lokomotiv Moscow vs Sochi",
+      "games_played": 5,
+      "avg_margin": 1.6,
+      "avg_excitement": 70.0
+    },
+    {
+      "matchup": "Sochi vs Lokomotiv Moscow",
+      "games_played": 5,
+      "avg_margin": 1.6,
+      "avg_excitement": 70.0
+    },
+    {
+      "matchup": "Gazovik Orenburg vs Rubin Kazan",
+      "games_played": 2,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Rubin Kazan vs Gazovik Orenburg",
+      "games_played": 2,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "CSKA Moscow vs FC Tambov",
+      "games_played": 1,
+      "avg_margin": 2,
+      "avg_excitement": 10.0
+    },
+    {
+      "matchup": "FC Tambov vs CSKA Moscow",
+      "games_played": 1,
+      "avg_margin": 2,
+      "avg_excitement": 10.0
+    },
+    {
+      "matchup": "Krasnodar vs Krylia Sovetov",
+      "games_played": 5,
+      "avg_margin": 1,
+      "avg_excitement": 76.0
+    },
+    {
+      "matchup": "Krylia Sovetov vs Krasnodar",
+      "games_played": 5,
+      "avg_margin": 1,
+      "avg_excitement": 76.0
+    },
+    {
+      "matchup": "Dinamo Moscow vs FC Ufa",
+      "games_played": 1,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "FC Ufa vs Dinamo Moscow",
+      "games_played": 1,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "Akhmat Grozny vs Rostov",
+      "games_played": 7,
+      "avg_margin": 1.57,
+      "avg_excitement": 64.29
+    },
+    {
+      "matchup": "Rostov vs Akhmat Grozny",
+      "games_played": 7,
+      "avg_margin": 1.57,
+      "avg_excitement": 64.29
+    },
+    {
+      "matchup": "FC Ufa vs Spartak Moscow",
+      "games_played": 2,
+      "avg_margin": 1.5,
+      "avg_excitement": 50.0
+    },
+    {
+      "matchup": "Spartak Moscow vs FC Ufa",
+      "games_played": 2,
+      "avg_margin": 1.5,
+      "avg_excitement": 50.0
+    },
+    {
+      "matchup": "Akhmat Grozny vs Krylia Sovetov",
+      "games_played": 3,
+      "avg_margin": 0.33,
+      "avg_excitement": 96.67
+    },
+    {
+      "matchup": "Krylia Sovetov vs Akhmat Grozny",
+      "games_played": 3,
+      "avg_margin": 0.33,
+      "avg_excitement": 96.67
+    },
+    {
+      "matchup": "FC Tambov vs Rostov",
+      "games_played": 2,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Rostov vs FC Tambov",
+      "games_played": 2,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Rubin Kazan vs Zenit St Petersburg",
+      "games_played": 4,
+      "avg_margin": 2.75,
+      "avg_excitement": 20.0
+    },
+    {
+      "matchup": "Zenit St Petersburg vs Rubin Kazan",
+      "games_played": 4,
+      "avg_margin": 2.75,
+      "avg_excitement": 20.0
+    },
+    {
+      "matchup": "Gazovik Orenburg vs Lokomotiv Moscow",
+      "games_played": 4,
+      "avg_margin": 2.25,
+      "avg_excitement": 25.0
+    },
+    {
+      "matchup": "Lokomotiv Moscow vs Gazovik Orenburg",
+      "games_played": 4,
+      "avg_margin": 2.25,
+      "avg_excitement": 25.0
+    },
+    {
+      "matchup": "Dinamo Moscow vs Sochi",
+      "games_played": 6,
+      "avg_margin": 1.17,
+      "avg_excitement": 65.0
+    },
+    {
+      "matchup": "Sochi vs Dinamo Moscow",
+      "games_played": 6,
+      "avg_margin": 1.17,
+      "avg_excitement": 65.0
+    },
+    {
+      "matchup": "FC Arsenal Tula vs FC Ural Ekaterinburg",
+      "games_played": 3,
+      "avg_margin": 1,
+      "avg_excitement": 66.67
+    },
+    {
+      "matchup": "FC Ural Ekaterinburg vs FC Arsenal Tula",
+      "games_played": 3,
+      "avg_margin": 1,
+      "avg_excitement": 66.67
+    },
+    {
+      "matchup": "CSKA Moscow vs Krasnodar",
+      "games_played": 5,
+      "avg_margin": 1.2,
+      "avg_excitement": 74.0
+    },
+    {
+      "matchup": "Krasnodar vs CSKA Moscow",
+      "games_played": 5,
+      "avg_margin": 1.2,
+      "avg_excitement": 74.0
+    },
+    {
+      "matchup": "FC Tambov vs Krylia Sovetov",
+      "games_played": 1,
+      "avg_margin": 2,
+      "avg_excitement": 10.0
+    },
+    {
+      "matchup": "Krylia Sovetov vs FC Tambov",
+      "games_played": 1,
+      "avg_margin": 2,
+      "avg_excitement": 10.0
+    },
+    {
+      "matchup": "Dinamo Moscow vs Rostov",
+      "games_played": 4,
+      "avg_margin": 1.75,
+      "avg_excitement": 47.5
+    },
+    {
+      "matchup": "Rostov vs Dinamo Moscow",
+      "games_played": 4,
+      "avg_margin": 1.75,
+      "avg_excitement": 47.5
+    },
+    {
+      "matchup": "Lokomotiv Moscow vs Zenit St Petersburg",
+      "games_played": 4,
+      "avg_margin": 0.5,
+      "avg_excitement": 95.0
+    },
+    {
+      "matchup": "Zenit St Petersburg vs Lokomotiv Moscow",
+      "games_played": 4,
+      "avg_margin": 0.5,
+      "avg_excitement": 95.0
+    },
+    {
+      "matchup": "CSKA Moscow vs FC Ural Ekaterinburg",
+      "games_played": 4,
+      "avg_margin": 1.5,
+      "avg_excitement": 50.0
+    },
+    {
+      "matchup": "FC Ural Ekaterinburg vs CSKA Moscow",
+      "games_played": 4,
+      "avg_margin": 1.5,
+      "avg_excitement": 50.0
+    },
+    {
+      "matchup": "FC Ufa vs Rubin Kazan",
+      "games_played": 2,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "Rubin Kazan vs FC Ufa",
+      "games_played": 2,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "Gazovik Orenburg vs Spartak Moscow",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Spartak Moscow vs Gazovik Orenburg",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "FC Arsenal Tula vs Krasnodar",
+      "games_played": 2,
+      "avg_margin": 1.5,
+      "avg_excitement": 50.0
+    },
+    {
+      "matchup": "Krasnodar vs FC Arsenal Tula",
+      "games_played": 2,
+      "avg_margin": 1.5,
+      "avg_excitement": 50.0
+    },
+    {
+      "matchup": "Akhmat Grozny vs Sochi",
+      "games_played": 5,
+      "avg_margin": 1.4,
+      "avg_excitement": 58.0
+    },
+    {
+      "matchup": "Sochi vs Akhmat Grozny",
+      "games_played": 5,
+      "avg_margin": 1.4,
+      "avg_excitement": 58.0
+    },
+    {
+      "matchup": "Akhmat Grozny vs FC Ufa",
+      "games_played": 3,
+      "avg_margin": 1.33,
+      "avg_excitement": 63.33
+    },
+    {
+      "matchup": "FC Ufa vs Akhmat Grozny",
+      "games_played": 3,
+      "avg_margin": 1.33,
+      "avg_excitement": 63.33
+    },
+    {
+      "matchup": "Dinamo Moscow vs Gazovik Orenburg",
+      "games_played": 3,
+      "avg_margin": 1,
+      "avg_excitement": 66.67
+    },
+    {
+      "matchup": "Gazovik Orenburg vs Dinamo Moscow",
+      "games_played": 3,
+      "avg_margin": 1,
+      "avg_excitement": 66.67
+    },
+    {
+      "matchup": "FC Tambov vs Rubin Kazan",
+      "games_played": 2,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Rubin Kazan vs FC Tambov",
+      "games_played": 2,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Krylia Sovetov vs Sochi",
+      "games_played": 4,
+      "avg_margin": 1.5,
+      "avg_excitement": 50.0
+    },
+    {
+      "matchup": "Sochi vs Krylia Sovetov",
+      "games_played": 4,
+      "avg_margin": 1.5,
+      "avg_excitement": 50.0
+    },
+    {
+      "matchup": "FC Ural Ekaterinburg vs Zenit St Petersburg",
+      "games_played": 6,
+      "avg_margin": 2.33,
+      "avg_excitement": 30.0
+    },
+    {
+      "matchup": "Zenit St Petersburg vs FC Ural Ekaterinburg",
+      "games_played": 6,
+      "avg_margin": 2.33,
+      "avg_excitement": 30.0
+    },
+    {
+      "matchup": "FC Arsenal Tula vs Lokomotiv Moscow",
+      "games_played": 2,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Lokomotiv Moscow vs FC Arsenal Tula",
+      "games_played": 2,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "CSKA Moscow vs Rostov",
+      "games_played": 5,
+      "avg_margin": 1.2,
+      "avg_excitement": 46.0
+    },
+    {
+      "matchup": "Rostov vs CSKA Moscow",
+      "games_played": 5,
+      "avg_margin": 1.2,
+      "avg_excitement": 46.0
+    },
+    {
+      "matchup": "Krasnodar vs Spartak Moscow",
+      "games_played": 4,
+      "avg_margin": 2,
+      "avg_excitement": 27.5
+    },
+    {
+      "matchup": "Spartak Moscow vs Krasnodar",
+      "games_played": 4,
+      "avg_margin": 2,
+      "avg_excitement": 27.5
+    },
+    {
+      "matchup": "Akhmat Grozny vs Lokomotiv Moscow",
+      "games_played": 5,
+      "avg_margin": 1.8,
+      "avg_excitement": 54.0
+    },
+    {
+      "matchup": "Lokomotiv Moscow vs Akhmat Grozny",
+      "games_played": 5,
+      "avg_margin": 1.8,
+      "avg_excitement": 54.0
+    },
+    {
+      "matchup": "FC Tambov vs FC Ural Ekaterinburg",
+      "games_played": 2,
+      "avg_margin": 0.5,
+      "avg_excitement": 95.0
+    },
+    {
+      "matchup": "FC Ural Ekaterinburg vs FC Tambov",
+      "games_played": 2,
+      "avg_margin": 0.5,
+      "avg_excitement": 95.0
+    },
+    {
+      "matchup": "Rubin Kazan vs Spartak Moscow",
+      "games_played": 4,
+      "avg_margin": 1.5,
+      "avg_excitement": 50.0
+    },
+    {
+      "matchup": "Spartak Moscow vs Rubin Kazan",
+      "games_played": 4,
+      "avg_margin": 1.5,
+      "avg_excitement": 50.0
+    },
+    {
+      "matchup": "Rostov vs Zenit St Petersburg",
+      "games_played": 4,
+      "avg_margin": 3.5,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Zenit St Petersburg vs Rostov",
+      "games_played": 4,
+      "avg_margin": 3.5,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Gazovik Orenburg vs Krylia Sovetov",
+      "games_played": 3,
+      "avg_margin": 0.33,
+      "avg_excitement": 96.67
+    },
+    {
+      "matchup": "Krylia Sovetov vs Gazovik Orenburg",
+      "games_played": 3,
+      "avg_margin": 0.33,
+      "avg_excitement": 96.67
+    },
+    {
+      "matchup": "CSKA Moscow vs FC Ufa",
+      "games_played": 2,
+      "avg_margin": 0.5,
+      "avg_excitement": 95.0
+    },
+    {
+      "matchup": "FC Ufa vs CSKA Moscow",
+      "games_played": 2,
+      "avg_margin": 0.5,
+      "avg_excitement": 95.0
+    },
+    {
+      "matchup": "FC Arsenal Tula vs Sochi",
+      "games_played": 3,
+      "avg_margin": 0.67,
+      "avg_excitement": 93.33
+    },
+    {
+      "matchup": "Sochi vs FC Arsenal Tula",
+      "games_played": 3,
+      "avg_margin": 0.67,
+      "avg_excitement": 93.33
+    },
+    {
+      "matchup": "Dinamo Moscow vs Krasnodar",
+      "games_played": 5,
+      "avg_margin": 0.8,
+      "avg_excitement": 78.0
+    },
+    {
+      "matchup": "Krasnodar vs Dinamo Moscow",
+      "games_played": 5,
+      "avg_margin": 0.8,
+      "avg_excitement": 78.0
+    },
+    {
+      "matchup": "FC Ural Ekaterinburg vs Rubin Kazan",
+      "games_played": 3,
+      "avg_margin": 1.67,
+      "avg_excitement": 60.0
+    },
+    {
+      "matchup": "Rubin Kazan vs FC Ural Ekaterinburg",
+      "games_played": 3,
+      "avg_margin": 1.67,
+      "avg_excitement": 60.0
+    },
+    {
+      "matchup": "FC Tambov vs FC Ufa",
+      "games_played": 3,
+      "avg_margin": 3,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "FC Ufa vs FC Tambov",
+      "games_played": 3,
+      "avg_margin": 3,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Akhmat Grozny vs FC Arsenal Tula",
+      "games_played": 2,
+      "avg_margin": 0.5,
+      "avg_excitement": 95.0
+    },
+    {
+      "matchup": "FC Arsenal Tula vs Akhmat Grozny",
+      "games_played": 2,
+      "avg_margin": 0.5,
+      "avg_excitement": 95.0
+    },
+    {
+      "matchup": "Rostov vs Sochi",
+      "games_played": 5,
+      "avg_margin": 1.8,
+      "avg_excitement": 40.0
+    },
+    {
+      "matchup": "Sochi vs Rostov",
+      "games_played": 5,
+      "avg_margin": 1.8,
+      "avg_excitement": 40.0
+    },
+    {
+      "matchup": "Krylia Sovetov vs Zenit St Petersburg",
+      "games_played": 3,
+      "avg_margin": 1.67,
+      "avg_excitement": 36.67
+    },
+    {
+      "matchup": "Zenit St Petersburg vs Krylia Sovetov",
+      "games_played": 3,
+      "avg_margin": 1.67,
+      "avg_excitement": 36.67
+    },
+    {
+      "matchup": "CSKA Moscow vs Dinamo Moscow",
+      "games_played": 6,
+      "avg_margin": 1,
+      "avg_excitement": 78.33
+    },
+    {
+      "matchup": "Dinamo Moscow vs CSKA Moscow",
+      "games_played": 6,
+      "avg_margin": 1,
+      "avg_excitement": 78.33
+    },
+    {
+      "matchup": "Lokomotiv Moscow vs Spartak Moscow",
+      "games_played": 5,
+      "avg_margin": 1.2,
+      "avg_excitement": 60.0
+    },
+    {
+      "matchup": "Spartak Moscow vs Lokomotiv Moscow",
+      "games_played": 5,
+      "avg_margin": 1.2,
+      "avg_excitement": 60.0
+    },
+    {
+      "matchup": "Gazovik Orenburg vs Krasnodar",
+      "games_played": 4,
+      "avg_margin": 2,
+      "avg_excitement": 27.5
+    },
+    {
+      "matchup": "Krasnodar vs Gazovik Orenburg",
+      "games_played": 4,
+      "avg_margin": 2,
+      "avg_excitement": 27.5
+    },
+    {
+      "matchup": "Akhmat Grozny vs Dinamo Moscow",
+      "games_played": 6,
+      "avg_margin": 0.83,
+      "avg_excitement": 80.0
+    },
+    {
+      "matchup": "Dinamo Moscow vs Akhmat Grozny",
+      "games_played": 6,
+      "avg_margin": 0.83,
+      "avg_excitement": 80.0
+    },
+    {
+      "matchup": "FC Ufa vs Lokomotiv Moscow",
+      "games_played": 3,
+      "avg_margin": 0.33,
+      "avg_excitement": 96.67
+    },
+    {
+      "matchup": "Lokomotiv Moscow vs FC Ufa",
+      "games_played": 3,
+      "avg_margin": 0.33,
+      "avg_excitement": 96.67
+    },
+    {
+      "matchup": "FC Tambov vs Sochi",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Sochi vs FC Tambov",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "CSKA Moscow vs Zenit St Petersburg",
+      "games_played": 5,
+      "avg_margin": 0.6,
+      "avg_excitement": 94.0
+    },
+    {
+      "matchup": "Zenit St Petersburg vs CSKA Moscow",
+      "games_played": 5,
+      "avg_margin": 0.6,
+      "avg_excitement": 94.0
+    },
+    {
+      "matchup": "Krasnodar vs Rostov",
+      "games_played": 5,
+      "avg_margin": 0.8,
+      "avg_excitement": 78.0
+    },
+    {
+      "matchup": "Rostov vs Krasnodar",
+      "games_played": 5,
+      "avg_margin": 0.8,
+      "avg_excitement": 78.0
+    },
+    {
+      "matchup": "FC Ural Ekaterinburg vs Gazovik Orenburg",
+      "games_played": 2,
+      "avg_margin": 1.5,
+      "avg_excitement": 50.0
+    },
+    {
+      "matchup": "Gazovik Orenburg vs FC Ural Ekaterinburg",
+      "games_played": 2,
+      "avg_margin": 1.5,
+      "avg_excitement": 50.0
+    },
+    {
+      "matchup": "Krylia Sovetov vs Rubin Kazan",
+      "games_played": 4,
+      "avg_margin": 0.75,
+      "avg_excitement": 75.0
+    },
+    {
+      "matchup": "Rubin Kazan vs Krylia Sovetov",
+      "games_played": 4,
+      "avg_margin": 0.75,
+      "avg_excitement": 75.0
+    },
+    {
+      "matchup": "FC Arsenal Tula vs Spartak Moscow",
+      "games_played": 2,
+      "avg_margin": 0.5,
+      "avg_excitement": 95.0
+    },
+    {
+      "matchup": "Spartak Moscow vs FC Arsenal Tula",
+      "games_played": 2,
+      "avg_margin": 0.5,
+      "avg_excitement": 95.0
+    },
+    {
+      "matchup": "Akhmat Grozny vs FC Ural Ekaterinburg",
+      "games_played": 5,
+      "avg_margin": 1,
+      "avg_excitement": 76.0
+    },
+    {
+      "matchup": "FC Ural Ekaterinburg vs Akhmat Grozny",
+      "games_played": 5,
+      "avg_margin": 1,
+      "avg_excitement": 76.0
+    },
+    {
+      "matchup": "Dinamo Moscow vs Rubin Kazan",
+      "games_played": 5,
+      "avg_margin": 1.6,
+      "avg_excitement": 56.0
+    },
+    {
+      "matchup": "Rubin Kazan vs Dinamo Moscow",
+      "games_played": 5,
+      "avg_margin": 1.6,
+      "avg_excitement": 56.0
+    },
+    {
+      "matchup": "FC Khimki vs FC Ural Ekaterinburg",
+      "games_played": 3,
+      "avg_margin": 1,
+      "avg_excitement": 66.67
+    },
+    {
+      "matchup": "FC Ural Ekaterinburg vs FC Khimki",
+      "games_played": 3,
+      "avg_margin": 1,
+      "avg_excitement": 66.67
+    },
+    {
+      "matchup": "FC Rotor Volgograd vs Krasnodar",
+      "games_played": 2,
+      "avg_margin": 4,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Krasnodar vs FC Rotor Volgograd",
+      "games_played": 2,
+      "avg_margin": 4,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "FC Khimki vs Krasnodar",
+      "games_played": 5,
+      "avg_margin": 2.6,
+      "avg_excitement": 32.0
+    },
+    {
+      "matchup": "Krasnodar vs FC Khimki",
+      "games_played": 5,
+      "avg_margin": 2.6,
+      "avg_excitement": 32.0
+    },
+    {
+      "matchup": "FC Rotor Volgograd vs Rostov",
+      "games_played": 1,
+      "avg_margin": 3,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Rostov vs FC Rotor Volgograd",
+      "games_played": 1,
+      "avg_margin": 3,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "FC Tambov vs Lokomotiv Moscow",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Lokomotiv Moscow vs FC Tambov",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "FC Tambov vs Spartak Moscow",
+      "games_played": 2,
+      "avg_margin": 3,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Spartak Moscow vs FC Tambov",
+      "games_played": 2,
+      "avg_margin": 3,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Krasnodar vs Sochi",
+      "games_played": 3,
+      "avg_margin": 1.33,
+      "avg_excitement": 63.33
+    },
+    {
+      "matchup": "Sochi vs Krasnodar",
+      "games_played": 3,
+      "avg_margin": 1.33,
+      "avg_excitement": 63.33
+    },
+    {
+      "matchup": "FC Arsenal Tula vs Rostov",
+      "games_played": 2,
+      "avg_margin": 2.5,
+      "avg_excitement": 40.0
+    },
+    {
+      "matchup": "Rostov vs FC Arsenal Tula",
+      "games_played": 2,
+      "avg_margin": 2.5,
+      "avg_excitement": 40.0
+    },
+    {
+      "matchup": "CSKA Moscow vs Lokomotiv Moscow",
+      "games_played": 4,
+      "avg_margin": 1.5,
+      "avg_excitement": 67.5
+    },
+    {
+      "matchup": "Lokomotiv Moscow vs CSKA Moscow",
+      "games_played": 4,
+      "avg_margin": 1.5,
+      "avg_excitement": 67.5
+    },
+    {
+      "matchup": "FC Rotor Volgograd vs Rubin Kazan",
+      "games_played": 1,
+      "avg_margin": 2,
+      "avg_excitement": 10.0
+    },
+    {
+      "matchup": "Rubin Kazan vs FC Rotor Volgograd",
+      "games_played": 1,
+      "avg_margin": 2,
+      "avg_excitement": 10.0
+    },
+    {
+      "matchup": "Dinamo Moscow vs FC Khimki",
+      "games_played": 4,
+      "avg_margin": 2.5,
+      "avg_excitement": 40.0
+    },
+    {
+      "matchup": "FC Khimki vs Dinamo Moscow",
+      "games_played": 4,
+      "avg_margin": 2.5,
+      "avg_excitement": 40.0
+    },
+    {
+      "matchup": "FC Rotor Volgograd vs FC Ufa",
+      "games_played": 2,
+      "avg_margin": 0.5,
+      "avg_excitement": 95.0
+    },
+    {
+      "matchup": "FC Ufa vs FC Rotor Volgograd",
+      "games_played": 2,
+      "avg_margin": 0.5,
+      "avg_excitement": 95.0
+    },
+    {
+      "matchup": "FC Khimki vs Lokomotiv Moscow",
+      "games_played": 5,
+      "avg_margin": 1.4,
+      "avg_excitement": 58.0
+    },
+    {
+      "matchup": "Lokomotiv Moscow vs FC Khimki",
+      "games_played": 5,
+      "avg_margin": 1.4,
+      "avg_excitement": 58.0
+    },
+    {
+      "matchup": "Akhmat Grozny vs Rubin Kazan",
+      "games_played": 4,
+      "avg_margin": 1,
+      "avg_excitement": 72.5
+    },
+    {
+      "matchup": "Rubin Kazan vs Akhmat Grozny",
+      "games_played": 4,
+      "avg_margin": 1,
+      "avg_excitement": 72.5
+    },
+    {
+      "matchup": "Sochi vs Zenit St Petersburg",
+      "games_played": 4,
+      "avg_margin": 3,
+      "avg_excitement": 17.5
+    },
+    {
+      "matchup": "Zenit St Petersburg vs Sochi",
+      "games_played": 4,
+      "avg_margin": 3,
+      "avg_excitement": 17.5
+    },
+    {
+      "matchup": "FC Khimki vs Spartak Moscow",
+      "games_played": 3,
+      "avg_margin": 2.67,
+      "avg_excitement": 26.67
+    },
+    {
+      "matchup": "Spartak Moscow vs FC Khimki",
+      "games_played": 3,
+      "avg_margin": 2.67,
+      "avg_excitement": 26.67
+    },
+    {
+      "matchup": "FC Rotor Volgograd vs FC Tambov",
+      "games_played": 1,
+      "avg_margin": 2,
+      "avg_excitement": 10.0
+    },
+    {
+      "matchup": "FC Tambov vs FC Rotor Volgograd",
+      "games_played": 1,
+      "avg_margin": 2,
+      "avg_excitement": 10.0
+    },
+    {
+      "matchup": "FC Rotor Volgograd vs Lokomotiv Moscow",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Lokomotiv Moscow vs FC Rotor Volgograd",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "FC Khimki vs Rostov",
+      "games_played": 3,
+      "avg_margin": 1.33,
+      "avg_excitement": 40.0
+    },
+    {
+      "matchup": "Rostov vs FC Khimki",
+      "games_played": 3,
+      "avg_margin": 1.33,
+      "avg_excitement": 40.0
+    },
+    {
+      "matchup": "Akhmat Grozny vs Krasnodar",
+      "games_played": 4,
+      "avg_margin": 1.25,
+      "avg_excitement": 52.5
+    },
+    {
+      "matchup": "Krasnodar vs Akhmat Grozny",
+      "games_played": 4,
+      "avg_margin": 1.25,
+      "avg_excitement": 52.5
+    },
+    {
+      "matchup": "Rostov vs Spartak Moscow",
+      "games_played": 4,
+      "avg_margin": 1.5,
+      "avg_excitement": 50.0
+    },
+    {
+      "matchup": "Spartak Moscow vs Rostov",
+      "games_played": 4,
+      "avg_margin": 1.5,
+      "avg_excitement": 50.0
+    },
+    {
+      "matchup": "FC Ufa vs FC Ural Ekaterinburg",
+      "games_played": 2,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "FC Ural Ekaterinburg vs FC Ufa",
+      "games_played": 2,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "FC Khimki vs Zenit St Petersburg",
+      "games_played": 2,
+      "avg_margin": 1,
+      "avg_excitement": 55.0
+    },
+    {
+      "matchup": "Zenit St Petersburg vs FC Khimki",
+      "games_played": 2,
+      "avg_margin": 1,
+      "avg_excitement": 55.0
+    },
+    {
+      "matchup": "CSKA Moscow vs FC Rotor Volgograd",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "FC Rotor Volgograd vs CSKA Moscow",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "FC Arsenal Tula vs FC Rotor Volgograd",
+      "games_played": 2,
+      "avg_margin": 0.5,
+      "avg_excitement": 95.0
+    },
+    {
+      "matchup": "FC Rotor Volgograd vs FC Arsenal Tula",
+      "games_played": 2,
+      "avg_margin": 0.5,
+      "avg_excitement": 95.0
+    },
+    {
+      "matchup": "FC Khimki vs Rubin Kazan",
+      "games_played": 3,
+      "avg_margin": 1,
+      "avg_excitement": 66.67
+    },
+    {
+      "matchup": "Rubin Kazan vs FC Khimki",
+      "games_played": 3,
+      "avg_margin": 1,
+      "avg_excitement": 66.67
+    },
+    {
+      "matchup": "FC Rotor Volgograd vs FC Ural Ekaterinburg",
+      "games_played": 1,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "FC Ural Ekaterinburg vs FC Rotor Volgograd",
+      "games_played": 1,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "FC Khimki vs FC Ufa",
+      "games_played": 2,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "FC Ufa vs FC Khimki",
+      "games_played": 2,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "FC Rotor Volgograd vs Spartak Moscow",
+      "games_played": 1,
+      "avg_margin": 2,
+      "avg_excitement": 10.0
+    },
+    {
+      "matchup": "Spartak Moscow vs FC Rotor Volgograd",
+      "games_played": 1,
+      "avg_margin": 2,
+      "avg_excitement": 10.0
+    },
+    {
+      "matchup": "Lokomotiv Moscow vs Rubin Kazan",
+      "games_played": 3,
+      "avg_margin": 1,
+      "avg_excitement": 66.67
+    },
+    {
+      "matchup": "Rubin Kazan vs Lokomotiv Moscow",
+      "games_played": 3,
+      "avg_margin": 1,
+      "avg_excitement": 66.67
+    },
+    {
+      "matchup": "Dinamo Moscow vs FC Arsenal Tula",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "FC Arsenal Tula vs Dinamo Moscow",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "CSKA Moscow vs FC Khimki",
+      "games_played": 3,
+      "avg_margin": 1,
+      "avg_excitement": 66.67
+    },
+    {
+      "matchup": "FC Khimki vs CSKA Moscow",
+      "games_played": 3,
+      "avg_margin": 1,
+      "avg_excitement": 66.67
+    },
+    {
+      "matchup": "FC Arsenal Tula vs FC Khimki",
+      "games_played": 2,
+      "avg_margin": 0.5,
+      "avg_excitement": 95.0
+    },
+    {
+      "matchup": "FC Khimki vs FC Arsenal Tula",
+      "games_played": 2,
+      "avg_margin": 0.5,
+      "avg_excitement": 95.0
+    },
+    {
+      "matchup": "Sochi vs Spartak Moscow",
+      "games_played": 5,
+      "avg_margin": 1.2,
+      "avg_excitement": 74.0
+    },
+    {
+      "matchup": "Spartak Moscow vs Sochi",
+      "games_played": 5,
+      "avg_margin": 1.2,
+      "avg_excitement": 74.0
+    },
+    {
+      "matchup": "FC Ural Ekaterinburg vs Nizhny Novgorod",
+      "games_played": 2,
+      "avg_margin": 0.5,
+      "avg_excitement": 95.0
+    },
+    {
+      "matchup": "Nizhny Novgorod vs FC Ural Ekaterinburg",
+      "games_played": 2,
+      "avg_margin": 0.5,
+      "avg_excitement": 95.0
+    },
+    {
+      "matchup": "FC Arsenal Tula vs Krylia Sovetov",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Krylia Sovetov vs FC Arsenal Tula",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Nizhny Novgorod vs Spartak Moscow",
+      "games_played": 4,
+      "avg_margin": 1.5,
+      "avg_excitement": 50.0
+    },
+    {
+      "matchup": "Spartak Moscow vs Nizhny Novgorod",
+      "games_played": 4,
+      "avg_margin": 1.5,
+      "avg_excitement": 50.0
+    },
+    {
+      "matchup": "FC Ufa vs Nizhny Novgorod",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Nizhny Novgorod vs FC Ufa",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "FC Khimki vs Sochi",
+      "games_played": 2,
+      "avg_margin": 3,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Sochi vs FC Khimki",
+      "games_played": 2,
+      "avg_margin": 3,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Dinamo Moscow vs FC Ural Ekaterinburg",
+      "games_played": 3,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "FC Ural Ekaterinburg vs Dinamo Moscow",
+      "games_played": 3,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Nizhny Novgorod vs Rostov",
+      "games_played": 4,
+      "avg_margin": 0.75,
+      "avg_excitement": 92.5
+    },
+    {
+      "matchup": "Rostov vs Nizhny Novgorod",
+      "games_played": 4,
+      "avg_margin": 0.75,
+      "avg_excitement": 92.5
+    },
+    {
+      "matchup": "FC Ufa vs Krylia Sovetov",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Krylia Sovetov vs FC Ufa",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "FC Khimki vs Nizhny Novgorod",
+      "games_played": 2,
+      "avg_margin": 0.5,
+      "avg_excitement": 95.0
+    },
+    {
+      "matchup": "Nizhny Novgorod vs FC Khimki",
+      "games_played": 2,
+      "avg_margin": 0.5,
+      "avg_excitement": 95.0
+    },
+    {
+      "matchup": "Dinamo Moscow vs Nizhny Novgorod",
+      "games_played": 4,
+      "avg_margin": 0.75,
+      "avg_excitement": 75.0
+    },
+    {
+      "matchup": "Nizhny Novgorod vs Dinamo Moscow",
+      "games_played": 4,
+      "avg_margin": 0.75,
+      "avg_excitement": 75.0
+    },
+    {
+      "matchup": "FC Arsenal Tula vs Nizhny Novgorod",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Nizhny Novgorod vs FC Arsenal Tula",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "CSKA Moscow vs Nizhny Novgorod",
+      "games_played": 2,
+      "avg_margin": 1.5,
+      "avg_excitement": 50.0
+    },
+    {
+      "matchup": "Nizhny Novgorod vs CSKA Moscow",
+      "games_played": 2,
+      "avg_margin": 1.5,
+      "avg_excitement": 50.0
+    },
+    {
+      "matchup": "Nizhny Novgorod vs Rubin Kazan",
+      "games_played": 2,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Rubin Kazan vs Nizhny Novgorod",
+      "games_played": 2,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Akhmat Grozny vs FC Khimki",
+      "games_played": 3,
+      "avg_margin": 1.33,
+      "avg_excitement": 40.0
+    },
+    {
+      "matchup": "FC Khimki vs Akhmat Grozny",
+      "games_played": 3,
+      "avg_margin": 1.33,
+      "avg_excitement": 40.0
+    },
+    {
+      "matchup": "Krylia Sovetov vs Nizhny Novgorod",
+      "games_played": 4,
+      "avg_margin": 1.75,
+      "avg_excitement": 30.0
+    },
+    {
+      "matchup": "Nizhny Novgorod vs Krylia Sovetov",
+      "games_played": 4,
+      "avg_margin": 1.75,
+      "avg_excitement": 30.0
+    },
+    {
+      "matchup": "FC Ufa vs Krasnodar",
+      "games_played": 1,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "Krasnodar vs FC Ufa",
+      "games_played": 1,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "Krasnodar vs Nizhny Novgorod",
+      "games_played": 4,
+      "avg_margin": 1.75,
+      "avg_excitement": 47.5
+    },
+    {
+      "matchup": "Nizhny Novgorod vs Krasnodar",
+      "games_played": 4,
+      "avg_margin": 1.75,
+      "avg_excitement": 47.5
+    },
+    {
+      "matchup": "CSKA Moscow vs Krylia Sovetov",
+      "games_played": 3,
+      "avg_margin": 1,
+      "avg_excitement": 66.67
+    },
+    {
+      "matchup": "Krylia Sovetov vs CSKA Moscow",
+      "games_played": 3,
+      "avg_margin": 1,
+      "avg_excitement": 66.67
+    },
+    {
+      "matchup": "Lokomotiv Moscow vs Nizhny Novgorod",
+      "games_played": 3,
+      "avg_margin": 1.33,
+      "avg_excitement": 63.33
+    },
+    {
+      "matchup": "Nizhny Novgorod vs Lokomotiv Moscow",
+      "games_played": 3,
+      "avg_margin": 1.33,
+      "avg_excitement": 63.33
+    },
+    {
+      "matchup": "FC Khimki vs Krylia Sovetov",
+      "games_played": 3,
+      "avg_margin": 1,
+      "avg_excitement": 66.67
+    },
+    {
+      "matchup": "Krylia Sovetov vs FC Khimki",
+      "games_played": 3,
+      "avg_margin": 1,
+      "avg_excitement": 66.67
+    },
+    {
+      "matchup": "Akhmat Grozny vs Nizhny Novgorod",
+      "games_played": 4,
+      "avg_margin": 2,
+      "avg_excitement": 10.0
+    },
+    {
+      "matchup": "Nizhny Novgorod vs Akhmat Grozny",
+      "games_played": 4,
+      "avg_margin": 2,
+      "avg_excitement": 10.0
+    },
+    {
+      "matchup": "CSKA Moscow vs Fakel Voronezh",
+      "games_played": 3,
+      "avg_margin": 1,
+      "avg_excitement": 66.67
+    },
+    {
+      "matchup": "Fakel Voronezh vs CSKA Moscow",
+      "games_played": 3,
+      "avg_margin": 1,
+      "avg_excitement": 66.67
+    },
+    {
+      "matchup": "FC Khimki vs FK Torpedo Moscow",
+      "games_played": 1,
+      "avg_margin": 2,
+      "avg_excitement": 10.0
+    },
+    {
+      "matchup": "FK Torpedo Moscow vs FC Khimki",
+      "games_played": 1,
+      "avg_margin": 2,
+      "avg_excitement": 10.0
+    },
+    {
+      "matchup": "Gazovik Orenburg vs Rostov",
+      "games_played": 3,
+      "avg_margin": 0.67,
+      "avg_excitement": 93.33
+    },
+    {
+      "matchup": "Rostov vs Gazovik Orenburg",
+      "games_played": 3,
+      "avg_margin": 0.67,
+      "avg_excitement": 93.33
+    },
+    {
+      "matchup": "Nizhny Novgorod vs Sochi",
+      "games_played": 2,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Sochi vs Nizhny Novgorod",
+      "games_played": 2,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "FC Ural Ekaterinburg vs Fakel Voronezh",
+      "games_played": 2,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "Fakel Voronezh vs FC Ural Ekaterinburg",
+      "games_played": 2,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "FK Torpedo Moscow vs Gazovik Orenburg",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Gazovik Orenburg vs FK Torpedo Moscow",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Fakel Voronezh vs Krylia Sovetov",
+      "games_played": 3,
+      "avg_margin": 1.67,
+      "avg_excitement": 36.67
+    },
+    {
+      "matchup": "Krylia Sovetov vs Fakel Voronezh",
+      "games_played": 3,
+      "avg_margin": 1.67,
+      "avg_excitement": 36.67
+    },
+    {
+      "matchup": "FK Torpedo Moscow vs Zenit St Petersburg",
+      "games_played": 1,
+      "avg_margin": 2,
+      "avg_excitement": 10.0
+    },
+    {
+      "matchup": "Zenit St Petersburg vs FK Torpedo Moscow",
+      "games_played": 1,
+      "avg_margin": 2,
+      "avg_excitement": 10.0
+    },
+    {
+      "matchup": "Fakel Voronezh vs Spartak Moscow",
+      "games_played": 3,
+      "avg_margin": 2.67,
+      "avg_excitement": 3.33
+    },
+    {
+      "matchup": "Spartak Moscow vs Fakel Voronezh",
+      "games_played": 3,
+      "avg_margin": 2.67,
+      "avg_excitement": 3.33
+    },
+    {
+      "matchup": "FK Torpedo Moscow vs Krasnodar",
+      "games_played": 1,
+      "avg_margin": 3,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Krasnodar vs FK Torpedo Moscow",
+      "games_played": 1,
+      "avg_margin": 3,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "FC Khimki vs Gazovik Orenburg",
+      "games_played": 3,
+      "avg_margin": 1.33,
+      "avg_excitement": 40.0
+    },
+    {
+      "matchup": "Gazovik Orenburg vs FC Khimki",
+      "games_played": 3,
+      "avg_margin": 1.33,
+      "avg_excitement": 40.0
+    },
+    {
+      "matchup": "Fakel Voronezh vs Nizhny Novgorod",
+      "games_played": 3,
+      "avg_margin": 1.33,
+      "avg_excitement": 40.0
+    },
+    {
+      "matchup": "Nizhny Novgorod vs Fakel Voronezh",
+      "games_played": 3,
+      "avg_margin": 1.33,
+      "avg_excitement": 40.0
+    },
+    {
+      "matchup": "FK Torpedo Moscow vs Rostov",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Rostov vs FK Torpedo Moscow",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "FC Ural Ekaterinburg vs FK Torpedo Moscow",
+      "games_played": 1,
+      "avg_margin": 2,
+      "avg_excitement": 10.0
+    },
+    {
+      "matchup": "FK Torpedo Moscow vs FC Ural Ekaterinburg",
+      "games_played": 1,
+      "avg_margin": 2,
+      "avg_excitement": 10.0
+    },
+    {
+      "matchup": "Fakel Voronezh vs Lokomotiv Moscow",
+      "games_played": 2,
+      "avg_margin": 1.5,
+      "avg_excitement": 50.0
+    },
+    {
+      "matchup": "Lokomotiv Moscow vs Fakel Voronezh",
+      "games_played": 2,
+      "avg_margin": 1.5,
+      "avg_excitement": 50.0
+    },
+    {
+      "matchup": "Gazovik Orenburg vs Zenit St Petersburg",
+      "games_played": 3,
+      "avg_margin": 3.67,
+      "avg_excitement": 23.33
+    },
+    {
+      "matchup": "Zenit St Petersburg vs Gazovik Orenburg",
+      "games_played": 3,
+      "avg_margin": 3.67,
+      "avg_excitement": 23.33
+    },
+    {
+      "matchup": "CSKA Moscow vs FK Torpedo Moscow",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "FK Torpedo Moscow vs CSKA Moscow",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Gazovik Orenburg vs Nizhny Novgorod",
+      "games_played": 3,
+      "avg_margin": 1.67,
+      "avg_excitement": 36.67
+    },
+    {
+      "matchup": "Nizhny Novgorod vs Gazovik Orenburg",
+      "games_played": 3,
+      "avg_margin": 1.67,
+      "avg_excitement": 36.67
+    },
+    {
+      "matchup": "Fakel Voronezh vs Sochi",
+      "games_played": 2,
+      "avg_margin": 1,
+      "avg_excitement": 55.0
+    },
+    {
+      "matchup": "Sochi vs Fakel Voronezh",
+      "games_played": 2,
+      "avg_margin": 1,
+      "avg_excitement": 55.0
+    },
+    {
+      "matchup": "FK Torpedo Moscow vs Fakel Voronezh",
+      "games_played": 1,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "Fakel Voronezh vs FK Torpedo Moscow",
+      "games_played": 1,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "Fakel Voronezh vs Zenit St Petersburg",
+      "games_played": 3,
+      "avg_margin": 1.33,
+      "avg_excitement": 40.0
+    },
+    {
+      "matchup": "Zenit St Petersburg vs Fakel Voronezh",
+      "games_played": 3,
+      "avg_margin": 1.33,
+      "avg_excitement": 40.0
+    },
+    {
+      "matchup": "FK Torpedo Moscow vs Nizhny Novgorod",
+      "games_played": 1,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "Nizhny Novgorod vs FK Torpedo Moscow",
+      "games_played": 1,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "FC Khimki vs Fakel Voronezh",
+      "games_played": 2,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "Fakel Voronezh vs FC Khimki",
+      "games_played": 2,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "FK Torpedo Moscow vs Lokomotiv Moscow",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Lokomotiv Moscow vs FK Torpedo Moscow",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Nizhny Novgorod vs Zenit St Petersburg",
+      "games_played": 2,
+      "avg_margin": 3,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Zenit St Petersburg vs Nizhny Novgorod",
+      "games_played": 2,
+      "avg_margin": 3,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Fakel Voronezh vs Rostov",
+      "games_played": 2,
+      "avg_margin": 1.5,
+      "avg_excitement": 50.0
+    },
+    {
+      "matchup": "Rostov vs Fakel Voronezh",
+      "games_played": 2,
+      "avg_margin": 1.5,
+      "avg_excitement": 50.0
+    },
+    {
+      "matchup": "CSKA Moscow vs Gazovik Orenburg",
+      "games_played": 3,
+      "avg_margin": 1.33,
+      "avg_excitement": 63.33
+    },
+    {
+      "matchup": "Gazovik Orenburg vs CSKA Moscow",
+      "games_played": 3,
+      "avg_margin": 1.33,
+      "avg_excitement": 63.33
+    },
+    {
+      "matchup": "Akhmat Grozny vs FK Torpedo Moscow",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "FK Torpedo Moscow vs Akhmat Grozny",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Fakel Voronezh vs Gazovik Orenburg",
+      "games_played": 3,
+      "avg_margin": 1.67,
+      "avg_excitement": 60.0
+    },
+    {
+      "matchup": "Gazovik Orenburg vs Fakel Voronezh",
+      "games_played": 3,
+      "avg_margin": 1.67,
+      "avg_excitement": 60.0
+    },
+    {
+      "matchup": "FK Torpedo Moscow vs Spartak Moscow",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Spartak Moscow vs FK Torpedo Moscow",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Fakel Voronezh vs Krasnodar",
+      "games_played": 3,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "Krasnodar vs Fakel Voronezh",
+      "games_played": 3,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "FC Baltika Kaliningrad vs Fakel Voronezh",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Fakel Voronezh vs FC Baltika Kaliningrad",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Dinamo Moscow vs FC Baltika Kaliningrad",
+      "games_played": 1,
+      "avg_margin": 2,
+      "avg_excitement": 10.0
+    },
+    {
+      "matchup": "FC Baltika Kaliningrad vs Dinamo Moscow",
+      "games_played": 1,
+      "avg_margin": 2,
+      "avg_excitement": 10.0
+    },
+    {
+      "matchup": "FC Baltika Kaliningrad vs FC Ural Ekaterinburg",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "FC Ural Ekaterinburg vs FC Baltika Kaliningrad",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "FC Baltika Kaliningrad vs Krylia Sovetov",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Krylia Sovetov vs FC Baltika Kaliningrad",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "FC Baltika Kaliningrad vs Lokomotiv Moscow",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Lokomotiv Moscow vs FC Baltika Kaliningrad",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "FC Baltika Kaliningrad vs Rostov",
+      "games_played": 1,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "Rostov vs FC Baltika Kaliningrad",
+      "games_played": 1,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "Akhmat Grozny vs FC Baltika Kaliningrad",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "FC Baltika Kaliningrad vs Akhmat Grozny",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Fakel Voronezh vs Rubin Kazan",
+      "games_played": 2,
+      "avg_margin": 0.5,
+      "avg_excitement": 95.0
+    },
+    {
+      "matchup": "Rubin Kazan vs Fakel Voronezh",
+      "games_played": 2,
+      "avg_margin": 0.5,
+      "avg_excitement": 95.0
+    },
+    {
+      "matchup": "CSKA Moscow vs FC Baltika Kaliningrad",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "FC Baltika Kaliningrad vs CSKA Moscow",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "FC Baltika Kaliningrad vs Gazovik Orenburg",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Gazovik Orenburg vs FC Baltika Kaliningrad",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Dinamo Moscow vs Fakel Voronezh",
+      "games_played": 1,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "Fakel Voronezh vs Dinamo Moscow",
+      "games_played": 1,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "FC Baltika Kaliningrad vs Krasnodar",
+      "games_played": 1,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "Krasnodar vs FC Baltika Kaliningrad",
+      "games_played": 1,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "FC Baltika Kaliningrad vs Rubin Kazan",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Rubin Kazan vs FC Baltika Kaliningrad",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Akhmat Grozny vs Fakel Voronezh",
+      "games_played": 2,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Fakel Voronezh vs Akhmat Grozny",
+      "games_played": 2,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "FC Baltika Kaliningrad vs Zenit St Petersburg",
+      "games_played": 1,
+      "avg_margin": 2,
+      "avg_excitement": 10.0
+    },
+    {
+      "matchup": "Zenit St Petersburg vs FC Baltika Kaliningrad",
+      "games_played": 1,
+      "avg_margin": 2,
+      "avg_excitement": 10.0
+    },
+    {
+      "matchup": "Akron Tolyatti vs Dinamo Moscow",
+      "games_played": 1,
+      "avg_margin": 2,
+      "avg_excitement": 10.0
+    },
+    {
+      "matchup": "Dinamo Moscow vs Akron Tolyatti",
+      "games_played": 1,
+      "avg_margin": 2,
+      "avg_excitement": 10.0
+    },
+    {
+      "matchup": "Dynamo Makhachkala vs Nizhny Novgorod",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Nizhny Novgorod vs Dynamo Makhachkala",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Dynamo Makhachkala vs Lokomotiv Moscow",
+      "games_played": 1,
+      "avg_margin": 2,
+      "avg_excitement": 10.0
+    },
+    {
+      "matchup": "Lokomotiv Moscow vs Dynamo Makhachkala",
+      "games_played": 1,
+      "avg_margin": 2,
+      "avg_excitement": 10.0
+    },
+    {
+      "matchup": "Akron Tolyatti vs Gazovik Orenburg",
+      "games_played": 1,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "Gazovik Orenburg vs Akron Tolyatti",
+      "games_played": 1,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "Akron Tolyatti vs Rubin Kazan",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Rubin Kazan vs Akron Tolyatti",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Akhmat Grozny vs Dynamo Makhachkala",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Dynamo Makhachkala vs Akhmat Grozny",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Dynamo Makhachkala vs Rubin Kazan",
+      "games_played": 1,
+      "avg_margin": 2,
+      "avg_excitement": 10.0
+    },
+    {
+      "matchup": "Rubin Kazan vs Dynamo Makhachkala",
+      "games_played": 1,
+      "avg_margin": 2,
+      "avg_excitement": 10.0
+    },
+    {
+      "matchup": "Akron Tolyatti vs CSKA Moscow",
+      "games_played": 1,
+      "avg_margin": 4,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "CSKA Moscow vs Akron Tolyatti",
+      "games_played": 1,
+      "avg_margin": 4,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Akhmat Grozny vs Akron Tolyatti",
+      "games_played": 1,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "Akron Tolyatti vs Akhmat Grozny",
+      "games_played": 1,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "Dynamo Makhachkala vs Krylia Sovetov",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Krylia Sovetov vs Dynamo Makhachkala",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Akron Tolyatti vs FC Khimki",
+      "games_played": 1,
+      "avg_margin": 3,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "FC Khimki vs Akron Tolyatti",
+      "games_played": 1,
+      "avg_margin": 3,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Dynamo Makhachkala vs Spartak Moscow",
+      "games_played": 1,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "Spartak Moscow vs Dynamo Makhachkala",
+      "games_played": 1,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "Akron Tolyatti vs Krasnodar",
+      "games_played": 1,
+      "avg_margin": 3,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Krasnodar vs Akron Tolyatti",
+      "games_played": 1,
+      "avg_margin": 3,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Dynamo Makhachkala vs Rostov",
+      "games_played": 1,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "Rostov vs Dynamo Makhachkala",
+      "games_played": 1,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "Akron Tolyatti vs Rostov",
+      "games_played": 1,
+      "avg_margin": 2,
+      "avg_excitement": 10.0
+    },
+    {
+      "matchup": "Rostov vs Akron Tolyatti",
+      "games_played": 1,
+      "avg_margin": 2,
+      "avg_excitement": 10.0
+    },
+    {
+      "matchup": "Dinamo Moscow vs Dynamo Makhachkala",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Dynamo Makhachkala vs Dinamo Moscow",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Akron Tolyatti vs Nizhny Novgorod",
+      "games_played": 1,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "Nizhny Novgorod vs Akron Tolyatti",
+      "games_played": 1,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "Dynamo Makhachkala vs Fakel Voronezh",
+      "games_played": 1,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "Fakel Voronezh vs Dynamo Makhachkala",
+      "games_played": 1,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "Akron Tolyatti vs Zenit St Petersburg",
+      "games_played": 1,
+      "avg_margin": 5,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Zenit St Petersburg vs Akron Tolyatti",
+      "games_played": 1,
+      "avg_margin": 5,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "CSKA Moscow vs Dynamo Makhachkala",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Dynamo Makhachkala vs CSKA Moscow",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Akron Tolyatti vs Dynamo Makhachkala",
+      "games_played": 1,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "Dynamo Makhachkala vs Akron Tolyatti",
+      "games_played": 1,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "Dynamo Makhachkala vs Zenit St Petersburg",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Zenit St Petersburg vs Dynamo Makhachkala",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Akron Tolyatti vs Krylia Sovetov",
+      "games_played": 1,
+      "avg_margin": 2,
+      "avg_excitement": 10.0
+    },
+    {
+      "matchup": "Krylia Sovetov vs Akron Tolyatti",
+      "games_played": 1,
+      "avg_margin": 2,
+      "avg_excitement": 10.0
+    },
+    {
+      "matchup": "Dynamo Makhachkala vs Gazovik Orenburg",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Gazovik Orenburg vs Dynamo Makhachkala",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    }
+  ],
+  "matchup_close_rates": [
+    {
+      "matchup": "FC Ural Ekaterinburg vs Rostov",
+      "games": 4,
+      "close_games": 4,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Rostov vs FC Ural Ekaterinburg",
+      "games": 4,
+      "close_games": 4,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Krylia Sovetov vs Lokomotiv Moscow",
+      "games": 5,
+      "close_games": 4,
+      "close_rate": 80.0
+    },
+    {
+      "matchup": "Lokomotiv Moscow vs Krylia Sovetov",
+      "games": 5,
+      "close_games": 4,
+      "close_rate": 80.0
+    },
+    {
+      "matchup": "Dinamo Moscow vs Spartak Moscow",
+      "games": 6,
+      "close_games": 6,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Spartak Moscow vs Dinamo Moscow",
+      "games": 6,
+      "close_games": 6,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Krasnodar vs Zenit St Petersburg",
+      "games": 6,
+      "close_games": 4,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Zenit St Petersburg vs Krasnodar",
+      "games": 6,
+      "close_games": 4,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "FC Arsenal Tula vs FC Tambov",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "FC Tambov vs FC Arsenal Tula",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "CSKA Moscow vs Rubin Kazan",
+      "games": 5,
+      "close_games": 5,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Rubin Kazan vs CSKA Moscow",
+      "games": 5,
+      "close_games": 5,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "FC Ufa vs Sochi",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Sochi vs FC Ufa",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Akhmat Grozny vs Gazovik Orenburg",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Gazovik Orenburg vs Akhmat Grozny",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "FC Tambov vs Gazovik Orenburg",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Gazovik Orenburg vs FC Tambov",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Dinamo Moscow vs Zenit St Petersburg",
+      "games": 6,
+      "close_games": 2,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "Zenit St Petersburg vs Dinamo Moscow",
+      "games": 6,
+      "close_games": 2,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "Krasnodar vs Rubin Kazan",
+      "games": 4,
+      "close_games": 1,
+      "close_rate": 25.0
+    },
+    {
+      "matchup": "Rubin Kazan vs Krasnodar",
+      "games": 4,
+      "close_games": 1,
+      "close_rate": 25.0
+    },
+    {
+      "matchup": "FC Arsenal Tula vs FC Ufa",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "FC Ufa vs FC Arsenal Tula",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "FC Ural Ekaterinburg vs Lokomotiv Moscow",
+      "games": 4,
+      "close_games": 2,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Lokomotiv Moscow vs FC Ural Ekaterinburg",
+      "games": 4,
+      "close_games": 2,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "CSKA Moscow vs Sochi",
+      "games": 4,
+      "close_games": 2,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Sochi vs CSKA Moscow",
+      "games": 4,
+      "close_games": 2,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Akhmat Grozny vs Spartak Moscow",
+      "games": 4,
+      "close_games": 3,
+      "close_rate": 75.0
+    },
+    {
+      "matchup": "Spartak Moscow vs Akhmat Grozny",
+      "games": 4,
+      "close_games": 3,
+      "close_rate": 75.0
+    },
+    {
+      "matchup": "Krylia Sovetov vs Rostov",
+      "games": 4,
+      "close_games": 2,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Rostov vs Krylia Sovetov",
+      "games": 4,
+      "close_games": 2,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Gazovik Orenburg vs Sochi",
+      "games": 3,
+      "close_games": 1,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "Sochi vs Gazovik Orenburg",
+      "games": 3,
+      "close_games": 1,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "FC Ural Ekaterinburg vs Krylia Sovetov",
+      "games": 3,
+      "close_games": 1,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "Krylia Sovetov vs FC Ural Ekaterinburg",
+      "games": 3,
+      "close_games": 1,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "FC Tambov vs Krasnodar",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Krasnodar vs FC Tambov",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Akhmat Grozny vs Zenit St Petersburg",
+      "games": 6,
+      "close_games": 5,
+      "close_rate": 83.33
+    },
+    {
+      "matchup": "Zenit St Petersburg vs Akhmat Grozny",
+      "games": 6,
+      "close_games": 5,
+      "close_rate": 83.33
+    },
+    {
+      "matchup": "FC Arsenal Tula vs Rubin Kazan",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Rubin Kazan vs FC Arsenal Tula",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "FC Ufa vs Rostov",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Rostov vs FC Ufa",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Dinamo Moscow vs Lokomotiv Moscow",
+      "games": 5,
+      "close_games": 3,
+      "close_rate": 60.0
+    },
+    {
+      "matchup": "Lokomotiv Moscow vs Dinamo Moscow",
+      "games": 5,
+      "close_games": 3,
+      "close_rate": 60.0
+    },
+    {
+      "matchup": "CSKA Moscow vs Spartak Moscow",
+      "games": 6,
+      "close_games": 4,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Spartak Moscow vs CSKA Moscow",
+      "games": 6,
+      "close_games": 4,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Dinamo Moscow vs FC Tambov",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "FC Tambov vs Dinamo Moscow",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "FC Ufa vs Zenit St Petersburg",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Zenit St Petersburg vs FC Ufa",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Krasnodar vs Lokomotiv Moscow",
+      "games": 6,
+      "close_games": 3,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Lokomotiv Moscow vs Krasnodar",
+      "games": 6,
+      "close_games": 3,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Akhmat Grozny vs CSKA Moscow",
+      "games": 4,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "CSKA Moscow vs Akhmat Grozny",
+      "games": 4,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Krylia Sovetov vs Spartak Moscow",
+      "games": 5,
+      "close_games": 1,
+      "close_rate": 20.0
+    },
+    {
+      "matchup": "Spartak Moscow vs Krylia Sovetov",
+      "games": 5,
+      "close_games": 1,
+      "close_rate": 20.0
+    },
+    {
+      "matchup": "Rostov vs Rubin Kazan",
+      "games": 5,
+      "close_games": 2,
+      "close_rate": 40.0
+    },
+    {
+      "matchup": "Rubin Kazan vs Rostov",
+      "games": 5,
+      "close_games": 2,
+      "close_rate": 40.0
+    },
+    {
+      "matchup": "FC Arsenal Tula vs Gazovik Orenburg",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Gazovik Orenburg vs FC Arsenal Tula",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "FC Ural Ekaterinburg vs Sochi",
+      "games": 5,
+      "close_games": 2,
+      "close_rate": 40.0
+    },
+    {
+      "matchup": "Sochi vs FC Ural Ekaterinburg",
+      "games": 5,
+      "close_games": 2,
+      "close_rate": 40.0
+    },
+    {
+      "matchup": "Dinamo Moscow vs Krylia Sovetov",
+      "games": 4,
+      "close_games": 3,
+      "close_rate": 75.0
+    },
+    {
+      "matchup": "Krylia Sovetov vs Dinamo Moscow",
+      "games": 4,
+      "close_games": 3,
+      "close_rate": 75.0
+    },
+    {
+      "matchup": "FC Ufa vs Gazovik Orenburg",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Gazovik Orenburg vs FC Ufa",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Rubin Kazan vs Sochi",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Sochi vs Rubin Kazan",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Lokomotiv Moscow vs Rostov",
+      "games": 5,
+      "close_games": 5,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Rostov vs Lokomotiv Moscow",
+      "games": 5,
+      "close_games": 5,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Akhmat Grozny vs FC Tambov",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "FC Tambov vs Akhmat Grozny",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "FC Ural Ekaterinburg vs Krasnodar",
+      "games": 2,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Krasnodar vs FC Ural Ekaterinburg",
+      "games": 2,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "CSKA Moscow vs FC Arsenal Tula",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "FC Arsenal Tula vs CSKA Moscow",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Spartak Moscow vs Zenit St Petersburg",
+      "games": 7,
+      "close_games": 4,
+      "close_rate": 57.14
+    },
+    {
+      "matchup": "Zenit St Petersburg vs Spartak Moscow",
+      "games": 7,
+      "close_games": 4,
+      "close_rate": 57.14
+    },
+    {
+      "matchup": "FC Arsenal Tula vs Zenit St Petersburg",
+      "games": 4,
+      "close_games": 2,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Zenit St Petersburg vs FC Arsenal Tula",
+      "games": 4,
+      "close_games": 2,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "FC Ural Ekaterinburg vs Spartak Moscow",
+      "games": 5,
+      "close_games": 4,
+      "close_rate": 80.0
+    },
+    {
+      "matchup": "Spartak Moscow vs FC Ural Ekaterinburg",
+      "games": 5,
+      "close_games": 4,
+      "close_rate": 80.0
+    },
+    {
+      "matchup": "Lokomotiv Moscow vs Sochi",
+      "games": 5,
+      "close_games": 4,
+      "close_rate": 80.0
+    },
+    {
+      "matchup": "Sochi vs Lokomotiv Moscow",
+      "games": 5,
+      "close_games": 4,
+      "close_rate": 80.0
+    },
+    {
+      "matchup": "Gazovik Orenburg vs Rubin Kazan",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Rubin Kazan vs Gazovik Orenburg",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "CSKA Moscow vs FC Tambov",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "FC Tambov vs CSKA Moscow",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Krasnodar vs Krylia Sovetov",
+      "games": 5,
+      "close_games": 4,
+      "close_rate": 80.0
+    },
+    {
+      "matchup": "Krylia Sovetov vs Krasnodar",
+      "games": 5,
+      "close_games": 4,
+      "close_rate": 80.0
+    },
+    {
+      "matchup": "Dinamo Moscow vs FC Ufa",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "FC Ufa vs Dinamo Moscow",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Akhmat Grozny vs Rostov",
+      "games": 7,
+      "close_games": 5,
+      "close_rate": 71.43
+    },
+    {
+      "matchup": "Rostov vs Akhmat Grozny",
+      "games": 7,
+      "close_games": 5,
+      "close_rate": 71.43
+    },
+    {
+      "matchup": "FC Ufa vs Spartak Moscow",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Spartak Moscow vs FC Ufa",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Akhmat Grozny vs Krylia Sovetov",
+      "games": 3,
+      "close_games": 3,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Krylia Sovetov vs Akhmat Grozny",
+      "games": 3,
+      "close_games": 3,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "FC Tambov vs Rostov",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Rostov vs FC Tambov",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Rubin Kazan vs Zenit St Petersburg",
+      "games": 4,
+      "close_games": 1,
+      "close_rate": 25.0
+    },
+    {
+      "matchup": "Zenit St Petersburg vs Rubin Kazan",
+      "games": 4,
+      "close_games": 1,
+      "close_rate": 25.0
+    },
+    {
+      "matchup": "Gazovik Orenburg vs Lokomotiv Moscow",
+      "games": 4,
+      "close_games": 1,
+      "close_rate": 25.0
+    },
+    {
+      "matchup": "Lokomotiv Moscow vs Gazovik Orenburg",
+      "games": 4,
+      "close_games": 1,
+      "close_rate": 25.0
+    },
+    {
+      "matchup": "Dinamo Moscow vs Sochi",
+      "games": 6,
+      "close_games": 4,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Sochi vs Dinamo Moscow",
+      "games": 6,
+      "close_games": 4,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "FC Arsenal Tula vs FC Ural Ekaterinburg",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "FC Ural Ekaterinburg vs FC Arsenal Tula",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "CSKA Moscow vs Krasnodar",
+      "games": 5,
+      "close_games": 4,
+      "close_rate": 80.0
+    },
+    {
+      "matchup": "Krasnodar vs CSKA Moscow",
+      "games": 5,
+      "close_games": 4,
+      "close_rate": 80.0
+    },
+    {
+      "matchup": "FC Tambov vs Krylia Sovetov",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Krylia Sovetov vs FC Tambov",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Dinamo Moscow vs Rostov",
+      "games": 4,
+      "close_games": 2,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Rostov vs Dinamo Moscow",
+      "games": 4,
+      "close_games": 2,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Lokomotiv Moscow vs Zenit St Petersburg",
+      "games": 4,
+      "close_games": 4,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Zenit St Petersburg vs Lokomotiv Moscow",
+      "games": 4,
+      "close_games": 4,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "CSKA Moscow vs FC Ural Ekaterinburg",
+      "games": 4,
+      "close_games": 2,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "FC Ural Ekaterinburg vs CSKA Moscow",
+      "games": 4,
+      "close_games": 2,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "FC Ufa vs Rubin Kazan",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Rubin Kazan vs FC Ufa",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Gazovik Orenburg vs Spartak Moscow",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Spartak Moscow vs Gazovik Orenburg",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "FC Arsenal Tula vs Krasnodar",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Krasnodar vs FC Arsenal Tula",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Akhmat Grozny vs Sochi",
+      "games": 5,
+      "close_games": 3,
+      "close_rate": 60.0
+    },
+    {
+      "matchup": "Sochi vs Akhmat Grozny",
+      "games": 5,
+      "close_games": 3,
+      "close_rate": 60.0
+    },
+    {
+      "matchup": "Akhmat Grozny vs FC Ufa",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "FC Ufa vs Akhmat Grozny",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Dinamo Moscow vs Gazovik Orenburg",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Gazovik Orenburg vs Dinamo Moscow",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "FC Tambov vs Rubin Kazan",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Rubin Kazan vs FC Tambov",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Krylia Sovetov vs Sochi",
+      "games": 4,
+      "close_games": 2,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Sochi vs Krylia Sovetov",
+      "games": 4,
+      "close_games": 2,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "FC Ural Ekaterinburg vs Zenit St Petersburg",
+      "games": 6,
+      "close_games": 2,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "Zenit St Petersburg vs FC Ural Ekaterinburg",
+      "games": 6,
+      "close_games": 2,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "FC Arsenal Tula vs Lokomotiv Moscow",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Lokomotiv Moscow vs FC Arsenal Tula",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "CSKA Moscow vs Rostov",
+      "games": 5,
+      "close_games": 2,
+      "close_rate": 40.0
+    },
+    {
+      "matchup": "Rostov vs CSKA Moscow",
+      "games": 5,
+      "close_games": 2,
+      "close_rate": 40.0
+    },
+    {
+      "matchup": "Krasnodar vs Spartak Moscow",
+      "games": 4,
+      "close_games": 1,
+      "close_rate": 25.0
+    },
+    {
+      "matchup": "Spartak Moscow vs Krasnodar",
+      "games": 4,
+      "close_games": 1,
+      "close_rate": 25.0
+    },
+    {
+      "matchup": "Akhmat Grozny vs Lokomotiv Moscow",
+      "games": 5,
+      "close_games": 3,
+      "close_rate": 60.0
+    },
+    {
+      "matchup": "Lokomotiv Moscow vs Akhmat Grozny",
+      "games": 5,
+      "close_games": 3,
+      "close_rate": 60.0
+    },
+    {
+      "matchup": "FC Tambov vs FC Ural Ekaterinburg",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "FC Ural Ekaterinburg vs FC Tambov",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Rubin Kazan vs Spartak Moscow",
+      "games": 4,
+      "close_games": 2,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Spartak Moscow vs Rubin Kazan",
+      "games": 4,
+      "close_games": 2,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Rostov vs Zenit St Petersburg",
+      "games": 4,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Zenit St Petersburg vs Rostov",
+      "games": 4,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Gazovik Orenburg vs Krylia Sovetov",
+      "games": 3,
+      "close_games": 3,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Krylia Sovetov vs Gazovik Orenburg",
+      "games": 3,
+      "close_games": 3,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "CSKA Moscow vs FC Ufa",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "FC Ufa vs CSKA Moscow",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "FC Arsenal Tula vs Sochi",
+      "games": 3,
+      "close_games": 3,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Sochi vs FC Arsenal Tula",
+      "games": 3,
+      "close_games": 3,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Dinamo Moscow vs Krasnodar",
+      "games": 5,
+      "close_games": 4,
+      "close_rate": 80.0
+    },
+    {
+      "matchup": "Krasnodar vs Dinamo Moscow",
+      "games": 5,
+      "close_games": 4,
+      "close_rate": 80.0
+    },
+    {
+      "matchup": "FC Ural Ekaterinburg vs Rubin Kazan",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Rubin Kazan vs FC Ural Ekaterinburg",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "FC Tambov vs FC Ufa",
+      "games": 3,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "FC Ufa vs FC Tambov",
+      "games": 3,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Akhmat Grozny vs FC Arsenal Tula",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "FC Arsenal Tula vs Akhmat Grozny",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Rostov vs Sochi",
+      "games": 5,
+      "close_games": 2,
+      "close_rate": 40.0
+    },
+    {
+      "matchup": "Sochi vs Rostov",
+      "games": 5,
+      "close_games": 2,
+      "close_rate": 40.0
+    },
+    {
+      "matchup": "Krylia Sovetov vs Zenit St Petersburg",
+      "games": 3,
+      "close_games": 1,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "Zenit St Petersburg vs Krylia Sovetov",
+      "games": 3,
+      "close_games": 1,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "CSKA Moscow vs Dinamo Moscow",
+      "games": 6,
+      "close_games": 5,
+      "close_rate": 83.33
+    },
+    {
+      "matchup": "Dinamo Moscow vs CSKA Moscow",
+      "games": 6,
+      "close_games": 5,
+      "close_rate": 83.33
+    },
+    {
+      "matchup": "Lokomotiv Moscow vs Spartak Moscow",
+      "games": 5,
+      "close_games": 3,
+      "close_rate": 60.0
+    },
+    {
+      "matchup": "Spartak Moscow vs Lokomotiv Moscow",
+      "games": 5,
+      "close_games": 3,
+      "close_rate": 60.0
+    },
+    {
+      "matchup": "Gazovik Orenburg vs Krasnodar",
+      "games": 4,
+      "close_games": 1,
+      "close_rate": 25.0
+    },
+    {
+      "matchup": "Krasnodar vs Gazovik Orenburg",
+      "games": 4,
+      "close_games": 1,
+      "close_rate": 25.0
+    },
+    {
+      "matchup": "Akhmat Grozny vs Dinamo Moscow",
+      "games": 6,
+      "close_games": 5,
+      "close_rate": 83.33
+    },
+    {
+      "matchup": "Dinamo Moscow vs Akhmat Grozny",
+      "games": 6,
+      "close_games": 5,
+      "close_rate": 83.33
+    },
+    {
+      "matchup": "FC Ufa vs Lokomotiv Moscow",
+      "games": 3,
+      "close_games": 3,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Lokomotiv Moscow vs FC Ufa",
+      "games": 3,
+      "close_games": 3,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "FC Tambov vs Sochi",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Sochi vs FC Tambov",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "CSKA Moscow vs Zenit St Petersburg",
+      "games": 5,
+      "close_games": 5,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Zenit St Petersburg vs CSKA Moscow",
+      "games": 5,
+      "close_games": 5,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Krasnodar vs Rostov",
+      "games": 5,
+      "close_games": 4,
+      "close_rate": 80.0
+    },
+    {
+      "matchup": "Rostov vs Krasnodar",
+      "games": 5,
+      "close_games": 4,
+      "close_rate": 80.0
+    },
+    {
+      "matchup": "FC Ural Ekaterinburg vs Gazovik Orenburg",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Gazovik Orenburg vs FC Ural Ekaterinburg",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Krylia Sovetov vs Rubin Kazan",
+      "games": 4,
+      "close_games": 3,
+      "close_rate": 75.0
+    },
+    {
+      "matchup": "Rubin Kazan vs Krylia Sovetov",
+      "games": 4,
+      "close_games": 3,
+      "close_rate": 75.0
+    },
+    {
+      "matchup": "FC Arsenal Tula vs Spartak Moscow",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Spartak Moscow vs FC Arsenal Tula",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Akhmat Grozny vs FC Ural Ekaterinburg",
+      "games": 5,
+      "close_games": 4,
+      "close_rate": 80.0
+    },
+    {
+      "matchup": "FC Ural Ekaterinburg vs Akhmat Grozny",
+      "games": 5,
+      "close_games": 4,
+      "close_rate": 80.0
+    },
+    {
+      "matchup": "Dinamo Moscow vs Rubin Kazan",
+      "games": 5,
+      "close_games": 3,
+      "close_rate": 60.0
+    },
+    {
+      "matchup": "Rubin Kazan vs Dinamo Moscow",
+      "games": 5,
+      "close_games": 3,
+      "close_rate": 60.0
+    },
+    {
+      "matchup": "FC Khimki vs FC Ural Ekaterinburg",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "FC Ural Ekaterinburg vs FC Khimki",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "FC Rotor Volgograd vs Krasnodar",
+      "games": 2,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Krasnodar vs FC Rotor Volgograd",
+      "games": 2,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "FC Khimki vs Krasnodar",
+      "games": 5,
+      "close_games": 2,
+      "close_rate": 40.0
+    },
+    {
+      "matchup": "Krasnodar vs FC Khimki",
+      "games": 5,
+      "close_games": 2,
+      "close_rate": 40.0
+    },
+    {
+      "matchup": "FC Rotor Volgograd vs Rostov",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Rostov vs FC Rotor Volgograd",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "FC Tambov vs Lokomotiv Moscow",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Lokomotiv Moscow vs FC Tambov",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "FC Tambov vs Spartak Moscow",
+      "games": 2,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Spartak Moscow vs FC Tambov",
+      "games": 2,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Krasnodar vs Sochi",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Sochi vs Krasnodar",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "FC Arsenal Tula vs Rostov",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Rostov vs FC Arsenal Tula",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "CSKA Moscow vs Lokomotiv Moscow",
+      "games": 4,
+      "close_games": 3,
+      "close_rate": 75.0
+    },
+    {
+      "matchup": "Lokomotiv Moscow vs CSKA Moscow",
+      "games": 4,
+      "close_games": 3,
+      "close_rate": 75.0
+    },
+    {
+      "matchup": "FC Rotor Volgograd vs Rubin Kazan",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Rubin Kazan vs FC Rotor Volgograd",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Dinamo Moscow vs FC Khimki",
+      "games": 4,
+      "close_games": 2,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "FC Khimki vs Dinamo Moscow",
+      "games": 4,
+      "close_games": 2,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "FC Rotor Volgograd vs FC Ufa",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "FC Ufa vs FC Rotor Volgograd",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "FC Khimki vs Lokomotiv Moscow",
+      "games": 5,
+      "close_games": 3,
+      "close_rate": 60.0
+    },
+    {
+      "matchup": "Lokomotiv Moscow vs FC Khimki",
+      "games": 5,
+      "close_games": 3,
+      "close_rate": 60.0
+    },
+    {
+      "matchup": "Akhmat Grozny vs Rubin Kazan",
+      "games": 4,
+      "close_games": 3,
+      "close_rate": 75.0
+    },
+    {
+      "matchup": "Rubin Kazan vs Akhmat Grozny",
+      "games": 4,
+      "close_games": 3,
+      "close_rate": 75.0
+    },
+    {
+      "matchup": "Sochi vs Zenit St Petersburg",
+      "games": 4,
+      "close_games": 1,
+      "close_rate": 25.0
+    },
+    {
+      "matchup": "Zenit St Petersburg vs Sochi",
+      "games": 4,
+      "close_games": 1,
+      "close_rate": 25.0
+    },
+    {
+      "matchup": "FC Khimki vs Spartak Moscow",
+      "games": 3,
+      "close_games": 1,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "Spartak Moscow vs FC Khimki",
+      "games": 3,
+      "close_games": 1,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "FC Rotor Volgograd vs FC Tambov",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "FC Tambov vs FC Rotor Volgograd",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "FC Rotor Volgograd vs Lokomotiv Moscow",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Lokomotiv Moscow vs FC Rotor Volgograd",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "FC Khimki vs Rostov",
+      "games": 3,
+      "close_games": 1,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "Rostov vs FC Khimki",
+      "games": 3,
+      "close_games": 1,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "Akhmat Grozny vs Krasnodar",
+      "games": 4,
+      "close_games": 2,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Krasnodar vs Akhmat Grozny",
+      "games": 4,
+      "close_games": 2,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Rostov vs Spartak Moscow",
+      "games": 4,
+      "close_games": 2,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Spartak Moscow vs Rostov",
+      "games": 4,
+      "close_games": 2,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "FC Ufa vs FC Ural Ekaterinburg",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "FC Ural Ekaterinburg vs FC Ufa",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "FC Khimki vs Zenit St Petersburg",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Zenit St Petersburg vs FC Khimki",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "CSKA Moscow vs FC Rotor Volgograd",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "FC Rotor Volgograd vs CSKA Moscow",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "FC Arsenal Tula vs FC Rotor Volgograd",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "FC Rotor Volgograd vs FC Arsenal Tula",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "FC Khimki vs Rubin Kazan",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Rubin Kazan vs FC Khimki",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "FC Rotor Volgograd vs FC Ural Ekaterinburg",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "FC Ural Ekaterinburg vs FC Rotor Volgograd",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "FC Khimki vs FC Ufa",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "FC Ufa vs FC Khimki",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "FC Rotor Volgograd vs Spartak Moscow",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Spartak Moscow vs FC Rotor Volgograd",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Lokomotiv Moscow vs Rubin Kazan",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Rubin Kazan vs Lokomotiv Moscow",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Dinamo Moscow vs FC Arsenal Tula",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "FC Arsenal Tula vs Dinamo Moscow",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "CSKA Moscow vs FC Khimki",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "FC Khimki vs CSKA Moscow",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "FC Arsenal Tula vs FC Khimki",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "FC Khimki vs FC Arsenal Tula",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Sochi vs Spartak Moscow",
+      "games": 5,
+      "close_games": 4,
+      "close_rate": 80.0
+    },
+    {
+      "matchup": "Spartak Moscow vs Sochi",
+      "games": 5,
+      "close_games": 4,
+      "close_rate": 80.0
+    },
+    {
+      "matchup": "FC Ural Ekaterinburg vs Nizhny Novgorod",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Nizhny Novgorod vs FC Ural Ekaterinburg",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "FC Arsenal Tula vs Krylia Sovetov",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Krylia Sovetov vs FC Arsenal Tula",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Nizhny Novgorod vs Spartak Moscow",
+      "games": 4,
+      "close_games": 2,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Spartak Moscow vs Nizhny Novgorod",
+      "games": 4,
+      "close_games": 2,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "FC Ufa vs Nizhny Novgorod",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Nizhny Novgorod vs FC Ufa",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "FC Khimki vs Sochi",
+      "games": 2,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Sochi vs FC Khimki",
+      "games": 2,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Dinamo Moscow vs FC Ural Ekaterinburg",
+      "games": 3,
+      "close_games": 3,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "FC Ural Ekaterinburg vs Dinamo Moscow",
+      "games": 3,
+      "close_games": 3,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Nizhny Novgorod vs Rostov",
+      "games": 4,
+      "close_games": 4,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Rostov vs Nizhny Novgorod",
+      "games": 4,
+      "close_games": 4,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "FC Ufa vs Krylia Sovetov",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Krylia Sovetov vs FC Ufa",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "FC Khimki vs Nizhny Novgorod",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Nizhny Novgorod vs FC Khimki",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Dinamo Moscow vs Nizhny Novgorod",
+      "games": 4,
+      "close_games": 3,
+      "close_rate": 75.0
+    },
+    {
+      "matchup": "Nizhny Novgorod vs Dinamo Moscow",
+      "games": 4,
+      "close_games": 3,
+      "close_rate": 75.0
+    },
+    {
+      "matchup": "FC Arsenal Tula vs Nizhny Novgorod",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Nizhny Novgorod vs FC Arsenal Tula",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "CSKA Moscow vs Nizhny Novgorod",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Nizhny Novgorod vs CSKA Moscow",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Nizhny Novgorod vs Rubin Kazan",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Rubin Kazan vs Nizhny Novgorod",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Akhmat Grozny vs FC Khimki",
+      "games": 3,
+      "close_games": 1,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "FC Khimki vs Akhmat Grozny",
+      "games": 3,
+      "close_games": 1,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "Krylia Sovetov vs Nizhny Novgorod",
+      "games": 4,
+      "close_games": 1,
+      "close_rate": 25.0
+    },
+    {
+      "matchup": "Nizhny Novgorod vs Krylia Sovetov",
+      "games": 4,
+      "close_games": 1,
+      "close_rate": 25.0
+    },
+    {
+      "matchup": "FC Ufa vs Krasnodar",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Krasnodar vs FC Ufa",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Krasnodar vs Nizhny Novgorod",
+      "games": 4,
+      "close_games": 2,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Nizhny Novgorod vs Krasnodar",
+      "games": 4,
+      "close_games": 2,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "CSKA Moscow vs Krylia Sovetov",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Krylia Sovetov vs CSKA Moscow",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Lokomotiv Moscow vs Nizhny Novgorod",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Nizhny Novgorod vs Lokomotiv Moscow",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "FC Khimki vs Krylia Sovetov",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Krylia Sovetov vs FC Khimki",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Akhmat Grozny vs Nizhny Novgorod",
+      "games": 4,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Nizhny Novgorod vs Akhmat Grozny",
+      "games": 4,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "CSKA Moscow vs Fakel Voronezh",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Fakel Voronezh vs CSKA Moscow",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "FC Khimki vs FK Torpedo Moscow",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "FK Torpedo Moscow vs FC Khimki",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Gazovik Orenburg vs Rostov",
+      "games": 3,
+      "close_games": 3,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Rostov vs Gazovik Orenburg",
+      "games": 3,
+      "close_games": 3,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Nizhny Novgorod vs Sochi",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Sochi vs Nizhny Novgorod",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "FC Ural Ekaterinburg vs Fakel Voronezh",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Fakel Voronezh vs FC Ural Ekaterinburg",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "FK Torpedo Moscow vs Gazovik Orenburg",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Gazovik Orenburg vs FK Torpedo Moscow",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Fakel Voronezh vs Krylia Sovetov",
+      "games": 3,
+      "close_games": 1,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "Krylia Sovetov vs Fakel Voronezh",
+      "games": 3,
+      "close_games": 1,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "FK Torpedo Moscow vs Zenit St Petersburg",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Zenit St Petersburg vs FK Torpedo Moscow",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Fakel Voronezh vs Spartak Moscow",
+      "games": 3,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Spartak Moscow vs Fakel Voronezh",
+      "games": 3,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "FK Torpedo Moscow vs Krasnodar",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Krasnodar vs FK Torpedo Moscow",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "FC Khimki vs Gazovik Orenburg",
+      "games": 3,
+      "close_games": 1,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "Gazovik Orenburg vs FC Khimki",
+      "games": 3,
+      "close_games": 1,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "Fakel Voronezh vs Nizhny Novgorod",
+      "games": 3,
+      "close_games": 1,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "Nizhny Novgorod vs Fakel Voronezh",
+      "games": 3,
+      "close_games": 1,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "FK Torpedo Moscow vs Rostov",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Rostov vs FK Torpedo Moscow",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "FC Ural Ekaterinburg vs FK Torpedo Moscow",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "FK Torpedo Moscow vs FC Ural Ekaterinburg",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Fakel Voronezh vs Lokomotiv Moscow",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Lokomotiv Moscow vs Fakel Voronezh",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Gazovik Orenburg vs Zenit St Petersburg",
+      "games": 3,
+      "close_games": 1,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "Zenit St Petersburg vs Gazovik Orenburg",
+      "games": 3,
+      "close_games": 1,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "CSKA Moscow vs FK Torpedo Moscow",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "FK Torpedo Moscow vs CSKA Moscow",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Gazovik Orenburg vs Nizhny Novgorod",
+      "games": 3,
+      "close_games": 1,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "Nizhny Novgorod vs Gazovik Orenburg",
+      "games": 3,
+      "close_games": 1,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "Fakel Voronezh vs Sochi",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Sochi vs Fakel Voronezh",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "FK Torpedo Moscow vs Fakel Voronezh",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Fakel Voronezh vs FK Torpedo Moscow",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Fakel Voronezh vs Zenit St Petersburg",
+      "games": 3,
+      "close_games": 1,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "Zenit St Petersburg vs Fakel Voronezh",
+      "games": 3,
+      "close_games": 1,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "FK Torpedo Moscow vs Nizhny Novgorod",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Nizhny Novgorod vs FK Torpedo Moscow",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "FC Khimki vs Fakel Voronezh",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Fakel Voronezh vs FC Khimki",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "FK Torpedo Moscow vs Lokomotiv Moscow",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Lokomotiv Moscow vs FK Torpedo Moscow",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Nizhny Novgorod vs Zenit St Petersburg",
+      "games": 2,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Zenit St Petersburg vs Nizhny Novgorod",
+      "games": 2,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Fakel Voronezh vs Rostov",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Rostov vs Fakel Voronezh",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "CSKA Moscow vs Gazovik Orenburg",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Gazovik Orenburg vs CSKA Moscow",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Akhmat Grozny vs FK Torpedo Moscow",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "FK Torpedo Moscow vs Akhmat Grozny",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Fakel Voronezh vs Gazovik Orenburg",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Gazovik Orenburg vs Fakel Voronezh",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "FK Torpedo Moscow vs Spartak Moscow",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Spartak Moscow vs FK Torpedo Moscow",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Fakel Voronezh vs Krasnodar",
+      "games": 3,
+      "close_games": 3,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Krasnodar vs Fakel Voronezh",
+      "games": 3,
+      "close_games": 3,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "FC Baltika Kaliningrad vs Fakel Voronezh",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Fakel Voronezh vs FC Baltika Kaliningrad",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Dinamo Moscow vs FC Baltika Kaliningrad",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "FC Baltika Kaliningrad vs Dinamo Moscow",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "FC Baltika Kaliningrad vs FC Ural Ekaterinburg",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "FC Ural Ekaterinburg vs FC Baltika Kaliningrad",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "FC Baltika Kaliningrad vs Krylia Sovetov",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Krylia Sovetov vs FC Baltika Kaliningrad",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "FC Baltika Kaliningrad vs Lokomotiv Moscow",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Lokomotiv Moscow vs FC Baltika Kaliningrad",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "FC Baltika Kaliningrad vs Rostov",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Rostov vs FC Baltika Kaliningrad",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Akhmat Grozny vs FC Baltika Kaliningrad",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "FC Baltika Kaliningrad vs Akhmat Grozny",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Fakel Voronezh vs Rubin Kazan",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Rubin Kazan vs Fakel Voronezh",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "CSKA Moscow vs FC Baltika Kaliningrad",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "FC Baltika Kaliningrad vs CSKA Moscow",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "FC Baltika Kaliningrad vs Gazovik Orenburg",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Gazovik Orenburg vs FC Baltika Kaliningrad",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Dinamo Moscow vs Fakel Voronezh",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Fakel Voronezh vs Dinamo Moscow",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "FC Baltika Kaliningrad vs Krasnodar",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Krasnodar vs FC Baltika Kaliningrad",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "FC Baltika Kaliningrad vs Rubin Kazan",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Rubin Kazan vs FC Baltika Kaliningrad",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Akhmat Grozny vs Fakel Voronezh",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Fakel Voronezh vs Akhmat Grozny",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "FC Baltika Kaliningrad vs Zenit St Petersburg",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Zenit St Petersburg vs FC Baltika Kaliningrad",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Akron Tolyatti vs Dinamo Moscow",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Dinamo Moscow vs Akron Tolyatti",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Dynamo Makhachkala vs Nizhny Novgorod",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Nizhny Novgorod vs Dynamo Makhachkala",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Dynamo Makhachkala vs Lokomotiv Moscow",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Lokomotiv Moscow vs Dynamo Makhachkala",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Akron Tolyatti vs Gazovik Orenburg",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Gazovik Orenburg vs Akron Tolyatti",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Akron Tolyatti vs Rubin Kazan",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Rubin Kazan vs Akron Tolyatti",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Akhmat Grozny vs Dynamo Makhachkala",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Dynamo Makhachkala vs Akhmat Grozny",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Dynamo Makhachkala vs Rubin Kazan",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Rubin Kazan vs Dynamo Makhachkala",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Akron Tolyatti vs CSKA Moscow",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "CSKA Moscow vs Akron Tolyatti",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Akhmat Grozny vs Akron Tolyatti",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Akron Tolyatti vs Akhmat Grozny",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Dynamo Makhachkala vs Krylia Sovetov",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Krylia Sovetov vs Dynamo Makhachkala",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Akron Tolyatti vs FC Khimki",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "FC Khimki vs Akron Tolyatti",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Dynamo Makhachkala vs Spartak Moscow",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Spartak Moscow vs Dynamo Makhachkala",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Akron Tolyatti vs Krasnodar",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Krasnodar vs Akron Tolyatti",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Dynamo Makhachkala vs Rostov",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Rostov vs Dynamo Makhachkala",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Akron Tolyatti vs Rostov",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Rostov vs Akron Tolyatti",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Dinamo Moscow vs Dynamo Makhachkala",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Dynamo Makhachkala vs Dinamo Moscow",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Akron Tolyatti vs Nizhny Novgorod",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Nizhny Novgorod vs Akron Tolyatti",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Dynamo Makhachkala vs Fakel Voronezh",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Fakel Voronezh vs Dynamo Makhachkala",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Akron Tolyatti vs Zenit St Petersburg",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Zenit St Petersburg vs Akron Tolyatti",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "CSKA Moscow vs Dynamo Makhachkala",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Dynamo Makhachkala vs CSKA Moscow",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Akron Tolyatti vs Dynamo Makhachkala",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Dynamo Makhachkala vs Akron Tolyatti",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Dynamo Makhachkala vs Zenit St Petersburg",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Zenit St Petersburg vs Dynamo Makhachkala",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Akron Tolyatti vs Krylia Sovetov",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Krylia Sovetov vs Akron Tolyatti",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Dynamo Makhachkala vs Gazovik Orenburg",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Gazovik Orenburg vs Dynamo Makhachkala",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    }
+  ],
+  "form_strengths": [
+    {
+      "team": "Akhmat Grozny",
+      "strength": 62.7
+    },
+    {
+      "team": "Akron Tolyatti",
+      "strength": 64.0
+    },
+    {
+      "team": "CSKA Moscow",
+      "strength": 68.0
+    },
+    {
+      "team": "Dinamo Moscow",
+      "strength": 80.7
+    },
+    {
+      "team": "Dynamo Makhachkala",
+      "strength": 71.3
+    },
+    {
+      "team": "FC Arsenal Tula",
+      "strength": 61.3
+    },
+    {
+      "team": "FC Baltika Kaliningrad",
+      "strength": 63.3
+    },
+    {
+      "team": "FC Khimki",
+      "strength": 55.3
+    },
+    {
+      "team": "FC Rotor Volgograd",
+      "strength": 78.0
+    },
+    {
+      "team": "FC Tambov",
+      "strength": 52.0
+    },
+    {
+      "team": "FC Ufa",
+      "strength": 66.7
+    },
+    {
+      "team": "FC Ural Ekaterinburg",
+      "strength": 52.0
+    },
+    {
+      "team": "FK Torpedo Moscow",
+      "strength": 54.0
+    },
+    {
+      "team": "Fakel Voronezh",
+      "strength": 61.3
+    },
+    {
+      "team": "Gazovik Orenburg",
+      "strength": 56.0
+    },
+    {
+      "team": "Krasnodar",
+      "strength": 86.0
+    },
+    {
+      "team": "Krylia Sovetov",
+      "strength": 54.0
+    },
+    {
+      "team": "Lokomotiv Moscow",
+      "strength": 76.7
+    },
+    {
+      "team": "Nizhny Novgorod",
+      "strength": 58.7
+    },
+    {
+      "team": "Rostov",
+      "strength": 63.3
+    },
+    {
+      "team": "Rubin Kazan",
+      "strength": 68.0
+    },
+    {
+      "team": "Sochi",
+      "strength": 58.0
+    },
+    {
+      "team": "Spartak Moscow",
+      "strength": 77.3
+    },
+    {
+      "team": "Zenit St Petersburg",
+      "strength": 78.7
+    }
+  ],
+  "team_margin_ratings": [
+    {
+      "team": "Akhmat Grozny",
+      "avg_margin": -1
+    },
+    {
+      "team": "Akron Tolyatti",
+      "avg_margin": -0.6
+    },
+    {
+      "team": "CSKA Moscow",
+      "avg_margin": 0.7
+    },
+    {
+      "team": "Dinamo Moscow",
+      "avg_margin": 0.8
+    },
+    {
+      "team": "Dynamo Makhachkala",
+      "avg_margin": -0.3
+    },
+    {
+      "team": "FC Arsenal Tula",
+      "avg_margin": -0.6
+    },
+    {
+      "team": "FC Baltika Kaliningrad",
+      "avg_margin": -0.5
+    },
+    {
+      "team": "FC Khimki",
+      "avg_margin": -1
+    },
+    {
+      "team": "FC Rotor Volgograd",
+      "avg_margin": -0.7
+    },
+    {
+      "team": "FC Tambov",
+      "avg_margin": -1.2
+    },
+    {
+      "team": "FC Ufa",
+      "avg_margin": -0.4
+    },
+    {
+      "team": "FC Ural Ekaterinburg",
+      "avg_margin": -1.4
+    },
+    {
+      "team": "FK Torpedo Moscow",
+      "avg_margin": -1
+    },
+    {
+      "team": "Fakel Voronezh",
+      "avg_margin": -0.4
+    },
+    {
+      "team": "Gazovik Orenburg",
+      "avg_margin": -1.1
+    },
+    {
+      "team": "Krasnodar",
+      "avg_margin": 2.4
+    },
+    {
+      "team": "Krylia Sovetov",
+      "avg_margin": -0.2
+    },
+    {
+      "team": "Lokomotiv Moscow",
+      "avg_margin": 0.5
+    },
+    {
+      "team": "Nizhny Novgorod",
+      "avg_margin": -0.8
+    },
+    {
+      "team": "Rostov",
+      "avg_margin": -0.4
+    },
+    {
+      "team": "Rubin Kazan",
+      "avg_margin": -0.2
+    },
+    {
+      "team": "Sochi",
+      "avg_margin": -0.4
+    },
+    {
+      "team": "Spartak Moscow",
+      "avg_margin": 0.6
+    },
+    {
+      "team": "Zenit St Petersburg",
+      "avg_margin": 1.1
+    }
+  ]
+}

@@ -1,0 +1,4532 @@
+{
+  "meta": {
+    "sport": "Greek Super League",
+    "league": "gre.1",
+    "engine": "v1-bootstrap",
+    "formula": "close*0.35 + form_balance*0.25 + margin_balance*0.25 + matchup*0.15",
+    "close_margin": 1,
+    "games_sampled": 600,
+    "week_chunk": 8,
+    "built": "2026-06-11"
+  },
+  "matchup_ratings": [
+    {
+      "matchup": "Lamia vs Panathinaikos",
+      "games_played": 7,
+      "avg_margin": 1.43,
+      "avg_excitement": 45.71
+    },
+    {
+      "matchup": "Panathinaikos vs Lamia",
+      "games_played": 7,
+      "avg_margin": 1.43,
+      "avg_excitement": 45.71
+    },
+    {
+      "matchup": "Aris vs OFI Crete",
+      "games_played": 9,
+      "avg_margin": 0.89,
+      "avg_excitement": 75.56
+    },
+    {
+      "matchup": "OFI Crete vs Aris",
+      "games_played": 9,
+      "avg_margin": 0.89,
+      "avg_excitement": 75.56
+    },
+    {
+      "matchup": "Asteras Tripoli vs Olympiacos",
+      "games_played": 9,
+      "avg_margin": 2.56,
+      "avg_excitement": 27.78
+    },
+    {
+      "matchup": "Olympiacos vs Asteras Tripoli",
+      "games_played": 9,
+      "avg_margin": 2.56,
+      "avg_excitement": 27.78
+    },
+    {
+      "matchup": "Atromitos vs Larissa FC",
+      "games_played": 3,
+      "avg_margin": 0.33,
+      "avg_excitement": 96.67
+    },
+    {
+      "matchup": "Larissa FC vs Atromitos",
+      "games_played": 3,
+      "avg_margin": 0.33,
+      "avg_excitement": 96.67
+    },
+    {
+      "matchup": "Panionios vs Volos NFC",
+      "games_played": 2,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Volos NFC vs Panionios",
+      "games_played": 2,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "PAOK Salonika vs Panetolikos",
+      "games_played": 8,
+      "avg_margin": 1.62,
+      "avg_excitement": 48.75
+    },
+    {
+      "matchup": "Panetolikos vs PAOK Salonika",
+      "games_played": 8,
+      "avg_margin": 1.62,
+      "avg_excitement": 48.75
+    },
+    {
+      "matchup": "AEK Athens vs FC Xanthi",
+      "games_played": 2,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "FC Xanthi vs AEK Athens",
+      "games_played": 2,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "FC Xanthi vs Panetolikos",
+      "games_played": 2,
+      "avg_margin": 0.5,
+      "avg_excitement": 95.0
+    },
+    {
+      "matchup": "Panetolikos vs FC Xanthi",
+      "games_played": 2,
+      "avg_margin": 0.5,
+      "avg_excitement": 95.0
+    },
+    {
+      "matchup": "OFI Crete vs Panathinaikos",
+      "games_played": 7,
+      "avg_margin": 1.29,
+      "avg_excitement": 57.14
+    },
+    {
+      "matchup": "Panathinaikos vs OFI Crete",
+      "games_played": 7,
+      "avg_margin": 1.29,
+      "avg_excitement": 57.14
+    },
+    {
+      "matchup": "Aris vs Volos NFC",
+      "games_played": 7,
+      "avg_margin": 1.43,
+      "avg_excitement": 55.71
+    },
+    {
+      "matchup": "Volos NFC vs Aris",
+      "games_played": 7,
+      "avg_margin": 1.43,
+      "avg_excitement": 55.71
+    },
+    {
+      "matchup": "PAOK Salonika vs Panionios",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Panionios vs PAOK Salonika",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Larissa FC vs Olympiacos",
+      "games_played": 2,
+      "avg_margin": 2.5,
+      "avg_excitement": 40.0
+    },
+    {
+      "matchup": "Olympiacos vs Larissa FC",
+      "games_played": 2,
+      "avg_margin": 2.5,
+      "avg_excitement": 40.0
+    },
+    {
+      "matchup": "Atromitos vs Lamia",
+      "games_played": 5,
+      "avg_margin": 0.4,
+      "avg_excitement": 82.0
+    },
+    {
+      "matchup": "Lamia vs Atromitos",
+      "games_played": 5,
+      "avg_margin": 0.4,
+      "avg_excitement": 82.0
+    },
+    {
+      "matchup": "AEK Athens vs Asteras Tripoli",
+      "games_played": 6,
+      "avg_margin": 1.33,
+      "avg_excitement": 63.33
+    },
+    {
+      "matchup": "Asteras Tripoli vs AEK Athens",
+      "games_played": 6,
+      "avg_margin": 1.33,
+      "avg_excitement": 63.33
+    },
+    {
+      "matchup": "Atromitos vs PAOK Salonika",
+      "games_played": 7,
+      "avg_margin": 1.14,
+      "avg_excitement": 68.57
+    },
+    {
+      "matchup": "PAOK Salonika vs Atromitos",
+      "games_played": 7,
+      "avg_margin": 1.14,
+      "avg_excitement": 68.57
+    },
+    {
+      "matchup": "OFI Crete vs Panetolikos",
+      "games_played": 7,
+      "avg_margin": 0.86,
+      "avg_excitement": 81.43
+    },
+    {
+      "matchup": "Panetolikos vs OFI Crete",
+      "games_played": 7,
+      "avg_margin": 0.86,
+      "avg_excitement": 81.43
+    },
+    {
+      "matchup": "Olympiacos vs Volos NFC",
+      "games_played": 7,
+      "avg_margin": 2,
+      "avg_excitement": 40.0
+    },
+    {
+      "matchup": "Volos NFC vs Olympiacos",
+      "games_played": 7,
+      "avg_margin": 2,
+      "avg_excitement": 40.0
+    },
+    {
+      "matchup": "Asteras Tripoli vs FC Xanthi",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "FC Xanthi vs Asteras Tripoli",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "AEK Athens vs Lamia",
+      "games_played": 8,
+      "avg_margin": 2,
+      "avg_excitement": 36.25
+    },
+    {
+      "matchup": "Lamia vs AEK Athens",
+      "games_played": 8,
+      "avg_margin": 2,
+      "avg_excitement": 36.25
+    },
+    {
+      "matchup": "Larissa FC vs Panionios",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Panionios vs Larissa FC",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Aris vs Panathinaikos",
+      "games_played": 6,
+      "avg_margin": 1.5,
+      "avg_excitement": 61.67
+    },
+    {
+      "matchup": "Panathinaikos vs Aris",
+      "games_played": 6,
+      "avg_margin": 1.5,
+      "avg_excitement": 61.67
+    },
+    {
+      "matchup": "OFI Crete vs Volos NFC",
+      "games_played": 6,
+      "avg_margin": 1.5,
+      "avg_excitement": 50.0
+    },
+    {
+      "matchup": "Volos NFC vs OFI Crete",
+      "games_played": 6,
+      "avg_margin": 1.5,
+      "avg_excitement": 50.0
+    },
+    {
+      "matchup": "Asteras Tripoli vs Atromitos",
+      "games_played": 6,
+      "avg_margin": 1.67,
+      "avg_excitement": 48.33
+    },
+    {
+      "matchup": "Atromitos vs Asteras Tripoli",
+      "games_played": 6,
+      "avg_margin": 1.67,
+      "avg_excitement": 48.33
+    },
+    {
+      "matchup": "AEK Athens vs Panetolikos",
+      "games_played": 8,
+      "avg_margin": 1.5,
+      "avg_excitement": 50.0
+    },
+    {
+      "matchup": "Panetolikos vs AEK Athens",
+      "games_played": 8,
+      "avg_margin": 1.5,
+      "avg_excitement": 50.0
+    },
+    {
+      "matchup": "FC Xanthi vs Larissa FC",
+      "games_played": 1,
+      "avg_margin": 3,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Larissa FC vs FC Xanthi",
+      "games_played": 1,
+      "avg_margin": 3,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Aris vs PAOK Salonika",
+      "games_played": 6,
+      "avg_margin": 0.5,
+      "avg_excitement": 95.0
+    },
+    {
+      "matchup": "PAOK Salonika vs Aris",
+      "games_played": 6,
+      "avg_margin": 0.5,
+      "avg_excitement": 95.0
+    },
+    {
+      "matchup": "Lamia vs Panionios",
+      "games_played": 1,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "Panionios vs Lamia",
+      "games_played": 1,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "Olympiacos vs Panathinaikos",
+      "games_played": 6,
+      "avg_margin": 0.67,
+      "avg_excitement": 81.67
+    },
+    {
+      "matchup": "Panathinaikos vs Olympiacos",
+      "games_played": 6,
+      "avg_margin": 0.67,
+      "avg_excitement": 81.67
+    },
+    {
+      "matchup": "Aris vs Larissa FC",
+      "games_played": 2,
+      "avg_margin": 2,
+      "avg_excitement": 45.0
+    },
+    {
+      "matchup": "Larissa FC vs Aris",
+      "games_played": 2,
+      "avg_margin": 2,
+      "avg_excitement": 45.0
+    },
+    {
+      "matchup": "Atromitos vs Panetolikos",
+      "games_played": 7,
+      "avg_margin": 1.29,
+      "avg_excitement": 57.14
+    },
+    {
+      "matchup": "Panetolikos vs Atromitos",
+      "games_played": 7,
+      "avg_margin": 1.29,
+      "avg_excitement": 57.14
+    },
+    {
+      "matchup": "Lamia vs Olympiacos",
+      "games_played": 7,
+      "avg_margin": 2.71,
+      "avg_excitement": 22.86
+    },
+    {
+      "matchup": "Olympiacos vs Lamia",
+      "games_played": 7,
+      "avg_margin": 2.71,
+      "avg_excitement": 22.86
+    },
+    {
+      "matchup": "Asteras Tripoli vs OFI Crete",
+      "games_played": 6,
+      "avg_margin": 1.83,
+      "avg_excitement": 35.0
+    },
+    {
+      "matchup": "OFI Crete vs Asteras Tripoli",
+      "games_played": 6,
+      "avg_margin": 1.83,
+      "avg_excitement": 35.0
+    },
+    {
+      "matchup": "FC Xanthi vs Volos NFC",
+      "games_played": 1,
+      "avg_margin": 2,
+      "avg_excitement": 10.0
+    },
+    {
+      "matchup": "Volos NFC vs FC Xanthi",
+      "games_played": 1,
+      "avg_margin": 2,
+      "avg_excitement": 10.0
+    },
+    {
+      "matchup": "Panathinaikos vs Panionios",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Panionios vs Panathinaikos",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "AEK Athens vs PAOK Salonika",
+      "games_played": 6,
+      "avg_margin": 1,
+      "avg_excitement": 55.0
+    },
+    {
+      "matchup": "PAOK Salonika vs AEK Athens",
+      "games_played": 6,
+      "avg_margin": 1,
+      "avg_excitement": 55.0
+    },
+    {
+      "matchup": "FC Xanthi vs Panathinaikos",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Panathinaikos vs FC Xanthi",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "AEK Athens vs Larissa FC",
+      "games_played": 2,
+      "avg_margin": 1.5,
+      "avg_excitement": 50.0
+    },
+    {
+      "matchup": "Larissa FC vs AEK Athens",
+      "games_played": 2,
+      "avg_margin": 1.5,
+      "avg_excitement": 50.0
+    },
+    {
+      "matchup": "Atromitos vs Volos NFC",
+      "games_played": 7,
+      "avg_margin": 1.43,
+      "avg_excitement": 55.71
+    },
+    {
+      "matchup": "Volos NFC vs Atromitos",
+      "games_played": 7,
+      "avg_margin": 1.43,
+      "avg_excitement": 55.71
+    },
+    {
+      "matchup": "Asteras Tripoli vs PAOK Salonika",
+      "games_played": 8,
+      "avg_margin": 1.5,
+      "avg_excitement": 58.75
+    },
+    {
+      "matchup": "PAOK Salonika vs Asteras Tripoli",
+      "games_played": 8,
+      "avg_margin": 1.5,
+      "avg_excitement": 58.75
+    },
+    {
+      "matchup": "OFI Crete vs Panionios",
+      "games_played": 1,
+      "avg_margin": 3,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Panionios vs OFI Crete",
+      "games_played": 1,
+      "avg_margin": 3,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Aris vs Olympiacos",
+      "games_played": 6,
+      "avg_margin": 1.33,
+      "avg_excitement": 75.0
+    },
+    {
+      "matchup": "Olympiacos vs Aris",
+      "games_played": 6,
+      "avg_margin": 1.33,
+      "avg_excitement": 75.0
+    },
+    {
+      "matchup": "Lamia vs Panetolikos",
+      "games_played": 7,
+      "avg_margin": 0.71,
+      "avg_excitement": 82.86
+    },
+    {
+      "matchup": "Panetolikos vs Lamia",
+      "games_played": 7,
+      "avg_margin": 0.71,
+      "avg_excitement": 82.86
+    },
+    {
+      "matchup": "OFI Crete vs Olympiacos",
+      "games_played": 6,
+      "avg_margin": 1.67,
+      "avg_excitement": 36.67
+    },
+    {
+      "matchup": "Olympiacos vs OFI Crete",
+      "games_played": 6,
+      "avg_margin": 1.67,
+      "avg_excitement": 36.67
+    },
+    {
+      "matchup": "Larissa FC vs Panetolikos",
+      "games_played": 2,
+      "avg_margin": 0.5,
+      "avg_excitement": 95.0
+    },
+    {
+      "matchup": "Panetolikos vs Larissa FC",
+      "games_played": 2,
+      "avg_margin": 0.5,
+      "avg_excitement": 95.0
+    },
+    {
+      "matchup": "Asteras Tripoli vs Panionios",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Panionios vs Asteras Tripoli",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Aris vs FC Xanthi",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "FC Xanthi vs Aris",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Lamia vs PAOK Salonika",
+      "games_played": 6,
+      "avg_margin": 1.83,
+      "avg_excitement": 46.67
+    },
+    {
+      "matchup": "PAOK Salonika vs Lamia",
+      "games_played": 6,
+      "avg_margin": 1.83,
+      "avg_excitement": 46.67
+    },
+    {
+      "matchup": "AEK Athens vs Volos NFC",
+      "games_played": 6,
+      "avg_margin": 1.17,
+      "avg_excitement": 65.0
+    },
+    {
+      "matchup": "Volos NFC vs AEK Athens",
+      "games_played": 6,
+      "avg_margin": 1.17,
+      "avg_excitement": 65.0
+    },
+    {
+      "matchup": "Atromitos vs Panathinaikos",
+      "games_played": 7,
+      "avg_margin": 1.71,
+      "avg_excitement": 52.86
+    },
+    {
+      "matchup": "Panathinaikos vs Atromitos",
+      "games_played": 7,
+      "avg_margin": 1.71,
+      "avg_excitement": 52.86
+    },
+    {
+      "matchup": "FC Xanthi vs OFI Crete",
+      "games_played": 1,
+      "avg_margin": 2,
+      "avg_excitement": 10.0
+    },
+    {
+      "matchup": "OFI Crete vs FC Xanthi",
+      "games_played": 1,
+      "avg_margin": 2,
+      "avg_excitement": 10.0
+    },
+    {
+      "matchup": "PAOK Salonika vs Volos NFC",
+      "games_played": 6,
+      "avg_margin": 1.83,
+      "avg_excitement": 35.0
+    },
+    {
+      "matchup": "Volos NFC vs PAOK Salonika",
+      "games_played": 6,
+      "avg_margin": 1.83,
+      "avg_excitement": 35.0
+    },
+    {
+      "matchup": "Larissa FC vs Panathinaikos",
+      "games_played": 2,
+      "avg_margin": 0.5,
+      "avg_excitement": 95.0
+    },
+    {
+      "matchup": "Panathinaikos vs Larissa FC",
+      "games_played": 2,
+      "avg_margin": 0.5,
+      "avg_excitement": 95.0
+    },
+    {
+      "matchup": "Atromitos vs Panionios",
+      "games_played": 1,
+      "avg_margin": 4,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Panionios vs Atromitos",
+      "games_played": 1,
+      "avg_margin": 4,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Aris vs Panetolikos",
+      "games_played": 6,
+      "avg_margin": 2.17,
+      "avg_excitement": 31.67
+    },
+    {
+      "matchup": "Panetolikos vs Aris",
+      "games_played": 6,
+      "avg_margin": 2.17,
+      "avg_excitement": 31.67
+    },
+    {
+      "matchup": "AEK Athens vs Olympiacos",
+      "games_played": 7,
+      "avg_margin": 1.29,
+      "avg_excitement": 57.14
+    },
+    {
+      "matchup": "Olympiacos vs AEK Athens",
+      "games_played": 7,
+      "avg_margin": 1.29,
+      "avg_excitement": 57.14
+    },
+    {
+      "matchup": "Asteras Tripoli vs Lamia",
+      "games_played": 6,
+      "avg_margin": 0.83,
+      "avg_excitement": 80.0
+    },
+    {
+      "matchup": "Lamia vs Asteras Tripoli",
+      "games_played": 6,
+      "avg_margin": 0.83,
+      "avg_excitement": 80.0
+    },
+    {
+      "matchup": "Aris vs Panionios",
+      "games_played": 1,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "Panionios vs Aris",
+      "games_played": 1,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "FC Xanthi vs Olympiacos",
+      "games_played": 1,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "Olympiacos vs FC Xanthi",
+      "games_played": 1,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "Larissa FC vs OFI Crete",
+      "games_played": 2,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "OFI Crete vs Larissa FC",
+      "games_played": 2,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Asteras Tripoli vs Panetolikos",
+      "games_played": 7,
+      "avg_margin": 0.29,
+      "avg_excitement": 97.14
+    },
+    {
+      "matchup": "Panetolikos vs Asteras Tripoli",
+      "games_played": 7,
+      "avg_margin": 0.29,
+      "avg_excitement": 97.14
+    },
+    {
+      "matchup": "AEK Athens vs Atromitos",
+      "games_played": 6,
+      "avg_margin": 1.33,
+      "avg_excitement": 75.0
+    },
+    {
+      "matchup": "Atromitos vs AEK Athens",
+      "games_played": 6,
+      "avg_margin": 1.33,
+      "avg_excitement": 75.0
+    },
+    {
+      "matchup": "PAOK Salonika vs Panathinaikos",
+      "games_played": 6,
+      "avg_margin": 0.67,
+      "avg_excitement": 81.67
+    },
+    {
+      "matchup": "Panathinaikos vs PAOK Salonika",
+      "games_played": 6,
+      "avg_margin": 0.67,
+      "avg_excitement": 81.67
+    },
+    {
+      "matchup": "Lamia vs Volos NFC",
+      "games_played": 8,
+      "avg_margin": 0.5,
+      "avg_excitement": 95.0
+    },
+    {
+      "matchup": "Volos NFC vs Lamia",
+      "games_played": 8,
+      "avg_margin": 0.5,
+      "avg_excitement": 95.0
+    },
+    {
+      "matchup": "Panetolikos vs Volos NFC",
+      "games_played": 6,
+      "avg_margin": 1,
+      "avg_excitement": 78.33
+    },
+    {
+      "matchup": "Volos NFC vs Panetolikos",
+      "games_played": 6,
+      "avg_margin": 1,
+      "avg_excitement": 78.33
+    },
+    {
+      "matchup": "OFI Crete vs PAOK Salonika",
+      "games_played": 6,
+      "avg_margin": 1.33,
+      "avg_excitement": 63.33
+    },
+    {
+      "matchup": "PAOK Salonika vs OFI Crete",
+      "games_played": 6,
+      "avg_margin": 1.33,
+      "avg_excitement": 63.33
+    },
+    {
+      "matchup": "Aris vs Asteras Tripoli",
+      "games_played": 6,
+      "avg_margin": 1,
+      "avg_excitement": 78.33
+    },
+    {
+      "matchup": "Asteras Tripoli vs Aris",
+      "games_played": 6,
+      "avg_margin": 1,
+      "avg_excitement": 78.33
+    },
+    {
+      "matchup": "FC Xanthi vs Panionios",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Panionios vs FC Xanthi",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Atromitos vs Olympiacos",
+      "games_played": 7,
+      "avg_margin": 2.43,
+      "avg_excitement": 15.71
+    },
+    {
+      "matchup": "Olympiacos vs Atromitos",
+      "games_played": 7,
+      "avg_margin": 2.43,
+      "avg_excitement": 15.71
+    },
+    {
+      "matchup": "AEK Athens vs Panathinaikos",
+      "games_played": 6,
+      "avg_margin": 1.17,
+      "avg_excitement": 76.67
+    },
+    {
+      "matchup": "Panathinaikos vs AEK Athens",
+      "games_played": 6,
+      "avg_margin": 1.17,
+      "avg_excitement": 76.67
+    },
+    {
+      "matchup": "Lamia vs Larissa FC",
+      "games_played": 1,
+      "avg_margin": 3,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Larissa FC vs Lamia",
+      "games_played": 1,
+      "avg_margin": 3,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Olympiacos vs Panionios",
+      "games_played": 1,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "Panionios vs Olympiacos",
+      "games_played": 1,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "FC Xanthi vs Lamia",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Lamia vs FC Xanthi",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Atromitos vs OFI Crete",
+      "games_played": 8,
+      "avg_margin": 0.75,
+      "avg_excitement": 75.0
+    },
+    {
+      "matchup": "OFI Crete vs Atromitos",
+      "games_played": 8,
+      "avg_margin": 0.75,
+      "avg_excitement": 75.0
+    },
+    {
+      "matchup": "Asteras Tripoli vs Volos NFC",
+      "games_played": 7,
+      "avg_margin": 0.43,
+      "avg_excitement": 95.71
+    },
+    {
+      "matchup": "Volos NFC vs Asteras Tripoli",
+      "games_played": 7,
+      "avg_margin": 0.43,
+      "avg_excitement": 95.71
+    },
+    {
+      "matchup": "Larissa FC vs PAOK Salonika",
+      "games_played": 3,
+      "avg_margin": 0.67,
+      "avg_excitement": 93.33
+    },
+    {
+      "matchup": "PAOK Salonika vs Larissa FC",
+      "games_played": 3,
+      "avg_margin": 0.67,
+      "avg_excitement": 93.33
+    },
+    {
+      "matchup": "AEK Athens vs Aris",
+      "games_played": 5,
+      "avg_margin": 1.6,
+      "avg_excitement": 56.0
+    },
+    {
+      "matchup": "Aris vs AEK Athens",
+      "games_played": 5,
+      "avg_margin": 1.6,
+      "avg_excitement": 56.0
+    },
+    {
+      "matchup": "Panathinaikos vs Panetolikos",
+      "games_played": 6,
+      "avg_margin": 1.67,
+      "avg_excitement": 60.0
+    },
+    {
+      "matchup": "Panetolikos vs Panathinaikos",
+      "games_played": 6,
+      "avg_margin": 1.67,
+      "avg_excitement": 60.0
+    },
+    {
+      "matchup": "Larissa FC vs Volos NFC",
+      "games_played": 2,
+      "avg_margin": 0.5,
+      "avg_excitement": 95.0
+    },
+    {
+      "matchup": "Volos NFC vs Larissa FC",
+      "games_played": 2,
+      "avg_margin": 0.5,
+      "avg_excitement": 95.0
+    },
+    {
+      "matchup": "Panetolikos vs Panionios",
+      "games_played": 1,
+      "avg_margin": 3,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Panionios vs Panetolikos",
+      "games_played": 1,
+      "avg_margin": 3,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "AEK Athens vs OFI Crete",
+      "games_played": 7,
+      "avg_margin": 1.57,
+      "avg_excitement": 54.29
+    },
+    {
+      "matchup": "OFI Crete vs AEK Athens",
+      "games_played": 7,
+      "avg_margin": 1.57,
+      "avg_excitement": 54.29
+    },
+    {
+      "matchup": "Asteras Tripoli vs Panathinaikos",
+      "games_played": 8,
+      "avg_margin": 1.12,
+      "avg_excitement": 80.0
+    },
+    {
+      "matchup": "Panathinaikos vs Asteras Tripoli",
+      "games_played": 8,
+      "avg_margin": 1.12,
+      "avg_excitement": 80.0
+    },
+    {
+      "matchup": "Aris vs Lamia",
+      "games_played": 8,
+      "avg_margin": 1.62,
+      "avg_excitement": 48.75
+    },
+    {
+      "matchup": "Lamia vs Aris",
+      "games_played": 8,
+      "avg_margin": 1.62,
+      "avg_excitement": 48.75
+    },
+    {
+      "matchup": "Atromitos vs FC Xanthi",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "FC Xanthi vs Atromitos",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Olympiacos vs PAOK Salonika",
+      "games_played": 5,
+      "avg_margin": 1,
+      "avg_excitement": 76.0
+    },
+    {
+      "matchup": "PAOK Salonika vs Olympiacos",
+      "games_played": 5,
+      "avg_margin": 1,
+      "avg_excitement": 76.0
+    },
+    {
+      "matchup": "FC Xanthi vs PAOK Salonika",
+      "games_played": 1,
+      "avg_margin": 2,
+      "avg_excitement": 10.0
+    },
+    {
+      "matchup": "PAOK Salonika vs FC Xanthi",
+      "games_played": 1,
+      "avg_margin": 2,
+      "avg_excitement": 10.0
+    },
+    {
+      "matchup": "AEK Athens vs Panionios",
+      "games_played": 1,
+      "avg_margin": 5,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Panionios vs AEK Athens",
+      "games_played": 1,
+      "avg_margin": 5,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Olympiacos vs Panetolikos",
+      "games_played": 6,
+      "avg_margin": 1.67,
+      "avg_excitement": 36.67
+    },
+    {
+      "matchup": "Panetolikos vs Olympiacos",
+      "games_played": 6,
+      "avg_margin": 1.67,
+      "avg_excitement": 36.67
+    },
+    {
+      "matchup": "Lamia vs OFI Crete",
+      "games_played": 7,
+      "avg_margin": 0.57,
+      "avg_excitement": 84.29
+    },
+    {
+      "matchup": "OFI Crete vs Lamia",
+      "games_played": 7,
+      "avg_margin": 0.57,
+      "avg_excitement": 84.29
+    },
+    {
+      "matchup": "Asteras Tripoli vs Larissa FC",
+      "games_played": 2,
+      "avg_margin": 1,
+      "avg_excitement": 55.0
+    },
+    {
+      "matchup": "Larissa FC vs Asteras Tripoli",
+      "games_played": 2,
+      "avg_margin": 1,
+      "avg_excitement": 55.0
+    },
+    {
+      "matchup": "Aris vs Atromitos",
+      "games_played": 7,
+      "avg_margin": 0.71,
+      "avg_excitement": 72.86
+    },
+    {
+      "matchup": "Atromitos vs Aris",
+      "games_played": 7,
+      "avg_margin": 0.71,
+      "avg_excitement": 72.86
+    },
+    {
+      "matchup": "Panathinaikos vs Volos NFC",
+      "games_played": 7,
+      "avg_margin": 2.14,
+      "avg_excitement": 38.57
+    },
+    {
+      "matchup": "Volos NFC vs Panathinaikos",
+      "games_played": 7,
+      "avg_margin": 2.14,
+      "avg_excitement": 38.57
+    },
+    {
+      "matchup": "Aris vs Pas Giannina",
+      "games_played": 4,
+      "avg_margin": 2.75,
+      "avg_excitement": 20.0
+    },
+    {
+      "matchup": "Pas Giannina vs Aris",
+      "games_played": 4,
+      "avg_margin": 2.75,
+      "avg_excitement": 20.0
+    },
+    {
+      "matchup": "Apollon Smyrni vs Larissa FC",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Larissa FC vs Apollon Smyrni",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Olympiacos vs Pas Giannina",
+      "games_played": 5,
+      "avg_margin": 1.2,
+      "avg_excitement": 60.0
+    },
+    {
+      "matchup": "Pas Giannina vs Olympiacos",
+      "games_played": 5,
+      "avg_margin": 1.2,
+      "avg_excitement": 60.0
+    },
+    {
+      "matchup": "Pas Giannina vs Volos NFC",
+      "games_played": 4,
+      "avg_margin": 0.75,
+      "avg_excitement": 92.5
+    },
+    {
+      "matchup": "Volos NFC vs Pas Giannina",
+      "games_played": 4,
+      "avg_margin": 0.75,
+      "avg_excitement": 92.5
+    },
+    {
+      "matchup": "Apollon Smyrni vs Aris",
+      "games_played": 2,
+      "avg_margin": 0.5,
+      "avg_excitement": 95.0
+    },
+    {
+      "matchup": "Aris vs Apollon Smyrni",
+      "games_played": 2,
+      "avg_margin": 0.5,
+      "avg_excitement": 95.0
+    },
+    {
+      "matchup": "Apollon Smyrni vs Pas Giannina",
+      "games_played": 3,
+      "avg_margin": 1.33,
+      "avg_excitement": 63.33
+    },
+    {
+      "matchup": "Pas Giannina vs Apollon Smyrni",
+      "games_played": 3,
+      "avg_margin": 1.33,
+      "avg_excitement": 63.33
+    },
+    {
+      "matchup": "AEK Athens vs Pas Giannina",
+      "games_played": 4,
+      "avg_margin": 1.25,
+      "avg_excitement": 70.0
+    },
+    {
+      "matchup": "Pas Giannina vs AEK Athens",
+      "games_played": 4,
+      "avg_margin": 1.25,
+      "avg_excitement": 70.0
+    },
+    {
+      "matchup": "Apollon Smyrni vs Olympiacos",
+      "games_played": 2,
+      "avg_margin": 2.5,
+      "avg_excitement": 5.0
+    },
+    {
+      "matchup": "Olympiacos vs Apollon Smyrni",
+      "games_played": 2,
+      "avg_margin": 2.5,
+      "avg_excitement": 5.0
+    },
+    {
+      "matchup": "Atromitos vs Pas Giannina",
+      "games_played": 4,
+      "avg_margin": 0.75,
+      "avg_excitement": 75.0
+    },
+    {
+      "matchup": "Pas Giannina vs Atromitos",
+      "games_played": 4,
+      "avg_margin": 0.75,
+      "avg_excitement": 75.0
+    },
+    {
+      "matchup": "Apollon Smyrni vs Panathinaikos",
+      "games_played": 3,
+      "avg_margin": 2,
+      "avg_excitement": 56.67
+    },
+    {
+      "matchup": "Panathinaikos vs Apollon Smyrni",
+      "games_played": 3,
+      "avg_margin": 2,
+      "avg_excitement": 56.67
+    },
+    {
+      "matchup": "Larissa FC vs Pas Giannina",
+      "games_played": 2,
+      "avg_margin": 0.5,
+      "avg_excitement": 95.0
+    },
+    {
+      "matchup": "Pas Giannina vs Larissa FC",
+      "games_played": 2,
+      "avg_margin": 0.5,
+      "avg_excitement": 95.0
+    },
+    {
+      "matchup": "Panetolikos vs Pas Giannina",
+      "games_played": 4,
+      "avg_margin": 1.5,
+      "avg_excitement": 50.0
+    },
+    {
+      "matchup": "Pas Giannina vs Panetolikos",
+      "games_played": 4,
+      "avg_margin": 1.5,
+      "avg_excitement": 50.0
+    },
+    {
+      "matchup": "Apollon Smyrni vs PAOK Salonika",
+      "games_played": 2,
+      "avg_margin": 2.5,
+      "avg_excitement": 5.0
+    },
+    {
+      "matchup": "PAOK Salonika vs Apollon Smyrni",
+      "games_played": 2,
+      "avg_margin": 2.5,
+      "avg_excitement": 5.0
+    },
+    {
+      "matchup": "Apollon Smyrni vs Atromitos",
+      "games_played": 2,
+      "avg_margin": 1.5,
+      "avg_excitement": 50.0
+    },
+    {
+      "matchup": "Atromitos vs Apollon Smyrni",
+      "games_played": 2,
+      "avg_margin": 1.5,
+      "avg_excitement": 50.0
+    },
+    {
+      "matchup": "PAOK Salonika vs Pas Giannina",
+      "games_played": 5,
+      "avg_margin": 2,
+      "avg_excitement": 38.0
+    },
+    {
+      "matchup": "Pas Giannina vs PAOK Salonika",
+      "games_played": 5,
+      "avg_margin": 2,
+      "avg_excitement": 38.0
+    },
+    {
+      "matchup": "Apollon Smyrni vs Asteras Tripoli",
+      "games_played": 2,
+      "avg_margin": 0.5,
+      "avg_excitement": 95.0
+    },
+    {
+      "matchup": "Asteras Tripoli vs Apollon Smyrni",
+      "games_played": 2,
+      "avg_margin": 0.5,
+      "avg_excitement": 95.0
+    },
+    {
+      "matchup": "OFI Crete vs Pas Giannina",
+      "games_played": 4,
+      "avg_margin": 0.25,
+      "avg_excitement": 97.5
+    },
+    {
+      "matchup": "Pas Giannina vs OFI Crete",
+      "games_played": 4,
+      "avg_margin": 0.25,
+      "avg_excitement": 97.5
+    },
+    {
+      "matchup": "Apollon Smyrni vs Volos NFC",
+      "games_played": 2,
+      "avg_margin": 1,
+      "avg_excitement": 55.0
+    },
+    {
+      "matchup": "Volos NFC vs Apollon Smyrni",
+      "games_played": 2,
+      "avg_margin": 1,
+      "avg_excitement": 55.0
+    },
+    {
+      "matchup": "Apollon Smyrni vs OFI Crete",
+      "games_played": 1,
+      "avg_margin": 2,
+      "avg_excitement": 10.0
+    },
+    {
+      "matchup": "OFI Crete vs Apollon Smyrni",
+      "games_played": 1,
+      "avg_margin": 2,
+      "avg_excitement": 10.0
+    },
+    {
+      "matchup": "Lamia vs Pas Giannina",
+      "games_played": 4,
+      "avg_margin": 1,
+      "avg_excitement": 72.5
+    },
+    {
+      "matchup": "Pas Giannina vs Lamia",
+      "games_played": 4,
+      "avg_margin": 1,
+      "avg_excitement": 72.5
+    },
+    {
+      "matchup": "Panathinaikos vs Pas Giannina",
+      "games_played": 5,
+      "avg_margin": 1.8,
+      "avg_excitement": 40.0
+    },
+    {
+      "matchup": "Pas Giannina vs Panathinaikos",
+      "games_played": 5,
+      "avg_margin": 1.8,
+      "avg_excitement": 40.0
+    },
+    {
+      "matchup": "AEK Athens vs Apollon Smyrni",
+      "games_played": 2,
+      "avg_margin": 0.5,
+      "avg_excitement": 95.0
+    },
+    {
+      "matchup": "Apollon Smyrni vs AEK Athens",
+      "games_played": 2,
+      "avg_margin": 0.5,
+      "avg_excitement": 95.0
+    },
+    {
+      "matchup": "Apollon Smyrni vs Panetolikos",
+      "games_played": 2,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Panetolikos vs Apollon Smyrni",
+      "games_played": 2,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Asteras Tripoli vs Pas Giannina",
+      "games_played": 4,
+      "avg_margin": 0.25,
+      "avg_excitement": 97.5
+    },
+    {
+      "matchup": "Pas Giannina vs Asteras Tripoli",
+      "games_played": 4,
+      "avg_margin": 0.25,
+      "avg_excitement": 97.5
+    },
+    {
+      "matchup": "AEK Athens vs Ionikos FC",
+      "games_played": 3,
+      "avg_margin": 2.33,
+      "avg_excitement": 30.0
+    },
+    {
+      "matchup": "Ionikos FC vs AEK Athens",
+      "games_played": 3,
+      "avg_margin": 2.33,
+      "avg_excitement": 30.0
+    },
+    {
+      "matchup": "Aris vs Ionikos FC",
+      "games_played": 2,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Ionikos FC vs Aris",
+      "games_played": 2,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Ionikos FC vs Pas Giannina",
+      "games_played": 2,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "Pas Giannina vs Ionikos FC",
+      "games_played": 2,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "Apollon Smyrni vs Ionikos FC",
+      "games_played": 1,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "Ionikos FC vs Apollon Smyrni",
+      "games_played": 1,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "Ionikos FC vs Lamia",
+      "games_played": 2,
+      "avg_margin": 0.5,
+      "avg_excitement": 95.0
+    },
+    {
+      "matchup": "Lamia vs Ionikos FC",
+      "games_played": 2,
+      "avg_margin": 0.5,
+      "avg_excitement": 95.0
+    },
+    {
+      "matchup": "Ionikos FC vs Panathinaikos",
+      "games_played": 3,
+      "avg_margin": 1.33,
+      "avg_excitement": 63.33
+    },
+    {
+      "matchup": "Panathinaikos vs Ionikos FC",
+      "games_played": 3,
+      "avg_margin": 1.33,
+      "avg_excitement": 63.33
+    },
+    {
+      "matchup": "Atromitos vs Ionikos FC",
+      "games_played": 2,
+      "avg_margin": 2.5,
+      "avg_excitement": 5.0
+    },
+    {
+      "matchup": "Ionikos FC vs Atromitos",
+      "games_played": 2,
+      "avg_margin": 2.5,
+      "avg_excitement": 5.0
+    },
+    {
+      "matchup": "Ionikos FC vs Volos NFC",
+      "games_played": 2,
+      "avg_margin": 1,
+      "avg_excitement": 55.0
+    },
+    {
+      "matchup": "Volos NFC vs Ionikos FC",
+      "games_played": 2,
+      "avg_margin": 1,
+      "avg_excitement": 55.0
+    },
+    {
+      "matchup": "Ionikos FC vs Olympiacos",
+      "games_played": 2,
+      "avg_margin": 1.5,
+      "avg_excitement": 50.0
+    },
+    {
+      "matchup": "Olympiacos vs Ionikos FC",
+      "games_played": 2,
+      "avg_margin": 1.5,
+      "avg_excitement": 50.0
+    },
+    {
+      "matchup": "Asteras Tripoli vs Ionikos FC",
+      "games_played": 2,
+      "avg_margin": 0.5,
+      "avg_excitement": 95.0
+    },
+    {
+      "matchup": "Ionikos FC vs Asteras Tripoli",
+      "games_played": 2,
+      "avg_margin": 0.5,
+      "avg_excitement": 95.0
+    },
+    {
+      "matchup": "Apollon Smyrni vs Lamia",
+      "games_played": 1,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "Lamia vs Apollon Smyrni",
+      "games_played": 1,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "Ionikos FC vs OFI Crete",
+      "games_played": 2,
+      "avg_margin": 1.5,
+      "avg_excitement": 50.0
+    },
+    {
+      "matchup": "OFI Crete vs Ionikos FC",
+      "games_played": 2,
+      "avg_margin": 1.5,
+      "avg_excitement": 50.0
+    },
+    {
+      "matchup": "Ionikos FC vs PAOK Salonika",
+      "games_played": 2,
+      "avg_margin": 2,
+      "avg_excitement": 45.0
+    },
+    {
+      "matchup": "PAOK Salonika vs Ionikos FC",
+      "games_played": 2,
+      "avg_margin": 2,
+      "avg_excitement": 45.0
+    },
+    {
+      "matchup": "Ionikos FC vs Panetolikos",
+      "games_played": 2,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "Panetolikos vs Ionikos FC",
+      "games_played": 2,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "Aris vs Levadiakos",
+      "games_played": 3,
+      "avg_margin": 1.67,
+      "avg_excitement": 36.67
+    },
+    {
+      "matchup": "Levadiakos vs Aris",
+      "games_played": 3,
+      "avg_margin": 1.67,
+      "avg_excitement": 36.67
+    },
+    {
+      "matchup": "Ionikos FC vs Levadiakos",
+      "games_played": 2,
+      "avg_margin": 0.5,
+      "avg_excitement": 95.0
+    },
+    {
+      "matchup": "Levadiakos vs Ionikos FC",
+      "games_played": 2,
+      "avg_margin": 0.5,
+      "avg_excitement": 95.0
+    },
+    {
+      "matchup": "Levadiakos vs Panathinaikos",
+      "games_played": 2,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Panathinaikos vs Levadiakos",
+      "games_played": 2,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Levadiakos vs Pas Giannina",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Pas Giannina vs Levadiakos",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Asteras Tripoli vs Levadiakos",
+      "games_played": 2,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "Levadiakos vs Asteras Tripoli",
+      "games_played": 2,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "Lamia vs Levadiakos",
+      "games_played": 2,
+      "avg_margin": 0.5,
+      "avg_excitement": 95.0
+    },
+    {
+      "matchup": "Levadiakos vs Lamia",
+      "games_played": 2,
+      "avg_margin": 0.5,
+      "avg_excitement": 95.0
+    },
+    {
+      "matchup": "Levadiakos vs PAOK Salonika",
+      "games_played": 2,
+      "avg_margin": 1,
+      "avg_excitement": 55.0
+    },
+    {
+      "matchup": "PAOK Salonika vs Levadiakos",
+      "games_played": 2,
+      "avg_margin": 1,
+      "avg_excitement": 55.0
+    },
+    {
+      "matchup": "Levadiakos vs Volos NFC",
+      "games_played": 2,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Volos NFC vs Levadiakos",
+      "games_played": 2,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "AEK Athens vs Levadiakos",
+      "games_played": 2,
+      "avg_margin": 2.5,
+      "avg_excitement": 5.0
+    },
+    {
+      "matchup": "Levadiakos vs AEK Athens",
+      "games_played": 2,
+      "avg_margin": 2.5,
+      "avg_excitement": 5.0
+    },
+    {
+      "matchup": "Atromitos vs Levadiakos",
+      "games_played": 2,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Levadiakos vs Atromitos",
+      "games_played": 2,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Levadiakos vs Panetolikos",
+      "games_played": 2,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "Panetolikos vs Levadiakos",
+      "games_played": 2,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "Levadiakos vs Olympiacos",
+      "games_played": 2,
+      "avg_margin": 0.5,
+      "avg_excitement": 95.0
+    },
+    {
+      "matchup": "Olympiacos vs Levadiakos",
+      "games_played": 2,
+      "avg_margin": 0.5,
+      "avg_excitement": 95.0
+    },
+    {
+      "matchup": "Levadiakos vs OFI Crete",
+      "games_played": 2,
+      "avg_margin": 0.5,
+      "avg_excitement": 95.0
+    },
+    {
+      "matchup": "OFI Crete vs Levadiakos",
+      "games_played": 2,
+      "avg_margin": 0.5,
+      "avg_excitement": 95.0
+    },
+    {
+      "matchup": "Kifisia vs Pas Giannina",
+      "games_played": 2,
+      "avg_margin": 2.5,
+      "avg_excitement": 5.0
+    },
+    {
+      "matchup": "Pas Giannina vs Kifisia",
+      "games_played": 2,
+      "avg_margin": 2.5,
+      "avg_excitement": 5.0
+    },
+    {
+      "matchup": "Olympiacos vs Panserraikos FC",
+      "games_played": 3,
+      "avg_margin": 1.33,
+      "avg_excitement": 63.33
+    },
+    {
+      "matchup": "Panserraikos FC vs Olympiacos",
+      "games_played": 3,
+      "avg_margin": 1.33,
+      "avg_excitement": 63.33
+    },
+    {
+      "matchup": "AEK Athens vs Panserraikos FC",
+      "games_played": 2,
+      "avg_margin": 0.5,
+      "avg_excitement": 95.0
+    },
+    {
+      "matchup": "Panserraikos FC vs AEK Athens",
+      "games_played": 2,
+      "avg_margin": 0.5,
+      "avg_excitement": 95.0
+    },
+    {
+      "matchup": "Kifisia vs PAOK Salonika",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "PAOK Salonika vs Kifisia",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Atromitos vs Kifisia",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Kifisia vs Atromitos",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Panetolikos vs Panserraikos FC",
+      "games_played": 2,
+      "avg_margin": 1.5,
+      "avg_excitement": 50.0
+    },
+    {
+      "matchup": "Panserraikos FC vs Panetolikos",
+      "games_played": 2,
+      "avg_margin": 1.5,
+      "avg_excitement": 50.0
+    },
+    {
+      "matchup": "Kifisia vs Panserraikos FC",
+      "games_played": 1,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "Panserraikos FC vs Kifisia",
+      "games_played": 1,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "Lamia vs Panserraikos FC",
+      "games_played": 2,
+      "avg_margin": 1.5,
+      "avg_excitement": 50.0
+    },
+    {
+      "matchup": "Panserraikos FC vs Lamia",
+      "games_played": 2,
+      "avg_margin": 1.5,
+      "avg_excitement": 50.0
+    },
+    {
+      "matchup": "Kifisia vs Olympiacos",
+      "games_played": 1,
+      "avg_margin": 4,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Olympiacos vs Kifisia",
+      "games_played": 1,
+      "avg_margin": 4,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Kifisia vs Lamia",
+      "games_played": 1,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "Lamia vs Kifisia",
+      "games_played": 1,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "Panserraikos FC vs Pas Giannina",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Pas Giannina vs Panserraikos FC",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Aris vs Kifisia",
+      "games_played": 1,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "Kifisia vs Aris",
+      "games_played": 1,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "Aris vs Panserraikos FC",
+      "games_played": 2,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Panserraikos FC vs Aris",
+      "games_played": 2,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Kifisia vs OFI Crete",
+      "games_played": 1,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "OFI Crete vs Kifisia",
+      "games_played": 1,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "Kifisia vs Volos NFC",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Volos NFC vs Kifisia",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Panathinaikos vs Panserraikos FC",
+      "games_played": 2,
+      "avg_margin": 3.5,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Panserraikos FC vs Panathinaikos",
+      "games_played": 2,
+      "avg_margin": 3.5,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "AEK Athens vs Kifisia",
+      "games_played": 1,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "Kifisia vs AEK Athens",
+      "games_played": 1,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "OFI Crete vs Panserraikos FC",
+      "games_played": 2,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Panserraikos FC vs OFI Crete",
+      "games_played": 2,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Atromitos vs Panserraikos FC",
+      "games_played": 2,
+      "avg_margin": 0.5,
+      "avg_excitement": 95.0
+    },
+    {
+      "matchup": "Panserraikos FC vs Atromitos",
+      "games_played": 2,
+      "avg_margin": 0.5,
+      "avg_excitement": 95.0
+    },
+    {
+      "matchup": "Kifisia vs Panathinaikos",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Panathinaikos vs Kifisia",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "PAOK Salonika vs Panserraikos FC",
+      "games_played": 3,
+      "avg_margin": 3,
+      "avg_excitement": 23.33
+    },
+    {
+      "matchup": "Panserraikos FC vs PAOK Salonika",
+      "games_played": 3,
+      "avg_margin": 3,
+      "avg_excitement": 23.33
+    },
+    {
+      "matchup": "Asteras Tripoli vs Kifisia",
+      "games_played": 1,
+      "avg_margin": 2,
+      "avg_excitement": 10.0
+    },
+    {
+      "matchup": "Kifisia vs Asteras Tripoli",
+      "games_played": 1,
+      "avg_margin": 2,
+      "avg_excitement": 10.0
+    },
+    {
+      "matchup": "Panserraikos FC vs Volos NFC",
+      "games_played": 2,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Volos NFC vs Panserraikos FC",
+      "games_played": 2,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Kifisia vs Panetolikos",
+      "games_played": 1,
+      "avg_margin": 3,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Panetolikos vs Kifisia",
+      "games_played": 1,
+      "avg_margin": 3,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Asteras Tripoli vs Panserraikos FC",
+      "games_played": 2,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Panserraikos FC vs Asteras Tripoli",
+      "games_played": 2,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Athens Kallithea vs Levadiakos",
+      "games_played": 2,
+      "avg_margin": 1,
+      "avg_excitement": 55.0
+    },
+    {
+      "matchup": "Levadiakos vs Athens Kallithea",
+      "games_played": 2,
+      "avg_margin": 1,
+      "avg_excitement": 55.0
+    },
+    {
+      "matchup": "Athens Kallithea vs Olympiacos",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Olympiacos vs Athens Kallithea",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Athens Kallithea vs Panathinaikos",
+      "games_played": 1,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "Panathinaikos vs Athens Kallithea",
+      "games_played": 1,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "Athens Kallithea vs Lamia",
+      "games_played": 1,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "Lamia vs Athens Kallithea",
+      "games_played": 1,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "Levadiakos vs Panserraikos FC",
+      "games_played": 1,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "Panserraikos FC vs Levadiakos",
+      "games_played": 1,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "AEK Athens vs Athens Kallithea",
+      "games_played": 1,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "Athens Kallithea vs AEK Athens",
+      "games_played": 1,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "Athens Kallithea vs Volos NFC",
+      "games_played": 1,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "Volos NFC vs Athens Kallithea",
+      "games_played": 1,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "Asteras Tripoli vs Athens Kallithea",
+      "games_played": 1,
+      "avg_margin": 2,
+      "avg_excitement": 10.0
+    },
+    {
+      "matchup": "Athens Kallithea vs Asteras Tripoli",
+      "games_played": 1,
+      "avg_margin": 2,
+      "avg_excitement": 10.0
+    },
+    {
+      "matchup": "Aris vs Athens Kallithea",
+      "games_played": 1,
+      "avg_margin": 2,
+      "avg_excitement": 10.0
+    },
+    {
+      "matchup": "Athens Kallithea vs Aris",
+      "games_played": 1,
+      "avg_margin": 2,
+      "avg_excitement": 10.0
+    },
+    {
+      "matchup": "Athens Kallithea vs Atromitos",
+      "games_played": 1,
+      "avg_margin": 3,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Atromitos vs Athens Kallithea",
+      "games_played": 1,
+      "avg_margin": 3,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Athens Kallithea vs Panetolikos",
+      "games_played": 1,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "Panetolikos vs Athens Kallithea",
+      "games_played": 1,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "Athens Kallithea vs OFI Crete",
+      "games_played": 1,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "OFI Crete vs Athens Kallithea",
+      "games_played": 1,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "Athens Kallithea vs Panserraikos FC",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Panserraikos FC vs Athens Kallithea",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Athens Kallithea vs PAOK Salonika",
+      "games_played": 1,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "PAOK Salonika vs Athens Kallithea",
+      "games_played": 1,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    }
+  ],
+  "matchup_close_rates": [
+    {
+      "matchup": "Lamia vs Panathinaikos",
+      "games": 7,
+      "close_games": 3,
+      "close_rate": 42.86
+    },
+    {
+      "matchup": "Panathinaikos vs Lamia",
+      "games": 7,
+      "close_games": 3,
+      "close_rate": 42.86
+    },
+    {
+      "matchup": "Aris vs OFI Crete",
+      "games": 9,
+      "close_games": 7,
+      "close_rate": 77.78
+    },
+    {
+      "matchup": "OFI Crete vs Aris",
+      "games": 9,
+      "close_games": 7,
+      "close_rate": 77.78
+    },
+    {
+      "matchup": "Asteras Tripoli vs Olympiacos",
+      "games": 9,
+      "close_games": 3,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "Olympiacos vs Asteras Tripoli",
+      "games": 9,
+      "close_games": 3,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "Atromitos vs Larissa FC",
+      "games": 3,
+      "close_games": 3,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Larissa FC vs Atromitos",
+      "games": 3,
+      "close_games": 3,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Panionios vs Volos NFC",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Volos NFC vs Panionios",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "PAOK Salonika vs Panetolikos",
+      "games": 8,
+      "close_games": 4,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Panetolikos vs PAOK Salonika",
+      "games": 8,
+      "close_games": 4,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "AEK Athens vs FC Xanthi",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "FC Xanthi vs AEK Athens",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "FC Xanthi vs Panetolikos",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Panetolikos vs FC Xanthi",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "OFI Crete vs Panathinaikos",
+      "games": 7,
+      "close_games": 4,
+      "close_rate": 57.14
+    },
+    {
+      "matchup": "Panathinaikos vs OFI Crete",
+      "games": 7,
+      "close_games": 4,
+      "close_rate": 57.14
+    },
+    {
+      "matchup": "Aris vs Volos NFC",
+      "games": 7,
+      "close_games": 4,
+      "close_rate": 57.14
+    },
+    {
+      "matchup": "Volos NFC vs Aris",
+      "games": 7,
+      "close_games": 4,
+      "close_rate": 57.14
+    },
+    {
+      "matchup": "PAOK Salonika vs Panionios",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Panionios vs PAOK Salonika",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Larissa FC vs Olympiacos",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Olympiacos vs Larissa FC",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Atromitos vs Lamia",
+      "games": 5,
+      "close_games": 4,
+      "close_rate": 80.0
+    },
+    {
+      "matchup": "Lamia vs Atromitos",
+      "games": 5,
+      "close_games": 4,
+      "close_rate": 80.0
+    },
+    {
+      "matchup": "AEK Athens vs Asteras Tripoli",
+      "games": 6,
+      "close_games": 4,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Asteras Tripoli vs AEK Athens",
+      "games": 6,
+      "close_games": 4,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Atromitos vs PAOK Salonika",
+      "games": 7,
+      "close_games": 5,
+      "close_rate": 71.43
+    },
+    {
+      "matchup": "PAOK Salonika vs Atromitos",
+      "games": 7,
+      "close_games": 5,
+      "close_rate": 71.43
+    },
+    {
+      "matchup": "OFI Crete vs Panetolikos",
+      "games": 7,
+      "close_games": 6,
+      "close_rate": 85.71
+    },
+    {
+      "matchup": "Panetolikos vs OFI Crete",
+      "games": 7,
+      "close_games": 6,
+      "close_rate": 85.71
+    },
+    {
+      "matchup": "Olympiacos vs Volos NFC",
+      "games": 7,
+      "close_games": 3,
+      "close_rate": 42.86
+    },
+    {
+      "matchup": "Volos NFC vs Olympiacos",
+      "games": 7,
+      "close_games": 3,
+      "close_rate": 42.86
+    },
+    {
+      "matchup": "Asteras Tripoli vs FC Xanthi",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "FC Xanthi vs Asteras Tripoli",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "AEK Athens vs Lamia",
+      "games": 8,
+      "close_games": 3,
+      "close_rate": 37.5
+    },
+    {
+      "matchup": "Lamia vs AEK Athens",
+      "games": 8,
+      "close_games": 3,
+      "close_rate": 37.5
+    },
+    {
+      "matchup": "Larissa FC vs Panionios",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Panionios vs Larissa FC",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Aris vs Panathinaikos",
+      "games": 6,
+      "close_games": 4,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Panathinaikos vs Aris",
+      "games": 6,
+      "close_games": 4,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "OFI Crete vs Volos NFC",
+      "games": 6,
+      "close_games": 3,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Volos NFC vs OFI Crete",
+      "games": 6,
+      "close_games": 3,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Asteras Tripoli vs Atromitos",
+      "games": 6,
+      "close_games": 3,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Atromitos vs Asteras Tripoli",
+      "games": 6,
+      "close_games": 3,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "AEK Athens vs Panetolikos",
+      "games": 8,
+      "close_games": 4,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Panetolikos vs AEK Athens",
+      "games": 8,
+      "close_games": 4,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "FC Xanthi vs Larissa FC",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Larissa FC vs FC Xanthi",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Aris vs PAOK Salonika",
+      "games": 6,
+      "close_games": 6,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "PAOK Salonika vs Aris",
+      "games": 6,
+      "close_games": 6,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Lamia vs Panionios",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Panionios vs Lamia",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Olympiacos vs Panathinaikos",
+      "games": 6,
+      "close_games": 5,
+      "close_rate": 83.33
+    },
+    {
+      "matchup": "Panathinaikos vs Olympiacos",
+      "games": 6,
+      "close_games": 5,
+      "close_rate": 83.33
+    },
+    {
+      "matchup": "Aris vs Larissa FC",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Larissa FC vs Aris",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Atromitos vs Panetolikos",
+      "games": 7,
+      "close_games": 4,
+      "close_rate": 57.14
+    },
+    {
+      "matchup": "Panetolikos vs Atromitos",
+      "games": 7,
+      "close_games": 4,
+      "close_rate": 57.14
+    },
+    {
+      "matchup": "Lamia vs Olympiacos",
+      "games": 7,
+      "close_games": 2,
+      "close_rate": 28.57
+    },
+    {
+      "matchup": "Olympiacos vs Lamia",
+      "games": 7,
+      "close_games": 2,
+      "close_rate": 28.57
+    },
+    {
+      "matchup": "Asteras Tripoli vs OFI Crete",
+      "games": 6,
+      "close_games": 2,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "OFI Crete vs Asteras Tripoli",
+      "games": 6,
+      "close_games": 2,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "FC Xanthi vs Volos NFC",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Volos NFC vs FC Xanthi",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Panathinaikos vs Panionios",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Panionios vs Panathinaikos",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "AEK Athens vs PAOK Salonika",
+      "games": 6,
+      "close_games": 3,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "PAOK Salonika vs AEK Athens",
+      "games": 6,
+      "close_games": 3,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "FC Xanthi vs Panathinaikos",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Panathinaikos vs FC Xanthi",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "AEK Athens vs Larissa FC",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Larissa FC vs AEK Athens",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Atromitos vs Volos NFC",
+      "games": 7,
+      "close_games": 4,
+      "close_rate": 57.14
+    },
+    {
+      "matchup": "Volos NFC vs Atromitos",
+      "games": 7,
+      "close_games": 4,
+      "close_rate": 57.14
+    },
+    {
+      "matchup": "Asteras Tripoli vs PAOK Salonika",
+      "games": 8,
+      "close_games": 5,
+      "close_rate": 62.5
+    },
+    {
+      "matchup": "PAOK Salonika vs Asteras Tripoli",
+      "games": 8,
+      "close_games": 5,
+      "close_rate": 62.5
+    },
+    {
+      "matchup": "OFI Crete vs Panionios",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Panionios vs OFI Crete",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Aris vs Olympiacos",
+      "games": 6,
+      "close_games": 5,
+      "close_rate": 83.33
+    },
+    {
+      "matchup": "Olympiacos vs Aris",
+      "games": 6,
+      "close_games": 5,
+      "close_rate": 83.33
+    },
+    {
+      "matchup": "Lamia vs Panetolikos",
+      "games": 7,
+      "close_games": 6,
+      "close_rate": 85.71
+    },
+    {
+      "matchup": "Panetolikos vs Lamia",
+      "games": 7,
+      "close_games": 6,
+      "close_rate": 85.71
+    },
+    {
+      "matchup": "OFI Crete vs Olympiacos",
+      "games": 6,
+      "close_games": 2,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "Olympiacos vs OFI Crete",
+      "games": 6,
+      "close_games": 2,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "Larissa FC vs Panetolikos",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Panetolikos vs Larissa FC",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Asteras Tripoli vs Panionios",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Panionios vs Asteras Tripoli",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Aris vs FC Xanthi",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "FC Xanthi vs Aris",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Lamia vs PAOK Salonika",
+      "games": 6,
+      "close_games": 3,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "PAOK Salonika vs Lamia",
+      "games": 6,
+      "close_games": 3,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "AEK Athens vs Volos NFC",
+      "games": 6,
+      "close_games": 4,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Volos NFC vs AEK Athens",
+      "games": 6,
+      "close_games": 4,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Atromitos vs Panathinaikos",
+      "games": 7,
+      "close_games": 4,
+      "close_rate": 57.14
+    },
+    {
+      "matchup": "Panathinaikos vs Atromitos",
+      "games": 7,
+      "close_games": 4,
+      "close_rate": 57.14
+    },
+    {
+      "matchup": "FC Xanthi vs OFI Crete",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "OFI Crete vs FC Xanthi",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "PAOK Salonika vs Volos NFC",
+      "games": 6,
+      "close_games": 2,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "Volos NFC vs PAOK Salonika",
+      "games": 6,
+      "close_games": 2,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "Larissa FC vs Panathinaikos",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Panathinaikos vs Larissa FC",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Atromitos vs Panionios",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Panionios vs Atromitos",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Aris vs Panetolikos",
+      "games": 6,
+      "close_games": 2,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "Panetolikos vs Aris",
+      "games": 6,
+      "close_games": 2,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "AEK Athens vs Olympiacos",
+      "games": 7,
+      "close_games": 4,
+      "close_rate": 57.14
+    },
+    {
+      "matchup": "Olympiacos vs AEK Athens",
+      "games": 7,
+      "close_games": 4,
+      "close_rate": 57.14
+    },
+    {
+      "matchup": "Asteras Tripoli vs Lamia",
+      "games": 6,
+      "close_games": 5,
+      "close_rate": 83.33
+    },
+    {
+      "matchup": "Lamia vs Asteras Tripoli",
+      "games": 6,
+      "close_games": 5,
+      "close_rate": 83.33
+    },
+    {
+      "matchup": "Aris vs Panionios",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Panionios vs Aris",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "FC Xanthi vs Olympiacos",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Olympiacos vs FC Xanthi",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Larissa FC vs OFI Crete",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "OFI Crete vs Larissa FC",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Asteras Tripoli vs Panetolikos",
+      "games": 7,
+      "close_games": 7,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Panetolikos vs Asteras Tripoli",
+      "games": 7,
+      "close_games": 7,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "AEK Athens vs Atromitos",
+      "games": 6,
+      "close_games": 5,
+      "close_rate": 83.33
+    },
+    {
+      "matchup": "Atromitos vs AEK Athens",
+      "games": 6,
+      "close_games": 5,
+      "close_rate": 83.33
+    },
+    {
+      "matchup": "PAOK Salonika vs Panathinaikos",
+      "games": 6,
+      "close_games": 5,
+      "close_rate": 83.33
+    },
+    {
+      "matchup": "Panathinaikos vs PAOK Salonika",
+      "games": 6,
+      "close_games": 5,
+      "close_rate": 83.33
+    },
+    {
+      "matchup": "Lamia vs Volos NFC",
+      "games": 8,
+      "close_games": 8,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Volos NFC vs Lamia",
+      "games": 8,
+      "close_games": 8,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Panetolikos vs Volos NFC",
+      "games": 6,
+      "close_games": 5,
+      "close_rate": 83.33
+    },
+    {
+      "matchup": "Volos NFC vs Panetolikos",
+      "games": 6,
+      "close_games": 5,
+      "close_rate": 83.33
+    },
+    {
+      "matchup": "OFI Crete vs PAOK Salonika",
+      "games": 6,
+      "close_games": 4,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "PAOK Salonika vs OFI Crete",
+      "games": 6,
+      "close_games": 4,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Aris vs Asteras Tripoli",
+      "games": 6,
+      "close_games": 5,
+      "close_rate": 83.33
+    },
+    {
+      "matchup": "Asteras Tripoli vs Aris",
+      "games": 6,
+      "close_games": 5,
+      "close_rate": 83.33
+    },
+    {
+      "matchup": "FC Xanthi vs Panionios",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Panionios vs FC Xanthi",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Atromitos vs Olympiacos",
+      "games": 7,
+      "close_games": 1,
+      "close_rate": 14.29
+    },
+    {
+      "matchup": "Olympiacos vs Atromitos",
+      "games": 7,
+      "close_games": 1,
+      "close_rate": 14.29
+    },
+    {
+      "matchup": "AEK Athens vs Panathinaikos",
+      "games": 6,
+      "close_games": 5,
+      "close_rate": 83.33
+    },
+    {
+      "matchup": "Panathinaikos vs AEK Athens",
+      "games": 6,
+      "close_games": 5,
+      "close_rate": 83.33
+    },
+    {
+      "matchup": "Lamia vs Larissa FC",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Larissa FC vs Lamia",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Olympiacos vs Panionios",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Panionios vs Olympiacos",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "FC Xanthi vs Lamia",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Lamia vs FC Xanthi",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Atromitos vs OFI Crete",
+      "games": 8,
+      "close_games": 6,
+      "close_rate": 75.0
+    },
+    {
+      "matchup": "OFI Crete vs Atromitos",
+      "games": 8,
+      "close_games": 6,
+      "close_rate": 75.0
+    },
+    {
+      "matchup": "Asteras Tripoli vs Volos NFC",
+      "games": 7,
+      "close_games": 7,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Volos NFC vs Asteras Tripoli",
+      "games": 7,
+      "close_games": 7,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Larissa FC vs PAOK Salonika",
+      "games": 3,
+      "close_games": 3,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "PAOK Salonika vs Larissa FC",
+      "games": 3,
+      "close_games": 3,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "AEK Athens vs Aris",
+      "games": 5,
+      "close_games": 3,
+      "close_rate": 60.0
+    },
+    {
+      "matchup": "Aris vs AEK Athens",
+      "games": 5,
+      "close_games": 3,
+      "close_rate": 60.0
+    },
+    {
+      "matchup": "Panathinaikos vs Panetolikos",
+      "games": 6,
+      "close_games": 4,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Panetolikos vs Panathinaikos",
+      "games": 6,
+      "close_games": 4,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Larissa FC vs Volos NFC",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Volos NFC vs Larissa FC",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Panetolikos vs Panionios",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Panionios vs Panetolikos",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "AEK Athens vs OFI Crete",
+      "games": 7,
+      "close_games": 4,
+      "close_rate": 57.14
+    },
+    {
+      "matchup": "OFI Crete vs AEK Athens",
+      "games": 7,
+      "close_games": 4,
+      "close_rate": 57.14
+    },
+    {
+      "matchup": "Asteras Tripoli vs Panathinaikos",
+      "games": 8,
+      "close_games": 7,
+      "close_rate": 87.5
+    },
+    {
+      "matchup": "Panathinaikos vs Asteras Tripoli",
+      "games": 8,
+      "close_games": 7,
+      "close_rate": 87.5
+    },
+    {
+      "matchup": "Aris vs Lamia",
+      "games": 8,
+      "close_games": 4,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Lamia vs Aris",
+      "games": 8,
+      "close_games": 4,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Atromitos vs FC Xanthi",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "FC Xanthi vs Atromitos",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Olympiacos vs PAOK Salonika",
+      "games": 5,
+      "close_games": 4,
+      "close_rate": 80.0
+    },
+    {
+      "matchup": "PAOK Salonika vs Olympiacos",
+      "games": 5,
+      "close_games": 4,
+      "close_rate": 80.0
+    },
+    {
+      "matchup": "FC Xanthi vs PAOK Salonika",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "PAOK Salonika vs FC Xanthi",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "AEK Athens vs Panionios",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Panionios vs AEK Athens",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Olympiacos vs Panetolikos",
+      "games": 6,
+      "close_games": 2,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "Panetolikos vs Olympiacos",
+      "games": 6,
+      "close_games": 2,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "Lamia vs OFI Crete",
+      "games": 7,
+      "close_games": 6,
+      "close_rate": 85.71
+    },
+    {
+      "matchup": "OFI Crete vs Lamia",
+      "games": 7,
+      "close_games": 6,
+      "close_rate": 85.71
+    },
+    {
+      "matchup": "Asteras Tripoli vs Larissa FC",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Larissa FC vs Asteras Tripoli",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Aris vs Atromitos",
+      "games": 7,
+      "close_games": 5,
+      "close_rate": 71.43
+    },
+    {
+      "matchup": "Atromitos vs Aris",
+      "games": 7,
+      "close_games": 5,
+      "close_rate": 71.43
+    },
+    {
+      "matchup": "Panathinaikos vs Volos NFC",
+      "games": 7,
+      "close_games": 3,
+      "close_rate": 42.86
+    },
+    {
+      "matchup": "Volos NFC vs Panathinaikos",
+      "games": 7,
+      "close_games": 3,
+      "close_rate": 42.86
+    },
+    {
+      "matchup": "Aris vs Pas Giannina",
+      "games": 4,
+      "close_games": 1,
+      "close_rate": 25.0
+    },
+    {
+      "matchup": "Pas Giannina vs Aris",
+      "games": 4,
+      "close_games": 1,
+      "close_rate": 25.0
+    },
+    {
+      "matchup": "Apollon Smyrni vs Larissa FC",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Larissa FC vs Apollon Smyrni",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Olympiacos vs Pas Giannina",
+      "games": 5,
+      "close_games": 3,
+      "close_rate": 60.0
+    },
+    {
+      "matchup": "Pas Giannina vs Olympiacos",
+      "games": 5,
+      "close_games": 3,
+      "close_rate": 60.0
+    },
+    {
+      "matchup": "Pas Giannina vs Volos NFC",
+      "games": 4,
+      "close_games": 4,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Volos NFC vs Pas Giannina",
+      "games": 4,
+      "close_games": 4,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Apollon Smyrni vs Aris",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Aris vs Apollon Smyrni",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Apollon Smyrni vs Pas Giannina",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Pas Giannina vs Apollon Smyrni",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "AEK Athens vs Pas Giannina",
+      "games": 4,
+      "close_games": 3,
+      "close_rate": 75.0
+    },
+    {
+      "matchup": "Pas Giannina vs AEK Athens",
+      "games": 4,
+      "close_games": 3,
+      "close_rate": 75.0
+    },
+    {
+      "matchup": "Apollon Smyrni vs Olympiacos",
+      "games": 2,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Olympiacos vs Apollon Smyrni",
+      "games": 2,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Atromitos vs Pas Giannina",
+      "games": 4,
+      "close_games": 3,
+      "close_rate": 75.0
+    },
+    {
+      "matchup": "Pas Giannina vs Atromitos",
+      "games": 4,
+      "close_games": 3,
+      "close_rate": 75.0
+    },
+    {
+      "matchup": "Apollon Smyrni vs Panathinaikos",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Panathinaikos vs Apollon Smyrni",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Larissa FC vs Pas Giannina",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Pas Giannina vs Larissa FC",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Panetolikos vs Pas Giannina",
+      "games": 4,
+      "close_games": 2,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Pas Giannina vs Panetolikos",
+      "games": 4,
+      "close_games": 2,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Apollon Smyrni vs PAOK Salonika",
+      "games": 2,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "PAOK Salonika vs Apollon Smyrni",
+      "games": 2,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Apollon Smyrni vs Atromitos",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Atromitos vs Apollon Smyrni",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "PAOK Salonika vs Pas Giannina",
+      "games": 5,
+      "close_games": 2,
+      "close_rate": 40.0
+    },
+    {
+      "matchup": "Pas Giannina vs PAOK Salonika",
+      "games": 5,
+      "close_games": 2,
+      "close_rate": 40.0
+    },
+    {
+      "matchup": "Apollon Smyrni vs Asteras Tripoli",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Asteras Tripoli vs Apollon Smyrni",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "OFI Crete vs Pas Giannina",
+      "games": 4,
+      "close_games": 4,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Pas Giannina vs OFI Crete",
+      "games": 4,
+      "close_games": 4,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Apollon Smyrni vs Volos NFC",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Volos NFC vs Apollon Smyrni",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Apollon Smyrni vs OFI Crete",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "OFI Crete vs Apollon Smyrni",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Lamia vs Pas Giannina",
+      "games": 4,
+      "close_games": 3,
+      "close_rate": 75.0
+    },
+    {
+      "matchup": "Pas Giannina vs Lamia",
+      "games": 4,
+      "close_games": 3,
+      "close_rate": 75.0
+    },
+    {
+      "matchup": "Panathinaikos vs Pas Giannina",
+      "games": 5,
+      "close_games": 2,
+      "close_rate": 40.0
+    },
+    {
+      "matchup": "Pas Giannina vs Panathinaikos",
+      "games": 5,
+      "close_games": 2,
+      "close_rate": 40.0
+    },
+    {
+      "matchup": "AEK Athens vs Apollon Smyrni",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Apollon Smyrni vs AEK Athens",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Apollon Smyrni vs Panetolikos",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Panetolikos vs Apollon Smyrni",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Asteras Tripoli vs Pas Giannina",
+      "games": 4,
+      "close_games": 4,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Pas Giannina vs Asteras Tripoli",
+      "games": 4,
+      "close_games": 4,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "AEK Athens vs Ionikos FC",
+      "games": 3,
+      "close_games": 1,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "Ionikos FC vs AEK Athens",
+      "games": 3,
+      "close_games": 1,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "Aris vs Ionikos FC",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Ionikos FC vs Aris",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Ionikos FC vs Pas Giannina",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Pas Giannina vs Ionikos FC",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Apollon Smyrni vs Ionikos FC",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Ionikos FC vs Apollon Smyrni",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Ionikos FC vs Lamia",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Lamia vs Ionikos FC",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Ionikos FC vs Panathinaikos",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Panathinaikos vs Ionikos FC",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Atromitos vs Ionikos FC",
+      "games": 2,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Ionikos FC vs Atromitos",
+      "games": 2,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Ionikos FC vs Volos NFC",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Volos NFC vs Ionikos FC",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Ionikos FC vs Olympiacos",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Olympiacos vs Ionikos FC",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Asteras Tripoli vs Ionikos FC",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Ionikos FC vs Asteras Tripoli",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Apollon Smyrni vs Lamia",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Lamia vs Apollon Smyrni",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Ionikos FC vs OFI Crete",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "OFI Crete vs Ionikos FC",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Ionikos FC vs PAOK Salonika",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "PAOK Salonika vs Ionikos FC",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Ionikos FC vs Panetolikos",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Panetolikos vs Ionikos FC",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Aris vs Levadiakos",
+      "games": 3,
+      "close_games": 1,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "Levadiakos vs Aris",
+      "games": 3,
+      "close_games": 1,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "Ionikos FC vs Levadiakos",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Levadiakos vs Ionikos FC",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Levadiakos vs Panathinaikos",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Panathinaikos vs Levadiakos",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Levadiakos vs Pas Giannina",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Pas Giannina vs Levadiakos",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Asteras Tripoli vs Levadiakos",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Levadiakos vs Asteras Tripoli",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Lamia vs Levadiakos",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Levadiakos vs Lamia",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Levadiakos vs PAOK Salonika",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "PAOK Salonika vs Levadiakos",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Levadiakos vs Volos NFC",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Volos NFC vs Levadiakos",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "AEK Athens vs Levadiakos",
+      "games": 2,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Levadiakos vs AEK Athens",
+      "games": 2,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Atromitos vs Levadiakos",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Levadiakos vs Atromitos",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Levadiakos vs Panetolikos",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Panetolikos vs Levadiakos",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Levadiakos vs Olympiacos",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Olympiacos vs Levadiakos",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Levadiakos vs OFI Crete",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "OFI Crete vs Levadiakos",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Kifisia vs Pas Giannina",
+      "games": 2,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Pas Giannina vs Kifisia",
+      "games": 2,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Olympiacos vs Panserraikos FC",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Panserraikos FC vs Olympiacos",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "AEK Athens vs Panserraikos FC",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Panserraikos FC vs AEK Athens",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Kifisia vs PAOK Salonika",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "PAOK Salonika vs Kifisia",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Atromitos vs Kifisia",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Kifisia vs Atromitos",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Panetolikos vs Panserraikos FC",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Panserraikos FC vs Panetolikos",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Kifisia vs Panserraikos FC",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Panserraikos FC vs Kifisia",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Lamia vs Panserraikos FC",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Panserraikos FC vs Lamia",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Kifisia vs Olympiacos",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Olympiacos vs Kifisia",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Kifisia vs Lamia",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Lamia vs Kifisia",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Panserraikos FC vs Pas Giannina",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Pas Giannina vs Panserraikos FC",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Aris vs Kifisia",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Kifisia vs Aris",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Aris vs Panserraikos FC",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Panserraikos FC vs Aris",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Kifisia vs OFI Crete",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "OFI Crete vs Kifisia",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Kifisia vs Volos NFC",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Volos NFC vs Kifisia",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Panathinaikos vs Panserraikos FC",
+      "games": 2,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Panserraikos FC vs Panathinaikos",
+      "games": 2,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "AEK Athens vs Kifisia",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Kifisia vs AEK Athens",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "OFI Crete vs Panserraikos FC",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Panserraikos FC vs OFI Crete",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Atromitos vs Panserraikos FC",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Panserraikos FC vs Atromitos",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Kifisia vs Panathinaikos",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Panathinaikos vs Kifisia",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "PAOK Salonika vs Panserraikos FC",
+      "games": 3,
+      "close_games": 1,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "Panserraikos FC vs PAOK Salonika",
+      "games": 3,
+      "close_games": 1,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "Asteras Tripoli vs Kifisia",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Kifisia vs Asteras Tripoli",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Panserraikos FC vs Volos NFC",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Volos NFC vs Panserraikos FC",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Kifisia vs Panetolikos",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Panetolikos vs Kifisia",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Asteras Tripoli vs Panserraikos FC",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Panserraikos FC vs Asteras Tripoli",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Athens Kallithea vs Levadiakos",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Levadiakos vs Athens Kallithea",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Athens Kallithea vs Olympiacos",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Olympiacos vs Athens Kallithea",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Athens Kallithea vs Panathinaikos",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Panathinaikos vs Athens Kallithea",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Athens Kallithea vs Lamia",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Lamia vs Athens Kallithea",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Levadiakos vs Panserraikos FC",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Panserraikos FC vs Levadiakos",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "AEK Athens vs Athens Kallithea",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Athens Kallithea vs AEK Athens",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Athens Kallithea vs Volos NFC",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Volos NFC vs Athens Kallithea",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Asteras Tripoli vs Athens Kallithea",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Athens Kallithea vs Asteras Tripoli",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Aris vs Athens Kallithea",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Athens Kallithea vs Aris",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Athens Kallithea vs Atromitos",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Atromitos vs Athens Kallithea",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Athens Kallithea vs Panetolikos",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Panetolikos vs Athens Kallithea",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Athens Kallithea vs OFI Crete",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "OFI Crete vs Athens Kallithea",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Athens Kallithea vs Panserraikos FC",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Panserraikos FC vs Athens Kallithea",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Athens Kallithea vs PAOK Salonika",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "PAOK Salonika vs Athens Kallithea",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    }
+  ],
+  "form_strengths": [
+    {
+      "team": "AEK Athens",
+      "strength": 86.7
+    },
+    {
+      "team": "Apollon Smyrni",
+      "strength": 54.0
+    },
+    {
+      "team": "Aris",
+      "strength": 68.0
+    },
+    {
+      "team": "Asteras Tripoli",
+      "strength": 56.7
+    },
+    {
+      "team": "Athens Kallithea",
+      "strength": 52.0
+    },
+    {
+      "team": "Atromitos",
+      "strength": 62.0
+    },
+    {
+      "team": "FC Xanthi",
+      "strength": 61.3
+    },
+    {
+      "team": "Ionikos FC",
+      "strength": 56.7
+    },
+    {
+      "team": "Kifisia",
+      "strength": 65.3
+    },
+    {
+      "team": "Lamia",
+      "strength": 58.0
+    },
+    {
+      "team": "Larissa FC",
+      "strength": 54.0
+    },
+    {
+      "team": "Levadiakos",
+      "strength": 72.7
+    },
+    {
+      "team": "OFI Crete",
+      "strength": 56.0
+    },
+    {
+      "team": "Olympiacos",
+      "strength": 92.0
+    },
+    {
+      "team": "PAOK Salonika",
+      "strength": 78.0
+    },
+    {
+      "team": "Panathinaikos",
+      "strength": 85.3
+    },
+    {
+      "team": "Panetolikos",
+      "strength": 76.7
+    },
+    {
+      "team": "Panionios",
+      "strength": 62.7
+    },
+    {
+      "team": "Panserraikos FC",
+      "strength": 74.7
+    },
+    {
+      "team": "Pas Giannina",
+      "strength": 52.0
+    },
+    {
+      "team": "Volos NFC",
+      "strength": 64.0
+    }
+  ],
+  "team_margin_ratings": [
+    {
+      "team": "AEK Athens",
+      "avg_margin": 0.7
+    },
+    {
+      "team": "Apollon Smyrni",
+      "avg_margin": -1
+    },
+    {
+      "team": "Aris",
+      "avg_margin": 0.3
+    },
+    {
+      "team": "Asteras Tripoli",
+      "avg_margin": 0
+    },
+    {
+      "team": "Athens Kallithea",
+      "avg_margin": -1
+    },
+    {
+      "team": "Atromitos",
+      "avg_margin": -0.2
+    },
+    {
+      "team": "FC Xanthi",
+      "avg_margin": -0.6
+    },
+    {
+      "team": "Ionikos FC",
+      "avg_margin": -0.7
+    },
+    {
+      "team": "Kifisia",
+      "avg_margin": -0.9
+    },
+    {
+      "team": "Lamia",
+      "avg_margin": -0.7
+    },
+    {
+      "team": "Larissa FC",
+      "avg_margin": -1.1
+    },
+    {
+      "team": "Levadiakos",
+      "avg_margin": -0.2
+    },
+    {
+      "team": "OFI Crete",
+      "avg_margin": -0.6
+    },
+    {
+      "team": "Olympiacos",
+      "avg_margin": 1
+    },
+    {
+      "team": "PAOK Salonika",
+      "avg_margin": 0.7
+    },
+    {
+      "team": "Panathinaikos",
+      "avg_margin": 0.5
+    },
+    {
+      "team": "Panetolikos",
+      "avg_margin": 0.4
+    },
+    {
+      "team": "Panionios",
+      "avg_margin": -1.1
+    },
+    {
+      "team": "Panserraikos FC",
+      "avg_margin": -0.3
+    },
+    {
+      "team": "Pas Giannina",
+      "avg_margin": -1.2
+    },
+    {
+      "team": "Volos NFC",
+      "avg_margin": -0.6
+    }
+  ]
+}

@@ -1,0 +1,2955 @@
+{
+  "meta": {
+    "sport": "Top 14",
+    "engine": "v1-bootstrap",
+    "formula": "close*0.35 + form_balance*0.25 + margin_balance*0.25 + matchup*0.15",
+    "close_margin": 12,
+    "games_sampled": 297,
+    "week_chunk": 8,
+    "built": "2026-06-11"
+  },
+  "matchup_ratings": [
+    {
+      "matchup": "Castres Olympique vs Racing 92",
+      "games_played": 4,
+      "avg_margin": 3.25,
+      "avg_excitement": 97.29
+    },
+    {
+      "matchup": "Racing 92 vs Castres Olympique",
+      "games_played": 4,
+      "avg_margin": 3.25,
+      "avg_excitement": 97.29
+    },
+    {
+      "matchup": "Brive vs Lyon",
+      "games_played": 2,
+      "avg_margin": 3.5,
+      "avg_excitement": 97.08
+    },
+    {
+      "matchup": "Lyon vs Brive",
+      "games_played": 2,
+      "avg_margin": 3.5,
+      "avg_excitement": 97.08
+    },
+    {
+      "matchup": "Bayonne vs Toulon",
+      "games_played": 4,
+      "avg_margin": 11.5,
+      "avg_excitement": 55.42
+    },
+    {
+      "matchup": "Toulon vs Bayonne",
+      "games_played": 4,
+      "avg_margin": 11.5,
+      "avg_excitement": 55.42
+    },
+    {
+      "matchup": "Pau vs Perpignan",
+      "games_played": 3,
+      "avg_margin": 6,
+      "avg_excitement": 71.67
+    },
+    {
+      "matchup": "Perpignan vs Pau",
+      "games_played": 3,
+      "avg_margin": 6,
+      "avg_excitement": 71.67
+    },
+    {
+      "matchup": "Clermont Auvergne vs Stade Francais Paris",
+      "games_played": 3,
+      "avg_margin": 12,
+      "avg_excitement": 66.67
+    },
+    {
+      "matchup": "Stade Francais Paris vs Clermont Auvergne",
+      "games_played": 3,
+      "avg_margin": 12,
+      "avg_excitement": 66.67
+    },
+    {
+      "matchup": "La Rochelle vs Montpellier Herault",
+      "games_played": 4,
+      "avg_margin": 9.75,
+      "avg_excitement": 74.38
+    },
+    {
+      "matchup": "Montpellier Herault vs La Rochelle",
+      "games_played": 4,
+      "avg_margin": 9.75,
+      "avg_excitement": 74.38
+    },
+    {
+      "matchup": "Bordeaux Begles vs Stade Toulousain",
+      "games_played": 3,
+      "avg_margin": 4,
+      "avg_excitement": 96.67
+    },
+    {
+      "matchup": "Stade Toulousain vs Bordeaux Begles",
+      "games_played": 3,
+      "avg_margin": 4,
+      "avg_excitement": 96.67
+    },
+    {
+      "matchup": "La Rochelle vs Lyon",
+      "games_played": 4,
+      "avg_margin": 13.75,
+      "avg_excitement": 53.54
+    },
+    {
+      "matchup": "Lyon vs La Rochelle",
+      "games_played": 4,
+      "avg_margin": 13.75,
+      "avg_excitement": 53.54
+    },
+    {
+      "matchup": "Clermont Auvergne vs Pau",
+      "games_played": 3,
+      "avg_margin": 17.33,
+      "avg_excitement": 62.22
+    },
+    {
+      "matchup": "Pau vs Clermont Auvergne",
+      "games_played": 3,
+      "avg_margin": 17.33,
+      "avg_excitement": 62.22
+    },
+    {
+      "matchup": "Bayonne vs Racing 92",
+      "games_played": 3,
+      "avg_margin": 9,
+      "avg_excitement": 69.17
+    },
+    {
+      "matchup": "Racing 92 vs Bayonne",
+      "games_played": 3,
+      "avg_margin": 9,
+      "avg_excitement": 69.17
+    },
+    {
+      "matchup": "Castres Olympique vs Stade Francais Paris",
+      "games_played": 3,
+      "avg_margin": 18.33,
+      "avg_excitement": 38.06
+    },
+    {
+      "matchup": "Stade Francais Paris vs Castres Olympique",
+      "games_played": 3,
+      "avg_margin": 18.33,
+      "avg_excitement": 38.06
+    },
+    {
+      "matchup": "Brive vs Perpignan",
+      "games_played": 1,
+      "avg_margin": 11,
+      "avg_excitement": 90.83
+    },
+    {
+      "matchup": "Perpignan vs Brive",
+      "games_played": 1,
+      "avg_margin": 11,
+      "avg_excitement": 90.83
+    },
+    {
+      "matchup": "Bordeaux Begles vs Montpellier Herault",
+      "games_played": 4,
+      "avg_margin": 14,
+      "avg_excitement": 53.33
+    },
+    {
+      "matchup": "Montpellier Herault vs Bordeaux Begles",
+      "games_played": 4,
+      "avg_margin": 14,
+      "avg_excitement": 53.33
+    },
+    {
+      "matchup": "Stade Toulousain vs Toulon",
+      "games_played": 3,
+      "avg_margin": 26.67,
+      "avg_excitement": 31.11
+    },
+    {
+      "matchup": "Toulon vs Stade Toulousain",
+      "games_played": 3,
+      "avg_margin": 26.67,
+      "avg_excitement": 31.11
+    },
+    {
+      "matchup": "Bordeaux Begles vs Castres Olympique",
+      "games_played": 3,
+      "avg_margin": 11,
+      "avg_excitement": 67.5
+    },
+    {
+      "matchup": "Castres Olympique vs Bordeaux Begles",
+      "games_played": 3,
+      "avg_margin": 11,
+      "avg_excitement": 67.5
+    },
+    {
+      "matchup": "Brive vs Montpellier Herault",
+      "games_played": 1,
+      "avg_margin": 5,
+      "avg_excitement": 95.83
+    },
+    {
+      "matchup": "Montpellier Herault vs Brive",
+      "games_played": 1,
+      "avg_margin": 5,
+      "avg_excitement": 95.83
+    },
+    {
+      "matchup": "Lyon vs Racing 92",
+      "games_played": 3,
+      "avg_margin": 5,
+      "avg_excitement": 72.5
+    },
+    {
+      "matchup": "Racing 92 vs Lyon",
+      "games_played": 3,
+      "avg_margin": 5,
+      "avg_excitement": 72.5
+    },
+    {
+      "matchup": "Bayonne vs Stade Francais Paris",
+      "games_played": 3,
+      "avg_margin": 10.33,
+      "avg_excitement": 68.06
+    },
+    {
+      "matchup": "Stade Francais Paris vs Bayonne",
+      "games_played": 3,
+      "avg_margin": 10.33,
+      "avg_excitement": 68.06
+    },
+    {
+      "matchup": "La Rochelle vs Perpignan",
+      "games_played": 4,
+      "avg_margin": 22.75,
+      "avg_excitement": 28.54
+    },
+    {
+      "matchup": "Perpignan vs La Rochelle",
+      "games_played": 4,
+      "avg_margin": 22.75,
+      "avg_excitement": 28.54
+    },
+    {
+      "matchup": "Pau vs Stade Toulousain",
+      "games_played": 3,
+      "avg_margin": 7.33,
+      "avg_excitement": 93.89
+    },
+    {
+      "matchup": "Stade Toulousain vs Pau",
+      "games_played": 3,
+      "avg_margin": 7.33,
+      "avg_excitement": 93.89
+    },
+    {
+      "matchup": "Clermont Auvergne vs Toulon",
+      "games_played": 3,
+      "avg_margin": 1.67,
+      "avg_excitement": 98.61
+    },
+    {
+      "matchup": "Toulon vs Clermont Auvergne",
+      "games_played": 3,
+      "avg_margin": 1.67,
+      "avg_excitement": 98.61
+    },
+    {
+      "matchup": "Perpignan vs Toulon",
+      "games_played": 3,
+      "avg_margin": 6.33,
+      "avg_excitement": 94.72
+    },
+    {
+      "matchup": "Toulon vs Perpignan",
+      "games_played": 3,
+      "avg_margin": 6.33,
+      "avg_excitement": 94.72
+    },
+    {
+      "matchup": "Bayonne vs Bordeaux Begles",
+      "games_played": 4,
+      "avg_margin": 4.25,
+      "avg_excitement": 96.46
+    },
+    {
+      "matchup": "Bordeaux Begles vs Bayonne",
+      "games_played": 4,
+      "avg_margin": 4.25,
+      "avg_excitement": 96.46
+    },
+    {
+      "matchup": "Brive vs Castres Olympique",
+      "games_played": 1,
+      "avg_margin": 6,
+      "avg_excitement": 95.0
+    },
+    {
+      "matchup": "Castres Olympique vs Brive",
+      "games_played": 1,
+      "avg_margin": 6,
+      "avg_excitement": 95.0
+    },
+    {
+      "matchup": "Lyon vs Stade Francais Paris",
+      "games_played": 3,
+      "avg_margin": 14,
+      "avg_excitement": 65.0
+    },
+    {
+      "matchup": "Stade Francais Paris vs Lyon",
+      "games_played": 3,
+      "avg_margin": 14,
+      "avg_excitement": 65.0
+    },
+    {
+      "matchup": "Montpellier Herault vs Pau",
+      "games_played": 3,
+      "avg_margin": 19.33,
+      "avg_excitement": 37.22
+    },
+    {
+      "matchup": "Pau vs Montpellier Herault",
+      "games_played": 3,
+      "avg_margin": 19.33,
+      "avg_excitement": 37.22
+    },
+    {
+      "matchup": "Racing 92 vs Stade Toulousain",
+      "games_played": 3,
+      "avg_margin": 12.67,
+      "avg_excitement": 66.11
+    },
+    {
+      "matchup": "Stade Toulousain vs Racing 92",
+      "games_played": 3,
+      "avg_margin": 12.67,
+      "avg_excitement": 66.11
+    },
+    {
+      "matchup": "Clermont Auvergne vs La Rochelle",
+      "games_played": 3,
+      "avg_margin": 5,
+      "avg_excitement": 95.83
+    },
+    {
+      "matchup": "La Rochelle vs Clermont Auvergne",
+      "games_played": 3,
+      "avg_margin": 5,
+      "avg_excitement": 95.83
+    },
+    {
+      "matchup": "Bordeaux Begles vs Stade Francais Paris",
+      "games_played": 4,
+      "avg_margin": 14,
+      "avg_excitement": 53.33
+    },
+    {
+      "matchup": "Stade Francais Paris vs Bordeaux Begles",
+      "games_played": 4,
+      "avg_margin": 14,
+      "avg_excitement": 53.33
+    },
+    {
+      "matchup": "Clermont Auvergne vs Lyon",
+      "games_played": 4,
+      "avg_margin": 16.75,
+      "avg_excitement": 33.54
+    },
+    {
+      "matchup": "Lyon vs Clermont Auvergne",
+      "games_played": 4,
+      "avg_margin": 16.75,
+      "avg_excitement": 33.54
+    },
+    {
+      "matchup": "Bayonne vs Brive",
+      "games_played": 1,
+      "avg_margin": 3,
+      "avg_excitement": 97.5
+    },
+    {
+      "matchup": "Brive vs Bayonne",
+      "games_played": 1,
+      "avg_margin": 3,
+      "avg_excitement": 97.5
+    },
+    {
+      "matchup": "Pau vs Toulon",
+      "games_played": 3,
+      "avg_margin": 23.67,
+      "avg_excitement": 10.28
+    },
+    {
+      "matchup": "Toulon vs Pau",
+      "games_played": 3,
+      "avg_margin": 23.67,
+      "avg_excitement": 10.28
+    },
+    {
+      "matchup": "Castres Olympique vs Perpignan",
+      "games_played": 3,
+      "avg_margin": 7.67,
+      "avg_excitement": 70.28
+    },
+    {
+      "matchup": "Perpignan vs Castres Olympique",
+      "games_played": 3,
+      "avg_margin": 7.67,
+      "avg_excitement": 70.28
+    },
+    {
+      "matchup": "La Rochelle vs Racing 92",
+      "games_played": 3,
+      "avg_margin": 9.33,
+      "avg_excitement": 68.89
+    },
+    {
+      "matchup": "Racing 92 vs La Rochelle",
+      "games_played": 3,
+      "avg_margin": 9.33,
+      "avg_excitement": 68.89
+    },
+    {
+      "matchup": "Montpellier Herault vs Stade Toulousain",
+      "games_played": 3,
+      "avg_margin": 12,
+      "avg_excitement": 66.67
+    },
+    {
+      "matchup": "Stade Toulousain vs Montpellier Herault",
+      "games_played": 3,
+      "avg_margin": 12,
+      "avg_excitement": 66.67
+    },
+    {
+      "matchup": "Castres Olympique vs Montpellier Herault",
+      "games_played": 3,
+      "avg_margin": 8.67,
+      "avg_excitement": 69.44
+    },
+    {
+      "matchup": "Montpellier Herault vs Castres Olympique",
+      "games_played": 3,
+      "avg_margin": 8.67,
+      "avg_excitement": 69.44
+    },
+    {
+      "matchup": "Bayonne vs La Rochelle",
+      "games_played": 3,
+      "avg_margin": 16.33,
+      "avg_excitement": 39.72
+    },
+    {
+      "matchup": "La Rochelle vs Bayonne",
+      "games_played": 3,
+      "avg_margin": 16.33,
+      "avg_excitement": 39.72
+    },
+    {
+      "matchup": "Pau vs Racing 92",
+      "games_played": 3,
+      "avg_margin": 8.33,
+      "avg_excitement": 69.72
+    },
+    {
+      "matchup": "Racing 92 vs Pau",
+      "games_played": 3,
+      "avg_margin": 8.33,
+      "avg_excitement": 69.72
+    },
+    {
+      "matchup": "Brive vs Toulon",
+      "games_played": 1,
+      "avg_margin": 47,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Toulon vs Brive",
+      "games_played": 1,
+      "avg_margin": 47,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Perpignan vs Stade Francais Paris",
+      "games_played": 3,
+      "avg_margin": 29.33,
+      "avg_excitement": 5.56
+    },
+    {
+      "matchup": "Stade Francais Paris vs Perpignan",
+      "games_played": 3,
+      "avg_margin": 29.33,
+      "avg_excitement": 5.56
+    },
+    {
+      "matchup": "Clermont Auvergne vs Stade Toulousain",
+      "games_played": 4,
+      "avg_margin": 27.5,
+      "avg_excitement": 7.08
+    },
+    {
+      "matchup": "Stade Toulousain vs Clermont Auvergne",
+      "games_played": 4,
+      "avg_margin": 27.5,
+      "avg_excitement": 7.08
+    },
+    {
+      "matchup": "Bordeaux Begles vs Lyon",
+      "games_played": 3,
+      "avg_margin": 17.67,
+      "avg_excitement": 38.61
+    },
+    {
+      "matchup": "Lyon vs Bordeaux Begles",
+      "games_played": 3,
+      "avg_margin": 17.67,
+      "avg_excitement": 38.61
+    },
+    {
+      "matchup": "Brive vs Stade Toulousain",
+      "games_played": 1,
+      "avg_margin": 38,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Stade Toulousain vs Brive",
+      "games_played": 1,
+      "avg_margin": 38,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Bayonne vs Castres Olympique",
+      "games_played": 3,
+      "avg_margin": 25,
+      "avg_excitement": 9.17
+    },
+    {
+      "matchup": "Castres Olympique vs Bayonne",
+      "games_played": 3,
+      "avg_margin": 25,
+      "avg_excitement": 9.17
+    },
+    {
+      "matchup": "Lyon vs Montpellier Herault",
+      "games_played": 3,
+      "avg_margin": 4.33,
+      "avg_excitement": 96.39
+    },
+    {
+      "matchup": "Montpellier Herault vs Lyon",
+      "games_played": 3,
+      "avg_margin": 4.33,
+      "avg_excitement": 96.39
+    },
+    {
+      "matchup": "Pau vs Stade Francais Paris",
+      "games_played": 4,
+      "avg_margin": 18.5,
+      "avg_excitement": 32.08
+    },
+    {
+      "matchup": "Stade Francais Paris vs Pau",
+      "games_played": 4,
+      "avg_margin": 18.5,
+      "avg_excitement": 32.08
+    },
+    {
+      "matchup": "Clermont Auvergne vs Perpignan",
+      "games_played": 4,
+      "avg_margin": 18.75,
+      "avg_excitement": 49.38
+    },
+    {
+      "matchup": "Perpignan vs Clermont Auvergne",
+      "games_played": 4,
+      "avg_margin": 18.75,
+      "avg_excitement": 49.38
+    },
+    {
+      "matchup": "Bordeaux Begles vs Racing 92",
+      "games_played": 3,
+      "avg_margin": 11.67,
+      "avg_excitement": 66.94
+    },
+    {
+      "matchup": "Racing 92 vs Bordeaux Begles",
+      "games_played": 3,
+      "avg_margin": 11.67,
+      "avg_excitement": 66.94
+    },
+    {
+      "matchup": "La Rochelle vs Toulon",
+      "games_played": 3,
+      "avg_margin": 11,
+      "avg_excitement": 67.5
+    },
+    {
+      "matchup": "Toulon vs La Rochelle",
+      "games_played": 3,
+      "avg_margin": 11,
+      "avg_excitement": 67.5
+    },
+    {
+      "matchup": "Montpellier Herault vs Racing 92",
+      "games_played": 3,
+      "avg_margin": 4.67,
+      "avg_excitement": 96.11
+    },
+    {
+      "matchup": "Racing 92 vs Montpellier Herault",
+      "games_played": 3,
+      "avg_margin": 4.67,
+      "avg_excitement": 96.11
+    },
+    {
+      "matchup": "Bayonne vs Perpignan",
+      "games_played": 3,
+      "avg_margin": 10.67,
+      "avg_excitement": 67.78
+    },
+    {
+      "matchup": "Perpignan vs Bayonne",
+      "games_played": 3,
+      "avg_margin": 10.67,
+      "avg_excitement": 67.78
+    },
+    {
+      "matchup": "Lyon vs Pau",
+      "games_played": 3,
+      "avg_margin": 16,
+      "avg_excitement": 40.0
+    },
+    {
+      "matchup": "Pau vs Lyon",
+      "games_played": 3,
+      "avg_margin": 16,
+      "avg_excitement": 40.0
+    },
+    {
+      "matchup": "Castres Olympique vs Toulon",
+      "games_played": 3,
+      "avg_margin": 10.67,
+      "avg_excitement": 67.78
+    },
+    {
+      "matchup": "Toulon vs Castres Olympique",
+      "games_played": 3,
+      "avg_margin": 10.67,
+      "avg_excitement": 67.78
+    },
+    {
+      "matchup": "Brive vs Stade Francais Paris",
+      "games_played": 1,
+      "avg_margin": 27,
+      "avg_excitement": 7.5
+    },
+    {
+      "matchup": "Stade Francais Paris vs Brive",
+      "games_played": 1,
+      "avg_margin": 27,
+      "avg_excitement": 7.5
+    },
+    {
+      "matchup": "Bordeaux Begles vs Clermont Auvergne",
+      "games_played": 3,
+      "avg_margin": 3.33,
+      "avg_excitement": 97.22
+    },
+    {
+      "matchup": "Clermont Auvergne vs Bordeaux Begles",
+      "games_played": 3,
+      "avg_margin": 3.33,
+      "avg_excitement": 97.22
+    },
+    {
+      "matchup": "La Rochelle vs Stade Toulousain",
+      "games_played": 4,
+      "avg_margin": 10.25,
+      "avg_excitement": 73.96
+    },
+    {
+      "matchup": "Stade Toulousain vs La Rochelle",
+      "games_played": 4,
+      "avg_margin": 10.25,
+      "avg_excitement": 73.96
+    },
+    {
+      "matchup": "Castres Olympique vs Clermont Auvergne",
+      "games_played": 3,
+      "avg_margin": 17,
+      "avg_excitement": 62.5
+    },
+    {
+      "matchup": "Clermont Auvergne vs Castres Olympique",
+      "games_played": 3,
+      "avg_margin": 17,
+      "avg_excitement": 62.5
+    },
+    {
+      "matchup": "Brive vs Racing 92",
+      "games_played": 1,
+      "avg_margin": 5,
+      "avg_excitement": 95.83
+    },
+    {
+      "matchup": "Racing 92 vs Brive",
+      "games_played": 1,
+      "avg_margin": 5,
+      "avg_excitement": 95.83
+    },
+    {
+      "matchup": "Montpellier Herault vs Stade Francais Paris",
+      "games_played": 3,
+      "avg_margin": 9.33,
+      "avg_excitement": 68.89
+    },
+    {
+      "matchup": "Stade Francais Paris vs Montpellier Herault",
+      "games_played": 3,
+      "avg_margin": 9.33,
+      "avg_excitement": 68.89
+    },
+    {
+      "matchup": "La Rochelle vs Pau",
+      "games_played": 3,
+      "avg_margin": 16.67,
+      "avg_excitement": 39.44
+    },
+    {
+      "matchup": "Pau vs La Rochelle",
+      "games_played": 3,
+      "avg_margin": 16.67,
+      "avg_excitement": 39.44
+    },
+    {
+      "matchup": "Lyon vs Perpignan",
+      "games_played": 4,
+      "avg_margin": 6.75,
+      "avg_excitement": 94.38
+    },
+    {
+      "matchup": "Perpignan vs Lyon",
+      "games_played": 4,
+      "avg_margin": 6.75,
+      "avg_excitement": 94.38
+    },
+    {
+      "matchup": "Bayonne vs Stade Toulousain",
+      "games_played": 4,
+      "avg_margin": 11.75,
+      "avg_excitement": 55.21
+    },
+    {
+      "matchup": "Stade Toulousain vs Bayonne",
+      "games_played": 4,
+      "avg_margin": 11.75,
+      "avg_excitement": 55.21
+    },
+    {
+      "matchup": "Bordeaux Begles vs Toulon",
+      "games_played": 4,
+      "avg_margin": 3.75,
+      "avg_excitement": 96.88
+    },
+    {
+      "matchup": "Toulon vs Bordeaux Begles",
+      "games_played": 4,
+      "avg_margin": 3.75,
+      "avg_excitement": 96.88
+    },
+    {
+      "matchup": "Stade Francais Paris vs Stade Toulousain",
+      "games_played": 3,
+      "avg_margin": 10,
+      "avg_excitement": 45.0
+    },
+    {
+      "matchup": "Stade Toulousain vs Stade Francais Paris",
+      "games_played": 3,
+      "avg_margin": 10,
+      "avg_excitement": 45.0
+    },
+    {
+      "matchup": "Bayonne vs Clermont Auvergne",
+      "games_played": 3,
+      "avg_margin": 17.67,
+      "avg_excitement": 38.61
+    },
+    {
+      "matchup": "Clermont Auvergne vs Bayonne",
+      "games_played": 3,
+      "avg_margin": 17.67,
+      "avg_excitement": 38.61
+    },
+    {
+      "matchup": "Brive vs La Rochelle",
+      "games_played": 1,
+      "avg_margin": 2,
+      "avg_excitement": 98.33
+    },
+    {
+      "matchup": "La Rochelle vs Brive",
+      "games_played": 1,
+      "avg_margin": 2,
+      "avg_excitement": 98.33
+    },
+    {
+      "matchup": "Castres Olympique vs Lyon",
+      "games_played": 3,
+      "avg_margin": 7.67,
+      "avg_excitement": 70.28
+    },
+    {
+      "matchup": "Lyon vs Castres Olympique",
+      "games_played": 3,
+      "avg_margin": 7.67,
+      "avg_excitement": 70.28
+    },
+    {
+      "matchup": "Perpignan vs Racing 92",
+      "games_played": 4,
+      "avg_margin": 25.25,
+      "avg_excitement": 26.46
+    },
+    {
+      "matchup": "Racing 92 vs Perpignan",
+      "games_played": 4,
+      "avg_margin": 25.25,
+      "avg_excitement": 26.46
+    },
+    {
+      "matchup": "Bordeaux Begles vs Pau",
+      "games_played": 4,
+      "avg_margin": 14.5,
+      "avg_excitement": 52.92
+    },
+    {
+      "matchup": "Pau vs Bordeaux Begles",
+      "games_played": 4,
+      "avg_margin": 14.5,
+      "avg_excitement": 52.92
+    },
+    {
+      "matchup": "Montpellier Herault vs Toulon",
+      "games_played": 3,
+      "avg_margin": 11,
+      "avg_excitement": 67.5
+    },
+    {
+      "matchup": "Toulon vs Montpellier Herault",
+      "games_played": 3,
+      "avg_margin": 11,
+      "avg_excitement": 67.5
+    },
+    {
+      "matchup": "Bayonne vs Montpellier Herault",
+      "games_played": 4,
+      "avg_margin": 17.25,
+      "avg_excitement": 33.12
+    },
+    {
+      "matchup": "Montpellier Herault vs Bayonne",
+      "games_played": 4,
+      "avg_margin": 17.25,
+      "avg_excitement": 33.12
+    },
+    {
+      "matchup": "Brive vs Pau",
+      "games_played": 1,
+      "avg_margin": 16,
+      "avg_excitement": 16.67
+    },
+    {
+      "matchup": "Pau vs Brive",
+      "games_played": 1,
+      "avg_margin": 16,
+      "avg_excitement": 16.67
+    },
+    {
+      "matchup": "Castres Olympique vs La Rochelle",
+      "games_played": 3,
+      "avg_margin": 17.67,
+      "avg_excitement": 61.94
+    },
+    {
+      "matchup": "La Rochelle vs Castres Olympique",
+      "games_played": 3,
+      "avg_margin": 17.67,
+      "avg_excitement": 61.94
+    },
+    {
+      "matchup": "Bordeaux Begles vs Perpignan",
+      "games_played": 3,
+      "avg_margin": 27,
+      "avg_excitement": 30.83
+    },
+    {
+      "matchup": "Perpignan vs Bordeaux Begles",
+      "games_played": 3,
+      "avg_margin": 27,
+      "avg_excitement": 30.83
+    },
+    {
+      "matchup": "Stade Francais Paris vs Toulon",
+      "games_played": 3,
+      "avg_margin": 7.67,
+      "avg_excitement": 70.28
+    },
+    {
+      "matchup": "Toulon vs Stade Francais Paris",
+      "games_played": 3,
+      "avg_margin": 7.67,
+      "avg_excitement": 70.28
+    },
+    {
+      "matchup": "Clermont Auvergne vs Racing 92",
+      "games_played": 3,
+      "avg_margin": 17.33,
+      "avg_excitement": 38.89
+    },
+    {
+      "matchup": "Racing 92 vs Clermont Auvergne",
+      "games_played": 3,
+      "avg_margin": 17.33,
+      "avg_excitement": 38.89
+    },
+    {
+      "matchup": "Lyon vs Stade Toulousain",
+      "games_played": 3,
+      "avg_margin": 17.33,
+      "avg_excitement": 62.22
+    },
+    {
+      "matchup": "Stade Toulousain vs Lyon",
+      "games_played": 3,
+      "avg_margin": 17.33,
+      "avg_excitement": 62.22
+    },
+    {
+      "matchup": "Clermont Auvergne vs Montpellier Herault",
+      "games_played": 3,
+      "avg_margin": 4,
+      "avg_excitement": 96.67
+    },
+    {
+      "matchup": "Montpellier Herault vs Clermont Auvergne",
+      "games_played": 3,
+      "avg_margin": 4,
+      "avg_excitement": 96.67
+    },
+    {
+      "matchup": "Bayonne vs Lyon",
+      "games_played": 3,
+      "avg_margin": 12,
+      "avg_excitement": 66.67
+    },
+    {
+      "matchup": "Lyon vs Bayonne",
+      "games_played": 3,
+      "avg_margin": 12,
+      "avg_excitement": 66.67
+    },
+    {
+      "matchup": "Perpignan vs Stade Toulousain",
+      "games_played": 3,
+      "avg_margin": 20.67,
+      "avg_excitement": 36.11
+    },
+    {
+      "matchup": "Stade Toulousain vs Perpignan",
+      "games_played": 3,
+      "avg_margin": 20.67,
+      "avg_excitement": 36.11
+    },
+    {
+      "matchup": "Bordeaux Begles vs Brive",
+      "games_played": 1,
+      "avg_margin": 20,
+      "avg_excitement": 13.33
+    },
+    {
+      "matchup": "Brive vs Bordeaux Begles",
+      "games_played": 1,
+      "avg_margin": 20,
+      "avg_excitement": 13.33
+    },
+    {
+      "matchup": "La Rochelle vs Stade Francais Paris",
+      "games_played": 3,
+      "avg_margin": 11.67,
+      "avg_excitement": 43.61
+    },
+    {
+      "matchup": "Stade Francais Paris vs La Rochelle",
+      "games_played": 3,
+      "avg_margin": 11.67,
+      "avg_excitement": 43.61
+    },
+    {
+      "matchup": "Castres Olympique vs Pau",
+      "games_played": 5,
+      "avg_margin": 5.6,
+      "avg_excitement": 95.33
+    },
+    {
+      "matchup": "Pau vs Castres Olympique",
+      "games_played": 5,
+      "avg_margin": 5.6,
+      "avg_excitement": 95.33
+    },
+    {
+      "matchup": "Racing 92 vs Toulon",
+      "games_played": 4,
+      "avg_margin": 12.5,
+      "avg_excitement": 54.58
+    },
+    {
+      "matchup": "Toulon vs Racing 92",
+      "games_played": 4,
+      "avg_margin": 12.5,
+      "avg_excitement": 54.58
+    },
+    {
+      "matchup": "Lyon vs Toulon",
+      "games_played": 3,
+      "avg_margin": 13.67,
+      "avg_excitement": 65.28
+    },
+    {
+      "matchup": "Toulon vs Lyon",
+      "games_played": 3,
+      "avg_margin": 13.67,
+      "avg_excitement": 65.28
+    },
+    {
+      "matchup": "Brive vs Clermont Auvergne",
+      "games_played": 1,
+      "avg_margin": 4,
+      "avg_excitement": 96.67
+    },
+    {
+      "matchup": "Clermont Auvergne vs Brive",
+      "games_played": 1,
+      "avg_margin": 4,
+      "avg_excitement": 96.67
+    },
+    {
+      "matchup": "Montpellier Herault vs Perpignan",
+      "games_played": 3,
+      "avg_margin": 18,
+      "avg_excitement": 38.33
+    },
+    {
+      "matchup": "Perpignan vs Montpellier Herault",
+      "games_played": 3,
+      "avg_margin": 18,
+      "avg_excitement": 38.33
+    },
+    {
+      "matchup": "Bayonne vs Pau",
+      "games_played": 3,
+      "avg_margin": 13.67,
+      "avg_excitement": 41.94
+    },
+    {
+      "matchup": "Pau vs Bayonne",
+      "games_played": 3,
+      "avg_margin": 13.67,
+      "avg_excitement": 41.94
+    },
+    {
+      "matchup": "Bordeaux Begles vs La Rochelle",
+      "games_played": 3,
+      "avg_margin": 6,
+      "avg_excitement": 95.0
+    },
+    {
+      "matchup": "La Rochelle vs Bordeaux Begles",
+      "games_played": 3,
+      "avg_margin": 6,
+      "avg_excitement": 95.0
+    },
+    {
+      "matchup": "Castres Olympique vs Stade Toulousain",
+      "games_played": 3,
+      "avg_margin": 5.67,
+      "avg_excitement": 95.28
+    },
+    {
+      "matchup": "Stade Toulousain vs Castres Olympique",
+      "games_played": 3,
+      "avg_margin": 5.67,
+      "avg_excitement": 95.28
+    },
+    {
+      "matchup": "Racing 92 vs Stade Francais Paris",
+      "games_played": 3,
+      "avg_margin": 19.33,
+      "avg_excitement": 37.22
+    },
+    {
+      "matchup": "Stade Francais Paris vs Racing 92",
+      "games_played": 3,
+      "avg_margin": 19.33,
+      "avg_excitement": 37.22
+    },
+    {
+      "matchup": "Clermont Auvergne vs Oyonnax",
+      "games_played": 1,
+      "avg_margin": 19,
+      "avg_excitement": 14.17
+    },
+    {
+      "matchup": "Oyonnax vs Clermont Auvergne",
+      "games_played": 1,
+      "avg_margin": 19,
+      "avg_excitement": 14.17
+    },
+    {
+      "matchup": "Oyonnax vs Stade Francais Paris",
+      "games_played": 2,
+      "avg_margin": 7,
+      "avg_excitement": 94.17
+    },
+    {
+      "matchup": "Stade Francais Paris vs Oyonnax",
+      "games_played": 2,
+      "avg_margin": 7,
+      "avg_excitement": 94.17
+    },
+    {
+      "matchup": "Oyonnax vs Stade Toulousain",
+      "games_played": 1,
+      "avg_margin": 6,
+      "avg_excitement": 95.0
+    },
+    {
+      "matchup": "Stade Toulousain vs Oyonnax",
+      "games_played": 1,
+      "avg_margin": 6,
+      "avg_excitement": 95.0
+    },
+    {
+      "matchup": "Oyonnax vs Toulon",
+      "games_played": 1,
+      "avg_margin": 34,
+      "avg_excitement": 1.67
+    },
+    {
+      "matchup": "Toulon vs Oyonnax",
+      "games_played": 1,
+      "avg_margin": 34,
+      "avg_excitement": 1.67
+    },
+    {
+      "matchup": "La Rochelle vs Oyonnax",
+      "games_played": 1,
+      "avg_margin": 2,
+      "avg_excitement": 98.33
+    },
+    {
+      "matchup": "Oyonnax vs La Rochelle",
+      "games_played": 1,
+      "avg_margin": 2,
+      "avg_excitement": 98.33
+    },
+    {
+      "matchup": "Castres Olympique vs Oyonnax",
+      "games_played": 1,
+      "avg_margin": 28,
+      "avg_excitement": 6.67
+    },
+    {
+      "matchup": "Oyonnax vs Castres Olympique",
+      "games_played": 1,
+      "avg_margin": 28,
+      "avg_excitement": 6.67
+    },
+    {
+      "matchup": "Lyon vs Oyonnax",
+      "games_played": 1,
+      "avg_margin": 18,
+      "avg_excitement": 15.0
+    },
+    {
+      "matchup": "Oyonnax vs Lyon",
+      "games_played": 1,
+      "avg_margin": 18,
+      "avg_excitement": 15.0
+    },
+    {
+      "matchup": "Montpellier Herault vs Oyonnax",
+      "games_played": 1,
+      "avg_margin": 5,
+      "avg_excitement": 95.83
+    },
+    {
+      "matchup": "Oyonnax vs Montpellier Herault",
+      "games_played": 1,
+      "avg_margin": 5,
+      "avg_excitement": 95.83
+    },
+    {
+      "matchup": "Bordeaux Begles vs Oyonnax",
+      "games_played": 1,
+      "avg_margin": 6,
+      "avg_excitement": 95.0
+    },
+    {
+      "matchup": "Oyonnax vs Bordeaux Begles",
+      "games_played": 1,
+      "avg_margin": 6,
+      "avg_excitement": 95.0
+    },
+    {
+      "matchup": "Oyonnax vs Racing 92",
+      "games_played": 1,
+      "avg_margin": 56,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Racing 92 vs Oyonnax",
+      "games_played": 1,
+      "avg_margin": 56,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Oyonnax vs Pau",
+      "games_played": 1,
+      "avg_margin": 21,
+      "avg_excitement": 12.5
+    },
+    {
+      "matchup": "Pau vs Oyonnax",
+      "games_played": 1,
+      "avg_margin": 21,
+      "avg_excitement": 12.5
+    },
+    {
+      "matchup": "Oyonnax vs Perpignan",
+      "games_played": 1,
+      "avg_margin": 15,
+      "avg_excitement": 17.5
+    },
+    {
+      "matchup": "Perpignan vs Oyonnax",
+      "games_played": 1,
+      "avg_margin": 15,
+      "avg_excitement": 17.5
+    },
+    {
+      "matchup": "Bayonne vs Oyonnax",
+      "games_played": 1,
+      "avg_margin": 4,
+      "avg_excitement": 96.67
+    },
+    {
+      "matchup": "Oyonnax vs Bayonne",
+      "games_played": 1,
+      "avg_margin": 4,
+      "avg_excitement": 96.67
+    },
+    {
+      "matchup": "Stade Toulousain vs Vannes",
+      "games_played": 1,
+      "avg_margin": 25,
+      "avg_excitement": 9.17
+    },
+    {
+      "matchup": "Vannes vs Stade Toulousain",
+      "games_played": 1,
+      "avg_margin": 25,
+      "avg_excitement": 9.17
+    },
+    {
+      "matchup": "Stade Francais Paris vs Vannes",
+      "games_played": 1,
+      "avg_margin": 3,
+      "avg_excitement": 97.5
+    },
+    {
+      "matchup": "Vannes vs Stade Francais Paris",
+      "games_played": 1,
+      "avg_margin": 3,
+      "avg_excitement": 97.5
+    },
+    {
+      "matchup": "Lyon vs Vannes",
+      "games_played": 1,
+      "avg_margin": 10,
+      "avg_excitement": 91.67
+    },
+    {
+      "matchup": "Vannes vs Lyon",
+      "games_played": 1,
+      "avg_margin": 10,
+      "avg_excitement": 91.67
+    },
+    {
+      "matchup": "Toulon vs Vannes",
+      "games_played": 1,
+      "avg_margin": 35,
+      "avg_excitement": 0.83
+    },
+    {
+      "matchup": "Vannes vs Toulon",
+      "games_played": 1,
+      "avg_margin": 35,
+      "avg_excitement": 0.83
+    },
+    {
+      "matchup": "Racing 92 vs Vannes",
+      "games_played": 1,
+      "avg_margin": 3,
+      "avg_excitement": 97.5
+    },
+    {
+      "matchup": "Vannes vs Racing 92",
+      "games_played": 1,
+      "avg_margin": 3,
+      "avg_excitement": 97.5
+    },
+    {
+      "matchup": "Montpellier Herault vs Vannes",
+      "games_played": 1,
+      "avg_margin": 2,
+      "avg_excitement": 98.33
+    },
+    {
+      "matchup": "Vannes vs Montpellier Herault",
+      "games_played": 1,
+      "avg_margin": 2,
+      "avg_excitement": 98.33
+    },
+    {
+      "matchup": "Clermont Auvergne vs Vannes",
+      "games_played": 1,
+      "avg_margin": 22,
+      "avg_excitement": 11.67
+    },
+    {
+      "matchup": "Vannes vs Clermont Auvergne",
+      "games_played": 1,
+      "avg_margin": 22,
+      "avg_excitement": 11.67
+    },
+    {
+      "matchup": "Castres Olympique vs Vannes",
+      "games_played": 1,
+      "avg_margin": 6,
+      "avg_excitement": 95.0
+    },
+    {
+      "matchup": "Vannes vs Castres Olympique",
+      "games_played": 1,
+      "avg_margin": 6,
+      "avg_excitement": 95.0
+    },
+    {
+      "matchup": "Perpignan vs Vannes",
+      "games_played": 1,
+      "avg_margin": 19,
+      "avg_excitement": 14.17
+    },
+    {
+      "matchup": "Vannes vs Perpignan",
+      "games_played": 1,
+      "avg_margin": 19,
+      "avg_excitement": 14.17
+    },
+    {
+      "matchup": "Bordeaux Begles vs Vannes",
+      "games_played": 1,
+      "avg_margin": 8,
+      "avg_excitement": 93.33
+    },
+    {
+      "matchup": "Vannes vs Bordeaux Begles",
+      "games_played": 1,
+      "avg_margin": 8,
+      "avg_excitement": 93.33
+    },
+    {
+      "matchup": "La Rochelle vs Vannes",
+      "games_played": 1,
+      "avg_margin": 9,
+      "avg_excitement": 92.5
+    },
+    {
+      "matchup": "Vannes vs La Rochelle",
+      "games_played": 1,
+      "avg_margin": 9,
+      "avg_excitement": 92.5
+    },
+    {
+      "matchup": "Bayonne vs Vannes",
+      "games_played": 1,
+      "avg_margin": 6,
+      "avg_excitement": 95.0
+    },
+    {
+      "matchup": "Vannes vs Bayonne",
+      "games_played": 1,
+      "avg_margin": 6,
+      "avg_excitement": 95.0
+    },
+    {
+      "matchup": "Pau vs Vannes",
+      "games_played": 1,
+      "avg_margin": 24,
+      "avg_excitement": 10.0
+    },
+    {
+      "matchup": "Vannes vs Pau",
+      "games_played": 1,
+      "avg_margin": 24,
+      "avg_excitement": 10.0
+    }
+  ],
+  "matchup_close_rates": [
+    {
+      "matchup": "Castres Olympique vs Racing 92",
+      "games": 4,
+      "close_games": 4,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Racing 92 vs Castres Olympique",
+      "games": 4,
+      "close_games": 4,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Brive vs Lyon",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Lyon vs Brive",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Bayonne vs Toulon",
+      "games": 4,
+      "close_games": 2,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Toulon vs Bayonne",
+      "games": 4,
+      "close_games": 2,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Pau vs Perpignan",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Perpignan vs Pau",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Clermont Auvergne vs Stade Francais Paris",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Stade Francais Paris vs Clermont Auvergne",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "La Rochelle vs Montpellier Herault",
+      "games": 4,
+      "close_games": 3,
+      "close_rate": 75.0
+    },
+    {
+      "matchup": "Montpellier Herault vs La Rochelle",
+      "games": 4,
+      "close_games": 3,
+      "close_rate": 75.0
+    },
+    {
+      "matchup": "Bordeaux Begles vs Stade Toulousain",
+      "games": 3,
+      "close_games": 3,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Stade Toulousain vs Bordeaux Begles",
+      "games": 3,
+      "close_games": 3,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "La Rochelle vs Lyon",
+      "games": 4,
+      "close_games": 2,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Lyon vs La Rochelle",
+      "games": 4,
+      "close_games": 2,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Clermont Auvergne vs Pau",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Pau vs Clermont Auvergne",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Bayonne vs Racing 92",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Racing 92 vs Bayonne",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Castres Olympique vs Stade Francais Paris",
+      "games": 3,
+      "close_games": 1,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "Stade Francais Paris vs Castres Olympique",
+      "games": 3,
+      "close_games": 1,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "Brive vs Perpignan",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Perpignan vs Brive",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Bordeaux Begles vs Montpellier Herault",
+      "games": 4,
+      "close_games": 2,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Montpellier Herault vs Bordeaux Begles",
+      "games": 4,
+      "close_games": 2,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Stade Toulousain vs Toulon",
+      "games": 3,
+      "close_games": 1,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "Toulon vs Stade Toulousain",
+      "games": 3,
+      "close_games": 1,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "Bordeaux Begles vs Castres Olympique",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Castres Olympique vs Bordeaux Begles",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Brive vs Montpellier Herault",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Montpellier Herault vs Brive",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Lyon vs Racing 92",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Racing 92 vs Lyon",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Bayonne vs Stade Francais Paris",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Stade Francais Paris vs Bayonne",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "La Rochelle vs Perpignan",
+      "games": 4,
+      "close_games": 1,
+      "close_rate": 25.0
+    },
+    {
+      "matchup": "Perpignan vs La Rochelle",
+      "games": 4,
+      "close_games": 1,
+      "close_rate": 25.0
+    },
+    {
+      "matchup": "Pau vs Stade Toulousain",
+      "games": 3,
+      "close_games": 3,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Stade Toulousain vs Pau",
+      "games": 3,
+      "close_games": 3,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Clermont Auvergne vs Toulon",
+      "games": 3,
+      "close_games": 3,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Toulon vs Clermont Auvergne",
+      "games": 3,
+      "close_games": 3,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Perpignan vs Toulon",
+      "games": 3,
+      "close_games": 3,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Toulon vs Perpignan",
+      "games": 3,
+      "close_games": 3,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Bayonne vs Bordeaux Begles",
+      "games": 4,
+      "close_games": 4,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Bordeaux Begles vs Bayonne",
+      "games": 4,
+      "close_games": 4,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Brive vs Castres Olympique",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Castres Olympique vs Brive",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Lyon vs Stade Francais Paris",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Stade Francais Paris vs Lyon",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Montpellier Herault vs Pau",
+      "games": 3,
+      "close_games": 1,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "Pau vs Montpellier Herault",
+      "games": 3,
+      "close_games": 1,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "Racing 92 vs Stade Toulousain",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Stade Toulousain vs Racing 92",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Clermont Auvergne vs La Rochelle",
+      "games": 3,
+      "close_games": 3,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "La Rochelle vs Clermont Auvergne",
+      "games": 3,
+      "close_games": 3,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Bordeaux Begles vs Stade Francais Paris",
+      "games": 4,
+      "close_games": 2,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Stade Francais Paris vs Bordeaux Begles",
+      "games": 4,
+      "close_games": 2,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Clermont Auvergne vs Lyon",
+      "games": 4,
+      "close_games": 1,
+      "close_rate": 25.0
+    },
+    {
+      "matchup": "Lyon vs Clermont Auvergne",
+      "games": 4,
+      "close_games": 1,
+      "close_rate": 25.0
+    },
+    {
+      "matchup": "Bayonne vs Brive",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Brive vs Bayonne",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Pau vs Toulon",
+      "games": 3,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Toulon vs Pau",
+      "games": 3,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Castres Olympique vs Perpignan",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Perpignan vs Castres Olympique",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "La Rochelle vs Racing 92",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Racing 92 vs La Rochelle",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Montpellier Herault vs Stade Toulousain",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Stade Toulousain vs Montpellier Herault",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Castres Olympique vs Montpellier Herault",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Montpellier Herault vs Castres Olympique",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Bayonne vs La Rochelle",
+      "games": 3,
+      "close_games": 1,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "La Rochelle vs Bayonne",
+      "games": 3,
+      "close_games": 1,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "Pau vs Racing 92",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Racing 92 vs Pau",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Brive vs Toulon",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Toulon vs Brive",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Perpignan vs Stade Francais Paris",
+      "games": 3,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Stade Francais Paris vs Perpignan",
+      "games": 3,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Clermont Auvergne vs Stade Toulousain",
+      "games": 4,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Stade Toulousain vs Clermont Auvergne",
+      "games": 4,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Bordeaux Begles vs Lyon",
+      "games": 3,
+      "close_games": 1,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "Lyon vs Bordeaux Begles",
+      "games": 3,
+      "close_games": 1,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "Brive vs Stade Toulousain",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Stade Toulousain vs Brive",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Bayonne vs Castres Olympique",
+      "games": 3,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Castres Olympique vs Bayonne",
+      "games": 3,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Lyon vs Montpellier Herault",
+      "games": 3,
+      "close_games": 3,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Montpellier Herault vs Lyon",
+      "games": 3,
+      "close_games": 3,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Pau vs Stade Francais Paris",
+      "games": 4,
+      "close_games": 1,
+      "close_rate": 25.0
+    },
+    {
+      "matchup": "Stade Francais Paris vs Pau",
+      "games": 4,
+      "close_games": 1,
+      "close_rate": 25.0
+    },
+    {
+      "matchup": "Clermont Auvergne vs Perpignan",
+      "games": 4,
+      "close_games": 2,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Perpignan vs Clermont Auvergne",
+      "games": 4,
+      "close_games": 2,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Bordeaux Begles vs Racing 92",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Racing 92 vs Bordeaux Begles",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "La Rochelle vs Toulon",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Toulon vs La Rochelle",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Montpellier Herault vs Racing 92",
+      "games": 3,
+      "close_games": 3,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Racing 92 vs Montpellier Herault",
+      "games": 3,
+      "close_games": 3,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Bayonne vs Perpignan",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Perpignan vs Bayonne",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Lyon vs Pau",
+      "games": 3,
+      "close_games": 1,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "Pau vs Lyon",
+      "games": 3,
+      "close_games": 1,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "Castres Olympique vs Toulon",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Toulon vs Castres Olympique",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Brive vs Stade Francais Paris",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Stade Francais Paris vs Brive",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Bordeaux Begles vs Clermont Auvergne",
+      "games": 3,
+      "close_games": 3,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Clermont Auvergne vs Bordeaux Begles",
+      "games": 3,
+      "close_games": 3,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "La Rochelle vs Stade Toulousain",
+      "games": 4,
+      "close_games": 3,
+      "close_rate": 75.0
+    },
+    {
+      "matchup": "Stade Toulousain vs La Rochelle",
+      "games": 4,
+      "close_games": 3,
+      "close_rate": 75.0
+    },
+    {
+      "matchup": "Castres Olympique vs Clermont Auvergne",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Clermont Auvergne vs Castres Olympique",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Brive vs Racing 92",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Racing 92 vs Brive",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Montpellier Herault vs Stade Francais Paris",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Stade Francais Paris vs Montpellier Herault",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "La Rochelle vs Pau",
+      "games": 3,
+      "close_games": 1,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "Pau vs La Rochelle",
+      "games": 3,
+      "close_games": 1,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "Lyon vs Perpignan",
+      "games": 4,
+      "close_games": 4,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Perpignan vs Lyon",
+      "games": 4,
+      "close_games": 4,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Bayonne vs Stade Toulousain",
+      "games": 4,
+      "close_games": 2,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Stade Toulousain vs Bayonne",
+      "games": 4,
+      "close_games": 2,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Bordeaux Begles vs Toulon",
+      "games": 4,
+      "close_games": 4,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Toulon vs Bordeaux Begles",
+      "games": 4,
+      "close_games": 4,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Stade Francais Paris vs Stade Toulousain",
+      "games": 3,
+      "close_games": 1,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "Stade Toulousain vs Stade Francais Paris",
+      "games": 3,
+      "close_games": 1,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "Bayonne vs Clermont Auvergne",
+      "games": 3,
+      "close_games": 1,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "Clermont Auvergne vs Bayonne",
+      "games": 3,
+      "close_games": 1,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "Brive vs La Rochelle",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "La Rochelle vs Brive",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Castres Olympique vs Lyon",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Lyon vs Castres Olympique",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Perpignan vs Racing 92",
+      "games": 4,
+      "close_games": 1,
+      "close_rate": 25.0
+    },
+    {
+      "matchup": "Racing 92 vs Perpignan",
+      "games": 4,
+      "close_games": 1,
+      "close_rate": 25.0
+    },
+    {
+      "matchup": "Bordeaux Begles vs Pau",
+      "games": 4,
+      "close_games": 2,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Pau vs Bordeaux Begles",
+      "games": 4,
+      "close_games": 2,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Montpellier Herault vs Toulon",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Toulon vs Montpellier Herault",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Bayonne vs Montpellier Herault",
+      "games": 4,
+      "close_games": 1,
+      "close_rate": 25.0
+    },
+    {
+      "matchup": "Montpellier Herault vs Bayonne",
+      "games": 4,
+      "close_games": 1,
+      "close_rate": 25.0
+    },
+    {
+      "matchup": "Brive vs Pau",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Pau vs Brive",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Castres Olympique vs La Rochelle",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "La Rochelle vs Castres Olympique",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Bordeaux Begles vs Perpignan",
+      "games": 3,
+      "close_games": 1,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "Perpignan vs Bordeaux Begles",
+      "games": 3,
+      "close_games": 1,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "Stade Francais Paris vs Toulon",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Toulon vs Stade Francais Paris",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Clermont Auvergne vs Racing 92",
+      "games": 3,
+      "close_games": 1,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "Racing 92 vs Clermont Auvergne",
+      "games": 3,
+      "close_games": 1,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "Lyon vs Stade Toulousain",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Stade Toulousain vs Lyon",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Clermont Auvergne vs Montpellier Herault",
+      "games": 3,
+      "close_games": 3,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Montpellier Herault vs Clermont Auvergne",
+      "games": 3,
+      "close_games": 3,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Bayonne vs Lyon",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Lyon vs Bayonne",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Perpignan vs Stade Toulousain",
+      "games": 3,
+      "close_games": 1,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "Stade Toulousain vs Perpignan",
+      "games": 3,
+      "close_games": 1,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "Bordeaux Begles vs Brive",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Brive vs Bordeaux Begles",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "La Rochelle vs Stade Francais Paris",
+      "games": 3,
+      "close_games": 1,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "Stade Francais Paris vs La Rochelle",
+      "games": 3,
+      "close_games": 1,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "Castres Olympique vs Pau",
+      "games": 5,
+      "close_games": 5,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Pau vs Castres Olympique",
+      "games": 5,
+      "close_games": 5,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Racing 92 vs Toulon",
+      "games": 4,
+      "close_games": 2,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Toulon vs Racing 92",
+      "games": 4,
+      "close_games": 2,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Lyon vs Toulon",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Toulon vs Lyon",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Brive vs Clermont Auvergne",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Clermont Auvergne vs Brive",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Montpellier Herault vs Perpignan",
+      "games": 3,
+      "close_games": 1,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "Perpignan vs Montpellier Herault",
+      "games": 3,
+      "close_games": 1,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "Bayonne vs Pau",
+      "games": 3,
+      "close_games": 1,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "Pau vs Bayonne",
+      "games": 3,
+      "close_games": 1,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "Bordeaux Begles vs La Rochelle",
+      "games": 3,
+      "close_games": 3,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "La Rochelle vs Bordeaux Begles",
+      "games": 3,
+      "close_games": 3,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Castres Olympique vs Stade Toulousain",
+      "games": 3,
+      "close_games": 3,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Stade Toulousain vs Castres Olympique",
+      "games": 3,
+      "close_games": 3,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Racing 92 vs Stade Francais Paris",
+      "games": 3,
+      "close_games": 1,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "Stade Francais Paris vs Racing 92",
+      "games": 3,
+      "close_games": 1,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "Clermont Auvergne vs Oyonnax",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Oyonnax vs Clermont Auvergne",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Oyonnax vs Stade Francais Paris",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Stade Francais Paris vs Oyonnax",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Oyonnax vs Stade Toulousain",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Stade Toulousain vs Oyonnax",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Oyonnax vs Toulon",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Toulon vs Oyonnax",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "La Rochelle vs Oyonnax",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Oyonnax vs La Rochelle",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Castres Olympique vs Oyonnax",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Oyonnax vs Castres Olympique",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Lyon vs Oyonnax",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Oyonnax vs Lyon",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Montpellier Herault vs Oyonnax",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Oyonnax vs Montpellier Herault",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Bordeaux Begles vs Oyonnax",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Oyonnax vs Bordeaux Begles",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Oyonnax vs Racing 92",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Racing 92 vs Oyonnax",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Oyonnax vs Pau",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Pau vs Oyonnax",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Oyonnax vs Perpignan",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Perpignan vs Oyonnax",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Bayonne vs Oyonnax",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Oyonnax vs Bayonne",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Stade Toulousain vs Vannes",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Vannes vs Stade Toulousain",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Stade Francais Paris vs Vannes",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Vannes vs Stade Francais Paris",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Lyon vs Vannes",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Vannes vs Lyon",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Toulon vs Vannes",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Vannes vs Toulon",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Racing 92 vs Vannes",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Vannes vs Racing 92",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Montpellier Herault vs Vannes",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Vannes vs Montpellier Herault",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Clermont Auvergne vs Vannes",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Vannes vs Clermont Auvergne",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Castres Olympique vs Vannes",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Vannes vs Castres Olympique",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Perpignan vs Vannes",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Vannes vs Perpignan",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Bordeaux Begles vs Vannes",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Vannes vs Bordeaux Begles",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "La Rochelle vs Vannes",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Vannes vs La Rochelle",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Bayonne vs Vannes",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Vannes vs Bayonne",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Pau vs Vannes",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Vannes vs Pau",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    }
+  ],
+  "form_strengths": [
+    {
+      "team": "Bayonne",
+      "strength": 74.0
+    },
+    {
+      "team": "Bordeaux Begles",
+      "strength": 94.0
+    },
+    {
+      "team": "Brive",
+      "strength": 74.0
+    },
+    {
+      "team": "Castres Olympique",
+      "strength": 70.0
+    },
+    {
+      "team": "Clermont Auvergne",
+      "strength": 66.0
+    },
+    {
+      "team": "La Rochelle",
+      "strength": 73.3
+    },
+    {
+      "team": "Lyon",
+      "strength": 67.3
+    },
+    {
+      "team": "Montpellier Herault",
+      "strength": 86.7
+    },
+    {
+      "team": "Oyonnax",
+      "strength": 55.3
+    },
+    {
+      "team": "Pau",
+      "strength": 66.0
+    },
+    {
+      "team": "Perpignan",
+      "strength": 62.7
+    },
+    {
+      "team": "Racing 92",
+      "strength": 54.0
+    },
+    {
+      "team": "Stade Francais Paris",
+      "strength": 54.7
+    },
+    {
+      "team": "Stade Toulousain",
+      "strength": 70.7
+    },
+    {
+      "team": "Toulon",
+      "strength": 79.3
+    },
+    {
+      "team": "Vannes",
+      "strength": 60.0
+    }
+  ],
+  "team_margin_ratings": [
+    {
+      "team": "Bayonne",
+      "avg_margin": 4.2
+    },
+    {
+      "team": "Bordeaux Begles",
+      "avg_margin": 10.7
+    },
+    {
+      "team": "Brive",
+      "avg_margin": -14.5
+    },
+    {
+      "team": "Castres Olympique",
+      "avg_margin": -4.8
+    },
+    {
+      "team": "Clermont Auvergne",
+      "avg_margin": -2.3
+    },
+    {
+      "team": "La Rochelle",
+      "avg_margin": -1.1
+    },
+    {
+      "team": "Lyon",
+      "avg_margin": -3.1
+    },
+    {
+      "team": "Montpellier Herault",
+      "avg_margin": 5.6
+    },
+    {
+      "team": "Oyonnax",
+      "avg_margin": -6.7
+    },
+    {
+      "team": "Pau",
+      "avg_margin": -5
+    },
+    {
+      "team": "Perpignan",
+      "avg_margin": -9.3
+    },
+    {
+      "team": "Racing 92",
+      "avg_margin": -1.7
+    },
+    {
+      "team": "Stade Francais Paris",
+      "avg_margin": -4.9
+    },
+    {
+      "team": "Stade Toulousain",
+      "avg_margin": 13.3
+    },
+    {
+      "team": "Toulon",
+      "avg_margin": 2.3
+    },
+    {
+      "team": "Vannes",
+      "avg_margin": -10.4
+    }
+  ]
+}

@@ -48,6 +48,16 @@ SOCCER_LEAGUES = [
     ("uefa.champions", "UCL", "UCL", 8),
     ("uefa.europa", "UEL", "UEL", 8),
     ("conmebol.libertadores", "Libertadores", "LIB", 8),
+    ("jpn.1", "J1 League", "J1", 10),
+    ("eng.3", "League One", "L1", 12),
+    ("eng.4", "League Two", "L2", 12),
+    ("chn.1", "Chinese Super League", "CSL", 10),
+    ("bel.1", "Belgian Pro League", "BEL", 8),
+    ("sui.1", "Swiss Super League", "SUI", 8),
+    ("gre.1", "Greek Super League", "GRE", 8),
+    ("ita.2", "Serie B", "SB", 10),
+    ("ksa.1", "Saudi Pro League", "KSA", 9),
+    ("rus.1", "Russian Premier League", "RUS", 8),
 ]
 
 THRESHOLDS = [65, 68, 70, 72, 75, 78, 80, 85, 88, 90, 92, 93, 94, 95, 96, 97, 98]

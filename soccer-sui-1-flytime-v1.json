@@ -1,0 +1,2596 @@
+{
+  "meta": {
+    "sport": "Swiss Super League",
+    "league": "sui.1",
+    "engine": "v1-bootstrap",
+    "formula": "close*0.35 + form_balance*0.25 + margin_balance*0.25 + matchup*0.15",
+    "close_margin": 1,
+    "games_sampled": 600,
+    "week_chunk": 8,
+    "built": "2026-06-11"
+  },
+  "matchup_ratings": [
+    {
+      "matchup": "FC Sion vs FC Z\u00fcrich",
+      "games_played": 12,
+      "avg_margin": 1.42,
+      "avg_excitement": 56.67
+    },
+    {
+      "matchup": "FC Z\u00fcrich vs FC Sion",
+      "games_played": 12,
+      "avg_margin": 1.42,
+      "avg_excitement": 56.67
+    },
+    {
+      "matchup": "FC Basel vs FC Thun",
+      "games_played": 3,
+      "avg_margin": 1.33,
+      "avg_excitement": 63.33
+    },
+    {
+      "matchup": "FC Thun vs FC Basel",
+      "games_played": 3,
+      "avg_margin": 1.33,
+      "avg_excitement": 63.33
+    },
+    {
+      "matchup": "Neuchatel Xamax vs St. Gallen",
+      "games_played": 2,
+      "avg_margin": 1.5,
+      "avg_excitement": 50.0
+    },
+    {
+      "matchup": "St. Gallen vs Neuchatel Xamax",
+      "games_played": 2,
+      "avg_margin": 1.5,
+      "avg_excitement": 50.0
+    },
+    {
+      "matchup": "FC Luzern vs Servette",
+      "games_played": 12,
+      "avg_margin": 1.67,
+      "avg_excitement": 36.67
+    },
+    {
+      "matchup": "Servette vs FC Luzern",
+      "games_played": 12,
+      "avg_margin": 1.67,
+      "avg_excitement": 36.67
+    },
+    {
+      "matchup": "FC Lugano vs Young Boys",
+      "games_played": 16,
+      "avg_margin": 1.69,
+      "avg_excitement": 43.75
+    },
+    {
+      "matchup": "Young Boys vs FC Lugano",
+      "games_played": 16,
+      "avg_margin": 1.69,
+      "avg_excitement": 43.75
+    },
+    {
+      "matchup": "FC Basel vs Servette",
+      "games_played": 12,
+      "avg_margin": 1.83,
+      "avg_excitement": 46.67
+    },
+    {
+      "matchup": "Servette vs FC Basel",
+      "games_played": 12,
+      "avg_margin": 1.83,
+      "avg_excitement": 46.67
+    },
+    {
+      "matchup": "St. Gallen vs Young Boys",
+      "games_played": 13,
+      "avg_margin": 1.38,
+      "avg_excitement": 64.62
+    },
+    {
+      "matchup": "Young Boys vs St. Gallen",
+      "games_played": 13,
+      "avg_margin": 1.38,
+      "avg_excitement": 64.62
+    },
+    {
+      "matchup": "FC Lugano vs FC Sion",
+      "games_played": 8,
+      "avg_margin": 0.75,
+      "avg_excitement": 83.75
+    },
+    {
+      "matchup": "FC Sion vs FC Lugano",
+      "games_played": 8,
+      "avg_margin": 0.75,
+      "avg_excitement": 83.75
+    },
+    {
+      "matchup": "FC Luzern vs FC Thun",
+      "games_played": 2,
+      "avg_margin": 2,
+      "avg_excitement": 10.0
+    },
+    {
+      "matchup": "FC Thun vs FC Luzern",
+      "games_played": 2,
+      "avg_margin": 2,
+      "avg_excitement": 10.0
+    },
+    {
+      "matchup": "FC Z\u00fcrich vs Neuchatel Xamax",
+      "games_played": 2,
+      "avg_margin": 0.5,
+      "avg_excitement": 95.0
+    },
+    {
+      "matchup": "Neuchatel Xamax vs FC Z\u00fcrich",
+      "games_played": 2,
+      "avg_margin": 0.5,
+      "avg_excitement": 95.0
+    },
+    {
+      "matchup": "FC Z\u00fcrich vs St. Gallen",
+      "games_played": 11,
+      "avg_margin": 1.27,
+      "avg_excitement": 61.82
+    },
+    {
+      "matchup": "St. Gallen vs FC Z\u00fcrich",
+      "games_played": 11,
+      "avg_margin": 1.27,
+      "avg_excitement": 61.82
+    },
+    {
+      "matchup": "FC Basel vs Neuchatel Xamax",
+      "games_played": 2,
+      "avg_margin": 1.5,
+      "avg_excitement": 50.0
+    },
+    {
+      "matchup": "Neuchatel Xamax vs FC Basel",
+      "games_played": 2,
+      "avg_margin": 1.5,
+      "avg_excitement": 50.0
+    },
+    {
+      "matchup": "FC Z\u00fcrich vs Young Boys",
+      "games_played": 12,
+      "avg_margin": 1.58,
+      "avg_excitement": 55.0
+    },
+    {
+      "matchup": "Young Boys vs FC Z\u00fcrich",
+      "games_played": 12,
+      "avg_margin": 1.58,
+      "avg_excitement": 55.0
+    },
+    {
+      "matchup": "FC Luzern vs FC Sion",
+      "games_played": 11,
+      "avg_margin": 1.36,
+      "avg_excitement": 54.55
+    },
+    {
+      "matchup": "FC Sion vs FC Luzern",
+      "games_played": 11,
+      "avg_margin": 1.36,
+      "avg_excitement": 54.55
+    },
+    {
+      "matchup": "FC Thun vs Servette",
+      "games_played": 3,
+      "avg_margin": 2.33,
+      "avg_excitement": 30.0
+    },
+    {
+      "matchup": "Servette vs FC Thun",
+      "games_played": 3,
+      "avg_margin": 2.33,
+      "avg_excitement": 30.0
+    },
+    {
+      "matchup": "FC Lugano vs St. Gallen",
+      "games_played": 12,
+      "avg_margin": 0.92,
+      "avg_excitement": 73.33
+    },
+    {
+      "matchup": "St. Gallen vs FC Lugano",
+      "games_played": 12,
+      "avg_margin": 0.92,
+      "avg_excitement": 73.33
+    },
+    {
+      "matchup": "Neuchatel Xamax vs Servette",
+      "games_played": 3,
+      "avg_margin": 0.33,
+      "avg_excitement": 96.67
+    },
+    {
+      "matchup": "Servette vs Neuchatel Xamax",
+      "games_played": 3,
+      "avg_margin": 0.33,
+      "avg_excitement": 96.67
+    },
+    {
+      "matchup": "FC Basel vs FC Lugano",
+      "games_played": 11,
+      "avg_margin": 1.09,
+      "avg_excitement": 63.64
+    },
+    {
+      "matchup": "FC Lugano vs FC Basel",
+      "games_played": 11,
+      "avg_margin": 1.09,
+      "avg_excitement": 63.64
+    },
+    {
+      "matchup": "FC Luzern vs Young Boys",
+      "games_played": 13,
+      "avg_margin": 1.15,
+      "avg_excitement": 72.31
+    },
+    {
+      "matchup": "Young Boys vs FC Luzern",
+      "games_played": 13,
+      "avg_margin": 1.15,
+      "avg_excitement": 72.31
+    },
+    {
+      "matchup": "FC Sion vs FC Thun",
+      "games_played": 3,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "FC Thun vs FC Sion",
+      "games_played": 3,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "FC Sion vs Neuchatel Xamax",
+      "games_played": 3,
+      "avg_margin": 1,
+      "avg_excitement": 66.67
+    },
+    {
+      "matchup": "Neuchatel Xamax vs FC Sion",
+      "games_played": 3,
+      "avg_margin": 1,
+      "avg_excitement": 66.67
+    },
+    {
+      "matchup": "Servette vs St. Gallen",
+      "games_played": 13,
+      "avg_margin": 1.31,
+      "avg_excitement": 65.38
+    },
+    {
+      "matchup": "St. Gallen vs Servette",
+      "games_played": 13,
+      "avg_margin": 1.31,
+      "avg_excitement": 65.38
+    },
+    {
+      "matchup": "FC Lugano vs FC Luzern",
+      "games_played": 14,
+      "avg_margin": 1.07,
+      "avg_excitement": 74.29
+    },
+    {
+      "matchup": "FC Luzern vs FC Lugano",
+      "games_played": 14,
+      "avg_margin": 1.07,
+      "avg_excitement": 74.29
+    },
+    {
+      "matchup": "FC Thun vs FC Z\u00fcrich",
+      "games_played": 2,
+      "avg_margin": 1.5,
+      "avg_excitement": 50.0
+    },
+    {
+      "matchup": "FC Z\u00fcrich vs FC Thun",
+      "games_played": 2,
+      "avg_margin": 1.5,
+      "avg_excitement": 50.0
+    },
+    {
+      "matchup": "FC Basel vs Young Boys",
+      "games_played": 13,
+      "avg_margin": 1.31,
+      "avg_excitement": 54.62
+    },
+    {
+      "matchup": "Young Boys vs FC Basel",
+      "games_played": 13,
+      "avg_margin": 1.31,
+      "avg_excitement": 54.62
+    },
+    {
+      "matchup": "FC Basel vs FC Z\u00fcrich",
+      "games_played": 13,
+      "avg_margin": 1.62,
+      "avg_excitement": 46.15
+    },
+    {
+      "matchup": "FC Z\u00fcrich vs FC Basel",
+      "games_played": 13,
+      "avg_margin": 1.62,
+      "avg_excitement": 46.15
+    },
+    {
+      "matchup": "FC Sion vs St. Gallen",
+      "games_played": 12,
+      "avg_margin": 1.5,
+      "avg_excitement": 61.67
+    },
+    {
+      "matchup": "St. Gallen vs FC Sion",
+      "games_played": 12,
+      "avg_margin": 1.5,
+      "avg_excitement": 61.67
+    },
+    {
+      "matchup": "FC Thun vs Young Boys",
+      "games_played": 2,
+      "avg_margin": 1,
+      "avg_excitement": 55.0
+    },
+    {
+      "matchup": "Young Boys vs FC Thun",
+      "games_played": 2,
+      "avg_margin": 1,
+      "avg_excitement": 55.0
+    },
+    {
+      "matchup": "FC Luzern vs Neuchatel Xamax",
+      "games_played": 3,
+      "avg_margin": 1.33,
+      "avg_excitement": 63.33
+    },
+    {
+      "matchup": "Neuchatel Xamax vs FC Luzern",
+      "games_played": 3,
+      "avg_margin": 1.33,
+      "avg_excitement": 63.33
+    },
+    {
+      "matchup": "FC Lugano vs Servette",
+      "games_played": 12,
+      "avg_margin": 0.92,
+      "avg_excitement": 73.33
+    },
+    {
+      "matchup": "Servette vs FC Lugano",
+      "games_played": 12,
+      "avg_margin": 0.92,
+      "avg_excitement": 73.33
+    },
+    {
+      "matchup": "FC Thun vs St. Gallen",
+      "games_played": 2,
+      "avg_margin": 3.5,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "St. Gallen vs FC Thun",
+      "games_played": 2,
+      "avg_margin": 3.5,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "FC Sion vs Young Boys",
+      "games_played": 9,
+      "avg_margin": 0.89,
+      "avg_excitement": 83.33
+    },
+    {
+      "matchup": "Young Boys vs FC Sion",
+      "games_played": 9,
+      "avg_margin": 0.89,
+      "avg_excitement": 83.33
+    },
+    {
+      "matchup": "FC Basel vs FC Luzern",
+      "games_played": 13,
+      "avg_margin": 1.31,
+      "avg_excitement": 65.38
+    },
+    {
+      "matchup": "FC Luzern vs FC Basel",
+      "games_played": 13,
+      "avg_margin": 1.31,
+      "avg_excitement": 65.38
+    },
+    {
+      "matchup": "FC Lugano vs Neuchatel Xamax",
+      "games_played": 3,
+      "avg_margin": 0.33,
+      "avg_excitement": 96.67
+    },
+    {
+      "matchup": "Neuchatel Xamax vs FC Lugano",
+      "games_played": 3,
+      "avg_margin": 0.33,
+      "avg_excitement": 96.67
+    },
+    {
+      "matchup": "FC Z\u00fcrich vs Servette",
+      "games_played": 13,
+      "avg_margin": 1.62,
+      "avg_excitement": 56.92
+    },
+    {
+      "matchup": "Servette vs FC Z\u00fcrich",
+      "games_played": 13,
+      "avg_margin": 1.62,
+      "avg_excitement": 56.92
+    },
+    {
+      "matchup": "FC Basel vs St. Gallen",
+      "games_played": 11,
+      "avg_margin": 0.91,
+      "avg_excitement": 71.82
+    },
+    {
+      "matchup": "St. Gallen vs FC Basel",
+      "games_played": 11,
+      "avg_margin": 0.91,
+      "avg_excitement": 71.82
+    },
+    {
+      "matchup": "Neuchatel Xamax vs Young Boys",
+      "games_played": 1,
+      "avg_margin": 3,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Young Boys vs Neuchatel Xamax",
+      "games_played": 1,
+      "avg_margin": 3,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "FC Lugano vs FC Z\u00fcrich",
+      "games_played": 11,
+      "avg_margin": 1.55,
+      "avg_excitement": 52.73
+    },
+    {
+      "matchup": "FC Z\u00fcrich vs FC Lugano",
+      "games_played": 11,
+      "avg_margin": 1.55,
+      "avg_excitement": 52.73
+    },
+    {
+      "matchup": "FC Sion vs Servette",
+      "games_played": 6,
+      "avg_margin": 1,
+      "avg_excitement": 66.67
+    },
+    {
+      "matchup": "Servette vs FC Sion",
+      "games_played": 6,
+      "avg_margin": 1,
+      "avg_excitement": 66.67
+    },
+    {
+      "matchup": "Servette vs Young Boys",
+      "games_played": 10,
+      "avg_margin": 1.6,
+      "avg_excitement": 63.0
+    },
+    {
+      "matchup": "Young Boys vs Servette",
+      "games_played": 10,
+      "avg_margin": 1.6,
+      "avg_excitement": 63.0
+    },
+    {
+      "matchup": "FC Thun vs Neuchatel Xamax",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Neuchatel Xamax vs FC Thun",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "FC Luzern vs FC Z\u00fcrich",
+      "games_played": 10,
+      "avg_margin": 1.5,
+      "avg_excitement": 50.0
+    },
+    {
+      "matchup": "FC Z\u00fcrich vs FC Luzern",
+      "games_played": 10,
+      "avg_margin": 1.5,
+      "avg_excitement": 50.0
+    },
+    {
+      "matchup": "FC Lugano vs FC Thun",
+      "games_played": 2,
+      "avg_margin": 2,
+      "avg_excitement": 45.0
+    },
+    {
+      "matchup": "FC Thun vs FC Lugano",
+      "games_played": 2,
+      "avg_margin": 2,
+      "avg_excitement": 45.0
+    },
+    {
+      "matchup": "FC Luzern vs St. Gallen",
+      "games_played": 11,
+      "avg_margin": 1.09,
+      "avg_excitement": 70.0
+    },
+    {
+      "matchup": "St. Gallen vs FC Luzern",
+      "games_played": 11,
+      "avg_margin": 1.09,
+      "avg_excitement": 70.0
+    },
+    {
+      "matchup": "FC Basel vs FC Sion",
+      "games_played": 11,
+      "avg_margin": 1.45,
+      "avg_excitement": 60.0
+    },
+    {
+      "matchup": "FC Sion vs FC Basel",
+      "games_played": 11,
+      "avg_margin": 1.45,
+      "avg_excitement": 60.0
+    },
+    {
+      "matchup": "FC Basel vs FC Vaduz",
+      "games_played": 2,
+      "avg_margin": 1,
+      "avg_excitement": 55.0
+    },
+    {
+      "matchup": "FC Vaduz vs FC Basel",
+      "games_played": 2,
+      "avg_margin": 1,
+      "avg_excitement": 55.0
+    },
+    {
+      "matchup": "Lausanne Sports vs Servette",
+      "games_played": 10,
+      "avg_margin": 1,
+      "avg_excitement": 76.0
+    },
+    {
+      "matchup": "Servette vs Lausanne Sports",
+      "games_played": 10,
+      "avg_margin": 1,
+      "avg_excitement": 76.0
+    },
+    {
+      "matchup": "FC Luzern vs Lausanne Sports",
+      "games_played": 6,
+      "avg_margin": 0.5,
+      "avg_excitement": 83.33
+    },
+    {
+      "matchup": "Lausanne Sports vs FC Luzern",
+      "games_played": 6,
+      "avg_margin": 0.5,
+      "avg_excitement": 83.33
+    },
+    {
+      "matchup": "FC Vaduz vs St. Gallen",
+      "games_played": 3,
+      "avg_margin": 1.33,
+      "avg_excitement": 63.33
+    },
+    {
+      "matchup": "St. Gallen vs FC Vaduz",
+      "games_played": 3,
+      "avg_margin": 1.33,
+      "avg_excitement": 63.33
+    },
+    {
+      "matchup": "FC Z\u00fcrich vs Lausanne Sports",
+      "games_played": 6,
+      "avg_margin": 2.5,
+      "avg_excitement": 16.67
+    },
+    {
+      "matchup": "Lausanne Sports vs FC Z\u00fcrich",
+      "games_played": 6,
+      "avg_margin": 2.5,
+      "avg_excitement": 16.67
+    },
+    {
+      "matchup": "FC Vaduz vs Young Boys",
+      "games_played": 2,
+      "avg_margin": 0.5,
+      "avg_excitement": 95.0
+    },
+    {
+      "matchup": "Young Boys vs FC Vaduz",
+      "games_played": 2,
+      "avg_margin": 0.5,
+      "avg_excitement": 95.0
+    },
+    {
+      "matchup": "FC Lugano vs FC Vaduz",
+      "games_played": 2,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "FC Vaduz vs FC Lugano",
+      "games_played": 2,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "FC Sion vs Lausanne Sports",
+      "games_played": 5,
+      "avg_margin": 0.8,
+      "avg_excitement": 78.0
+    },
+    {
+      "matchup": "Lausanne Sports vs FC Sion",
+      "games_played": 5,
+      "avg_margin": 0.8,
+      "avg_excitement": 78.0
+    },
+    {
+      "matchup": "FC Vaduz vs FC Z\u00fcrich",
+      "games_played": 3,
+      "avg_margin": 1.67,
+      "avg_excitement": 60.0
+    },
+    {
+      "matchup": "FC Z\u00fcrich vs FC Vaduz",
+      "games_played": 3,
+      "avg_margin": 1.67,
+      "avg_excitement": 60.0
+    },
+    {
+      "matchup": "FC Lugano vs Lausanne Sports",
+      "games_played": 8,
+      "avg_margin": 1.5,
+      "avg_excitement": 50.0
+    },
+    {
+      "matchup": "Lausanne Sports vs FC Lugano",
+      "games_played": 8,
+      "avg_margin": 1.5,
+      "avg_excitement": 50.0
+    },
+    {
+      "matchup": "FC Luzern vs FC Vaduz",
+      "games_played": 2,
+      "avg_margin": 2,
+      "avg_excitement": 45.0
+    },
+    {
+      "matchup": "FC Vaduz vs FC Luzern",
+      "games_played": 2,
+      "avg_margin": 2,
+      "avg_excitement": 45.0
+    },
+    {
+      "matchup": "Lausanne Sports vs St. Gallen",
+      "games_played": 7,
+      "avg_margin": 1.29,
+      "avg_excitement": 77.14
+    },
+    {
+      "matchup": "St. Gallen vs Lausanne Sports",
+      "games_played": 7,
+      "avg_margin": 1.29,
+      "avg_excitement": 77.14
+    },
+    {
+      "matchup": "FC Basel vs Lausanne Sports",
+      "games_played": 8,
+      "avg_margin": 1.25,
+      "avg_excitement": 61.25
+    },
+    {
+      "matchup": "Lausanne Sports vs FC Basel",
+      "games_played": 8,
+      "avg_margin": 1.25,
+      "avg_excitement": 61.25
+    },
+    {
+      "matchup": "FC Sion vs FC Vaduz",
+      "games_played": 2,
+      "avg_margin": 2,
+      "avg_excitement": 45.0
+    },
+    {
+      "matchup": "FC Vaduz vs FC Sion",
+      "games_played": 2,
+      "avg_margin": 2,
+      "avg_excitement": 45.0
+    },
+    {
+      "matchup": "Lausanne Sports vs Young Boys",
+      "games_played": 6,
+      "avg_margin": 2,
+      "avg_excitement": 45.0
+    },
+    {
+      "matchup": "Young Boys vs Lausanne Sports",
+      "games_played": 6,
+      "avg_margin": 2,
+      "avg_excitement": 45.0
+    },
+    {
+      "matchup": "FC Vaduz vs Lausanne Sports",
+      "games_played": 2,
+      "avg_margin": 2.5,
+      "avg_excitement": 5.0
+    },
+    {
+      "matchup": "Lausanne Sports vs FC Vaduz",
+      "games_played": 2,
+      "avg_margin": 2.5,
+      "avg_excitement": 5.0
+    },
+    {
+      "matchup": "FC Vaduz vs Servette",
+      "games_played": 2,
+      "avg_margin": 1,
+      "avg_excitement": 55.0
+    },
+    {
+      "matchup": "Servette vs FC Vaduz",
+      "games_played": 2,
+      "avg_margin": 1,
+      "avg_excitement": 55.0
+    },
+    {
+      "matchup": "Grasshoppers vs Lausanne Sports",
+      "games_played": 5,
+      "avg_margin": 2.8,
+      "avg_excitement": 2.0
+    },
+    {
+      "matchup": "Lausanne Sports vs Grasshoppers",
+      "games_played": 5,
+      "avg_margin": 2.8,
+      "avg_excitement": 2.0
+    },
+    {
+      "matchup": "FC Z\u00fcrich vs Grasshoppers",
+      "games_played": 9,
+      "avg_margin": 1,
+      "avg_excitement": 74.44
+    },
+    {
+      "matchup": "Grasshoppers vs FC Z\u00fcrich",
+      "games_played": 9,
+      "avg_margin": 1,
+      "avg_excitement": 74.44
+    },
+    {
+      "matchup": "Grasshoppers vs Servette",
+      "games_played": 7,
+      "avg_margin": 1,
+      "avg_excitement": 70.0
+    },
+    {
+      "matchup": "Servette vs Grasshoppers",
+      "games_played": 7,
+      "avg_margin": 1,
+      "avg_excitement": 70.0
+    },
+    {
+      "matchup": "FC Luzern vs Grasshoppers",
+      "games_played": 8,
+      "avg_margin": 1,
+      "avg_excitement": 63.75
+    },
+    {
+      "matchup": "Grasshoppers vs FC Luzern",
+      "games_played": 8,
+      "avg_margin": 1,
+      "avg_excitement": 63.75
+    },
+    {
+      "matchup": "FC Lugano vs Grasshoppers",
+      "games_played": 5,
+      "avg_margin": 0.4,
+      "avg_excitement": 96.0
+    },
+    {
+      "matchup": "Grasshoppers vs FC Lugano",
+      "games_played": 5,
+      "avg_margin": 0.4,
+      "avg_excitement": 96.0
+    },
+    {
+      "matchup": "FC Sion vs Grasshoppers",
+      "games_played": 7,
+      "avg_margin": 1.29,
+      "avg_excitement": 47.14
+    },
+    {
+      "matchup": "Grasshoppers vs FC Sion",
+      "games_played": 7,
+      "avg_margin": 1.29,
+      "avg_excitement": 47.14
+    },
+    {
+      "matchup": "Grasshoppers vs St. Gallen",
+      "games_played": 9,
+      "avg_margin": 1.44,
+      "avg_excitement": 62.22
+    },
+    {
+      "matchup": "St. Gallen vs Grasshoppers",
+      "games_played": 9,
+      "avg_margin": 1.44,
+      "avg_excitement": 62.22
+    },
+    {
+      "matchup": "Grasshoppers vs Young Boys",
+      "games_played": 5,
+      "avg_margin": 0.8,
+      "avg_excitement": 92.0
+    },
+    {
+      "matchup": "Young Boys vs Grasshoppers",
+      "games_played": 5,
+      "avg_margin": 0.8,
+      "avg_excitement": 92.0
+    },
+    {
+      "matchup": "FC Basel vs Grasshoppers",
+      "games_played": 8,
+      "avg_margin": 1.62,
+      "avg_excitement": 57.5
+    },
+    {
+      "matchup": "Grasshoppers vs FC Basel",
+      "games_played": 8,
+      "avg_margin": 1.62,
+      "avg_excitement": 57.5
+    },
+    {
+      "matchup": "Servette vs Winterthur",
+      "games_played": 6,
+      "avg_margin": 0.5,
+      "avg_excitement": 95.0
+    },
+    {
+      "matchup": "Winterthur vs Servette",
+      "games_played": 6,
+      "avg_margin": 0.5,
+      "avg_excitement": 95.0
+    },
+    {
+      "matchup": "FC Z\u00fcrich vs Winterthur",
+      "games_played": 5,
+      "avg_margin": 0.4,
+      "avg_excitement": 96.0
+    },
+    {
+      "matchup": "Winterthur vs FC Z\u00fcrich",
+      "games_played": 5,
+      "avg_margin": 0.4,
+      "avg_excitement": 96.0
+    },
+    {
+      "matchup": "Winterthur vs Young Boys",
+      "games_played": 7,
+      "avg_margin": 2.43,
+      "avg_excitement": 25.71
+    },
+    {
+      "matchup": "Young Boys vs Winterthur",
+      "games_played": 7,
+      "avg_margin": 2.43,
+      "avg_excitement": 25.71
+    },
+    {
+      "matchup": "Grasshoppers vs Winterthur",
+      "games_played": 5,
+      "avg_margin": 1.4,
+      "avg_excitement": 58.0
+    },
+    {
+      "matchup": "Winterthur vs Grasshoppers",
+      "games_played": 5,
+      "avg_margin": 1.4,
+      "avg_excitement": 58.0
+    },
+    {
+      "matchup": "FC Luzern vs Winterthur",
+      "games_played": 5,
+      "avg_margin": 2.4,
+      "avg_excitement": 34.0
+    },
+    {
+      "matchup": "Winterthur vs FC Luzern",
+      "games_played": 5,
+      "avg_margin": 2.4,
+      "avg_excitement": 34.0
+    },
+    {
+      "matchup": "FC Sion vs Winterthur",
+      "games_played": 5,
+      "avg_margin": 1.4,
+      "avg_excitement": 44.0
+    },
+    {
+      "matchup": "Winterthur vs FC Sion",
+      "games_played": 5,
+      "avg_margin": 1.4,
+      "avg_excitement": 44.0
+    },
+    {
+      "matchup": "FC Basel vs Winterthur",
+      "games_played": 3,
+      "avg_margin": 4,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Winterthur vs FC Basel",
+      "games_played": 3,
+      "avg_margin": 4,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "St. Gallen vs Winterthur",
+      "games_played": 4,
+      "avg_margin": 1,
+      "avg_excitement": 72.5
+    },
+    {
+      "matchup": "Winterthur vs St. Gallen",
+      "games_played": 4,
+      "avg_margin": 1,
+      "avg_excitement": 72.5
+    },
+    {
+      "matchup": "FC Lugano vs Winterthur",
+      "games_played": 5,
+      "avg_margin": 1.2,
+      "avg_excitement": 74.0
+    },
+    {
+      "matchup": "Winterthur vs FC Lugano",
+      "games_played": 5,
+      "avg_margin": 1.2,
+      "avg_excitement": 74.0
+    },
+    {
+      "matchup": "FC Stade Lausanne-Ouchy vs Servette",
+      "games_played": 1,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "Servette vs FC Stade Lausanne-Ouchy",
+      "games_played": 1,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "Lausanne Sports vs Yverdon",
+      "games_played": 4,
+      "avg_margin": 1.5,
+      "avg_excitement": 50.0
+    },
+    {
+      "matchup": "Yverdon vs Lausanne Sports",
+      "games_played": 4,
+      "avg_margin": 1.5,
+      "avg_excitement": 50.0
+    },
+    {
+      "matchup": "FC Stade Lausanne-Ouchy vs FC Z\u00fcrich",
+      "games_played": 2,
+      "avg_margin": 1.5,
+      "avg_excitement": 50.0
+    },
+    {
+      "matchup": "FC Z\u00fcrich vs FC Stade Lausanne-Ouchy",
+      "games_played": 2,
+      "avg_margin": 1.5,
+      "avg_excitement": 50.0
+    },
+    {
+      "matchup": "FC Lugano vs Yverdon",
+      "games_played": 4,
+      "avg_margin": 3.5,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Yverdon vs FC Lugano",
+      "games_played": 4,
+      "avg_margin": 3.5,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Servette vs Yverdon",
+      "games_played": 1,
+      "avg_margin": 3,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Yverdon vs Servette",
+      "games_played": 1,
+      "avg_margin": 3,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Lausanne Sports vs Winterthur",
+      "games_played": 4,
+      "avg_margin": 1.75,
+      "avg_excitement": 47.5
+    },
+    {
+      "matchup": "Winterthur vs Lausanne Sports",
+      "games_played": 4,
+      "avg_margin": 1.75,
+      "avg_excitement": 47.5
+    },
+    {
+      "matchup": "FC Stade Lausanne-Ouchy vs Grasshoppers",
+      "games_played": 2,
+      "avg_margin": 2,
+      "avg_excitement": 45.0
+    },
+    {
+      "matchup": "Grasshoppers vs FC Stade Lausanne-Ouchy",
+      "games_played": 2,
+      "avg_margin": 2,
+      "avg_excitement": 45.0
+    },
+    {
+      "matchup": "Winterthur vs Yverdon",
+      "games_played": 3,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "Yverdon vs Winterthur",
+      "games_played": 3,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "FC Stade Lausanne-Ouchy vs Winterthur",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Winterthur vs FC Stade Lausanne-Ouchy",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "FC Basel vs Yverdon",
+      "games_played": 4,
+      "avg_margin": 1.75,
+      "avg_excitement": 47.5
+    },
+    {
+      "matchup": "Yverdon vs FC Basel",
+      "games_played": 4,
+      "avg_margin": 1.75,
+      "avg_excitement": 47.5
+    },
+    {
+      "matchup": "FC Stade Lausanne-Ouchy vs Yverdon",
+      "games_played": 2,
+      "avg_margin": 0.5,
+      "avg_excitement": 95.0
+    },
+    {
+      "matchup": "Yverdon vs FC Stade Lausanne-Ouchy",
+      "games_played": 2,
+      "avg_margin": 0.5,
+      "avg_excitement": 95.0
+    },
+    {
+      "matchup": "St. Gallen vs Yverdon",
+      "games_played": 4,
+      "avg_margin": 1.5,
+      "avg_excitement": 67.5
+    },
+    {
+      "matchup": "Yverdon vs St. Gallen",
+      "games_played": 4,
+      "avg_margin": 1.5,
+      "avg_excitement": 67.5
+    },
+    {
+      "matchup": "FC Basel vs FC Stade Lausanne-Ouchy",
+      "games_played": 2,
+      "avg_margin": 1.5,
+      "avg_excitement": 50.0
+    },
+    {
+      "matchup": "FC Stade Lausanne-Ouchy vs FC Basel",
+      "games_played": 2,
+      "avg_margin": 1.5,
+      "avg_excitement": 50.0
+    },
+    {
+      "matchup": "Grasshoppers vs Yverdon",
+      "games_played": 4,
+      "avg_margin": 1,
+      "avg_excitement": 72.5
+    },
+    {
+      "matchup": "Yverdon vs Grasshoppers",
+      "games_played": 4,
+      "avg_margin": 1,
+      "avg_excitement": 72.5
+    },
+    {
+      "matchup": "FC Stade Lausanne-Ouchy vs St. Gallen",
+      "games_played": 2,
+      "avg_margin": 3.5,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "St. Gallen vs FC Stade Lausanne-Ouchy",
+      "games_played": 2,
+      "avg_margin": 3.5,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "FC Stade Lausanne-Ouchy vs Lausanne Sports",
+      "games_played": 2,
+      "avg_margin": 0.5,
+      "avg_excitement": 95.0
+    },
+    {
+      "matchup": "Lausanne Sports vs FC Stade Lausanne-Ouchy",
+      "games_played": 2,
+      "avg_margin": 0.5,
+      "avg_excitement": 95.0
+    },
+    {
+      "matchup": "FC Luzern vs Yverdon",
+      "games_played": 3,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Yverdon vs FC Luzern",
+      "games_played": 3,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "FC Stade Lausanne-Ouchy vs Young Boys",
+      "games_played": 2,
+      "avg_margin": 1.5,
+      "avg_excitement": 50.0
+    },
+    {
+      "matchup": "Young Boys vs FC Stade Lausanne-Ouchy",
+      "games_played": 2,
+      "avg_margin": 1.5,
+      "avg_excitement": 50.0
+    },
+    {
+      "matchup": "FC Lugano vs FC Stade Lausanne-Ouchy",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "FC Stade Lausanne-Ouchy vs FC Lugano",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Young Boys vs Yverdon",
+      "games_played": 1,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "Yverdon vs Young Boys",
+      "games_played": 1,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "FC Sion vs Yverdon",
+      "games_played": 2,
+      "avg_margin": 0.5,
+      "avg_excitement": 95.0
+    },
+    {
+      "matchup": "Yverdon vs FC Sion",
+      "games_played": 2,
+      "avg_margin": 0.5,
+      "avg_excitement": 95.0
+    },
+    {
+      "matchup": "FC Z\u00fcrich vs Yverdon",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Yverdon vs FC Z\u00fcrich",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    }
+  ],
+  "matchup_close_rates": [
+    {
+      "matchup": "FC Sion vs FC Z\u00fcrich",
+      "games": 12,
+      "close_games": 7,
+      "close_rate": 58.33
+    },
+    {
+      "matchup": "FC Z\u00fcrich vs FC Sion",
+      "games": 12,
+      "close_games": 7,
+      "close_rate": 58.33
+    },
+    {
+      "matchup": "FC Basel vs FC Thun",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "FC Thun vs FC Basel",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Neuchatel Xamax vs St. Gallen",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "St. Gallen vs Neuchatel Xamax",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "FC Luzern vs Servette",
+      "games": 12,
+      "close_games": 4,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "Servette vs FC Luzern",
+      "games": 12,
+      "close_games": 4,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "FC Lugano vs Young Boys",
+      "games": 16,
+      "close_games": 7,
+      "close_rate": 43.75
+    },
+    {
+      "matchup": "Young Boys vs FC Lugano",
+      "games": 16,
+      "close_games": 7,
+      "close_rate": 43.75
+    },
+    {
+      "matchup": "FC Basel vs Servette",
+      "games": 12,
+      "close_games": 6,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Servette vs FC Basel",
+      "games": 12,
+      "close_games": 6,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "St. Gallen vs Young Boys",
+      "games": 13,
+      "close_games": 9,
+      "close_rate": 69.23
+    },
+    {
+      "matchup": "Young Boys vs St. Gallen",
+      "games": 13,
+      "close_games": 9,
+      "close_rate": 69.23
+    },
+    {
+      "matchup": "FC Lugano vs FC Sion",
+      "games": 8,
+      "close_games": 7,
+      "close_rate": 87.5
+    },
+    {
+      "matchup": "FC Sion vs FC Lugano",
+      "games": 8,
+      "close_games": 7,
+      "close_rate": 87.5
+    },
+    {
+      "matchup": "FC Luzern vs FC Thun",
+      "games": 2,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "FC Thun vs FC Luzern",
+      "games": 2,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "FC Z\u00fcrich vs Neuchatel Xamax",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Neuchatel Xamax vs FC Z\u00fcrich",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "FC Z\u00fcrich vs St. Gallen",
+      "games": 11,
+      "close_games": 7,
+      "close_rate": 63.64
+    },
+    {
+      "matchup": "St. Gallen vs FC Z\u00fcrich",
+      "games": 11,
+      "close_games": 7,
+      "close_rate": 63.64
+    },
+    {
+      "matchup": "FC Basel vs Neuchatel Xamax",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Neuchatel Xamax vs FC Basel",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "FC Z\u00fcrich vs Young Boys",
+      "games": 12,
+      "close_games": 7,
+      "close_rate": 58.33
+    },
+    {
+      "matchup": "Young Boys vs FC Z\u00fcrich",
+      "games": 12,
+      "close_games": 7,
+      "close_rate": 58.33
+    },
+    {
+      "matchup": "FC Luzern vs FC Sion",
+      "games": 11,
+      "close_games": 6,
+      "close_rate": 54.55
+    },
+    {
+      "matchup": "FC Sion vs FC Luzern",
+      "games": 11,
+      "close_games": 6,
+      "close_rate": 54.55
+    },
+    {
+      "matchup": "FC Thun vs Servette",
+      "games": 3,
+      "close_games": 1,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "Servette vs FC Thun",
+      "games": 3,
+      "close_games": 1,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "FC Lugano vs St. Gallen",
+      "games": 12,
+      "close_games": 9,
+      "close_rate": 75.0
+    },
+    {
+      "matchup": "St. Gallen vs FC Lugano",
+      "games": 12,
+      "close_games": 9,
+      "close_rate": 75.0
+    },
+    {
+      "matchup": "Neuchatel Xamax vs Servette",
+      "games": 3,
+      "close_games": 3,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Servette vs Neuchatel Xamax",
+      "games": 3,
+      "close_games": 3,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "FC Basel vs FC Lugano",
+      "games": 11,
+      "close_games": 7,
+      "close_rate": 63.64
+    },
+    {
+      "matchup": "FC Lugano vs FC Basel",
+      "games": 11,
+      "close_games": 7,
+      "close_rate": 63.64
+    },
+    {
+      "matchup": "FC Luzern vs Young Boys",
+      "games": 13,
+      "close_games": 10,
+      "close_rate": 76.92
+    },
+    {
+      "matchup": "Young Boys vs FC Luzern",
+      "games": 13,
+      "close_games": 10,
+      "close_rate": 76.92
+    },
+    {
+      "matchup": "FC Sion vs FC Thun",
+      "games": 3,
+      "close_games": 3,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "FC Thun vs FC Sion",
+      "games": 3,
+      "close_games": 3,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "FC Sion vs Neuchatel Xamax",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Neuchatel Xamax vs FC Sion",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Servette vs St. Gallen",
+      "games": 13,
+      "close_games": 9,
+      "close_rate": 69.23
+    },
+    {
+      "matchup": "St. Gallen vs Servette",
+      "games": 13,
+      "close_games": 9,
+      "close_rate": 69.23
+    },
+    {
+      "matchup": "FC Lugano vs FC Luzern",
+      "games": 14,
+      "close_games": 11,
+      "close_rate": 78.57
+    },
+    {
+      "matchup": "FC Luzern vs FC Lugano",
+      "games": 14,
+      "close_games": 11,
+      "close_rate": 78.57
+    },
+    {
+      "matchup": "FC Thun vs FC Z\u00fcrich",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "FC Z\u00fcrich vs FC Thun",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "FC Basel vs Young Boys",
+      "games": 13,
+      "close_games": 7,
+      "close_rate": 53.85
+    },
+    {
+      "matchup": "Young Boys vs FC Basel",
+      "games": 13,
+      "close_games": 7,
+      "close_rate": 53.85
+    },
+    {
+      "matchup": "FC Basel vs FC Z\u00fcrich",
+      "games": 13,
+      "close_games": 6,
+      "close_rate": 46.15
+    },
+    {
+      "matchup": "FC Z\u00fcrich vs FC Basel",
+      "games": 13,
+      "close_games": 6,
+      "close_rate": 46.15
+    },
+    {
+      "matchup": "FC Sion vs St. Gallen",
+      "games": 12,
+      "close_games": 8,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "St. Gallen vs FC Sion",
+      "games": 12,
+      "close_games": 8,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "FC Thun vs Young Boys",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Young Boys vs FC Thun",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "FC Luzern vs Neuchatel Xamax",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Neuchatel Xamax vs FC Luzern",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "FC Lugano vs Servette",
+      "games": 12,
+      "close_games": 9,
+      "close_rate": 75.0
+    },
+    {
+      "matchup": "Servette vs FC Lugano",
+      "games": 12,
+      "close_games": 9,
+      "close_rate": 75.0
+    },
+    {
+      "matchup": "FC Thun vs St. Gallen",
+      "games": 2,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "St. Gallen vs FC Thun",
+      "games": 2,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "FC Sion vs Young Boys",
+      "games": 9,
+      "close_games": 8,
+      "close_rate": 88.89
+    },
+    {
+      "matchup": "Young Boys vs FC Sion",
+      "games": 9,
+      "close_games": 8,
+      "close_rate": 88.89
+    },
+    {
+      "matchup": "FC Basel vs FC Luzern",
+      "games": 13,
+      "close_games": 9,
+      "close_rate": 69.23
+    },
+    {
+      "matchup": "FC Luzern vs FC Basel",
+      "games": 13,
+      "close_games": 9,
+      "close_rate": 69.23
+    },
+    {
+      "matchup": "FC Lugano vs Neuchatel Xamax",
+      "games": 3,
+      "close_games": 3,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Neuchatel Xamax vs FC Lugano",
+      "games": 3,
+      "close_games": 3,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "FC Z\u00fcrich vs Servette",
+      "games": 13,
+      "close_games": 8,
+      "close_rate": 61.54
+    },
+    {
+      "matchup": "Servette vs FC Z\u00fcrich",
+      "games": 13,
+      "close_games": 8,
+      "close_rate": 61.54
+    },
+    {
+      "matchup": "FC Basel vs St. Gallen",
+      "games": 11,
+      "close_games": 8,
+      "close_rate": 72.73
+    },
+    {
+      "matchup": "St. Gallen vs FC Basel",
+      "games": 11,
+      "close_games": 8,
+      "close_rate": 72.73
+    },
+    {
+      "matchup": "Neuchatel Xamax vs Young Boys",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Young Boys vs Neuchatel Xamax",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "FC Lugano vs FC Z\u00fcrich",
+      "games": 11,
+      "close_games": 6,
+      "close_rate": 54.55
+    },
+    {
+      "matchup": "FC Z\u00fcrich vs FC Lugano",
+      "games": 11,
+      "close_games": 6,
+      "close_rate": 54.55
+    },
+    {
+      "matchup": "FC Sion vs Servette",
+      "games": 6,
+      "close_games": 4,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Servette vs FC Sion",
+      "games": 6,
+      "close_games": 4,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Servette vs Young Boys",
+      "games": 10,
+      "close_games": 7,
+      "close_rate": 70.0
+    },
+    {
+      "matchup": "Young Boys vs Servette",
+      "games": 10,
+      "close_games": 7,
+      "close_rate": 70.0
+    },
+    {
+      "matchup": "FC Thun vs Neuchatel Xamax",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Neuchatel Xamax vs FC Thun",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "FC Luzern vs FC Z\u00fcrich",
+      "games": 10,
+      "close_games": 5,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "FC Z\u00fcrich vs FC Luzern",
+      "games": 10,
+      "close_games": 5,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "FC Lugano vs FC Thun",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "FC Thun vs FC Lugano",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "FC Luzern vs St. Gallen",
+      "games": 11,
+      "close_games": 8,
+      "close_rate": 72.73
+    },
+    {
+      "matchup": "St. Gallen vs FC Luzern",
+      "games": 11,
+      "close_games": 8,
+      "close_rate": 72.73
+    },
+    {
+      "matchup": "FC Basel vs FC Sion",
+      "games": 11,
+      "close_games": 7,
+      "close_rate": 63.64
+    },
+    {
+      "matchup": "FC Sion vs FC Basel",
+      "games": 11,
+      "close_games": 7,
+      "close_rate": 63.64
+    },
+    {
+      "matchup": "FC Basel vs FC Vaduz",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "FC Vaduz vs FC Basel",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Lausanne Sports vs Servette",
+      "games": 10,
+      "close_games": 8,
+      "close_rate": 80.0
+    },
+    {
+      "matchup": "Servette vs Lausanne Sports",
+      "games": 10,
+      "close_games": 8,
+      "close_rate": 80.0
+    },
+    {
+      "matchup": "FC Luzern vs Lausanne Sports",
+      "games": 6,
+      "close_games": 5,
+      "close_rate": 83.33
+    },
+    {
+      "matchup": "Lausanne Sports vs FC Luzern",
+      "games": 6,
+      "close_games": 5,
+      "close_rate": 83.33
+    },
+    {
+      "matchup": "FC Vaduz vs St. Gallen",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "St. Gallen vs FC Vaduz",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "FC Z\u00fcrich vs Lausanne Sports",
+      "games": 6,
+      "close_games": 1,
+      "close_rate": 16.67
+    },
+    {
+      "matchup": "Lausanne Sports vs FC Z\u00fcrich",
+      "games": 6,
+      "close_games": 1,
+      "close_rate": 16.67
+    },
+    {
+      "matchup": "FC Vaduz vs Young Boys",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Young Boys vs FC Vaduz",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "FC Lugano vs FC Vaduz",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "FC Vaduz vs FC Lugano",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "FC Sion vs Lausanne Sports",
+      "games": 5,
+      "close_games": 4,
+      "close_rate": 80.0
+    },
+    {
+      "matchup": "Lausanne Sports vs FC Sion",
+      "games": 5,
+      "close_games": 4,
+      "close_rate": 80.0
+    },
+    {
+      "matchup": "FC Vaduz vs FC Z\u00fcrich",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "FC Z\u00fcrich vs FC Vaduz",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "FC Lugano vs Lausanne Sports",
+      "games": 8,
+      "close_games": 4,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Lausanne Sports vs FC Lugano",
+      "games": 8,
+      "close_games": 4,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "FC Luzern vs FC Vaduz",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "FC Vaduz vs FC Luzern",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Lausanne Sports vs St. Gallen",
+      "games": 7,
+      "close_games": 6,
+      "close_rate": 85.71
+    },
+    {
+      "matchup": "St. Gallen vs Lausanne Sports",
+      "games": 7,
+      "close_games": 6,
+      "close_rate": 85.71
+    },
+    {
+      "matchup": "FC Basel vs Lausanne Sports",
+      "games": 8,
+      "close_games": 5,
+      "close_rate": 62.5
+    },
+    {
+      "matchup": "Lausanne Sports vs FC Basel",
+      "games": 8,
+      "close_games": 5,
+      "close_rate": 62.5
+    },
+    {
+      "matchup": "FC Sion vs FC Vaduz",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "FC Vaduz vs FC Sion",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Lausanne Sports vs Young Boys",
+      "games": 6,
+      "close_games": 3,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Young Boys vs Lausanne Sports",
+      "games": 6,
+      "close_games": 3,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "FC Vaduz vs Lausanne Sports",
+      "games": 2,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Lausanne Sports vs FC Vaduz",
+      "games": 2,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "FC Vaduz vs Servette",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Servette vs FC Vaduz",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Grasshoppers vs Lausanne Sports",
+      "games": 5,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Lausanne Sports vs Grasshoppers",
+      "games": 5,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "FC Z\u00fcrich vs Grasshoppers",
+      "games": 9,
+      "close_games": 7,
+      "close_rate": 77.78
+    },
+    {
+      "matchup": "Grasshoppers vs FC Z\u00fcrich",
+      "games": 9,
+      "close_games": 7,
+      "close_rate": 77.78
+    },
+    {
+      "matchup": "Grasshoppers vs Servette",
+      "games": 7,
+      "close_games": 5,
+      "close_rate": 71.43
+    },
+    {
+      "matchup": "Servette vs Grasshoppers",
+      "games": 7,
+      "close_games": 5,
+      "close_rate": 71.43
+    },
+    {
+      "matchup": "FC Luzern vs Grasshoppers",
+      "games": 8,
+      "close_games": 5,
+      "close_rate": 62.5
+    },
+    {
+      "matchup": "Grasshoppers vs FC Luzern",
+      "games": 8,
+      "close_games": 5,
+      "close_rate": 62.5
+    },
+    {
+      "matchup": "FC Lugano vs Grasshoppers",
+      "games": 5,
+      "close_games": 5,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Grasshoppers vs FC Lugano",
+      "games": 5,
+      "close_games": 5,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "FC Sion vs Grasshoppers",
+      "games": 7,
+      "close_games": 3,
+      "close_rate": 42.86
+    },
+    {
+      "matchup": "Grasshoppers vs FC Sion",
+      "games": 7,
+      "close_games": 3,
+      "close_rate": 42.86
+    },
+    {
+      "matchup": "Grasshoppers vs St. Gallen",
+      "games": 9,
+      "close_games": 6,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "St. Gallen vs Grasshoppers",
+      "games": 9,
+      "close_games": 6,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Grasshoppers vs Young Boys",
+      "games": 5,
+      "close_games": 5,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Young Boys vs Grasshoppers",
+      "games": 5,
+      "close_games": 5,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "FC Basel vs Grasshoppers",
+      "games": 8,
+      "close_games": 5,
+      "close_rate": 62.5
+    },
+    {
+      "matchup": "Grasshoppers vs FC Basel",
+      "games": 8,
+      "close_games": 5,
+      "close_rate": 62.5
+    },
+    {
+      "matchup": "Servette vs Winterthur",
+      "games": 6,
+      "close_games": 6,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Winterthur vs Servette",
+      "games": 6,
+      "close_games": 6,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "FC Z\u00fcrich vs Winterthur",
+      "games": 5,
+      "close_games": 5,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Winterthur vs FC Z\u00fcrich",
+      "games": 5,
+      "close_games": 5,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Winterthur vs Young Boys",
+      "games": 7,
+      "close_games": 2,
+      "close_rate": 28.57
+    },
+    {
+      "matchup": "Young Boys vs Winterthur",
+      "games": 7,
+      "close_games": 2,
+      "close_rate": 28.57
+    },
+    {
+      "matchup": "Grasshoppers vs Winterthur",
+      "games": 5,
+      "close_games": 3,
+      "close_rate": 60.0
+    },
+    {
+      "matchup": "Winterthur vs Grasshoppers",
+      "games": 5,
+      "close_games": 3,
+      "close_rate": 60.0
+    },
+    {
+      "matchup": "FC Luzern vs Winterthur",
+      "games": 5,
+      "close_games": 2,
+      "close_rate": 40.0
+    },
+    {
+      "matchup": "Winterthur vs FC Luzern",
+      "games": 5,
+      "close_games": 2,
+      "close_rate": 40.0
+    },
+    {
+      "matchup": "FC Sion vs Winterthur",
+      "games": 5,
+      "close_games": 2,
+      "close_rate": 40.0
+    },
+    {
+      "matchup": "Winterthur vs FC Sion",
+      "games": 5,
+      "close_games": 2,
+      "close_rate": 40.0
+    },
+    {
+      "matchup": "FC Basel vs Winterthur",
+      "games": 3,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Winterthur vs FC Basel",
+      "games": 3,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "St. Gallen vs Winterthur",
+      "games": 4,
+      "close_games": 3,
+      "close_rate": 75.0
+    },
+    {
+      "matchup": "Winterthur vs St. Gallen",
+      "games": 4,
+      "close_games": 3,
+      "close_rate": 75.0
+    },
+    {
+      "matchup": "FC Lugano vs Winterthur",
+      "games": 5,
+      "close_games": 4,
+      "close_rate": 80.0
+    },
+    {
+      "matchup": "Winterthur vs FC Lugano",
+      "games": 5,
+      "close_games": 4,
+      "close_rate": 80.0
+    },
+    {
+      "matchup": "FC Stade Lausanne-Ouchy vs Servette",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Servette vs FC Stade Lausanne-Ouchy",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Lausanne Sports vs Yverdon",
+      "games": 4,
+      "close_games": 2,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Yverdon vs Lausanne Sports",
+      "games": 4,
+      "close_games": 2,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "FC Stade Lausanne-Ouchy vs FC Z\u00fcrich",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "FC Z\u00fcrich vs FC Stade Lausanne-Ouchy",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "FC Lugano vs Yverdon",
+      "games": 4,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Yverdon vs FC Lugano",
+      "games": 4,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Servette vs Yverdon",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Yverdon vs Servette",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Lausanne Sports vs Winterthur",
+      "games": 4,
+      "close_games": 2,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Winterthur vs Lausanne Sports",
+      "games": 4,
+      "close_games": 2,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "FC Stade Lausanne-Ouchy vs Grasshoppers",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Grasshoppers vs FC Stade Lausanne-Ouchy",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Winterthur vs Yverdon",
+      "games": 3,
+      "close_games": 3,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Yverdon vs Winterthur",
+      "games": 3,
+      "close_games": 3,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "FC Stade Lausanne-Ouchy vs Winterthur",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Winterthur vs FC Stade Lausanne-Ouchy",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "FC Basel vs Yverdon",
+      "games": 4,
+      "close_games": 2,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Yverdon vs FC Basel",
+      "games": 4,
+      "close_games": 2,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "FC Stade Lausanne-Ouchy vs Yverdon",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Yverdon vs FC Stade Lausanne-Ouchy",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "St. Gallen vs Yverdon",
+      "games": 4,
+      "close_games": 3,
+      "close_rate": 75.0
+    },
+    {
+      "matchup": "Yverdon vs St. Gallen",
+      "games": 4,
+      "close_games": 3,
+      "close_rate": 75.0
+    },
+    {
+      "matchup": "FC Basel vs FC Stade Lausanne-Ouchy",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "FC Stade Lausanne-Ouchy vs FC Basel",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Grasshoppers vs Yverdon",
+      "games": 4,
+      "close_games": 3,
+      "close_rate": 75.0
+    },
+    {
+      "matchup": "Yverdon vs Grasshoppers",
+      "games": 4,
+      "close_games": 3,
+      "close_rate": 75.0
+    },
+    {
+      "matchup": "FC Stade Lausanne-Ouchy vs St. Gallen",
+      "games": 2,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "St. Gallen vs FC Stade Lausanne-Ouchy",
+      "games": 2,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "FC Stade Lausanne-Ouchy vs Lausanne Sports",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Lausanne Sports vs FC Stade Lausanne-Ouchy",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "FC Luzern vs Yverdon",
+      "games": 3,
+      "close_games": 3,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Yverdon vs FC Luzern",
+      "games": 3,
+      "close_games": 3,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "FC Stade Lausanne-Ouchy vs Young Boys",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Young Boys vs FC Stade Lausanne-Ouchy",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "FC Lugano vs FC Stade Lausanne-Ouchy",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "FC Stade Lausanne-Ouchy vs FC Lugano",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Young Boys vs Yverdon",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Yverdon vs Young Boys",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "FC Sion vs Yverdon",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Yverdon vs FC Sion",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "FC Z\u00fcrich vs Yverdon",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Yverdon vs FC Z\u00fcrich",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    }
+  ],
+  "form_strengths": [
+    {
+      "team": "FC Basel",
+      "strength": 54.7
+    },
+    {
+      "team": "FC Lugano",
+      "strength": 56.7
+    },
+    {
+      "team": "FC Luzern",
+      "strength": 75.3
+    },
+    {
+      "team": "FC Sion",
+      "strength": 74.0
+    },
+    {
+      "team": "FC Stade Lausanne-Ouchy",
+      "strength": 67.3
+    },
+    {
+      "team": "FC Thun",
+      "strength": 83.3
+    },
+    {
+      "team": "FC Vaduz",
+      "strength": 78.0
+    },
+    {
+      "team": "FC Z\u00fcrich",
+      "strength": 63.3
+    },
+    {
+      "team": "Grasshoppers",
+      "strength": 80.0
+    },
+    {
+      "team": "Lausanne Sports",
+      "strength": 79.3
+    },
+    {
+      "team": "Neuchatel Xamax",
+      "strength": 71.3
+    },
+    {
+      "team": "Servette",
+      "strength": 57.3
+    },
+    {
+      "team": "St. Gallen",
+      "strength": 66.7
+    },
+    {
+      "team": "Winterthur",
+      "strength": 52.0
+    },
+    {
+      "team": "Young Boys",
+      "strength": 70.0
+    },
+    {
+      "team": "Yverdon",
+      "strength": 52.0
+    }
+  ],
+  "team_margin_ratings": [
+    {
+      "team": "FC Basel",
+      "avg_margin": 1.4
+    },
+    {
+      "team": "FC Lugano",
+      "avg_margin": 0.1
+    },
+    {
+      "team": "FC Luzern",
+      "avg_margin": -0.3
+    },
+    {
+      "team": "FC Sion",
+      "avg_margin": 0
+    },
+    {
+      "team": "FC Stade Lausanne-Ouchy",
+      "avg_margin": -1
+    },
+    {
+      "team": "FC Thun",
+      "avg_margin": -0.7
+    },
+    {
+      "team": "FC Vaduz",
+      "avg_margin": -0.6
+    },
+    {
+      "team": "FC Z\u00fcrich",
+      "avg_margin": -0.6
+    },
+    {
+      "team": "Grasshoppers",
+      "avg_margin": -0.5
+    },
+    {
+      "team": "Lausanne Sports",
+      "avg_margin": 1.5
+    },
+    {
+      "team": "Neuchatel Xamax",
+      "avg_margin": -0.6
+    },
+    {
+      "team": "Servette",
+      "avg_margin": 0.4
+    },
+    {
+      "team": "St. Gallen",
+      "avg_margin": 0
+    },
+    {
+      "team": "Winterthur",
+      "avg_margin": -1.4
+    },
+    {
+      "team": "Young Boys",
+      "avg_margin": 0.2
+    },
+    {
+      "team": "Yverdon",
+      "avg_margin": -0.8
+    }
+  ]
+}

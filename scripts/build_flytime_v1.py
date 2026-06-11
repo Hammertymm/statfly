@@ -23,6 +23,20 @@ SEASON_WINDOWS = [
     ("2024", "20240901", "20250215"),
 ]
 
+CFL_SEASON_WINDOWS = [
+    ("2022", "20220601", "20221130"),
+    ("2023", "20230601", "20231130"),
+    ("2024", "20240601", "20241130"),
+]
+
+RUGBY_SEASON_WINDOWS = [
+    ("2022-23", "20220801", "20230615"),
+    ("2023-24", "20230801", "20240615"),
+    ("2024-25", "20240801", "20250615"),
+]
+
+THRESHOLDS = [65, 68, 70, 72, 75, 78, 80, 85, 88, 90, 92, 93, 94, 95, 96, 97, 98]
+
 NRL_SUBSTRINGS = [
     ("north queensland", "North Queensland Cowboys"),
     ("cowboy", "North Queensland Cowboys"),
@@ -115,6 +129,33 @@ SPORT_CONFIG = {
         "close_margin": 12,
         "chunk": 8,
         "normalize": "nrl",
+    },
+    "cfl": {
+        "label": "CFL",
+        "espn_sport": "football",
+        "espn_league": "cfl",
+        "close_margin": 8,
+        "chunk": 4,
+        "out_file": "cfl-flytime-v1.json",
+        "season_windows": CFL_SEASON_WINDOWS,
+    },
+    "urc": {
+        "label": "URC",
+        "espn_sport": "rugby",
+        "espn_league": "270557",
+        "close_margin": 12,
+        "chunk": 8,
+        "out_file": "rugby-urc-flytime-v1.json",
+        "season_windows": RUGBY_SEASON_WINDOWS,
+    },
+    "top14": {
+        "label": "Top 14",
+        "espn_sport": "rugby",
+        "espn_league": "270559",
+        "close_margin": 12,
+        "chunk": 8,
+        "out_file": "rugby-top14-flytime-v1.json",
+        "season_windows": RUGBY_SEASON_WINDOWS,
     },
 }
 
@@ -220,7 +261,8 @@ def load_games(cfg):
     seen = set()
     sport, league = cfg["espn_sport"], cfg["espn_league"]
     norm = cfg.get("normalize")
-    for label, start, end in SEASON_WINDOWS:
+    windows = cfg.get("season_windows") or SEASON_WINDOWS
+    for label, start, end in windows:
         url = f"https://site.api.espn.com/apis/site/v2/sports/{sport}/{league}/scoreboard?dates={start}-{end}"
         try:
             data = fetch_json(url)
@@ -325,9 +367,63 @@ def build_matchup_tables(games, close_margin):
     return ratings, close_rates
 
 
+def build_index(raw):
+    cr, mr, fs, mg = {}, {}, {}, {}
+    for r in raw["form_strengths"]:
+        fs[r["team"]] = r["strength"]
+    for r in raw["team_margin_ratings"]:
+        mg[r["team"]] = r["avg_margin"]
+    for r in raw["matchup_ratings"]:
+        a, b = r["matchup"].split(" vs ")
+        mr[f"{a}|{b}"] = mr[f"{b}|{a}"] = r["avg_excitement"]
+    for r in raw["matchup_close_rates"]:
+        a, b = r["matchup"].split(" vs ")
+        cr[f"{a}|{b}"] = cr[f"{b}|{a}"] = r["close_rate"]
+    return cr, mr, fs, mg
+
+
+def score_match(home, away, idx):
+    cr, mr, fs, mg = idx
+    key = f"{home}|{away}"
+    vals = [cr.get(key), mr.get(key), fs.get(home), fs.get(away), mg.get(home), mg.get(away)]
+    if any(v is None for v in vals):
+        return None
+    fb = 100 - abs(fs[home] - fs[away])
+    mb = 100 - abs(mg[home] - mg[away])
+    return cr[key] * 0.35 + fb * 0.25 + mb * 0.25 + mr[key] * 0.15
+
+
+def calibrate(raw, chunk):
+    idx = build_index(raw)
+    pairs = set()
+    gp_map = {}
+    for r in raw["matchup_close_rates"]:
+        a, b = r["matchup"].split(" vs ")
+        pairs.add((a, b))
+        gp_map[f"{a}|{b}"] = max(gp_map.get(f"{a}|{b}", 0), r["games"])
+    by_gp = []
+    for h, a in pairs:
+        s = score_match(h, a, idx)
+        if s is None:
+            continue
+        for _ in range(min(gp_map.get(f"{h}|{a}", 1), 4)):
+            by_gp.append(s)
+    if not by_gp:
+        return 85
+    weeks = [by_gp[i : i + chunk] for i in range(0, len(by_gp), chunk)]
+    weeks = [w for w in weeks if w]
+    best = (85, 999.0)
+    for thr in THRESHOLDS:
+        counts = [sum(1 for s in wk if s >= thr) for wk in weeks]
+        avg = mean(counts)
+        if abs(avg - 2) < abs(best[1] - 2):
+            best = (thr, avg)
+    return best[0]
+
+
 def build_one(key):
     cfg = SPORT_CONFIG[key]
-    out_path = ROOT / f"{key}-flytime-v1.json"
+    out_path = ROOT / cfg.get("out_file", f"{key}-flytime-v1.json")
     close = cfg["close_margin"]
     print(f"\n=== {cfg['label']} ({key}) ===")
     print("Fetching finals from ESPN...")
@@ -355,8 +451,9 @@ def build_one(key):
         "team_margin_ratings": margin_ratings,
     }
     out_path.write_text(json.dumps(output, indent=2), encoding="utf-8")
-    print(f"Wrote {out_path.name}: {len(form_strengths)} teams, {len(matchup_ratings)} matchup rows")
-    return output
+    thr = calibrate(output, cfg["chunk"]) if len(games) >= 20 else 85
+    print(f"Wrote {out_path.name}: {len(form_strengths)} teams, threshold {thr}")
+    return {"file": out_path.name, "threshold": thr, "tag": cfg.get("tag", key.upper()), "games": len(games)}
 
 
 def main():

@@ -1,0 +1,6420 @@
+{
+  "meta": {
+    "sport": "Chinese Super League",
+    "league": "chn.1",
+    "engine": "v1-bootstrap",
+    "formula": "close*0.35 + form_balance*0.25 + margin_balance*0.25 + matchup*0.15",
+    "close_margin": 1,
+    "games_sampled": 580,
+    "week_chunk": 10,
+    "built": "2026-06-11"
+  },
+  "matchup_ratings": [
+    {
+      "matchup": "Chongqing Liangjiang Athletic vs Dalian Professional",
+      "games_played": 3,
+      "avg_margin": 1.33,
+      "avg_excitement": 63.33
+    },
+    {
+      "matchup": "Dalian Professional vs Chongqing Liangjiang Athletic",
+      "games_played": 3,
+      "avg_margin": 1.33,
+      "avg_excitement": 63.33
+    },
+    {
+      "matchup": "Shanghai Shenhua vs Wuhan Yangtze River",
+      "games_played": 1,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "Wuhan Yangtze River vs Shanghai Shenhua",
+      "games_played": 1,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "Beijing Renhe vs Shenzhen FC",
+      "games_played": 1,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "Shenzhen FC vs Beijing Renhe",
+      "games_played": 1,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "Beijing Guoan vs Hebei FC",
+      "games_played": 4,
+      "avg_margin": 1,
+      "avg_excitement": 55.0
+    },
+    {
+      "matchup": "Hebei FC vs Beijing Guoan",
+      "games_played": 4,
+      "avg_margin": 1,
+      "avg_excitement": 55.0
+    },
+    {
+      "matchup": "Guangzhou City vs Jiangsu Suning",
+      "games_played": 2,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "Jiangsu Suning vs Guangzhou City",
+      "games_played": 2,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "Henan Songshan Longmen vs Tianjin Jinmen Tiger",
+      "games_played": 8,
+      "avg_margin": 0.75,
+      "avg_excitement": 83.75
+    },
+    {
+      "matchup": "Tianjin Jinmen Tiger vs Henan Songshan Longmen",
+      "games_played": 8,
+      "avg_margin": 0.75,
+      "avg_excitement": 83.75
+    },
+    {
+      "matchup": "Guangzhou vs Shandong Taishan",
+      "games_played": 3,
+      "avg_margin": 2.33,
+      "avg_excitement": 30.0
+    },
+    {
+      "matchup": "Shandong Taishan vs Guangzhou",
+      "games_played": 3,
+      "avg_margin": 2.33,
+      "avg_excitement": 30.0
+    },
+    {
+      "matchup": "Shanghai Port vs Tianjin Quanjian",
+      "games_played": 1,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "Tianjin Quanjian vs Shanghai Port",
+      "games_played": 1,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "Dalian Professional vs Jiangsu Suning",
+      "games_played": 2,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "Jiangsu Suning vs Dalian Professional",
+      "games_played": 2,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "Guangzhou City vs Shanghai Port",
+      "games_played": 4,
+      "avg_margin": 1,
+      "avg_excitement": 72.5
+    },
+    {
+      "matchup": "Shanghai Port vs Guangzhou City",
+      "games_played": 4,
+      "avg_margin": 1,
+      "avg_excitement": 72.5
+    },
+    {
+      "matchup": "Beijing Renhe vs Henan Songshan Longmen",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Henan Songshan Longmen vs Beijing Renhe",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Hebei FC vs Shandong Taishan",
+      "games_played": 6,
+      "avg_margin": 3.33,
+      "avg_excitement": 11.67
+    },
+    {
+      "matchup": "Shandong Taishan vs Hebei FC",
+      "games_played": 6,
+      "avg_margin": 3.33,
+      "avg_excitement": 11.67
+    },
+    {
+      "matchup": "Tianjin Jinmen Tiger vs Wuhan Yangtze River",
+      "games_played": 4,
+      "avg_margin": 0.75,
+      "avg_excitement": 75.0
+    },
+    {
+      "matchup": "Wuhan Yangtze River vs Tianjin Jinmen Tiger",
+      "games_played": 4,
+      "avg_margin": 0.75,
+      "avg_excitement": 75.0
+    },
+    {
+      "matchup": "Beijing Guoan vs Guangzhou",
+      "games_played": 5,
+      "avg_margin": 1.2,
+      "avg_excitement": 60.0
+    },
+    {
+      "matchup": "Guangzhou vs Beijing Guoan",
+      "games_played": 5,
+      "avg_margin": 1.2,
+      "avg_excitement": 60.0
+    },
+    {
+      "matchup": "Chongqing Liangjiang Athletic vs Tianjin Quanjian",
+      "games_played": 1,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "Tianjin Quanjian vs Chongqing Liangjiang Athletic",
+      "games_played": 1,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "Henan Songshan Longmen vs Jiangsu Suning",
+      "games_played": 1,
+      "avg_margin": 3,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Jiangsu Suning vs Henan Songshan Longmen",
+      "games_played": 1,
+      "avg_margin": 3,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Beijing Renhe vs Hebei FC",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Hebei FC vs Beijing Renhe",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Shanghai Port vs Tianjin Jinmen Tiger",
+      "games_played": 5,
+      "avg_margin": 3.2,
+      "avg_excitement": 28.0
+    },
+    {
+      "matchup": "Tianjin Jinmen Tiger vs Shanghai Port",
+      "games_played": 5,
+      "avg_margin": 3.2,
+      "avg_excitement": 28.0
+    },
+    {
+      "matchup": "Guangzhou City vs Shenzhen FC",
+      "games_played": 3,
+      "avg_margin": 1.67,
+      "avg_excitement": 60.0
+    },
+    {
+      "matchup": "Shenzhen FC vs Guangzhou City",
+      "games_played": 3,
+      "avg_margin": 1.67,
+      "avg_excitement": 60.0
+    },
+    {
+      "matchup": "Beijing Guoan vs Dalian Professional",
+      "games_played": 3,
+      "avg_margin": 1.33,
+      "avg_excitement": 40.0
+    },
+    {
+      "matchup": "Dalian Professional vs Beijing Guoan",
+      "games_played": 3,
+      "avg_margin": 1.33,
+      "avg_excitement": 40.0
+    },
+    {
+      "matchup": "Chongqing Liangjiang Athletic vs Guangzhou",
+      "games_played": 2,
+      "avg_margin": 2,
+      "avg_excitement": 45.0
+    },
+    {
+      "matchup": "Guangzhou vs Chongqing Liangjiang Athletic",
+      "games_played": 2,
+      "avg_margin": 2,
+      "avg_excitement": 45.0
+    },
+    {
+      "matchup": "Shanghai Shenhua vs Tianjin Quanjian",
+      "games_played": 1,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "Tianjin Quanjian vs Shanghai Shenhua",
+      "games_played": 1,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "Shandong Taishan vs Wuhan Yangtze River",
+      "games_played": 2,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Wuhan Yangtze River vs Shandong Taishan",
+      "games_played": 2,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Guangzhou vs Jiangsu Suning",
+      "games_played": 4,
+      "avg_margin": 1,
+      "avg_excitement": 72.5
+    },
+    {
+      "matchup": "Jiangsu Suning vs Guangzhou",
+      "games_played": 4,
+      "avg_margin": 1,
+      "avg_excitement": 72.5
+    },
+    {
+      "matchup": "Shandong Taishan vs Shanghai Port",
+      "games_played": 5,
+      "avg_margin": 1,
+      "avg_excitement": 62.0
+    },
+    {
+      "matchup": "Shanghai Port vs Shandong Taishan",
+      "games_played": 5,
+      "avg_margin": 1,
+      "avg_excitement": 62.0
+    },
+    {
+      "matchup": "Beijing Guoan vs Shenzhen FC",
+      "games_played": 4,
+      "avg_margin": 1,
+      "avg_excitement": 72.5
+    },
+    {
+      "matchup": "Shenzhen FC vs Beijing Guoan",
+      "games_played": 4,
+      "avg_margin": 1,
+      "avg_excitement": 72.5
+    },
+    {
+      "matchup": "Guangzhou City vs Tianjin Quanjian",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Tianjin Quanjian vs Guangzhou City",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Hebei FC vs Henan Songshan Longmen",
+      "games_played": 2,
+      "avg_margin": 2,
+      "avg_excitement": 45.0
+    },
+    {
+      "matchup": "Henan Songshan Longmen vs Hebei FC",
+      "games_played": 2,
+      "avg_margin": 2,
+      "avg_excitement": 45.0
+    },
+    {
+      "matchup": "Shanghai Shenhua vs Tianjin Jinmen Tiger",
+      "games_played": 5,
+      "avg_margin": 1,
+      "avg_excitement": 76.0
+    },
+    {
+      "matchup": "Tianjin Jinmen Tiger vs Shanghai Shenhua",
+      "games_played": 5,
+      "avg_margin": 1,
+      "avg_excitement": 76.0
+    },
+    {
+      "matchup": "Dalian Professional vs Wuhan Yangtze River",
+      "games_played": 2,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Wuhan Yangtze River vs Dalian Professional",
+      "games_played": 2,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Chongqing Liangjiang Athletic vs Jiangsu Suning",
+      "games_played": 3,
+      "avg_margin": 0.67,
+      "avg_excitement": 93.33
+    },
+    {
+      "matchup": "Jiangsu Suning vs Chongqing Liangjiang Athletic",
+      "games_played": 3,
+      "avg_margin": 0.67,
+      "avg_excitement": 93.33
+    },
+    {
+      "matchup": "Dalian Professional vs Shenzhen FC",
+      "games_played": 4,
+      "avg_margin": 2.25,
+      "avg_excitement": 25.0
+    },
+    {
+      "matchup": "Shenzhen FC vs Dalian Professional",
+      "games_played": 4,
+      "avg_margin": 2.25,
+      "avg_excitement": 25.0
+    },
+    {
+      "matchup": "Hebei FC vs Tianjin Jinmen Tiger",
+      "games_played": 3,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Tianjin Jinmen Tiger vs Hebei FC",
+      "games_played": 3,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Shandong Taishan vs Shanghai Shenhua",
+      "games_played": 3,
+      "avg_margin": 0.33,
+      "avg_excitement": 96.67
+    },
+    {
+      "matchup": "Shanghai Shenhua vs Shandong Taishan",
+      "games_played": 3,
+      "avg_margin": 0.33,
+      "avg_excitement": 96.67
+    },
+    {
+      "matchup": "Beijing Guoan vs Tianjin Quanjian",
+      "games_played": 1,
+      "avg_margin": 3,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Tianjin Quanjian vs Beijing Guoan",
+      "games_played": 1,
+      "avg_margin": 3,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Henan Songshan Longmen vs Shanghai Port",
+      "games_played": 3,
+      "avg_margin": 1.33,
+      "avg_excitement": 63.33
+    },
+    {
+      "matchup": "Shanghai Port vs Henan Songshan Longmen",
+      "games_played": 3,
+      "avg_margin": 1.33,
+      "avg_excitement": 63.33
+    },
+    {
+      "matchup": "Guangzhou vs Wuhan Yangtze River",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Wuhan Yangtze River vs Guangzhou",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Shanghai Shenhua vs Shenzhen FC",
+      "games_played": 4,
+      "avg_margin": 1,
+      "avg_excitement": 72.5
+    },
+    {
+      "matchup": "Shenzhen FC vs Shanghai Shenhua",
+      "games_played": 4,
+      "avg_margin": 1,
+      "avg_excitement": 72.5
+    },
+    {
+      "matchup": "Beijing Renhe vs Chongqing Liangjiang Athletic",
+      "games_played": 1,
+      "avg_margin": 3,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Chongqing Liangjiang Athletic vs Beijing Renhe",
+      "games_played": 1,
+      "avg_margin": 3,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Guangzhou vs Shenzhen FC",
+      "games_played": 3,
+      "avg_margin": 2,
+      "avg_excitement": 33.33
+    },
+    {
+      "matchup": "Shenzhen FC vs Guangzhou",
+      "games_played": 3,
+      "avg_margin": 2,
+      "avg_excitement": 33.33
+    },
+    {
+      "matchup": "Tianjin Quanjian vs Wuhan Yangtze River",
+      "games_played": 1,
+      "avg_margin": 2,
+      "avg_excitement": 10.0
+    },
+    {
+      "matchup": "Wuhan Yangtze River vs Tianjin Quanjian",
+      "games_played": 1,
+      "avg_margin": 2,
+      "avg_excitement": 10.0
+    },
+    {
+      "matchup": "Guangzhou City vs Shandong Taishan",
+      "games_played": 3,
+      "avg_margin": 1.33,
+      "avg_excitement": 40.0
+    },
+    {
+      "matchup": "Shandong Taishan vs Guangzhou City",
+      "games_played": 3,
+      "avg_margin": 1.33,
+      "avg_excitement": 40.0
+    },
+    {
+      "matchup": "Beijing Guoan vs Shanghai Port",
+      "games_played": 6,
+      "avg_margin": 1,
+      "avg_excitement": 78.33
+    },
+    {
+      "matchup": "Shanghai Port vs Beijing Guoan",
+      "games_played": 6,
+      "avg_margin": 1,
+      "avg_excitement": 78.33
+    },
+    {
+      "matchup": "Beijing Renhe vs Tianjin Jinmen Tiger",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Tianjin Jinmen Tiger vs Beijing Renhe",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Chongqing Liangjiang Athletic vs Henan Songshan Longmen",
+      "games_played": 2,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Henan Songshan Longmen vs Chongqing Liangjiang Athletic",
+      "games_played": 2,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Hebei FC vs Jiangsu Suning",
+      "games_played": 1,
+      "avg_margin": 3,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Jiangsu Suning vs Hebei FC",
+      "games_played": 1,
+      "avg_margin": 3,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Dalian Professional vs Shanghai Shenhua",
+      "games_played": 5,
+      "avg_margin": 1,
+      "avg_excitement": 76.0
+    },
+    {
+      "matchup": "Shanghai Shenhua vs Dalian Professional",
+      "games_played": 5,
+      "avg_margin": 1,
+      "avg_excitement": 76.0
+    },
+    {
+      "matchup": "Chongqing Liangjiang Athletic vs Shanghai Shenhua",
+      "games_played": 5,
+      "avg_margin": 1.6,
+      "avg_excitement": 42.0
+    },
+    {
+      "matchup": "Shanghai Shenhua vs Chongqing Liangjiang Athletic",
+      "games_played": 5,
+      "avg_margin": 1.6,
+      "avg_excitement": 42.0
+    },
+    {
+      "matchup": "Guangzhou City vs Hebei FC",
+      "games_played": 4,
+      "avg_margin": 1.5,
+      "avg_excitement": 67.5
+    },
+    {
+      "matchup": "Hebei FC vs Guangzhou City",
+      "games_played": 4,
+      "avg_margin": 1.5,
+      "avg_excitement": 67.5
+    },
+    {
+      "matchup": "Beijing Guoan vs Tianjin Jinmen Tiger",
+      "games_played": 4,
+      "avg_margin": 1.5,
+      "avg_excitement": 32.5
+    },
+    {
+      "matchup": "Tianjin Jinmen Tiger vs Beijing Guoan",
+      "games_played": 4,
+      "avg_margin": 1.5,
+      "avg_excitement": 32.5
+    },
+    {
+      "matchup": "Shenzhen FC vs Wuhan Yangtze River",
+      "games_played": 2,
+      "avg_margin": 1.5,
+      "avg_excitement": 50.0
+    },
+    {
+      "matchup": "Wuhan Yangtze River vs Shenzhen FC",
+      "games_played": 2,
+      "avg_margin": 1.5,
+      "avg_excitement": 50.0
+    },
+    {
+      "matchup": "Beijing Renhe vs Tianjin Quanjian",
+      "games_played": 1,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "Tianjin Quanjian vs Beijing Renhe",
+      "games_played": 1,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "Guangzhou vs Henan Songshan Longmen",
+      "games_played": 4,
+      "avg_margin": 1,
+      "avg_excitement": 72.5
+    },
+    {
+      "matchup": "Henan Songshan Longmen vs Guangzhou",
+      "games_played": 4,
+      "avg_margin": 1,
+      "avg_excitement": 72.5
+    },
+    {
+      "matchup": "Jiangsu Suning vs Shandong Taishan",
+      "games_played": 2,
+      "avg_margin": 0.5,
+      "avg_excitement": 95.0
+    },
+    {
+      "matchup": "Shandong Taishan vs Jiangsu Suning",
+      "games_played": 2,
+      "avg_margin": 0.5,
+      "avg_excitement": 95.0
+    },
+    {
+      "matchup": "Dalian Professional vs Shanghai Port",
+      "games_played": 4,
+      "avg_margin": 2.25,
+      "avg_excitement": 42.5
+    },
+    {
+      "matchup": "Shanghai Port vs Dalian Professional",
+      "games_played": 4,
+      "avg_margin": 2.25,
+      "avg_excitement": 42.5
+    },
+    {
+      "matchup": "Beijing Renhe vs Guangzhou City",
+      "games_played": 1,
+      "avg_margin": 3,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Guangzhou City vs Beijing Renhe",
+      "games_played": 1,
+      "avg_margin": 3,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Henan Songshan Longmen vs Tianjin Quanjian",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Tianjin Quanjian vs Henan Songshan Longmen",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Chongqing Liangjiang Athletic vs Shandong Taishan",
+      "games_played": 4,
+      "avg_margin": 1.5,
+      "avg_excitement": 50.0
+    },
+    {
+      "matchup": "Shandong Taishan vs Chongqing Liangjiang Athletic",
+      "games_played": 4,
+      "avg_margin": 1.5,
+      "avg_excitement": 50.0
+    },
+    {
+      "matchup": "Beijing Guoan vs Shanghai Shenhua",
+      "games_played": 6,
+      "avg_margin": 1.17,
+      "avg_excitement": 65.0
+    },
+    {
+      "matchup": "Shanghai Shenhua vs Beijing Guoan",
+      "games_played": 6,
+      "avg_margin": 1.17,
+      "avg_excitement": 65.0
+    },
+    {
+      "matchup": "Guangzhou City vs Wuhan Yangtze River",
+      "games_played": 2,
+      "avg_margin": 3,
+      "avg_excitement": 35.0
+    },
+    {
+      "matchup": "Wuhan Yangtze River vs Guangzhou City",
+      "games_played": 2,
+      "avg_margin": 3,
+      "avg_excitement": 35.0
+    },
+    {
+      "matchup": "Beijing Renhe vs Jiangsu Suning",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Jiangsu Suning vs Beijing Renhe",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Dalian Professional vs Hebei FC",
+      "games_played": 2,
+      "avg_margin": 0.5,
+      "avg_excitement": 95.0
+    },
+    {
+      "matchup": "Hebei FC vs Dalian Professional",
+      "games_played": 2,
+      "avg_margin": 0.5,
+      "avg_excitement": 95.0
+    },
+    {
+      "matchup": "Shenzhen FC vs Tianjin Jinmen Tiger",
+      "games_played": 3,
+      "avg_margin": 1.67,
+      "avg_excitement": 36.67
+    },
+    {
+      "matchup": "Tianjin Jinmen Tiger vs Shenzhen FC",
+      "games_played": 3,
+      "avg_margin": 1.67,
+      "avg_excitement": 36.67
+    },
+    {
+      "matchup": "Guangzhou vs Shanghai Port",
+      "games_played": 3,
+      "avg_margin": 1,
+      "avg_excitement": 66.67
+    },
+    {
+      "matchup": "Shanghai Port vs Guangzhou",
+      "games_played": 3,
+      "avg_margin": 1,
+      "avg_excitement": 66.67
+    },
+    {
+      "matchup": "Beijing Renhe vs Shanghai Port",
+      "games_played": 1,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "Shanghai Port vs Beijing Renhe",
+      "games_played": 1,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "Chongqing Liangjiang Athletic vs Wuhan Yangtze River",
+      "games_played": 4,
+      "avg_margin": 0.75,
+      "avg_excitement": 92.5
+    },
+    {
+      "matchup": "Wuhan Yangtze River vs Chongqing Liangjiang Athletic",
+      "games_played": 4,
+      "avg_margin": 0.75,
+      "avg_excitement": 92.5
+    },
+    {
+      "matchup": "Beijing Guoan vs Guangzhou City",
+      "games_played": 4,
+      "avg_margin": 2.25,
+      "avg_excitement": 42.5
+    },
+    {
+      "matchup": "Guangzhou City vs Beijing Guoan",
+      "games_played": 4,
+      "avg_margin": 2.25,
+      "avg_excitement": 42.5
+    },
+    {
+      "matchup": "Guangzhou vs Hebei FC",
+      "games_played": 5,
+      "avg_margin": 2.2,
+      "avg_excitement": 22.0
+    },
+    {
+      "matchup": "Hebei FC vs Guangzhou",
+      "games_played": 5,
+      "avg_margin": 2.2,
+      "avg_excitement": 22.0
+    },
+    {
+      "matchup": "Shandong Taishan vs Tianjin Jinmen Tiger",
+      "games_played": 4,
+      "avg_margin": 1.75,
+      "avg_excitement": 47.5
+    },
+    {
+      "matchup": "Tianjin Jinmen Tiger vs Shandong Taishan",
+      "games_played": 4,
+      "avg_margin": 1.75,
+      "avg_excitement": 47.5
+    },
+    {
+      "matchup": "Jiangsu Suning vs Shanghai Shenhua",
+      "games_played": 2,
+      "avg_margin": 1,
+      "avg_excitement": 55.0
+    },
+    {
+      "matchup": "Shanghai Shenhua vs Jiangsu Suning",
+      "games_played": 2,
+      "avg_margin": 1,
+      "avg_excitement": 55.0
+    },
+    {
+      "matchup": "Henan Songshan Longmen vs Shenzhen FC",
+      "games_played": 2,
+      "avg_margin": 1,
+      "avg_excitement": 55.0
+    },
+    {
+      "matchup": "Shenzhen FC vs Henan Songshan Longmen",
+      "games_played": 2,
+      "avg_margin": 1,
+      "avg_excitement": 55.0
+    },
+    {
+      "matchup": "Dalian Professional vs Tianjin Quanjian",
+      "games_played": 1,
+      "avg_margin": 4,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Tianjin Quanjian vs Dalian Professional",
+      "games_played": 1,
+      "avg_margin": 4,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Beijing Guoan vs Shandong Taishan",
+      "games_played": 7,
+      "avg_margin": 0.43,
+      "avg_excitement": 95.71
+    },
+    {
+      "matchup": "Shandong Taishan vs Beijing Guoan",
+      "games_played": 7,
+      "avg_margin": 0.43,
+      "avg_excitement": 95.71
+    },
+    {
+      "matchup": "Beijing Renhe vs Dalian Professional",
+      "games_played": 1,
+      "avg_margin": 2,
+      "avg_excitement": 10.0
+    },
+    {
+      "matchup": "Dalian Professional vs Beijing Renhe",
+      "games_played": 1,
+      "avg_margin": 2,
+      "avg_excitement": 10.0
+    },
+    {
+      "matchup": "Guangzhou vs Shanghai Shenhua",
+      "games_played": 1,
+      "avg_margin": 3,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Shanghai Shenhua vs Guangzhou",
+      "games_played": 1,
+      "avg_margin": 3,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Guangzhou City vs Henan Songshan Longmen",
+      "games_played": 5,
+      "avg_margin": 1,
+      "avg_excitement": 76.0
+    },
+    {
+      "matchup": "Henan Songshan Longmen vs Guangzhou City",
+      "games_played": 5,
+      "avg_margin": 1,
+      "avg_excitement": 76.0
+    },
+    {
+      "matchup": "Jiangsu Suning vs Tianjin Quanjian",
+      "games_played": 1,
+      "avg_margin": 2,
+      "avg_excitement": 10.0
+    },
+    {
+      "matchup": "Tianjin Quanjian vs Jiangsu Suning",
+      "games_played": 1,
+      "avg_margin": 2,
+      "avg_excitement": 10.0
+    },
+    {
+      "matchup": "Shanghai Port vs Shenzhen FC",
+      "games_played": 4,
+      "avg_margin": 3,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Shenzhen FC vs Shanghai Port",
+      "games_played": 4,
+      "avg_margin": 3,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Chongqing Liangjiang Athletic vs Tianjin Jinmen Tiger",
+      "games_played": 4,
+      "avg_margin": 1,
+      "avg_excitement": 72.5
+    },
+    {
+      "matchup": "Tianjin Jinmen Tiger vs Chongqing Liangjiang Athletic",
+      "games_played": 4,
+      "avg_margin": 1,
+      "avg_excitement": 72.5
+    },
+    {
+      "matchup": "Hebei FC vs Wuhan Yangtze River",
+      "games_played": 3,
+      "avg_margin": 1,
+      "avg_excitement": 66.67
+    },
+    {
+      "matchup": "Wuhan Yangtze River vs Hebei FC",
+      "games_played": 3,
+      "avg_margin": 1,
+      "avg_excitement": 66.67
+    },
+    {
+      "matchup": "Qingdao vs Wuhan Yangtze River",
+      "games_played": 5,
+      "avg_margin": 1.6,
+      "avg_excitement": 56.0
+    },
+    {
+      "matchup": "Wuhan Yangtze River vs Qingdao",
+      "games_played": 5,
+      "avg_margin": 1.6,
+      "avg_excitement": 56.0
+    },
+    {
+      "matchup": "Beijing Guoan vs Chongqing Liangjiang Athletic",
+      "games_played": 1,
+      "avg_margin": 3,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Chongqing Liangjiang Athletic vs Beijing Guoan",
+      "games_played": 1,
+      "avg_margin": 3,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Dalian Professional vs Henan Songshan Longmen",
+      "games_played": 4,
+      "avg_margin": 2.25,
+      "avg_excitement": 42.5
+    },
+    {
+      "matchup": "Henan Songshan Longmen vs Dalian Professional",
+      "games_played": 4,
+      "avg_margin": 2.25,
+      "avg_excitement": 42.5
+    },
+    {
+      "matchup": "Guangzhou vs Guangzhou City",
+      "games_played": 3,
+      "avg_margin": 0.67,
+      "avg_excitement": 93.33
+    },
+    {
+      "matchup": "Guangzhou City vs Guangzhou",
+      "games_played": 3,
+      "avg_margin": 0.67,
+      "avg_excitement": 93.33
+    },
+    {
+      "matchup": "Hebei FC vs Shanghai Port",
+      "games_played": 2,
+      "avg_margin": 1.5,
+      "avg_excitement": 50.0
+    },
+    {
+      "matchup": "Shanghai Port vs Hebei FC",
+      "games_played": 2,
+      "avg_margin": 1.5,
+      "avg_excitement": 50.0
+    },
+    {
+      "matchup": "Cangzhou Mighty Lions vs Qingdao",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Qingdao vs Cangzhou Mighty Lions",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Beijing Guoan vs Wuhan Yangtze River",
+      "games_played": 3,
+      "avg_margin": 1.33,
+      "avg_excitement": 63.33
+    },
+    {
+      "matchup": "Wuhan Yangtze River vs Beijing Guoan",
+      "games_played": 3,
+      "avg_margin": 1.33,
+      "avg_excitement": 63.33
+    },
+    {
+      "matchup": "Qingdao vs Shanghai Port",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Shanghai Port vs Qingdao",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Chongqing Liangjiang Athletic vs Hebei FC",
+      "games_played": 1,
+      "avg_margin": 2,
+      "avg_excitement": 10.0
+    },
+    {
+      "matchup": "Hebei FC vs Chongqing Liangjiang Athletic",
+      "games_played": 1,
+      "avg_margin": 2,
+      "avg_excitement": 10.0
+    },
+    {
+      "matchup": "Cangzhou Mighty Lions vs Wuhan Yangtze River",
+      "games_played": 6,
+      "avg_margin": 1.5,
+      "avg_excitement": 50.0
+    },
+    {
+      "matchup": "Wuhan Yangtze River vs Cangzhou Mighty Lions",
+      "games_played": 6,
+      "avg_margin": 1.5,
+      "avg_excitement": 50.0
+    },
+    {
+      "matchup": "Shanghai Port vs Wuhan Yangtze River",
+      "games_played": 2,
+      "avg_margin": 2,
+      "avg_excitement": 45.0
+    },
+    {
+      "matchup": "Wuhan Yangtze River vs Shanghai Port",
+      "games_played": 2,
+      "avg_margin": 2,
+      "avg_excitement": 45.0
+    },
+    {
+      "matchup": "Chongqing Liangjiang Athletic vs Qingdao",
+      "games_played": 2,
+      "avg_margin": 2,
+      "avg_excitement": 45.0
+    },
+    {
+      "matchup": "Qingdao vs Chongqing Liangjiang Athletic",
+      "games_played": 2,
+      "avg_margin": 2,
+      "avg_excitement": 45.0
+    },
+    {
+      "matchup": "Cangzhou Mighty Lions vs Tianjin Jinmen Tiger",
+      "games_played": 4,
+      "avg_margin": 0.75,
+      "avg_excitement": 92.5
+    },
+    {
+      "matchup": "Tianjin Jinmen Tiger vs Cangzhou Mighty Lions",
+      "games_played": 4,
+      "avg_margin": 0.75,
+      "avg_excitement": 92.5
+    },
+    {
+      "matchup": "Shandong Taishan vs Shenzhen FC",
+      "games_played": 4,
+      "avg_margin": 2,
+      "avg_excitement": 45.0
+    },
+    {
+      "matchup": "Shenzhen FC vs Shandong Taishan",
+      "games_played": 4,
+      "avg_margin": 2,
+      "avg_excitement": 45.0
+    },
+    {
+      "matchup": "Dalian Professional vs Guangzhou City",
+      "games_played": 3,
+      "avg_margin": 2.67,
+      "avg_excitement": 26.67
+    },
+    {
+      "matchup": "Guangzhou City vs Dalian Professional",
+      "games_played": 3,
+      "avg_margin": 2.67,
+      "avg_excitement": 26.67
+    },
+    {
+      "matchup": "Beijing Guoan vs Qingdao",
+      "games_played": 1,
+      "avg_margin": 4,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Qingdao vs Beijing Guoan",
+      "games_played": 1,
+      "avg_margin": 4,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Cangzhou Mighty Lions vs Shanghai Port",
+      "games_played": 3,
+      "avg_margin": 0.67,
+      "avg_excitement": 93.33
+    },
+    {
+      "matchup": "Shanghai Port vs Cangzhou Mighty Lions",
+      "games_played": 3,
+      "avg_margin": 0.67,
+      "avg_excitement": 93.33
+    },
+    {
+      "matchup": "Henan Songshan Longmen vs Shandong Taishan",
+      "games_played": 3,
+      "avg_margin": 2,
+      "avg_excitement": 33.33
+    },
+    {
+      "matchup": "Shandong Taishan vs Henan Songshan Longmen",
+      "games_played": 3,
+      "avg_margin": 2,
+      "avg_excitement": 33.33
+    },
+    {
+      "matchup": "Guangzhou City vs Shanghai Shenhua",
+      "games_played": 2,
+      "avg_margin": 1,
+      "avg_excitement": 55.0
+    },
+    {
+      "matchup": "Shanghai Shenhua vs Guangzhou City",
+      "games_played": 2,
+      "avg_margin": 1,
+      "avg_excitement": 55.0
+    },
+    {
+      "matchup": "Qingdao vs Tianjin Jinmen Tiger",
+      "games_played": 3,
+      "avg_margin": 1.67,
+      "avg_excitement": 60.0
+    },
+    {
+      "matchup": "Tianjin Jinmen Tiger vs Qingdao",
+      "games_played": 3,
+      "avg_margin": 1.67,
+      "avg_excitement": 60.0
+    },
+    {
+      "matchup": "Cangzhou Mighty Lions vs Chongqing Liangjiang Athletic",
+      "games_played": 1,
+      "avg_margin": 3,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Chongqing Liangjiang Athletic vs Cangzhou Mighty Lions",
+      "games_played": 1,
+      "avg_margin": 3,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Henan Songshan Longmen vs Shanghai Shenhua",
+      "games_played": 7,
+      "avg_margin": 2,
+      "avg_excitement": 30.0
+    },
+    {
+      "matchup": "Shanghai Shenhua vs Henan Songshan Longmen",
+      "games_played": 7,
+      "avg_margin": 2,
+      "avg_excitement": 30.0
+    },
+    {
+      "matchup": "Jiangsu Suning vs Shenzhen FC",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Shenzhen FC vs Jiangsu Suning",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Dalian Professional vs Guangzhou",
+      "games_played": 2,
+      "avg_margin": 0.5,
+      "avg_excitement": 95.0
+    },
+    {
+      "matchup": "Guangzhou vs Dalian Professional",
+      "games_played": 2,
+      "avg_margin": 0.5,
+      "avg_excitement": 95.0
+    },
+    {
+      "matchup": "Beijing Guoan vs Cangzhou Mighty Lions",
+      "games_played": 3,
+      "avg_margin": 3.33,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Cangzhou Mighty Lions vs Beijing Guoan",
+      "games_played": 3,
+      "avg_margin": 3.33,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Chongqing Liangjiang Athletic vs Shanghai Port",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Shanghai Port vs Chongqing Liangjiang Athletic",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Hebei FC vs Qingdao",
+      "games_played": 1,
+      "avg_margin": 2,
+      "avg_excitement": 10.0
+    },
+    {
+      "matchup": "Qingdao vs Hebei FC",
+      "games_played": 1,
+      "avg_margin": 2,
+      "avg_excitement": 10.0
+    },
+    {
+      "matchup": "Cangzhou Mighty Lions vs Dalian Professional",
+      "games_played": 6,
+      "avg_margin": 1.5,
+      "avg_excitement": 50.0
+    },
+    {
+      "matchup": "Dalian Professional vs Cangzhou Mighty Lions",
+      "games_played": 6,
+      "avg_margin": 1.5,
+      "avg_excitement": 50.0
+    },
+    {
+      "matchup": "Henan Songshan Longmen vs Wuhan Yangtze River",
+      "games_played": 5,
+      "avg_margin": 0.4,
+      "avg_excitement": 96.0
+    },
+    {
+      "matchup": "Wuhan Yangtze River vs Henan Songshan Longmen",
+      "games_played": 5,
+      "avg_margin": 0.4,
+      "avg_excitement": 96.0
+    },
+    {
+      "matchup": "Shanghai Port vs Shanghai Shenhua",
+      "games_played": 3,
+      "avg_margin": 0.67,
+      "avg_excitement": 70.0
+    },
+    {
+      "matchup": "Shanghai Shenhua vs Shanghai Port",
+      "games_played": 3,
+      "avg_margin": 0.67,
+      "avg_excitement": 70.0
+    },
+    {
+      "matchup": "Guangzhou City vs Qingdao",
+      "games_played": 2,
+      "avg_margin": 0.5,
+      "avg_excitement": 95.0
+    },
+    {
+      "matchup": "Qingdao vs Guangzhou City",
+      "games_played": 2,
+      "avg_margin": 0.5,
+      "avg_excitement": 95.0
+    },
+    {
+      "matchup": "Dalian Professional vs Tianjin Jinmen Tiger",
+      "games_played": 5,
+      "avg_margin": 1.6,
+      "avg_excitement": 42.0
+    },
+    {
+      "matchup": "Tianjin Jinmen Tiger vs Dalian Professional",
+      "games_played": 5,
+      "avg_margin": 1.6,
+      "avg_excitement": 42.0
+    },
+    {
+      "matchup": "Cangzhou Mighty Lions vs Shenzhen FC",
+      "games_played": 4,
+      "avg_margin": 0.75,
+      "avg_excitement": 92.5
+    },
+    {
+      "matchup": "Shenzhen FC vs Cangzhou Mighty Lions",
+      "games_played": 4,
+      "avg_margin": 0.75,
+      "avg_excitement": 92.5
+    },
+    {
+      "matchup": "Jiangsu Suning vs Shanghai Port",
+      "games_played": 2,
+      "avg_margin": 0.5,
+      "avg_excitement": 95.0
+    },
+    {
+      "matchup": "Shanghai Port vs Jiangsu Suning",
+      "games_played": 2,
+      "avg_margin": 0.5,
+      "avg_excitement": 95.0
+    },
+    {
+      "matchup": "Qingdao vs Shenzhen FC",
+      "games_played": 2,
+      "avg_margin": 1.5,
+      "avg_excitement": 50.0
+    },
+    {
+      "matchup": "Shenzhen FC vs Qingdao",
+      "games_played": 2,
+      "avg_margin": 1.5,
+      "avg_excitement": 50.0
+    },
+    {
+      "matchup": "Hebei FC vs Shanghai Shenhua",
+      "games_played": 3,
+      "avg_margin": 1.33,
+      "avg_excitement": 63.33
+    },
+    {
+      "matchup": "Shanghai Shenhua vs Hebei FC",
+      "games_played": 3,
+      "avg_margin": 1.33,
+      "avg_excitement": 63.33
+    },
+    {
+      "matchup": "Cangzhou Mighty Lions vs Guangzhou",
+      "games_played": 2,
+      "avg_margin": 2.5,
+      "avg_excitement": 5.0
+    },
+    {
+      "matchup": "Guangzhou vs Cangzhou Mighty Lions",
+      "games_played": 2,
+      "avg_margin": 2.5,
+      "avg_excitement": 5.0
+    },
+    {
+      "matchup": "Qingdao vs Shandong Taishan",
+      "games_played": 1,
+      "avg_margin": 5,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Shandong Taishan vs Qingdao",
+      "games_played": 1,
+      "avg_margin": 5,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Changchun Yatai vs Shanghai Port",
+      "games_played": 5,
+      "avg_margin": 1.8,
+      "avg_excitement": 40.0
+    },
+    {
+      "matchup": "Shanghai Port vs Changchun Yatai",
+      "games_played": 5,
+      "avg_margin": 1.8,
+      "avg_excitement": 40.0
+    },
+    {
+      "matchup": "Cangzhou Mighty Lions vs Guangzhou City",
+      "games_played": 2,
+      "avg_margin": 1,
+      "avg_excitement": 55.0
+    },
+    {
+      "matchup": "Guangzhou City vs Cangzhou Mighty Lions",
+      "games_played": 2,
+      "avg_margin": 1,
+      "avg_excitement": 55.0
+    },
+    {
+      "matchup": "Changchun Yatai vs Shanghai Shenhua",
+      "games_played": 3,
+      "avg_margin": 0.67,
+      "avg_excitement": 93.33
+    },
+    {
+      "matchup": "Shanghai Shenhua vs Changchun Yatai",
+      "games_played": 3,
+      "avg_margin": 0.67,
+      "avg_excitement": 93.33
+    },
+    {
+      "matchup": "Henan Songshan Longmen vs Qingdao",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Qingdao vs Henan Songshan Longmen",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Changchun Yatai vs Hebei FC",
+      "games_played": 2,
+      "avg_margin": 4.5,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Hebei FC vs Changchun Yatai",
+      "games_played": 2,
+      "avg_margin": 4.5,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Guangzhou vs Qingdao",
+      "games_played": 1,
+      "avg_margin": 5,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Qingdao vs Guangzhou",
+      "games_played": 1,
+      "avg_margin": 5,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Chongqing Liangjiang Athletic vs Shenzhen FC",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Shenzhen FC vs Chongqing Liangjiang Athletic",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Cangzhou Mighty Lions vs Shandong Taishan",
+      "games_played": 4,
+      "avg_margin": 2.25,
+      "avg_excitement": 25.0
+    },
+    {
+      "matchup": "Shandong Taishan vs Cangzhou Mighty Lions",
+      "games_played": 4,
+      "avg_margin": 2.25,
+      "avg_excitement": 25.0
+    },
+    {
+      "matchup": "Beijing Guoan vs Changchun Yatai",
+      "games_played": 4,
+      "avg_margin": 2.25,
+      "avg_excitement": 60.0
+    },
+    {
+      "matchup": "Changchun Yatai vs Beijing Guoan",
+      "games_played": 4,
+      "avg_margin": 2.25,
+      "avg_excitement": 60.0
+    },
+    {
+      "matchup": "Changchun Yatai vs Dalian Professional",
+      "games_played": 1,
+      "avg_margin": 2,
+      "avg_excitement": 10.0
+    },
+    {
+      "matchup": "Dalian Professional vs Changchun Yatai",
+      "games_played": 1,
+      "avg_margin": 2,
+      "avg_excitement": 10.0
+    },
+    {
+      "matchup": "Qingdao vs Shanghai Shenhua",
+      "games_played": 2,
+      "avg_margin": 2,
+      "avg_excitement": 45.0
+    },
+    {
+      "matchup": "Shanghai Shenhua vs Qingdao",
+      "games_played": 2,
+      "avg_margin": 2,
+      "avg_excitement": 45.0
+    },
+    {
+      "matchup": "Changchun Yatai vs Guangzhou City",
+      "games_played": 2,
+      "avg_margin": 1.5,
+      "avg_excitement": 50.0
+    },
+    {
+      "matchup": "Guangzhou City vs Changchun Yatai",
+      "games_played": 2,
+      "avg_margin": 1.5,
+      "avg_excitement": 50.0
+    },
+    {
+      "matchup": "Cangzhou Mighty Lions vs Shanghai Shenhua",
+      "games_played": 3,
+      "avg_margin": 0.67,
+      "avg_excitement": 70.0
+    },
+    {
+      "matchup": "Shanghai Shenhua vs Cangzhou Mighty Lions",
+      "games_played": 3,
+      "avg_margin": 0.67,
+      "avg_excitement": 70.0
+    },
+    {
+      "matchup": "Changchun Yatai vs Shenzhen FC",
+      "games_played": 4,
+      "avg_margin": 0.75,
+      "avg_excitement": 92.5
+    },
+    {
+      "matchup": "Shenzhen FC vs Changchun Yatai",
+      "games_played": 4,
+      "avg_margin": 0.75,
+      "avg_excitement": 92.5
+    },
+    {
+      "matchup": "Changchun Yatai vs Guangzhou",
+      "games_played": 3,
+      "avg_margin": 1.33,
+      "avg_excitement": 40.0
+    },
+    {
+      "matchup": "Guangzhou vs Changchun Yatai",
+      "games_played": 3,
+      "avg_margin": 1.33,
+      "avg_excitement": 40.0
+    },
+    {
+      "matchup": "Hebei FC vs Shenzhen FC",
+      "games_played": 3,
+      "avg_margin": 1.67,
+      "avg_excitement": 60.0
+    },
+    {
+      "matchup": "Shenzhen FC vs Hebei FC",
+      "games_played": 3,
+      "avg_margin": 1.67,
+      "avg_excitement": 60.0
+    },
+    {
+      "matchup": "Dalian Professional vs Qingdao",
+      "games_played": 2,
+      "avg_margin": 2,
+      "avg_excitement": 45.0
+    },
+    {
+      "matchup": "Qingdao vs Dalian Professional",
+      "games_played": 2,
+      "avg_margin": 2,
+      "avg_excitement": 45.0
+    },
+    {
+      "matchup": "Changchun Yatai vs Shandong Taishan",
+      "games_played": 4,
+      "avg_margin": 1.5,
+      "avg_excitement": 50.0
+    },
+    {
+      "matchup": "Shandong Taishan vs Changchun Yatai",
+      "games_played": 4,
+      "avg_margin": 1.5,
+      "avg_excitement": 50.0
+    },
+    {
+      "matchup": "Chengdu Rongcheng vs Hebei FC",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Hebei FC vs Chengdu Rongcheng",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Shenzhen FC vs Zhejiang Professional FC",
+      "games_played": 2,
+      "avg_margin": 3.5,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Zhejiang Professional FC vs Shenzhen FC",
+      "games_played": 2,
+      "avg_margin": 3.5,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Guangzhou City vs Wuhan Three Towns",
+      "games_played": 1,
+      "avg_margin": 3,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Wuhan Three Towns vs Guangzhou City",
+      "games_played": 1,
+      "avg_margin": 3,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Beijing Guoan vs Henan Songshan Longmen",
+      "games_played": 3,
+      "avg_margin": 1.67,
+      "avg_excitement": 36.67
+    },
+    {
+      "matchup": "Henan Songshan Longmen vs Beijing Guoan",
+      "games_played": 3,
+      "avg_margin": 1.67,
+      "avg_excitement": 36.67
+    },
+    {
+      "matchup": "Meizhou Hakka vs Wuhan Yangtze River",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Wuhan Yangtze River vs Meizhou Hakka",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Beijing Guoan vs Wuhan Three Towns",
+      "games_played": 1,
+      "avg_margin": 4,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Wuhan Three Towns vs Beijing Guoan",
+      "games_played": 1,
+      "avg_margin": 4,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Chengdu Rongcheng vs Guangzhou",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Guangzhou vs Chengdu Rongcheng",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Henan Songshan Longmen vs Meizhou Hakka",
+      "games_played": 4,
+      "avg_margin": 0.5,
+      "avg_excitement": 95.0
+    },
+    {
+      "matchup": "Meizhou Hakka vs Henan Songshan Longmen",
+      "games_played": 4,
+      "avg_margin": 0.5,
+      "avg_excitement": 95.0
+    },
+    {
+      "matchup": "Changchun Yatai vs Tianjin Jinmen Tiger",
+      "games_played": 1,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "Tianjin Jinmen Tiger vs Changchun Yatai",
+      "games_played": 1,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "Chengdu Rongcheng vs Shanghai Shenhua",
+      "games_played": 3,
+      "avg_margin": 1,
+      "avg_excitement": 66.67
+    },
+    {
+      "matchup": "Shanghai Shenhua vs Chengdu Rongcheng",
+      "games_played": 3,
+      "avg_margin": 1,
+      "avg_excitement": 66.67
+    },
+    {
+      "matchup": "Henan Songshan Longmen vs Wuhan Three Towns",
+      "games_played": 3,
+      "avg_margin": 2,
+      "avg_excitement": 33.33
+    },
+    {
+      "matchup": "Wuhan Three Towns vs Henan Songshan Longmen",
+      "games_played": 3,
+      "avg_margin": 2,
+      "avg_excitement": 33.33
+    },
+    {
+      "matchup": "Guangzhou City vs Meizhou Hakka",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Meizhou Hakka vs Guangzhou City",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Shanghai Port vs Zhejiang Professional FC",
+      "games_played": 2,
+      "avg_margin": 0.5,
+      "avg_excitement": 95.0
+    },
+    {
+      "matchup": "Zhejiang Professional FC vs Shanghai Port",
+      "games_played": 2,
+      "avg_margin": 0.5,
+      "avg_excitement": 95.0
+    },
+    {
+      "matchup": "Chengdu Rongcheng vs Shandong Taishan",
+      "games_played": 3,
+      "avg_margin": 1.67,
+      "avg_excitement": 60.0
+    },
+    {
+      "matchup": "Shandong Taishan vs Chengdu Rongcheng",
+      "games_played": 3,
+      "avg_margin": 1.67,
+      "avg_excitement": 60.0
+    },
+    {
+      "matchup": "Meizhou Hakka vs Wuhan Three Towns",
+      "games_played": 2,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Wuhan Three Towns vs Meizhou Hakka",
+      "games_played": 2,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Cangzhou Mighty Lions vs Zhejiang Professional FC",
+      "games_played": 3,
+      "avg_margin": 1.67,
+      "avg_excitement": 60.0
+    },
+    {
+      "matchup": "Zhejiang Professional FC vs Cangzhou Mighty Lions",
+      "games_played": 3,
+      "avg_margin": 1.67,
+      "avg_excitement": 60.0
+    },
+    {
+      "matchup": "Chengdu Rongcheng vs Guangzhou City",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Guangzhou City vs Chengdu Rongcheng",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Cangzhou Mighty Lions vs Changchun Yatai",
+      "games_played": 2,
+      "avg_margin": 1.5,
+      "avg_excitement": 50.0
+    },
+    {
+      "matchup": "Changchun Yatai vs Cangzhou Mighty Lions",
+      "games_played": 2,
+      "avg_margin": 1.5,
+      "avg_excitement": 50.0
+    },
+    {
+      "matchup": "Dalian Professional vs Meizhou Hakka",
+      "games_played": 1,
+      "avg_margin": 2,
+      "avg_excitement": 10.0
+    },
+    {
+      "matchup": "Meizhou Hakka vs Dalian Professional",
+      "games_played": 1,
+      "avg_margin": 2,
+      "avg_excitement": 10.0
+    },
+    {
+      "matchup": "Shenzhen FC vs Wuhan Three Towns",
+      "games_played": 2,
+      "avg_margin": 2.5,
+      "avg_excitement": 40.0
+    },
+    {
+      "matchup": "Wuhan Three Towns vs Shenzhen FC",
+      "games_played": 2,
+      "avg_margin": 2.5,
+      "avg_excitement": 40.0
+    },
+    {
+      "matchup": "Hebei FC vs Zhejiang Professional FC",
+      "games_played": 1,
+      "avg_margin": 3,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Zhejiang Professional FC vs Hebei FC",
+      "games_played": 1,
+      "avg_margin": 3,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Changchun Yatai vs Chengdu Rongcheng",
+      "games_played": 3,
+      "avg_margin": 2,
+      "avg_excitement": 56.67
+    },
+    {
+      "matchup": "Chengdu Rongcheng vs Changchun Yatai",
+      "games_played": 3,
+      "avg_margin": 2,
+      "avg_excitement": 56.67
+    },
+    {
+      "matchup": "Guangzhou vs Zhejiang Professional FC",
+      "games_played": 1,
+      "avg_margin": 3,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Zhejiang Professional FC vs Guangzhou",
+      "games_played": 1,
+      "avg_margin": 3,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Guangzhou City vs Tianjin Jinmen Tiger",
+      "games_played": 1,
+      "avg_margin": 2,
+      "avg_excitement": 10.0
+    },
+    {
+      "matchup": "Tianjin Jinmen Tiger vs Guangzhou City",
+      "games_played": 1,
+      "avg_margin": 2,
+      "avg_excitement": 10.0
+    },
+    {
+      "matchup": "Beijing Guoan vs Zhejiang Professional FC",
+      "games_played": 3,
+      "avg_margin": 0.33,
+      "avg_excitement": 96.67
+    },
+    {
+      "matchup": "Zhejiang Professional FC vs Beijing Guoan",
+      "games_played": 3,
+      "avg_margin": 0.33,
+      "avg_excitement": 96.67
+    },
+    {
+      "matchup": "Guangzhou vs Tianjin Jinmen Tiger",
+      "games_played": 1,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "Tianjin Jinmen Tiger vs Guangzhou",
+      "games_played": 1,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "Hebei FC vs Meizhou Hakka",
+      "games_played": 1,
+      "avg_margin": 6,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Meizhou Hakka vs Hebei FC",
+      "games_played": 1,
+      "avg_margin": 6,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Shanghai Shenhua vs Zhejiang Professional FC",
+      "games_played": 3,
+      "avg_margin": 0.67,
+      "avg_excitement": 93.33
+    },
+    {
+      "matchup": "Zhejiang Professional FC vs Shanghai Shenhua",
+      "games_played": 3,
+      "avg_margin": 0.67,
+      "avg_excitement": 93.33
+    },
+    {
+      "matchup": "Meizhou Hakka vs Zhejiang Professional FC",
+      "games_played": 2,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "Zhejiang Professional FC vs Meizhou Hakka",
+      "games_played": 2,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "Shandong Taishan vs Wuhan Three Towns",
+      "games_played": 3,
+      "avg_margin": 0.33,
+      "avg_excitement": 96.67
+    },
+    {
+      "matchup": "Wuhan Three Towns vs Shandong Taishan",
+      "games_played": 3,
+      "avg_margin": 0.33,
+      "avg_excitement": 96.67
+    },
+    {
+      "matchup": "Changchun Yatai vs Wuhan Three Towns",
+      "games_played": 4,
+      "avg_margin": 1,
+      "avg_excitement": 72.5
+    },
+    {
+      "matchup": "Wuhan Three Towns vs Changchun Yatai",
+      "games_played": 4,
+      "avg_margin": 1,
+      "avg_excitement": 72.5
+    },
+    {
+      "matchup": "Meizhou Hakka vs Shanghai Shenhua",
+      "games_played": 2,
+      "avg_margin": 1.5,
+      "avg_excitement": 50.0
+    },
+    {
+      "matchup": "Shanghai Shenhua vs Meizhou Hakka",
+      "games_played": 2,
+      "avg_margin": 1.5,
+      "avg_excitement": 50.0
+    },
+    {
+      "matchup": "Changchun Yatai vs Wuhan Yangtze River",
+      "games_played": 1,
+      "avg_margin": 2,
+      "avg_excitement": 10.0
+    },
+    {
+      "matchup": "Wuhan Yangtze River vs Changchun Yatai",
+      "games_played": 1,
+      "avg_margin": 2,
+      "avg_excitement": 10.0
+    },
+    {
+      "matchup": "Cangzhou Mighty Lions vs Wuhan Three Towns",
+      "games_played": 2,
+      "avg_margin": 1.5,
+      "avg_excitement": 50.0
+    },
+    {
+      "matchup": "Wuhan Three Towns vs Cangzhou Mighty Lions",
+      "games_played": 2,
+      "avg_margin": 1.5,
+      "avg_excitement": 50.0
+    },
+    {
+      "matchup": "Chengdu Rongcheng vs Henan Songshan Longmen",
+      "games_played": 2,
+      "avg_margin": 1,
+      "avg_excitement": 55.0
+    },
+    {
+      "matchup": "Henan Songshan Longmen vs Chengdu Rongcheng",
+      "games_played": 2,
+      "avg_margin": 1,
+      "avg_excitement": 55.0
+    },
+    {
+      "matchup": "Chengdu Rongcheng vs Shanghai Port",
+      "games_played": 3,
+      "avg_margin": 2,
+      "avg_excitement": 33.33
+    },
+    {
+      "matchup": "Shanghai Port vs Chengdu Rongcheng",
+      "games_played": 3,
+      "avg_margin": 2,
+      "avg_excitement": 33.33
+    },
+    {
+      "matchup": "Cangzhou Mighty Lions vs Hebei FC",
+      "games_played": 1,
+      "avg_margin": 5,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Hebei FC vs Cangzhou Mighty Lions",
+      "games_played": 1,
+      "avg_margin": 5,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Wuhan Three Towns vs Zhejiang Professional FC",
+      "games_played": 4,
+      "avg_margin": 2,
+      "avg_excitement": 45.0
+    },
+    {
+      "matchup": "Zhejiang Professional FC vs Wuhan Three Towns",
+      "games_played": 4,
+      "avg_margin": 2,
+      "avg_excitement": 45.0
+    },
+    {
+      "matchup": "Meizhou Hakka vs Shandong Taishan",
+      "games_played": 4,
+      "avg_margin": 2,
+      "avg_excitement": 62.5
+    },
+    {
+      "matchup": "Shandong Taishan vs Meizhou Hakka",
+      "games_played": 4,
+      "avg_margin": 2,
+      "avg_excitement": 62.5
+    },
+    {
+      "matchup": "Chengdu Rongcheng vs Wuhan Yangtze River",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Wuhan Yangtze River vs Chengdu Rongcheng",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Tianjin Jinmen Tiger vs Wuhan Three Towns",
+      "games_played": 3,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Wuhan Three Towns vs Tianjin Jinmen Tiger",
+      "games_played": 3,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Chengdu Rongcheng vs Dalian Professional",
+      "games_played": 1,
+      "avg_margin": 2,
+      "avg_excitement": 10.0
+    },
+    {
+      "matchup": "Dalian Professional vs Chengdu Rongcheng",
+      "games_played": 1,
+      "avg_margin": 2,
+      "avg_excitement": 10.0
+    },
+    {
+      "matchup": "Guangzhou vs Meizhou Hakka",
+      "games_played": 1,
+      "avg_margin": 2,
+      "avg_excitement": 10.0
+    },
+    {
+      "matchup": "Meizhou Hakka vs Guangzhou",
+      "games_played": 1,
+      "avg_margin": 2,
+      "avg_excitement": 10.0
+    },
+    {
+      "matchup": "Wuhan Yangtze River vs Zhejiang Professional FC",
+      "games_played": 1,
+      "avg_margin": 3,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Zhejiang Professional FC vs Wuhan Yangtze River",
+      "games_played": 1,
+      "avg_margin": 3,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Chengdu Rongcheng vs Zhejiang Professional FC",
+      "games_played": 1,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "Zhejiang Professional FC vs Chengdu Rongcheng",
+      "games_played": 1,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "Cangzhou Mighty Lions vs Henan Songshan Longmen",
+      "games_played": 3,
+      "avg_margin": 3.67,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Henan Songshan Longmen vs Cangzhou Mighty Lions",
+      "games_played": 3,
+      "avg_margin": 3.67,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Meizhou Hakka vs Shanghai Port",
+      "games_played": 3,
+      "avg_margin": 4,
+      "avg_excitement": 23.33
+    },
+    {
+      "matchup": "Shanghai Port vs Meizhou Hakka",
+      "games_played": 3,
+      "avg_margin": 4,
+      "avg_excitement": 23.33
+    },
+    {
+      "matchup": "Dalian Professional vs Wuhan Three Towns",
+      "games_played": 2,
+      "avg_margin": 3,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Wuhan Three Towns vs Dalian Professional",
+      "games_played": 2,
+      "avg_margin": 3,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Changchun Yatai vs Nantong Zhiyun",
+      "games_played": 2,
+      "avg_margin": 0.5,
+      "avg_excitement": 95.0
+    },
+    {
+      "matchup": "Nantong Zhiyun vs Changchun Yatai",
+      "games_played": 2,
+      "avg_margin": 0.5,
+      "avg_excitement": 95.0
+    },
+    {
+      "matchup": "Chengdu Rongcheng vs Qingdao Hainiu",
+      "games_played": 2,
+      "avg_margin": 1.5,
+      "avg_excitement": 50.0
+    },
+    {
+      "matchup": "Qingdao Hainiu vs Chengdu Rongcheng",
+      "games_played": 2,
+      "avg_margin": 1.5,
+      "avg_excitement": 50.0
+    },
+    {
+      "matchup": "Changchun Yatai vs Meizhou Hakka",
+      "games_played": 2,
+      "avg_margin": 1.5,
+      "avg_excitement": 50.0
+    },
+    {
+      "matchup": "Meizhou Hakka vs Changchun Yatai",
+      "games_played": 2,
+      "avg_margin": 1.5,
+      "avg_excitement": 50.0
+    },
+    {
+      "matchup": "Qingdao Hainiu vs Shanghai Port",
+      "games_played": 1,
+      "avg_margin": 5,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Shanghai Port vs Qingdao Hainiu",
+      "games_played": 1,
+      "avg_margin": 5,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Nantong Zhiyun vs Zhejiang Professional FC",
+      "games_played": 2,
+      "avg_margin": 0.5,
+      "avg_excitement": 95.0
+    },
+    {
+      "matchup": "Zhejiang Professional FC vs Nantong Zhiyun",
+      "games_played": 2,
+      "avg_margin": 0.5,
+      "avg_excitement": 95.0
+    },
+    {
+      "matchup": "Meizhou Hakka vs Qingdao Hainiu",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Qingdao Hainiu vs Meizhou Hakka",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Beijing Guoan vs Nantong Zhiyun",
+      "games_played": 2,
+      "avg_margin": 1.5,
+      "avg_excitement": 50.0
+    },
+    {
+      "matchup": "Nantong Zhiyun vs Beijing Guoan",
+      "games_played": 2,
+      "avg_margin": 1.5,
+      "avg_excitement": 50.0
+    },
+    {
+      "matchup": "Shanghai Shenhua vs Wuhan Three Towns",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Wuhan Three Towns vs Shanghai Shenhua",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Qingdao Hainiu vs Zhejiang Professional FC",
+      "games_played": 2,
+      "avg_margin": 0.5,
+      "avg_excitement": 95.0
+    },
+    {
+      "matchup": "Zhejiang Professional FC vs Qingdao Hainiu",
+      "games_played": 2,
+      "avg_margin": 0.5,
+      "avg_excitement": 95.0
+    },
+    {
+      "matchup": "Chengdu Rongcheng vs Wuhan Three Towns",
+      "games_played": 2,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Wuhan Three Towns vs Chengdu Rongcheng",
+      "games_played": 2,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Nantong Zhiyun vs Shenzhen FC",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Shenzhen FC vs Nantong Zhiyun",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Changchun Yatai vs Qingdao Hainiu",
+      "games_played": 2,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Qingdao Hainiu vs Changchun Yatai",
+      "games_played": 2,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Meizhou Hakka vs Tianjin Jinmen Tiger",
+      "games_played": 3,
+      "avg_margin": 1,
+      "avg_excitement": 66.67
+    },
+    {
+      "matchup": "Tianjin Jinmen Tiger vs Meizhou Hakka",
+      "games_played": 3,
+      "avg_margin": 1,
+      "avg_excitement": 66.67
+    },
+    {
+      "matchup": "Dalian Professional vs Zhejiang Professional FC",
+      "games_played": 1,
+      "avg_margin": 3,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Zhejiang Professional FC vs Dalian Professional",
+      "games_played": 1,
+      "avg_margin": 3,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Nantong Zhiyun vs Wuhan Three Towns",
+      "games_played": 1,
+      "avg_margin": 2,
+      "avg_excitement": 10.0
+    },
+    {
+      "matchup": "Wuhan Three Towns vs Nantong Zhiyun",
+      "games_played": 1,
+      "avg_margin": 2,
+      "avg_excitement": 10.0
+    },
+    {
+      "matchup": "Qingdao Hainiu vs Shandong Taishan",
+      "games_played": 1,
+      "avg_margin": 2,
+      "avg_excitement": 10.0
+    },
+    {
+      "matchup": "Shandong Taishan vs Qingdao Hainiu",
+      "games_played": 1,
+      "avg_margin": 2,
+      "avg_excitement": 10.0
+    },
+    {
+      "matchup": "Meizhou Hakka vs Shenzhen FC",
+      "games_played": 1,
+      "avg_margin": 4,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Shenzhen FC vs Meizhou Hakka",
+      "games_played": 1,
+      "avg_margin": 4,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Chengdu Rongcheng vs Nantong Zhiyun",
+      "games_played": 1,
+      "avg_margin": 2,
+      "avg_excitement": 10.0
+    },
+    {
+      "matchup": "Nantong Zhiyun vs Chengdu Rongcheng",
+      "games_played": 1,
+      "avg_margin": 2,
+      "avg_excitement": 10.0
+    },
+    {
+      "matchup": "Dalian Professional vs Shandong Taishan",
+      "games_played": 1,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "Shandong Taishan vs Dalian Professional",
+      "games_played": 1,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "Nantong Zhiyun vs Qingdao Hainiu",
+      "games_played": 2,
+      "avg_margin": 1.5,
+      "avg_excitement": 50.0
+    },
+    {
+      "matchup": "Qingdao Hainiu vs Nantong Zhiyun",
+      "games_played": 2,
+      "avg_margin": 1.5,
+      "avg_excitement": 50.0
+    },
+    {
+      "matchup": "Cangzhou Mighty Lions vs Meizhou Hakka",
+      "games_played": 2,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Meizhou Hakka vs Cangzhou Mighty Lions",
+      "games_played": 2,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Nantong Zhiyun vs Shanghai Port",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Shanghai Port vs Nantong Zhiyun",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Chengdu Rongcheng vs Tianjin Jinmen Tiger",
+      "games_played": 2,
+      "avg_margin": 0.5,
+      "avg_excitement": 95.0
+    },
+    {
+      "matchup": "Tianjin Jinmen Tiger vs Chengdu Rongcheng",
+      "games_played": 2,
+      "avg_margin": 0.5,
+      "avg_excitement": 95.0
+    },
+    {
+      "matchup": "Qingdao Hainiu vs Shanghai Shenhua",
+      "games_played": 2,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Shanghai Shenhua vs Qingdao Hainiu",
+      "games_played": 2,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Henan Songshan Longmen vs Zhejiang Professional FC",
+      "games_played": 1,
+      "avg_margin": 3,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Zhejiang Professional FC vs Henan Songshan Longmen",
+      "games_played": 1,
+      "avg_margin": 3,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Nantong Zhiyun vs Shanghai Shenhua",
+      "games_played": 2,
+      "avg_margin": 2.5,
+      "avg_excitement": 40.0
+    },
+    {
+      "matchup": "Shanghai Shenhua vs Nantong Zhiyun",
+      "games_played": 2,
+      "avg_margin": 2.5,
+      "avg_excitement": 40.0
+    },
+    {
+      "matchup": "Qingdao Hainiu vs Tianjin Jinmen Tiger",
+      "games_played": 3,
+      "avg_margin": 1.67,
+      "avg_excitement": 60.0
+    },
+    {
+      "matchup": "Tianjin Jinmen Tiger vs Qingdao Hainiu",
+      "games_played": 3,
+      "avg_margin": 1.67,
+      "avg_excitement": 60.0
+    },
+    {
+      "matchup": "Chengdu Rongcheng vs Shenzhen FC",
+      "games_played": 1,
+      "avg_margin": 4,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Shenzhen FC vs Chengdu Rongcheng",
+      "games_played": 1,
+      "avg_margin": 4,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Beijing Guoan vs Chengdu Rongcheng",
+      "games_played": 3,
+      "avg_margin": 0.33,
+      "avg_excitement": 96.67
+    },
+    {
+      "matchup": "Chengdu Rongcheng vs Beijing Guoan",
+      "games_played": 3,
+      "avg_margin": 0.33,
+      "avg_excitement": 96.67
+    },
+    {
+      "matchup": "Changchun Yatai vs Henan Songshan Longmen",
+      "games_played": 2,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "Henan Songshan Longmen vs Changchun Yatai",
+      "games_played": 2,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "Meizhou Hakka vs Nantong Zhiyun",
+      "games_played": 1,
+      "avg_margin": 4,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Nantong Zhiyun vs Meizhou Hakka",
+      "games_played": 1,
+      "avg_margin": 4,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Dalian Professional vs Qingdao Hainiu",
+      "games_played": 1,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "Qingdao Hainiu vs Dalian Professional",
+      "games_played": 1,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "Cangzhou Mighty Lions vs Qingdao Hainiu",
+      "games_played": 2,
+      "avg_margin": 0.5,
+      "avg_excitement": 95.0
+    },
+    {
+      "matchup": "Qingdao Hainiu vs Cangzhou Mighty Lions",
+      "games_played": 2,
+      "avg_margin": 0.5,
+      "avg_excitement": 95.0
+    },
+    {
+      "matchup": "Chengdu Rongcheng vs Meizhou Hakka",
+      "games_played": 2,
+      "avg_margin": 2.5,
+      "avg_excitement": 5.0
+    },
+    {
+      "matchup": "Meizhou Hakka vs Chengdu Rongcheng",
+      "games_played": 2,
+      "avg_margin": 2.5,
+      "avg_excitement": 5.0
+    },
+    {
+      "matchup": "Nantong Zhiyun vs Tianjin Jinmen Tiger",
+      "games_played": 2,
+      "avg_margin": 0.5,
+      "avg_excitement": 95.0
+    },
+    {
+      "matchup": "Tianjin Jinmen Tiger vs Nantong Zhiyun",
+      "games_played": 2,
+      "avg_margin": 0.5,
+      "avg_excitement": 95.0
+    },
+    {
+      "matchup": "Henan Songshan Longmen vs Qingdao West Coast",
+      "games_played": 2,
+      "avg_margin": 0.5,
+      "avg_excitement": 95.0
+    },
+    {
+      "matchup": "Qingdao West Coast vs Henan Songshan Longmen",
+      "games_played": 2,
+      "avg_margin": 0.5,
+      "avg_excitement": 95.0
+    },
+    {
+      "matchup": "Shanghai Port vs Wuhan Three Towns",
+      "games_played": 1,
+      "avg_margin": 2,
+      "avg_excitement": 10.0
+    },
+    {
+      "matchup": "Wuhan Three Towns vs Shanghai Port",
+      "games_played": 1,
+      "avg_margin": 2,
+      "avg_excitement": 10.0
+    },
+    {
+      "matchup": "Shenzhen Xinpengcheng vs Zhejiang Professional FC",
+      "games_played": 2,
+      "avg_margin": 2,
+      "avg_excitement": 45.0
+    },
+    {
+      "matchup": "Zhejiang Professional FC vs Shenzhen Xinpengcheng",
+      "games_played": 2,
+      "avg_margin": 2,
+      "avg_excitement": 45.0
+    },
+    {
+      "matchup": "Qingdao West Coast vs Shanghai Shenhua",
+      "games_played": 1,
+      "avg_margin": 2,
+      "avg_excitement": 10.0
+    },
+    {
+      "matchup": "Shanghai Shenhua vs Qingdao West Coast",
+      "games_played": 1,
+      "avg_margin": 2,
+      "avg_excitement": 10.0
+    },
+    {
+      "matchup": "Cangzhou Mighty Lions vs Qingdao West Coast",
+      "games_played": 1,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "Qingdao West Coast vs Cangzhou Mighty Lions",
+      "games_played": 1,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "Shenzhen Xinpengcheng vs Wuhan Three Towns",
+      "games_played": 1,
+      "avg_margin": 3,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Wuhan Three Towns vs Shenzhen Xinpengcheng",
+      "games_played": 1,
+      "avg_margin": 3,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Henan Songshan Longmen vs Nantong Zhiyun",
+      "games_played": 1,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "Nantong Zhiyun vs Henan Songshan Longmen",
+      "games_played": 1,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "Chengdu Rongcheng vs Shenzhen Xinpengcheng",
+      "games_played": 1,
+      "avg_margin": 3,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Shenzhen Xinpengcheng vs Chengdu Rongcheng",
+      "games_played": 1,
+      "avg_margin": 3,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Henan Songshan Longmen vs Qingdao Hainiu",
+      "games_played": 1,
+      "avg_margin": 2,
+      "avg_excitement": 10.0
+    },
+    {
+      "matchup": "Qingdao Hainiu vs Henan Songshan Longmen",
+      "games_played": 1,
+      "avg_margin": 2,
+      "avg_excitement": 10.0
+    },
+    {
+      "matchup": "Beijing Guoan vs Qingdao West Coast",
+      "games_played": 1,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "Qingdao West Coast vs Beijing Guoan",
+      "games_played": 1,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "Tianjin Jinmen Tiger vs Zhejiang Professional FC",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Zhejiang Professional FC vs Tianjin Jinmen Tiger",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Nantong Zhiyun vs Qingdao West Coast",
+      "games_played": 1,
+      "avg_margin": 3,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Qingdao West Coast vs Nantong Zhiyun",
+      "games_played": 1,
+      "avg_margin": 3,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Qingdao Hainiu vs Shenzhen Xinpengcheng",
+      "games_played": 2,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Shenzhen Xinpengcheng vs Qingdao Hainiu",
+      "games_played": 2,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Shanghai Port vs Shenzhen Xinpengcheng",
+      "games_played": 2,
+      "avg_margin": 2,
+      "avg_excitement": 10.0
+    },
+    {
+      "matchup": "Shenzhen Xinpengcheng vs Shanghai Port",
+      "games_played": 2,
+      "avg_margin": 2,
+      "avg_excitement": 10.0
+    },
+    {
+      "matchup": "Qingdao West Coast vs Shandong Taishan",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Shandong Taishan vs Qingdao West Coast",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Qingdao Hainiu vs Wuhan Three Towns",
+      "games_played": 1,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "Wuhan Three Towns vs Qingdao Hainiu",
+      "games_played": 1,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "Beijing Guoan vs Meizhou Hakka",
+      "games_played": 1,
+      "avg_margin": 2,
+      "avg_excitement": 10.0
+    },
+    {
+      "matchup": "Meizhou Hakka vs Beijing Guoan",
+      "games_played": 1,
+      "avg_margin": 2,
+      "avg_excitement": 10.0
+    },
+    {
+      "matchup": "Qingdao West Coast vs Shenzhen Xinpengcheng",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Shenzhen Xinpengcheng vs Qingdao West Coast",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Qingdao West Coast vs Shanghai Port",
+      "games_played": 2,
+      "avg_margin": 0.5,
+      "avg_excitement": 95.0
+    },
+    {
+      "matchup": "Shanghai Port vs Qingdao West Coast",
+      "games_played": 2,
+      "avg_margin": 0.5,
+      "avg_excitement": 95.0
+    },
+    {
+      "matchup": "Shandong Taishan vs Shenzhen Xinpengcheng",
+      "games_played": 1,
+      "avg_margin": 3,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Shenzhen Xinpengcheng vs Shandong Taishan",
+      "games_played": 1,
+      "avg_margin": 3,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Changchun Yatai vs Qingdao West Coast",
+      "games_played": 1,
+      "avg_margin": 4,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Qingdao West Coast vs Changchun Yatai",
+      "games_played": 1,
+      "avg_margin": 4,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Beijing Guoan vs Qingdao Hainiu",
+      "games_played": 1,
+      "avg_margin": 6,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Qingdao Hainiu vs Beijing Guoan",
+      "games_played": 1,
+      "avg_margin": 6,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Cangzhou Mighty Lions vs Nantong Zhiyun",
+      "games_played": 1,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "Nantong Zhiyun vs Cangzhou Mighty Lions",
+      "games_played": 1,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "Meizhou Hakka vs Shenzhen Xinpengcheng",
+      "games_played": 1,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "Shenzhen Xinpengcheng vs Meizhou Hakka",
+      "games_played": 1,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "Chengdu Rongcheng vs Qingdao West Coast",
+      "games_played": 1,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "Qingdao West Coast vs Chengdu Rongcheng",
+      "games_played": 1,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "Shanghai Shenhua vs Shenzhen Xinpengcheng",
+      "games_played": 1,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "Shenzhen Xinpengcheng vs Shanghai Shenhua",
+      "games_played": 1,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "Shandong Taishan vs Zhejiang Professional FC",
+      "games_played": 1,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "Zhejiang Professional FC vs Shandong Taishan",
+      "games_played": 1,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "Changchun Yatai vs Zhejiang Professional FC",
+      "games_played": 1,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "Zhejiang Professional FC vs Changchun Yatai",
+      "games_played": 1,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "Nantong Zhiyun vs Shenzhen Xinpengcheng",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Shenzhen Xinpengcheng vs Nantong Zhiyun",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Qingdao West Coast vs Wuhan Three Towns",
+      "games_played": 2,
+      "avg_margin": 2,
+      "avg_excitement": 10.0
+    },
+    {
+      "matchup": "Wuhan Three Towns vs Qingdao West Coast",
+      "games_played": 2,
+      "avg_margin": 2,
+      "avg_excitement": 10.0
+    },
+    {
+      "matchup": "Beijing Guoan vs Yunnan Yukun",
+      "games_played": 1,
+      "avg_margin": 2,
+      "avg_excitement": 10.0
+    },
+    {
+      "matchup": "Yunnan Yukun vs Beijing Guoan",
+      "games_played": 1,
+      "avg_margin": 2,
+      "avg_excitement": 10.0
+    },
+    {
+      "matchup": "Qingdao Hainiu vs Qingdao West Coast",
+      "games_played": 1,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "Qingdao West Coast vs Qingdao Hainiu",
+      "games_played": 1,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "Dalian Yingbo vs Zhejiang Professional FC",
+      "games_played": 1,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "Zhejiang Professional FC vs Dalian Yingbo",
+      "games_played": 1,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "Dalian Yingbo vs Shandong Taishan",
+      "games_played": 1,
+      "avg_margin": 3,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Shandong Taishan vs Dalian Yingbo",
+      "games_played": 1,
+      "avg_margin": 3,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Yunnan Yukun vs Zhejiang Professional FC",
+      "games_played": 1,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "Zhejiang Professional FC vs Yunnan Yukun",
+      "games_played": 1,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "Shenzhen Xinpengcheng vs Yunnan Yukun",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Yunnan Yukun vs Shenzhen Xinpengcheng",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Changchun Yatai vs Dalian Yingbo",
+      "games_played": 1,
+      "avg_margin": 2,
+      "avg_excitement": 10.0
+    },
+    {
+      "matchup": "Dalian Yingbo vs Changchun Yatai",
+      "games_played": 1,
+      "avg_margin": 2,
+      "avg_excitement": 10.0
+    },
+    {
+      "matchup": "Shanghai Shenhua vs Yunnan Yukun",
+      "games_played": 1,
+      "avg_margin": 2,
+      "avg_excitement": 10.0
+    },
+    {
+      "matchup": "Yunnan Yukun vs Shanghai Shenhua",
+      "games_played": 1,
+      "avg_margin": 2,
+      "avg_excitement": 10.0
+    }
+  ],
+  "matchup_close_rates": [
+    {
+      "matchup": "Chongqing Liangjiang Athletic vs Dalian Professional",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Dalian Professional vs Chongqing Liangjiang Athletic",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Shanghai Shenhua vs Wuhan Yangtze River",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Wuhan Yangtze River vs Shanghai Shenhua",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Beijing Renhe vs Shenzhen FC",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Shenzhen FC vs Beijing Renhe",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Beijing Guoan vs Hebei FC",
+      "games": 4,
+      "close_games": 2,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Hebei FC vs Beijing Guoan",
+      "games": 4,
+      "close_games": 2,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Guangzhou City vs Jiangsu Suning",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Jiangsu Suning vs Guangzhou City",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Henan Songshan Longmen vs Tianjin Jinmen Tiger",
+      "games": 8,
+      "close_games": 7,
+      "close_rate": 87.5
+    },
+    {
+      "matchup": "Tianjin Jinmen Tiger vs Henan Songshan Longmen",
+      "games": 8,
+      "close_games": 7,
+      "close_rate": 87.5
+    },
+    {
+      "matchup": "Guangzhou vs Shandong Taishan",
+      "games": 3,
+      "close_games": 1,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "Shandong Taishan vs Guangzhou",
+      "games": 3,
+      "close_games": 1,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "Shanghai Port vs Tianjin Quanjian",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Tianjin Quanjian vs Shanghai Port",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Dalian Professional vs Jiangsu Suning",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Jiangsu Suning vs Dalian Professional",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Guangzhou City vs Shanghai Port",
+      "games": 4,
+      "close_games": 3,
+      "close_rate": 75.0
+    },
+    {
+      "matchup": "Shanghai Port vs Guangzhou City",
+      "games": 4,
+      "close_games": 3,
+      "close_rate": 75.0
+    },
+    {
+      "matchup": "Beijing Renhe vs Henan Songshan Longmen",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Henan Songshan Longmen vs Beijing Renhe",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Hebei FC vs Shandong Taishan",
+      "games": 6,
+      "close_games": 1,
+      "close_rate": 16.67
+    },
+    {
+      "matchup": "Shandong Taishan vs Hebei FC",
+      "games": 6,
+      "close_games": 1,
+      "close_rate": 16.67
+    },
+    {
+      "matchup": "Tianjin Jinmen Tiger vs Wuhan Yangtze River",
+      "games": 4,
+      "close_games": 3,
+      "close_rate": 75.0
+    },
+    {
+      "matchup": "Wuhan Yangtze River vs Tianjin Jinmen Tiger",
+      "games": 4,
+      "close_games": 3,
+      "close_rate": 75.0
+    },
+    {
+      "matchup": "Beijing Guoan vs Guangzhou",
+      "games": 5,
+      "close_games": 3,
+      "close_rate": 60.0
+    },
+    {
+      "matchup": "Guangzhou vs Beijing Guoan",
+      "games": 5,
+      "close_games": 3,
+      "close_rate": 60.0
+    },
+    {
+      "matchup": "Chongqing Liangjiang Athletic vs Tianjin Quanjian",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Tianjin Quanjian vs Chongqing Liangjiang Athletic",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Henan Songshan Longmen vs Jiangsu Suning",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Jiangsu Suning vs Henan Songshan Longmen",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Beijing Renhe vs Hebei FC",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Hebei FC vs Beijing Renhe",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Shanghai Port vs Tianjin Jinmen Tiger",
+      "games": 5,
+      "close_games": 2,
+      "close_rate": 40.0
+    },
+    {
+      "matchup": "Tianjin Jinmen Tiger vs Shanghai Port",
+      "games": 5,
+      "close_games": 2,
+      "close_rate": 40.0
+    },
+    {
+      "matchup": "Guangzhou City vs Shenzhen FC",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Shenzhen FC vs Guangzhou City",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Beijing Guoan vs Dalian Professional",
+      "games": 3,
+      "close_games": 1,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "Dalian Professional vs Beijing Guoan",
+      "games": 3,
+      "close_games": 1,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "Chongqing Liangjiang Athletic vs Guangzhou",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Guangzhou vs Chongqing Liangjiang Athletic",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Shanghai Shenhua vs Tianjin Quanjian",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Tianjin Quanjian vs Shanghai Shenhua",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Shandong Taishan vs Wuhan Yangtze River",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Wuhan Yangtze River vs Shandong Taishan",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Guangzhou vs Jiangsu Suning",
+      "games": 4,
+      "close_games": 3,
+      "close_rate": 75.0
+    },
+    {
+      "matchup": "Jiangsu Suning vs Guangzhou",
+      "games": 4,
+      "close_games": 3,
+      "close_rate": 75.0
+    },
+    {
+      "matchup": "Shandong Taishan vs Shanghai Port",
+      "games": 5,
+      "close_games": 3,
+      "close_rate": 60.0
+    },
+    {
+      "matchup": "Shanghai Port vs Shandong Taishan",
+      "games": 5,
+      "close_games": 3,
+      "close_rate": 60.0
+    },
+    {
+      "matchup": "Beijing Guoan vs Shenzhen FC",
+      "games": 4,
+      "close_games": 3,
+      "close_rate": 75.0
+    },
+    {
+      "matchup": "Shenzhen FC vs Beijing Guoan",
+      "games": 4,
+      "close_games": 3,
+      "close_rate": 75.0
+    },
+    {
+      "matchup": "Guangzhou City vs Tianjin Quanjian",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Tianjin Quanjian vs Guangzhou City",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Hebei FC vs Henan Songshan Longmen",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Henan Songshan Longmen vs Hebei FC",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Shanghai Shenhua vs Tianjin Jinmen Tiger",
+      "games": 5,
+      "close_games": 4,
+      "close_rate": 80.0
+    },
+    {
+      "matchup": "Tianjin Jinmen Tiger vs Shanghai Shenhua",
+      "games": 5,
+      "close_games": 4,
+      "close_rate": 80.0
+    },
+    {
+      "matchup": "Dalian Professional vs Wuhan Yangtze River",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Wuhan Yangtze River vs Dalian Professional",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Chongqing Liangjiang Athletic vs Jiangsu Suning",
+      "games": 3,
+      "close_games": 3,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Jiangsu Suning vs Chongqing Liangjiang Athletic",
+      "games": 3,
+      "close_games": 3,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Dalian Professional vs Shenzhen FC",
+      "games": 4,
+      "close_games": 1,
+      "close_rate": 25.0
+    },
+    {
+      "matchup": "Shenzhen FC vs Dalian Professional",
+      "games": 4,
+      "close_games": 1,
+      "close_rate": 25.0
+    },
+    {
+      "matchup": "Hebei FC vs Tianjin Jinmen Tiger",
+      "games": 3,
+      "close_games": 3,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Tianjin Jinmen Tiger vs Hebei FC",
+      "games": 3,
+      "close_games": 3,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Shandong Taishan vs Shanghai Shenhua",
+      "games": 3,
+      "close_games": 3,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Shanghai Shenhua vs Shandong Taishan",
+      "games": 3,
+      "close_games": 3,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Beijing Guoan vs Tianjin Quanjian",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Tianjin Quanjian vs Beijing Guoan",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Henan Songshan Longmen vs Shanghai Port",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Shanghai Port vs Henan Songshan Longmen",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Guangzhou vs Wuhan Yangtze River",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Wuhan Yangtze River vs Guangzhou",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Shanghai Shenhua vs Shenzhen FC",
+      "games": 4,
+      "close_games": 3,
+      "close_rate": 75.0
+    },
+    {
+      "matchup": "Shenzhen FC vs Shanghai Shenhua",
+      "games": 4,
+      "close_games": 3,
+      "close_rate": 75.0
+    },
+    {
+      "matchup": "Beijing Renhe vs Chongqing Liangjiang Athletic",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Chongqing Liangjiang Athletic vs Beijing Renhe",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Guangzhou vs Shenzhen FC",
+      "games": 3,
+      "close_games": 1,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "Shenzhen FC vs Guangzhou",
+      "games": 3,
+      "close_games": 1,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "Tianjin Quanjian vs Wuhan Yangtze River",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Wuhan Yangtze River vs Tianjin Quanjian",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Guangzhou City vs Shandong Taishan",
+      "games": 3,
+      "close_games": 1,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "Shandong Taishan vs Guangzhou City",
+      "games": 3,
+      "close_games": 1,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "Beijing Guoan vs Shanghai Port",
+      "games": 6,
+      "close_games": 5,
+      "close_rate": 83.33
+    },
+    {
+      "matchup": "Shanghai Port vs Beijing Guoan",
+      "games": 6,
+      "close_games": 5,
+      "close_rate": 83.33
+    },
+    {
+      "matchup": "Beijing Renhe vs Tianjin Jinmen Tiger",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Tianjin Jinmen Tiger vs Beijing Renhe",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Chongqing Liangjiang Athletic vs Henan Songshan Longmen",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Henan Songshan Longmen vs Chongqing Liangjiang Athletic",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Hebei FC vs Jiangsu Suning",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Jiangsu Suning vs Hebei FC",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Dalian Professional vs Shanghai Shenhua",
+      "games": 5,
+      "close_games": 4,
+      "close_rate": 80.0
+    },
+    {
+      "matchup": "Shanghai Shenhua vs Dalian Professional",
+      "games": 5,
+      "close_games": 4,
+      "close_rate": 80.0
+    },
+    {
+      "matchup": "Chongqing Liangjiang Athletic vs Shanghai Shenhua",
+      "games": 5,
+      "close_games": 2,
+      "close_rate": 40.0
+    },
+    {
+      "matchup": "Shanghai Shenhua vs Chongqing Liangjiang Athletic",
+      "games": 5,
+      "close_games": 2,
+      "close_rate": 40.0
+    },
+    {
+      "matchup": "Guangzhou City vs Hebei FC",
+      "games": 4,
+      "close_games": 3,
+      "close_rate": 75.0
+    },
+    {
+      "matchup": "Hebei FC vs Guangzhou City",
+      "games": 4,
+      "close_games": 3,
+      "close_rate": 75.0
+    },
+    {
+      "matchup": "Beijing Guoan vs Tianjin Jinmen Tiger",
+      "games": 4,
+      "close_games": 1,
+      "close_rate": 25.0
+    },
+    {
+      "matchup": "Tianjin Jinmen Tiger vs Beijing Guoan",
+      "games": 4,
+      "close_games": 1,
+      "close_rate": 25.0
+    },
+    {
+      "matchup": "Shenzhen FC vs Wuhan Yangtze River",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Wuhan Yangtze River vs Shenzhen FC",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Beijing Renhe vs Tianjin Quanjian",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Tianjin Quanjian vs Beijing Renhe",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Guangzhou vs Henan Songshan Longmen",
+      "games": 4,
+      "close_games": 3,
+      "close_rate": 75.0
+    },
+    {
+      "matchup": "Henan Songshan Longmen vs Guangzhou",
+      "games": 4,
+      "close_games": 3,
+      "close_rate": 75.0
+    },
+    {
+      "matchup": "Jiangsu Suning vs Shandong Taishan",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Shandong Taishan vs Jiangsu Suning",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Dalian Professional vs Shanghai Port",
+      "games": 4,
+      "close_games": 2,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Shanghai Port vs Dalian Professional",
+      "games": 4,
+      "close_games": 2,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Beijing Renhe vs Guangzhou City",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Guangzhou City vs Beijing Renhe",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Henan Songshan Longmen vs Tianjin Quanjian",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Tianjin Quanjian vs Henan Songshan Longmen",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Chongqing Liangjiang Athletic vs Shandong Taishan",
+      "games": 4,
+      "close_games": 2,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Shandong Taishan vs Chongqing Liangjiang Athletic",
+      "games": 4,
+      "close_games": 2,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Beijing Guoan vs Shanghai Shenhua",
+      "games": 6,
+      "close_games": 4,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Shanghai Shenhua vs Beijing Guoan",
+      "games": 6,
+      "close_games": 4,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Guangzhou City vs Wuhan Yangtze River",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Wuhan Yangtze River vs Guangzhou City",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Beijing Renhe vs Jiangsu Suning",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Jiangsu Suning vs Beijing Renhe",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Dalian Professional vs Hebei FC",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Hebei FC vs Dalian Professional",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Shenzhen FC vs Tianjin Jinmen Tiger",
+      "games": 3,
+      "close_games": 1,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "Tianjin Jinmen Tiger vs Shenzhen FC",
+      "games": 3,
+      "close_games": 1,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "Guangzhou vs Shanghai Port",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Shanghai Port vs Guangzhou",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Beijing Renhe vs Shanghai Port",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Shanghai Port vs Beijing Renhe",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Chongqing Liangjiang Athletic vs Wuhan Yangtze River",
+      "games": 4,
+      "close_games": 4,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Wuhan Yangtze River vs Chongqing Liangjiang Athletic",
+      "games": 4,
+      "close_games": 4,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Beijing Guoan vs Guangzhou City",
+      "games": 4,
+      "close_games": 2,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Guangzhou City vs Beijing Guoan",
+      "games": 4,
+      "close_games": 2,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Guangzhou vs Hebei FC",
+      "games": 5,
+      "close_games": 1,
+      "close_rate": 20.0
+    },
+    {
+      "matchup": "Hebei FC vs Guangzhou",
+      "games": 5,
+      "close_games": 1,
+      "close_rate": 20.0
+    },
+    {
+      "matchup": "Shandong Taishan vs Tianjin Jinmen Tiger",
+      "games": 4,
+      "close_games": 2,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Tianjin Jinmen Tiger vs Shandong Taishan",
+      "games": 4,
+      "close_games": 2,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Jiangsu Suning vs Shanghai Shenhua",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Shanghai Shenhua vs Jiangsu Suning",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Henan Songshan Longmen vs Shenzhen FC",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Shenzhen FC vs Henan Songshan Longmen",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Dalian Professional vs Tianjin Quanjian",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Tianjin Quanjian vs Dalian Professional",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Beijing Guoan vs Shandong Taishan",
+      "games": 7,
+      "close_games": 7,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Shandong Taishan vs Beijing Guoan",
+      "games": 7,
+      "close_games": 7,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Beijing Renhe vs Dalian Professional",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Dalian Professional vs Beijing Renhe",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Guangzhou vs Shanghai Shenhua",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Shanghai Shenhua vs Guangzhou",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Guangzhou City vs Henan Songshan Longmen",
+      "games": 5,
+      "close_games": 4,
+      "close_rate": 80.0
+    },
+    {
+      "matchup": "Henan Songshan Longmen vs Guangzhou City",
+      "games": 5,
+      "close_games": 4,
+      "close_rate": 80.0
+    },
+    {
+      "matchup": "Jiangsu Suning vs Tianjin Quanjian",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Tianjin Quanjian vs Jiangsu Suning",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Shanghai Port vs Shenzhen FC",
+      "games": 4,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Shenzhen FC vs Shanghai Port",
+      "games": 4,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Chongqing Liangjiang Athletic vs Tianjin Jinmen Tiger",
+      "games": 4,
+      "close_games": 3,
+      "close_rate": 75.0
+    },
+    {
+      "matchup": "Tianjin Jinmen Tiger vs Chongqing Liangjiang Athletic",
+      "games": 4,
+      "close_games": 3,
+      "close_rate": 75.0
+    },
+    {
+      "matchup": "Hebei FC vs Wuhan Yangtze River",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Wuhan Yangtze River vs Hebei FC",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Qingdao vs Wuhan Yangtze River",
+      "games": 5,
+      "close_games": 3,
+      "close_rate": 60.0
+    },
+    {
+      "matchup": "Wuhan Yangtze River vs Qingdao",
+      "games": 5,
+      "close_games": 3,
+      "close_rate": 60.0
+    },
+    {
+      "matchup": "Beijing Guoan vs Chongqing Liangjiang Athletic",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Chongqing Liangjiang Athletic vs Beijing Guoan",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Dalian Professional vs Henan Songshan Longmen",
+      "games": 4,
+      "close_games": 2,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Henan Songshan Longmen vs Dalian Professional",
+      "games": 4,
+      "close_games": 2,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Guangzhou vs Guangzhou City",
+      "games": 3,
+      "close_games": 3,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Guangzhou City vs Guangzhou",
+      "games": 3,
+      "close_games": 3,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Hebei FC vs Shanghai Port",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Shanghai Port vs Hebei FC",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Cangzhou Mighty Lions vs Qingdao",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Qingdao vs Cangzhou Mighty Lions",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Beijing Guoan vs Wuhan Yangtze River",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Wuhan Yangtze River vs Beijing Guoan",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Qingdao vs Shanghai Port",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Shanghai Port vs Qingdao",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Chongqing Liangjiang Athletic vs Hebei FC",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Hebei FC vs Chongqing Liangjiang Athletic",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Cangzhou Mighty Lions vs Wuhan Yangtze River",
+      "games": 6,
+      "close_games": 3,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Wuhan Yangtze River vs Cangzhou Mighty Lions",
+      "games": 6,
+      "close_games": 3,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Shanghai Port vs Wuhan Yangtze River",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Wuhan Yangtze River vs Shanghai Port",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Chongqing Liangjiang Athletic vs Qingdao",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Qingdao vs Chongqing Liangjiang Athletic",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Cangzhou Mighty Lions vs Tianjin Jinmen Tiger",
+      "games": 4,
+      "close_games": 4,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Tianjin Jinmen Tiger vs Cangzhou Mighty Lions",
+      "games": 4,
+      "close_games": 4,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Shandong Taishan vs Shenzhen FC",
+      "games": 4,
+      "close_games": 2,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Shenzhen FC vs Shandong Taishan",
+      "games": 4,
+      "close_games": 2,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Dalian Professional vs Guangzhou City",
+      "games": 3,
+      "close_games": 1,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "Guangzhou City vs Dalian Professional",
+      "games": 3,
+      "close_games": 1,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "Beijing Guoan vs Qingdao",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Qingdao vs Beijing Guoan",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Cangzhou Mighty Lions vs Shanghai Port",
+      "games": 3,
+      "close_games": 3,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Shanghai Port vs Cangzhou Mighty Lions",
+      "games": 3,
+      "close_games": 3,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Henan Songshan Longmen vs Shandong Taishan",
+      "games": 3,
+      "close_games": 1,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "Shandong Taishan vs Henan Songshan Longmen",
+      "games": 3,
+      "close_games": 1,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "Guangzhou City vs Shanghai Shenhua",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Shanghai Shenhua vs Guangzhou City",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Qingdao vs Tianjin Jinmen Tiger",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Tianjin Jinmen Tiger vs Qingdao",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Cangzhou Mighty Lions vs Chongqing Liangjiang Athletic",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Chongqing Liangjiang Athletic vs Cangzhou Mighty Lions",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Henan Songshan Longmen vs Shanghai Shenhua",
+      "games": 7,
+      "close_games": 2,
+      "close_rate": 28.57
+    },
+    {
+      "matchup": "Shanghai Shenhua vs Henan Songshan Longmen",
+      "games": 7,
+      "close_games": 2,
+      "close_rate": 28.57
+    },
+    {
+      "matchup": "Jiangsu Suning vs Shenzhen FC",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Shenzhen FC vs Jiangsu Suning",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Dalian Professional vs Guangzhou",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Guangzhou vs Dalian Professional",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Beijing Guoan vs Cangzhou Mighty Lions",
+      "games": 3,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Cangzhou Mighty Lions vs Beijing Guoan",
+      "games": 3,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Chongqing Liangjiang Athletic vs Shanghai Port",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Shanghai Port vs Chongqing Liangjiang Athletic",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Hebei FC vs Qingdao",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Qingdao vs Hebei FC",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Cangzhou Mighty Lions vs Dalian Professional",
+      "games": 6,
+      "close_games": 3,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Dalian Professional vs Cangzhou Mighty Lions",
+      "games": 6,
+      "close_games": 3,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Henan Songshan Longmen vs Wuhan Yangtze River",
+      "games": 5,
+      "close_games": 5,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Wuhan Yangtze River vs Henan Songshan Longmen",
+      "games": 5,
+      "close_games": 5,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Shanghai Port vs Shanghai Shenhua",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Shanghai Shenhua vs Shanghai Port",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Guangzhou City vs Qingdao",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Qingdao vs Guangzhou City",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Dalian Professional vs Tianjin Jinmen Tiger",
+      "games": 5,
+      "close_games": 2,
+      "close_rate": 40.0
+    },
+    {
+      "matchup": "Tianjin Jinmen Tiger vs Dalian Professional",
+      "games": 5,
+      "close_games": 2,
+      "close_rate": 40.0
+    },
+    {
+      "matchup": "Cangzhou Mighty Lions vs Shenzhen FC",
+      "games": 4,
+      "close_games": 4,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Shenzhen FC vs Cangzhou Mighty Lions",
+      "games": 4,
+      "close_games": 4,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Jiangsu Suning vs Shanghai Port",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Shanghai Port vs Jiangsu Suning",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Qingdao vs Shenzhen FC",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Shenzhen FC vs Qingdao",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Hebei FC vs Shanghai Shenhua",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Shanghai Shenhua vs Hebei FC",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Cangzhou Mighty Lions vs Guangzhou",
+      "games": 2,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Guangzhou vs Cangzhou Mighty Lions",
+      "games": 2,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Qingdao vs Shandong Taishan",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Shandong Taishan vs Qingdao",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Changchun Yatai vs Shanghai Port",
+      "games": 5,
+      "close_games": 2,
+      "close_rate": 40.0
+    },
+    {
+      "matchup": "Shanghai Port vs Changchun Yatai",
+      "games": 5,
+      "close_games": 2,
+      "close_rate": 40.0
+    },
+    {
+      "matchup": "Cangzhou Mighty Lions vs Guangzhou City",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Guangzhou City vs Cangzhou Mighty Lions",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Changchun Yatai vs Shanghai Shenhua",
+      "games": 3,
+      "close_games": 3,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Shanghai Shenhua vs Changchun Yatai",
+      "games": 3,
+      "close_games": 3,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Henan Songshan Longmen vs Qingdao",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Qingdao vs Henan Songshan Longmen",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Changchun Yatai vs Hebei FC",
+      "games": 2,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Hebei FC vs Changchun Yatai",
+      "games": 2,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Guangzhou vs Qingdao",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Qingdao vs Guangzhou",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Chongqing Liangjiang Athletic vs Shenzhen FC",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Shenzhen FC vs Chongqing Liangjiang Athletic",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Cangzhou Mighty Lions vs Shandong Taishan",
+      "games": 4,
+      "close_games": 1,
+      "close_rate": 25.0
+    },
+    {
+      "matchup": "Shandong Taishan vs Cangzhou Mighty Lions",
+      "games": 4,
+      "close_games": 1,
+      "close_rate": 25.0
+    },
+    {
+      "matchup": "Beijing Guoan vs Changchun Yatai",
+      "games": 4,
+      "close_games": 3,
+      "close_rate": 75.0
+    },
+    {
+      "matchup": "Changchun Yatai vs Beijing Guoan",
+      "games": 4,
+      "close_games": 3,
+      "close_rate": 75.0
+    },
+    {
+      "matchup": "Changchun Yatai vs Dalian Professional",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Dalian Professional vs Changchun Yatai",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Qingdao vs Shanghai Shenhua",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Shanghai Shenhua vs Qingdao",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Changchun Yatai vs Guangzhou City",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Guangzhou City vs Changchun Yatai",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Cangzhou Mighty Lions vs Shanghai Shenhua",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Shanghai Shenhua vs Cangzhou Mighty Lions",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Changchun Yatai vs Shenzhen FC",
+      "games": 4,
+      "close_games": 4,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Shenzhen FC vs Changchun Yatai",
+      "games": 4,
+      "close_games": 4,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Changchun Yatai vs Guangzhou",
+      "games": 3,
+      "close_games": 1,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "Guangzhou vs Changchun Yatai",
+      "games": 3,
+      "close_games": 1,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "Hebei FC vs Shenzhen FC",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Shenzhen FC vs Hebei FC",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Dalian Professional vs Qingdao",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Qingdao vs Dalian Professional",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Changchun Yatai vs Shandong Taishan",
+      "games": 4,
+      "close_games": 2,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Shandong Taishan vs Changchun Yatai",
+      "games": 4,
+      "close_games": 2,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Chengdu Rongcheng vs Hebei FC",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Hebei FC vs Chengdu Rongcheng",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Shenzhen FC vs Zhejiang Professional FC",
+      "games": 2,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Zhejiang Professional FC vs Shenzhen FC",
+      "games": 2,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Guangzhou City vs Wuhan Three Towns",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Wuhan Three Towns vs Guangzhou City",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Beijing Guoan vs Henan Songshan Longmen",
+      "games": 3,
+      "close_games": 1,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "Henan Songshan Longmen vs Beijing Guoan",
+      "games": 3,
+      "close_games": 1,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "Meizhou Hakka vs Wuhan Yangtze River",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Wuhan Yangtze River vs Meizhou Hakka",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Beijing Guoan vs Wuhan Three Towns",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Wuhan Three Towns vs Beijing Guoan",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Chengdu Rongcheng vs Guangzhou",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Guangzhou vs Chengdu Rongcheng",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Henan Songshan Longmen vs Meizhou Hakka",
+      "games": 4,
+      "close_games": 4,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Meizhou Hakka vs Henan Songshan Longmen",
+      "games": 4,
+      "close_games": 4,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Changchun Yatai vs Tianjin Jinmen Tiger",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Tianjin Jinmen Tiger vs Changchun Yatai",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Chengdu Rongcheng vs Shanghai Shenhua",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Shanghai Shenhua vs Chengdu Rongcheng",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Henan Songshan Longmen vs Wuhan Three Towns",
+      "games": 3,
+      "close_games": 1,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "Wuhan Three Towns vs Henan Songshan Longmen",
+      "games": 3,
+      "close_games": 1,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "Guangzhou City vs Meizhou Hakka",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Meizhou Hakka vs Guangzhou City",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Shanghai Port vs Zhejiang Professional FC",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Zhejiang Professional FC vs Shanghai Port",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Chengdu Rongcheng vs Shandong Taishan",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Shandong Taishan vs Chengdu Rongcheng",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Meizhou Hakka vs Wuhan Three Towns",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Wuhan Three Towns vs Meizhou Hakka",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Cangzhou Mighty Lions vs Zhejiang Professional FC",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Zhejiang Professional FC vs Cangzhou Mighty Lions",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Chengdu Rongcheng vs Guangzhou City",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Guangzhou City vs Chengdu Rongcheng",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Cangzhou Mighty Lions vs Changchun Yatai",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Changchun Yatai vs Cangzhou Mighty Lions",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Dalian Professional vs Meizhou Hakka",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Meizhou Hakka vs Dalian Professional",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Shenzhen FC vs Wuhan Three Towns",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Wuhan Three Towns vs Shenzhen FC",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Hebei FC vs Zhejiang Professional FC",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Zhejiang Professional FC vs Hebei FC",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Changchun Yatai vs Chengdu Rongcheng",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Chengdu Rongcheng vs Changchun Yatai",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Guangzhou vs Zhejiang Professional FC",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Zhejiang Professional FC vs Guangzhou",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Guangzhou City vs Tianjin Jinmen Tiger",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Tianjin Jinmen Tiger vs Guangzhou City",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Beijing Guoan vs Zhejiang Professional FC",
+      "games": 3,
+      "close_games": 3,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Zhejiang Professional FC vs Beijing Guoan",
+      "games": 3,
+      "close_games": 3,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Guangzhou vs Tianjin Jinmen Tiger",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Tianjin Jinmen Tiger vs Guangzhou",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Hebei FC vs Meizhou Hakka",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Meizhou Hakka vs Hebei FC",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Shanghai Shenhua vs Zhejiang Professional FC",
+      "games": 3,
+      "close_games": 3,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Zhejiang Professional FC vs Shanghai Shenhua",
+      "games": 3,
+      "close_games": 3,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Meizhou Hakka vs Zhejiang Professional FC",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Zhejiang Professional FC vs Meizhou Hakka",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Shandong Taishan vs Wuhan Three Towns",
+      "games": 3,
+      "close_games": 3,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Wuhan Three Towns vs Shandong Taishan",
+      "games": 3,
+      "close_games": 3,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Changchun Yatai vs Wuhan Three Towns",
+      "games": 4,
+      "close_games": 3,
+      "close_rate": 75.0
+    },
+    {
+      "matchup": "Wuhan Three Towns vs Changchun Yatai",
+      "games": 4,
+      "close_games": 3,
+      "close_rate": 75.0
+    },
+    {
+      "matchup": "Meizhou Hakka vs Shanghai Shenhua",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Shanghai Shenhua vs Meizhou Hakka",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Changchun Yatai vs Wuhan Yangtze River",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Wuhan Yangtze River vs Changchun Yatai",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Cangzhou Mighty Lions vs Wuhan Three Towns",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Wuhan Three Towns vs Cangzhou Mighty Lions",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Chengdu Rongcheng vs Henan Songshan Longmen",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Henan Songshan Longmen vs Chengdu Rongcheng",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Chengdu Rongcheng vs Shanghai Port",
+      "games": 3,
+      "close_games": 1,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "Shanghai Port vs Chengdu Rongcheng",
+      "games": 3,
+      "close_games": 1,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "Cangzhou Mighty Lions vs Hebei FC",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Hebei FC vs Cangzhou Mighty Lions",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Wuhan Three Towns vs Zhejiang Professional FC",
+      "games": 4,
+      "close_games": 2,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Zhejiang Professional FC vs Wuhan Three Towns",
+      "games": 4,
+      "close_games": 2,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Meizhou Hakka vs Shandong Taishan",
+      "games": 4,
+      "close_games": 3,
+      "close_rate": 75.0
+    },
+    {
+      "matchup": "Shandong Taishan vs Meizhou Hakka",
+      "games": 4,
+      "close_games": 3,
+      "close_rate": 75.0
+    },
+    {
+      "matchup": "Chengdu Rongcheng vs Wuhan Yangtze River",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Wuhan Yangtze River vs Chengdu Rongcheng",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Tianjin Jinmen Tiger vs Wuhan Three Towns",
+      "games": 3,
+      "close_games": 3,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Wuhan Three Towns vs Tianjin Jinmen Tiger",
+      "games": 3,
+      "close_games": 3,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Chengdu Rongcheng vs Dalian Professional",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Dalian Professional vs Chengdu Rongcheng",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Guangzhou vs Meizhou Hakka",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Meizhou Hakka vs Guangzhou",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Wuhan Yangtze River vs Zhejiang Professional FC",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Zhejiang Professional FC vs Wuhan Yangtze River",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Chengdu Rongcheng vs Zhejiang Professional FC",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Zhejiang Professional FC vs Chengdu Rongcheng",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Cangzhou Mighty Lions vs Henan Songshan Longmen",
+      "games": 3,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Henan Songshan Longmen vs Cangzhou Mighty Lions",
+      "games": 3,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Meizhou Hakka vs Shanghai Port",
+      "games": 3,
+      "close_games": 1,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "Shanghai Port vs Meizhou Hakka",
+      "games": 3,
+      "close_games": 1,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "Dalian Professional vs Wuhan Three Towns",
+      "games": 2,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Wuhan Three Towns vs Dalian Professional",
+      "games": 2,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Changchun Yatai vs Nantong Zhiyun",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Nantong Zhiyun vs Changchun Yatai",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Chengdu Rongcheng vs Qingdao Hainiu",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Qingdao Hainiu vs Chengdu Rongcheng",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Changchun Yatai vs Meizhou Hakka",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Meizhou Hakka vs Changchun Yatai",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Qingdao Hainiu vs Shanghai Port",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Shanghai Port vs Qingdao Hainiu",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Nantong Zhiyun vs Zhejiang Professional FC",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Zhejiang Professional FC vs Nantong Zhiyun",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Meizhou Hakka vs Qingdao Hainiu",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Qingdao Hainiu vs Meizhou Hakka",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Beijing Guoan vs Nantong Zhiyun",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Nantong Zhiyun vs Beijing Guoan",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Shanghai Shenhua vs Wuhan Three Towns",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Wuhan Three Towns vs Shanghai Shenhua",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Qingdao Hainiu vs Zhejiang Professional FC",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Zhejiang Professional FC vs Qingdao Hainiu",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Chengdu Rongcheng vs Wuhan Three Towns",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Wuhan Three Towns vs Chengdu Rongcheng",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Nantong Zhiyun vs Shenzhen FC",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Shenzhen FC vs Nantong Zhiyun",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Changchun Yatai vs Qingdao Hainiu",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Qingdao Hainiu vs Changchun Yatai",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Meizhou Hakka vs Tianjin Jinmen Tiger",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Tianjin Jinmen Tiger vs Meizhou Hakka",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Dalian Professional vs Zhejiang Professional FC",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Zhejiang Professional FC vs Dalian Professional",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Nantong Zhiyun vs Wuhan Three Towns",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Wuhan Three Towns vs Nantong Zhiyun",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Qingdao Hainiu vs Shandong Taishan",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Shandong Taishan vs Qingdao Hainiu",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Meizhou Hakka vs Shenzhen FC",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Shenzhen FC vs Meizhou Hakka",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Chengdu Rongcheng vs Nantong Zhiyun",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Nantong Zhiyun vs Chengdu Rongcheng",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Dalian Professional vs Shandong Taishan",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Shandong Taishan vs Dalian Professional",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Nantong Zhiyun vs Qingdao Hainiu",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Qingdao Hainiu vs Nantong Zhiyun",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Cangzhou Mighty Lions vs Meizhou Hakka",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Meizhou Hakka vs Cangzhou Mighty Lions",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Nantong Zhiyun vs Shanghai Port",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Shanghai Port vs Nantong Zhiyun",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Chengdu Rongcheng vs Tianjin Jinmen Tiger",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Tianjin Jinmen Tiger vs Chengdu Rongcheng",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Qingdao Hainiu vs Shanghai Shenhua",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Shanghai Shenhua vs Qingdao Hainiu",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Henan Songshan Longmen vs Zhejiang Professional FC",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Zhejiang Professional FC vs Henan Songshan Longmen",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Nantong Zhiyun vs Shanghai Shenhua",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Shanghai Shenhua vs Nantong Zhiyun",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Qingdao Hainiu vs Tianjin Jinmen Tiger",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Tianjin Jinmen Tiger vs Qingdao Hainiu",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Chengdu Rongcheng vs Shenzhen FC",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Shenzhen FC vs Chengdu Rongcheng",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Beijing Guoan vs Chengdu Rongcheng",
+      "games": 3,
+      "close_games": 3,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Chengdu Rongcheng vs Beijing Guoan",
+      "games": 3,
+      "close_games": 3,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Changchun Yatai vs Henan Songshan Longmen",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Henan Songshan Longmen vs Changchun Yatai",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Meizhou Hakka vs Nantong Zhiyun",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Nantong Zhiyun vs Meizhou Hakka",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Dalian Professional vs Qingdao Hainiu",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Qingdao Hainiu vs Dalian Professional",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Cangzhou Mighty Lions vs Qingdao Hainiu",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Qingdao Hainiu vs Cangzhou Mighty Lions",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Chengdu Rongcheng vs Meizhou Hakka",
+      "games": 2,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Meizhou Hakka vs Chengdu Rongcheng",
+      "games": 2,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Nantong Zhiyun vs Tianjin Jinmen Tiger",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Tianjin Jinmen Tiger vs Nantong Zhiyun",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Henan Songshan Longmen vs Qingdao West Coast",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Qingdao West Coast vs Henan Songshan Longmen",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Shanghai Port vs Wuhan Three Towns",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Wuhan Three Towns vs Shanghai Port",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Shenzhen Xinpengcheng vs Zhejiang Professional FC",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Zhejiang Professional FC vs Shenzhen Xinpengcheng",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Qingdao West Coast vs Shanghai Shenhua",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Shanghai Shenhua vs Qingdao West Coast",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Cangzhou Mighty Lions vs Qingdao West Coast",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Qingdao West Coast vs Cangzhou Mighty Lions",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Shenzhen Xinpengcheng vs Wuhan Three Towns",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Wuhan Three Towns vs Shenzhen Xinpengcheng",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Henan Songshan Longmen vs Nantong Zhiyun",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Nantong Zhiyun vs Henan Songshan Longmen",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Chengdu Rongcheng vs Shenzhen Xinpengcheng",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Shenzhen Xinpengcheng vs Chengdu Rongcheng",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Henan Songshan Longmen vs Qingdao Hainiu",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Qingdao Hainiu vs Henan Songshan Longmen",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Beijing Guoan vs Qingdao West Coast",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Qingdao West Coast vs Beijing Guoan",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Tianjin Jinmen Tiger vs Zhejiang Professional FC",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Zhejiang Professional FC vs Tianjin Jinmen Tiger",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Nantong Zhiyun vs Qingdao West Coast",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Qingdao West Coast vs Nantong Zhiyun",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Qingdao Hainiu vs Shenzhen Xinpengcheng",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Shenzhen Xinpengcheng vs Qingdao Hainiu",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Shanghai Port vs Shenzhen Xinpengcheng",
+      "games": 2,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Shenzhen Xinpengcheng vs Shanghai Port",
+      "games": 2,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Qingdao West Coast vs Shandong Taishan",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Shandong Taishan vs Qingdao West Coast",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Qingdao Hainiu vs Wuhan Three Towns",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Wuhan Three Towns vs Qingdao Hainiu",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Beijing Guoan vs Meizhou Hakka",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Meizhou Hakka vs Beijing Guoan",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Qingdao West Coast vs Shenzhen Xinpengcheng",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Shenzhen Xinpengcheng vs Qingdao West Coast",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Qingdao West Coast vs Shanghai Port",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Shanghai Port vs Qingdao West Coast",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Shandong Taishan vs Shenzhen Xinpengcheng",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Shenzhen Xinpengcheng vs Shandong Taishan",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Changchun Yatai vs Qingdao West Coast",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Qingdao West Coast vs Changchun Yatai",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Beijing Guoan vs Qingdao Hainiu",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Qingdao Hainiu vs Beijing Guoan",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Cangzhou Mighty Lions vs Nantong Zhiyun",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Nantong Zhiyun vs Cangzhou Mighty Lions",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Meizhou Hakka vs Shenzhen Xinpengcheng",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Shenzhen Xinpengcheng vs Meizhou Hakka",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Chengdu Rongcheng vs Qingdao West Coast",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Qingdao West Coast vs Chengdu Rongcheng",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Shanghai Shenhua vs Shenzhen Xinpengcheng",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Shenzhen Xinpengcheng vs Shanghai Shenhua",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Shandong Taishan vs Zhejiang Professional FC",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Zhejiang Professional FC vs Shandong Taishan",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Changchun Yatai vs Zhejiang Professional FC",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Zhejiang Professional FC vs Changchun Yatai",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Nantong Zhiyun vs Shenzhen Xinpengcheng",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Shenzhen Xinpengcheng vs Nantong Zhiyun",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Qingdao West Coast vs Wuhan Three Towns",
+      "games": 2,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Wuhan Three Towns vs Qingdao West Coast",
+      "games": 2,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Beijing Guoan vs Yunnan Yukun",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Yunnan Yukun vs Beijing Guoan",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Qingdao Hainiu vs Qingdao West Coast",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Qingdao West Coast vs Qingdao Hainiu",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Dalian Yingbo vs Zhejiang Professional FC",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Zhejiang Professional FC vs Dalian Yingbo",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Dalian Yingbo vs Shandong Taishan",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Shandong Taishan vs Dalian Yingbo",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Yunnan Yukun vs Zhejiang Professional FC",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Zhejiang Professional FC vs Yunnan Yukun",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Shenzhen Xinpengcheng vs Yunnan Yukun",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Yunnan Yukun vs Shenzhen Xinpengcheng",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Changchun Yatai vs Dalian Yingbo",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Dalian Yingbo vs Changchun Yatai",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Shanghai Shenhua vs Yunnan Yukun",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Yunnan Yukun vs Shanghai Shenhua",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    }
+  ],
+  "form_strengths": [
+    {
+      "team": "Beijing Guoan",
+      "strength": 60.7
+    },
+    {
+      "team": "Beijing Renhe",
+      "strength": 54.0
+    },
+    {
+      "team": "Cangzhou Mighty Lions",
+      "strength": 54.0
+    },
+    {
+      "team": "Changchun Yatai",
+      "strength": 52.0
+    },
+    {
+      "team": "Chengdu Rongcheng",
+      "strength": 60.0
+    },
+    {
+      "team": "Chongqing Liangjiang Athletic",
+      "strength": 77.3
+    },
+    {
+      "team": "Dalian Professional",
+      "strength": 52.0
+    },
+    {
+      "team": "Dalian Yingbo",
+      "strength": 66.7
+    },
+    {
+      "team": "Guangzhou",
+      "strength": 52.0
+    },
+    {
+      "team": "Guangzhou City",
+      "strength": 67.3
+    },
+    {
+      "team": "Hebei FC",
+      "strength": 46.0
+    },
+    {
+      "team": "Henan Songshan Longmen",
+      "strength": 56.0
+    },
+    {
+      "team": "Jiangsu Suning",
+      "strength": 84.0
+    },
+    {
+      "team": "Meizhou Hakka",
+      "strength": 69.3
+    },
+    {
+      "team": "Nantong Zhiyun",
+      "strength": 62.0
+    },
+    {
+      "team": "Qingdao",
+      "strength": 52.0
+    },
+    {
+      "team": "Qingdao Hainiu",
+      "strength": 63.3
+    },
+    {
+      "team": "Qingdao West Coast",
+      "strength": 78.0
+    },
+    {
+      "team": "Shandong Taishan",
+      "strength": 81.3
+    },
+    {
+      "team": "Shanghai Port",
+      "strength": 74.7
+    },
+    {
+      "team": "Shanghai Shenhua",
+      "strength": 88.0
+    },
+    {
+      "team": "Shenzhen FC",
+      "strength": 50.0
+    },
+    {
+      "team": "Shenzhen Xinpengcheng",
+      "strength": 62.7
+    },
+    {
+      "team": "Tianjin Jinmen Tiger",
+      "strength": 82.7
+    },
+    {
+      "team": "Tianjin Quanjian",
+      "strength": 65.3
+    },
+    {
+      "team": "Wuhan Three Towns",
+      "strength": 52.0
+    },
+    {
+      "team": "Wuhan Yangtze River",
+      "strength": 46.0
+    },
+    {
+      "team": "Yunnan Yukun",
+      "strength": 62.0
+    },
+    {
+      "team": "Zhejiang Professional FC",
+      "strength": 78.0
+    }
+  ],
+  "team_margin_ratings": [
+    {
+      "team": "Beijing Guoan",
+      "avg_margin": 1.9
+    },
+    {
+      "team": "Beijing Renhe",
+      "avg_margin": -1.2
+    },
+    {
+      "team": "Cangzhou Mighty Lions",
+      "avg_margin": 0
+    },
+    {
+      "team": "Changchun Yatai",
+      "avg_margin": -0.8
+    },
+    {
+      "team": "Chengdu Rongcheng",
+      "avg_margin": -0.2
+    },
+    {
+      "team": "Chongqing Liangjiang Athletic",
+      "avg_margin": -0.8
+    },
+    {
+      "team": "Dalian Professional",
+      "avg_margin": -1.2
+    },
+    {
+      "team": "Dalian Yingbo",
+      "avg_margin": -0.3
+    },
+    {
+      "team": "Guangzhou",
+      "avg_margin": -0.8
+    },
+    {
+      "team": "Guangzhou City",
+      "avg_margin": 0.2
+    },
+    {
+      "team": "Hebei FC",
+      "avg_margin": -3.6
+    },
+    {
+      "team": "Henan Songshan Longmen",
+      "avg_margin": -0.5
+    },
+    {
+      "team": "Jiangsu Suning",
+      "avg_margin": 0.5
+    },
+    {
+      "team": "Meizhou Hakka",
+      "avg_margin": -0.4
+    },
+    {
+      "team": "Nantong Zhiyun",
+      "avg_margin": -0.9
+    },
+    {
+      "team": "Qingdao",
+      "avg_margin": -1.7
+    },
+    {
+      "team": "Qingdao Hainiu",
+      "avg_margin": -0.9
+    },
+    {
+      "team": "Qingdao West Coast",
+      "avg_margin": 0.2
+    },
+    {
+      "team": "Shandong Taishan",
+      "avg_margin": 1.3
+    },
+    {
+      "team": "Shanghai Port",
+      "avg_margin": 1
+    },
+    {
+      "team": "Shanghai Shenhua",
+      "avg_margin": 1
+    },
+    {
+      "team": "Shenzhen FC",
+      "avg_margin": -2.4
+    },
+    {
+      "team": "Shenzhen Xinpengcheng",
+      "avg_margin": -1
+    },
+    {
+      "team": "Tianjin Jinmen Tiger",
+      "avg_margin": -0.3
+    },
+    {
+      "team": "Tianjin Quanjian",
+      "avg_margin": -0.1
+    },
+    {
+      "team": "Wuhan Three Towns",
+      "avg_margin": -1.1
+    },
+    {
+      "team": "Wuhan Yangtze River",
+      "avg_margin": -1.3
+    },
+    {
+      "team": "Yunnan Yukun",
+      "avg_margin": -0.8
+    },
+    {
+      "team": "Zhejiang Professional FC",
+      "avg_margin": 0.7
+    }
+  ]
+}

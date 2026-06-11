@@ -1,0 +1,955 @@
+{
+  "meta": {
+    "sport": "CFL",
+    "engine": "v1-bootstrap",
+    "formula": "close*0.35 + form_balance*0.25 + margin_balance*0.25 + matchup*0.15",
+    "close_margin": 8,
+    "games_sampled": 86,
+    "week_chunk": 4,
+    "built": "2026-06-11"
+  },
+  "matchup_ratings": [
+    {
+      "matchup": "Calgary Stampeders vs Montreal Alouettes",
+      "games_played": 1,
+      "avg_margin": 3,
+      "avg_excitement": 96.25
+    },
+    {
+      "matchup": "Montreal Alouettes vs Calgary Stampeders",
+      "games_played": 1,
+      "avg_margin": 3,
+      "avg_excitement": 96.25
+    },
+    {
+      "matchup": "Ottawa Red Blacks vs Winnipeg Blue Bombers",
+      "games_played": 2,
+      "avg_margin": 4.5,
+      "avg_excitement": 94.38
+    },
+    {
+      "matchup": "Winnipeg Blue Bombers vs Ottawa Red Blacks",
+      "games_played": 2,
+      "avg_margin": 4.5,
+      "avg_excitement": 94.38
+    },
+    {
+      "matchup": "Hamilton Tiger-Cats vs Saskatchewan Roughriders",
+      "games_played": 2,
+      "avg_margin": 10.5,
+      "avg_excitement": 51.88
+    },
+    {
+      "matchup": "Saskatchewan Roughriders vs Hamilton Tiger-Cats",
+      "games_played": 2,
+      "avg_margin": 10.5,
+      "avg_excitement": 51.88
+    },
+    {
+      "matchup": "BC Lions vs Edmonton Elks",
+      "games_played": 3,
+      "avg_margin": 31,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Edmonton Elks vs BC Lions",
+      "games_played": 3,
+      "avg_margin": 31,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Montreal Alouettes vs Toronto Argonauts",
+      "games_played": 4,
+      "avg_margin": 3.5,
+      "avg_excitement": 95.62
+    },
+    {
+      "matchup": "Toronto Argonauts vs Montreal Alouettes",
+      "games_played": 4,
+      "avg_margin": 3.5,
+      "avg_excitement": 95.62
+    },
+    {
+      "matchup": "Calgary Stampeders vs Hamilton Tiger-Cats",
+      "games_played": 2,
+      "avg_margin": 3,
+      "avg_excitement": 96.25
+    },
+    {
+      "matchup": "Hamilton Tiger-Cats vs Calgary Stampeders",
+      "games_played": 2,
+      "avg_margin": 3,
+      "avg_excitement": 96.25
+    },
+    {
+      "matchup": "Edmonton Elks vs Saskatchewan Roughriders",
+      "games_played": 3,
+      "avg_margin": 7.67,
+      "avg_excitement": 43.75
+    },
+    {
+      "matchup": "Saskatchewan Roughriders vs Edmonton Elks",
+      "games_played": 3,
+      "avg_margin": 7.67,
+      "avg_excitement": 43.75
+    },
+    {
+      "matchup": "Montreal Alouettes vs Saskatchewan Roughriders",
+      "games_played": 2,
+      "avg_margin": 22.5,
+      "avg_excitement": 1.88
+    },
+    {
+      "matchup": "Saskatchewan Roughriders vs Montreal Alouettes",
+      "games_played": 2,
+      "avg_margin": 22.5,
+      "avg_excitement": 1.88
+    },
+    {
+      "matchup": "Hamilton Tiger-Cats vs Winnipeg Blue Bombers",
+      "games_played": 2,
+      "avg_margin": 15.5,
+      "avg_excitement": 10.62
+    },
+    {
+      "matchup": "Winnipeg Blue Bombers vs Hamilton Tiger-Cats",
+      "games_played": 2,
+      "avg_margin": 15.5,
+      "avg_excitement": 10.62
+    },
+    {
+      "matchup": "Calgary Stampeders vs Edmonton Elks",
+      "games_played": 4,
+      "avg_margin": 21.5,
+      "avg_excitement": 38.12
+    },
+    {
+      "matchup": "Edmonton Elks vs Calgary Stampeders",
+      "games_played": 4,
+      "avg_margin": 21.5,
+      "avg_excitement": 38.12
+    },
+    {
+      "matchup": "BC Lions vs Toronto Argonauts",
+      "games_played": 2,
+      "avg_margin": 22,
+      "avg_excitement": 37.5
+    },
+    {
+      "matchup": "Toronto Argonauts vs BC Lions",
+      "games_played": 2,
+      "avg_margin": 22,
+      "avg_excitement": 37.5
+    },
+    {
+      "matchup": "BC Lions vs Ottawa Red Blacks",
+      "games_played": 2,
+      "avg_margin": 9,
+      "avg_excitement": 53.75
+    },
+    {
+      "matchup": "Ottawa Red Blacks vs BC Lions",
+      "games_played": 2,
+      "avg_margin": 9,
+      "avg_excitement": 53.75
+    },
+    {
+      "matchup": "Edmonton Elks vs Hamilton Tiger-Cats",
+      "games_played": 1,
+      "avg_margin": 4,
+      "avg_excitement": 95.0
+    },
+    {
+      "matchup": "Hamilton Tiger-Cats vs Edmonton Elks",
+      "games_played": 1,
+      "avg_margin": 4,
+      "avg_excitement": 95.0
+    },
+    {
+      "matchup": "Toronto Argonauts vs Winnipeg Blue Bombers",
+      "games_played": 2,
+      "avg_margin": 1,
+      "avg_excitement": 98.75
+    },
+    {
+      "matchup": "Winnipeg Blue Bombers vs Toronto Argonauts",
+      "games_played": 2,
+      "avg_margin": 1,
+      "avg_excitement": 98.75
+    },
+    {
+      "matchup": "Ottawa Red Blacks vs Saskatchewan Roughriders",
+      "games_played": 1,
+      "avg_margin": 15,
+      "avg_excitement": 11.25
+    },
+    {
+      "matchup": "Saskatchewan Roughriders vs Ottawa Red Blacks",
+      "games_played": 1,
+      "avg_margin": 15,
+      "avg_excitement": 11.25
+    },
+    {
+      "matchup": "BC Lions vs Winnipeg Blue Bombers",
+      "games_played": 4,
+      "avg_margin": 13,
+      "avg_excitement": 48.75
+    },
+    {
+      "matchup": "Winnipeg Blue Bombers vs BC Lions",
+      "games_played": 4,
+      "avg_margin": 13,
+      "avg_excitement": 48.75
+    },
+    {
+      "matchup": "Edmonton Elks vs Montreal Alouettes",
+      "games_played": 2,
+      "avg_margin": 4,
+      "avg_excitement": 95.0
+    },
+    {
+      "matchup": "Montreal Alouettes vs Edmonton Elks",
+      "games_played": 2,
+      "avg_margin": 4,
+      "avg_excitement": 95.0
+    },
+    {
+      "matchup": "Calgary Stampeders vs Winnipeg Blue Bombers",
+      "games_played": 3,
+      "avg_margin": 5.33,
+      "avg_excitement": 93.33
+    },
+    {
+      "matchup": "Winnipeg Blue Bombers vs Calgary Stampeders",
+      "games_played": 3,
+      "avg_margin": 5.33,
+      "avg_excitement": 93.33
+    },
+    {
+      "matchup": "Saskatchewan Roughriders vs Toronto Argonauts",
+      "games_played": 2,
+      "avg_margin": 8,
+      "avg_excitement": 55.0
+    },
+    {
+      "matchup": "Toronto Argonauts vs Saskatchewan Roughriders",
+      "games_played": 2,
+      "avg_margin": 8,
+      "avg_excitement": 55.0
+    },
+    {
+      "matchup": "Hamilton Tiger-Cats vs Ottawa Red Blacks",
+      "games_played": 3,
+      "avg_margin": 4,
+      "avg_excitement": 95.0
+    },
+    {
+      "matchup": "Ottawa Red Blacks vs Hamilton Tiger-Cats",
+      "games_played": 3,
+      "avg_margin": 4,
+      "avg_excitement": 95.0
+    },
+    {
+      "matchup": "Montreal Alouettes vs Ottawa Red Blacks",
+      "games_played": 4,
+      "avg_margin": 7.75,
+      "avg_excitement": 72.81
+    },
+    {
+      "matchup": "Ottawa Red Blacks vs Montreal Alouettes",
+      "games_played": 4,
+      "avg_margin": 7.75,
+      "avg_excitement": 72.81
+    },
+    {
+      "matchup": "BC Lions vs Hamilton Tiger-Cats",
+      "games_played": 1,
+      "avg_margin": 5,
+      "avg_excitement": 93.75
+    },
+    {
+      "matchup": "Hamilton Tiger-Cats vs BC Lions",
+      "games_played": 1,
+      "avg_margin": 5,
+      "avg_excitement": 93.75
+    },
+    {
+      "matchup": "Edmonton Elks vs Winnipeg Blue Bombers",
+      "games_played": 2,
+      "avg_margin": 25.5,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Winnipeg Blue Bombers vs Edmonton Elks",
+      "games_played": 2,
+      "avg_margin": 25.5,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Hamilton Tiger-Cats vs Montreal Alouettes",
+      "games_played": 4,
+      "avg_margin": 6.5,
+      "avg_excitement": 74.38
+    },
+    {
+      "matchup": "Montreal Alouettes vs Hamilton Tiger-Cats",
+      "games_played": 4,
+      "avg_margin": 6.5,
+      "avg_excitement": 74.38
+    },
+    {
+      "matchup": "BC Lions vs Saskatchewan Roughriders",
+      "games_played": 3,
+      "avg_margin": 13.33,
+      "avg_excitement": 36.67
+    },
+    {
+      "matchup": "Saskatchewan Roughriders vs BC Lions",
+      "games_played": 3,
+      "avg_margin": 13.33,
+      "avg_excitement": 36.67
+    },
+    {
+      "matchup": "Ottawa Red Blacks vs Toronto Argonauts",
+      "games_played": 3,
+      "avg_margin": 15,
+      "avg_excitement": 34.58
+    },
+    {
+      "matchup": "Toronto Argonauts vs Ottawa Red Blacks",
+      "games_played": 3,
+      "avg_margin": 15,
+      "avg_excitement": 34.58
+    },
+    {
+      "matchup": "Montreal Alouettes vs Winnipeg Blue Bombers",
+      "games_played": 2,
+      "avg_margin": 9,
+      "avg_excitement": 53.75
+    },
+    {
+      "matchup": "Winnipeg Blue Bombers vs Montreal Alouettes",
+      "games_played": 2,
+      "avg_margin": 9,
+      "avg_excitement": 53.75
+    },
+    {
+      "matchup": "Calgary Stampeders vs Ottawa Red Blacks",
+      "games_played": 1,
+      "avg_margin": 14,
+      "avg_excitement": 12.5
+    },
+    {
+      "matchup": "Ottawa Red Blacks vs Calgary Stampeders",
+      "games_played": 1,
+      "avg_margin": 14,
+      "avg_excitement": 12.5
+    },
+    {
+      "matchup": "Hamilton Tiger-Cats vs Toronto Argonauts",
+      "games_played": 4,
+      "avg_margin": 14.5,
+      "avg_excitement": 29.38
+    },
+    {
+      "matchup": "Toronto Argonauts vs Hamilton Tiger-Cats",
+      "games_played": 4,
+      "avg_margin": 14.5,
+      "avg_excitement": 29.38
+    },
+    {
+      "matchup": "BC Lions vs Calgary Stampeders",
+      "games_played": 4,
+      "avg_margin": 7.75,
+      "avg_excitement": 55.31
+    },
+    {
+      "matchup": "Calgary Stampeders vs BC Lions",
+      "games_played": 4,
+      "avg_margin": 7.75,
+      "avg_excitement": 55.31
+    },
+    {
+      "matchup": "Edmonton Elks vs Ottawa Red Blacks",
+      "games_played": 2,
+      "avg_margin": 12.5,
+      "avg_excitement": 49.38
+    },
+    {
+      "matchup": "Ottawa Red Blacks vs Edmonton Elks",
+      "games_played": 2,
+      "avg_margin": 12.5,
+      "avg_excitement": 49.38
+    },
+    {
+      "matchup": "Calgary Stampeders vs Toronto Argonauts",
+      "games_played": 2,
+      "avg_margin": 15,
+      "avg_excitement": 46.25
+    },
+    {
+      "matchup": "Toronto Argonauts vs Calgary Stampeders",
+      "games_played": 2,
+      "avg_margin": 15,
+      "avg_excitement": 46.25
+    },
+    {
+      "matchup": "Saskatchewan Roughriders vs Winnipeg Blue Bombers",
+      "games_played": 3,
+      "avg_margin": 18,
+      "avg_excitement": 30.83
+    },
+    {
+      "matchup": "Winnipeg Blue Bombers vs Saskatchewan Roughriders",
+      "games_played": 3,
+      "avg_margin": 18,
+      "avg_excitement": 30.83
+    },
+    {
+      "matchup": "BC Lions vs Montreal Alouettes",
+      "games_played": 1,
+      "avg_margin": 21,
+      "avg_excitement": 3.75
+    },
+    {
+      "matchup": "Montreal Alouettes vs BC Lions",
+      "games_played": 1,
+      "avg_margin": 21,
+      "avg_excitement": 3.75
+    },
+    {
+      "matchup": "Edmonton Elks vs Toronto Argonauts",
+      "games_played": 1,
+      "avg_margin": 5,
+      "avg_excitement": 93.75
+    },
+    {
+      "matchup": "Toronto Argonauts vs Edmonton Elks",
+      "games_played": 1,
+      "avg_margin": 5,
+      "avg_excitement": 93.75
+    },
+    {
+      "matchup": "Calgary Stampeders vs Saskatchewan Roughriders",
+      "games_played": 2,
+      "avg_margin": 18.5,
+      "avg_excitement": 6.87
+    },
+    {
+      "matchup": "Saskatchewan Roughriders vs Calgary Stampeders",
+      "games_played": 2,
+      "avg_margin": 18.5,
+      "avg_excitement": 6.87
+    }
+  ],
+  "matchup_close_rates": [
+    {
+      "matchup": "Calgary Stampeders vs Montreal Alouettes",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Montreal Alouettes vs Calgary Stampeders",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Ottawa Red Blacks vs Winnipeg Blue Bombers",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Winnipeg Blue Bombers vs Ottawa Red Blacks",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Hamilton Tiger-Cats vs Saskatchewan Roughriders",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Saskatchewan Roughriders vs Hamilton Tiger-Cats",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "BC Lions vs Edmonton Elks",
+      "games": 3,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Edmonton Elks vs BC Lions",
+      "games": 3,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Montreal Alouettes vs Toronto Argonauts",
+      "games": 4,
+      "close_games": 4,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Toronto Argonauts vs Montreal Alouettes",
+      "games": 4,
+      "close_games": 4,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Calgary Stampeders vs Hamilton Tiger-Cats",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Hamilton Tiger-Cats vs Calgary Stampeders",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Edmonton Elks vs Saskatchewan Roughriders",
+      "games": 3,
+      "close_games": 1,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "Saskatchewan Roughriders vs Edmonton Elks",
+      "games": 3,
+      "close_games": 1,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "Montreal Alouettes vs Saskatchewan Roughriders",
+      "games": 2,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Saskatchewan Roughriders vs Montreal Alouettes",
+      "games": 2,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Hamilton Tiger-Cats vs Winnipeg Blue Bombers",
+      "games": 2,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Winnipeg Blue Bombers vs Hamilton Tiger-Cats",
+      "games": 2,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Calgary Stampeders vs Edmonton Elks",
+      "games": 4,
+      "close_games": 2,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Edmonton Elks vs Calgary Stampeders",
+      "games": 4,
+      "close_games": 2,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "BC Lions vs Toronto Argonauts",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Toronto Argonauts vs BC Lions",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "BC Lions vs Ottawa Red Blacks",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Ottawa Red Blacks vs BC Lions",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Edmonton Elks vs Hamilton Tiger-Cats",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Hamilton Tiger-Cats vs Edmonton Elks",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Toronto Argonauts vs Winnipeg Blue Bombers",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Winnipeg Blue Bombers vs Toronto Argonauts",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Ottawa Red Blacks vs Saskatchewan Roughriders",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Saskatchewan Roughriders vs Ottawa Red Blacks",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "BC Lions vs Winnipeg Blue Bombers",
+      "games": 4,
+      "close_games": 2,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Winnipeg Blue Bombers vs BC Lions",
+      "games": 4,
+      "close_games": 2,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Edmonton Elks vs Montreal Alouettes",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Montreal Alouettes vs Edmonton Elks",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Calgary Stampeders vs Winnipeg Blue Bombers",
+      "games": 3,
+      "close_games": 3,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Winnipeg Blue Bombers vs Calgary Stampeders",
+      "games": 3,
+      "close_games": 3,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Saskatchewan Roughriders vs Toronto Argonauts",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Toronto Argonauts vs Saskatchewan Roughriders",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Hamilton Tiger-Cats vs Ottawa Red Blacks",
+      "games": 3,
+      "close_games": 3,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Ottawa Red Blacks vs Hamilton Tiger-Cats",
+      "games": 3,
+      "close_games": 3,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Montreal Alouettes vs Ottawa Red Blacks",
+      "games": 4,
+      "close_games": 3,
+      "close_rate": 75.0
+    },
+    {
+      "matchup": "Ottawa Red Blacks vs Montreal Alouettes",
+      "games": 4,
+      "close_games": 3,
+      "close_rate": 75.0
+    },
+    {
+      "matchup": "BC Lions vs Hamilton Tiger-Cats",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Hamilton Tiger-Cats vs BC Lions",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Edmonton Elks vs Winnipeg Blue Bombers",
+      "games": 2,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Winnipeg Blue Bombers vs Edmonton Elks",
+      "games": 2,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Hamilton Tiger-Cats vs Montreal Alouettes",
+      "games": 4,
+      "close_games": 3,
+      "close_rate": 75.0
+    },
+    {
+      "matchup": "Montreal Alouettes vs Hamilton Tiger-Cats",
+      "games": 4,
+      "close_games": 3,
+      "close_rate": 75.0
+    },
+    {
+      "matchup": "BC Lions vs Saskatchewan Roughriders",
+      "games": 3,
+      "close_games": 1,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "Saskatchewan Roughriders vs BC Lions",
+      "games": 3,
+      "close_games": 1,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "Ottawa Red Blacks vs Toronto Argonauts",
+      "games": 3,
+      "close_games": 1,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "Toronto Argonauts vs Ottawa Red Blacks",
+      "games": 3,
+      "close_games": 1,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "Montreal Alouettes vs Winnipeg Blue Bombers",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Winnipeg Blue Bombers vs Montreal Alouettes",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Calgary Stampeders vs Ottawa Red Blacks",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Ottawa Red Blacks vs Calgary Stampeders",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Hamilton Tiger-Cats vs Toronto Argonauts",
+      "games": 4,
+      "close_games": 1,
+      "close_rate": 25.0
+    },
+    {
+      "matchup": "Toronto Argonauts vs Hamilton Tiger-Cats",
+      "games": 4,
+      "close_games": 1,
+      "close_rate": 25.0
+    },
+    {
+      "matchup": "BC Lions vs Calgary Stampeders",
+      "games": 4,
+      "close_games": 2,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Calgary Stampeders vs BC Lions",
+      "games": 4,
+      "close_games": 2,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Edmonton Elks vs Ottawa Red Blacks",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Ottawa Red Blacks vs Edmonton Elks",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Calgary Stampeders vs Toronto Argonauts",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Toronto Argonauts vs Calgary Stampeders",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Saskatchewan Roughriders vs Winnipeg Blue Bombers",
+      "games": 3,
+      "close_games": 1,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "Winnipeg Blue Bombers vs Saskatchewan Roughriders",
+      "games": 3,
+      "close_games": 1,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "BC Lions vs Montreal Alouettes",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Montreal Alouettes vs BC Lions",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Edmonton Elks vs Toronto Argonauts",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Toronto Argonauts vs Edmonton Elks",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Calgary Stampeders vs Saskatchewan Roughriders",
+      "games": 2,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Saskatchewan Roughriders vs Calgary Stampeders",
+      "games": 2,
+      "close_games": 0,
+      "close_rate": 0.0
+    }
+  ],
+  "form_strengths": [
+    {
+      "team": "BC Lions",
+      "strength": 66.7
+    },
+    {
+      "team": "Calgary Stampeders",
+      "strength": 69.3
+    },
+    {
+      "team": "Edmonton Elks",
+      "strength": 52.7
+    },
+    {
+      "team": "Hamilton Tiger-Cats",
+      "strength": 78.7
+    },
+    {
+      "team": "Montreal Alouettes",
+      "strength": 75.3
+    },
+    {
+      "team": "Ottawa Red Blacks",
+      "strength": 57.3
+    },
+    {
+      "team": "Saskatchewan Roughriders",
+      "strength": 48.0
+    },
+    {
+      "team": "Toronto Argonauts",
+      "strength": 86.0
+    },
+    {
+      "team": "Winnipeg Blue Bombers",
+      "strength": 71.3
+    }
+  ],
+  "team_margin_ratings": [
+    {
+      "team": "BC Lions",
+      "avg_margin": -0.5
+    },
+    {
+      "team": "Calgary Stampeders",
+      "avg_margin": 9.3
+    },
+    {
+      "team": "Edmonton Elks",
+      "avg_margin": -10
+    },
+    {
+      "team": "Hamilton Tiger-Cats",
+      "avg_margin": -2.2
+    },
+    {
+      "team": "Montreal Alouettes",
+      "avg_margin": 2.7
+    },
+    {
+      "team": "Ottawa Red Blacks",
+      "avg_margin": -5.5
+    },
+    {
+      "team": "Saskatchewan Roughriders",
+      "avg_margin": -9.7
+    },
+    {
+      "team": "Toronto Argonauts",
+      "avg_margin": 4
+    },
+    {
+      "team": "Winnipeg Blue Bombers",
+      "avg_margin": 9
+    }
+  ]
+}

@@ -1,0 +1,6252 @@
+{
+  "meta": {
+    "sport": "J1 League",
+    "league": "jpn.1",
+    "engine": "v1-bootstrap",
+    "formula": "close*0.35 + form_balance*0.25 + margin_balance*0.25 + matchup*0.15",
+    "close_margin": 1,
+    "games_sampled": 599,
+    "week_chunk": 10,
+    "built": "2026-06-11"
+  },
+  "matchup_ratings": [
+    {
+      "matchup": "Gamba Osaka vs Vissel Kobe",
+      "games_played": 3,
+      "avg_margin": 0.33,
+      "avg_excitement": 96.67
+    },
+    {
+      "matchup": "Vissel Kobe vs Gamba Osaka",
+      "games_played": 3,
+      "avg_margin": 0.33,
+      "avg_excitement": 96.67
+    },
+    {
+      "matchup": "Cerezo Osaka vs FC Tokyo",
+      "games_played": 4,
+      "avg_margin": 2.5,
+      "avg_excitement": 22.5
+    },
+    {
+      "matchup": "FC Tokyo vs Cerezo Osaka",
+      "games_played": 4,
+      "avg_margin": 2.5,
+      "avg_excitement": 22.5
+    },
+    {
+      "matchup": "Consadole Sapporo vs Sanfrecce Hiroshima",
+      "games_played": 5,
+      "avg_margin": 1.2,
+      "avg_excitement": 60.0
+    },
+    {
+      "matchup": "Sanfrecce Hiroshima vs Consadole Sapporo",
+      "games_played": 5,
+      "avg_margin": 1.2,
+      "avg_excitement": 60.0
+    },
+    {
+      "matchup": "Kashima Antlers vs Shonan Bellmare",
+      "games_played": 6,
+      "avg_margin": 0.67,
+      "avg_excitement": 93.33
+    },
+    {
+      "matchup": "Shonan Bellmare vs Kashima Antlers",
+      "games_played": 6,
+      "avg_margin": 0.67,
+      "avg_excitement": 93.33
+    },
+    {
+      "matchup": "Jubilo Iwata vs Vegalta Sendai",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Vegalta Sendai vs Jubilo Iwata",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Shimizu S-Pulse vs Yokohama F. Marinos",
+      "games_played": 3,
+      "avg_margin": 1.33,
+      "avg_excitement": 63.33
+    },
+    {
+      "matchup": "Yokohama F. Marinos vs Shimizu S-Pulse",
+      "games_played": 3,
+      "avg_margin": 1.33,
+      "avg_excitement": 63.33
+    },
+    {
+      "matchup": "Kawasaki Frontale vs Matsumoto Yamaga FC",
+      "games_played": 1,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "Matsumoto Yamaga FC vs Kawasaki Frontale",
+      "games_played": 1,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "Nagoya Grampus vs Urawa Red Diamonds",
+      "games_played": 4,
+      "avg_margin": 1.25,
+      "avg_excitement": 70.0
+    },
+    {
+      "matchup": "Urawa Red Diamonds vs Nagoya Grampus",
+      "games_played": 4,
+      "avg_margin": 1.25,
+      "avg_excitement": 70.0
+    },
+    {
+      "matchup": "Oita Trinita vs Sagan Tosu",
+      "games_played": 2,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "Sagan Tosu vs Oita Trinita",
+      "games_played": 2,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "Consadole Sapporo vs Urawa Red Diamonds",
+      "games_played": 4,
+      "avg_margin": 0.5,
+      "avg_excitement": 95.0
+    },
+    {
+      "matchup": "Urawa Red Diamonds vs Consadole Sapporo",
+      "games_played": 4,
+      "avg_margin": 0.5,
+      "avg_excitement": 95.0
+    },
+    {
+      "matchup": "Matsumoto Yamaga FC vs Shimizu S-Pulse",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Shimizu S-Pulse vs Matsumoto Yamaga FC",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Kashima Antlers vs Yokohama F. Marinos",
+      "games_played": 3,
+      "avg_margin": 1.33,
+      "avg_excitement": 63.33
+    },
+    {
+      "matchup": "Yokohama F. Marinos vs Kashima Antlers",
+      "games_played": 3,
+      "avg_margin": 1.33,
+      "avg_excitement": 63.33
+    },
+    {
+      "matchup": "FC Tokyo vs Vegalta Sendai",
+      "games_played": 3,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Vegalta Sendai vs FC Tokyo",
+      "games_played": 3,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Gamba Osaka vs Sanfrecce Hiroshima",
+      "games_played": 3,
+      "avg_margin": 1.33,
+      "avg_excitement": 63.33
+    },
+    {
+      "matchup": "Sanfrecce Hiroshima vs Gamba Osaka",
+      "games_played": 3,
+      "avg_margin": 1.33,
+      "avg_excitement": 63.33
+    },
+    {
+      "matchup": "Kawasaki Frontale vs Nagoya Grampus",
+      "games_played": 4,
+      "avg_margin": 2,
+      "avg_excitement": 27.5
+    },
+    {
+      "matchup": "Nagoya Grampus vs Kawasaki Frontale",
+      "games_played": 4,
+      "avg_margin": 2,
+      "avg_excitement": 27.5
+    },
+    {
+      "matchup": "Oita Trinita vs Vissel Kobe",
+      "games_played": 3,
+      "avg_margin": 0.67,
+      "avg_excitement": 70.0
+    },
+    {
+      "matchup": "Vissel Kobe vs Oita Trinita",
+      "games_played": 3,
+      "avg_margin": 0.67,
+      "avg_excitement": 70.0
+    },
+    {
+      "matchup": "Cerezo Osaka vs Sagan Tosu",
+      "games_played": 2,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Sagan Tosu vs Cerezo Osaka",
+      "games_played": 2,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Jubilo Iwata vs Shonan Bellmare",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Shonan Bellmare vs Jubilo Iwata",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Consadole Sapporo vs Shimizu S-Pulse",
+      "games_played": 2,
+      "avg_margin": 4.5,
+      "avg_excitement": 35.0
+    },
+    {
+      "matchup": "Shimizu S-Pulse vs Consadole Sapporo",
+      "games_played": 2,
+      "avg_margin": 4.5,
+      "avg_excitement": 35.0
+    },
+    {
+      "matchup": "FC Tokyo vs Sanfrecce Hiroshima",
+      "games_played": 3,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Sanfrecce Hiroshima vs FC Tokyo",
+      "games_played": 3,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Kashima Antlers vs Oita Trinita",
+      "games_played": 2,
+      "avg_margin": 1.5,
+      "avg_excitement": 50.0
+    },
+    {
+      "matchup": "Oita Trinita vs Kashima Antlers",
+      "games_played": 2,
+      "avg_margin": 1.5,
+      "avg_excitement": 50.0
+    },
+    {
+      "matchup": "Sagan Tosu vs Shonan Bellmare",
+      "games_played": 5,
+      "avg_margin": 1,
+      "avg_excitement": 76.0
+    },
+    {
+      "matchup": "Shonan Bellmare vs Sagan Tosu",
+      "games_played": 5,
+      "avg_margin": 1,
+      "avg_excitement": 76.0
+    },
+    {
+      "matchup": "Kawasaki Frontale vs Vegalta Sendai",
+      "games_played": 2,
+      "avg_margin": 0.5,
+      "avg_excitement": 95.0
+    },
+    {
+      "matchup": "Vegalta Sendai vs Kawasaki Frontale",
+      "games_played": 2,
+      "avg_margin": 0.5,
+      "avg_excitement": 95.0
+    },
+    {
+      "matchup": "Urawa Red Diamonds vs Vissel Kobe",
+      "games_played": 4,
+      "avg_margin": 2.25,
+      "avg_excitement": 42.5
+    },
+    {
+      "matchup": "Vissel Kobe vs Urawa Red Diamonds",
+      "games_played": 4,
+      "avg_margin": 2.25,
+      "avg_excitement": 42.5
+    },
+    {
+      "matchup": "Cerezo Osaka vs Yokohama F. Marinos",
+      "games_played": 5,
+      "avg_margin": 2.2,
+      "avg_excitement": 36.0
+    },
+    {
+      "matchup": "Yokohama F. Marinos vs Cerezo Osaka",
+      "games_played": 5,
+      "avg_margin": 2.2,
+      "avg_excitement": 36.0
+    },
+    {
+      "matchup": "Matsumoto Yamaga FC vs Nagoya Grampus",
+      "games_played": 1,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "Nagoya Grampus vs Matsumoto Yamaga FC",
+      "games_played": 1,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "Gamba Osaka vs Jubilo Iwata",
+      "games_played": 2,
+      "avg_margin": 1,
+      "avg_excitement": 55.0
+    },
+    {
+      "matchup": "Jubilo Iwata vs Gamba Osaka",
+      "games_played": 2,
+      "avg_margin": 1,
+      "avg_excitement": 55.0
+    },
+    {
+      "matchup": "Gamba Osaka vs Kashima Antlers",
+      "games_played": 4,
+      "avg_margin": 1,
+      "avg_excitement": 55.0
+    },
+    {
+      "matchup": "Kashima Antlers vs Gamba Osaka",
+      "games_played": 4,
+      "avg_margin": 1,
+      "avg_excitement": 55.0
+    },
+    {
+      "matchup": "Sagan Tosu vs Vissel Kobe",
+      "games_played": 3,
+      "avg_margin": 2.67,
+      "avg_excitement": 26.67
+    },
+    {
+      "matchup": "Vissel Kobe vs Sagan Tosu",
+      "games_played": 3,
+      "avg_margin": 2.67,
+      "avg_excitement": 26.67
+    },
+    {
+      "matchup": "Matsumoto Yamaga FC vs Urawa Red Diamonds",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Urawa Red Diamonds vs Matsumoto Yamaga FC",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Consadole Sapporo vs FC Tokyo",
+      "games_played": 2,
+      "avg_margin": 0.5,
+      "avg_excitement": 95.0
+    },
+    {
+      "matchup": "FC Tokyo vs Consadole Sapporo",
+      "games_played": 2,
+      "avg_margin": 0.5,
+      "avg_excitement": 95.0
+    },
+    {
+      "matchup": "Nagoya Grampus vs Yokohama F. Marinos",
+      "games_played": 5,
+      "avg_margin": 2.4,
+      "avg_excitement": 34.0
+    },
+    {
+      "matchup": "Yokohama F. Marinos vs Nagoya Grampus",
+      "games_played": 5,
+      "avg_margin": 2.4,
+      "avg_excitement": 34.0
+    },
+    {
+      "matchup": "Cerezo Osaka vs Jubilo Iwata",
+      "games_played": 3,
+      "avg_margin": 1,
+      "avg_excitement": 66.67
+    },
+    {
+      "matchup": "Jubilo Iwata vs Cerezo Osaka",
+      "games_played": 3,
+      "avg_margin": 1,
+      "avg_excitement": 66.67
+    },
+    {
+      "matchup": "Kawasaki Frontale vs Shimizu S-Pulse",
+      "games_played": 2,
+      "avg_margin": 0.5,
+      "avg_excitement": 95.0
+    },
+    {
+      "matchup": "Shimizu S-Pulse vs Kawasaki Frontale",
+      "games_played": 2,
+      "avg_margin": 0.5,
+      "avg_excitement": 95.0
+    },
+    {
+      "matchup": "Oita Trinita vs Sanfrecce Hiroshima",
+      "games_played": 3,
+      "avg_margin": 1.67,
+      "avg_excitement": 36.67
+    },
+    {
+      "matchup": "Sanfrecce Hiroshima vs Oita Trinita",
+      "games_played": 3,
+      "avg_margin": 1.67,
+      "avg_excitement": 36.67
+    },
+    {
+      "matchup": "Shonan Bellmare vs Vegalta Sendai",
+      "games_played": 1,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "Vegalta Sendai vs Shonan Bellmare",
+      "games_played": 1,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "FC Tokyo vs Nagoya Grampus",
+      "games_played": 4,
+      "avg_margin": 1.25,
+      "avg_excitement": 70.0
+    },
+    {
+      "matchup": "Nagoya Grampus vs FC Tokyo",
+      "games_played": 4,
+      "avg_margin": 1.25,
+      "avg_excitement": 70.0
+    },
+    {
+      "matchup": "Jubilo Iwata vs Sanfrecce Hiroshima",
+      "games_played": 2,
+      "avg_margin": 1.5,
+      "avg_excitement": 50.0
+    },
+    {
+      "matchup": "Sanfrecce Hiroshima vs Jubilo Iwata",
+      "games_played": 2,
+      "avg_margin": 1.5,
+      "avg_excitement": 50.0
+    },
+    {
+      "matchup": "Matsumoto Yamaga FC vs Oita Trinita",
+      "games_played": 1,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "Oita Trinita vs Matsumoto Yamaga FC",
+      "games_played": 1,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "Consadole Sapporo vs Vissel Kobe",
+      "games_played": 4,
+      "avg_margin": 2,
+      "avg_excitement": 45.0
+    },
+    {
+      "matchup": "Vissel Kobe vs Consadole Sapporo",
+      "games_played": 4,
+      "avg_margin": 2,
+      "avg_excitement": 45.0
+    },
+    {
+      "matchup": "Gamba Osaka vs Yokohama F. Marinos",
+      "games_played": 5,
+      "avg_margin": 1.2,
+      "avg_excitement": 60.0
+    },
+    {
+      "matchup": "Yokohama F. Marinos vs Gamba Osaka",
+      "games_played": 5,
+      "avg_margin": 1.2,
+      "avg_excitement": 60.0
+    },
+    {
+      "matchup": "Sagan Tosu vs Vegalta Sendai",
+      "games_played": 2,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Vegalta Sendai vs Sagan Tosu",
+      "games_played": 2,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Cerezo Osaka vs Kawasaki Frontale",
+      "games_played": 3,
+      "avg_margin": 2,
+      "avg_excitement": 33.33
+    },
+    {
+      "matchup": "Kawasaki Frontale vs Cerezo Osaka",
+      "games_played": 3,
+      "avg_margin": 2,
+      "avg_excitement": 33.33
+    },
+    {
+      "matchup": "Kashima Antlers vs Shimizu S-Pulse",
+      "games_played": 4,
+      "avg_margin": 2.5,
+      "avg_excitement": 40.0
+    },
+    {
+      "matchup": "Shimizu S-Pulse vs Kashima Antlers",
+      "games_played": 4,
+      "avg_margin": 2.5,
+      "avg_excitement": 40.0
+    },
+    {
+      "matchup": "Shonan Bellmare vs Urawa Red Diamonds",
+      "games_played": 4,
+      "avg_margin": 0.25,
+      "avg_excitement": 97.5
+    },
+    {
+      "matchup": "Urawa Red Diamonds vs Shonan Bellmare",
+      "games_played": 4,
+      "avg_margin": 0.25,
+      "avg_excitement": 97.5
+    },
+    {
+      "matchup": "Nagoya Grampus vs Shimizu S-Pulse",
+      "games_played": 3,
+      "avg_margin": 1,
+      "avg_excitement": 66.67
+    },
+    {
+      "matchup": "Shimizu S-Pulse vs Nagoya Grampus",
+      "games_played": 3,
+      "avg_margin": 1,
+      "avg_excitement": 66.67
+    },
+    {
+      "matchup": "Cerezo Osaka vs Urawa Red Diamonds",
+      "games_played": 5,
+      "avg_margin": 1.6,
+      "avg_excitement": 56.0
+    },
+    {
+      "matchup": "Urawa Red Diamonds vs Cerezo Osaka",
+      "games_played": 5,
+      "avg_margin": 1.6,
+      "avg_excitement": 56.0
+    },
+    {
+      "matchup": "Consadole Sapporo vs Vegalta Sendai",
+      "games_played": 2,
+      "avg_margin": 1,
+      "avg_excitement": 55.0
+    },
+    {
+      "matchup": "Vegalta Sendai vs Consadole Sapporo",
+      "games_played": 2,
+      "avg_margin": 1,
+      "avg_excitement": 55.0
+    },
+    {
+      "matchup": "Oita Trinita vs Shonan Bellmare",
+      "games_played": 3,
+      "avg_margin": 1,
+      "avg_excitement": 66.67
+    },
+    {
+      "matchup": "Shonan Bellmare vs Oita Trinita",
+      "games_played": 3,
+      "avg_margin": 1,
+      "avg_excitement": 66.67
+    },
+    {
+      "matchup": "Gamba Osaka vs Sagan Tosu",
+      "games_played": 4,
+      "avg_margin": 1.25,
+      "avg_excitement": 70.0
+    },
+    {
+      "matchup": "Sagan Tosu vs Gamba Osaka",
+      "games_played": 4,
+      "avg_margin": 1.25,
+      "avg_excitement": 70.0
+    },
+    {
+      "matchup": "FC Tokyo vs Kashima Antlers",
+      "games_played": 2,
+      "avg_margin": 1.5,
+      "avg_excitement": 50.0
+    },
+    {
+      "matchup": "Kashima Antlers vs FC Tokyo",
+      "games_played": 2,
+      "avg_margin": 1.5,
+      "avg_excitement": 50.0
+    },
+    {
+      "matchup": "Jubilo Iwata vs Kawasaki Frontale",
+      "games_played": 1,
+      "avg_margin": 2,
+      "avg_excitement": 10.0
+    },
+    {
+      "matchup": "Kawasaki Frontale vs Jubilo Iwata",
+      "games_played": 1,
+      "avg_margin": 2,
+      "avg_excitement": 10.0
+    },
+    {
+      "matchup": "Matsumoto Yamaga FC vs Vissel Kobe",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Vissel Kobe vs Matsumoto Yamaga FC",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Sanfrecce Hiroshima vs Yokohama F. Marinos",
+      "games_played": 3,
+      "avg_margin": 3,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Yokohama F. Marinos vs Sanfrecce Hiroshima",
+      "games_played": 3,
+      "avg_margin": 3,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Cerezo Osaka vs Gamba Osaka",
+      "games_played": 4,
+      "avg_margin": 1.25,
+      "avg_excitement": 70.0
+    },
+    {
+      "matchup": "Gamba Osaka vs Cerezo Osaka",
+      "games_played": 4,
+      "avg_margin": 1.25,
+      "avg_excitement": 70.0
+    },
+    {
+      "matchup": "Sagan Tosu vs Urawa Red Diamonds",
+      "games_played": 6,
+      "avg_margin": 0.5,
+      "avg_excitement": 95.0
+    },
+    {
+      "matchup": "Urawa Red Diamonds vs Sagan Tosu",
+      "games_played": 6,
+      "avg_margin": 0.5,
+      "avg_excitement": 95.0
+    },
+    {
+      "matchup": "Consadole Sapporo vs Kashima Antlers",
+      "games_played": 3,
+      "avg_margin": 1.33,
+      "avg_excitement": 63.33
+    },
+    {
+      "matchup": "Kashima Antlers vs Consadole Sapporo",
+      "games_played": 3,
+      "avg_margin": 1.33,
+      "avg_excitement": 63.33
+    },
+    {
+      "matchup": "Kawasaki Frontale vs Vissel Kobe",
+      "games_played": 6,
+      "avg_margin": 1.5,
+      "avg_excitement": 61.67
+    },
+    {
+      "matchup": "Vissel Kobe vs Kawasaki Frontale",
+      "games_played": 6,
+      "avg_margin": 1.5,
+      "avg_excitement": 61.67
+    },
+    {
+      "matchup": "Jubilo Iwata vs Oita Trinita",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Oita Trinita vs Jubilo Iwata",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Nagoya Grampus vs Sanfrecce Hiroshima",
+      "games_played": 5,
+      "avg_margin": 0.8,
+      "avg_excitement": 78.0
+    },
+    {
+      "matchup": "Sanfrecce Hiroshima vs Nagoya Grampus",
+      "games_played": 5,
+      "avg_margin": 0.8,
+      "avg_excitement": 78.0
+    },
+    {
+      "matchup": "Vegalta Sendai vs Yokohama F. Marinos",
+      "games_played": 3,
+      "avg_margin": 2.33,
+      "avg_excitement": 30.0
+    },
+    {
+      "matchup": "Yokohama F. Marinos vs Vegalta Sendai",
+      "games_played": 3,
+      "avg_margin": 2.33,
+      "avg_excitement": 30.0
+    },
+    {
+      "matchup": "FC Tokyo vs Matsumoto Yamaga FC",
+      "games_played": 1,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "Matsumoto Yamaga FC vs FC Tokyo",
+      "games_played": 1,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "Shimizu S-Pulse vs Shonan Bellmare",
+      "games_played": 4,
+      "avg_margin": 2.25,
+      "avg_excitement": 42.5
+    },
+    {
+      "matchup": "Shonan Bellmare vs Shimizu S-Pulse",
+      "games_played": 4,
+      "avg_margin": 2.25,
+      "avg_excitement": 42.5
+    },
+    {
+      "matchup": "Consadole Sapporo vs Gamba Osaka",
+      "games_played": 5,
+      "avg_margin": 3,
+      "avg_excitement": 28.0
+    },
+    {
+      "matchup": "Gamba Osaka vs Consadole Sapporo",
+      "games_played": 5,
+      "avg_margin": 3,
+      "avg_excitement": 28.0
+    },
+    {
+      "matchup": "Jubilo Iwata vs Yokohama F. Marinos",
+      "games_played": 2,
+      "avg_margin": 1.5,
+      "avg_excitement": 50.0
+    },
+    {
+      "matchup": "Yokohama F. Marinos vs Jubilo Iwata",
+      "games_played": 2,
+      "avg_margin": 1.5,
+      "avg_excitement": 50.0
+    },
+    {
+      "matchup": "Nagoya Grampus vs Oita Trinita",
+      "games_played": 2,
+      "avg_margin": 0.5,
+      "avg_excitement": 95.0
+    },
+    {
+      "matchup": "Oita Trinita vs Nagoya Grampus",
+      "games_played": 2,
+      "avg_margin": 0.5,
+      "avg_excitement": 95.0
+    },
+    {
+      "matchup": "FC Tokyo vs Sagan Tosu",
+      "games_played": 5,
+      "avg_margin": 1.2,
+      "avg_excitement": 74.0
+    },
+    {
+      "matchup": "Sagan Tosu vs FC Tokyo",
+      "games_played": 5,
+      "avg_margin": 1.2,
+      "avg_excitement": 74.0
+    },
+    {
+      "matchup": "Matsumoto Yamaga FC vs Vegalta Sendai",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Vegalta Sendai vs Matsumoto Yamaga FC",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Sanfrecce Hiroshima vs Vissel Kobe",
+      "games_played": 5,
+      "avg_margin": 2.2,
+      "avg_excitement": 36.0
+    },
+    {
+      "matchup": "Vissel Kobe vs Sanfrecce Hiroshima",
+      "games_played": 5,
+      "avg_margin": 2.2,
+      "avg_excitement": 36.0
+    },
+    {
+      "matchup": "Cerezo Osaka vs Kashima Antlers",
+      "games_played": 4,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Kashima Antlers vs Cerezo Osaka",
+      "games_played": 4,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Shimizu S-Pulse vs Urawa Red Diamonds",
+      "games_played": 2,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Urawa Red Diamonds vs Shimizu S-Pulse",
+      "games_played": 2,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Kawasaki Frontale vs Shonan Bellmare",
+      "games_played": 5,
+      "avg_margin": 2,
+      "avg_excitement": 52.0
+    },
+    {
+      "matchup": "Shonan Bellmare vs Kawasaki Frontale",
+      "games_played": 5,
+      "avg_margin": 2,
+      "avg_excitement": 52.0
+    },
+    {
+      "matchup": "Cerezo Osaka vs Consadole Sapporo",
+      "games_played": 5,
+      "avg_margin": 1.8,
+      "avg_excitement": 40.0
+    },
+    {
+      "matchup": "Consadole Sapporo vs Cerezo Osaka",
+      "games_played": 5,
+      "avg_margin": 1.8,
+      "avg_excitement": 40.0
+    },
+    {
+      "matchup": "Kashima Antlers vs Matsumoto Yamaga FC",
+      "games_played": 1,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "Matsumoto Yamaga FC vs Kashima Antlers",
+      "games_played": 1,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "Oita Trinita vs Urawa Red Diamonds",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Urawa Red Diamonds vs Oita Trinita",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "FC Tokyo vs Vissel Kobe",
+      "games_played": 6,
+      "avg_margin": 1,
+      "avg_excitement": 66.67
+    },
+    {
+      "matchup": "Vissel Kobe vs FC Tokyo",
+      "games_played": 6,
+      "avg_margin": 1,
+      "avg_excitement": 66.67
+    },
+    {
+      "matchup": "Gamba Osaka vs Kawasaki Frontale",
+      "games_played": 3,
+      "avg_margin": 0.33,
+      "avg_excitement": 96.67
+    },
+    {
+      "matchup": "Kawasaki Frontale vs Gamba Osaka",
+      "games_played": 3,
+      "avg_margin": 0.33,
+      "avg_excitement": 96.67
+    },
+    {
+      "matchup": "Nagoya Grampus vs Vegalta Sendai",
+      "games_played": 1,
+      "avg_margin": 2,
+      "avg_excitement": 10.0
+    },
+    {
+      "matchup": "Vegalta Sendai vs Nagoya Grampus",
+      "games_played": 1,
+      "avg_margin": 2,
+      "avg_excitement": 10.0
+    },
+    {
+      "matchup": "Sanfrecce Hiroshima vs Shimizu S-Pulse",
+      "games_played": 4,
+      "avg_margin": 1.75,
+      "avg_excitement": 47.5
+    },
+    {
+      "matchup": "Shimizu S-Pulse vs Sanfrecce Hiroshima",
+      "games_played": 4,
+      "avg_margin": 1.75,
+      "avg_excitement": 47.5
+    },
+    {
+      "matchup": "Shonan Bellmare vs Yokohama F. Marinos",
+      "games_played": 3,
+      "avg_margin": 2,
+      "avg_excitement": 33.33
+    },
+    {
+      "matchup": "Yokohama F. Marinos vs Shonan Bellmare",
+      "games_played": 3,
+      "avg_margin": 2,
+      "avg_excitement": 33.33
+    },
+    {
+      "matchup": "Jubilo Iwata vs Sagan Tosu",
+      "games_played": 2,
+      "avg_margin": 1,
+      "avg_excitement": 55.0
+    },
+    {
+      "matchup": "Sagan Tosu vs Jubilo Iwata",
+      "games_played": 2,
+      "avg_margin": 1,
+      "avg_excitement": 55.0
+    },
+    {
+      "matchup": "Sanfrecce Hiroshima vs Urawa Red Diamonds",
+      "games_played": 4,
+      "avg_margin": 1.25,
+      "avg_excitement": 70.0
+    },
+    {
+      "matchup": "Urawa Red Diamonds vs Sanfrecce Hiroshima",
+      "games_played": 4,
+      "avg_margin": 1.25,
+      "avg_excitement": 70.0
+    },
+    {
+      "matchup": "Kashima Antlers vs Urawa Red Diamonds",
+      "games_played": 4,
+      "avg_margin": 0.25,
+      "avg_excitement": 97.5
+    },
+    {
+      "matchup": "Urawa Red Diamonds vs Kashima Antlers",
+      "games_played": 4,
+      "avg_margin": 0.25,
+      "avg_excitement": 97.5
+    },
+    {
+      "matchup": "Vegalta Sendai vs Vissel Kobe",
+      "games_played": 1,
+      "avg_margin": 2,
+      "avg_excitement": 10.0
+    },
+    {
+      "matchup": "Vissel Kobe vs Vegalta Sendai",
+      "games_played": 1,
+      "avg_margin": 2,
+      "avg_excitement": 10.0
+    },
+    {
+      "matchup": "Consadole Sapporo vs Nagoya Grampus",
+      "games_played": 5,
+      "avg_margin": 2,
+      "avg_excitement": 24.0
+    },
+    {
+      "matchup": "Nagoya Grampus vs Consadole Sapporo",
+      "games_played": 5,
+      "avg_margin": 2,
+      "avg_excitement": 24.0
+    },
+    {
+      "matchup": "Sagan Tosu vs Yokohama F. Marinos",
+      "games_played": 5,
+      "avg_margin": 1.4,
+      "avg_excitement": 58.0
+    },
+    {
+      "matchup": "Yokohama F. Marinos vs Sagan Tosu",
+      "games_played": 5,
+      "avg_margin": 1.4,
+      "avg_excitement": 58.0
+    },
+    {
+      "matchup": "Jubilo Iwata vs Shimizu S-Pulse",
+      "games_played": 2,
+      "avg_margin": 0.5,
+      "avg_excitement": 95.0
+    },
+    {
+      "matchup": "Shimizu S-Pulse vs Jubilo Iwata",
+      "games_played": 2,
+      "avg_margin": 0.5,
+      "avg_excitement": 95.0
+    },
+    {
+      "matchup": "Cerezo Osaka vs Matsumoto Yamaga FC",
+      "games_played": 1,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "Matsumoto Yamaga FC vs Cerezo Osaka",
+      "games_played": 1,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "Kawasaki Frontale vs Sanfrecce Hiroshima",
+      "games_played": 6,
+      "avg_margin": 2,
+      "avg_excitement": 45.0
+    },
+    {
+      "matchup": "Sanfrecce Hiroshima vs Kawasaki Frontale",
+      "games_played": 6,
+      "avg_margin": 2,
+      "avg_excitement": 45.0
+    },
+    {
+      "matchup": "FC Tokyo vs Oita Trinita",
+      "games_played": 3,
+      "avg_margin": 1.33,
+      "avg_excitement": 63.33
+    },
+    {
+      "matchup": "Oita Trinita vs FC Tokyo",
+      "games_played": 3,
+      "avg_margin": 1.33,
+      "avg_excitement": 63.33
+    },
+    {
+      "matchup": "Gamba Osaka vs Shonan Bellmare",
+      "games_played": 3,
+      "avg_margin": 1.67,
+      "avg_excitement": 60.0
+    },
+    {
+      "matchup": "Shonan Bellmare vs Gamba Osaka",
+      "games_played": 3,
+      "avg_margin": 1.67,
+      "avg_excitement": 60.0
+    },
+    {
+      "matchup": "Kawasaki Frontale vs Urawa Red Diamonds",
+      "games_played": 2,
+      "avg_margin": 2.5,
+      "avg_excitement": 5.0
+    },
+    {
+      "matchup": "Urawa Red Diamonds vs Kawasaki Frontale",
+      "games_played": 2,
+      "avg_margin": 2.5,
+      "avg_excitement": 5.0
+    },
+    {
+      "matchup": "FC Tokyo vs Jubilo Iwata",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Jubilo Iwata vs FC Tokyo",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Kashima Antlers vs Kawasaki Frontale",
+      "games_played": 4,
+      "avg_margin": 1.75,
+      "avg_excitement": 47.5
+    },
+    {
+      "matchup": "Kawasaki Frontale vs Kashima Antlers",
+      "games_played": 4,
+      "avg_margin": 1.75,
+      "avg_excitement": 47.5
+    },
+    {
+      "matchup": "Nagoya Grampus vs Vissel Kobe",
+      "games_played": 4,
+      "avg_margin": 1.25,
+      "avg_excitement": 70.0
+    },
+    {
+      "matchup": "Vissel Kobe vs Nagoya Grampus",
+      "games_played": 4,
+      "avg_margin": 1.25,
+      "avg_excitement": 70.0
+    },
+    {
+      "matchup": "Consadole Sapporo vs Yokohama F. Marinos",
+      "games_played": 4,
+      "avg_margin": 1.5,
+      "avg_excitement": 50.0
+    },
+    {
+      "matchup": "Yokohama F. Marinos vs Consadole Sapporo",
+      "games_played": 4,
+      "avg_margin": 1.5,
+      "avg_excitement": 50.0
+    },
+    {
+      "matchup": "Cerezo Osaka vs Shonan Bellmare",
+      "games_played": 6,
+      "avg_margin": 1.5,
+      "avg_excitement": 61.67
+    },
+    {
+      "matchup": "Shonan Bellmare vs Cerezo Osaka",
+      "games_played": 6,
+      "avg_margin": 1.5,
+      "avg_excitement": 61.67
+    },
+    {
+      "matchup": "Shimizu S-Pulse vs Vegalta Sendai",
+      "games_played": 2,
+      "avg_margin": 1.5,
+      "avg_excitement": 50.0
+    },
+    {
+      "matchup": "Vegalta Sendai vs Shimizu S-Pulse",
+      "games_played": 2,
+      "avg_margin": 1.5,
+      "avg_excitement": 50.0
+    },
+    {
+      "matchup": "Gamba Osaka vs Oita Trinita",
+      "games_played": 2,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Oita Trinita vs Gamba Osaka",
+      "games_played": 2,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Matsumoto Yamaga FC vs Sagan Tosu",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Sagan Tosu vs Matsumoto Yamaga FC",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Kashima Antlers vs Nagoya Grampus",
+      "games_played": 2,
+      "avg_margin": 1.5,
+      "avg_excitement": 50.0
+    },
+    {
+      "matchup": "Nagoya Grampus vs Kashima Antlers",
+      "games_played": 2,
+      "avg_margin": 1.5,
+      "avg_excitement": 50.0
+    },
+    {
+      "matchup": "Kashiwa Reysol vs Shimizu S-Pulse",
+      "games_played": 3,
+      "avg_margin": 0.67,
+      "avg_excitement": 93.33
+    },
+    {
+      "matchup": "Shimizu S-Pulse vs Kashiwa Reysol",
+      "games_played": 3,
+      "avg_margin": 0.67,
+      "avg_excitement": 93.33
+    },
+    {
+      "matchup": "Kawasaki Frontale vs Yokohama F. Marinos",
+      "games_played": 3,
+      "avg_margin": 1.67,
+      "avg_excitement": 36.67
+    },
+    {
+      "matchup": "Yokohama F. Marinos vs Kawasaki Frontale",
+      "games_played": 3,
+      "avg_margin": 1.67,
+      "avg_excitement": 36.67
+    },
+    {
+      "matchup": "Shonan Bellmare vs Vissel Kobe",
+      "games_played": 3,
+      "avg_margin": 0.33,
+      "avg_excitement": 96.67
+    },
+    {
+      "matchup": "Vissel Kobe vs Shonan Bellmare",
+      "games_played": 3,
+      "avg_margin": 0.33,
+      "avg_excitement": 96.67
+    },
+    {
+      "matchup": "Gamba Osaka vs Vegalta Sendai",
+      "games_played": 3,
+      "avg_margin": 1.67,
+      "avg_excitement": 60.0
+    },
+    {
+      "matchup": "Vegalta Sendai vs Gamba Osaka",
+      "games_played": 3,
+      "avg_margin": 1.67,
+      "avg_excitement": 60.0
+    },
+    {
+      "matchup": "Sagan Tosu vs Yokohama FC",
+      "games_played": 2,
+      "avg_margin": 2.5,
+      "avg_excitement": 5.0
+    },
+    {
+      "matchup": "Yokohama FC vs Sagan Tosu",
+      "games_played": 2,
+      "avg_margin": 2.5,
+      "avg_excitement": 5.0
+    },
+    {
+      "matchup": "FC Tokyo vs Yokohama FC",
+      "games_played": 4,
+      "avg_margin": 1.75,
+      "avg_excitement": 65.0
+    },
+    {
+      "matchup": "Yokohama FC vs FC Tokyo",
+      "games_played": 4,
+      "avg_margin": 1.75,
+      "avg_excitement": 65.0
+    },
+    {
+      "matchup": "Kashima Antlers vs Vegalta Sendai",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Vegalta Sendai vs Kashima Antlers",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Gamba Osaka vs Kashiwa Reysol",
+      "games_played": 3,
+      "avg_margin": 1.33,
+      "avg_excitement": 63.33
+    },
+    {
+      "matchup": "Kashiwa Reysol vs Gamba Osaka",
+      "games_played": 3,
+      "avg_margin": 1.33,
+      "avg_excitement": 63.33
+    },
+    {
+      "matchup": "Oita Trinita vs Vegalta Sendai",
+      "games_played": 1,
+      "avg_margin": 3,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Vegalta Sendai vs Oita Trinita",
+      "games_played": 1,
+      "avg_margin": 3,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Nagoya Grampus vs Yokohama FC",
+      "games_played": 3,
+      "avg_margin": 1,
+      "avg_excitement": 66.67
+    },
+    {
+      "matchup": "Yokohama FC vs Nagoya Grampus",
+      "games_played": 3,
+      "avg_margin": 1,
+      "avg_excitement": 66.67
+    },
+    {
+      "matchup": "Kashiwa Reysol vs Sagan Tosu",
+      "games_played": 2,
+      "avg_margin": 1.5,
+      "avg_excitement": 50.0
+    },
+    {
+      "matchup": "Sagan Tosu vs Kashiwa Reysol",
+      "games_played": 2,
+      "avg_margin": 1.5,
+      "avg_excitement": 50.0
+    },
+    {
+      "matchup": "Cerezo Osaka vs Vissel Kobe",
+      "games_played": 4,
+      "avg_margin": 1.5,
+      "avg_excitement": 67.5
+    },
+    {
+      "matchup": "Vissel Kobe vs Cerezo Osaka",
+      "games_played": 4,
+      "avg_margin": 1.5,
+      "avg_excitement": 67.5
+    },
+    {
+      "matchup": "Consadole Sapporo vs Sagan Tosu",
+      "games_played": 4,
+      "avg_margin": 1.25,
+      "avg_excitement": 52.5
+    },
+    {
+      "matchup": "Sagan Tosu vs Consadole Sapporo",
+      "games_played": 4,
+      "avg_margin": 1.25,
+      "avg_excitement": 52.5
+    },
+    {
+      "matchup": "Kashiwa Reysol vs Sanfrecce Hiroshima",
+      "games_played": 5,
+      "avg_margin": 1.2,
+      "avg_excitement": 60.0
+    },
+    {
+      "matchup": "Sanfrecce Hiroshima vs Kashiwa Reysol",
+      "games_played": 5,
+      "avg_margin": 1.2,
+      "avg_excitement": 60.0
+    },
+    {
+      "matchup": "Oita Trinita vs Yokohama FC",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Yokohama FC vs Oita Trinita",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Consadole Sapporo vs Kashiwa Reysol",
+      "games_played": 2,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Kashiwa Reysol vs Consadole Sapporo",
+      "games_played": 2,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Gamba Osaka vs Nagoya Grampus",
+      "games_played": 4,
+      "avg_margin": 1.25,
+      "avg_excitement": 70.0
+    },
+    {
+      "matchup": "Nagoya Grampus vs Gamba Osaka",
+      "games_played": 4,
+      "avg_margin": 1.25,
+      "avg_excitement": 70.0
+    },
+    {
+      "matchup": "Kawasaki Frontale vs Yokohama FC",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Yokohama FC vs Kawasaki Frontale",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Urawa Red Diamonds vs Yokohama FC",
+      "games_played": 3,
+      "avg_margin": 1.33,
+      "avg_excitement": 40.0
+    },
+    {
+      "matchup": "Yokohama FC vs Urawa Red Diamonds",
+      "games_played": 3,
+      "avg_margin": 1.33,
+      "avg_excitement": 40.0
+    },
+    {
+      "matchup": "Cerezo Osaka vs Vegalta Sendai",
+      "games_played": 2,
+      "avg_margin": 0.5,
+      "avg_excitement": 95.0
+    },
+    {
+      "matchup": "Vegalta Sendai vs Cerezo Osaka",
+      "games_played": 2,
+      "avg_margin": 0.5,
+      "avg_excitement": 95.0
+    },
+    {
+      "matchup": "Kashiwa Reysol vs Yokohama F. Marinos",
+      "games_played": 3,
+      "avg_margin": 1.67,
+      "avg_excitement": 36.67
+    },
+    {
+      "matchup": "Yokohama F. Marinos vs Kashiwa Reysol",
+      "games_played": 3,
+      "avg_margin": 1.67,
+      "avg_excitement": 36.67
+    },
+    {
+      "matchup": "FC Tokyo vs Urawa Red Diamonds",
+      "games_played": 3,
+      "avg_margin": 1.33,
+      "avg_excitement": 63.33
+    },
+    {
+      "matchup": "Urawa Red Diamonds vs FC Tokyo",
+      "games_played": 3,
+      "avg_margin": 1.33,
+      "avg_excitement": 63.33
+    },
+    {
+      "matchup": "Kashiwa Reysol vs Yokohama FC",
+      "games_played": 3,
+      "avg_margin": 1.67,
+      "avg_excitement": 60.0
+    },
+    {
+      "matchup": "Yokohama FC vs Kashiwa Reysol",
+      "games_played": 3,
+      "avg_margin": 1.67,
+      "avg_excitement": 60.0
+    },
+    {
+      "matchup": "Sagan Tosu vs Sanfrecce Hiroshima",
+      "games_played": 3,
+      "avg_margin": 1.67,
+      "avg_excitement": 36.67
+    },
+    {
+      "matchup": "Sanfrecce Hiroshima vs Sagan Tosu",
+      "games_played": 3,
+      "avg_margin": 1.67,
+      "avg_excitement": 36.67
+    },
+    {
+      "matchup": "Oita Trinita vs Shimizu S-Pulse",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Shimizu S-Pulse vs Oita Trinita",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "FC Tokyo vs Shonan Bellmare",
+      "games_played": 2,
+      "avg_margin": 1.5,
+      "avg_excitement": 50.0
+    },
+    {
+      "matchup": "Shonan Bellmare vs FC Tokyo",
+      "games_played": 2,
+      "avg_margin": 1.5,
+      "avg_excitement": 50.0
+    },
+    {
+      "matchup": "Vissel Kobe vs Yokohama F. Marinos",
+      "games_played": 3,
+      "avg_margin": 1.33,
+      "avg_excitement": 63.33
+    },
+    {
+      "matchup": "Yokohama F. Marinos vs Vissel Kobe",
+      "games_played": 3,
+      "avg_margin": 1.33,
+      "avg_excitement": 63.33
+    },
+    {
+      "matchup": "Consadole Sapporo vs Shonan Bellmare",
+      "games_played": 3,
+      "avg_margin": 2,
+      "avg_excitement": 56.67
+    },
+    {
+      "matchup": "Shonan Bellmare vs Consadole Sapporo",
+      "games_played": 3,
+      "avg_margin": 2,
+      "avg_excitement": 56.67
+    },
+    {
+      "matchup": "FC Tokyo vs Gamba Osaka",
+      "games_played": 5,
+      "avg_margin": 0.8,
+      "avg_excitement": 78.0
+    },
+    {
+      "matchup": "Gamba Osaka vs FC Tokyo",
+      "games_played": 5,
+      "avg_margin": 0.8,
+      "avg_excitement": 78.0
+    },
+    {
+      "matchup": "Cerezo Osaka vs Nagoya Grampus",
+      "games_played": 3,
+      "avg_margin": 1.33,
+      "avg_excitement": 63.33
+    },
+    {
+      "matchup": "Nagoya Grampus vs Cerezo Osaka",
+      "games_played": 3,
+      "avg_margin": 1.33,
+      "avg_excitement": 63.33
+    },
+    {
+      "matchup": "Kashiwa Reysol vs Vissel Kobe",
+      "games_played": 3,
+      "avg_margin": 0.67,
+      "avg_excitement": 93.33
+    },
+    {
+      "matchup": "Vissel Kobe vs Kashiwa Reysol",
+      "games_played": 3,
+      "avg_margin": 0.67,
+      "avg_excitement": 93.33
+    },
+    {
+      "matchup": "Kashima Antlers vs Yokohama FC",
+      "games_played": 2,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Yokohama FC vs Kashima Antlers",
+      "games_played": 2,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Oita Trinita vs Yokohama F. Marinos",
+      "games_played": 2,
+      "avg_margin": 4,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Yokohama F. Marinos vs Oita Trinita",
+      "games_played": 2,
+      "avg_margin": 4,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Kashima Antlers vs Sagan Tosu",
+      "games_played": 4,
+      "avg_margin": 1.5,
+      "avg_excitement": 50.0
+    },
+    {
+      "matchup": "Sagan Tosu vs Kashima Antlers",
+      "games_played": 4,
+      "avg_margin": 1.5,
+      "avg_excitement": 50.0
+    },
+    {
+      "matchup": "FC Tokyo vs Shimizu S-Pulse",
+      "games_played": 2,
+      "avg_margin": 2,
+      "avg_excitement": 10.0
+    },
+    {
+      "matchup": "Shimizu S-Pulse vs FC Tokyo",
+      "games_played": 2,
+      "avg_margin": 2,
+      "avg_excitement": 10.0
+    },
+    {
+      "matchup": "Kashiwa Reysol vs Urawa Red Diamonds",
+      "games_played": 4,
+      "avg_margin": 1.5,
+      "avg_excitement": 50.0
+    },
+    {
+      "matchup": "Urawa Red Diamonds vs Kashiwa Reysol",
+      "games_played": 4,
+      "avg_margin": 1.5,
+      "avg_excitement": 50.0
+    },
+    {
+      "matchup": "Vegalta Sendai vs Yokohama FC",
+      "games_played": 2,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "Yokohama FC vs Vegalta Sendai",
+      "games_played": 2,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "Sagan Tosu vs Shimizu S-Pulse",
+      "games_played": 2,
+      "avg_margin": 0.5,
+      "avg_excitement": 95.0
+    },
+    {
+      "matchup": "Shimizu S-Pulse vs Sagan Tosu",
+      "games_played": 2,
+      "avg_margin": 0.5,
+      "avg_excitement": 95.0
+    },
+    {
+      "matchup": "Kashiwa Reysol vs Shonan Bellmare",
+      "games_played": 3,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Shonan Bellmare vs Kashiwa Reysol",
+      "games_played": 3,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Urawa Red Diamonds vs Vegalta Sendai",
+      "games_played": 1,
+      "avg_margin": 6,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Vegalta Sendai vs Urawa Red Diamonds",
+      "games_played": 1,
+      "avg_margin": 6,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Kashima Antlers vs Vissel Kobe",
+      "games_played": 3,
+      "avg_margin": 1.67,
+      "avg_excitement": 36.67
+    },
+    {
+      "matchup": "Vissel Kobe vs Kashima Antlers",
+      "games_played": 3,
+      "avg_margin": 1.67,
+      "avg_excitement": 36.67
+    },
+    {
+      "matchup": "Avispa Fukuoka vs Sanfrecce Hiroshima",
+      "games_played": 1,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "Sanfrecce Hiroshima vs Avispa Fukuoka",
+      "games_played": 1,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "Kawasaki Frontale vs Oita Trinita",
+      "games_played": 1,
+      "avg_margin": 2,
+      "avg_excitement": 10.0
+    },
+    {
+      "matchup": "Oita Trinita vs Kawasaki Frontale",
+      "games_played": 1,
+      "avg_margin": 2,
+      "avg_excitement": 10.0
+    },
+    {
+      "matchup": "Gamba Osaka vs Tokushima Vortis",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Tokushima Vortis vs Gamba Osaka",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Gamba Osaka vs Shimizu S-Pulse",
+      "games_played": 2,
+      "avg_margin": 1.5,
+      "avg_excitement": 50.0
+    },
+    {
+      "matchup": "Shimizu S-Pulse vs Gamba Osaka",
+      "games_played": 2,
+      "avg_margin": 1.5,
+      "avg_excitement": 50.0
+    },
+    {
+      "matchup": "Kashiwa Reysol vs Kawasaki Frontale",
+      "games_played": 3,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "Kawasaki Frontale vs Kashiwa Reysol",
+      "games_played": 3,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "Nagoya Grampus vs Shonan Bellmare",
+      "games_played": 3,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Shonan Bellmare vs Nagoya Grampus",
+      "games_played": 3,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Kashima Antlers vs Tokushima Vortis",
+      "games_played": 1,
+      "avg_margin": 3,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Tokushima Vortis vs Kashima Antlers",
+      "games_played": 1,
+      "avg_margin": 3,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Avispa Fukuoka vs Cerezo Osaka",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Cerezo Osaka vs Avispa Fukuoka",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Cerezo Osaka vs Yokohama FC",
+      "games_played": 2,
+      "avg_margin": 1.5,
+      "avg_excitement": 50.0
+    },
+    {
+      "matchup": "Yokohama FC vs Cerezo Osaka",
+      "games_played": 2,
+      "avg_margin": 1.5,
+      "avg_excitement": 50.0
+    },
+    {
+      "matchup": "Consadole Sapporo vs Oita Trinita",
+      "games_played": 1,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "Oita Trinita vs Consadole Sapporo",
+      "games_played": 1,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "Tokushima Vortis vs Urawa Red Diamonds",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Urawa Red Diamonds vs Tokushima Vortis",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Avispa Fukuoka vs Nagoya Grampus",
+      "games_played": 4,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Nagoya Grampus vs Avispa Fukuoka",
+      "games_played": 4,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Avispa Fukuoka vs Kawasaki Frontale",
+      "games_played": 3,
+      "avg_margin": 2,
+      "avg_excitement": 33.33
+    },
+    {
+      "matchup": "Kawasaki Frontale vs Avispa Fukuoka",
+      "games_played": 3,
+      "avg_margin": 2,
+      "avg_excitement": 33.33
+    },
+    {
+      "matchup": "Kashiwa Reysol vs Tokushima Vortis",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Tokushima Vortis vs Kashiwa Reysol",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Gamba Osaka vs Yokohama FC",
+      "games_played": 1,
+      "avg_margin": 2,
+      "avg_excitement": 10.0
+    },
+    {
+      "matchup": "Yokohama FC vs Gamba Osaka",
+      "games_played": 1,
+      "avg_margin": 2,
+      "avg_excitement": 10.0
+    },
+    {
+      "matchup": "Consadole Sapporo vs Kawasaki Frontale",
+      "games_played": 4,
+      "avg_margin": 1.25,
+      "avg_excitement": 52.5
+    },
+    {
+      "matchup": "Kawasaki Frontale vs Consadole Sapporo",
+      "games_played": 4,
+      "avg_margin": 1.25,
+      "avg_excitement": 52.5
+    },
+    {
+      "matchup": "Avispa Fukuoka vs Tokushima Vortis",
+      "games_played": 1,
+      "avg_margin": 3,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Tokushima Vortis vs Avispa Fukuoka",
+      "games_played": 1,
+      "avg_margin": 3,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Nagoya Grampus vs Tokushima Vortis",
+      "games_played": 1,
+      "avg_margin": 3,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Tokushima Vortis vs Nagoya Grampus",
+      "games_played": 1,
+      "avg_margin": 3,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Avispa Fukuoka vs Kashima Antlers",
+      "games_played": 4,
+      "avg_margin": 1.25,
+      "avg_excitement": 52.5
+    },
+    {
+      "matchup": "Kashima Antlers vs Avispa Fukuoka",
+      "games_played": 4,
+      "avg_margin": 1.25,
+      "avg_excitement": 52.5
+    },
+    {
+      "matchup": "FC Tokyo vs Kashiwa Reysol",
+      "games_played": 2,
+      "avg_margin": 2,
+      "avg_excitement": 45.0
+    },
+    {
+      "matchup": "Kashiwa Reysol vs FC Tokyo",
+      "games_played": 2,
+      "avg_margin": 2,
+      "avg_excitement": 45.0
+    },
+    {
+      "matchup": "Avispa Fukuoka vs Shonan Bellmare",
+      "games_played": 2,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "Shonan Bellmare vs Avispa Fukuoka",
+      "games_played": 2,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "Kawasaki Frontale vs Tokushima Vortis",
+      "games_played": 1,
+      "avg_margin": 2,
+      "avg_excitement": 10.0
+    },
+    {
+      "matchup": "Tokushima Vortis vs Kawasaki Frontale",
+      "games_played": 1,
+      "avg_margin": 2,
+      "avg_excitement": 10.0
+    },
+    {
+      "matchup": "Cerezo Osaka vs Sanfrecce Hiroshima",
+      "games_played": 4,
+      "avg_margin": 1.5,
+      "avg_excitement": 50.0
+    },
+    {
+      "matchup": "Sanfrecce Hiroshima vs Cerezo Osaka",
+      "games_played": 4,
+      "avg_margin": 1.5,
+      "avg_excitement": 50.0
+    },
+    {
+      "matchup": "Shimizu S-Pulse vs Vissel Kobe",
+      "games_played": 1,
+      "avg_margin": 2,
+      "avg_excitement": 10.0
+    },
+    {
+      "matchup": "Vissel Kobe vs Shimizu S-Pulse",
+      "games_played": 1,
+      "avg_margin": 2,
+      "avg_excitement": 10.0
+    },
+    {
+      "matchup": "Tokushima Vortis vs Vegalta Sendai",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Vegalta Sendai vs Tokushima Vortis",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Yokohama F. Marinos vs Yokohama FC",
+      "games_played": 2,
+      "avg_margin": 1.5,
+      "avg_excitement": 50.0
+    },
+    {
+      "matchup": "Yokohama FC vs Yokohama F. Marinos",
+      "games_played": 2,
+      "avg_margin": 1.5,
+      "avg_excitement": 50.0
+    },
+    {
+      "matchup": "Avispa Fukuoka vs Sagan Tosu",
+      "games_played": 4,
+      "avg_margin": 1,
+      "avg_excitement": 72.5
+    },
+    {
+      "matchup": "Sagan Tosu vs Avispa Fukuoka",
+      "games_played": 4,
+      "avg_margin": 1,
+      "avg_excitement": 72.5
+    },
+    {
+      "matchup": "Avispa Fukuoka vs Shimizu S-Pulse",
+      "games_played": 2,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Shimizu S-Pulse vs Avispa Fukuoka",
+      "games_played": 2,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Kashiwa Reysol vs Vegalta Sendai",
+      "games_played": 1,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "Vegalta Sendai vs Kashiwa Reysol",
+      "games_played": 1,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "FC Tokyo vs Kawasaki Frontale",
+      "games_played": 4,
+      "avg_margin": 1.5,
+      "avg_excitement": 67.5
+    },
+    {
+      "matchup": "Kawasaki Frontale vs FC Tokyo",
+      "games_played": 4,
+      "avg_margin": 1.5,
+      "avg_excitement": 67.5
+    },
+    {
+      "matchup": "Sagan Tosu vs Tokushima Vortis",
+      "games_played": 1,
+      "avg_margin": 3,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Tokushima Vortis vs Sagan Tosu",
+      "games_played": 1,
+      "avg_margin": 3,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Cerezo Osaka vs Oita Trinita",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Oita Trinita vs Cerezo Osaka",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Gamba Osaka vs Urawa Red Diamonds",
+      "games_played": 3,
+      "avg_margin": 1,
+      "avg_excitement": 66.67
+    },
+    {
+      "matchup": "Urawa Red Diamonds vs Gamba Osaka",
+      "games_played": 3,
+      "avg_margin": 1,
+      "avg_excitement": 66.67
+    },
+    {
+      "matchup": "Kashima Antlers vs Sanfrecce Hiroshima",
+      "games_played": 2,
+      "avg_margin": 1,
+      "avg_excitement": 55.0
+    },
+    {
+      "matchup": "Sanfrecce Hiroshima vs Kashima Antlers",
+      "games_played": 2,
+      "avg_margin": 1,
+      "avg_excitement": 55.0
+    },
+    {
+      "matchup": "Kashiwa Reysol vs Kyoto Sanga",
+      "games_played": 2,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Kyoto Sanga vs Kashiwa Reysol",
+      "games_played": 2,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Jubilo Iwata vs Urawa Red Diamonds",
+      "games_played": 1,
+      "avg_margin": 6,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Urawa Red Diamonds vs Jubilo Iwata",
+      "games_played": 1,
+      "avg_margin": 6,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Nagoya Grampus vs Sagan Tosu",
+      "games_played": 2,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "Sagan Tosu vs Nagoya Grampus",
+      "games_played": 2,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "Jubilo Iwata vs Nagoya Grampus",
+      "games_played": 2,
+      "avg_margin": 1.5,
+      "avg_excitement": 50.0
+    },
+    {
+      "matchup": "Nagoya Grampus vs Jubilo Iwata",
+      "games_played": 2,
+      "avg_margin": 1.5,
+      "avg_excitement": 50.0
+    },
+    {
+      "matchup": "Kyoto Sanga vs Shimizu S-Pulse",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Shimizu S-Pulse vs Kyoto Sanga",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Avispa Fukuoka vs Gamba Osaka",
+      "games_played": 3,
+      "avg_margin": 0.67,
+      "avg_excitement": 93.33
+    },
+    {
+      "matchup": "Gamba Osaka vs Avispa Fukuoka",
+      "games_played": 3,
+      "avg_margin": 0.67,
+      "avg_excitement": 93.33
+    },
+    {
+      "matchup": "Kawasaki Frontale vs Sagan Tosu",
+      "games_played": 2,
+      "avg_margin": 2.5,
+      "avg_excitement": 40.0
+    },
+    {
+      "matchup": "Sagan Tosu vs Kawasaki Frontale",
+      "games_played": 2,
+      "avg_margin": 2.5,
+      "avg_excitement": 40.0
+    },
+    {
+      "matchup": "Jubilo Iwata vs Kashiwa Reysol",
+      "games_played": 2,
+      "avg_margin": 1,
+      "avg_excitement": 55.0
+    },
+    {
+      "matchup": "Kashiwa Reysol vs Jubilo Iwata",
+      "games_played": 2,
+      "avg_margin": 1,
+      "avg_excitement": 55.0
+    },
+    {
+      "matchup": "FC Tokyo vs Yokohama F. Marinos",
+      "games_played": 3,
+      "avg_margin": 1,
+      "avg_excitement": 66.67
+    },
+    {
+      "matchup": "Yokohama F. Marinos vs FC Tokyo",
+      "games_played": 3,
+      "avg_margin": 1,
+      "avg_excitement": 66.67
+    },
+    {
+      "matchup": "Kyoto Sanga vs Vissel Kobe",
+      "games_played": 3,
+      "avg_margin": 1.33,
+      "avg_excitement": 63.33
+    },
+    {
+      "matchup": "Vissel Kobe vs Kyoto Sanga",
+      "games_played": 3,
+      "avg_margin": 1.33,
+      "avg_excitement": 63.33
+    },
+    {
+      "matchup": "Kashima Antlers vs Kyoto Sanga",
+      "games_played": 1,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "Kyoto Sanga vs Kashima Antlers",
+      "games_played": 1,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "Avispa Fukuoka vs Yokohama F. Marinos",
+      "games_played": 2,
+      "avg_margin": 2.5,
+      "avg_excitement": 40.0
+    },
+    {
+      "matchup": "Yokohama F. Marinos vs Avispa Fukuoka",
+      "games_played": 2,
+      "avg_margin": 2.5,
+      "avg_excitement": 40.0
+    },
+    {
+      "matchup": "Consadole Sapporo vs Jubilo Iwata",
+      "games_played": 2,
+      "avg_margin": 3,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Jubilo Iwata vs Consadole Sapporo",
+      "games_played": 2,
+      "avg_margin": 3,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Kyoto Sanga vs Yokohama F. Marinos",
+      "games_played": 2,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Yokohama F. Marinos vs Kyoto Sanga",
+      "games_played": 2,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "FC Tokyo vs Kyoto Sanga",
+      "games_played": 3,
+      "avg_margin": 2.33,
+      "avg_excitement": 6.67
+    },
+    {
+      "matchup": "Kyoto Sanga vs FC Tokyo",
+      "games_played": 3,
+      "avg_margin": 2.33,
+      "avg_excitement": 6.67
+    },
+    {
+      "matchup": "Avispa Fukuoka vs Vissel Kobe",
+      "games_played": 2,
+      "avg_margin": 1.5,
+      "avg_excitement": 50.0
+    },
+    {
+      "matchup": "Vissel Kobe vs Avispa Fukuoka",
+      "games_played": 2,
+      "avg_margin": 1.5,
+      "avg_excitement": 50.0
+    },
+    {
+      "matchup": "Kyoto Sanga vs Sagan Tosu",
+      "games_played": 3,
+      "avg_margin": 1.33,
+      "avg_excitement": 63.33
+    },
+    {
+      "matchup": "Sagan Tosu vs Kyoto Sanga",
+      "games_played": 3,
+      "avg_margin": 1.33,
+      "avg_excitement": 63.33
+    },
+    {
+      "matchup": "Avispa Fukuoka vs Consadole Sapporo",
+      "games_played": 2,
+      "avg_margin": 0.5,
+      "avg_excitement": 95.0
+    },
+    {
+      "matchup": "Consadole Sapporo vs Avispa Fukuoka",
+      "games_played": 2,
+      "avg_margin": 0.5,
+      "avg_excitement": 95.0
+    },
+    {
+      "matchup": "Jubilo Iwata vs Kashima Antlers",
+      "games_played": 2,
+      "avg_margin": 0.5,
+      "avg_excitement": 95.0
+    },
+    {
+      "matchup": "Kashima Antlers vs Jubilo Iwata",
+      "games_played": 2,
+      "avg_margin": 0.5,
+      "avg_excitement": 95.0
+    },
+    {
+      "matchup": "Kyoto Sanga vs Nagoya Grampus",
+      "games_played": 2,
+      "avg_margin": 0.5,
+      "avg_excitement": 95.0
+    },
+    {
+      "matchup": "Nagoya Grampus vs Kyoto Sanga",
+      "games_played": 2,
+      "avg_margin": 0.5,
+      "avg_excitement": 95.0
+    },
+    {
+      "matchup": "Cerezo Osaka vs Kashiwa Reysol",
+      "games_played": 3,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "Kashiwa Reysol vs Cerezo Osaka",
+      "games_played": 3,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "Kawasaki Frontale vs Kyoto Sanga",
+      "games_played": 2,
+      "avg_margin": 1,
+      "avg_excitement": 55.0
+    },
+    {
+      "matchup": "Kyoto Sanga vs Kawasaki Frontale",
+      "games_played": 2,
+      "avg_margin": 1,
+      "avg_excitement": 55.0
+    },
+    {
+      "matchup": "Avispa Fukuoka vs Kashiwa Reysol",
+      "games_played": 2,
+      "avg_margin": 1.5,
+      "avg_excitement": 50.0
+    },
+    {
+      "matchup": "Kashiwa Reysol vs Avispa Fukuoka",
+      "games_played": 2,
+      "avg_margin": 1.5,
+      "avg_excitement": 50.0
+    },
+    {
+      "matchup": "Cerezo Osaka vs Kyoto Sanga",
+      "games_played": 2,
+      "avg_margin": 1,
+      "avg_excitement": 55.0
+    },
+    {
+      "matchup": "Kyoto Sanga vs Cerezo Osaka",
+      "games_played": 2,
+      "avg_margin": 1,
+      "avg_excitement": 55.0
+    },
+    {
+      "matchup": "Urawa Red Diamonds vs Yokohama F. Marinos",
+      "games_played": 3,
+      "avg_margin": 1,
+      "avg_excitement": 66.67
+    },
+    {
+      "matchup": "Yokohama F. Marinos vs Urawa Red Diamonds",
+      "games_played": 3,
+      "avg_margin": 1,
+      "avg_excitement": 66.67
+    },
+    {
+      "matchup": "Jubilo Iwata vs Kyoto Sanga",
+      "games_played": 1,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "Kyoto Sanga vs Jubilo Iwata",
+      "games_played": 1,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "Avispa Fukuoka vs Urawa Red Diamonds",
+      "games_played": 1,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "Urawa Red Diamonds vs Avispa Fukuoka",
+      "games_played": 1,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "Albirex Niigata vs Nagoya Grampus",
+      "games_played": 2,
+      "avg_margin": 2,
+      "avg_excitement": 45.0
+    },
+    {
+      "matchup": "Nagoya Grampus vs Albirex Niigata",
+      "games_played": 2,
+      "avg_margin": 2,
+      "avg_excitement": 45.0
+    },
+    {
+      "matchup": "Sanfrecce Hiroshima vs Shonan Bellmare",
+      "games_played": 2,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Shonan Bellmare vs Sanfrecce Hiroshima",
+      "games_played": 2,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Vissel Kobe vs Yokohama FC",
+      "games_played": 1,
+      "avg_margin": 2,
+      "avg_excitement": 10.0
+    },
+    {
+      "matchup": "Yokohama FC vs Vissel Kobe",
+      "games_played": 1,
+      "avg_margin": 2,
+      "avg_excitement": 10.0
+    },
+    {
+      "matchup": "Albirex Niigata vs Shonan Bellmare",
+      "games_played": 2,
+      "avg_margin": 1,
+      "avg_excitement": 55.0
+    },
+    {
+      "matchup": "Shonan Bellmare vs Albirex Niigata",
+      "games_played": 2,
+      "avg_margin": 1,
+      "avg_excitement": 55.0
+    },
+    {
+      "matchup": "Avispa Fukuoka vs Yokohama FC",
+      "games_played": 1,
+      "avg_margin": 2,
+      "avg_excitement": 10.0
+    },
+    {
+      "matchup": "Yokohama FC vs Avispa Fukuoka",
+      "games_played": 1,
+      "avg_margin": 2,
+      "avg_excitement": 10.0
+    },
+    {
+      "matchup": "Albirex Niigata vs Avispa Fukuoka",
+      "games_played": 2,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Avispa Fukuoka vs Albirex Niigata",
+      "games_played": 2,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Consadole Sapporo vs Kyoto Sanga",
+      "games_played": 2,
+      "avg_margin": 2.5,
+      "avg_excitement": 5.0
+    },
+    {
+      "matchup": "Kyoto Sanga vs Consadole Sapporo",
+      "games_played": 2,
+      "avg_margin": 2.5,
+      "avg_excitement": 5.0
+    },
+    {
+      "matchup": "Albirex Niigata vs Kashima Antlers",
+      "games_played": 2,
+      "avg_margin": 3,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Kashima Antlers vs Albirex Niigata",
+      "games_played": 2,
+      "avg_margin": 3,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Avispa Fukuoka vs Kyoto Sanga",
+      "games_played": 1,
+      "avg_margin": 2,
+      "avg_excitement": 10.0
+    },
+    {
+      "matchup": "Kyoto Sanga vs Avispa Fukuoka",
+      "games_played": 1,
+      "avg_margin": 2,
+      "avg_excitement": 10.0
+    },
+    {
+      "matchup": "Albirex Niigata vs Urawa Red Diamonds",
+      "games_played": 1,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "Urawa Red Diamonds vs Albirex Niigata",
+      "games_played": 1,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "Avispa Fukuoka vs FC Tokyo",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "FC Tokyo vs Avispa Fukuoka",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Kyoto Sanga vs Urawa Red Diamonds",
+      "games_played": 1,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "Urawa Red Diamonds vs Kyoto Sanga",
+      "games_played": 1,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "Albirex Niigata vs Gamba Osaka",
+      "games_played": 1,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "Gamba Osaka vs Albirex Niigata",
+      "games_played": 1,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "Albirex Niigata vs Yokohama FC",
+      "games_played": 1,
+      "avg_margin": 2,
+      "avg_excitement": 10.0
+    },
+    {
+      "matchup": "Yokohama FC vs Albirex Niigata",
+      "games_played": 1,
+      "avg_margin": 2,
+      "avg_excitement": 10.0
+    },
+    {
+      "matchup": "Kyoto Sanga vs Sanfrecce Hiroshima",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Sanfrecce Hiroshima vs Kyoto Sanga",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Albirex Niigata vs Kawasaki Frontale",
+      "games_played": 2,
+      "avg_margin": 2.5,
+      "avg_excitement": 40.0
+    },
+    {
+      "matchup": "Kawasaki Frontale vs Albirex Niigata",
+      "games_played": 2,
+      "avg_margin": 2.5,
+      "avg_excitement": 40.0
+    },
+    {
+      "matchup": "Albirex Niigata vs Sagan Tosu",
+      "games_played": 1,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "Sagan Tosu vs Albirex Niigata",
+      "games_played": 1,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "Kyoto Sanga vs Shonan Bellmare",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Shonan Bellmare vs Kyoto Sanga",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Consadole Sapporo vs Yokohama FC",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Yokohama FC vs Consadole Sapporo",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Albirex Niigata vs Kyoto Sanga",
+      "games_played": 2,
+      "avg_margin": 1.5,
+      "avg_excitement": 50.0
+    },
+    {
+      "matchup": "Kyoto Sanga vs Albirex Niigata",
+      "games_played": 2,
+      "avg_margin": 1.5,
+      "avg_excitement": 50.0
+    },
+    {
+      "matchup": "Albirex Niigata vs FC Tokyo",
+      "games_played": 1,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "FC Tokyo vs Albirex Niigata",
+      "games_played": 1,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "Kashima Antlers vs Kashiwa Reysol",
+      "games_played": 2,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "Kashiwa Reysol vs Kashima Antlers",
+      "games_played": 2,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "Albirex Niigata vs Jubilo Iwata",
+      "games_played": 1,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "Jubilo Iwata vs Albirex Niigata",
+      "games_played": 1,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "Cerezo Osaka vs Machida Zelvia",
+      "games_played": 1,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "Machida Zelvia vs Cerezo Osaka",
+      "games_played": 1,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "Sanfrecce Hiroshima vs Tokyo Verdy 1969",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Tokyo Verdy 1969 vs Sanfrecce Hiroshima",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Machida Zelvia vs Shonan Bellmare",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Shonan Bellmare vs Machida Zelvia",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Nagoya Grampus vs Tokyo Verdy 1969",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Tokyo Verdy 1969 vs Nagoya Grampus",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Jubilo Iwata vs Machida Zelvia",
+      "games_played": 1,
+      "avg_margin": 4,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Machida Zelvia vs Jubilo Iwata",
+      "games_played": 1,
+      "avg_margin": 4,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "FC Tokyo vs Tokyo Verdy 1969",
+      "games_played": 1,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "Tokyo Verdy 1969 vs FC Tokyo",
+      "games_played": 1,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "Kashima Antlers vs Tokyo Verdy 1969",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Tokyo Verdy 1969 vs Kashima Antlers",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Albirex Niigata vs Machida Zelvia",
+      "games_played": 1,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "Machida Zelvia vs Albirex Niigata",
+      "games_played": 1,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "Machida Zelvia vs Urawa Red Diamonds",
+      "games_played": 1,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "Urawa Red Diamonds vs Machida Zelvia",
+      "games_played": 1,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "Kashiwa Reysol vs Tokyo Verdy 1969",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Tokyo Verdy 1969 vs Kashiwa Reysol",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Consadole Sapporo vs Tokyo Verdy 1969",
+      "games_played": 1,
+      "avg_margin": 2,
+      "avg_excitement": 10.0
+    },
+    {
+      "matchup": "Tokyo Verdy 1969 vs Consadole Sapporo",
+      "games_played": 1,
+      "avg_margin": 2,
+      "avg_excitement": 10.0
+    },
+    {
+      "matchup": "Avispa Fukuoka vs Machida Zelvia",
+      "games_played": 1,
+      "avg_margin": 3,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Machida Zelvia vs Avispa Fukuoka",
+      "games_played": 1,
+      "avg_margin": 3,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Avispa Fukuoka vs Jubilo Iwata",
+      "games_played": 1,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "Jubilo Iwata vs Avispa Fukuoka",
+      "games_played": 1,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "Consadole Sapporo vs Machida Zelvia",
+      "games_played": 1,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "Machida Zelvia vs Consadole Sapporo",
+      "games_played": 1,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "Albirex Niigata vs Vissel Kobe",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Vissel Kobe vs Albirex Niigata",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Sagan Tosu vs Tokyo Verdy 1969",
+      "games_played": 1,
+      "avg_margin": 2,
+      "avg_excitement": 10.0
+    },
+    {
+      "matchup": "Tokyo Verdy 1969 vs Sagan Tosu",
+      "games_played": 1,
+      "avg_margin": 2,
+      "avg_excitement": 10.0
+    },
+    {
+      "matchup": "Gamba Osaka vs Kyoto Sanga",
+      "games_played": 1,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "Kyoto Sanga vs Gamba Osaka",
+      "games_played": 1,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "Gamba Osaka vs Tokyo Verdy 1969",
+      "games_played": 1,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "Tokyo Verdy 1969 vs Gamba Osaka",
+      "games_played": 1,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "Machida Zelvia vs Sanfrecce Hiroshima",
+      "games_played": 1,
+      "avg_margin": 2,
+      "avg_excitement": 10.0
+    },
+    {
+      "matchup": "Sanfrecce Hiroshima vs Machida Zelvia",
+      "games_played": 1,
+      "avg_margin": 2,
+      "avg_excitement": 10.0
+    },
+    {
+      "matchup": "Kawasaki Frontale vs Machida Zelvia",
+      "games_played": 1,
+      "avg_margin": 3,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Machida Zelvia vs Kawasaki Frontale",
+      "games_played": 1,
+      "avg_margin": 3,
+      "avg_excitement": 0.0
+    },
+    {
+      "matchup": "Shonan Bellmare vs Tokyo Verdy 1969",
+      "games_played": 1,
+      "avg_margin": 2,
+      "avg_excitement": 10.0
+    },
+    {
+      "matchup": "Tokyo Verdy 1969 vs Shonan Bellmare",
+      "games_played": 1,
+      "avg_margin": 2,
+      "avg_excitement": 10.0
+    },
+    {
+      "matchup": "Albirex Niigata vs Yokohama F. Marinos",
+      "games_played": 1,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "Yokohama F. Marinos vs Albirex Niigata",
+      "games_played": 1,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "Kashiwa Reysol vs Machida Zelvia",
+      "games_played": 1,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "Machida Zelvia vs Kashiwa Reysol",
+      "games_played": 1,
+      "avg_margin": 0,
+      "avg_excitement": 100.0
+    },
+    {
+      "matchup": "Tokyo Verdy 1969 vs Urawa Red Diamonds",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Urawa Red Diamonds vs Tokyo Verdy 1969",
+      "games_played": 1,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
+    },
+    {
+      "matchup": "Albirex Niigata vs Tokyo Verdy 1969",
+      "games_played": 1,
+      "avg_margin": 2,
+      "avg_excitement": 10.0
+    },
+    {
+      "matchup": "Tokyo Verdy 1969 vs Albirex Niigata",
+      "games_played": 1,
+      "avg_margin": 2,
+      "avg_excitement": 10.0
+    }
+  ],
+  "matchup_close_rates": [
+    {
+      "matchup": "Gamba Osaka vs Vissel Kobe",
+      "games": 3,
+      "close_games": 3,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Vissel Kobe vs Gamba Osaka",
+      "games": 3,
+      "close_games": 3,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Cerezo Osaka vs FC Tokyo",
+      "games": 4,
+      "close_games": 1,
+      "close_rate": 25.0
+    },
+    {
+      "matchup": "FC Tokyo vs Cerezo Osaka",
+      "games": 4,
+      "close_games": 1,
+      "close_rate": 25.0
+    },
+    {
+      "matchup": "Consadole Sapporo vs Sanfrecce Hiroshima",
+      "games": 5,
+      "close_games": 3,
+      "close_rate": 60.0
+    },
+    {
+      "matchup": "Sanfrecce Hiroshima vs Consadole Sapporo",
+      "games": 5,
+      "close_games": 3,
+      "close_rate": 60.0
+    },
+    {
+      "matchup": "Kashima Antlers vs Shonan Bellmare",
+      "games": 6,
+      "close_games": 6,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Shonan Bellmare vs Kashima Antlers",
+      "games": 6,
+      "close_games": 6,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Jubilo Iwata vs Vegalta Sendai",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Vegalta Sendai vs Jubilo Iwata",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Shimizu S-Pulse vs Yokohama F. Marinos",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Yokohama F. Marinos vs Shimizu S-Pulse",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Kawasaki Frontale vs Matsumoto Yamaga FC",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Matsumoto Yamaga FC vs Kawasaki Frontale",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Nagoya Grampus vs Urawa Red Diamonds",
+      "games": 4,
+      "close_games": 3,
+      "close_rate": 75.0
+    },
+    {
+      "matchup": "Urawa Red Diamonds vs Nagoya Grampus",
+      "games": 4,
+      "close_games": 3,
+      "close_rate": 75.0
+    },
+    {
+      "matchup": "Oita Trinita vs Sagan Tosu",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Sagan Tosu vs Oita Trinita",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Consadole Sapporo vs Urawa Red Diamonds",
+      "games": 4,
+      "close_games": 4,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Urawa Red Diamonds vs Consadole Sapporo",
+      "games": 4,
+      "close_games": 4,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Matsumoto Yamaga FC vs Shimizu S-Pulse",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Shimizu S-Pulse vs Matsumoto Yamaga FC",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Kashima Antlers vs Yokohama F. Marinos",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Yokohama F. Marinos vs Kashima Antlers",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "FC Tokyo vs Vegalta Sendai",
+      "games": 3,
+      "close_games": 3,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Vegalta Sendai vs FC Tokyo",
+      "games": 3,
+      "close_games": 3,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Gamba Osaka vs Sanfrecce Hiroshima",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Sanfrecce Hiroshima vs Gamba Osaka",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Kawasaki Frontale vs Nagoya Grampus",
+      "games": 4,
+      "close_games": 1,
+      "close_rate": 25.0
+    },
+    {
+      "matchup": "Nagoya Grampus vs Kawasaki Frontale",
+      "games": 4,
+      "close_games": 1,
+      "close_rate": 25.0
+    },
+    {
+      "matchup": "Oita Trinita vs Vissel Kobe",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Vissel Kobe vs Oita Trinita",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Cerezo Osaka vs Sagan Tosu",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Sagan Tosu vs Cerezo Osaka",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Jubilo Iwata vs Shonan Bellmare",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Shonan Bellmare vs Jubilo Iwata",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Consadole Sapporo vs Shimizu S-Pulse",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Shimizu S-Pulse vs Consadole Sapporo",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "FC Tokyo vs Sanfrecce Hiroshima",
+      "games": 3,
+      "close_games": 3,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Sanfrecce Hiroshima vs FC Tokyo",
+      "games": 3,
+      "close_games": 3,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Kashima Antlers vs Oita Trinita",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Oita Trinita vs Kashima Antlers",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Sagan Tosu vs Shonan Bellmare",
+      "games": 5,
+      "close_games": 4,
+      "close_rate": 80.0
+    },
+    {
+      "matchup": "Shonan Bellmare vs Sagan Tosu",
+      "games": 5,
+      "close_games": 4,
+      "close_rate": 80.0
+    },
+    {
+      "matchup": "Kawasaki Frontale vs Vegalta Sendai",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Vegalta Sendai vs Kawasaki Frontale",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Urawa Red Diamonds vs Vissel Kobe",
+      "games": 4,
+      "close_games": 2,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Vissel Kobe vs Urawa Red Diamonds",
+      "games": 4,
+      "close_games": 2,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Cerezo Osaka vs Yokohama F. Marinos",
+      "games": 5,
+      "close_games": 2,
+      "close_rate": 40.0
+    },
+    {
+      "matchup": "Yokohama F. Marinos vs Cerezo Osaka",
+      "games": 5,
+      "close_games": 2,
+      "close_rate": 40.0
+    },
+    {
+      "matchup": "Matsumoto Yamaga FC vs Nagoya Grampus",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Nagoya Grampus vs Matsumoto Yamaga FC",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Gamba Osaka vs Jubilo Iwata",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Jubilo Iwata vs Gamba Osaka",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Gamba Osaka vs Kashima Antlers",
+      "games": 4,
+      "close_games": 2,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Kashima Antlers vs Gamba Osaka",
+      "games": 4,
+      "close_games": 2,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Sagan Tosu vs Vissel Kobe",
+      "games": 3,
+      "close_games": 1,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "Vissel Kobe vs Sagan Tosu",
+      "games": 3,
+      "close_games": 1,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "Matsumoto Yamaga FC vs Urawa Red Diamonds",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Urawa Red Diamonds vs Matsumoto Yamaga FC",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Consadole Sapporo vs FC Tokyo",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "FC Tokyo vs Consadole Sapporo",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Nagoya Grampus vs Yokohama F. Marinos",
+      "games": 5,
+      "close_games": 2,
+      "close_rate": 40.0
+    },
+    {
+      "matchup": "Yokohama F. Marinos vs Nagoya Grampus",
+      "games": 5,
+      "close_games": 2,
+      "close_rate": 40.0
+    },
+    {
+      "matchup": "Cerezo Osaka vs Jubilo Iwata",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Jubilo Iwata vs Cerezo Osaka",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Kawasaki Frontale vs Shimizu S-Pulse",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Shimizu S-Pulse vs Kawasaki Frontale",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Oita Trinita vs Sanfrecce Hiroshima",
+      "games": 3,
+      "close_games": 1,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "Sanfrecce Hiroshima vs Oita Trinita",
+      "games": 3,
+      "close_games": 1,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "Shonan Bellmare vs Vegalta Sendai",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Vegalta Sendai vs Shonan Bellmare",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "FC Tokyo vs Nagoya Grampus",
+      "games": 4,
+      "close_games": 3,
+      "close_rate": 75.0
+    },
+    {
+      "matchup": "Nagoya Grampus vs FC Tokyo",
+      "games": 4,
+      "close_games": 3,
+      "close_rate": 75.0
+    },
+    {
+      "matchup": "Jubilo Iwata vs Sanfrecce Hiroshima",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Sanfrecce Hiroshima vs Jubilo Iwata",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Matsumoto Yamaga FC vs Oita Trinita",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Oita Trinita vs Matsumoto Yamaga FC",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Consadole Sapporo vs Vissel Kobe",
+      "games": 4,
+      "close_games": 2,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Vissel Kobe vs Consadole Sapporo",
+      "games": 4,
+      "close_games": 2,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Gamba Osaka vs Yokohama F. Marinos",
+      "games": 5,
+      "close_games": 3,
+      "close_rate": 60.0
+    },
+    {
+      "matchup": "Yokohama F. Marinos vs Gamba Osaka",
+      "games": 5,
+      "close_games": 3,
+      "close_rate": 60.0
+    },
+    {
+      "matchup": "Sagan Tosu vs Vegalta Sendai",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Vegalta Sendai vs Sagan Tosu",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Cerezo Osaka vs Kawasaki Frontale",
+      "games": 3,
+      "close_games": 1,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "Kawasaki Frontale vs Cerezo Osaka",
+      "games": 3,
+      "close_games": 1,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "Kashima Antlers vs Shimizu S-Pulse",
+      "games": 4,
+      "close_games": 2,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Shimizu S-Pulse vs Kashima Antlers",
+      "games": 4,
+      "close_games": 2,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Shonan Bellmare vs Urawa Red Diamonds",
+      "games": 4,
+      "close_games": 4,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Urawa Red Diamonds vs Shonan Bellmare",
+      "games": 4,
+      "close_games": 4,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Nagoya Grampus vs Shimizu S-Pulse",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Shimizu S-Pulse vs Nagoya Grampus",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Cerezo Osaka vs Urawa Red Diamonds",
+      "games": 5,
+      "close_games": 3,
+      "close_rate": 60.0
+    },
+    {
+      "matchup": "Urawa Red Diamonds vs Cerezo Osaka",
+      "games": 5,
+      "close_games": 3,
+      "close_rate": 60.0
+    },
+    {
+      "matchup": "Consadole Sapporo vs Vegalta Sendai",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Vegalta Sendai vs Consadole Sapporo",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Oita Trinita vs Shonan Bellmare",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Shonan Bellmare vs Oita Trinita",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Gamba Osaka vs Sagan Tosu",
+      "games": 4,
+      "close_games": 3,
+      "close_rate": 75.0
+    },
+    {
+      "matchup": "Sagan Tosu vs Gamba Osaka",
+      "games": 4,
+      "close_games": 3,
+      "close_rate": 75.0
+    },
+    {
+      "matchup": "FC Tokyo vs Kashima Antlers",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Kashima Antlers vs FC Tokyo",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Jubilo Iwata vs Kawasaki Frontale",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Kawasaki Frontale vs Jubilo Iwata",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Matsumoto Yamaga FC vs Vissel Kobe",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Vissel Kobe vs Matsumoto Yamaga FC",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Sanfrecce Hiroshima vs Yokohama F. Marinos",
+      "games": 3,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Yokohama F. Marinos vs Sanfrecce Hiroshima",
+      "games": 3,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Cerezo Osaka vs Gamba Osaka",
+      "games": 4,
+      "close_games": 3,
+      "close_rate": 75.0
+    },
+    {
+      "matchup": "Gamba Osaka vs Cerezo Osaka",
+      "games": 4,
+      "close_games": 3,
+      "close_rate": 75.0
+    },
+    {
+      "matchup": "Sagan Tosu vs Urawa Red Diamonds",
+      "games": 6,
+      "close_games": 6,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Urawa Red Diamonds vs Sagan Tosu",
+      "games": 6,
+      "close_games": 6,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Consadole Sapporo vs Kashima Antlers",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Kashima Antlers vs Consadole Sapporo",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Kawasaki Frontale vs Vissel Kobe",
+      "games": 6,
+      "close_games": 4,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Vissel Kobe vs Kawasaki Frontale",
+      "games": 6,
+      "close_games": 4,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Jubilo Iwata vs Oita Trinita",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Oita Trinita vs Jubilo Iwata",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Nagoya Grampus vs Sanfrecce Hiroshima",
+      "games": 5,
+      "close_games": 4,
+      "close_rate": 80.0
+    },
+    {
+      "matchup": "Sanfrecce Hiroshima vs Nagoya Grampus",
+      "games": 5,
+      "close_games": 4,
+      "close_rate": 80.0
+    },
+    {
+      "matchup": "Vegalta Sendai vs Yokohama F. Marinos",
+      "games": 3,
+      "close_games": 1,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "Yokohama F. Marinos vs Vegalta Sendai",
+      "games": 3,
+      "close_games": 1,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "FC Tokyo vs Matsumoto Yamaga FC",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Matsumoto Yamaga FC vs FC Tokyo",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Shimizu S-Pulse vs Shonan Bellmare",
+      "games": 4,
+      "close_games": 2,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Shonan Bellmare vs Shimizu S-Pulse",
+      "games": 4,
+      "close_games": 2,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Consadole Sapporo vs Gamba Osaka",
+      "games": 5,
+      "close_games": 2,
+      "close_rate": 40.0
+    },
+    {
+      "matchup": "Gamba Osaka vs Consadole Sapporo",
+      "games": 5,
+      "close_games": 2,
+      "close_rate": 40.0
+    },
+    {
+      "matchup": "Jubilo Iwata vs Yokohama F. Marinos",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Yokohama F. Marinos vs Jubilo Iwata",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Nagoya Grampus vs Oita Trinita",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Oita Trinita vs Nagoya Grampus",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "FC Tokyo vs Sagan Tosu",
+      "games": 5,
+      "close_games": 4,
+      "close_rate": 80.0
+    },
+    {
+      "matchup": "Sagan Tosu vs FC Tokyo",
+      "games": 5,
+      "close_games": 4,
+      "close_rate": 80.0
+    },
+    {
+      "matchup": "Matsumoto Yamaga FC vs Vegalta Sendai",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Vegalta Sendai vs Matsumoto Yamaga FC",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Sanfrecce Hiroshima vs Vissel Kobe",
+      "games": 5,
+      "close_games": 2,
+      "close_rate": 40.0
+    },
+    {
+      "matchup": "Vissel Kobe vs Sanfrecce Hiroshima",
+      "games": 5,
+      "close_games": 2,
+      "close_rate": 40.0
+    },
+    {
+      "matchup": "Cerezo Osaka vs Kashima Antlers",
+      "games": 4,
+      "close_games": 4,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Kashima Antlers vs Cerezo Osaka",
+      "games": 4,
+      "close_games": 4,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Shimizu S-Pulse vs Urawa Red Diamonds",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Urawa Red Diamonds vs Shimizu S-Pulse",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Kawasaki Frontale vs Shonan Bellmare",
+      "games": 5,
+      "close_games": 3,
+      "close_rate": 60.0
+    },
+    {
+      "matchup": "Shonan Bellmare vs Kawasaki Frontale",
+      "games": 5,
+      "close_games": 3,
+      "close_rate": 60.0
+    },
+    {
+      "matchup": "Cerezo Osaka vs Consadole Sapporo",
+      "games": 5,
+      "close_games": 2,
+      "close_rate": 40.0
+    },
+    {
+      "matchup": "Consadole Sapporo vs Cerezo Osaka",
+      "games": 5,
+      "close_games": 2,
+      "close_rate": 40.0
+    },
+    {
+      "matchup": "Kashima Antlers vs Matsumoto Yamaga FC",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Matsumoto Yamaga FC vs Kashima Antlers",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Oita Trinita vs Urawa Red Diamonds",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Urawa Red Diamonds vs Oita Trinita",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "FC Tokyo vs Vissel Kobe",
+      "games": 6,
+      "close_games": 4,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Vissel Kobe vs FC Tokyo",
+      "games": 6,
+      "close_games": 4,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Gamba Osaka vs Kawasaki Frontale",
+      "games": 3,
+      "close_games": 3,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Kawasaki Frontale vs Gamba Osaka",
+      "games": 3,
+      "close_games": 3,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Nagoya Grampus vs Vegalta Sendai",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Vegalta Sendai vs Nagoya Grampus",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Sanfrecce Hiroshima vs Shimizu S-Pulse",
+      "games": 4,
+      "close_games": 2,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Shimizu S-Pulse vs Sanfrecce Hiroshima",
+      "games": 4,
+      "close_games": 2,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Shonan Bellmare vs Yokohama F. Marinos",
+      "games": 3,
+      "close_games": 1,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "Yokohama F. Marinos vs Shonan Bellmare",
+      "games": 3,
+      "close_games": 1,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "Jubilo Iwata vs Sagan Tosu",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Sagan Tosu vs Jubilo Iwata",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Sanfrecce Hiroshima vs Urawa Red Diamonds",
+      "games": 4,
+      "close_games": 3,
+      "close_rate": 75.0
+    },
+    {
+      "matchup": "Urawa Red Diamonds vs Sanfrecce Hiroshima",
+      "games": 4,
+      "close_games": 3,
+      "close_rate": 75.0
+    },
+    {
+      "matchup": "Kashima Antlers vs Urawa Red Diamonds",
+      "games": 4,
+      "close_games": 4,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Urawa Red Diamonds vs Kashima Antlers",
+      "games": 4,
+      "close_games": 4,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Vegalta Sendai vs Vissel Kobe",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Vissel Kobe vs Vegalta Sendai",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Consadole Sapporo vs Nagoya Grampus",
+      "games": 5,
+      "close_games": 1,
+      "close_rate": 20.0
+    },
+    {
+      "matchup": "Nagoya Grampus vs Consadole Sapporo",
+      "games": 5,
+      "close_games": 1,
+      "close_rate": 20.0
+    },
+    {
+      "matchup": "Sagan Tosu vs Yokohama F. Marinos",
+      "games": 5,
+      "close_games": 3,
+      "close_rate": 60.0
+    },
+    {
+      "matchup": "Yokohama F. Marinos vs Sagan Tosu",
+      "games": 5,
+      "close_games": 3,
+      "close_rate": 60.0
+    },
+    {
+      "matchup": "Jubilo Iwata vs Shimizu S-Pulse",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Shimizu S-Pulse vs Jubilo Iwata",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Cerezo Osaka vs Matsumoto Yamaga FC",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Matsumoto Yamaga FC vs Cerezo Osaka",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Kawasaki Frontale vs Sanfrecce Hiroshima",
+      "games": 6,
+      "close_games": 3,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Sanfrecce Hiroshima vs Kawasaki Frontale",
+      "games": 6,
+      "close_games": 3,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "FC Tokyo vs Oita Trinita",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Oita Trinita vs FC Tokyo",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Gamba Osaka vs Shonan Bellmare",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Shonan Bellmare vs Gamba Osaka",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Kawasaki Frontale vs Urawa Red Diamonds",
+      "games": 2,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Urawa Red Diamonds vs Kawasaki Frontale",
+      "games": 2,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "FC Tokyo vs Jubilo Iwata",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Jubilo Iwata vs FC Tokyo",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Kashima Antlers vs Kawasaki Frontale",
+      "games": 4,
+      "close_games": 2,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Kawasaki Frontale vs Kashima Antlers",
+      "games": 4,
+      "close_games": 2,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Nagoya Grampus vs Vissel Kobe",
+      "games": 4,
+      "close_games": 3,
+      "close_rate": 75.0
+    },
+    {
+      "matchup": "Vissel Kobe vs Nagoya Grampus",
+      "games": 4,
+      "close_games": 3,
+      "close_rate": 75.0
+    },
+    {
+      "matchup": "Consadole Sapporo vs Yokohama F. Marinos",
+      "games": 4,
+      "close_games": 2,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Yokohama F. Marinos vs Consadole Sapporo",
+      "games": 4,
+      "close_games": 2,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Cerezo Osaka vs Shonan Bellmare",
+      "games": 6,
+      "close_games": 4,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Shonan Bellmare vs Cerezo Osaka",
+      "games": 6,
+      "close_games": 4,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Shimizu S-Pulse vs Vegalta Sendai",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Vegalta Sendai vs Shimizu S-Pulse",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Gamba Osaka vs Oita Trinita",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Oita Trinita vs Gamba Osaka",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Matsumoto Yamaga FC vs Sagan Tosu",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Sagan Tosu vs Matsumoto Yamaga FC",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Kashima Antlers vs Nagoya Grampus",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Nagoya Grampus vs Kashima Antlers",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Kashiwa Reysol vs Shimizu S-Pulse",
+      "games": 3,
+      "close_games": 3,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Shimizu S-Pulse vs Kashiwa Reysol",
+      "games": 3,
+      "close_games": 3,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Kawasaki Frontale vs Yokohama F. Marinos",
+      "games": 3,
+      "close_games": 1,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "Yokohama F. Marinos vs Kawasaki Frontale",
+      "games": 3,
+      "close_games": 1,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "Shonan Bellmare vs Vissel Kobe",
+      "games": 3,
+      "close_games": 3,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Vissel Kobe vs Shonan Bellmare",
+      "games": 3,
+      "close_games": 3,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Gamba Osaka vs Vegalta Sendai",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Vegalta Sendai vs Gamba Osaka",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Sagan Tosu vs Yokohama FC",
+      "games": 2,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Yokohama FC vs Sagan Tosu",
+      "games": 2,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "FC Tokyo vs Yokohama FC",
+      "games": 4,
+      "close_games": 3,
+      "close_rate": 75.0
+    },
+    {
+      "matchup": "Yokohama FC vs FC Tokyo",
+      "games": 4,
+      "close_games": 3,
+      "close_rate": 75.0
+    },
+    {
+      "matchup": "Kashima Antlers vs Vegalta Sendai",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Vegalta Sendai vs Kashima Antlers",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Gamba Osaka vs Kashiwa Reysol",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Kashiwa Reysol vs Gamba Osaka",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Oita Trinita vs Vegalta Sendai",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Vegalta Sendai vs Oita Trinita",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Nagoya Grampus vs Yokohama FC",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Yokohama FC vs Nagoya Grampus",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Kashiwa Reysol vs Sagan Tosu",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Sagan Tosu vs Kashiwa Reysol",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Cerezo Osaka vs Vissel Kobe",
+      "games": 4,
+      "close_games": 3,
+      "close_rate": 75.0
+    },
+    {
+      "matchup": "Vissel Kobe vs Cerezo Osaka",
+      "games": 4,
+      "close_games": 3,
+      "close_rate": 75.0
+    },
+    {
+      "matchup": "Consadole Sapporo vs Sagan Tosu",
+      "games": 4,
+      "close_games": 2,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Sagan Tosu vs Consadole Sapporo",
+      "games": 4,
+      "close_games": 2,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Kashiwa Reysol vs Sanfrecce Hiroshima",
+      "games": 5,
+      "close_games": 3,
+      "close_rate": 60.0
+    },
+    {
+      "matchup": "Sanfrecce Hiroshima vs Kashiwa Reysol",
+      "games": 5,
+      "close_games": 3,
+      "close_rate": 60.0
+    },
+    {
+      "matchup": "Oita Trinita vs Yokohama FC",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Yokohama FC vs Oita Trinita",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Consadole Sapporo vs Kashiwa Reysol",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Kashiwa Reysol vs Consadole Sapporo",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Gamba Osaka vs Nagoya Grampus",
+      "games": 4,
+      "close_games": 3,
+      "close_rate": 75.0
+    },
+    {
+      "matchup": "Nagoya Grampus vs Gamba Osaka",
+      "games": 4,
+      "close_games": 3,
+      "close_rate": 75.0
+    },
+    {
+      "matchup": "Kawasaki Frontale vs Yokohama FC",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Yokohama FC vs Kawasaki Frontale",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Urawa Red Diamonds vs Yokohama FC",
+      "games": 3,
+      "close_games": 1,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "Yokohama FC vs Urawa Red Diamonds",
+      "games": 3,
+      "close_games": 1,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "Cerezo Osaka vs Vegalta Sendai",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Vegalta Sendai vs Cerezo Osaka",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Kashiwa Reysol vs Yokohama F. Marinos",
+      "games": 3,
+      "close_games": 1,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "Yokohama F. Marinos vs Kashiwa Reysol",
+      "games": 3,
+      "close_games": 1,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "FC Tokyo vs Urawa Red Diamonds",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Urawa Red Diamonds vs FC Tokyo",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Kashiwa Reysol vs Yokohama FC",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Yokohama FC vs Kashiwa Reysol",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Sagan Tosu vs Sanfrecce Hiroshima",
+      "games": 3,
+      "close_games": 1,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "Sanfrecce Hiroshima vs Sagan Tosu",
+      "games": 3,
+      "close_games": 1,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "Oita Trinita vs Shimizu S-Pulse",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Shimizu S-Pulse vs Oita Trinita",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "FC Tokyo vs Shonan Bellmare",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Shonan Bellmare vs FC Tokyo",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Vissel Kobe vs Yokohama F. Marinos",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Yokohama F. Marinos vs Vissel Kobe",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Consadole Sapporo vs Shonan Bellmare",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Shonan Bellmare vs Consadole Sapporo",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "FC Tokyo vs Gamba Osaka",
+      "games": 5,
+      "close_games": 4,
+      "close_rate": 80.0
+    },
+    {
+      "matchup": "Gamba Osaka vs FC Tokyo",
+      "games": 5,
+      "close_games": 4,
+      "close_rate": 80.0
+    },
+    {
+      "matchup": "Cerezo Osaka vs Nagoya Grampus",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Nagoya Grampus vs Cerezo Osaka",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Kashiwa Reysol vs Vissel Kobe",
+      "games": 3,
+      "close_games": 3,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Vissel Kobe vs Kashiwa Reysol",
+      "games": 3,
+      "close_games": 3,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Kashima Antlers vs Yokohama FC",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Yokohama FC vs Kashima Antlers",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Oita Trinita vs Yokohama F. Marinos",
+      "games": 2,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Yokohama F. Marinos vs Oita Trinita",
+      "games": 2,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Kashima Antlers vs Sagan Tosu",
+      "games": 4,
+      "close_games": 2,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Sagan Tosu vs Kashima Antlers",
+      "games": 4,
+      "close_games": 2,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "FC Tokyo vs Shimizu S-Pulse",
+      "games": 2,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Shimizu S-Pulse vs FC Tokyo",
+      "games": 2,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Kashiwa Reysol vs Urawa Red Diamonds",
+      "games": 4,
+      "close_games": 2,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Urawa Red Diamonds vs Kashiwa Reysol",
+      "games": 4,
+      "close_games": 2,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Vegalta Sendai vs Yokohama FC",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Yokohama FC vs Vegalta Sendai",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Sagan Tosu vs Shimizu S-Pulse",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Shimizu S-Pulse vs Sagan Tosu",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Kashiwa Reysol vs Shonan Bellmare",
+      "games": 3,
+      "close_games": 3,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Shonan Bellmare vs Kashiwa Reysol",
+      "games": 3,
+      "close_games": 3,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Urawa Red Diamonds vs Vegalta Sendai",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Vegalta Sendai vs Urawa Red Diamonds",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Kashima Antlers vs Vissel Kobe",
+      "games": 3,
+      "close_games": 1,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "Vissel Kobe vs Kashima Antlers",
+      "games": 3,
+      "close_games": 1,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "Avispa Fukuoka vs Sanfrecce Hiroshima",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Sanfrecce Hiroshima vs Avispa Fukuoka",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Kawasaki Frontale vs Oita Trinita",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Oita Trinita vs Kawasaki Frontale",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Gamba Osaka vs Tokushima Vortis",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Tokushima Vortis vs Gamba Osaka",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Gamba Osaka vs Shimizu S-Pulse",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Shimizu S-Pulse vs Gamba Osaka",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Kashiwa Reysol vs Kawasaki Frontale",
+      "games": 3,
+      "close_games": 3,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Kawasaki Frontale vs Kashiwa Reysol",
+      "games": 3,
+      "close_games": 3,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Nagoya Grampus vs Shonan Bellmare",
+      "games": 3,
+      "close_games": 3,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Shonan Bellmare vs Nagoya Grampus",
+      "games": 3,
+      "close_games": 3,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Kashima Antlers vs Tokushima Vortis",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Tokushima Vortis vs Kashima Antlers",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Avispa Fukuoka vs Cerezo Osaka",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Cerezo Osaka vs Avispa Fukuoka",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Cerezo Osaka vs Yokohama FC",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Yokohama FC vs Cerezo Osaka",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Consadole Sapporo vs Oita Trinita",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Oita Trinita vs Consadole Sapporo",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Tokushima Vortis vs Urawa Red Diamonds",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Urawa Red Diamonds vs Tokushima Vortis",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Avispa Fukuoka vs Nagoya Grampus",
+      "games": 4,
+      "close_games": 4,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Nagoya Grampus vs Avispa Fukuoka",
+      "games": 4,
+      "close_games": 4,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Avispa Fukuoka vs Kawasaki Frontale",
+      "games": 3,
+      "close_games": 1,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "Kawasaki Frontale vs Avispa Fukuoka",
+      "games": 3,
+      "close_games": 1,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "Kashiwa Reysol vs Tokushima Vortis",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Tokushima Vortis vs Kashiwa Reysol",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Gamba Osaka vs Yokohama FC",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Yokohama FC vs Gamba Osaka",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Consadole Sapporo vs Kawasaki Frontale",
+      "games": 4,
+      "close_games": 2,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Kawasaki Frontale vs Consadole Sapporo",
+      "games": 4,
+      "close_games": 2,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Avispa Fukuoka vs Tokushima Vortis",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Tokushima Vortis vs Avispa Fukuoka",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Nagoya Grampus vs Tokushima Vortis",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Tokushima Vortis vs Nagoya Grampus",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Avispa Fukuoka vs Kashima Antlers",
+      "games": 4,
+      "close_games": 2,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Kashima Antlers vs Avispa Fukuoka",
+      "games": 4,
+      "close_games": 2,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "FC Tokyo vs Kashiwa Reysol",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Kashiwa Reysol vs FC Tokyo",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Avispa Fukuoka vs Shonan Bellmare",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Shonan Bellmare vs Avispa Fukuoka",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Kawasaki Frontale vs Tokushima Vortis",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Tokushima Vortis vs Kawasaki Frontale",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Cerezo Osaka vs Sanfrecce Hiroshima",
+      "games": 4,
+      "close_games": 2,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Sanfrecce Hiroshima vs Cerezo Osaka",
+      "games": 4,
+      "close_games": 2,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Shimizu S-Pulse vs Vissel Kobe",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Vissel Kobe vs Shimizu S-Pulse",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Tokushima Vortis vs Vegalta Sendai",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Vegalta Sendai vs Tokushima Vortis",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Yokohama F. Marinos vs Yokohama FC",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Yokohama FC vs Yokohama F. Marinos",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Avispa Fukuoka vs Sagan Tosu",
+      "games": 4,
+      "close_games": 3,
+      "close_rate": 75.0
+    },
+    {
+      "matchup": "Sagan Tosu vs Avispa Fukuoka",
+      "games": 4,
+      "close_games": 3,
+      "close_rate": 75.0
+    },
+    {
+      "matchup": "Avispa Fukuoka vs Shimizu S-Pulse",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Shimizu S-Pulse vs Avispa Fukuoka",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Kashiwa Reysol vs Vegalta Sendai",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Vegalta Sendai vs Kashiwa Reysol",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "FC Tokyo vs Kawasaki Frontale",
+      "games": 4,
+      "close_games": 3,
+      "close_rate": 75.0
+    },
+    {
+      "matchup": "Kawasaki Frontale vs FC Tokyo",
+      "games": 4,
+      "close_games": 3,
+      "close_rate": 75.0
+    },
+    {
+      "matchup": "Sagan Tosu vs Tokushima Vortis",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Tokushima Vortis vs Sagan Tosu",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Cerezo Osaka vs Oita Trinita",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Oita Trinita vs Cerezo Osaka",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Gamba Osaka vs Urawa Red Diamonds",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Urawa Red Diamonds vs Gamba Osaka",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Kashima Antlers vs Sanfrecce Hiroshima",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Sanfrecce Hiroshima vs Kashima Antlers",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Kashiwa Reysol vs Kyoto Sanga",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Kyoto Sanga vs Kashiwa Reysol",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Jubilo Iwata vs Urawa Red Diamonds",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Urawa Red Diamonds vs Jubilo Iwata",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Nagoya Grampus vs Sagan Tosu",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Sagan Tosu vs Nagoya Grampus",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Jubilo Iwata vs Nagoya Grampus",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Nagoya Grampus vs Jubilo Iwata",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Kyoto Sanga vs Shimizu S-Pulse",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Shimizu S-Pulse vs Kyoto Sanga",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Avispa Fukuoka vs Gamba Osaka",
+      "games": 3,
+      "close_games": 3,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Gamba Osaka vs Avispa Fukuoka",
+      "games": 3,
+      "close_games": 3,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Kawasaki Frontale vs Sagan Tosu",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Sagan Tosu vs Kawasaki Frontale",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Jubilo Iwata vs Kashiwa Reysol",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Kashiwa Reysol vs Jubilo Iwata",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "FC Tokyo vs Yokohama F. Marinos",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Yokohama F. Marinos vs FC Tokyo",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Kyoto Sanga vs Vissel Kobe",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Vissel Kobe vs Kyoto Sanga",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Kashima Antlers vs Kyoto Sanga",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Kyoto Sanga vs Kashima Antlers",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Avispa Fukuoka vs Yokohama F. Marinos",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Yokohama F. Marinos vs Avispa Fukuoka",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Consadole Sapporo vs Jubilo Iwata",
+      "games": 2,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Jubilo Iwata vs Consadole Sapporo",
+      "games": 2,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Kyoto Sanga vs Yokohama F. Marinos",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Yokohama F. Marinos vs Kyoto Sanga",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "FC Tokyo vs Kyoto Sanga",
+      "games": 3,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Kyoto Sanga vs FC Tokyo",
+      "games": 3,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Avispa Fukuoka vs Vissel Kobe",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Vissel Kobe vs Avispa Fukuoka",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Kyoto Sanga vs Sagan Tosu",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Sagan Tosu vs Kyoto Sanga",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Avispa Fukuoka vs Consadole Sapporo",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Consadole Sapporo vs Avispa Fukuoka",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Jubilo Iwata vs Kashima Antlers",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Kashima Antlers vs Jubilo Iwata",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Kyoto Sanga vs Nagoya Grampus",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Nagoya Grampus vs Kyoto Sanga",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Cerezo Osaka vs Kashiwa Reysol",
+      "games": 3,
+      "close_games": 3,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Kashiwa Reysol vs Cerezo Osaka",
+      "games": 3,
+      "close_games": 3,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Kawasaki Frontale vs Kyoto Sanga",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Kyoto Sanga vs Kawasaki Frontale",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Avispa Fukuoka vs Kashiwa Reysol",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Kashiwa Reysol vs Avispa Fukuoka",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Cerezo Osaka vs Kyoto Sanga",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Kyoto Sanga vs Cerezo Osaka",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Urawa Red Diamonds vs Yokohama F. Marinos",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Yokohama F. Marinos vs Urawa Red Diamonds",
+      "games": 3,
+      "close_games": 2,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Jubilo Iwata vs Kyoto Sanga",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Kyoto Sanga vs Jubilo Iwata",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Avispa Fukuoka vs Urawa Red Diamonds",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Urawa Red Diamonds vs Avispa Fukuoka",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Albirex Niigata vs Nagoya Grampus",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Nagoya Grampus vs Albirex Niigata",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Sanfrecce Hiroshima vs Shonan Bellmare",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Shonan Bellmare vs Sanfrecce Hiroshima",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Vissel Kobe vs Yokohama FC",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Yokohama FC vs Vissel Kobe",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Albirex Niigata vs Shonan Bellmare",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Shonan Bellmare vs Albirex Niigata",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Avispa Fukuoka vs Yokohama FC",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Yokohama FC vs Avispa Fukuoka",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Albirex Niigata vs Avispa Fukuoka",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Avispa Fukuoka vs Albirex Niigata",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Consadole Sapporo vs Kyoto Sanga",
+      "games": 2,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Kyoto Sanga vs Consadole Sapporo",
+      "games": 2,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Albirex Niigata vs Kashima Antlers",
+      "games": 2,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Kashima Antlers vs Albirex Niigata",
+      "games": 2,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Avispa Fukuoka vs Kyoto Sanga",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Kyoto Sanga vs Avispa Fukuoka",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Albirex Niigata vs Urawa Red Diamonds",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Urawa Red Diamonds vs Albirex Niigata",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Avispa Fukuoka vs FC Tokyo",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "FC Tokyo vs Avispa Fukuoka",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Kyoto Sanga vs Urawa Red Diamonds",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Urawa Red Diamonds vs Kyoto Sanga",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Albirex Niigata vs Gamba Osaka",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Gamba Osaka vs Albirex Niigata",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Albirex Niigata vs Yokohama FC",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Yokohama FC vs Albirex Niigata",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Kyoto Sanga vs Sanfrecce Hiroshima",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Sanfrecce Hiroshima vs Kyoto Sanga",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Albirex Niigata vs Kawasaki Frontale",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Kawasaki Frontale vs Albirex Niigata",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Albirex Niigata vs Sagan Tosu",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Sagan Tosu vs Albirex Niigata",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Kyoto Sanga vs Shonan Bellmare",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Shonan Bellmare vs Kyoto Sanga",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Consadole Sapporo vs Yokohama FC",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Yokohama FC vs Consadole Sapporo",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Albirex Niigata vs Kyoto Sanga",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Kyoto Sanga vs Albirex Niigata",
+      "games": 2,
+      "close_games": 1,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Albirex Niigata vs FC Tokyo",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "FC Tokyo vs Albirex Niigata",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Kashima Antlers vs Kashiwa Reysol",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Kashiwa Reysol vs Kashima Antlers",
+      "games": 2,
+      "close_games": 2,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Albirex Niigata vs Jubilo Iwata",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Jubilo Iwata vs Albirex Niigata",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Cerezo Osaka vs Machida Zelvia",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Machida Zelvia vs Cerezo Osaka",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Sanfrecce Hiroshima vs Tokyo Verdy 1969",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Tokyo Verdy 1969 vs Sanfrecce Hiroshima",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Machida Zelvia vs Shonan Bellmare",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Shonan Bellmare vs Machida Zelvia",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Nagoya Grampus vs Tokyo Verdy 1969",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Tokyo Verdy 1969 vs Nagoya Grampus",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Jubilo Iwata vs Machida Zelvia",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Machida Zelvia vs Jubilo Iwata",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "FC Tokyo vs Tokyo Verdy 1969",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Tokyo Verdy 1969 vs FC Tokyo",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Kashima Antlers vs Tokyo Verdy 1969",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Tokyo Verdy 1969 vs Kashima Antlers",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Albirex Niigata vs Machida Zelvia",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Machida Zelvia vs Albirex Niigata",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Machida Zelvia vs Urawa Red Diamonds",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Urawa Red Diamonds vs Machida Zelvia",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Kashiwa Reysol vs Tokyo Verdy 1969",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Tokyo Verdy 1969 vs Kashiwa Reysol",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Consadole Sapporo vs Tokyo Verdy 1969",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Tokyo Verdy 1969 vs Consadole Sapporo",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Avispa Fukuoka vs Machida Zelvia",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Machida Zelvia vs Avispa Fukuoka",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Avispa Fukuoka vs Jubilo Iwata",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Jubilo Iwata vs Avispa Fukuoka",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Consadole Sapporo vs Machida Zelvia",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Machida Zelvia vs Consadole Sapporo",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Albirex Niigata vs Vissel Kobe",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Vissel Kobe vs Albirex Niigata",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Sagan Tosu vs Tokyo Verdy 1969",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Tokyo Verdy 1969 vs Sagan Tosu",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Gamba Osaka vs Kyoto Sanga",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Kyoto Sanga vs Gamba Osaka",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Gamba Osaka vs Tokyo Verdy 1969",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Tokyo Verdy 1969 vs Gamba Osaka",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Machida Zelvia vs Sanfrecce Hiroshima",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Sanfrecce Hiroshima vs Machida Zelvia",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Kawasaki Frontale vs Machida Zelvia",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Machida Zelvia vs Kawasaki Frontale",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Shonan Bellmare vs Tokyo Verdy 1969",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Tokyo Verdy 1969 vs Shonan Bellmare",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Albirex Niigata vs Yokohama F. Marinos",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Yokohama F. Marinos vs Albirex Niigata",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Kashiwa Reysol vs Machida Zelvia",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Machida Zelvia vs Kashiwa Reysol",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Tokyo Verdy 1969 vs Urawa Red Diamonds",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Urawa Red Diamonds vs Tokyo Verdy 1969",
+      "games": 1,
+      "close_games": 1,
+      "close_rate": 100.0
+    },
+    {
+      "matchup": "Albirex Niigata vs Tokyo Verdy 1969",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Tokyo Verdy 1969 vs Albirex Niigata",
+      "games": 1,
+      "close_games": 0,
+      "close_rate": 0.0
+    }
+  ],
+  "form_strengths": [
+    {
+      "team": "Albirex Niigata",
+      "strength": 48.0
+    },
+    {
+      "team": "Avispa Fukuoka",
+      "strength": 66.7
+    },
+    {
+      "team": "Cerezo Osaka",
+      "strength": 75.3
+    },
+    {
+      "team": "Consadole Sapporo",
+      "strength": 69.3
+    },
+    {
+      "team": "FC Tokyo",
+      "strength": 77.3
+    },
+    {
+      "team": "Gamba Osaka",
+      "strength": 81.3
+    },
+    {
+      "team": "Jubilo Iwata",
+      "strength": 68.0
+    },
+    {
+      "team": "Kashima Antlers",
+      "strength": 64.7
+    },
+    {
+      "team": "Kashiwa Reysol",
+      "strength": 64.0
+    },
+    {
+      "team": "Kawasaki Frontale",
+      "strength": 65.3
+    },
+    {
+      "team": "Kyoto Sanga",
+      "strength": 66.0
+    },
+    {
+      "team": "Machida Zelvia",
+      "strength": 54.7
+    },
+    {
+      "team": "Matsumoto Yamaga FC",
+      "strength": 65.3
+    },
+    {
+      "team": "Nagoya Grampus",
+      "strength": 58.0
+    },
+    {
+      "team": "Oita Trinita",
+      "strength": 68.7
+    },
+    {
+      "team": "Sagan Tosu",
+      "strength": 50.0
+    },
+    {
+      "team": "Sanfrecce Hiroshima",
+      "strength": 76.0
+    },
+    {
+      "team": "Shimizu S-Pulse",
+      "strength": 56.0
+    },
+    {
+      "team": "Shonan Bellmare",
+      "strength": 88.0
+    },
+    {
+      "team": "Tokushima Vortis",
+      "strength": 72.9
+    },
+    {
+      "team": "Tokyo Verdy 1969",
+      "strength": 78.7
+    },
+    {
+      "team": "Urawa Red Diamonds",
+      "strength": 68.7
+    },
+    {
+      "team": "Vegalta Sendai",
+      "strength": 63.3
+    },
+    {
+      "team": "Vissel Kobe",
+      "strength": 78.7
+    },
+    {
+      "team": "Yokohama F. Marinos",
+      "strength": 52.0
+    },
+    {
+      "team": "Yokohama FC",
+      "strength": 73.3
+    }
+  ],
+  "team_margin_ratings": [
+    {
+      "team": "Albirex Niigata",
+      "avg_margin": -0.9
+    },
+    {
+      "team": "Avispa Fukuoka",
+      "avg_margin": -0.5
+    },
+    {
+      "team": "Cerezo Osaka",
+      "avg_margin": -0.7
+    },
+    {
+      "team": "Consadole Sapporo",
+      "avg_margin": 0.6
+    },
+    {
+      "team": "FC Tokyo",
+      "avg_margin": 0.2
+    },
+    {
+      "team": "Gamba Osaka",
+      "avg_margin": 0
+    },
+    {
+      "team": "Jubilo Iwata",
+      "avg_margin": -0.5
+    },
+    {
+      "team": "Kashima Antlers",
+      "avg_margin": 0.1
+    },
+    {
+      "team": "Kashiwa Reysol",
+      "avg_margin": -0.4
+    },
+    {
+      "team": "Kawasaki Frontale",
+      "avg_margin": 1.1
+    },
+    {
+      "team": "Kyoto Sanga",
+      "avg_margin": 0.4
+    },
+    {
+      "team": "Machida Zelvia",
+      "avg_margin": 0.1
+    },
+    {
+      "team": "Matsumoto Yamaga FC",
+      "avg_margin": -0.1
+    },
+    {
+      "team": "Nagoya Grampus",
+      "avg_margin": 0.1
+    },
+    {
+      "team": "Oita Trinita",
+      "avg_margin": -1
+    },
+    {
+      "team": "Sagan Tosu",
+      "avg_margin": -1.3
+    },
+    {
+      "team": "Sanfrecce Hiroshima",
+      "avg_margin": 1.3
+    },
+    {
+      "team": "Shimizu S-Pulse",
+      "avg_margin": -0.3
+    },
+    {
+      "team": "Shonan Bellmare",
+      "avg_margin": 0.1
+    },
+    {
+      "team": "Tokushima Vortis",
+      "avg_margin": -0.9
+    },
+    {
+      "team": "Tokyo Verdy 1969",
+      "avg_margin": 0.6
+    },
+    {
+      "team": "Urawa Red Diamonds",
+      "avg_margin": -0.3
+    },
+    {
+      "team": "Vegalta Sendai",
+      "avg_margin": -0.9
+    },
+    {
+      "team": "Vissel Kobe",
+      "avg_margin": 0.4
+    },
+    {
+      "team": "Yokohama F. Marinos",
+      "avg_margin": -0.2
+    },
+    {
+      "team": "Yokohama FC",
+      "avg_margin": -0.1
+    }
+  ]
+}

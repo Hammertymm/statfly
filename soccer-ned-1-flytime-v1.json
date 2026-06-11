@@ -5,9 +5,9 @@
     "engine": "v1-bootstrap",
     "formula": "close*0.35 + form_balance*0.25 + margin_balance*0.25 + matchup*0.15",
     "close_margin": 1,
-    "games_sampled": 600,
+    "games_sampled": 599,
     "week_chunk": 9,
-    "built": "2026-06-10"
+    "built": "2026-06-11"
   },
   "matchup_ratings": [
     {
@@ -1104,15 +1104,15 @@
     },
     {
       "matchup": "RKC Waalwijk vs Willem II",
-      "games_played": 3,
-      "avg_margin": 1.67,
-      "avg_excitement": 60.0
+      "games_played": 2,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
     },
     {
       "matchup": "Willem II vs RKC Waalwijk",
-      "games_played": 3,
-      "avg_margin": 1.67,
-      "avg_excitement": 60.0
+      "games_played": 2,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
     },
     {
       "matchup": "ADO Den Haag vs Vitesse",
@@ -4082,15 +4082,15 @@
     },
     {
       "matchup": "RKC Waalwijk vs Willem II",
-      "games": 3,
+      "games": 2,
       "close_games": 2,
-      "close_rate": 66.67
+      "close_rate": 100.0
     },
     {
       "matchup": "Willem II vs RKC Waalwijk",
-      "games": 3,
+      "games": 2,
       "close_games": 2,
-      "close_rate": 66.67
+      "close_rate": 100.0
     },
     {
       "matchup": "ADO Den Haag vs Vitesse",
@@ -6064,7 +6064,7 @@
     },
     {
       "team": "Willem II",
-      "strength": 59.3
+      "strength": 61.3
     }
   ],
   "team_margin_ratings": [
@@ -6146,7 +6146,7 @@
     },
     {
       "team": "RKC Waalwijk",
-      "avg_margin": -1.4
+      "avg_margin": -1.5
     },
     {
       "team": "SC Cambuur",
@@ -6166,7 +6166,7 @@
     },
     {
       "team": "Willem II",
-      "avg_margin": 0
+      "avg_margin": -0.3
     }
   ]
 }

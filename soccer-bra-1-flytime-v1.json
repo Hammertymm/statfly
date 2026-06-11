@@ -5,9 +5,9 @@
     "engine": "v1-bootstrap",
     "formula": "close*0.35 + form_balance*0.25 + margin_balance*0.25 + matchup*0.15",
     "close_margin": 1,
-    "games_sampled": 599,
+    "games_sampled": 598,
     "week_chunk": 10,
-    "built": "2026-06-10"
+    "built": "2026-06-11"
   },
   "matchup_ratings": [
     {
@@ -384,15 +384,15 @@
     },
     {
       "matchup": "Atl\u00e9tico-MG vs Bahia",
-      "games_played": 3,
-      "avg_margin": 1.67,
-      "avg_excitement": 60.0
+      "games_played": 2,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
     },
     {
       "matchup": "Bahia vs Atl\u00e9tico-MG",
-      "games_played": 3,
-      "avg_margin": 1.67,
-      "avg_excitement": 60.0
+      "games_played": 2,
+      "avg_margin": 1,
+      "avg_excitement": 90.0
     },
     {
       "matchup": "Athletico-PR vs Gr\u00eamio",
@@ -3998,15 +3998,15 @@
     },
     {
       "matchup": "Atl\u00e9tico-MG vs Bahia",
-      "games": 3,
+      "games": 2,
       "close_games": 2,
-      "close_rate": 66.67
+      "close_rate": 100.0
     },
     {
       "matchup": "Bahia vs Atl\u00e9tico-MG",
-      "games": 3,
+      "games": 2,
       "close_games": 2,
-      "close_rate": 66.67
+      "close_rate": 100.0
     },
     {
       "matchup": "Athletico-PR vs Gr\u00eamio",
@@ -7252,7 +7252,7 @@
     },
     {
       "team": "Atl\u00e9tico-MG",
-      "strength": 67.3
+      "strength": 69.3
     },
     {
       "team": "Ava\u00ed",
@@ -7260,7 +7260,7 @@
     },
     {
       "team": "Bahia",
-      "strength": 66.0
+      "strength": 60.7
     },
     {
       "team": "Botafogo",
@@ -7370,7 +7370,7 @@
     },
     {
       "team": "Atl\u00e9tico-MG",
-      "avg_margin": -0.1
+      "avg_margin": 0.1
     },
     {
       "team": "Ava\u00ed",
@@ -7378,7 +7378,7 @@
     },
     {
       "team": "Bahia",
-      "avg_margin": 0.2
+      "avg_margin": 0.1
     },
     {
       "team": "Botafogo",

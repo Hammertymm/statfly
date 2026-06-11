@@ -32,8 +32,8 @@
     "file": "soccer-ger-1-flytime-v1.json",
     "tag": "BUN",
     "threshold": 92,
-    "games": 500,
-    "teams": 24
+    "games": 600,
+    "teams": 26
   },
   {
     "league_key": "ita.1",
@@ -68,7 +68,7 @@
     "file": "soccer-ned-1-flytime-v1.json",
     "tag": "ERE",
     "threshold": 88,
-    "games": 600,
+    "games": 599,
     "teams": 25
   },
   {
@@ -86,7 +86,7 @@
     "file": "soccer-sco-1-flytime-v1.json",
     "tag": "SCO",
     "threshold": 85,
-    "games": 552,
+    "games": 551,
     "teams": 14
   },
   {
@@ -104,7 +104,7 @@
     "file": "soccer-bra-1-flytime-v1.json",
     "tag": "BRA",
     "threshold": 97,
-    "games": 599,
+    "games": 598,
     "teams": 29
   },
   {
@@ -139,7 +139,7 @@
     "slug": "irl-1",
     "file": "soccer-irl-1-flytime-v1.json",
     "tag": "IRL",
-    "threshold": 90,
+    "threshold": 80,
     "games": 566,
     "teams": 14
   },
@@ -196,5 +196,95 @@
     "threshold": 96,
     "games": 576,
     "teams": 86
+  },
+  {
+    "league_key": "jpn.1",
+    "slug": "jpn-1",
+    "file": "soccer-jpn-1-flytime-v1.json",
+    "tag": "J1",
+    "threshold": 96,
+    "games": 599,
+    "teams": 26
+  },
+  {
+    "league_key": "eng.3",
+    "slug": "eng-3",
+    "file": "soccer-eng-3-flytime-v1.json",
+    "tag": "L1",
+    "threshold": 97,
+    "games": 600,
+    "teams": 49
+  },
+  {
+    "league_key": "eng.4",
+    "slug": "eng-4",
+    "file": "soccer-eng-4-flytime-v1.json",
+    "tag": "L2",
+    "threshold": 97,
+    "games": 600,
+    "teams": 44
+  },
+  {
+    "league_key": "chn.1",
+    "slug": "chn-1",
+    "file": "soccer-chn-1-flytime-v1.json",
+    "tag": "CSL",
+    "threshold": 94,
+    "games": 580,
+    "teams": 29
+  },
+  {
+    "league_key": "bel.1",
+    "slug": "bel-1",
+    "file": "soccer-bel-1-flytime-v1.json",
+    "tag": "BEL",
+    "threshold": 88,
+    "games": 600,
+    "teams": 23
+  },
+  {
+    "league_key": "sui.1",
+    "slug": "sui-1",
+    "file": "soccer-sui-1-flytime-v1.json",
+    "tag": "SUI",
+    "threshold": 85,
+    "games": 600,
+    "teams": 16
+  },
+  {
+    "league_key": "gre.1",
+    "slug": "gre-1",
+    "file": "soccer-gre-1-flytime-v1.json",
+    "tag": "GRE",
+    "threshold": 93,
+    "games": 600,
+    "teams": 21
+  },
+  {
+    "league_key": "ita.2",
+    "slug": "ita-2",
+    "file": "soccer-ita-2-flytime-v1.json",
+    "tag": "SB",
+    "threshold": 97,
+    "games": 600,
+    "teams": 45
+  },
+  {
+    "league_key": "ksa.1",
+    "slug": "ksa-1",
+    "file": "soccer-ksa-1-flytime-v1.json",
+    "tag": "KSA",
+    "threshold": 96,
+    "games": 300,
+    "teams": 23
+  },
+  {
+    "league_key": "rus.1",
+    "slug": "rus-1",
+    "file": "soccer-rus-1-flytime-v1.json",
+    "tag": "RUS",
+    "threshold": 94,
+    "games": 600,
+    "teams": 24
   }
 ]

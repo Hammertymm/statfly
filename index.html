@@ -288,10 +288,6 @@
   .onb-overlay { display: none; position: fixed; inset: 0; background: #000; z-index: 300; overflow-y: auto; }
   .onb-overlay.active { display: block; }
   .onb-inner { max-width: 430px; margin: 0 auto; min-height: 100%; display: flex; flex-direction: column; padding: 0 22px; box-sizing: border-box; }
-  .onb-progress { padding: 14px 0 6px; flex-shrink: 0; }
-  .onb-dots { display: flex; gap: 7px; justify-content: center; }
-  .onb-dot { width: 7px; height: 7px; border-radius: 50%; background: rgba(255,255,255,0.18); transition: background .2s, transform .2s; }
-  .onb-dot.active { background: var(--live); transform: scale(1.15); }
   .onb-step { flex: 1; display: flex; flex-direction: column; }
   #onb-step-1, #onb-step-3 { padding: 0; }
   .onb-hero-caption { font-size: 14px; line-height: 1.45; color: var(--text-3); text-align: center; margin: -4px 0 10px; padding: 0 8px; }
@@ -945,13 +941,6 @@
 <!-- ONBOARDING: first-run only. Shown by startOnboarding(); hidden once finished. -->
 <div class="onb-overlay" id="onboard-overlay">
   <div class="onb-inner">
-    <div class="onb-progress" id="onb-progress" aria-hidden="true">
-      <div class="onb-dots">
-        <span class="onb-dot" data-step="1"></span>
-        <span class="onb-dot" data-step="2"></span>
-        <span class="onb-dot" data-step="3"></span>
-      </div>
-    </div>
 
     <!-- Step 1: Welcome hero -->
     <div class="onb-step" id="onb-step-1">
@@ -4612,17 +4601,7 @@ function onbGoStep(n){
   for(var i=0;i<steps.length;i++){ steps[i].style.display='none'; }
   var target=document.getElementById('onb-step-'+n);
   if(target) target.style.display='flex';
-  onbUpdateProgress(n);
   if(n===2){ onbRefresh(); }
-}
-
-function onbUpdateProgress(step){
-  var prog=document.getElementById('onb-progress');
-  if(prog) prog.setAttribute('aria-hidden','false');
-  document.querySelectorAll('.onb-dot').forEach(function(d){
-    var s=parseInt(d.getAttribute('data-step'),10);
-    d.classList.toggle('active', s <= step);
-  });
 }
 
 // Search inside onboarding. Mirrors globalSearch/gsrTap but targets the

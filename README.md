@@ -2,7 +2,7 @@
 
 **Scores Anywhere. Simple.**
 
-A mobile-first sports scores web app. Live scores, fixtures, and recent results from 42 league feeds — follow any of 619 teams across 20 countries and international competitions. No login, no ads, no clutter.
+A mobile-first sports scores web app. Live scores, fixtures, and recent results from 47 league feeds — follow any of 746 teams across 20 countries and international competitions. No login, no ads, no clutter.
 
 **Live:** [scorefly.app](https://scorefly.app) · [hammertymm.github.io/scorefly](https://hammertymm.github.io/scorefly)
 
@@ -37,7 +37,7 @@ The score numbers change colour to show what's *happening* in a game, not just t
 - **Blue** — a team has gone cold
 - **White** — even contest
 
-Coloured **fly icons** on cards show FlyTime status: green = live in FlyTime, yellow = upcoming and predicted close, red = finished after reaching FlyTime.
+Coloured **fly icons** on cards show FlyTime status: **yellow fly** = upcoming and predicted close, **green fly** = live in FlyTime, **red fly** = finished after reaching FlyTime.
 
 Turn on a team's bell and ScoreFly sends you one alert the moment its match enters FlyTime. Switch on **FlyTime ALL** to get that alert for *any* close game, not just the teams you follow.
 
@@ -47,7 +47,7 @@ Tap the **+** beside any team on a card or in search to follow it without leavin
 
 ## Leagues covered
 
-ScoreFly pulls live data for **42 league feeds** across soccer, US/Canada major leagues, AFL, NRL, cricket, tennis, and more. The searchable follow list covers **619 teams and players**.
+ScoreFly pulls live data for **47 league feeds** across soccer, US/Canada major leagues, AFL, NRL, NBL, cricket, tennis, and more. The searchable follow list covers **746 teams and players**.
 
 See `SCOREFLY.md` for the full league list.
 

@@ -192,7 +192,7 @@
   .fm-stamp .mk-fb{background:rgba(6,240,60,.15);border:1px solid var(--live);color:var(--live);}
 
   /* FLYTIME ICON - single coloured fly, fixed top-right of every card. Own system:
-     green = live and in FlyTime now; yellow = upcoming and predicted; red = finished and reached FlyTime. */
+     yellow fly = upcoming prediction; green fly = live FlyTime; red fly = finished after FlyTime. */
   .ft-fly img{height:22px;width:22px;border-radius:50%;display:block;}
   .ft-fly .mk-fb{background:none;border:none;padding:0;height:auto;font-size:15px;}
   /* Local testing: flyscore readout on cards. Set DEBUG_FLYSCORES false before production. */
@@ -279,7 +279,17 @@
   .fly-lab-num.warn{color:var(--upcoming);}
   .fly-lab-num.bad{color:var(--result);}
   .fly-lab-num.dim{color:var(--text-2);}
+  .fly-lab-num.blue{color:var(--blue);}
   .fly-lab-lbl{font-size:10px;color:var(--text-3);margin-top:4px;line-height:1.2;}
+  .fly-lab-league{margin-top:6px;border:1px solid var(--sep);border-radius:10px;overflow:hidden;}
+  .fly-lab-league-hdr,.fly-lab-league-row{display:grid;grid-template-columns:52px 1fr repeat(5,minmax(28px,auto));gap:4px;align-items:center;padding:6px 8px;font-size:10px;}
+  .fly-lab-league-hdr{background:#1c1c1e;color:var(--text-3);font-weight:700;letter-spacing:.3px;text-transform:uppercase;}
+  .fly-lab-league-row{border-top:1px solid var(--sep);color:var(--text-2);}
+  .fly-lab-league-row .tag{font-weight:700;color:var(--text);}
+  .fly-lab-league-row .num{text-align:right;font-variant-numeric:tabular-nums;}
+  .fly-lab-hint{grid-column:1/-1;font-size:11px;color:var(--blue);padding:2px 0 4px;}
+  .fly-lab-hint.up{color:var(--result);}
+  .fly-lab-hint.down{color:var(--upcoming);}
   .fly-lab-note{font-size:12px;color:var(--text-2);line-height:1.45;margin:6px 0 2px;}
   .fly-lab-note.warn{color:var(--upcoming);}
   .fly-lab-bar{height:6px;background:rgba(255,255,255,.08);border-radius:3px;margin:6px 0 4px;overflow:hidden;}
@@ -1242,6 +1252,7 @@ const ESPN_FEEDS = [
   { sport:'cricket',    league:'8048',  label:'IPL', emoji:'🏏' },
   { sport:'cricket',    league:'23694', label:'Cricket', emoji:'🏏' },
   { sport:'basketball', league:'wnba',  label:'WNBA', emoji:'🏀' },
+  { sport:'basketball', league:'nbl',   label:'NBL', emoji:'🏀' },
   { sport:'basketball', league:'mens-college-basketball', label:'NCAAM', emoji:'🏀' },
   { sport:'football',   league:'college-football',        label:'NCAAF', emoji:'🏈' },
   { sport:'football',   league:'cfl',   label:'CFL', emoji:'🏈' },
@@ -1256,7 +1267,7 @@ const ESPN_FEEDS = [
 // college sports) simply never qualify for the deep window - they stay on the All
 // window. Keep this in sync if league names in TEAMS ever change.
 const FEED_LEAGUE_NAME = {
-  'nba':'NBA','wnba':'WNBA','nfl':'NFL','mlb':'MLB','nhl':'NHL','usa.1':'MLS',
+  'nba':'NBA','wnba':'WNBA','nbl':'NBL','nfl':'NFL','mlb':'MLB','nhl':'NHL','usa.1':'MLS',
   'eng.1':'Premier League','esp.1':'La Liga','uefa.champions':'UEFA Champions League',
   'uefa.europa':'UEFA Europa League','ger.1':'Bundesliga','ita.1':'Serie A',
   'fra.1':'Ligue 1','eng.2':'Championship','ned.1':'Eredivisie','por.1':'Primeira Liga',
@@ -1893,7 +1904,7 @@ function isFlyTime(m) {
 }
 
 // Blowout buffer: once a game has entered FlyTime, unpin it if the margin blows out
-// (roughly 2x the FlyTime close-game threshold). The after-match stamp is kept.
+// (roughly 2x the FlyTime close-game threshold). The after-match red fly is kept.
 const FLY_BLOWOUT_MARGIN = {
   basketball: 16,
   football: 16,
@@ -1923,8 +1934,8 @@ function isFlyTimePinned(m) {
   return !isFlyTimeBlowout(m);
 }
 
-// After-match Fly stamp: remember which matches ever entered FlyTime, so completed
-// matches can show a small validation stamp on Results. Stored id->timestamp and pruned
+// After-match red fly: remember which matches ever entered FlyTime, so completed
+// matches can show the red fly on Results. Stored id->timestamp and pruned
 // past the results window so it never grows without bound.
 let flyTimeMatches = {};
 try{ flyTimeMatches = JSON.parse(localStorage.getItem('scorefly_flytime_matches') || '{}') || {}; }catch(e){ flyTimeMatches = {}; }
@@ -1942,21 +1953,46 @@ function markFlyTimeMatch(id){
 function matchHadFlyTime(id){ return Object.prototype.hasOwnProperty.call(flyTimeMatches, id); }
 
 // --- FlyTime predictor ledger (Item 6) ---
-// DEBUG: set DEBUG_FLY false before public release (hides card scores + Teams lab).
+// DEBUG: set DEBUG_FLY false before public release (hides card score readouts on every card).
 const DEBUG_FLY = false;
 const DEBUG_FLYSCORES = DEBUG_FLY;
+// Fly naming (four coloured flies — same icon, different colours):
+//   Yellow fly = upcoming, engine predicts FlyTime potential (isFlyMatch)
+//   Green fly  = live, match is in FlyTime now
+//   Red fly    = finished after having reached FlyTime (results cards)
+//   Blue fly   = diagnostic only: yellow predicted, then reached FlyTime live (Y→G hit)
+// Tuning aim: every game with FlyTime potential should carry a yellow fly (maximise recall).
+// Monitor yellow/green/blue ratios per league in FlyTime Lab; raise or lower thresholds
+// in FLY_V1_REGISTRY until recall is high without excessive false alarms.
+// Enable lab on production: add ?flylab=1 to the URL once (persists in localStorage).
+function flyLabEnabled(){
+  if(DEBUG_FLY) return true;
+  try{
+    if(localStorage.getItem('scorefly_fly_lab') === '1') return true;
+    if(/[?&]flylab=1(?:&|$)/.test(location.search)){
+      localStorage.setItem('scorefly_fly_lab','1');
+      return true;
+    }
+  }catch(e){}
+  return false;
+}
 // Records, per match: was it PREDICTED FlyTime-worthy (yellow fly), and did it actually
 // REACH FlyTime live. Lets the predictor be tuned against a real hit-rate instead of
-// guesswork. Pruned to 35 days. Separate store from the after-match stamp above.
+// guesswork. Pruned to 35 days. Separate store from flyTimeMatches (red fly on Results) above.
 const FLY_LEDGER_KEY = 'scorefly_fly_ledger_v1';
 let flyLedger = {};
 try{ flyLedger = JSON.parse(localStorage.getItem(FLY_LEDGER_KEY) || '{}') || {}; }catch(e){ flyLedger = {}; }
 (function(){
   const cutoff = Date.now() - 35*24*60*60*1000;
   let changed = false;
-  for(const k in flyLedger){ if(!flyLedger[k] || (flyLedger[k].t||0) < cutoff){ delete flyLedger[k]; changed = true; } }
+  for(const k in flyLedger){
+    const e = flyLedger[k];
+    if(!e || (e.t||0) < cutoff){ delete flyLedger[k]; changed = true; continue; }
+    if(e.stamp && !e.rf){ e.rf = e.stamp; delete e.stamp; changed = true; }
+  }
   if(changed){ try{ localStorage.setItem(FLY_LEDGER_KEY, JSON.stringify(flyLedger)); }catch(e){} }
 })();
+function isRedFly(e){ return !!(e && (e.rf || e.stamp)); }
 function saveFlyLedger(){ try{ localStorage.setItem(FLY_LEDGER_KEY, JSON.stringify(flyLedger)); }catch(e){} }
 // Flag a match the engine predicts as FlyTime-worthy. Called from computeFlyMatch, so it
 // fires often; it only writes on the first prediction for a match (cheap, no spam).
@@ -1975,8 +2011,8 @@ function ledgerPredict(m){
     thr = haveBoth ? FLYMATCH_THRESHOLD : FLYMATCH_THRESHOLD_NODATA;
   }
   flyLedger[m.id] = {
-    p:1, a:(e&&e.a)?1:0, fin:(e&&e.fin)?1:0, stamp:(e&&e.stamp)?1:0,
-    h:m.home||'', w:m.away||'', lg:m.league||'', sk:m.sportKey||'',
+    p:1, a:(e&&e.a)?1:0, bf:(e&&e.bf)?1:0, fin:(e&&e.fin)?1:0, rf:(e&&isRedFly(e))?1:0,
+    h:m.home||'', w:m.away||'', lg:m.league||'', sk:m.sportKey||'', lk:m.leagueKey||'',
     r:m.flyMatchRating||0, eng:eng, thr:thr,
     t:(e&&e.t)||Date.now()
   };
@@ -1987,26 +2023,68 @@ function ledgerAchieved(m){
   if(!m || !m.id) return;
   const e = flyLedger[m.id];
   if(e && e.a) return;
+  const wasYellow = !!(e && e.p);
   flyLedger[m.id] = {
-    p:(e&&e.p)?1:0, a:1, fin:(e&&e.fin)?1:0, stamp:1,
+    p:wasYellow?1:0, a:1, bf:wasYellow?1:0, fin:(e&&e.fin)?1:0, rf:1,
     h:m.home||(e&&e.h)||'', w:m.away||(e&&e.w)||'', lg:m.league||(e&&e.lg)||'',
-    sk:m.sportKey||(e&&e.sk)||'', r:(e&&e.r)||m.flyMatchRating||0,
+    sk:m.sportKey||(e&&e.sk)||'', lk:m.leagueKey||(e&&e.lk)||'',
+    r:(e&&e.r)||m.flyMatchRating||0,
     eng:(e&&e.eng)||'', thr:(e&&e.thr)||null,
     t:(e&&e.t)||Date.now(), at:Date.now()
   };
   saveFlyLedger();
   if(typeof renderFlyDashboard === 'function') renderFlyDashboard();
 }
+function isBlueFly(e){ return !!(e && (e.bf || (e.p && e.a))); }
 function flyLedgerStats(){
-  let predicted=0, achieved=0, hit=0, total=0;
+  let predicted=0, achieved=0, hit=0, blue=0, total=0;
   for(const k in flyLedger){
     const e = flyLedger[k]; if(!e) continue;
     total++;
     if(e.p) predicted++;
     if(e.a) achieved++;
     if(e.p && e.a) hit++;
+    if(isBlueFly(e)) blue++;
   }
-  return { predicted, achieved, hit, total, falseAlarm:predicted-hit, missed:achieved-hit };
+  return { predicted, achieved, hit, blue, total, falseAlarm:predicted-hit, missed:achieved-hit };
+}
+function flyTuneHint(row){
+  if(row.missed >= 2 && row.missed >= row.falseAlarm) return { cls:'down', text:'Lower threshold — green/red flies without yellow (missed recall)' };
+  if(row.falseAlarm >= 3 && row.falseAlarm > row.blue * 2) return { cls:'up', text:'Raise threshold — yellows that never went green' };
+  if(row.yellowUp === 0 && row.yellow === 0 && row.green + row.missed > 0) return { cls:'down', text:'No yellows logged — threshold likely too high' };
+  return null;
+}
+function flyDashboardPerLeague(){
+  var byKey = {};
+  function bucket(key, tag, thr){
+    if(!byKey[key]) byKey[key] = { key:key, tag:tag||key, thr:thr, yellowUp:0, yellow:0, green:0, blue:0, missed:0, falseAlarm:0 };
+    return byKey[key];
+  }
+  Object.keys(FLY_V1_REGISTRY).forEach(function(key){
+    var cfg = FLY_V1_REGISTRY[key];
+    bucket(key, cfg.tag, cfg.threshold);
+  });
+  (ALL_UPCOMING||[]).forEach(function(m){
+    if(!usesFlyV1Engine(m)) return;
+    var key = flyV1Key(m);
+    var cfg = FLY_V1_REGISTRY[key] || {};
+    var b = bucket(key, cfg.tag, cfg.threshold);
+    if(m.isFlyMatch) b.yellowUp++;
+  });
+  for(var id in flyLedger){
+    var e = flyLedger[id]; if(!e) continue;
+    var key = (e.sk && e.lk) ? (e.sk + '|' + e.lk) : '';
+    if(!key || !byKey[key]) continue;
+    var b = byKey[key];
+    if(e.p) b.yellow++;
+    if(e.a) b.green++;
+    if(isBlueFly(e)) b.blue++;
+    if((e.a || isRedFly(e)) && !e.p) b.missed++;
+    if(e.p && e.fin && !isRedFly(e) && !e.a) b.falseAlarm++;
+  }
+  return Object.keys(byKey).map(function(k){ return byKey[k]; })
+    .filter(function(r){ return r.yellowUp > 0 || r.yellow > 0 || r.green > 0 || r.missed > 0 || r.falseAlarm > 0; })
+    .sort(function(a,b){ return (b.yellowUp + b.yellow) - (a.yellowUp + a.yellow); });
 }
 function resetFlyLedger(){ flyLedger = {}; saveFlyLedger(); renderFlyDashboard(); }
 
@@ -2016,10 +2094,11 @@ function syncFlyLedgerFromResults(){
     if(!m || !m.id) return;
     var e = flyLedger[m.id];
     if(!e) return;
-    var stamp = matchHadFlyTime(m.id) ? 1 : 0;
-    if(!e.fin || e.stamp !== stamp){
+    var rf = matchHadFlyTime(m.id) ? 1 : 0;
+    if(!e.fin || (isRedFly(e) ? 1 : 0) !== rf){
       e.fin = 1;
-      e.stamp = stamp;
+      e.rf = rf;
+      if(e.stamp) delete e.stamp;
       changed = true;
     }
   });
@@ -2070,16 +2149,16 @@ function flyDashboardLive(){
 }
 
 function flyDashboardFinished(){
-  var predFin = 0, predFinGreen = 0, predFinNoGreen = 0, unpredStamp = 0;
+  var predFin = 0, predFinRed = 0, predFinNoRed = 0, unpredRed = 0;
   for(var k in flyLedger){
     var e = flyLedger[k]; if(!e || !e.fin) continue;
     if(e.p){
       predFin++;
-      if(e.stamp || e.a) predFinGreen++;
-      else predFinNoGreen++;
-    } else if(e.stamp || e.a) unpredStamp++;
+      if(isRedFly(e) || e.a) predFinRed++;
+      else predFinNoRed++;
+    } else if(isRedFly(e) || e.a) unpredRed++;
   }
-  return { predFin:predFin, predFinGreen:predFinGreen, predFinNoGreen:predFinNoGreen, unpredStamp:unpredStamp };
+  return { predFin:predFin, predFinRed:predFinRed, predFinNoRed:predFinNoRed, unpredRed:unpredRed };
 }
 
 function flyDashEsc(s){
@@ -2090,7 +2169,7 @@ function renderFlyDashboard(){
   var section = document.getElementById('fly-lab-section');
   var el = document.getElementById('fly-ledger-wrap');
   if(!el) return;
-  if(!DEBUG_FLY){
+  if(!flyLabEnabled()){
     if(section) section.style.display = 'none';
     return;
   }
@@ -2103,8 +2182,8 @@ function renderFlyDashboard(){
   var s = flyLedgerStats();
   var precision = s.predicted ? Math.round(100 * s.hit / s.predicted) : 0;
   var recall = s.achieved ? Math.round(100 * s.hit / s.achieved) : 0;
-  var stampTotal = 0;
-  try { stampTotal = Object.keys(flyTimeMatches).length; } catch(e){}
+  var redFlyTotal = 0;
+  try { redFlyTotal = Object.keys(flyTimeMatches).length; } catch(e){}
   var fresh = lastUpdateMs ? Math.floor((Date.now() - lastUpdateMs) / 60000) : null;
   var freshTxt = fresh === null ? 'never' : (fresh < 1 ? 'just now' : fresh + 'm ago');
 
@@ -2118,21 +2197,21 @@ function renderFlyDashboard(){
   if(live.predLive > 0){
     html += '<div class="fly-lab-note">Of ' + live.predLive + ' predicted-yellow now live, <strong>' + live.predLiveGreen + '</strong> have gone green.</div>';
   }
-  html += '<div class="fly-lab-note">Poll: ' + freshTxt + (lastPollFailed ? ' (reconnecting)' : '') + ' · Red stamps stored: ' + stampTotal + '</div>';
+  html += '<div class="fly-lab-note">Poll: ' + freshTxt + (lastPollFailed ? ' (reconnecting)' : '') + ' · Red flies stored: ' + redFlyTotal + '</div>';
 
-  html += '<div class="fly-lab-sec">Yellow to green accuracy</div>';
+  html += '<div class="fly-lab-sec">Yellow · Green · Blue (diagnostic)</div>';
   html += '<div class="fly-lab-grid">';
   html += '<div class="fly-lab-stat"><div class="fly-lab-num warn">' + s.predicted + '</div><div class="fly-lab-lbl">yellow predicted</div></div>';
-  html += '<div class="fly-lab-stat"><div class="fly-lab-num">' + s.achieved + '</div><div class="fly-lab-lbl">went green live</div></div>';
-  html += '<div class="fly-lab-stat"><div class="fly-lab-num">' + s.hit + '</div><div class="fly-lab-lbl">correct (Y+G)</div></div>';
+  html += '<div class="fly-lab-stat"><div class="fly-lab-num">' + s.achieved + '</div><div class="fly-lab-lbl">green live</div></div>';
+  html += '<div class="fly-lab-stat"><div class="fly-lab-num blue">' + s.blue + '</div><div class="fly-lab-lbl">blue fly (Y→G)</div></div>';
   html += '</div>';
   html += '<div class="fly-lab-grid wide">';
-  html += '<div class="fly-lab-stat"><div class="fly-lab-num bad">' + s.falseAlarm + '</div><div class="fly-lab-lbl">false alarms</div></div>';
-  html += '<div class="fly-lab-stat"><div class="fly-lab-num bad">' + s.missed + '</div><div class="fly-lab-lbl">missed (G no Y)</div></div>';
+  html += '<div class="fly-lab-stat"><div class="fly-lab-num bad">' + s.falseAlarm + '</div><div class="fly-lab-lbl">false alarms (Y, no G)</div></div>';
+  html += '<div class="fly-lab-stat"><div class="fly-lab-num bad">' + s.missed + '</div><div class="fly-lab-lbl">missed (G, no Y)</div></div>';
   html += '</div>';
   if(s.predicted){
-    html += '<div class="fly-lab-note">Precision: ' + precision + '% of yellows went green · Recall: ' + recall + '% of greens were yellow</div>';
-    html += '<div class="fly-lab-bar"><div class="fly-lab-bar-fill" style="width:' + precision + '%"></div></div>';
+    html += '<div class="fly-lab-note">Precision: ' + precision + '% yellow→green · Recall: ' + recall + '% green had yellow · Aim: recall high so every FlyTime candidate is yellow</div>';
+    html += '<div class="fly-lab-bar"><div class="fly-lab-bar-fill" style="width:' + recall + '%"></div></div>';
   } else {
     html += '<div class="fly-lab-note">No predictions logged yet. Yellow flies on upcoming games build the ledger automatically.</div>';
   }
@@ -2143,11 +2222,11 @@ function renderFlyDashboard(){
   html += '<div class="fly-lab-sec">Finished games (ledger)</div>';
   html += '<div class="fly-lab-grid">';
   html += '<div class="fly-lab-stat"><div class="fly-lab-num warn">' + fin.predFin + '</div><div class="fly-lab-lbl">predicted finished</div></div>';
-  html += '<div class="fly-lab-stat"><div class="fly-lab-num">' + fin.predFinGreen + '</div><div class="fly-lab-lbl">got red stamp</div></div>';
-  html += '<div class="fly-lab-stat"><div class="fly-lab-num bad">' + fin.predFinNoGreen + '</div><div class="fly-lab-lbl">predicted, no FT</div></div>';
+  html += '<div class="fly-lab-stat"><div class="fly-lab-num">' + fin.predFinRed + '</div><div class="fly-lab-lbl">got red fly</div></div>';
+  html += '<div class="fly-lab-stat"><div class="fly-lab-num bad">' + fin.predFinNoRed + '</div><div class="fly-lab-lbl">predicted, no red</div></div>';
   html += '</div>';
-  if(fin.unpredStamp > 0){
-    html += '<div class="fly-lab-note">' + fin.unpredStamp + ' finished with red stamp but no yellow prediction.</div>';
+  if(fin.unpredRed > 0){
+    html += '<div class="fly-lab-note">' + fin.unpredRed + ' finished with red fly but no yellow prediction.</div>';
   }
 
   html += '<div class="fly-lab-sec">Predictor input health</div>';
@@ -2158,22 +2237,20 @@ function renderFlyDashboard(){
     html += '<div class="fly-lab-note warn">Low margin coverage - legacy yellow tuning may be blind. Check form fetch / proxies.</div>';
   }
 
-  var engRows = [];
-  Object.keys(FLY_V1_REGISTRY).forEach(function(key){
-    var cfg = FLY_V1_REGISTRY[key];
-    var eng = flyV1Engines[key];
-    var yc = 0;
-    (ALL_UPCOMING||[]).forEach(function(m){ if(flyV1Key(m) === key && m.isFlyMatch) yc++; });
-    if(eng && eng.idx) engRows.push({ tag:cfg.tag, thr:cfg.threshold, yellow:yc, ok:true });
-    else if(!eng || !eng.idx) engRows.push({ tag:cfg.tag, thr:cfg.threshold, yellow:yc, ok:false });
-  });
-  engRows.sort(function(a,b){ return b.yellow - a.yellow; });
-  var topEng = engRows.filter(function(r){ return r.yellow > 0 || !r.ok; }).slice(0, 8);
-  if(topEng.length){
-    html += '<div class="fly-lab-sec">Engine snapshot</div>';
-    topEng.forEach(function(r){
-      html += '<div class="fly-lab-eng-row"><span>' + flyDashEsc(r.tag) + (r.ok ? '' : ' (not loaded)') + ' · thr ' + r.thr + '</span><span>' + r.yellow + ' yellow</span></div>';
+  var leagueRows = flyDashboardPerLeague();
+  if(leagueRows.length){
+    html += '<div class="fly-lab-sec">Per-league threshold monitor</div>';
+    html += '<div class="fly-lab-note">Tune FLY_V1_REGISTRY thresholds: lower if missed greens dominate; raise if false alarms dominate.</div>';
+    html += '<div class="fly-lab-league">';
+    html += '<div class="fly-lab-league-hdr"><span>Tag</span><span>Thr</span><span class="num">Y now</span><span class="num">Y</span><span class="num">G</span><span class="num">B</span><span class="num">Miss</span></div>';
+    leagueRows.slice(0, 16).forEach(function(r){
+      var hint = flyTuneHint(r);
+      html += '<div class="fly-lab-league-row"><span class="tag">' + flyDashEsc(r.tag) + '</span><span class="num">' + r.thr + '</span>';
+      html += '<span class="num warn">' + r.yellowUp + '</span><span class="num">' + r.yellow + '</span><span class="num">' + r.green + '</span>';
+      html += '<span class="num blue">' + r.blue + '</span><span class="num bad">' + r.missed + '</span></div>';
+      if(hint) html += '<div class="fly-lab-hint ' + hint.cls + '">' + flyDashEsc(r.tag) + ': ' + hint.text + '</div>';
     });
+    html += '</div>';
   }
 
   var log = [];
@@ -2193,11 +2270,13 @@ function renderFlyDashboard(){
       var e = row.e;
       var y = e.p ? 'Y' : '-';
       var g = e.a ? 'G' : '-';
-      var r = e.stamp ? 'R' : '-';
-      var icons = '<span class="fly-lab-icons" title="Yellow/Green/Red stamp">';
+      var b = isBlueFly(e) ? 'B' : '-';
+      var r = isRedFly(e) ? 'R' : '-';
+      var icons = '<span class="fly-lab-icons" title="Yellow/Green/Blue/Red fly">';
       icons += '<span style="color:' + (e.p ? 'var(--upcoming)' : 'var(--text-3)') + '">' + y + '</span>';
-      icons += '<span style="color:' + ((e.a) ? 'var(--live)' : 'var(--text-3)') + '">' + g + '</span>';
-      icons += '<span style="color:' + (e.stamp ? 'var(--result)' : 'var(--text-3)') + '">' + r + '</span></span>';
+      icons += '<span style="color:' + (e.a ? 'var(--live)' : 'var(--text-3)') + '">' + g + '</span>';
+      icons += '<span style="color:' + (isBlueFly(e) ? 'var(--blue)' : 'var(--text-3)') + '">' + b + '</span>';
+      icons += '<span style="color:' + (isRedFly(e) ? 'var(--result)' : 'var(--text-3)') + '">' + r + '</span></span>';
       var meta = (e.eng || '?').toUpperCase();
       if(e.r) meta += ' ' + e.r;
       if(e.thr) meta += '/' + e.thr;
@@ -2206,12 +2285,13 @@ function renderFlyDashboard(){
         '<div class="fly-lab-meta">' + meta + '</div></div>';
     });
     html += '</div>';
-    html += '<div class="fly-lab-note">Y=yellow predicted · G=went green live · R=red stamp on results</div>';
+    html += '<div class="fly-lab-note">Y=yellow fly · G=green fly · B=blue fly (Y→G) · R=red fly</div>';
   }
 
   html += '<div class="fly-lab-actions">';
   html += '<span class="ledger-reset" onclick="resetFlyLedger()">Reset ledger</span>';
   html += '<span class="ledger-reset" onclick="forceRefresh().then(function(){ renderFlyDashboard(); })">Refresh now</span>';
+  if(!DEBUG_FLY) html += '<span class="ledger-reset" onclick="try{localStorage.removeItem(\'scorefly_fly_lab\')}catch(e){}location.reload()">Hide lab</span>';
   html += '</div>';
 
   el.innerHTML = html;
@@ -3554,9 +3634,9 @@ function buildResultCard(m){
   const lparts=m.league.split(' ');
   const sico=lparts[0];
   const ltxt=lparts.slice(1).join(' ');
-  const flyStamp=flyTimeIcon(m,'result');
+  const flyRed=flyTimeIcon(m,'result');
   return`<div class="card result">
-    <div class="card-meta"><span class="league-tag"><span class="sport-icon">${renderSportIcon(sico)}</span><span class="lg-badge">${ltxt}</span></span><span class="card-right">${flyScoreDebugHTML(m)}${flyStamp}<span class="ft-badge">FT · ${m.date}</span></span></div>
+    <div class="card-meta"><span class="league-tag"><span class="sport-icon">${renderSportIcon(sico)}</span><span class="lg-badge">${ltxt}</span></span><span class="card-right">${flyScoreDebugHTML(m)}${flyRed}<span class="ft-badge">FT · ${m.date}</span></span></div>
     <div class="card-body">
       <div class="card-teams">
         <div class="team-row">${logoImg(m.homeLogo,m.league,m.homeId,m.home)}<div class="t-name ${hw?'':'dim'}">${displayTeamName(m.home)}</div></div>
@@ -4263,6 +4343,7 @@ const FLY_V1_REGISTRY = {
   'football|nfl':                           { file: 'nfl-flytime-v1.json',              threshold: 93, tag: 'NFL' },
   'basketball|nba':                         { file: 'nba-flytime-v1.json',              threshold: 88, tag: 'NBA' },
   'basketball|wnba':                        { file: 'wnba-flytime-v1.json',             threshold: 70, tag: 'WNBA' },
+  'basketball|nbl':                         { file: 'nbl-flytime-v1.json',              threshold: 70, tag: 'NBL' },
   'basketball|mens-college-basketball':     { file: 'ncaam-flytime-v1.json',            threshold: 97, tag: 'NCAAM' },
   'baseball|mlb':                           { file: 'mlb-flytime-v1.json',              threshold: 85, tag: 'MLB' },
   'hockey|nhl':                             { file: 'nhl-flytime-v1.json',              threshold: 78, tag: 'NHL' },
@@ -4552,18 +4633,16 @@ function flyScoreDebugHTML(m) {
   return '<span class="fly-debug-score' + qual + '">' + tag + ' ' + (Math.round(score * 10) / 10) + (thr != null ? '/' + thr : '') + '</span>';
 }
 
-// FlyTime traffic light: one coloured fly per card, in the fixed top-right slot.
-// status is 'live' | 'upcoming' | 'result'. Returns '' when the card has no FlyTime state.
-//   green  = live now and currently in FlyTime
-//   yellow = not started, predicted to reach FlyTime (FlyMatch rating)
-//   red    = finished, and reached FlyTime while it was live
+// FlyTime flies: one coloured fly per card, fixed top-right. status: live | upcoming | result.
+//   yellow fly = upcoming prediction · green fly = live FlyTime · red fly = finished after FlyTime
+//   blue fly = diagnostic only (yellow then green); never rendered on cards
 function flyTimeIcon(m, status){
   if(status === 'live' && getMatchFly(m.id) === 'flytime')
-    return markerHTML('ft-fly ft-green', 'fly-green.png', 'In FlyTime', '&#129712;');
+    return markerHTML('ft-fly ft-green', 'fly-green.png', 'Green fly', '&#129712;');
   if(status === 'upcoming' && m.isFlyMatch)
-    return markerHTML('ft-fly ft-yellow', 'fly-yellow.png', 'FlyTime predicted', '&#129712;');
+    return markerHTML('ft-fly ft-yellow', 'fly-yellow.png', 'Yellow fly', '&#129712;');
   if(status === 'result' && matchHadFlyTime(m.id))
-    return markerHTML('ft-fly ft-red', 'fly-red.png', 'Reached FlyTime', '&#129712;');
+    return markerHTML('ft-fly ft-red', 'fly-red.png', 'Red fly', '&#129712;');
   return '';
 }
 

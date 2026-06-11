@@ -114,7 +114,7 @@ These leagues stay in the Teams tab discovery list even though no feed currently
 - **NRL** (Australia) – ESPN dead (see above). Highest priority since user keeps asking.
 - **Big Bash League** (Australia) – ESPN `cricket/8044` works Dec-Jan only. Consider seasonal toggle.
 - **Super Rugby Pacific** (Australia + New Zealand) – shared list. No source yet.
-- **NBL** (Australia basketball) – no source yet.
+- **WNBL** (Australia women's basketball) – no ESPN endpoint; distinct from US WNBA which is live.
 - **Pakistan Super League** (Pakistan cricket) – no source yet.
 - **SA T20 Cricket** (South Africa) – no source yet.
 - **Copa do Brasil** (Brazil) – no source yet (Brasileirao is live).
@@ -211,7 +211,7 @@ keep the generic abbreviation. All 18 verified statically.
 
 ### v27 – Discovery cleanup (F1 + Golf), research log added
 
-Removed Formula 1 and Golf Majors from the Teams tab discovery (`LEAGUES['Global']`) and dropped the corresponding `TEAMS` rosters. Header count comment 40 -> 38 leagues. Other “kept but dead” leagues (NRL, NBL, BBL, Super Rugby, PSL Pakistan, SA T20, Copa do Brasil, Six Nations, ICC Cricket) intentionally left in discovery – user is still searching for feeds for these (see “Actively searching for a feed” above).
+Removed Formula 1 and Golf Majors from the Teams tab discovery (`LEAGUES['Global']`) and dropped the corresponding `TEAMS` rosters. Header count comment 40 -> 38 leagues. Other “kept but dead” leagues (NRL, BBL, Super Rugby, PSL Pakistan, SA T20, Copa do Brasil, Six Nations, ICC Cricket, WNBL) intentionally left in discovery – user is still searching for feeds for these (see “Actively searching for a feed” above).
 
 ### v26 – Fly Mode dynamic layout + new logo
 

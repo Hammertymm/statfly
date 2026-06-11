@@ -1,0 +1,1179 @@
+{
+  "meta": {
+    "sport": "NBL",
+    "engine": "v1-bootstrap",
+    "formula": "close*0.35 + form_balance*0.25 + margin_balance*0.25 + matchup*0.15",
+    "close_margin": 8,
+    "games_sampled": 300,
+    "week_chunk": 8,
+    "built": "2026-06-11"
+  },
+  "matchup_ratings": [
+    {
+      "matchup": "Perth Wildcats vs South East Melbourne Phoenix",
+      "games_played": 6,
+      "avg_margin": 12.5,
+      "avg_excitement": 37.71
+    },
+    {
+      "matchup": "South East Melbourne Phoenix vs Perth Wildcats",
+      "games_played": 6,
+      "avg_margin": 12.5,
+      "avg_excitement": 37.71
+    },
+    {
+      "matchup": "Brisbane Bullets vs New Zealand Breakers",
+      "games_played": 7,
+      "avg_margin": 11.29,
+      "avg_excitement": 35.89
+    },
+    {
+      "matchup": "New Zealand Breakers vs Brisbane Bullets",
+      "games_played": 7,
+      "avg_margin": 11.29,
+      "avg_excitement": 35.89
+    },
+    {
+      "matchup": "Cairns Taipans vs South East Melbourne Phoenix",
+      "games_played": 7,
+      "avg_margin": 13.57,
+      "avg_excitement": 33.04
+    },
+    {
+      "matchup": "South East Melbourne Phoenix vs Cairns Taipans",
+      "games_played": 7,
+      "avg_margin": 13.57,
+      "avg_excitement": 33.04
+    },
+    {
+      "matchup": "Sydney Kings vs Tasmania JackJumpers",
+      "games_played": 8,
+      "avg_margin": 13,
+      "avg_excitement": 31.25
+    },
+    {
+      "matchup": "Tasmania JackJumpers vs Sydney Kings",
+      "games_played": 8,
+      "avg_margin": 13,
+      "avg_excitement": 31.25
+    },
+    {
+      "matchup": "Adelaide 36ers vs Perth Wildcats",
+      "games_played": 9,
+      "avg_margin": 11.11,
+      "avg_excitement": 39.44
+    },
+    {
+      "matchup": "Perth Wildcats vs Adelaide 36ers",
+      "games_played": 9,
+      "avg_margin": 11.11,
+      "avg_excitement": 39.44
+    },
+    {
+      "matchup": "Illawarra Hawks vs South East Melbourne Phoenix",
+      "games_played": 8,
+      "avg_margin": 16.38,
+      "avg_excitement": 53.28
+    },
+    {
+      "matchup": "South East Melbourne Phoenix vs Illawarra Hawks",
+      "games_played": 8,
+      "avg_margin": 16.38,
+      "avg_excitement": 53.28
+    },
+    {
+      "matchup": "Brisbane Bullets vs Cairns Taipans",
+      "games_played": 6,
+      "avg_margin": 7.33,
+      "avg_excitement": 79.17
+    },
+    {
+      "matchup": "Cairns Taipans vs Brisbane Bullets",
+      "games_played": 6,
+      "avg_margin": 7.33,
+      "avg_excitement": 79.17
+    },
+    {
+      "matchup": "Melbourne United vs Tasmania JackJumpers",
+      "games_played": 5,
+      "avg_margin": 9.4,
+      "avg_excitement": 60.25
+    },
+    {
+      "matchup": "Tasmania JackJumpers vs Melbourne United",
+      "games_played": 5,
+      "avg_margin": 9.4,
+      "avg_excitement": 60.25
+    },
+    {
+      "matchup": "Adelaide 36ers vs Sydney Kings",
+      "games_played": 7,
+      "avg_margin": 11.57,
+      "avg_excitement": 35.54
+    },
+    {
+      "matchup": "Sydney Kings vs Adelaide 36ers",
+      "games_played": 7,
+      "avg_margin": 11.57,
+      "avg_excitement": 35.54
+    },
+    {
+      "matchup": "Illawarra Hawks vs Tasmania JackJumpers",
+      "games_played": 6,
+      "avg_margin": 13.67,
+      "avg_excitement": 47.92
+    },
+    {
+      "matchup": "Tasmania JackJumpers vs Illawarra Hawks",
+      "games_played": 6,
+      "avg_margin": 13.67,
+      "avg_excitement": 47.92
+    },
+    {
+      "matchup": "Brisbane Bullets vs Sydney Kings",
+      "games_played": 8,
+      "avg_margin": 14.5,
+      "avg_excitement": 29.38
+    },
+    {
+      "matchup": "Sydney Kings vs Brisbane Bullets",
+      "games_played": 8,
+      "avg_margin": 14.5,
+      "avg_excitement": 29.38
+    },
+    {
+      "matchup": "Melbourne United vs Perth Wildcats",
+      "games_played": 7,
+      "avg_margin": 11.57,
+      "avg_excitement": 45.54
+    },
+    {
+      "matchup": "Perth Wildcats vs Melbourne United",
+      "games_played": 7,
+      "avg_margin": 11.57,
+      "avg_excitement": 45.54
+    },
+    {
+      "matchup": "Adelaide 36ers vs Illawarra Hawks",
+      "games_played": 7,
+      "avg_margin": 7.43,
+      "avg_excitement": 60.71
+    },
+    {
+      "matchup": "Illawarra Hawks vs Adelaide 36ers",
+      "games_played": 7,
+      "avg_margin": 7.43,
+      "avg_excitement": 60.71
+    },
+    {
+      "matchup": "South East Melbourne Phoenix vs Tasmania JackJumpers",
+      "games_played": 7,
+      "avg_margin": 5.29,
+      "avg_excitement": 83.39
+    },
+    {
+      "matchup": "Tasmania JackJumpers vs South East Melbourne Phoenix",
+      "games_played": 7,
+      "avg_margin": 5.29,
+      "avg_excitement": 83.39
+    },
+    {
+      "matchup": "Brisbane Bullets vs Melbourne United",
+      "games_played": 7,
+      "avg_margin": 13,
+      "avg_excitement": 43.75
+    },
+    {
+      "matchup": "Melbourne United vs Brisbane Bullets",
+      "games_played": 7,
+      "avg_margin": 13,
+      "avg_excitement": 43.75
+    },
+    {
+      "matchup": "Perth Wildcats vs Sydney Kings",
+      "games_played": 5,
+      "avg_margin": 15.2,
+      "avg_excitement": 25.0
+    },
+    {
+      "matchup": "Sydney Kings vs Perth Wildcats",
+      "games_played": 5,
+      "avg_margin": 15.2,
+      "avg_excitement": 25.0
+    },
+    {
+      "matchup": "Adelaide 36ers vs South East Melbourne Phoenix",
+      "games_played": 7,
+      "avg_margin": 15,
+      "avg_excitement": 21.25
+    },
+    {
+      "matchup": "South East Melbourne Phoenix vs Adelaide 36ers",
+      "games_played": 7,
+      "avg_margin": 15,
+      "avg_excitement": 21.25
+    },
+    {
+      "matchup": "Illawarra Hawks vs Melbourne United",
+      "games_played": 7,
+      "avg_margin": 11.29,
+      "avg_excitement": 35.89
+    },
+    {
+      "matchup": "Melbourne United vs Illawarra Hawks",
+      "games_played": 7,
+      "avg_margin": 11.29,
+      "avg_excitement": 35.89
+    },
+    {
+      "matchup": "Brisbane Bullets vs South East Melbourne Phoenix",
+      "games_played": 9,
+      "avg_margin": 17.67,
+      "avg_excitement": 23.47
+    },
+    {
+      "matchup": "South East Melbourne Phoenix vs Brisbane Bullets",
+      "games_played": 9,
+      "avg_margin": 17.67,
+      "avg_excitement": 23.47
+    },
+    {
+      "matchup": "Melbourne United vs New Zealand Breakers",
+      "games_played": 6,
+      "avg_margin": 14.83,
+      "avg_excitement": 34.79
+    },
+    {
+      "matchup": "New Zealand Breakers vs Melbourne United",
+      "games_played": 6,
+      "avg_margin": 14.83,
+      "avg_excitement": 34.79
+    },
+    {
+      "matchup": "Adelaide 36ers vs New Zealand Breakers",
+      "games_played": 5,
+      "avg_margin": 14.6,
+      "avg_excitement": 25.75
+    },
+    {
+      "matchup": "New Zealand Breakers vs Adelaide 36ers",
+      "games_played": 5,
+      "avg_margin": 14.6,
+      "avg_excitement": 25.75
+    },
+    {
+      "matchup": "Cairns Taipans vs Illawarra Hawks",
+      "games_played": 7,
+      "avg_margin": 11.14,
+      "avg_excitement": 36.07
+    },
+    {
+      "matchup": "Illawarra Hawks vs Cairns Taipans",
+      "games_played": 7,
+      "avg_margin": 11.14,
+      "avg_excitement": 36.07
+    },
+    {
+      "matchup": "Brisbane Bullets vs Perth Wildcats",
+      "games_played": 7,
+      "avg_margin": 16.86,
+      "avg_excitement": 28.93
+    },
+    {
+      "matchup": "Perth Wildcats vs Brisbane Bullets",
+      "games_played": 7,
+      "avg_margin": 16.86,
+      "avg_excitement": 28.93
+    },
+    {
+      "matchup": "New Zealand Breakers vs South East Melbourne Phoenix",
+      "games_played": 5,
+      "avg_margin": 11.6,
+      "avg_excitement": 43.5
+    },
+    {
+      "matchup": "South East Melbourne Phoenix vs New Zealand Breakers",
+      "games_played": 5,
+      "avg_margin": 11.6,
+      "avg_excitement": 43.5
+    },
+    {
+      "matchup": "Cairns Taipans vs Sydney Kings",
+      "games_played": 7,
+      "avg_margin": 15.29,
+      "avg_excitement": 50.89
+    },
+    {
+      "matchup": "Sydney Kings vs Cairns Taipans",
+      "games_played": 7,
+      "avg_margin": 15.29,
+      "avg_excitement": 50.89
+    },
+    {
+      "matchup": "Brisbane Bullets vs Tasmania JackJumpers",
+      "games_played": 8,
+      "avg_margin": 4,
+      "avg_excitement": 86.25
+    },
+    {
+      "matchup": "Tasmania JackJumpers vs Brisbane Bullets",
+      "games_played": 8,
+      "avg_margin": 4,
+      "avg_excitement": 86.25
+    },
+    {
+      "matchup": "Cairns Taipans vs New Zealand Breakers",
+      "games_played": 6,
+      "avg_margin": 13.5,
+      "avg_excitement": 48.12
+    },
+    {
+      "matchup": "New Zealand Breakers vs Cairns Taipans",
+      "games_played": 6,
+      "avg_margin": 13.5,
+      "avg_excitement": 48.12
+    },
+    {
+      "matchup": "Illawarra Hawks vs Sydney Kings",
+      "games_played": 6,
+      "avg_margin": 14.17,
+      "avg_excitement": 47.29
+    },
+    {
+      "matchup": "Sydney Kings vs Illawarra Hawks",
+      "games_played": 6,
+      "avg_margin": 14.17,
+      "avg_excitement": 47.29
+    },
+    {
+      "matchup": "New Zealand Breakers vs Sydney Kings",
+      "games_played": 9,
+      "avg_margin": 11.11,
+      "avg_excitement": 62.78
+    },
+    {
+      "matchup": "Sydney Kings vs New Zealand Breakers",
+      "games_played": 9,
+      "avg_margin": 11.11,
+      "avg_excitement": 62.78
+    },
+    {
+      "matchup": "New Zealand Breakers vs Perth Wildcats",
+      "games_played": 7,
+      "avg_margin": 10,
+      "avg_excitement": 47.5
+    },
+    {
+      "matchup": "Perth Wildcats vs New Zealand Breakers",
+      "games_played": 7,
+      "avg_margin": 10,
+      "avg_excitement": 47.5
+    },
+    {
+      "matchup": "Adelaide 36ers vs Tasmania JackJumpers",
+      "games_played": 7,
+      "avg_margin": 10.57,
+      "avg_excitement": 46.79
+    },
+    {
+      "matchup": "Tasmania JackJumpers vs Adelaide 36ers",
+      "games_played": 7,
+      "avg_margin": 10.57,
+      "avg_excitement": 46.79
+    },
+    {
+      "matchup": "Melbourne United vs South East Melbourne Phoenix",
+      "games_played": 6,
+      "avg_margin": 15.67,
+      "avg_excitement": 10.42
+    },
+    {
+      "matchup": "South East Melbourne Phoenix vs Melbourne United",
+      "games_played": 6,
+      "avg_margin": 15.67,
+      "avg_excitement": 10.42
+    },
+    {
+      "matchup": "New Zealand Breakers vs Tasmania JackJumpers",
+      "games_played": 9,
+      "avg_margin": 12.89,
+      "avg_excitement": 37.22
+    },
+    {
+      "matchup": "Tasmania JackJumpers vs New Zealand Breakers",
+      "games_played": 9,
+      "avg_margin": 12.89,
+      "avg_excitement": 37.22
+    },
+    {
+      "matchup": "Cairns Taipans vs Perth Wildcats",
+      "games_played": 6,
+      "avg_margin": 14.17,
+      "avg_excitement": 58.96
+    },
+    {
+      "matchup": "Perth Wildcats vs Cairns Taipans",
+      "games_played": 6,
+      "avg_margin": 14.17,
+      "avg_excitement": 58.96
+    },
+    {
+      "matchup": "Cairns Taipans vs Tasmania JackJumpers",
+      "games_played": 6,
+      "avg_margin": 10,
+      "avg_excitement": 40.83
+    },
+    {
+      "matchup": "Tasmania JackJumpers vs Cairns Taipans",
+      "games_played": 6,
+      "avg_margin": 10,
+      "avg_excitement": 40.83
+    },
+    {
+      "matchup": "Illawarra Hawks vs New Zealand Breakers",
+      "games_played": 5,
+      "avg_margin": 24.2,
+      "avg_excitement": 28.0
+    },
+    {
+      "matchup": "New Zealand Breakers vs Illawarra Hawks",
+      "games_played": 5,
+      "avg_margin": 24.2,
+      "avg_excitement": 28.0
+    },
+    {
+      "matchup": "Melbourne United vs Sydney Kings",
+      "games_played": 8,
+      "avg_margin": 7.5,
+      "avg_excitement": 64.38
+    },
+    {
+      "matchup": "Sydney Kings vs Melbourne United",
+      "games_played": 8,
+      "avg_margin": 7.5,
+      "avg_excitement": 64.38
+    },
+    {
+      "matchup": "Cairns Taipans vs Melbourne United",
+      "games_played": 7,
+      "avg_margin": 22.43,
+      "avg_excitement": 1.96
+    },
+    {
+      "matchup": "Melbourne United vs Cairns Taipans",
+      "games_played": 7,
+      "avg_margin": 22.43,
+      "avg_excitement": 1.96
+    },
+    {
+      "matchup": "Brisbane Bullets vs Illawarra Hawks",
+      "games_played": 5,
+      "avg_margin": 13.6,
+      "avg_excitement": 41.0
+    },
+    {
+      "matchup": "Illawarra Hawks vs Brisbane Bullets",
+      "games_played": 5,
+      "avg_margin": 13.6,
+      "avg_excitement": 41.0
+    },
+    {
+      "matchup": "Illawarra Hawks vs Perth Wildcats",
+      "games_played": 6,
+      "avg_margin": 12.83,
+      "avg_excitement": 48.96
+    },
+    {
+      "matchup": "Perth Wildcats vs Illawarra Hawks",
+      "games_played": 6,
+      "avg_margin": 12.83,
+      "avg_excitement": 48.96
+    },
+    {
+      "matchup": "Adelaide 36ers vs Cairns Taipans",
+      "games_played": 7,
+      "avg_margin": 13,
+      "avg_excitement": 43.75
+    },
+    {
+      "matchup": "Cairns Taipans vs Adelaide 36ers",
+      "games_played": 7,
+      "avg_margin": 13,
+      "avg_excitement": 43.75
+    },
+    {
+      "matchup": "South East Melbourne Phoenix vs Sydney Kings",
+      "games_played": 4,
+      "avg_margin": 10.25,
+      "avg_excitement": 34.69
+    },
+    {
+      "matchup": "Sydney Kings vs South East Melbourne Phoenix",
+      "games_played": 4,
+      "avg_margin": 10.25,
+      "avg_excitement": 34.69
+    },
+    {
+      "matchup": "Perth Wildcats vs Tasmania JackJumpers",
+      "games_played": 7,
+      "avg_margin": 10,
+      "avg_excitement": 57.5
+    },
+    {
+      "matchup": "Tasmania JackJumpers vs Perth Wildcats",
+      "games_played": 7,
+      "avg_margin": 10,
+      "avg_excitement": 57.5
+    },
+    {
+      "matchup": "Adelaide 36ers vs Melbourne United",
+      "games_played": 7,
+      "avg_margin": 13,
+      "avg_excitement": 33.75
+    },
+    {
+      "matchup": "Melbourne United vs Adelaide 36ers",
+      "games_played": 7,
+      "avg_margin": 13,
+      "avg_excitement": 33.75
+    },
+    {
+      "matchup": "Adelaide 36ers vs Brisbane Bullets",
+      "games_played": 4,
+      "avg_margin": 18,
+      "avg_excitement": 25.0
+    },
+    {
+      "matchup": "Brisbane Bullets vs Adelaide 36ers",
+      "games_played": 4,
+      "avg_margin": 18,
+      "avg_excitement": 25.0
+    }
+  ],
+  "matchup_close_rates": [
+    {
+      "matchup": "Perth Wildcats vs South East Melbourne Phoenix",
+      "games": 6,
+      "close_games": 2,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "South East Melbourne Phoenix vs Perth Wildcats",
+      "games": 6,
+      "close_games": 2,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "Brisbane Bullets vs New Zealand Breakers",
+      "games": 7,
+      "close_games": 2,
+      "close_rate": 28.57
+    },
+    {
+      "matchup": "New Zealand Breakers vs Brisbane Bullets",
+      "games": 7,
+      "close_games": 2,
+      "close_rate": 28.57
+    },
+    {
+      "matchup": "Cairns Taipans vs South East Melbourne Phoenix",
+      "games": 7,
+      "close_games": 2,
+      "close_rate": 28.57
+    },
+    {
+      "matchup": "South East Melbourne Phoenix vs Cairns Taipans",
+      "games": 7,
+      "close_games": 2,
+      "close_rate": 28.57
+    },
+    {
+      "matchup": "Sydney Kings vs Tasmania JackJumpers",
+      "games": 8,
+      "close_games": 2,
+      "close_rate": 25.0
+    },
+    {
+      "matchup": "Tasmania JackJumpers vs Sydney Kings",
+      "games": 8,
+      "close_games": 2,
+      "close_rate": 25.0
+    },
+    {
+      "matchup": "Adelaide 36ers vs Perth Wildcats",
+      "games": 9,
+      "close_games": 3,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "Perth Wildcats vs Adelaide 36ers",
+      "games": 9,
+      "close_games": 3,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "Illawarra Hawks vs South East Melbourne Phoenix",
+      "games": 8,
+      "close_games": 5,
+      "close_rate": 62.5
+    },
+    {
+      "matchup": "South East Melbourne Phoenix vs Illawarra Hawks",
+      "games": 8,
+      "close_games": 5,
+      "close_rate": 62.5
+    },
+    {
+      "matchup": "Brisbane Bullets vs Cairns Taipans",
+      "games": 6,
+      "close_games": 5,
+      "close_rate": 83.33
+    },
+    {
+      "matchup": "Cairns Taipans vs Brisbane Bullets",
+      "games": 6,
+      "close_games": 5,
+      "close_rate": 83.33
+    },
+    {
+      "matchup": "Melbourne United vs Tasmania JackJumpers",
+      "games": 5,
+      "close_games": 3,
+      "close_rate": 60.0
+    },
+    {
+      "matchup": "Tasmania JackJumpers vs Melbourne United",
+      "games": 5,
+      "close_games": 3,
+      "close_rate": 60.0
+    },
+    {
+      "matchup": "Adelaide 36ers vs Sydney Kings",
+      "games": 7,
+      "close_games": 2,
+      "close_rate": 28.57
+    },
+    {
+      "matchup": "Sydney Kings vs Adelaide 36ers",
+      "games": 7,
+      "close_games": 2,
+      "close_rate": 28.57
+    },
+    {
+      "matchup": "Illawarra Hawks vs Tasmania JackJumpers",
+      "games": 6,
+      "close_games": 3,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Tasmania JackJumpers vs Illawarra Hawks",
+      "games": 6,
+      "close_games": 3,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Brisbane Bullets vs Sydney Kings",
+      "games": 8,
+      "close_games": 2,
+      "close_rate": 25.0
+    },
+    {
+      "matchup": "Sydney Kings vs Brisbane Bullets",
+      "games": 8,
+      "close_games": 2,
+      "close_rate": 25.0
+    },
+    {
+      "matchup": "Melbourne United vs Perth Wildcats",
+      "games": 7,
+      "close_games": 3,
+      "close_rate": 42.86
+    },
+    {
+      "matchup": "Perth Wildcats vs Melbourne United",
+      "games": 7,
+      "close_games": 3,
+      "close_rate": 42.86
+    },
+    {
+      "matchup": "Adelaide 36ers vs Illawarra Hawks",
+      "games": 7,
+      "close_games": 4,
+      "close_rate": 57.14
+    },
+    {
+      "matchup": "Illawarra Hawks vs Adelaide 36ers",
+      "games": 7,
+      "close_games": 4,
+      "close_rate": 57.14
+    },
+    {
+      "matchup": "South East Melbourne Phoenix vs Tasmania JackJumpers",
+      "games": 7,
+      "close_games": 6,
+      "close_rate": 85.71
+    },
+    {
+      "matchup": "Tasmania JackJumpers vs South East Melbourne Phoenix",
+      "games": 7,
+      "close_games": 6,
+      "close_rate": 85.71
+    },
+    {
+      "matchup": "Brisbane Bullets vs Melbourne United",
+      "games": 7,
+      "close_games": 3,
+      "close_rate": 42.86
+    },
+    {
+      "matchup": "Melbourne United vs Brisbane Bullets",
+      "games": 7,
+      "close_games": 3,
+      "close_rate": 42.86
+    },
+    {
+      "matchup": "Perth Wildcats vs Sydney Kings",
+      "games": 5,
+      "close_games": 1,
+      "close_rate": 20.0
+    },
+    {
+      "matchup": "Sydney Kings vs Perth Wildcats",
+      "games": 5,
+      "close_games": 1,
+      "close_rate": 20.0
+    },
+    {
+      "matchup": "Adelaide 36ers vs South East Melbourne Phoenix",
+      "games": 7,
+      "close_games": 1,
+      "close_rate": 14.29
+    },
+    {
+      "matchup": "South East Melbourne Phoenix vs Adelaide 36ers",
+      "games": 7,
+      "close_games": 1,
+      "close_rate": 14.29
+    },
+    {
+      "matchup": "Illawarra Hawks vs Melbourne United",
+      "games": 7,
+      "close_games": 2,
+      "close_rate": 28.57
+    },
+    {
+      "matchup": "Melbourne United vs Illawarra Hawks",
+      "games": 7,
+      "close_games": 2,
+      "close_rate": 28.57
+    },
+    {
+      "matchup": "Brisbane Bullets vs South East Melbourne Phoenix",
+      "games": 9,
+      "close_games": 2,
+      "close_rate": 22.22
+    },
+    {
+      "matchup": "South East Melbourne Phoenix vs Brisbane Bullets",
+      "games": 9,
+      "close_games": 2,
+      "close_rate": 22.22
+    },
+    {
+      "matchup": "Melbourne United vs New Zealand Breakers",
+      "games": 6,
+      "close_games": 2,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "New Zealand Breakers vs Melbourne United",
+      "games": 6,
+      "close_games": 2,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "Adelaide 36ers vs New Zealand Breakers",
+      "games": 5,
+      "close_games": 1,
+      "close_rate": 20.0
+    },
+    {
+      "matchup": "New Zealand Breakers vs Adelaide 36ers",
+      "games": 5,
+      "close_games": 1,
+      "close_rate": 20.0
+    },
+    {
+      "matchup": "Cairns Taipans vs Illawarra Hawks",
+      "games": 7,
+      "close_games": 2,
+      "close_rate": 28.57
+    },
+    {
+      "matchup": "Illawarra Hawks vs Cairns Taipans",
+      "games": 7,
+      "close_games": 2,
+      "close_rate": 28.57
+    },
+    {
+      "matchup": "Brisbane Bullets vs Perth Wildcats",
+      "games": 7,
+      "close_games": 2,
+      "close_rate": 28.57
+    },
+    {
+      "matchup": "Perth Wildcats vs Brisbane Bullets",
+      "games": 7,
+      "close_games": 2,
+      "close_rate": 28.57
+    },
+    {
+      "matchup": "New Zealand Breakers vs South East Melbourne Phoenix",
+      "games": 5,
+      "close_games": 2,
+      "close_rate": 40.0
+    },
+    {
+      "matchup": "South East Melbourne Phoenix vs New Zealand Breakers",
+      "games": 5,
+      "close_games": 2,
+      "close_rate": 40.0
+    },
+    {
+      "matchup": "Cairns Taipans vs Sydney Kings",
+      "games": 7,
+      "close_games": 4,
+      "close_rate": 57.14
+    },
+    {
+      "matchup": "Sydney Kings vs Cairns Taipans",
+      "games": 7,
+      "close_games": 4,
+      "close_rate": 57.14
+    },
+    {
+      "matchup": "Brisbane Bullets vs Tasmania JackJumpers",
+      "games": 8,
+      "close_games": 7,
+      "close_rate": 87.5
+    },
+    {
+      "matchup": "Tasmania JackJumpers vs Brisbane Bullets",
+      "games": 8,
+      "close_games": 7,
+      "close_rate": 87.5
+    },
+    {
+      "matchup": "Cairns Taipans vs New Zealand Breakers",
+      "games": 6,
+      "close_games": 3,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "New Zealand Breakers vs Cairns Taipans",
+      "games": 6,
+      "close_games": 3,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Illawarra Hawks vs Sydney Kings",
+      "games": 6,
+      "close_games": 3,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Sydney Kings vs Illawarra Hawks",
+      "games": 6,
+      "close_games": 3,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "New Zealand Breakers vs Sydney Kings",
+      "games": 9,
+      "close_games": 6,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Sydney Kings vs New Zealand Breakers",
+      "games": 9,
+      "close_games": 6,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "New Zealand Breakers vs Perth Wildcats",
+      "games": 7,
+      "close_games": 3,
+      "close_rate": 42.86
+    },
+    {
+      "matchup": "Perth Wildcats vs New Zealand Breakers",
+      "games": 7,
+      "close_games": 3,
+      "close_rate": 42.86
+    },
+    {
+      "matchup": "Adelaide 36ers vs Tasmania JackJumpers",
+      "games": 7,
+      "close_games": 3,
+      "close_rate": 42.86
+    },
+    {
+      "matchup": "Tasmania JackJumpers vs Adelaide 36ers",
+      "games": 7,
+      "close_games": 3,
+      "close_rate": 42.86
+    },
+    {
+      "matchup": "Melbourne United vs South East Melbourne Phoenix",
+      "games": 6,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "South East Melbourne Phoenix vs Melbourne United",
+      "games": 6,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "New Zealand Breakers vs Tasmania JackJumpers",
+      "games": 9,
+      "close_games": 3,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "Tasmania JackJumpers vs New Zealand Breakers",
+      "games": 9,
+      "close_games": 3,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "Cairns Taipans vs Perth Wildcats",
+      "games": 6,
+      "close_games": 4,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Perth Wildcats vs Cairns Taipans",
+      "games": 6,
+      "close_games": 4,
+      "close_rate": 66.67
+    },
+    {
+      "matchup": "Cairns Taipans vs Tasmania JackJumpers",
+      "games": 6,
+      "close_games": 2,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "Tasmania JackJumpers vs Cairns Taipans",
+      "games": 6,
+      "close_games": 2,
+      "close_rate": 33.33
+    },
+    {
+      "matchup": "Illawarra Hawks vs New Zealand Breakers",
+      "games": 5,
+      "close_games": 2,
+      "close_rate": 40.0
+    },
+    {
+      "matchup": "New Zealand Breakers vs Illawarra Hawks",
+      "games": 5,
+      "close_games": 2,
+      "close_rate": 40.0
+    },
+    {
+      "matchup": "Melbourne United vs Sydney Kings",
+      "games": 8,
+      "close_games": 5,
+      "close_rate": 62.5
+    },
+    {
+      "matchup": "Sydney Kings vs Melbourne United",
+      "games": 8,
+      "close_games": 5,
+      "close_rate": 62.5
+    },
+    {
+      "matchup": "Cairns Taipans vs Melbourne United",
+      "games": 7,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Melbourne United vs Cairns Taipans",
+      "games": 7,
+      "close_games": 0,
+      "close_rate": 0.0
+    },
+    {
+      "matchup": "Brisbane Bullets vs Illawarra Hawks",
+      "games": 5,
+      "close_games": 2,
+      "close_rate": 40.0
+    },
+    {
+      "matchup": "Illawarra Hawks vs Brisbane Bullets",
+      "games": 5,
+      "close_games": 2,
+      "close_rate": 40.0
+    },
+    {
+      "matchup": "Illawarra Hawks vs Perth Wildcats",
+      "games": 6,
+      "close_games": 3,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Perth Wildcats vs Illawarra Hawks",
+      "games": 6,
+      "close_games": 3,
+      "close_rate": 50.0
+    },
+    {
+      "matchup": "Adelaide 36ers vs Cairns Taipans",
+      "games": 7,
+      "close_games": 3,
+      "close_rate": 42.86
+    },
+    {
+      "matchup": "Cairns Taipans vs Adelaide 36ers",
+      "games": 7,
+      "close_games": 3,
+      "close_rate": 42.86
+    },
+    {
+      "matchup": "South East Melbourne Phoenix vs Sydney Kings",
+      "games": 4,
+      "close_games": 1,
+      "close_rate": 25.0
+    },
+    {
+      "matchup": "Sydney Kings vs South East Melbourne Phoenix",
+      "games": 4,
+      "close_games": 1,
+      "close_rate": 25.0
+    },
+    {
+      "matchup": "Perth Wildcats vs Tasmania JackJumpers",
+      "games": 7,
+      "close_games": 4,
+      "close_rate": 57.14
+    },
+    {
+      "matchup": "Tasmania JackJumpers vs Perth Wildcats",
+      "games": 7,
+      "close_games": 4,
+      "close_rate": 57.14
+    },
+    {
+      "matchup": "Adelaide 36ers vs Melbourne United",
+      "games": 7,
+      "close_games": 2,
+      "close_rate": 28.57
+    },
+    {
+      "matchup": "Melbourne United vs Adelaide 36ers",
+      "games": 7,
+      "close_games": 2,
+      "close_rate": 28.57
+    },
+    {
+      "matchup": "Adelaide 36ers vs Brisbane Bullets",
+      "games": 4,
+      "close_games": 1,
+      "close_rate": 25.0
+    },
+    {
+      "matchup": "Brisbane Bullets vs Adelaide 36ers",
+      "games": 4,
+      "close_games": 1,
+      "close_rate": 25.0
+    }
+  ],
+  "form_strengths": [
+    {
+      "team": "Adelaide 36ers",
+      "strength": 85.3
+    },
+    {
+      "team": "Brisbane Bullets",
+      "strength": 49.3
+    },
+    {
+      "team": "Cairns Taipans",
+      "strength": 48.7
+    },
+    {
+      "team": "Illawarra Hawks",
+      "strength": 72.0
+    },
+    {
+      "team": "Melbourne United",
+      "strength": 62.0
+    },
+    {
+      "team": "New Zealand Breakers",
+      "strength": 60.7
+    },
+    {
+      "team": "Perth Wildcats",
+      "strength": 75.3
+    },
+    {
+      "team": "South East Melbourne Phoenix",
+      "strength": 77.3
+    },
+    {
+      "team": "Sydney Kings",
+      "strength": 74.7
+    },
+    {
+      "team": "Tasmania JackJumpers",
+      "strength": 72.0
+    }
+  ],
+  "team_margin_ratings": [
+    {
+      "team": "Adelaide 36ers",
+      "avg_margin": 9.9
+    },
+    {
+      "team": "Brisbane Bullets",
+      "avg_margin": -16.2
+    },
+    {
+      "team": "Cairns Taipans",
+      "avg_margin": -10.8
+    },
+    {
+      "team": "Illawarra Hawks",
+      "avg_margin": -4.5
+    },
+    {
+      "team": "Melbourne United",
+      "avg_margin": -3.9
+    },
+    {
+      "team": "New Zealand Breakers",
+      "avg_margin": 0.3
+    },
+    {
+      "team": "Perth Wildcats",
+      "avg_margin": 2
+    },
+    {
+      "team": "South East Melbourne Phoenix",
+      "avg_margin": 8.1
+    },
+    {
+      "team": "Sydney Kings",
+      "avg_margin": 12.3
+    },
+    {
+      "team": "Tasmania JackJumpers",
+      "avg_margin": 5
+    }
+  ]
+}

@@ -35,6 +35,12 @@ RUGBY_SEASON_WINDOWS = [
     ("2024-25", "20240801", "20250615"),
 ]
 
+NBL_SEASON_WINDOWS = [
+    ("2023-24", "20231001", "20240630"),
+    ("2024-25", "20241001", "20250630"),
+    ("2025-26", "20251001", "20260630"),
+]
+
 THRESHOLDS = [65, 68, 70, 72, 75, 78, 80, 85, 88, 90, 92, 93, 94, 95, 96, 97, 98]
 
 NRL_SUBSTRINGS = [
@@ -87,6 +93,14 @@ SPORT_CONFIG = {
         "espn_league": "wnba",
         "close_margin": 8,
         "chunk": 6,
+    },
+    "nbl": {
+        "label": "NBL",
+        "espn_sport": "basketball",
+        "espn_league": "nbl",
+        "close_margin": 8,
+        "chunk": 8,
+        "season_windows": NBL_SEASON_WINDOWS,
     },
     "ncaam": {
         "label": "NCAAM",

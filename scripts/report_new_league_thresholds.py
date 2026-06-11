@@ -1,4 +1,15 @@
-"""Report calibrated FlyTime thresholds for newly added leagues (yellow-fly QA)."""
+"""Report calibrated FlyTime thresholds for leagues (yellow-fly QA).
+
+Tuning aim (see index.html FlyTime Lab):
+  - Yellow fly = upcoming prediction (every FlyTime candidate should get one)
+  - Green fly  = live FlyTime
+  - Red fly    = finished after FlyTime (results cards)
+  - Blue fly   = yellow then green (diagnostic hit — never user-facing)
+  - Lower threshold when recall is low (missed greens without yellow)
+  - Raise threshold when false alarms dominate (yellows that never go green)
+
+Enable in-app monitor: open scorefly.app/?flylab=1 then Teams tab → FlyTime Lab.
+"""
 import json
 import subprocess
 import sys

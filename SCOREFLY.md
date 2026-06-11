@@ -60,21 +60,20 @@ First-run flow triggered when `scorefly_onboarded` is not set in localStorage. F
 
 1. **Welcome** — SupaFly (welcome pose) + ScoreFly wordmark + tagline + the value hook (“Too much sport, not enough time. ScoreFly shows you which games are worth watching right now.”). Button -> `onbGoStep('fly')`.
 1. **Meet FlyTime** (`onb-step-fly`) — SupaFly (pointing pose) + a pulsing green `FLYTIME` badge + a black-box explanation. Exists to make FlyTime memorable; no thresholds revealed.
-1. **Pick your teams** — 8 example team cards shown before first pick (3 same city, 3 same country different sport, 2 popular/rivalry). After first pick, switches to smart suggestion chips. Search available throughout. No mascot (kept uncluttered).
+1. **Pick your teams** — search-only until the first team is followed. After first pick, a single flat list of up to 7 country-scoped suggestions appears in the overlay (cross-sport discovery + one same-league marquee). No mascot (kept uncluttered).
 1. **Notifications** — SupaFly (here’s-the-score pose) + opt-in step; grants bell alert for all followed teams on approval.
 
 SupaFly assets: `supafly-welcome.png`, `supafly-pointing.png`, `supafly-score.png`, `supafly-thumbsup.png` (thumbsup bundled, reserved for later). Transparent PNGs on pure black, pre-cached in `sw.js`.
 
 On finish: sets `scorefly_onboarded = '1'`, drops user into their feed.
 
-**Suggested for you** (Teams tab) is hidden permanently once onboarding is complete — it is an onboarding-only feature. Controlled by `renderSuggested()` checking `scorefly_onboarded`.
+**Suggested for you** (Teams tab) is unused — suggestions live only in the onboarding overlay. `renderSuggested()` always hides the Teams-tab section.
 
-Onboarding suggestion priority (`onbGetSuggestions`, rewritten v67; rivals-first slot dropped in v78 when rivalries were removed):
+Onboarding suggestion engine (`onbGetSuggestions`), anchored on `favs[0]` (re-syncs on add/remove):
 
-1. Local (2 slots) — same metro, a different league than the anchor, household names first (`METRO_TEAMS`)
-1. Same country, different sport (2 slots) — biggest names
-1. Same league (2 slots) — biggest names (was “rivals first” pre-v78)
-1. Cascade backfill to always return 6; 4-country / 2-league fallback when the anchor has no metro
+1. Up to 6 — same country as anchor, different league (cross-sport preferred; one per league; no padding for thin countries e.g. England)
+1. +1 — most popular team still in the anchor's league (`LEAGUE_MARQUEES` ordering, `MAJOR_CLUBS` fallback)
+1. If `favs` becomes empty, suggestions hide and step 2 returns to search-only copy
 
 -----
 

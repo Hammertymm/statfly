@@ -334,13 +334,8 @@
   .onb-pick-info{flex:1;min-width:0;}
   .onb-pick-name{font-size:14px;font-weight:600;color:var(--text);}
   .onb-pick-league{font-size:11px;color:var(--text-3);margin-top:1px;}
-  .onb-sugg-grid{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px;}
-  .onb-sugg-chip{display:flex;align-items:center;gap:6px;background:var(--card);border:1px solid var(--sep);border-radius:20px;padding:7px 13px;cursor:pointer;transition:border-color .15s,background .15s;font-size:12px;font-weight:600;color:var(--text-2);}
-  .onb-sugg-chip:active{background:#1a1a1e;}
-  .onb-sugg-chip.followed{border-color:var(--live);color:var(--live);background:rgba(6,240,60,0.07);}
-  .onb-sugg-chip-flag{font-size:13px;}
-  .onb-sugg-tag{font-size:9px;font-weight:700;letter-spacing:.4px;text-transform:uppercase;color:var(--text-3);background:rgba(255,255,255,0.06);padding:1px 5px;border-radius:4px;}
-  .onb-sugg-chip.followed .onb-sugg-tag{color:var(--live);background:rgba(6,240,60,0.12);}
+  .onb-sugg-list{margin-bottom:16px;}
+  .onb-pick-card.followed{border-color:var(--live);background:rgba(6,240,60,0.05);}
 
   /* -- COMPACT RESULTS TOGGLE -- */
 
@@ -910,16 +905,10 @@
       </div>
       <div class="global-search-results" id="onb-results"></div>
 
-      <!-- Example picks - shown before the first team is chosen -->
-      <div id="onb-examples-wrap">
-        <div class="onb-label">Popular picks</div>
-        <div id="onb-examples"></div>
-      </div>
-
-      <!-- Smart suggestions - shown after the first team is chosen -->
+      <!-- Suggestions appear only after the first team is chosen -->
       <div id="onb-suggestions-wrap" style="display:none">
-        <div class="onb-label" id="onb-sugg-label">You might also follow</div>
-        <div class="onb-sugg-grid" id="onb-sugg-grid"></div>
+        <div class="onb-label" id="onb-sugg-label"></div>
+        <div class="onb-sugg-list" id="onb-sugg-grid"></div>
       </div>
 
       <div class="onb-count" id="onb-count"></div>
@@ -3386,6 +3375,7 @@ function saveFavs(){try{localStorage.setItem('scorefly_favs',JSON.stringify(favs
 function removeTeam(key){
   favs=favs.filter(f=>f.key!==key);
   saveFavs();renderFavs();renderHome();renderResults();
+  onbSyncSuggestions();
 }
 
 function toggleAlert(key){
@@ -3461,52 +3451,21 @@ function renderFavs(){
   renderSuggested();
 }
 
-// Onboarding example teams. Order matches suggestion priority:
-//   1. Same city / state (3 teams) -- local teams across different sports
-//   2. Same country, different sport (3 teams) -- national cross-sport appeal
-//   3. Same league, biggest names (2 teams)
-// England flag: regional indicator GB-ENG tag sequence.
-const ENG_FLAG='\uD83C\uDFF4\uDB40\uDC67\uDB40\uDC62\uDB40\uDC65\uDB40\uDC6E\uDB40\uDC67\uDB40\uDC7F';
-const USA_FLAG='\uD83C\uDDFA\uD83C\uDDF8';
-const CAN_FLAG='\uD83C\uDDE8\uD83C\uDDE6';
-const ESP_FLAG='\uD83C\uDDEA\uD83C\uDDF8';
-const AUS_FLAG='\uD83C\uDDE6\uD83C\uDDFA';
-const SUGGESTED=[
-  {name:'Arsenal',          league:'Premier League', leagueEmoji:'\u26BD',       flag:ENG_FLAG},
-  {name:'Liverpool',        league:'Premier League', leagueEmoji:'\u26BD',       flag:ENG_FLAG},
-  {name:'New York Knicks',  league:'NBA',            leagueEmoji:'\uD83C\uDFC0', flag:USA_FLAG},
-  {name:'Atlanta Braves',   league:'MLB',            leagueEmoji:'\u26BE',       flag:USA_FLAG},
-  {name:'Brisbane Broncos', league:'NRL',            leagueEmoji:'\uD83C\uDFC9', flag:AUS_FLAG},
-  {name:'Hawthorn Hawks',   league:'AFL',            leagueEmoji:'\uD83D\uDD34', flag:AUS_FLAG},
-  {name:'Calgary Flames',   league:'NHL',            leagueEmoji:'\uD83C\uDFD2', flag:CAN_FLAG},
-];
-
 function hideSuggestedSection(){
   var section=document.getElementById('suggested-section');
   if(section) section.style.display='none';
 }
 
+function favToPickItem(fav){
+  if(!searchIndex) searchIndex=buildSearchIndex();
+  var item=searchIndex.find(function(it){ return it.type==='team' && it.favKey===fav.key; });
+  if(item) return item;
+  return {type:'team',name:fav.name,league:fav.league,emoji:fav.leagueEmoji,favKey:fav.key,flag:fav.flag,countryFlag:fav.flag,leagueEmoji:fav.leagueEmoji,country:''};
+}
+
 function renderSuggested(){
-  const section=document.getElementById('suggested-section');
-  const wrap=document.getElementById('suggested-wrap');
-  if(!wrap) return;
-  // Suggestions are onboarding-only: hide permanently once onboarding is done.
-  if(localStorage.getItem('scorefly_onboarded')){
-    hideSuggestedSection();
-    return;
-  }
-  const items=SUGGESTED.filter(s=>!favs.some(f=>f.key===s.name+'|'+s.league));
-  if(!items.length){ if(section) section.style.display='none'; return; }
-  if(section) section.style.display='';
-  wrap.innerHTML=`<div class="team-list">${items.map(s=>{
-    const key=(s.name+'|'+s.league).replace(/'/g,"\\'");
-    return `<div class="tli">
-      <div class="tli-flag">${s.flag}</div>
-      <div class="tli-sport">${sportImg(s.leagueEmoji,18)}</div>
-      <div class="tli-info"><div class="tli-name">${s.name}</div><div class="tli-lg">${s.league}</div></div>
-      <button type="button" class="qa-btn" data-fav-key="${escAttr(key)}" onclick="quickAddFromBtn(this,event)" aria-label="Follow ${escAttr(s.name)}">+</button>
-    </div>`;
-  }).join('')}</div>`;
+  // Suggestions live in the onboarding overlay only; Teams-tab section stays hidden.
+  hideSuggestedSection();
 }
 
 function followSuggested(key){
@@ -3771,8 +3730,8 @@ function clearGlobalSearch() {
 
 // - ONBOARDING (first-run flow) -
 // Reuses the app's real state (favs/saveFavs), team dataset (searchIndex),
-// SUGGESTED list and renderers. Only the overlay navigation, a thin search
-// wrapper and the first-team suggestion engine are new. The done-flag is set
+// Only the overlay navigation, a thin search wrapper and the first-team
+// suggestion engine are new. The done-flag is set
 // ONLY on finish, so an interrupted run shows again next launch.
 
 // ---------------------------------------------------------------------------
@@ -3844,6 +3803,60 @@ function isMajorClub(name){
   // contains-tolerant: "Liverpool FC" still matches "liverpool"
   for(const k in MAJOR_CLUBS){ if(nameTouches(n, k)) return true; }
   return false;
+}
+
+// Per-league marquee order for onboarding slot 7 (most popular in same league).
+// Higher score = more prominent. Falls back to isMajorClub when unlisted.
+const LEAGUE_MARQUEES = {
+  'Premier League':['Liverpool','Manchester United','Manchester City','Arsenal','Chelsea','Tottenham Hotspur'],
+  'Championship':['Leeds United','Leicester City','Southampton','Middlesbrough'],
+  "Women's Super League":['Chelsea Women','Arsenal Women','Manchester City Women','Manchester United Women'],
+  'La Liga':['Real Madrid','Barcelona','Atletico Madrid','Sevilla'],
+  'Bundesliga':['Bayern Munich','Borussia Dortmund','RB Leipzig','Bayer Leverkusen'],
+  'Serie A':['Juventus','Inter Milan','AC Milan','Napoli','Roma'],
+  'Ligue 1':['Paris Saint-Germain','Marseille','Lyon','Monaco'],
+  'Eredivisie':['Ajax','PSV Eindhoven','Feyenoord'],
+  'Primeira Liga':['Benfica','FC Porto','Sporting CP'],
+  'Scottish Premiership':['Celtic','Rangers'],
+  'Süper Lig':['Galatasaray','Fenerbahçe','Beşiktaş'],
+  'Brasileirao':['Flamengo','Palmeiras','Corinthians','São Paulo'],
+  'Liga Profesional':['Boca Juniors','River Plate','Racing Club'],
+  'Liga MX':['Club América','Guadalajara','Monterrey','Tigres UANL'],
+  'League of Ireland':['Shamrock Rovers','Bohemian'],
+  'PSL Football':['Kaizer Chiefs','Orlando Pirates','Mamelodi Sundowns'],
+  'SA T20 Cricket':['Lions','Titans'],
+  'Pakistan Super League':['Lahore Qalandars','Karachi Kings'],
+  'AFL':['Collingwood Magpies','Richmond Tigers','Hawthorn Hawks','Geelong Cats','West Coast Eagles'],
+  'NRL':['Brisbane Broncos','Sydney Roosters','Melbourne Storm','Penrith Panthers'],
+  'Big Bash League':['Perth Scorchers','Sydney Sixers','Melbourne Stars'],
+  'A-League':['Sydney FC','Melbourne Victory','Melbourne City'],
+  'NBL':['Sydney Kings','Melbourne United','Perth Wildcats'],
+  'Super Rugby Pacific':['Crusaders','Blues','Waratahs'],
+  'Indian Premier League':['Mumbai Indians','Chennai Super Kings','Royal Challengers Bengaluru'],
+  'ISL Football':['Mumbai City FC','Bengaluru FC','ATK Mohun Bagan'],
+  'NFL':['Dallas Cowboys','Kansas City Chiefs','Green Bay Packers','New England Patriots','San Francisco 49ers'],
+  'NBA':['Los Angeles Lakers','Boston Celtics','Golden State Warriors','New York Knicks','Chicago Bulls'],
+  'WNBA':['Las Vegas Aces','New York Liberty','Indiana Fever'],
+  'MLB':['New York Yankees','Los Angeles Dodgers','Boston Red Sox','St. Louis Cardinals'],
+  'NHL':['Montreal Canadiens','Toronto Maple Leafs','Boston Bruins','New York Rangers'],
+  'MLS':['LAFC','Inter Miami','LA Galaxy','Seattle Sounders'],
+  'UEFA Champions League':['Real Madrid','Barcelona','Bayern Munich','Manchester City','Liverpool'],
+  'UEFA Europa League':['Liverpool','Arsenal','Roma','Sevilla'],
+  'Copa Libertadores':['Boca Juniors','River Plate','Flamengo','Palmeiras'],
+  'ICC Cricket (ODI)':['India','Australia','England'],
+  'ICC Cricket (T20)':['India','Australia','England'],
+  'Six Nations Rugby':['England','France','Ireland']
+};
+function leaguePopularityScore(name, league){
+  var list = LEAGUE_MARQUEES[league];
+  if(list){
+    var n = normTeamName(name);
+    for(var i = 0; i < list.length; i++){
+      var m = normTeamName(list[i]);
+      if(n === m || nameTouches(n, m)) return list.length - i;
+    }
+  }
+  return isMajorClub(name) ? 1 : 0;
 }
 
 // FlyTime prediction model (0-100). A Yellow Fly should mean "this game is
@@ -4345,71 +4358,88 @@ function teamState(item){
   return TEAM_METRO[item.name] || '';
 }
 
-// Suggestion engine for the onboarding "you might also follow" chips, based on
-// the first team picked. Target is 6 chips:
-//   - if the pick has a known state: 2 same state, 2 same country, 2 same league
-//   - otherwise:                     4 same country, 2 same league
-// Backfills toward 6 if a small country/league comes up short.
+// Suggestion engine for onboarding. Based on favs[0]. Up to 7 teams, all same country:
+//   up to 6: other leagues in that country (cross-sport preferred; one per league; no padding)
+//   +1:      most popular team still in the anchor's league (LEAGUE_MARQUEES, then MAJOR_CLUBS)
 function onbGetSuggestions(picked){
   if(!searchIndex) searchIndex = buildSearchIndex();
-  var TARGET = 6, out = [], seen = {};
+  var CROSS = 6, TARGET = 7, out = [], seen = {};
   seen[picked.favKey] = true;
   favs.forEach(function(f){ seen[f.key] = true; });
 
-  function push(it, tag){
+  function push(it){
     if(!it || seen[it.favKey] || out.length >= TARGET) return false;
-    seen[it.favKey] = true; out.push({ entry: it, tag: tag }); return true;
+    seen[it.favKey] = true; out.push({ entry: it }); return true;
   }
-  // Take up to n from cands, household names first; optionally one-per-league
-  // first. keepOrder preserves the caller's order (used for the metro list,
-  // which is authored by prominence) instead of re-sorting by major-club.
-  function take(cands, tag, n, distinctLeague, keepOrder){
+  function majorSort(a, b){
+    return (isMajorClub(b.name) ? 1 : 0) - (isMajorClub(a.name) ? 1 : 0);
+  }
+  // Up to n cands; cross-sport first, then household names; one-per-league only (no backfill).
+  function take(cands, n){
     cands = cands.filter(function(it){ return !seen[it.favKey]; });
-    if(!keepOrder) cands.sort(function(a, b){ return (isMajorClub(b.name) ? 1 : 0) - (isMajorClub(a.name) ? 1 : 0); });
-    var added = 0;
-    if(distinctLeague){
-      var usedL = {};
-      for(var i = 0; i < cands.length && added < n; i++){
-        if(!usedL[cands[i].league] && push(cands[i], tag)){ usedL[cands[i].league] = true; added++; }
-      }
+    cands.sort(function(a, b){
+      var aCross = a.emoji !== pSport ? 1 : 0;
+      var bCross = b.emoji !== pSport ? 1 : 0;
+      if(bCross !== aCross) return bCross - aCross;
+      return majorSort(a, b);
+    });
+    var added = 0, usedL = {};
+    for(var i = 0; i < cands.length && added < n; i++){
+      if(!usedL[cands[i].league] && push(cands[i])){ usedL[cands[i].league] = true; added++; }
     }
-    for(var j = 0; j < cands.length && added < n; j++){ if(push(cands[j], tag)) added++; }
   }
 
   var teams    = searchIndex.filter(function(it){ return it.type === 'team'; });
-  var byName   = {}; teams.forEach(function(it){ if(!byName[it.name]) byName[it.name] = it; });
   var pCountry = leagueCountry(picked.league);
-  var pState   = teamState(picked);
   var pLeague  = picked.league;
-  var pSport   = picked.emoji;
+  var pSport   = picked.emoji || picked.leagueEmoji;
+  var sameCountry = function(it){ return leagueCountry(it.league) === pCountry; };
 
-  // Positions 1-2: same metro, a DIFFERENT league than the anchor (cross-sport
-  // local discovery), spread across leagues. Walked in METRO_TEAMS order, which
-  // is authored most-iconic-first, so the marquee local team surfaces.
-  if(pState){
-    var localCands = (METRO_TEAMS[pState] || []).map(function(nm){ return byName[nm]; })
-      .filter(function(it){ return it && it.league !== pLeague; });
-    take(localCands, 'Local', 2, true, true);
+  // Cross-league picks: one per league, only what the country actually has.
+  take(teams.filter(function(it){
+    return sameCountry(it) && it.league !== pLeague;
+  }), CROSS);
+
+  // Same-league marquee (last item in the flat list).
+  var sameLeague = teams.filter(function(it){ return it.league === pLeague && !seen[it.favKey]; });
+  sameLeague.sort(function(a, b){
+    return leaguePopularityScore(b.name, pLeague) - leaguePopularityScore(a.name, pLeague);
+  });
+  if(sameLeague.length) push(sameLeague[0]);
+
+  return out;
+}
+
+function isOnboardingActive(){
+  var overlay=document.getElementById('onboard-overlay');
+  return overlay && overlay.classList.contains('active');
+}
+
+function onbResetStep2Copy(){
+  var h=document.getElementById('onb-step2-h');
+  var sub=document.getElementById('onb-step2-sub');
+  if(h) h.textContent='Pick your teams';
+  if(sub) sub.textContent='Search for a team to get started. We\'ll suggest more once you pick one.';
+}
+
+function onbSyncSuggestions(){
+  if(!isOnboardingActive()) return;
+  var step2=document.getElementById('onb-step-2');
+  if(!step2 || step2.style.display==='none') return;
+  if(!favs.length){
+    var suggWrap=document.getElementById('onb-suggestions-wrap');
+    if(suggWrap) suggWrap.style.display='none';
+    onbResetStep2Copy();
+    return;
   }
-  // Positions 3-4 (or 1-4 when no metro): same country, a different sport than
-  // the anchor, biggest national names first.
-  take(teams.filter(function(it){ return leagueCountry(it.league) === pCountry && it.emoji !== pSport; }), 'Same country', pState ? 2 : 4, true);
-
-  // Positions 5-6: same league - biggest names in the competition first.
-  var sameLeague = teams.filter(function(it){ return it.league === pLeague; });
-  take(sameLeague, 'Same league', 2, false);
-
-  // Cascade backfill so we always return six: more same country, then league, then sport.
-  take(teams.filter(function(it){ return leagueCountry(it.league) === pCountry; }), 'Same country', TARGET, true);
-  take(sameLeague, 'Same league', TARGET, false);
-  take(teams.filter(function(it){ return it.emoji === pSport; }), 'Same sport', TARGET, true);
-
-  return out.slice(0, TARGET);
+  onbShowSuggestions(favToPickItem(favs[0]));
 }
 
 function startOnboarding(){
+  var suggWrap=document.getElementById('onb-suggestions-wrap');
+  if(suggWrap) suggWrap.style.display='none';
+  onbResetStep2Copy();
   onbGoStep(1);
-  onbRenderExamples();
   onbRefresh();
   document.getElementById('onboard-overlay').classList.add('active');
 }
@@ -4431,9 +4461,6 @@ function onbUpdateProgress(step){
     d.classList.toggle('active', s <= step);
   });
 }
-
-// Has the user picked their first team yet? Drives example-vs-suggestion view.
-let onbFirstPick = null;
 
 // Search inside onboarding. Mirrors globalSearch/gsrTap but targets the
 // onboarding elements so it never collides with the Teams-tab search.
@@ -4493,18 +4520,12 @@ function onbTap(el){
   onbSearch(document.getElementById('onb-search').value); // refresh to show Added
 }
 
-// Shared add path for onboarding (search result OR example pick). The first team
-// added becomes onbFirstPick and triggers the smart-suggestion view.
+// Shared add path for onboarding search / suggestion taps.
 function onbAddTeam(item){
   if(favs.some(function(f){return f.key===item.favKey;})) return;
   favs.push({key:item.favKey,name:item.name,league:item.league,leagueEmoji:item.leagueEmoji,flag:item.countryFlag||item.flag,alert:false});
   saveFavs(); renderFavs(); renderHome(); renderResults();
-  if(!onbFirstPick){
-    onbFirstPick = item;
-    onbShowSuggestions(item);
-  } else {
-    onbRenderSuggestions(); // refresh chip states
-  }
+  onbSyncSuggestions();
   onbRefresh();
 }
 
@@ -4515,65 +4536,36 @@ function onbClearSearch(){
   r.classList.remove('visible'); r.innerHTML='';
 }
 
-// A short list of recognisable example teams shown BEFORE the first pick.
-// Reuses the existing SUGGESTED list (already in the search index).
-function onbRenderExamples(){
-  var wrap=document.getElementById('onb-examples');
-  if(!wrap) return;
-  wrap.innerHTML=SUGGESTED.map(function(s){
-    var key=(s.name+'|'+s.league).replace(/'/g,"\\'");
-    return '<div class="onb-pick-card" onclick="onbPickExample(\''+key+'\')">'+
-      '<div class="onb-pick-flag">'+s.flag+'</div>'+
-      '<div class="onb-pick-info"><div class="onb-pick-name">'+s.name+'</div>'+
-      '<div class="onb-pick-league">'+s.league+'</div></div>'+
-      '<span class="qa-btn qa-btn-static">+</span></div>';
-  }).join('');
-}
-
-function onbPickExample(key){
-  if(!searchIndex) searchIndex=buildSearchIndex();
-  var item=searchIndex.find(function(it){ return it.type==='team' && it.favKey===key; });
-  // Fallback: build a minimal item from the SUGGESTED entry if not in index.
-  if(!item){
-    var parts=key.split('|');
-    var s=SUGGESTED.find(function(x){ return x.name===parts[0] && x.league===parts[1]; });
-    if(!s) return;
-    item={type:'team',name:s.name,league:s.league,emoji:s.leagueEmoji,favKey:key,countryFlag:s.flag,leagueEmoji:s.leagueEmoji,flag:s.flag,country:''};
-  }
-  onbAddTeam(item);
-}
-
-// Switch from the examples view to the smart-suggestion view after first pick.
+// Show country-scoped suggestions after the first pick.
 function onbShowSuggestions(picked){
-  var examples=document.getElementById('onb-examples-wrap');
   var suggWrap=document.getElementById('onb-suggestions-wrap');
   var h=document.getElementById('onb-step2-h');
   var sub=document.getElementById('onb-step2-sub');
   var lbl=document.getElementById('onb-sugg-label');
-  if(examples) examples.style.display='none';
+  var country=picked.country || leagueCountry(picked.league);
   if(suggWrap) suggWrap.style.display='block';
   if(h) h.textContent='Following '+picked.name;
-  if(sub) sub.textContent='Tap any of these to follow them too, or continue.';
-  if(lbl) lbl.textContent='You might also follow';
+  if(sub) sub.textContent='Add more teams you follow, or continue when you\'re ready.';
+  if(lbl) lbl.textContent='More from '+country;
   onbRenderSuggestions();
 }
 
-// Render the suggestion chips for the current first pick.
 function onbRenderSuggestions(){
   var grid=document.getElementById('onb-sugg-grid');
-  if(!grid || !onbFirstPick) return;
-  var suggestions=onbGetSuggestions(onbFirstPick);
+  if(!grid || !favs.length) return;
+  var suggestions=onbGetSuggestions(favToPickItem(favs[0]));
   if(!suggestions.length){
-    grid.innerHTML='<div class="section-empty" style="padding:4px 0">No suggestions - search above to add more.</div>';
+    grid.innerHTML='<div class="section-empty" style="padding:4px 0">No suggestions — search above to add more.</div>';
     return;
   }
   grid.innerHTML=suggestions.map(function(s,idx){
     var it=s.entry;
     var followed=favs.some(function(f){return f.key===it.favKey;});
-    return '<div class="onb-sugg-chip'+(followed?' followed':'')+'" data-idx="'+idx+'" onclick="onbSuggTap(this)">'+
-      '<span class="onb-sugg-chip-flag">'+(it.flag||it.countryFlag||'')+'</span>'+
-      '<span>'+it.name+'</span>'+
-      '<span class="onb-sugg-tag">'+s.tag+'</span>'+
+    return '<div class="onb-pick-card'+(followed?' followed':'')+'" data-idx="'+idx+'" onclick="onbSuggTap(this)">'+
+      '<div class="onb-pick-flag">'+sportImg(it.emoji||it.leagueEmoji,18)+'</div>'+
+      '<div class="onb-pick-info"><div class="onb-pick-name">'+it.name+'</div>'+
+      '<div class="onb-pick-league">'+it.league+'</div></div>'+
+      (followed ? '<span class="gsr-added">&#10003;</span>' : '<span class="qa-btn qa-btn-static">+</span>')+
       '</div>';
   }).join('');
   grid._suggestions=suggestions;

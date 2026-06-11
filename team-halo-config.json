@@ -2007,14 +2007,16 @@
         "Changchun Yatai"
       ],
       "league": "Chinese Super League",
-      "espnIds": [],
-      "logoUrl": "",
-      "haloColor": "#06F03C",
+      "espnIds": [
+        "8225"
+      ],
+      "logoUrl": "https://a.espncdn.com/i/teamlogos/soccer/500/8225.png",
+      "haloColor": "#E82828",
       "haloStrength": 0.25,
       "needsContrastLift": false,
-      "dominantColor": "#06F03C",
-      "secondaryColor": "#06F03C",
-      "logoScale": 1.0
+      "dominantColor": "#E82828",
+      "secondaryColor": "#E81828",
+      "logoScale": 1.19
     },
     {
       "teamId": "chengdu-rongcheng-chinese-super-league",
@@ -2077,14 +2079,16 @@
         "Meizhou Hakka"
       ],
       "league": "Chinese Super League",
-      "espnIds": [],
-      "logoUrl": "",
-      "haloColor": "#06F03C",
+      "espnIds": [
+        "21507"
+      ],
+      "logoUrl": "https://a.espncdn.com/i/teamlogos/soccer/500/21507.png",
+      "haloColor": "#083888",
       "haloStrength": 0.25,
       "needsContrastLift": false,
-      "dominantColor": "#06F03C",
-      "secondaryColor": "#06F03C",
-      "logoScale": 1.0
+      "dominantColor": "#083888",
+      "secondaryColor": "#C83808",
+      "logoScale": 1.03
     },
     {
       "teamId": "qingdao-hainiu-chinese-super-league",
@@ -2921,14 +2925,16 @@
         "Lamia"
       ],
       "league": "Greek Super League",
-      "espnIds": [],
-      "logoUrl": "",
-      "haloColor": "#06F03C",
+      "espnIds": [
+        "18814"
+      ],
+      "logoUrl": "https://a.espncdn.com/i/teamlogos/soccer/500/18814.png",
+      "haloColor": "#7878A8",
       "haloStrength": 0.25,
       "needsContrastLift": false,
-      "dominantColor": "#06F03C",
-      "secondaryColor": "#06F03C",
-      "logoScale": 1.0
+      "dominantColor": "#7878A8",
+      "secondaryColor": "#383888",
+      "logoScale": 1.1
     },
     {
       "teamId": "ofi-crete-greek-super-league",
@@ -3503,14 +3509,16 @@
         "Hyderabad FC"
       ],
       "league": "ISL Football",
-      "espnIds": [],
-      "logoUrl": "",
-      "haloColor": "#06F03C",
+      "espnIds": [
+        "20174"
+      ],
+      "logoUrl": "https://a.espncdn.com/i/teamlogos/soccer/500/20174.png",
+      "haloColor": "#F8E808",
       "haloStrength": 0.25,
       "needsContrastLift": false,
-      "dominantColor": "#06F03C",
-      "secondaryColor": "#06F03C",
-      "logoScale": 1.0
+      "dominantColor": "#F8E808",
+      "secondaryColor": "#F8D808",
+      "logoScale": 1.07
     },
     {
       "teamId": "jamshedpur-fc-isl-football",
@@ -3699,14 +3707,16 @@
         "Kolkata Knight Riders"
       ],
       "league": "Indian Premier League",
-      "espnIds": [],
-      "logoUrl": "",
-      "haloColor": "#06F03C",
+      "espnIds": [
+        "335971"
+      ],
+      "logoUrl": "https://a.espncdn.com/i/teamlogos/cricket/500/335971.png",
+      "haloColor": "#381858",
       "haloStrength": 0.25,
       "needsContrastLift": false,
-      "dominantColor": "#06F03C",
-      "secondaryColor": "#06F03C",
-      "logoScale": 1.0
+      "dominantColor": "#381858",
+      "secondaryColor": "#382858",
+      "logoScale": 1.1
     },
     {
       "teamId": "lucknow-super-giants-indian-premier-league",
@@ -3733,14 +3743,16 @@
         "Mumbai Indians"
       ],
       "league": "Indian Premier League",
-      "espnIds": [],
-      "logoUrl": "",
-      "haloColor": "#06F03C",
+      "espnIds": [
+        "335978"
+      ],
+      "logoUrl": "https://a.espncdn.com/i/teamlogos/cricket/500/335978.png",
+      "haloColor": "#083878",
       "haloStrength": 0.25,
       "needsContrastLift": false,
-      "dominantColor": "#06F03C",
-      "secondaryColor": "#06F03C",
-      "logoScale": 1.0
+      "dominantColor": "#083878",
+      "secondaryColor": "#082868",
+      "logoScale": 1.07
     },
     {
       "teamId": "punjab-kings-indian-premier-league",
@@ -3803,14 +3815,16 @@
         "Sunrisers Hyderabad"
       ],
       "league": "Indian Premier League",
-      "espnIds": [],
-      "logoUrl": "",
-      "haloColor": "#06F03C",
+      "espnIds": [
+        "628333"
+      ],
+      "logoUrl": "https://a.espncdn.com/i/teamlogos/cricket/500/628333.png",
+      "haloColor": "#E81838",
       "haloStrength": 0.25,
       "needsContrastLift": false,
-      "dominantColor": "#06F03C",
-      "secondaryColor": "#06F03C",
-      "logoScale": 1.0
+      "dominantColor": "#E81838",
+      "secondaryColor": "#C81828",
+      "logoScale": 1.14
     },
     {
       "teamId": "albirex-niigata-j1-league",
@@ -3819,14 +3833,16 @@
         "Albirex Niigata"
       ],
       "league": "J1 League",
-      "espnIds": [],
-      "logoUrl": "",
-      "haloColor": "#06F03C",
+      "espnIds": [
+        "8011"
+      ],
+      "logoUrl": "https://a.espncdn.com/i/teamlogos/soccer/500/8011.png",
+      "haloColor": "#0848A8",
       "haloStrength": 0.25,
       "needsContrastLift": false,
-      "dominantColor": "#06F03C",
-      "secondaryColor": "#06F03C",
-      "logoScale": 1.0
+      "dominantColor": "#0848A8",
+      "secondaryColor": "#084898",
+      "logoScale": 1.1
     },
     {
       "teamId": "avispa-fukuoka-j1-league",
@@ -3871,14 +3887,16 @@
         "Consadole Sapporo"
       ],
       "league": "J1 League",
-      "espnIds": [],
-      "logoUrl": "",
-      "haloColor": "#06F03C",
+      "espnIds": [
+        "9249"
+      ],
+      "logoUrl": "https://a.espncdn.com/i/teamlogos/soccer/500/9249.png",
+      "haloColor": "#D80818",
       "haloStrength": 0.25,
       "needsContrastLift": false,
-      "dominantColor": "#06F03C",
-      "secondaryColor": "#06F03C",
-      "logoScale": 1.0
+      "dominantColor": "#D80818",
+      "secondaryColor": "#084868",
+      "logoScale": 1.07
     },
     {
       "teamId": "fc-tokyo-j1-league",
@@ -4049,14 +4067,16 @@
         "Sagan Tosu"
       ],
       "league": "J1 League",
-      "espnIds": [],
-      "logoUrl": "",
-      "haloColor": "#06F03C",
+      "espnIds": [
+        "6911"
+      ],
+      "logoUrl": "https://a.espncdn.com/i/teamlogos/soccer/500/6911.png",
+      "haloColor": "#E85898",
       "haloStrength": 0.25,
       "needsContrastLift": false,
-      "dominantColor": "#06F03C",
-      "secondaryColor": "#06F03C",
-      "logoScale": 1.0
+      "dominantColor": "#E85898",
+      "secondaryColor": "#E84898",
+      "logoScale": 1.1
     },
     {
       "teamId": "sanfrecce-hiroshima-j1-league",
@@ -4101,14 +4121,16 @@
         "Shonan Bellmare"
       ],
       "league": "J1 League",
-      "espnIds": [],
-      "logoUrl": "",
-      "haloColor": "#06F03C",
+      "espnIds": [
+        "6902"
+      ],
+      "logoUrl": "https://a.espncdn.com/i/teamlogos/soccer/500/6902.png",
+      "haloColor": "#085898",
       "haloStrength": 0.25,
       "needsContrastLift": false,
-      "dominantColor": "#06F03C",
-      "secondaryColor": "#06F03C",
-      "logoScale": 1.0
+      "dominantColor": "#085898",
+      "secondaryColor": "#C8D8E8",
+      "logoScale": 1.08
     },
     {
       "teamId": "tokyo-verdy-j1-league",
@@ -4189,14 +4211,16 @@
         "Yokohama FC"
       ],
       "league": "J1 League",
-      "espnIds": [],
-      "logoUrl": "",
-      "haloColor": "#06F03C",
+      "espnIds": [
+        "7145"
+      ],
+      "logoUrl": "https://a.espncdn.com/i/teamlogos/soccer/500/7145.png",
+      "haloColor": "#083888",
       "haloStrength": 0.25,
       "needsContrastLift": false,
-      "dominantColor": "#06F03C",
-      "secondaryColor": "#06F03C",
-      "logoScale": 1.0
+      "dominantColor": "#083888",
+      "secondaryColor": "#083878",
+      "logoScale": 1.07
     },
     {
       "teamId": "alaves-la-liga",
@@ -5249,14 +5273,16 @@
         "Morecambe"
       ],
       "league": "League Two",
-      "espnIds": [],
-      "logoUrl": "",
-      "haloColor": "#06F03C",
+      "espnIds": [
+        "278"
+      ],
+      "logoUrl": "https://a.espncdn.com/i/teamlogos/soccer/500/278.png",
+      "haloColor": "#C81828",
       "haloStrength": 0.25,
       "needsContrastLift": false,
-      "dominantColor": "#06F03C",
-      "secondaryColor": "#06F03C",
-      "logoScale": 1.0
+      "dominantColor": "#C81828",
+      "secondaryColor": "#780808",
+      "logoScale": 1.08
     },
     {
       "teamId": "newport-county-league-two",
@@ -5695,14 +5721,16 @@
         "Mazatlán"
       ],
       "league": "Liga MX",
-      "espnIds": [],
-      "logoUrl": "",
-      "haloColor": "#06F03C",
+      "espnIds": [
+        "20702"
+      ],
+      "logoUrl": "https://a.espncdn.com/i/teamlogos/soccer/500/20702.png",
+      "haloColor": "#583878",
       "haloStrength": 0.25,
       "needsContrastLift": false,
-      "dominantColor": "#06F03C",
-      "secondaryColor": "#06F03C",
-      "logoScale": 1.0
+      "dominantColor": "#583878",
+      "secondaryColor": "#482868",
+      "logoScale": 1.07
     },
     {
       "teamId": "monterrey-liga-mx",
@@ -9707,14 +9735,16 @@
         "Cape Town City"
       ],
       "league": "PSL Football",
-      "espnIds": [],
-      "logoUrl": "",
-      "haloColor": "#06F03C",
+      "espnIds": [
+        "7100"
+      ],
+      "logoUrl": "https://a.espncdn.com/i/teamlogos/soccer/500/7100.png",
+      "haloColor": "#283898",
       "haloStrength": 0.25,
       "needsContrastLift": false,
-      "dominantColor": "#06F03C",
-      "secondaryColor": "#06F03C",
-      "logoScale": 1.0
+      "dominantColor": "#283898",
+      "secondaryColor": "#183898",
+      "logoScale": 1.07
     },
     {
       "teamId": "cape-town-spurs-psl-football",
@@ -9885,14 +9915,16 @@
         "Lahore Qalandars"
       ],
       "league": "Pakistan Super League",
-      "espnIds": [],
-      "logoUrl": "",
-      "haloColor": "#06F03C",
+      "espnIds": [
+        "953847"
+      ],
+      "logoUrl": "https://a.espncdn.com/i/teamlogos/cricket/500/953847.png",
+      "haloColor": "#581818",
       "haloStrength": 0.25,
       "needsContrastLift": false,
-      "dominantColor": "#06F03C",
-      "secondaryColor": "#06F03C",
-      "logoScale": 1.0
+      "dominantColor": "#581818",
+      "secondaryColor": "#F82828",
+      "logoScale": 1.07
     },
     {
       "teamId": "multan-sultans-pakistan-super-league",
@@ -9901,14 +9933,16 @@
         "Multan Sultans"
       ],
       "league": "Pakistan Super League",
-      "espnIds": [],
-      "logoUrl": "",
-      "haloColor": "#06F03C",
+      "espnIds": [
+        "1117814"
+      ],
+      "logoUrl": "https://a.espncdn.com/i/teamlogos/cricket/500/1117814.png",
+      "haloColor": "#082858",
       "haloStrength": 0.25,
       "needsContrastLift": false,
-      "dominantColor": "#06F03C",
-      "secondaryColor": "#06F03C",
-      "logoScale": 1.0
+      "dominantColor": "#082858",
+      "secondaryColor": "#081858",
+      "logoScale": 1.07
     },
     {
       "teamId": "peshawar-zalmi-pakistan-super-league",
@@ -9917,14 +9951,16 @@
         "Peshawar Zalmi"
       ],
       "league": "Pakistan Super League",
-      "espnIds": [],
-      "logoUrl": "",
-      "haloColor": "#06F03C",
+      "espnIds": [
+        "953833"
+      ],
+      "logoUrl": "https://a.espncdn.com/i/teamlogos/cricket/500/953833.png",
+      "haloColor": "#082848",
       "haloStrength": 0.25,
       "needsContrastLift": false,
-      "dominantColor": "#06F03C",
-      "secondaryColor": "#06F03C",
-      "logoScale": 1.0
+      "dominantColor": "#082848",
+      "secondaryColor": "#082858",
+      "logoScale": 1.07
     },
     {
       "teamId": "quetta-gladiators-pakistan-super-league",
@@ -9933,14 +9969,16 @@
         "Quetta Gladiators"
       ],
       "league": "Pakistan Super League",
-      "espnIds": [],
-      "logoUrl": "",
-      "haloColor": "#06F03C",
+      "espnIds": [
+        "953845"
+      ],
+      "logoUrl": "https://a.espncdn.com/i/teamlogos/cricket/500/953845.png",
+      "haloColor": "#482888",
       "haloStrength": 0.25,
       "needsContrastLift": false,
-      "dominantColor": "#06F03C",
-      "secondaryColor": "#06F03C",
-      "logoScale": 1.0
+      "dominantColor": "#482888",
+      "secondaryColor": "#382888",
+      "logoScale": 1.07
     },
     {
       "teamId": "arsenal-premier-league",
@@ -10345,14 +10383,16 @@
         "Boavista"
       ],
       "league": "Primeira Liga",
-      "espnIds": [],
-      "logoUrl": "",
-      "haloColor": "#06F03C",
+      "espnIds": [
+        "2256"
+      ],
+      "logoUrl": "https://a.espncdn.com/i/teamlogos/soccer/500/2256.png",
+      "haloColor": "#E8D808",
       "haloStrength": 0.25,
       "needsContrastLift": false,
-      "dominantColor": "#06F03C",
-      "secondaryColor": "#06F03C",
-      "logoScale": 1.0
+      "dominantColor": "#E8D808",
+      "secondaryColor": "#082808",
+      "logoScale": 1.02
     },
     {
       "teamId": "braga-primeira-liga",
@@ -10397,13 +10437,15 @@
         "Chaves"
       ],
       "league": "Primeira Liga",
-      "espnIds": [],
-      "logoUrl": "",
-      "haloColor": "#06F03C",
+      "espnIds": [
+        "12705"
+      ],
+      "logoUrl": "https://a.espncdn.com/i/teamlogos/soccer/500/12705.png",
+      "haloColor": "#083888",
       "haloStrength": 0.25,
       "needsContrastLift": false,
-      "dominantColor": "#06F03C",
-      "secondaryColor": "#06F03C",
+      "dominantColor": "#083888",
+      "secondaryColor": "#083878",
       "logoScale": 1.0
     },
     {
@@ -10575,14 +10617,16 @@
         "Vizela"
       ],
       "league": "Primeira Liga",
-      "espnIds": [],
-      "logoUrl": "",
-      "haloColor": "#06F03C",
+      "espnIds": [
+        "20995"
+      ],
+      "logoUrl": "https://a.espncdn.com/i/teamlogos/soccer/500/20995.png",
+      "haloColor": "#082878",
       "haloStrength": 0.25,
       "needsContrastLift": false,
-      "dominantColor": "#06F03C",
-      "secondaryColor": "#06F03C",
-      "logoScale": 1.0
+      "dominantColor": "#082878",
+      "secondaryColor": "#083888",
+      "logoScale": 1.07
     },
     {
       "teamId": "akhmat-grozny-russian-premier-league",
@@ -10771,14 +10815,16 @@
         "Cape Cobras"
       ],
       "league": "SA T20 Cricket",
-      "espnIds": [],
-      "logoUrl": "",
-      "haloColor": "#06F03C",
+      "espnIds": [
+        "3360"
+      ],
+      "logoUrl": "https://a.espncdn.com/i/teamlogos/cricket/500/3360.png",
+      "haloColor": "#081868",
       "haloStrength": 0.25,
       "needsContrastLift": false,
-      "dominantColor": "#06F03C",
-      "secondaryColor": "#06F03C",
-      "logoScale": 1.0
+      "dominantColor": "#081868",
+      "secondaryColor": "#A88808",
+      "logoScale": 1.07
     },
     {
       "teamId": "dolphins-sa-t20-cricket",
@@ -10877,14 +10923,16 @@
         "Abha"
       ],
       "league": "Saudi Pro League",
-      "espnIds": [],
-      "logoUrl": "",
-      "haloColor": "#06F03C",
+      "espnIds": [
+        "21833"
+      ],
+      "logoUrl": "https://a.espncdn.com/i/teamlogos/soccer/500/21833.png",
+      "haloColor": "#084878",
       "haloStrength": 0.25,
       "needsContrastLift": false,
-      "dominantColor": "#06F03C",
-      "secondaryColor": "#06F03C",
-      "logoScale": 1.0
+      "dominantColor": "#084878",
+      "secondaryColor": "#083878",
+      "logoScale": 1.07
     },
     {
       "teamId": "al-ahli-saudi-pro-league",
@@ -11019,14 +11067,16 @@
         "Al Raed"
       ],
       "league": "Saudi Pro League",
-      "espnIds": [],
-      "logoUrl": "",
-      "haloColor": "#06F03C",
+      "espnIds": [
+        "21834"
+      ],
+      "logoUrl": "https://a.espncdn.com/i/teamlogos/soccer/500/21834.png",
+      "haloColor": "#B81818",
       "haloStrength": 0.25,
       "needsContrastLift": false,
-      "dominantColor": "#06F03C",
-      "secondaryColor": "#06F03C",
-      "logoScale": 1.0
+      "dominantColor": "#B81818",
+      "secondaryColor": "#C81818",
+      "logoScale": 1.1
     },
     {
       "teamId": "al-shabab-saudi-pro-league",
@@ -11467,14 +11517,16 @@
         "Hellas Verona"
       ],
       "league": "Serie A",
-      "espnIds": [],
-      "logoUrl": "",
-      "haloColor": "#06F03C",
+      "espnIds": [
+        "119"
+      ],
+      "logoUrl": "https://a.espncdn.com/i/teamlogos/soccer/500/119.png",
+      "haloColor": "#082868",
       "haloStrength": 0.25,
-      "needsContrastLift": false,
-      "dominantColor": "#06F03C",
-      "secondaryColor": "#06F03C",
-      "logoScale": 1.0
+      "needsContrastLift": true,
+      "dominantColor": "#082868",
+      "secondaryColor": "#083878",
+      "logoScale": 1.07
     },
     {
       "teamId": "inter-milan-serie-a",
@@ -11609,14 +11661,16 @@
         "Salernitana"
       ],
       "league": "Serie A",
-      "espnIds": [],
-      "logoUrl": "",
-      "haloColor": "#06F03C",
+      "espnIds": [
+        "3240"
+      ],
+      "logoUrl": "https://a.espncdn.com/i/teamlogos/soccer/500/3240.png",
+      "haloColor": "#883838",
       "haloStrength": 0.25,
       "needsContrastLift": false,
-      "dominantColor": "#06F03C",
-      "secondaryColor": "#06F03C",
-      "logoScale": 1.0
+      "dominantColor": "#883838",
+      "secondaryColor": "#884838",
+      "logoScale": 1.07
     },
     {
       "teamId": "sassuolo-serie-a",
@@ -11679,14 +11733,16 @@
         "Ascoli"
       ],
       "league": "Serie B",
-      "espnIds": [],
-      "logoUrl": "",
-      "haloColor": "#06F03C",
+      "espnIds": [
+        "3346"
+      ],
+      "logoUrl": "https://a.espncdn.com/i/teamlogos/soccer/500/3346.png",
+      "haloColor": "#E80818",
       "haloStrength": 0.25,
       "needsContrastLift": false,
-      "dominantColor": "#06F03C",
-      "secondaryColor": "#06F03C",
-      "logoScale": 1.0
+      "dominantColor": "#E80818",
+      "secondaryColor": "#C80818",
+      "logoScale": 1.07
     },
     {
       "teamId": "bari-serie-b",
@@ -11713,14 +11769,16 @@
         "Brescia"
       ],
       "league": "Serie B",
-      "espnIds": [],
-      "logoUrl": "",
-      "haloColor": "#06F03C",
+      "espnIds": [
+        "108"
+      ],
+      "logoUrl": "https://a.espncdn.com/i/teamlogos/soccer/500/108.png",
+      "haloColor": "#0858A8",
       "haloStrength": 0.25,
       "needsContrastLift": false,
-      "dominantColor": "#06F03C",
-      "secondaryColor": "#06F03C",
-      "logoScale": 1.0
+      "dominantColor": "#0858A8",
+      "secondaryColor": "#1868B8",
+      "logoScale": 1.08
     },
     {
       "teamId": "catanzaro-serie-b",
@@ -11783,14 +11841,16 @@
         "Cosenza"
       ],
       "league": "Serie B",
-      "espnIds": [],
-      "logoUrl": "",
-      "haloColor": "#06F03C",
+      "espnIds": [
+        "8683"
+      ],
+      "logoUrl": "https://a.espncdn.com/i/teamlogos/soccer/500/8683.png",
+      "haloColor": "#083858",
       "haloStrength": 0.25,
       "needsContrastLift": false,
-      "dominantColor": "#06F03C",
-      "secondaryColor": "#06F03C",
-      "logoScale": 1.0
+      "dominantColor": "#083858",
+      "secondaryColor": "#887848",
+      "logoScale": 1.1
     },
     {
       "teamId": "cremonese-serie-b",
@@ -11817,14 +11877,16 @@
         "FeralpiSalo"
       ],
       "league": "Serie B",
-      "espnIds": [],
-      "logoUrl": "",
-      "haloColor": "#06F03C",
+      "espnIds": [
+        "11140"
+      ],
+      "logoUrl": "https://a.espncdn.com/i/teamlogos/soccer/500/11140.png",
+      "haloColor": "#184878",
       "haloStrength": 0.25,
       "needsContrastLift": false,
-      "dominantColor": "#06F03C",
-      "secondaryColor": "#06F03C",
-      "logoScale": 1.0
+      "dominantColor": "#184878",
+      "secondaryColor": "#087838",
+      "logoScale": 1.07
     },
     {
       "teamId": "lecco-serie-b",
@@ -11833,14 +11895,16 @@
         "Lecco"
       ],
       "league": "Serie B",
-      "espnIds": [],
-      "logoUrl": "",
-      "haloColor": "#06F03C",
+      "espnIds": [
+        "6009"
+      ],
+      "logoUrl": "https://a.espncdn.com/i/teamlogos/soccer/500/6009.png",
+      "haloColor": "#082858",
       "haloStrength": 0.25,
       "needsContrastLift": false,
-      "dominantColor": "#06F03C",
-      "secondaryColor": "#06F03C",
-      "logoScale": 1.0
+      "dominantColor": "#082858",
+      "secondaryColor": "#6898C8",
+      "logoScale": 1.07
     },
     {
       "teamId": "modena-serie-b",
@@ -11921,14 +11985,16 @@
         "Pisa"
       ],
       "league": "Serie B",
-      "espnIds": [],
-      "logoUrl": "",
-      "haloColor": "#06F03C",
+      "espnIds": [
+        "3956"
+      ],
+      "logoUrl": "https://a.espncdn.com/i/teamlogos/soccer/500/3956.png",
+      "haloColor": "#181818",
       "haloStrength": 0.25,
       "needsContrastLift": false,
-      "dominantColor": "#06F03C",
-      "secondaryColor": "#06F03C",
-      "logoScale": 1.0
+      "dominantColor": "#181818",
+      "secondaryColor": "#0868B8",
+      "logoScale": 1.07
     },
     {
       "teamId": "reggiana-serie-b",
@@ -12009,14 +12075,16 @@
         "Ternana"
       ],
       "league": "Serie B",
-      "espnIds": [],
-      "logoUrl": "",
-      "haloColor": "#06F03C",
+      "espnIds": [
+        "3175"
+      ],
+      "logoUrl": "https://a.espncdn.com/i/teamlogos/soccer/500/3175.png",
+      "haloColor": "#287838",
       "haloStrength": 0.25,
       "needsContrastLift": false,
-      "dominantColor": "#06F03C",
-      "secondaryColor": "#06F03C",
-      "logoScale": 1.0
+      "dominantColor": "#287838",
+      "secondaryColor": "#F80808",
+      "logoScale": 1.08
     },
     {
       "teamId": "venezia-serie-b",
@@ -12755,14 +12823,16 @@
         "Yverdon"
       ],
       "league": "Swiss Super League",
-      "espnIds": [],
-      "logoUrl": "",
-      "haloColor": "#06F03C",
+      "espnIds": [
+        "21538"
+      ],
+      "logoUrl": "https://a.espncdn.com/i/teamlogos/soccer/500/21538.png",
+      "haloColor": "#087838",
       "haloStrength": 0.25,
       "needsContrastLift": false,
-      "dominantColor": "#06F03C",
-      "secondaryColor": "#06F03C",
-      "logoScale": 1.0
+      "dominantColor": "#087838",
+      "secondaryColor": "#B8D8C8",
+      "logoScale": 1.07
     },
     {
       "teamId": "adana-demirspor-super-lig",
@@ -12771,14 +12841,16 @@
         "Adana Demirspor"
       ],
       "league": "Süper Lig",
-      "espnIds": [],
-      "logoUrl": "",
-      "haloColor": "#06F03C",
+      "espnIds": [
+        "20765"
+      ],
+      "logoUrl": "https://a.espncdn.com/i/teamlogos/soccer/500/20765.png",
+      "haloColor": "#281868",
       "haloStrength": 0.25,
       "needsContrastLift": false,
-      "dominantColor": "#06F03C",
-      "secondaryColor": "#06F03C",
-      "logoScale": 1.0
+      "dominantColor": "#281868",
+      "secondaryColor": "#281878",
+      "logoScale": 1.07
     },
     {
       "teamId": "antalyaspor-super-lig",
@@ -12931,14 +13003,16 @@
         "Hatayspor"
       ],
       "league": "Süper Lig",
-      "espnIds": [],
-      "logoUrl": "",
-      "haloColor": "#06F03C",
+      "espnIds": [
+        "20737"
+      ],
+      "logoUrl": "https://a.espncdn.com/i/teamlogos/soccer/500/20737.png",
+      "haloColor": "#880808",
       "haloStrength": 0.25,
-      "needsContrastLift": false,
-      "dominantColor": "#06F03C",
-      "secondaryColor": "#06F03C",
-      "logoScale": 1.0
+      "needsContrastLift": true,
+      "dominantColor": "#880808",
+      "secondaryColor": "#780808",
+      "logoScale": 1.1
     },
     {
       "teamId": "kas-mpasa-super-lig",
@@ -13001,14 +13075,16 @@
         "Pendikspor"
       ],
       "league": "Süper Lig",
-      "espnIds": [],
-      "logoUrl": "",
-      "haloColor": "#06F03C",
+      "espnIds": [
+        "9104"
+      ],
+      "logoUrl": "https://a.espncdn.com/i/teamlogos/soccer/500/9104.png",
+      "haloColor": "#C80808",
       "haloStrength": 0.25,
       "needsContrastLift": false,
-      "dominantColor": "#06F03C",
-      "secondaryColor": "#06F03C",
-      "logoScale": 1.0
+      "dominantColor": "#C80808",
+      "secondaryColor": "#D80808",
+      "logoScale": 1.07
     },
     {
       "teamId": "samsunspor-super-lig",
@@ -13035,14 +13111,16 @@
         "Sivasspor"
       ],
       "league": "Süper Lig",
-      "espnIds": [],
-      "logoUrl": "",
-      "haloColor": "#06F03C",
+      "espnIds": [
+        "3691"
+      ],
+      "logoUrl": "https://a.espncdn.com/i/teamlogos/soccer/500/3691.png",
+      "haloColor": "#D82828",
       "haloStrength": 0.25,
       "needsContrastLift": false,
-      "dominantColor": "#06F03C",
-      "secondaryColor": "#06F03C",
-      "logoScale": 1.0
+      "dominantColor": "#D82828",
+      "secondaryColor": "#D81828",
+      "logoScale": 1.07
     },
     {
       "teamId": "trabzonspor-super-lig",
@@ -14555,6 +14633,168 @@
       "dominantColor": "#782838",
       "secondaryColor": "#F8D848",
       "logoScale": 1.1
+    },
+    {
+      "teamId": "bc-lions-cfl",
+      "favKey": "BC Lions|CFL",
+      "names": [
+        "BC Lions"
+      ],
+      "league": "CFL",
+      "espnIds": [
+        "79"
+      ],
+      "logoUrl": "https://r2.thesportsdb.com/images/media/team/badge/ysxssy1424732039.png",
+      "haloColor": "#F87828",
+      "haloStrength": 0.25,
+      "needsContrastLift": true,
+      "dominantColor": "#F87828",
+      "secondaryColor": "#F88828",
+      "logoScale": 1.0
+    },
+    {
+      "teamId": "calgary-stampeders-cfl",
+      "favKey": "Calgary Stampeders|CFL",
+      "names": [
+        "Calgary Stampeders"
+      ],
+      "league": "CFL",
+      "espnIds": [
+        "80"
+      ],
+      "logoUrl": "https://r2.thesportsdb.com/images/media/team/badge/lksemj1565196917.png",
+      "haloColor": "#281818",
+      "haloStrength": 0.25,
+      "needsContrastLift": false,
+      "dominantColor": "#281818",
+      "secondaryColor": "#282828",
+      "logoScale": 1.0
+    },
+    {
+      "teamId": "edmonton-elks-cfl",
+      "favKey": "Edmonton Elks|CFL",
+      "names": [
+        "Edmonton Elks"
+      ],
+      "league": "CFL",
+      "espnIds": [
+        "81"
+      ],
+      "logoUrl": "https://r2.thesportsdb.com/images/media/team/badge/ehy8wx1770834697.png",
+      "haloColor": "#285838",
+      "haloStrength": 0.25,
+      "needsContrastLift": false,
+      "dominantColor": "#285838",
+      "secondaryColor": "#184838",
+      "logoScale": 1.0
+    },
+    {
+      "teamId": "hamilton-tiger-cats-cfl",
+      "favKey": "Hamilton Tiger-Cats|CFL",
+      "names": [
+        "Hamilton Tiger-Cats"
+      ],
+      "league": "CFL",
+      "espnIds": [
+        "82"
+      ],
+      "logoUrl": "https://r2.thesportsdb.com/images/media/team/badge/qtwsuq1424727420.png",
+      "haloColor": "#F8C858",
+      "haloStrength": 0.25,
+      "needsContrastLift": false,
+      "dominantColor": "#F8C858",
+      "secondaryColor": "#F8B858",
+      "logoScale": 1.0
+    },
+    {
+      "teamId": "montreal-alouettes-cfl",
+      "favKey": "Montreal Alouettes|CFL",
+      "names": [
+        "Montreal Alouettes"
+      ],
+      "league": "CFL",
+      "espnIds": [
+        "83"
+      ],
+      "logoUrl": "https://r2.thesportsdb.com/images/media/team/badge/8m9v4n1770835125.png",
+      "haloColor": "#D80828",
+      "haloStrength": 0.25,
+      "needsContrastLift": true,
+      "dominantColor": "#D80828",
+      "secondaryColor": "#E81828",
+      "logoScale": 1.0
+    },
+    {
+      "teamId": "ottawa-redblacks-cfl",
+      "favKey": "Ottawa Redblacks|CFL",
+      "names": [
+        "Ottawa Redblacks"
+      ],
+      "league": "CFL",
+      "espnIds": [
+        "87"
+      ],
+      "logoUrl": "https://r2.thesportsdb.com/images/media/team/badge/k8wjz71546002654.png",
+      "haloColor": "#B81828",
+      "haloStrength": 0.25,
+      "needsContrastLift": false,
+      "dominantColor": "#B81828",
+      "secondaryColor": "#981828",
+      "logoScale": 1.0
+    },
+    {
+      "teamId": "saskatchewan-roughriders-cfl",
+      "favKey": "Saskatchewan Roughriders|CFL",
+      "names": [
+        "Saskatchewan Roughriders"
+      ],
+      "league": "CFL",
+      "espnIds": [
+        "84"
+      ],
+      "logoUrl": "https://r2.thesportsdb.com/images/media/team/badge/xrdull1630952245.png",
+      "haloColor": "#086838",
+      "haloStrength": 0.25,
+      "needsContrastLift": false,
+      "dominantColor": "#086838",
+      "secondaryColor": "#086848",
+      "logoScale": 1.0
+    },
+    {
+      "teamId": "toronto-argonauts-cfl",
+      "favKey": "Toronto Argonauts|CFL",
+      "names": [
+        "Toronto Argonauts"
+      ],
+      "league": "CFL",
+      "espnIds": [
+        "85"
+      ],
+      "logoUrl": "https://r2.thesportsdb.com/images/media/team/badge/5a57ou1628555372.png",
+      "haloColor": "#082838",
+      "haloStrength": 0.25,
+      "needsContrastLift": false,
+      "dominantColor": "#082838",
+      "secondaryColor": "#082848",
+      "logoScale": 1.0
+    },
+    {
+      "teamId": "winnipeg-blue-bombers-cfl",
+      "favKey": "Winnipeg Blue Bombers|CFL",
+      "names": [
+        "Winnipeg Blue Bombers"
+      ],
+      "league": "CFL",
+      "espnIds": [
+        "86"
+      ],
+      "logoUrl": "https://r2.thesportsdb.com/images/media/team/badge/4bo4wj1561667273.png",
+      "haloColor": "#082888",
+      "haloStrength": 0.25,
+      "needsContrastLift": false,
+      "dominantColor": "#082888",
+      "secondaryColor": "#083888",
+      "logoScale": 1.0
     }
   ]
 }

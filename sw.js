@@ -1,6 +1,6 @@
 // ScoreFly service worker
 // Bump CACHE on every deploy so devices pick up the new files.
-const CACHE = 'scorefly-v120';
+const CACHE = 'scorefly-v121';
 
 // App shell + icons. Relative paths so it works under the /scorefly/ GitHub Pages path.
 const SHELL = [
@@ -38,6 +38,7 @@ const SHELL = [
   './mlb-flytime-v1.json',
   './nhl-flytime-v1.json',
   './ncaaf-flytime-v1.json',
+  './cfl-flytime-v1.json',
   './nrl-flytime-v1.json',
   './soccer-usa-1-flytime-v1.json',
   './soccer-eng-1-flytime-v1.json',

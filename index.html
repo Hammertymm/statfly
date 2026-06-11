@@ -1266,6 +1266,7 @@ const ESPN_FEEDS = [
   { sport:'basketball', league:'nbl',   label:'NBL', emoji:'🏀' },
   { sport:'basketball', league:'mens-college-basketball', label:'NCAAM', emoji:'🏀' },
   { sport:'football',   league:'college-football',        label:'NCAAF', emoji:'🏈' },
+  { sport:'football',   league:'cfl',   label:'CFL', emoji:'🏈' },
   { sport:'rugby',      league:'270557', label:'URC', emoji:'🏉' },
   { sport:'rugby',      league:'270559', label:'Top 14', emoji:'🏉' },
   { sport:'rugby-league', league:'3',   label:'NRL', emoji:'🏉' },
@@ -1288,7 +1289,7 @@ const FEED_LEAGUE_NAME = {
   'ita.2':'Serie B','ksa.1':'Saudi Pro League','rus.1':'Russian Premier League',
   'aus.1':'A-League','irl.1':'League of Ireland','ind.1':'ISL Football','rsa.1':'PSL Football',
   'conmebol.libertadores':'Copa Libertadores','eng.w.1':"Women's Super League",
-  'afl':'AFL','8044':'Big Bash League','8048':'Indian Premier League',
+  'afl':'AFL','8044':'Big Bash League','8048':'Indian Premier League','cfl':'CFL',
   '270557':'United Rugby Championship','270559':'Top 14','3':'NRL'
 };
 
@@ -3368,6 +3369,7 @@ const LEAGUES={
   'Greece':      [{n:'Greek Super League',e:'⚽'}],
   'Saudi Arabia':[{n:'Saudi Pro League',e:'⚽'}],
   'Russia':      [{n:'Russian Premier League',e:'⚽'}],
+  'Canada':      [{n:'CFL',e:'🏈'}],
   'USA':         [{n:'NFL',e:'🏈'},{n:'NBA',e:'🏀'},{n:'WNBA',e:'🏀'},{n:'MLB',e:'⚾'},{n:'NHL',e:'🏒'},{n:'MLS',e:'⚽'}],
   'Australia':   [{n:'AFL',e:'🔴'},{n:'NRL',e:'🏉'},{n:'Big Bash League',e:'🏏'},{n:'A-League',e:'⚽'},{n:'Super Rugby Pacific',e:'🏉'},{n:'NBL',e:'🏀'}],
   'India':       [{n:'Indian Premier League',e:'🏏'},{n:'ISL Football',e:'⚽'}],
@@ -3451,6 +3453,7 @@ const TEAMS={
   'MLB':           ['Arizona Diamondbacks','Atlanta Braves','Baltimore Orioles','Boston Red Sox','Chicago Cubs','Chicago White Sox','Cincinnati Reds','Cleveland Guardians','Colorado Rockies','Detroit Tigers','Houston Astros','Kansas City Royals','Los Angeles Angels','Los Angeles Dodgers','Miami Marlins','Milwaukee Brewers','Minnesota Twins','New York Mets','New York Yankees','Oakland Athletics','Philadelphia Phillies','Pittsburgh Pirates','San Diego Padres','San Francisco Giants','Seattle Mariners','St. Louis Cardinals','Tampa Bay Rays','Texas Rangers','Toronto Blue Jays','Washington Nationals'],
   'NHL':           ['Anaheim Ducks','Boston Bruins','Buffalo Sabres','Calgary Flames','Carolina Hurricanes','Chicago Blackhawks','Colorado Avalanche','Columbus Blue Jackets','Dallas Stars','Detroit Red Wings','Edmonton Oilers','Florida Panthers','Los Angeles Kings','Minnesota Wild','Montreal Canadiens','Nashville Predators','New Jersey Devils','New York Islanders','New York Rangers','Ottawa Senators','Philadelphia Flyers','Pittsburgh Penguins','San Jose Sharks','Seattle Kraken','St. Louis Blues','Tampa Bay Lightning','Toronto Maple Leafs','Utah Hockey Club','Vancouver Canucks','Vegas Golden Knights','Washington Capitals','Winnipeg Jets'],
   'MLS':           ['Atlanta United','Austin FC','Charlotte FC','Chicago Fire','Colorado Rapids','Columbus Crew','D.C. United','FC Cincinnati','FC Dallas','Houston Dynamo','Inter Miami','LA Galaxy','LAFC','Minnesota United','Nashville SC','New England Revolution','New York City FC','New York Red Bulls','Orlando City','Philadelphia Union','Portland Timbers','Real Salt Lake','San Jose Earthquakes','Seattle Sounders','Sporting Kansas City','St. Louis City SC','Toronto FC','Vancouver Whitecaps'],
+  'CFL':           ['BC Lions','Calgary Stampeders','Edmonton Elks','Hamilton Tiger-Cats','Montreal Alouettes','Ottawa Redblacks','Saskatchewan Roughriders','Toronto Argonauts','Winnipeg Blue Bombers'],
   // Global
   'UEFA Champions League':['AC Milan','Arsenal','Atletico Madrid','Barcelona','Bayern Munich','Benfica','Borussia Dortmund','Chelsea','Inter Milan','Liverpool','Manchester City','Napoli','Paris Saint-Germain','Porto','RB Leipzig','Real Madrid'],
   'UEFA Europa League':   ['Ajax','Atalanta','Bayer Leverkusen','Feyenoord','Lazio','Liverpool','Manchester United','Roma','Sevilla','Sporting CP','Villarreal','West Ham United'],
@@ -4490,6 +4493,7 @@ const FLY_V1_REGISTRY = {
   'baseball|mlb':                           { file: 'mlb-flytime-v1.json',              threshold: 85, tag: 'MLB' },
   'hockey|nhl':                             { file: 'nhl-flytime-v1.json',              threshold: 78, tag: 'NHL' },
   'football|college-football':              { file: 'ncaaf-flytime-v1.json',            threshold: 96, tag: 'NCAAF' },
+  'football|cfl':                           { file: 'cfl-flytime-v1.json',              threshold: 85, tag: 'CFL' },
   'rugby-league|3':                         { file: 'nrl-flytime-v1.json',              threshold: 85, tag: 'NRL' },
   'soccer|usa.1':                           { file: 'soccer-usa-1-flytime-v1.json',     threshold: 96, tag: 'MLS' },
   'soccer|eng.1':                           { file: 'soccer-eng-1-flytime-v1.json',     threshold: 96, tag: 'EPL' },

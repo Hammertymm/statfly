@@ -196,8 +196,11 @@
   .ft-fly img{height:22px;width:22px;border-radius:50%;display:block;}
   .ft-fly .mk-fb{background:none;border:none;padding:0;height:auto;font-size:15px;}
   /* Local testing: flyscore readout on cards. Set DEBUG_FLYSCORES false before production. */
+  .fly-debug-pair{display:inline-flex;gap:5px;align-items:center;flex-wrap:wrap;justify-content:flex-end;}
   .fly-debug-score{font-size:10px;font-weight:700;color:rgba(255,255,255,.45);letter-spacing:.3px;font-variant-numeric:tabular-nums;white-space:nowrap;}
   .fly-debug-score.qual{color:var(--upcoming);}
+  .fly-debug-score.ach{color:var(--live);}
+  .fly-debug-score.miss{color:var(--result);}
   .fly-debug-score.na{opacity:.35;}
   .sh-flytime .sh-label{color:var(--live);}
 
@@ -274,6 +277,13 @@
   .fly-lab-sec:first-child{margin-top:0;}
   .fly-lab-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin-bottom:4px;}
   .fly-lab-grid.wide{grid-template-columns:repeat(2,1fr);}
+  .fly-lab-grid.four{grid-template-columns:repeat(4,1fr);}
+  .fly-lab-pre-banner{font-size:11px;font-weight:700;letter-spacing:.4px;color:var(--upcoming);background:rgba(255,214,10,.08);border:1px solid rgba(255,214,10,.25);border-radius:8px;padding:8px 10px;margin-bottom:10px;line-height:1.4;}
+  .fly-lab-bar-fill.blue{background:var(--blue);}
+  .fly-lab-bar-fill.prec{background:var(--upcoming);}
+  .fly-lab-bar-row{display:flex;align-items:center;gap:8px;margin:4px 0;}
+  .fly-lab-bar-lbl{flex-shrink:0;width:52px;font-size:10px;color:var(--text-3);text-align:right;}
+  .fly-lab-bar-track{flex:1;height:6px;background:rgba(255,255,255,.08);border-radius:3px;overflow:hidden;}
   .fly-lab-stat{background:#1c1c1e;border:1px solid var(--sep);border-radius:10px;padding:8px 6px;text-align:center;}
   .fly-lab-num{font-size:20px;font-weight:800;line-height:1;color:var(--live);font-variant-numeric:tabular-nums;}
   .fly-lab-num.warn{color:var(--upcoming);}
@@ -313,18 +323,20 @@
   .buzz-knob{position:absolute;top:2px;left:2px;width:24px;height:24px;border-radius:50%;background:#fff;transition:transform .2s;}
   .buzz-switch.on .buzz-knob{transform:translateX(18px);}
   /* ONBOARDING (first-run overlay) */
-  .onb-overlay { display: none; position: fixed; inset: 0; background: #000; z-index: 300; overflow-y: auto; }
+  .onb-overlay { display: none; position: fixed; inset: 0; background: #000; z-index: 300; overflow: hidden; }
   .onb-overlay.active { display: block; }
-  .onb-inner { max-width: 430px; margin: 0 auto; min-height: 100%; display: flex; flex-direction: column; padding: 0 22px; box-sizing: border-box; }
-  .onb-step { flex: 1; display: flex; flex-direction: column; }
-  #onb-step-1, #onb-step-3 { padding: 0; }
+  .onb-inner { max-width: 430px; margin: 0 auto; height: 100vh; display: flex; flex-direction: column; padding: 0 22px; box-sizing: border-box; }
+  .onb-step { flex: 1; display: flex; flex-direction: column; min-height: 0; }
+  #onb-step-1, #onb-step-3 { padding: 0; position: relative; height: 100%; overflow: hidden; }
   .onb-hero-caption { font-size: 14px; line-height: 1.45; color: var(--text-3); text-align: center; margin: -4px 0 10px; padding: 0 8px; }
   .onb-notif-copy { padding: 18px 4px 8px; text-align: center; }
   .onb-notif-copy .onb-h { margin: 0 0 6px; font-size: 24px; }
   .onb-notif-copy .onb-sub { margin-bottom: 0; max-width: 300px; margin-left: auto; margin-right: auto; }
-  .onb-hero { display: block; width: calc(100% + 44px); margin: 0 -22px; cursor: pointer; }
-  .onb-hero-btn { position: sticky; bottom: 14px; margin: 14px 0; z-index: 2; }
-  .onb-hero-actions { position: sticky; bottom: 14px; margin: 14px 0; z-index: 2; }
+  .onb-hero { display: block; width: calc(100% + 44px); margin: 0 -22px; }
+  #onb-step-1 .onb-hero { height: 100%; object-fit: contain; object-position: top center; }
+  #onb-step-1 .onb-hero-btn { position: absolute; left: 0; right: 0; bottom: max(18px, env(safe-area-inset-bottom)); margin: 0; z-index: 2; }
+  #onb-step-3 .onb-notif-hero { height: 100%; object-fit: contain; object-position: top center; }
+  #onb-step-3 .onb-hero-actions { position: absolute; left: 0; right: 0; bottom: max(16px, env(safe-area-inset-bottom)); margin: 0; z-index: 2; }
   .onb-hero-actions .onb-btn-primary { margin-bottom: 8px; }
   .onb-hero-actions .onb-btn-text { margin-bottom: 0; }
   .onb-logo { width: 96px; height: 96px; border-radius: 50%; display: block; margin-bottom: 22px; }
@@ -346,11 +358,14 @@
   .onb-bell { font-size: 54px; text-align: center; margin: 64px 0 4px; }
   .onb-btn { display: block; width: 100%; border: none; border-radius: 14px; font-family: inherit; font-size: 17px; font-weight: 600; padding: 16px; cursor: pointer; -webkit-tap-highlight-color: rgba(255,255,255,0.08); }
   .onb-btn-primary { background: var(--live); color: #000; margin-bottom: 16px; }
-  #onb-step-2 { min-height: 100%; }
-  .onb-step2-scroll { flex: 1 1 auto; min-height: 0; }
-  .onb-step2-actions { margin-top: auto; flex-shrink: 0; padding-bottom: 24px; }
+  #onb-step-2 { height: 100%; overflow: hidden; }
+  .onb-step2-scroll { flex: 1 1 auto; min-height: 0; overflow: hidden; }
+  .onb-step2-actions { margin-top: auto; flex-shrink: 0; padding-bottom: max(18px, env(safe-area-inset-bottom)); }
   #onb-step-2 .onb-btn-primary { margin-top: 12px; margin-bottom: 0; }
-  #onb-step-2.onb-has-suggestions .onb-sub { margin-bottom: 14px; }
+  #onb-step-2.onb-has-suggestions .onb-sub { margin-bottom: 10px; }
+  #onb-step-2.onb-has-suggestions .onb-h { margin-bottom: 4px; }
+  #onb-step-2.onb-has-suggestions .onb-pick-card { padding: 9px 12px; margin-bottom: 5px; }
+  #onb-step-2 #onb-results { max-height: min(34vh, 220px); }
   .onb-btn-text { background: none; color: var(--text-3); font-size: 15px; padding: 12px; margin-bottom: 24px; }
   .follow-btn{background:transparent;border:1px solid rgba(6,240,60,0.55);color:var(--live);font-size:12px;font-weight:600;padding:6px 14px;border-radius:14px;cursor:pointer;font-family:inherit;transition:background .15s,transform .1s;}
   .follow-btn:active{background:rgba(6,240,60,.12);transform:scale(.97);}
@@ -365,24 +380,19 @@
   .onb-sugg-list{margin-bottom:12px;}
   .onb-pick-card.followed{border-color:var(--live);background:rgba(6,240,60,0.05);}
   .onb-sugg-sub{font-size:12px;color:var(--text-3);margin:-4px 0 10px;}
-  .onb-divider{display:flex;align-items:center;gap:12px;margin:20px 0 16px;color:var(--text-3);font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:.4px;}
+  .onb-divider{display:flex;align-items:center;gap:12px;margin:14px 0 12px;color:var(--text-3);font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:.4px;}
   .onb-divider::before,.onb-divider::after{content:'';flex:1;height:1px;background:var(--sep);}
-  #onb-step-2 .onb-h { font-size: 22px; margin: 16px 0 6px; letter-spacing: -.3px; }
-  .onb-starter-btn{background:transparent;border:1px solid rgba(6,240,60,0.45);color:var(--live);display:flex;flex-direction:column;align-items:center;gap:10px;padding:14px 16px 12px;line-height:1.3;}
-  .onb-starter-btn:active{background:rgba(6,240,60,0.08);}
+  #onb-step-2 .onb-h { font-size: 22px; margin: 12px 0 4px; letter-spacing: -.3px; }
+  #onb-step-2 .onb-sub { margin-bottom: 14px; }
+  .onb-starter-btn{background:var(--live);border:none;color:#000;padding:13px 16px;line-height:1.3;margin-bottom:8px;}
+  .onb-starter-btn:active{opacity:.88;}
   .onb-starter-title{font-size:15px;font-weight:600;}
-  .onb-starter-logos{display:flex;gap:10px;justify-content:center;align-items:center;}
+  #onb-starter-wrap .onb-label{margin-top:0;margin-bottom:8px;}
+  .onb-starter-preview .onb-pick-card{padding:8px 12px;margin-bottom:5px;cursor:default;pointer-events:none;opacity:.92;}
+  .onb-starter-preview .onb-pick-card:active{background:var(--card);}
+  .onb-starter-preview .onb-pick-name{font-size:13px;}
+  .onb-starter-preview .onb-pick-league{font-size:10px;}
   #onb-step-1 .onb-hero-caption{display:none;}
-  #onb-step-3 .onb-notif-top{font-size:14px;line-height:1.45;color:var(--text-3);text-align:center;padding:12px 8px 0;margin:0;}
-  /* Crop the baked-in footer fly/line from onboard-notif.png above the buttons. */
-  #onb-step-3 .onb-notif-hero{
-    margin-top:4px;
-    display:block;
-    width:calc(100% + 44px);
-    height:min(58vh, 500px);
-    object-fit:cover;
-    object-position:top center;
-  }
 
   /* -- COMPACT RESULTS TOGGLE -- */
 
@@ -1005,7 +1015,7 @@
 
     <!-- Step 1: Welcome hero -->
     <div class="onb-step" id="onb-step-1">
-      <img class="onb-hero" src="onboard-hero.png" alt="ScoreFly — We'll tell you when it matters" onclick="onbGoStep(2)">
+      <img class="onb-hero" src="onboard-hero.png" alt="ScoreFly — We'll tell you when it matters">
       <button class="onb-btn onb-btn-primary onb-hero-btn" onclick="onbGoStep(2)">Choose My Teams</button>
     </div>
 
@@ -1038,19 +1048,17 @@
 
       <div id="onb-starter-wrap">
         <div class="onb-divider">or</div>
+        <div class="onb-label">Global Starter Pack</div>
         <button type="button" class="onb-btn onb-starter-btn" onclick="onbQuickStart()">
           <span class="onb-starter-title">Quick Start with Global Starter Pack</span>
-          <div class="onb-starter-logos" id="onb-starter-logos" aria-hidden="true"></div>
         </button>
+        <div class="onb-sugg-list onb-starter-preview" id="onb-starter-preview"></div>
       </div>
 
       <div id="onb-suggestions-wrap" style="display:none">
         <div class="onb-label" id="onb-sugg-label"></div>
         <div class="onb-sugg-sub">Recommended teams</div>
         <div class="onb-sugg-list" id="onb-sugg-grid"></div>
-        <div class="onb-divider">or</div>
-        <div class="onb-label">Global Starter Pack</div>
-        <div class="onb-sugg-list" id="onb-starter-grid"></div>
       </div>
       </div>
 
@@ -1062,7 +1070,6 @@
 
     <!-- Step 3: Activate FlyTime notifications -->
     <div class="onb-step" id="onb-step-3" style="display:none">
-      <p class="onb-notif-top">One alert when a game hits the final stretch worth watching. You can turn this on later in Teams.</p>
       <img class="onb-hero onb-notif-hero" src="onboard-notif.png" alt="Activate FlyTime notifications">
       <div class="onb-hero-actions">
         <button class="onb-btn onb-btn-primary" onclick="onbEnableNotifs()">Enable Notifications</button>
@@ -1953,8 +1960,8 @@ function markFlyTimeMatch(id){
 function matchHadFlyTime(id){ return Object.prototype.hasOwnProperty.call(flyTimeMatches, id); }
 
 // --- FlyTime predictor ledger (Item 6) ---
-// DEBUG: set DEBUG_FLY false before public release (hides card score readouts on every card).
-const DEBUG_FLY = false;
+// PRE-RELEASE: set DEBUG_FLY false before public release (hides card scores + Teams lab).
+const DEBUG_FLY = true;
 const DEBUG_FLYSCORES = DEBUG_FLY;
 // Fly naming (four coloured flies — same icon, different colours):
 //   Yellow fly = upcoming, engine predicts FlyTime potential (isFlyMatch)
@@ -2161,6 +2168,44 @@ function flyDashboardFinished(){
   return { predFin:predFin, predFinRed:predFinRed, predFinNoRed:predFinNoRed, unpredRed:unpredRed };
 }
 
+function flyDashboardUpcoming(){
+  var total = 0, scored = 0, yellow = 0, sumYellow = 0, maxScore = 0, maxMatch = '';
+  (ALL_UPCOMING || []).forEach(function(m){
+    total++;
+    var score = null;
+    if(usesFlyV1Engine(m)){
+      score = flyV1ScoreForMatch(m);
+      if(score === null && flyV1Engines[flyV1Key(m)]) score = m.flyMatchRating;
+    } else if(m.sportKey !== 'cricket' && m.sportKey !== 'tennis'){
+      if(m.flyMatchRating == null || m.flyMatchRating === 0) computeFlyMatch(m);
+      score = m.flyMatchRating;
+    }
+    if(score != null && score > 0){ scored++; if(score > maxScore){ maxScore = score; maxMatch = (m.home||'') + ' v ' + (m.away||''); } }
+    if(m.isFlyMatch){
+      yellow++;
+      if(score != null) sumYellow += score;
+    }
+  });
+  return {
+    total:total, scored:scored, yellow:yellow,
+    avgYellow:yellow ? Math.round((sumYellow / yellow) * 10) / 10 : 0,
+    maxScore:Math.round(maxScore * 10) / 10, maxMatch:maxMatch
+  };
+}
+
+function exportFlyLedger(){
+  try{
+    var txt = JSON.stringify(flyLedger, null, 2);
+    if(navigator.clipboard && navigator.clipboard.writeText){
+      navigator.clipboard.writeText(txt).then(function(){
+        alert('FlyTime ledger copied to clipboard (' + Object.keys(flyLedger).length + ' matches).');
+      });
+    } else {
+      prompt('Copy ledger JSON:', txt);
+    }
+  }catch(e){ alert('Export failed'); }
+}
+
 function flyDashEsc(s){
   return (s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/"/g,'&quot;');
 }
@@ -2177,17 +2222,21 @@ function renderFlyDashboard(){
   syncFlyLedgerFromResults();
   var live = flyDashboardLive();
   var fin = flyDashboardFinished();
+  var up = flyDashboardUpcoming();
   var cov = flyDashboardMarginCov();
   var inp = flyDashboardInputHealth();
   var s = flyLedgerStats();
   var precision = s.predicted ? Math.round(100 * s.hit / s.predicted) : 0;
   var recall = s.achieved ? Math.round(100 * s.hit / s.achieved) : 0;
+  var blueRate = s.predicted ? Math.round(100 * s.blue / s.predicted) : 0;
   var redFlyTotal = 0;
   try { redFlyTotal = Object.keys(flyTimeMatches).length; } catch(e){}
   var fresh = lastUpdateMs ? Math.floor((Date.now() - lastUpdateMs) / 60000) : null;
   var freshTxt = fresh === null ? 'never' : (fresh < 1 ? 'just now' : fresh + 'm ago');
 
   var html = '';
+  html += '<div class="fly-lab-pre-banner">PRE-RELEASE tuning panel. FlyScores on every card; remove DEBUG_FLY before public launch.</div>';
+
   html += '<div class="fly-lab-sec">Live right now</div>';
   html += '<div class="fly-lab-grid">';
   html += '<div class="fly-lab-stat"><div class="fly-lab-num dim">' + live.liveTotal + '</div><div class="fly-lab-lbl">games live</div></div>';
@@ -2197,26 +2246,39 @@ function renderFlyDashboard(){
   if(live.predLive > 0){
     html += '<div class="fly-lab-note">Of ' + live.predLive + ' predicted-yellow now live, <strong>' + live.predLiveGreen + '</strong> have gone green.</div>';
   }
-  html += '<div class="fly-lab-note">Poll: ' + freshTxt + (lastPollFailed ? ' (reconnecting)' : '') + ' · Red flies stored: ' + redFlyTotal + '</div>';
+  html += '<div class="fly-lab-note">Poll: ' + freshTxt + (lastPollFailed ? ' (reconnecting)' : '') + ' · Red flies stored: ' + redFlyTotal + ' · Ledger entries: ' + s.total + '</div>';
 
-  html += '<div class="fly-lab-sec">Yellow · Green · Blue (diagnostic)</div>';
-  html += '<div class="fly-lab-grid">';
+  html += '<div class="fly-lab-sec">Yellow · Green · Blue · Hit</div>';
+  html += '<div class="fly-lab-grid four">';
   html += '<div class="fly-lab-stat"><div class="fly-lab-num warn">' + s.predicted + '</div><div class="fly-lab-lbl">yellow predicted</div></div>';
   html += '<div class="fly-lab-stat"><div class="fly-lab-num">' + s.achieved + '</div><div class="fly-lab-lbl">green live</div></div>';
-  html += '<div class="fly-lab-stat"><div class="fly-lab-num blue">' + s.blue + '</div><div class="fly-lab-lbl">blue fly (Y→G)</div></div>';
+  html += '<div class="fly-lab-stat"><div class="fly-lab-num blue">' + s.blue + '</div><div class="fly-lab-lbl">blue fly total</div></div>';
+  html += '<div class="fly-lab-stat"><div class="fly-lab-num">' + s.hit + '</div><div class="fly-lab-lbl">correct (Y+G)</div></div>';
   html += '</div>';
   html += '<div class="fly-lab-grid wide">';
   html += '<div class="fly-lab-stat"><div class="fly-lab-num bad">' + s.falseAlarm + '</div><div class="fly-lab-lbl">false alarms (Y, no G)</div></div>';
   html += '<div class="fly-lab-stat"><div class="fly-lab-num bad">' + s.missed + '</div><div class="fly-lab-lbl">missed (G, no Y)</div></div>';
   html += '</div>';
   if(s.predicted){
-    html += '<div class="fly-lab-note">Precision: ' + precision + '% yellow→green · Recall: ' + recall + '% green had yellow · Aim: recall high so every FlyTime candidate is yellow</div>';
-    html += '<div class="fly-lab-bar"><div class="fly-lab-bar-fill" style="width:' + recall + '%"></div></div>';
+    html += '<div class="fly-lab-note">Blue fly rate: <strong>' + blueRate + '%</strong> of yellows went Y→G · Precision ' + precision + '% · Recall ' + recall + '%</div>';
+    html += '<div class="fly-lab-bar-row"><span class="fly-lab-bar-lbl">Recall</span><div class="fly-lab-bar-track"><div class="fly-lab-bar-fill" style="width:' + recall + '%"></div></div><span class="fly-lab-meta">' + recall + '%</span></div>';
+    html += '<div class="fly-lab-bar-row"><span class="fly-lab-bar-lbl">Prec</span><div class="fly-lab-bar-track"><div class="fly-lab-bar-fill prec" style="width:' + precision + '%"></div></div><span class="fly-lab-meta">' + precision + '%</span></div>';
+    html += '<div class="fly-lab-bar-row"><span class="fly-lab-bar-lbl">Blue</span><div class="fly-lab-bar-track"><div class="fly-lab-bar-fill blue" style="width:' + blueRate + '%"></div></div><span class="fly-lab-meta">' + s.blue + '/' + s.predicted + '</span></div>';
   } else {
     html += '<div class="fly-lab-note">No predictions logged yet. Yellow flies on upcoming games build the ledger automatically.</div>';
   }
   if(s.achieved === 0 && s.predicted > 0){
     html += '<div class="fly-lab-note warn">Zero greens recorded while predicted. Keep the app open during close finishes - iOS suspends background polling.</div>';
+  }
+
+  html += '<div class="fly-lab-sec">Upcoming flyscores (feed)</div>';
+  html += '<div class="fly-lab-grid">';
+  html += '<div class="fly-lab-stat"><div class="fly-lab-num dim">' + up.total + '</div><div class="fly-lab-lbl">upcoming</div></div>';
+  html += '<div class="fly-lab-stat"><div class="fly-lab-num warn">' + up.yellow + '</div><div class="fly-lab-lbl">yellow now</div></div>';
+  html += '<div class="fly-lab-stat"><div class="fly-lab-num">' + up.scored + '</div><div class="fly-lab-lbl">scored</div></div>';
+  html += '</div>';
+  if(up.yellow){
+    html += '<div class="fly-lab-note">Avg yellow score: ' + up.avgYellow + (up.maxScore ? ' · Peak: ' + up.maxScore + ' (' + flyDashEsc(up.maxMatch) + ')' : '') + '</div>';
   }
 
   html += '<div class="fly-lab-sec">Finished games (ledger)</div>';
@@ -2235,6 +2297,23 @@ function renderFlyDashboard(){
   html += '<div class="fly-lab-note">Margin data (legacy): ' + cov.covG + ' / ' + cov.covTot + ' upcoming with both teams</div>';
   if(cov.covTot > 0 && cov.covG < cov.covTot * 0.3){
     html += '<div class="fly-lab-note warn">Low margin coverage - legacy yellow tuning may be blind. Check form fetch / proxies.</div>';
+  }
+
+  var engRows = [];
+  Object.keys(FLY_V1_REGISTRY).forEach(function(key){
+    var cfg = FLY_V1_REGISTRY[key];
+    var eng = flyV1Engines[key];
+    var yc = 0;
+    (ALL_UPCOMING||[]).forEach(function(m){ if(flyV1Key(m) === key && m.isFlyMatch) yc++; });
+    engRows.push({ tag:cfg.tag, thr:cfg.threshold, yellow:yc, ok:!!(eng && eng.idx) });
+  });
+  engRows.sort(function(a,b){ return b.yellow - a.yellow; });
+  var topEng = engRows.filter(function(r){ return r.yellow > 0 || !r.ok; }).slice(0, 10);
+  if(topEng.length){
+    html += '<div class="fly-lab-sec">Engine snapshot</div>';
+    topEng.forEach(function(r){
+      html += '<div class="fly-lab-eng-row"><span>' + flyDashEsc(r.tag) + (r.ok ? '' : ' (not loaded)') + ' · thr ' + r.thr + '</span><span class="warn">' + r.yellow + ' yellow</span></div>';
+    });
   }
 
   var leagueRows = flyDashboardPerLeague();
@@ -2260,7 +2339,7 @@ function renderFlyDashboard(){
     log.push({ id:id, e:e, t:e.t||0 });
   }
   log.sort(function(a,b){ return b.t - a.t; });
-  log = log.slice(0, 18);
+  log = log.slice(0, 24);
   html += '<div class="fly-lab-sec">Recent matches</div>';
   if(!log.length){
     html += '<div class="ledger-empty">Ledger empty. Browse upcoming games on a match day to populate.</div>';
@@ -2278,19 +2357,21 @@ function renderFlyDashboard(){
       icons += '<span style="color:' + (isBlueFly(e) ? 'var(--blue)' : 'var(--text-3)') + '">' + b + '</span>';
       icons += '<span style="color:' + (isRedFly(e) ? 'var(--result)' : 'var(--text-3)') + '">' + r + '</span></span>';
       var meta = (e.eng || '?').toUpperCase();
-      if(e.r) meta += ' ' + e.r;
+      if(e.r) meta += ' pred ' + e.r;
       if(e.thr) meta += '/' + e.thr;
+      if(e.a || isRedFly(e)) meta += ' ach FT';
       html += '<div class="fly-lab-row">' + icons +
         '<div class="fly-lab-match">' + flyDashEsc(e.h) + ' vs ' + flyDashEsc(e.w) + '</div>' +
         '<div class="fly-lab-meta">' + meta + '</div></div>';
     });
     html += '</div>';
-    html += '<div class="fly-lab-note">Y=yellow fly · G=green fly · B=blue fly (Y→G) · R=red fly</div>';
+    html += '<div class="fly-lab-note">Y=yellow · G=green · B=blue (Y→G) · R=red · pred/ach on results cards too</div>';
   }
 
   html += '<div class="fly-lab-actions">';
   html += '<span class="ledger-reset" onclick="resetFlyLedger()">Reset ledger</span>';
   html += '<span class="ledger-reset" onclick="forceRefresh().then(function(){ renderFlyDashboard(); })">Refresh now</span>';
+  html += '<span class="ledger-reset" onclick="exportFlyLedger()">Export ledger</span>';
   if(!DEBUG_FLY) html += '<span class="ledger-reset" onclick="try{localStorage.removeItem(\'scorefly_fly_lab\')}catch(e){}location.reload()">Hide lab</span>';
   html += '</div>';
 
@@ -3580,7 +3661,7 @@ function buildLiveCard(m){
   const fly=flyTimeIcon(m,'live');
   const ftLocked=isFlyTimePinned(m)?' flytime-locked':'';
   return`<div class="card live${ftLocked}" data-match-id="${m.id}">
-    <div class="card-meta"><span class="league-tag"><span class="sport-icon">${renderSportIcon(sico)}</span><span class="lg-badge">${ltxt}</span></span><span class="card-right">${flyScoreDebugHTML(m)}${fly}<span class="live-badge"><span class="bdot"></span>LIVE ${m.timer}</span></span></div>
+    <div class="card-meta"><span class="league-tag"><span class="sport-icon">${renderSportIcon(sico)}</span><span class="lg-badge">${ltxt}</span></span><span class="card-right">${flyScoreDebugHTML(m,'live')}${fly}<span class="live-badge"><span class="bdot"></span>LIVE ${m.timer}</span></span></div>
     <div class="card-body">
       <div class="card-teams">
         <div class="team-row">${logoImg(m.homeLogo,m.league,m.homeId,m.home)}<div class="t-name">${displayTeamName(m.home)}</div>${teamQuickAddBtn(m.home,m)}</div>
@@ -3599,7 +3680,7 @@ function buildUpcomingCard(m){
   const sico=lparts[0];
   const ltxt=lparts.slice(1).join(' ');
   return`<div class="card upcoming">
-    <div class="card-meta"><span class="league-tag"><span class="sport-icon">${renderSportIcon(sico)}</span><span class="lg-badge">${ltxt}</span></span><span class="card-right">${flyScoreDebugHTML(m)}${flyTimeIcon(m,'upcoming')}</span></div>
+    <div class="card-meta"><span class="league-tag"><span class="sport-icon">${renderSportIcon(sico)}</span><span class="lg-badge">${ltxt}</span></span><span class="card-right">${flyScoreDebugHTML(m,'upcoming')}${flyTimeIcon(m,'upcoming')}</span></div>
     <div class="upcoming-body">
       <div class="up-teams">
         <div class="team-row">
@@ -3636,7 +3717,7 @@ function buildResultCard(m){
   const ltxt=lparts.slice(1).join(' ');
   const flyRed=flyTimeIcon(m,'result');
   return`<div class="card result">
-    <div class="card-meta"><span class="league-tag"><span class="sport-icon">${renderSportIcon(sico)}</span><span class="lg-badge">${ltxt}</span></span><span class="card-right">${flyScoreDebugHTML(m)}${flyRed}<span class="ft-badge">FT · ${m.date}</span></span></div>
+    <div class="card-meta"><span class="league-tag"><span class="sport-icon">${renderSportIcon(sico)}</span><span class="lg-badge">${ltxt}</span></span><span class="card-right">${flyScoreDebugHTML(m,'result')}${flyRed}<span class="ft-badge">FT · ${m.date}</span></span></div>
     <div class="card-body">
       <div class="card-teams">
         <div class="team-row">${logoImg(m.homeLogo,m.league,m.homeId,m.home)}<div class="t-name ${hw?'':'dim'}">${displayTeamName(m.home)}</div></div>
@@ -3757,6 +3838,7 @@ function renderResults(){
     const groups={};
     filtered.forEach(m=>{if(!groups[m.date])groups[m.date]=[];groups[m.date].push(m);});
     rw.innerHTML=Object.entries(groups).map(([date,matches])=>`<div class="date-group">${date}</div>`+matches.map(buildResultCard).join('')).join('');
+    if(typeof renderFlyDashboard === 'function') renderFlyDashboard();
   }catch(e){derr('renderResults error:',e);}
 }
 
@@ -4610,27 +4692,69 @@ function markerHTML(cls, src, alt, fb){
 }
 
 // Testing overlay: show internal flyscore on every card (see DEBUG_FLYSCORES).
-function flyScoreDebugHTML(m) {
-  if (!DEBUG_FLYSCORES) return '';
-  let score = null, tag = '', thr = null;
-  const eng = flyV1Engines[flyV1Key(m)];
-  if (eng) {
-    if (!eng.idx) return '<span class="fly-debug-score na">' + eng.tag + ' —</span>';
-    score = flyV1ScoreForMatch(m);
-    tag = eng.tag;
-    thr = eng.threshold;
-  } else if (m.sportKey === 'cricket') {
-    return '<span class="fly-debug-score na">—</span>';
+function flyScoreParts(m, status){
+  var score = null, tag = '', thr = null;
+  var ledger = flyLedger[m.id];
+  if(status === 'result' && ledger && ledger.r){
+    score = ledger.r;
+    tag = (ledger.eng || 'FM').toUpperCase();
+    thr = ledger.thr;
+  } else if(status === 'result'){
+    var engR = flyV1Engines[flyV1Key(m)];
+    if(engR && engR.idx){
+      score = flyV1ScoreForMatch(m);
+      tag = engR.tag;
+      thr = engR.threshold;
+    } else if(m.sportKey !== 'cricket' && m.sportKey !== 'tennis'){
+      if(m.flyMatchRating == null || m.flyMatchRating === 0) computeFlyMatch(m);
+      score = m.flyMatchRating;
+      tag = 'FM';
+    }
   } else {
-    if (m.flyMatchRating == null || m.flyMatchRating === 0) computeFlyMatch(m);
-    score = m.flyMatchRating;
-    tag = 'FM';
+    var eng = flyV1Engines[flyV1Key(m)];
+    if(eng){
+      if(!eng.idx) return { na:true, tag:eng.tag };
+      score = flyV1ScoreForMatch(m);
+      tag = eng.tag;
+      thr = eng.threshold;
+    } else if(m.sportKey === 'cricket' || m.sportKey === 'tennis'){
+      return { na:true, tag:'' };
+    } else {
+      if(m.flyMatchRating == null || m.flyMatchRating === 0) computeFlyMatch(m);
+      score = m.flyMatchRating;
+      tag = 'FM';
+      thr = ledger && ledger.thr ? ledger.thr : (m.isFlyMatch ? FLYMATCH_THRESHOLD : null);
+    }
+    if(ledger && ledger.r && score == null) score = ledger.r;
+    if(ledger && ledger.thr && thr == null) thr = ledger.thr;
   }
-  if (score == null) return '<span class="fly-debug-score na">' + tag + ' —</span>';
-  const qual = thr != null
-    ? (score >= thr ? ' qual' : '')
+  return { score:score, tag:tag, thr:thr, na:false };
+}
+
+function flyScoreDebugHTML(m, status) {
+  if (!DEBUG_FLYSCORES) return '';
+  var parts = flyScoreParts(m, status);
+  if(parts.na) return '<span class="fly-debug-score na">' + (parts.tag || '—') + '</span>';
+
+  if(status === 'result'){
+    var hadFT = matchHadFlyTime(m.id) || (flyLedger[m.id] && flyLedger[m.id].a);
+    var predTxt = parts.score != null
+      ? parts.tag + ' ' + (Math.round(parts.score * 10) / 10) + (parts.thr != null ? '/' + parts.thr : '')
+      : '—';
+    var predQual = (flyLedger[m.id] && flyLedger[m.id].p) || m.isFlyMatch ? ' qual' : '';
+    var achCls = hadFT ? ' ach' : ' miss';
+    var achTxt = hadFT ? 'FT✓' : 'no FT';
+    return '<span class="fly-debug-pair">' +
+      '<span class="fly-debug-score' + predQual + '">pred ' + predTxt + '</span>' +
+      '<span class="fly-debug-score' + achCls + '">ach ' + achTxt + '</span></span>';
+  }
+
+  var score = parts.score;
+  if(score == null) return '<span class="fly-debug-score na">' + (parts.tag || '—') + ' —</span>';
+  var qual = parts.thr != null
+    ? (score >= parts.thr ? ' qual' : '')
     : (m.isFlyMatch ? ' qual' : '');
-  return '<span class="fly-debug-score' + qual + '">' + tag + ' ' + (Math.round(score * 10) / 10) + (thr != null ? '/' + thr : '') + '</span>';
+  return '<span class="fly-debug-score' + qual + '">' + parts.tag + ' ' + (Math.round(score * 10) / 10) + (parts.thr != null ? '/' + parts.thr : '') + '</span>';
 }
 
 // FlyTime flies: one coloured fly per card, fixed top-right. status: live | upcoming | result.
@@ -4779,17 +4903,18 @@ const STARTER_PACK_LOGOS = {
   'Collingwood Magpies|AFL':        'https://a.espncdn.com/i/teamlogos/afl/500/coll.png'
 };
 
-function onbRenderStarterPack(){
-  var el=document.getElementById('onb-starter-logos');
+function onbStarterPreviewCardHtml(it){
+  return '<div class="onb-pick-card">'+
+    onbStarterLogoHtml(it.favKey)+
+    '<div class="onb-pick-info"><div class="onb-pick-name">'+it.name+'</div>'+
+    '<div class="onb-pick-league">'+it.league+'</div></div></div>';
+}
+
+function onbRenderStarterPreview(){
+  var el=document.getElementById('onb-starter-preview');
   if(!el) return;
-  el.innerHTML=GLOBAL_STARTER_PACK.map(function(key){
-    var item=onbEntryForKey(key);
-    var logo=STARTER_PACK_LOGOS[key]||'';
-    var emoji=item?(item.emoji||item.leagueEmoji):'';
-    var name=item?item.name:'';
-    var halo=logoImg(logo, emoji, '', name, 'onb-starter-logo');
-    return '<div title="'+escAttr(name)+'">'+halo+'</div>';
-  }).join('');
+  var entries=GLOBAL_STARTER_PACK.map(function(key){ return onbEntryForKey(key); }).filter(Boolean);
+  el.innerHTML=entries.map(function(it){ return onbStarterPreviewCardHtml(it); }).join('');
 }
 
 function onbEntryForKey(key){
@@ -4802,55 +4927,55 @@ function onbEntryForName(name){
   return searchIndex.find(function(it){ return it.type === 'team' && it.name === name; }) || null;
 }
 
-// Two same-country suggestions after the anchor pick (one per league where possible).
+// One-screen cap: 7 suggestions on tall phones, 6 on shorter viewports.
+function onbSuggestionCap(){
+  var h=window.innerHeight||700;
+  return h < 720 ? 6 : 7;
+}
+
 function onbGetSuggestions(picked){
   if(!searchIndex) searchIndex = buildSearchIndex();
-  var TARGET = 2, out = [], seen = {};
-  seen[picked.favKey] = true;
-  favs.forEach(function(f){ seen[f.key] = true; });
+  var TARGET=onbSuggestionCap(), CROSS=TARGET-1, out=[], seen={};
+  seen[picked.favKey]=true;
+  favs.forEach(function(f){ seen[f.key]=true; });
 
   function push(it){
-    if(!it || seen[it.favKey] || out.length >= TARGET) return false;
-    seen[it.favKey] = true;
+    if(!it || seen[it.favKey] || out.length>=TARGET) return false;
+    seen[it.favKey]=true;
     out.push({ entry: it });
     return true;
   }
   function majorSort(a, b){
-    return (isMajorClub(b.name) ? 1 : 0) - (isMajorClub(a.name) ? 1 : 0);
+    return (isMajorClub(b.name)?1:0)-(isMajorClub(a.name)?1:0);
   }
   function take(cands, n){
-    cands = cands.filter(function(it){ return !seen[it.favKey]; });
+    cands=cands.filter(function(it){ return !seen[it.favKey]; });
     cands.sort(function(a, b){
-      var aCross = a.emoji !== pSport ? 1 : 0;
-      var bCross = b.emoji !== pSport ? 1 : 0;
-      if(bCross !== aCross) return bCross - aCross;
+      var aCross=a.emoji!==pSport?1:0, bCross=b.emoji!==pSport?1:0;
+      if(bCross!==aCross) return bCross-aCross;
       return majorSort(a, b);
     });
-    var added = 0, usedL = {};
-    for(var i = 0; i < cands.length && added < n; i++){
-      if(!usedL[cands[i].league] && push(cands[i])){ usedL[cands[i].league] = true; added++; }
+    var added=0, usedL={};
+    for(var i=0;i<cands.length && added<n;i++){
+      if(!usedL[cands[i].league] && push(cands[i])){ usedL[cands[i].league]=true; added++; }
     }
   }
 
-  var teams    = searchIndex.filter(function(it){ return it.type === 'team'; });
-  var pCountry = leagueCountry(picked.league);
-  var pLeague  = picked.league;
-  var pSport   = picked.emoji || picked.leagueEmoji;
-  var sameCountry = function(it){ return leagueCountry(it.league) === pCountry; };
+  var teams=searchIndex.filter(function(it){ return it.type==='team'; });
+  var pCountry=leagueCountry(picked.league);
+  var pLeague=picked.league;
+  var pSport=picked.emoji||picked.leagueEmoji;
+  var sameCountry=function(it){ return leagueCountry(it.league)===pCountry; };
 
   take(teams.filter(function(it){
-    return sameCountry(it) && it.league !== pLeague;
-  }), TARGET);
+    return sameCountry(it) && it.league!==pLeague;
+  }), CROSS);
 
-  if(out.length < TARGET){
-    var sameLeague = teams.filter(function(it){ return it.league === pLeague && !seen[it.favKey]; });
-    sameLeague.sort(function(a, b){
-      return leaguePopularityScore(b.name, pLeague) - leaguePopularityScore(a.name, pLeague);
-    });
-    for(var s = 0; s < sameLeague.length && out.length < TARGET; s++){
-      push(sameLeague[s]);
-    }
-  }
+  var sameLeague=teams.filter(function(it){ return it.league===pLeague && !seen[it.favKey]; });
+  sameLeague.sort(function(a, b){
+    return leaguePopularityScore(b.name, pLeague)-leaguePopularityScore(a.name, pLeague);
+  });
+  if(sameLeague.length) push(sameLeague[0]);
 
   return out;
 }
@@ -4935,6 +5060,7 @@ function onbResetStep2Copy(){
   onbSetSearchMode(false);
   if(step2) step2.classList.remove('onb-has-suggestions');
   onbResetOnboardingCache();
+  onbRenderStarterPreview();
 }
 
 function onbSyncSuggestions(){
@@ -4969,7 +5095,7 @@ function startOnboarding(){
   onbResetOnboardingCache();
   onbGoStep(1);
   onbRefresh();
-  onbRenderStarterPack();
+  onbRenderStarterPreview();
   document.getElementById('onboard-overlay').classList.add('active');
 }
 
@@ -4978,7 +5104,7 @@ function onbGoStep(n){
   for(var i=0;i<steps.length;i++){ steps[i].style.display='none'; }
   var target=document.getElementById('onb-step-'+n);
   if(target) target.style.display='flex';
-  if(n===2){ onbRefresh(); onbRenderStarterPack(); }
+  if(n===2){ onbRefresh(); onbRenderStarterPreview(); }
 }
 
 // Search inside onboarding. Mirrors globalSearch/gsrTap but targets the
@@ -5063,8 +5189,7 @@ function onbClearSearch(){
 
 function onbRenderSuggestions(){
   var grid=document.getElementById('onb-sugg-grid');
-  var starterGrid=document.getElementById('onb-starter-grid');
-  if(!grid || !starterGrid || !favs.length) return;
+  if(!grid || !favs.length) return;
 
   var anchorKey=favs[0].key;
   if(anchorKey!==onbCachedAnchorKey || !onbCachedSuggestions){
@@ -5080,26 +5205,13 @@ function onbRenderSuggestions(){
     }).join('');
   }
   grid._suggestions=suggestions;
-
-  var starterEntries=GLOBAL_STARTER_PACK.map(function(key){ return onbEntryForKey(key); }).filter(Boolean);
-  starterGrid.innerHTML=starterEntries.map(function(it,idx){
-    return onbPickCardHtml(it, idx, 'starter');
-  }).join('');
-  starterGrid._entries=starterEntries;
 }
 
 function onbPickTap(el){
-  var source=el.getAttribute('data-source');
   var idx=parseInt(el.getAttribute('data-idx'),10);
-  var it=null;
-  if(source==='starter'){
-    var starterGrid=document.getElementById('onb-starter-grid');
-    it=(starterGrid && starterGrid._entries) ? starterGrid._entries[idx] : null;
-  } else {
-    var grid=document.getElementById('onb-sugg-grid');
-    var s=(grid && grid._suggestions) ? grid._suggestions[idx] : null;
-    it=s ? s.entry : null;
-  }
+  var grid=document.getElementById('onb-sugg-grid');
+  var s=(grid && grid._suggestions) ? grid._suggestions[idx] : null;
+  var it=s ? s.entry : null;
   if(!it || favs.some(function(f){return f.key===it.favKey;})) return;
   onbAddTeam(it);
 }

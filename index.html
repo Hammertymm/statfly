@@ -615,14 +615,20 @@
     max-width: 100%;
   }
 
-  /* Status pill — sits dead-centre on the board, straddling the seam between
-     the two scores (the divider in stacked portrait). Solid black background
-     keeps it readable where it overlaps the seam line. */
+  /* Status pill — single line, centred on the FULL card width (left/right auto
+     margins, so centring is not constrained to a 50%-offset shrink box), and
+     vertically at the exact midpoint between the score row's bottom edge and
+     the card's bottom edge. positionFlyPills() measures the rendered digits
+     after every grid build / resize and writes --pill-top per card; the 76%
+     default only covers the instant before the first measurement. */
   .flymode-status {
     position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
+    left: 0;
+    right: 0;
+    margin-inline: auto;
+    width: max-content;
+    top: var(--pill-top, 76%);
+    transform: translateY(-50%);
     font-family: 'Overpass', 'Inter', monospace;
     font-variant-numeric: tabular-nums;
     font-size: clamp(12px, calc((100vh - 96px) / var(--rows, 1) * 0.11), 22px);
@@ -4055,7 +4061,9 @@ function buildFlyModeGrid() {
     grid.innerHTML = '<div class="flymode-empty">No live matches</div>';
     return;
   }
-  // Split-tiles layout: two half-tiles for scores; timer in one row beneath them.
+  // Split-tiles layout: two half-tiles for scores; the timer pill is centred
+  // on the full card width, halfway between the score row and the card bottom
+  // (exact position measured per card by positionFlyPills()).
   grid.innerHTML = live.map(m => {
     const badge = (m.timer || '').trim();
     const mf = getMatchFly(m.id); // '' | 'flytime' | 'overtime'
@@ -4087,7 +4095,41 @@ function buildFlyModeGrid() {
       + '</div>';
   }).join('');
   flyCrossfade();
+  positionFlyPills();
 }
+
+// Timer pill placement: measure the rendered score digits and put the pill's
+// centre at the exact midpoint between the score row's bottom edge and the
+// card's bottom edge. Measured per card, so the rule holds identically in
+// every formation (1-8 boards), both orientations and any viewport size —
+// no fixed pixel offsets. Clamped so the pill never touches the digits or
+// spills past the card edge.
+function positionFlyPills() {
+  document.querySelectorAll('#flymode-grid .flymode-card').forEach(function(card) {
+    const board = card.querySelector('.flymode-board');
+    const pill  = card.querySelector('.flymode-status');
+    if (!board || !pill) return;
+    const b = board.getBoundingClientRect();
+    if (!b.height) return; // overlay hidden; CSS fallback applies until shown
+    let scoreBottom = b.top;
+    card.querySelectorAll('.flymode-score').forEach(function(s) {
+      const r = s.getBoundingClientRect();
+      if (r.bottom > scoreBottom) scoreBottom = r.bottom;
+    });
+    const half = pill.getBoundingClientRect().height / 2;
+    let mid = (scoreBottom + b.bottom) / 2;
+    mid = Math.max(mid, scoreBottom + half + 2);
+    mid = Math.min(mid, b.bottom - half - 2);
+    pill.style.setProperty('--pill-top', ((mid - b.top) / b.height * 100).toFixed(2) + '%');
+  });
+}
+
+// Re-measure on viewport changes while Fly Mode is open (rotation, resize,
+// browser chrome show/hide all change the card geometry).
+window.addEventListener('resize', function() {
+  const overlay = document.getElementById('flymode-overlay');
+  if (overlay && overlay.classList.contains('active')) positionFlyPills();
+});
 
 function enterFlyMode() {
   const slider = document.getElementById('flymode-bright');

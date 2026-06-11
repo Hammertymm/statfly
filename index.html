@@ -112,25 +112,28 @@
   .qa-btn:active{background:rgba(6,240,60,0.15);}
   .qa-btn-row{width:26px;height:26px;font-size:17px;}
   .qa-btn-static{pointer-events:none;opacity:.85;}
-  /* Adaptive Team Halo System V1.1 — logo is the hero; invisible depth + optional team tint */
+  /* Adaptive Team Halo System V2 — logo is the hero; micro-plate + team-colour glow */
   .team-logo-halo{
     position:relative;display:flex;align-items:center;justify-content:center;flex-shrink:0;
-    --halo-r:255;--halo-g:255;--halo-b:255;--halo-strength:0;
+    --halo-r:255;--halo-g:255;--halo-b:255;--halo-strength:0.25;--logo-scale:1;
   }
-  .team-logo-halo.t-logo{width:24px;height:24px;font-size:11px;padding:2px;}
-  .team-logo-halo.onb-pick-logo{width:26px;height:26px;padding:2px;}
-  .team-logo-halo.onb-starter-logo{width:34px;height:34px;padding:4px;}
+  .team-logo-halo.t-logo{width:32px;height:32px;font-size:13px;padding:3px;}
+  .team-logo-halo.onb-pick-logo{width:32px;height:32px;padding:3px;}
+  .team-logo-halo.onb-starter-logo{width:38px;height:38px;padding:4px;}
+  .team-logo-halo::before{
+    content:'';position:absolute;inset:0;border-radius:50%;pointer-events:none;z-index:0;
+    background:radial-gradient(circle,rgba(255,255,255,0.06) 0%,rgba(255,255,255,0.02) 55%,transparent 72%);
+  }
   .team-logo-halo[data-contrast-lift]::before{
-    content:'';position:absolute;inset:-35%;border-radius:50%;pointer-events:none;z-index:0;
-    background:radial-gradient(circle,rgba(255,255,255,0.08) 0%,transparent 70%);
+    background:radial-gradient(circle,rgba(255,255,255,0.16) 0%,rgba(255,255,255,0.06) 55%,transparent 72%);
   }
   .team-logo-halo img.team-crest,.team-logo-halo .team-crest{
     position:relative;z-index:1;width:100%;height:100%;object-fit:contain;display:block;
+    transform:scale(var(--logo-scale));
     filter:
-      drop-shadow(0 0 8px rgba(var(--halo-r),var(--halo-g),var(--halo-b),calc(var(--halo-strength) * 0.85)))
-      drop-shadow(0 0 14px rgba(var(--halo-r),var(--halo-g),var(--halo-b),calc(var(--halo-strength) * 0.45)))
-      drop-shadow(0 0 6px rgba(255,255,255,0.08))
-      drop-shadow(0 0 12px rgba(255,255,255,0.04));
+      brightness(1.06) saturate(1.14)
+      drop-shadow(0 0 10px rgba(var(--halo-r),var(--halo-g),var(--halo-b),calc(var(--halo-strength) * 0.9)))
+      drop-shadow(0 0 4px rgba(255,255,255,0.12));
   }
   .t-name{font-size:14px;font-weight:600;letter-spacing:-.2px;text-transform:uppercase;flex:1;line-height:1.1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
   .t-name.dim{color:var(--text-3);}
@@ -216,7 +219,7 @@
   /* FORM STRIP - last 5 results, oldest left newest right */
   .up-teams .team-row{flex-direction:column;align-items:flex-start;gap:4px;}
   .up-teams .team-row .row-top{display:flex;align-items:center;gap:10px;width:100%;}
-  .form-strip{display:flex;gap:3px;padding-left:28px;}
+  .form-strip{display:flex;gap:3px;padding-left:42px;}
   .form-box{width:11px;height:11px;border-radius:3px;background:rgba(255,255,255,0.08);}
   .form-box.w{background:var(--live);}
   .form-box.d{background:var(--upcoming);}
@@ -1256,13 +1259,13 @@ const ESPN_FEEDS = [
   { sport:'soccer',     league:'conmebol.libertadores', label:'Libertadores', emoji:'⚽' },
   { sport:'soccer',     league:'eng.w.1', label:'WSL',        emoji:'⚽' },
   { sport:'australian-football', league:'afl', label:'AFL', emoji:'🔴' },
+  { sport:'cricket',    league:'8044',  label:'Big Bash League', emoji:'🏏' },
   { sport:'cricket',    league:'8048',  label:'IPL', emoji:'🏏' },
   { sport:'cricket',    league:'23694', label:'Cricket', emoji:'🏏' },
   { sport:'basketball', league:'wnba',  label:'WNBA', emoji:'🏀' },
   { sport:'basketball', league:'nbl',   label:'NBL', emoji:'🏀' },
   { sport:'basketball', league:'mens-college-basketball', label:'NCAAM', emoji:'🏀' },
   { sport:'football',   league:'college-football',        label:'NCAAF', emoji:'🏈' },
-  { sport:'football',   league:'cfl',   label:'CFL', emoji:'🏈' },
   { sport:'rugby',      league:'270557', label:'URC', emoji:'🏉' },
   { sport:'rugby',      league:'270559', label:'Top 14', emoji:'🏉' },
   { sport:'rugby-league', league:'3',   label:'NRL', emoji:'🏉' },
@@ -1278,14 +1281,14 @@ const FEED_LEAGUE_NAME = {
   'eng.1':'Premier League','esp.1':'La Liga','uefa.champions':'UEFA Champions League',
   'uefa.europa':'UEFA Europa League','ger.1':'Bundesliga','ita.1':'Serie A',
   'fra.1':'Ligue 1','eng.2':'Championship','ned.1':'Eredivisie','por.1':'Primeira Liga',
-  'sco.1':'Scottish Premiership','tur.1':'Super Lig','bra.1':'Brasileirao',
+  'sco.1':'Scottish Premiership','tur.1':'Süper Lig','bra.1':'Brasileirao',
   'arg.1':'Liga Profesional','mex.1':'Liga MX','jpn.1':'J1 League',
   'eng.3':'League One','eng.4':'League Two','chn.1':'Chinese Super League',
   'bel.1':'Belgian Pro League','sui.1':'Swiss Super League','gre.1':'Greek Super League',
   'ita.2':'Serie B','ksa.1':'Saudi Pro League','rus.1':'Russian Premier League',
   'aus.1':'A-League','irl.1':'League of Ireland','ind.1':'ISL Football','rsa.1':'PSL Football',
   'conmebol.libertadores':'Copa Libertadores','eng.w.1':"Women's Super League",
-  'afl':'AFL','8048':'Indian Premier League','cfl':'CFL',
+  'afl':'AFL','8044':'Big Bash League','8048':'Indian Premier League',
   '270557':'United Rugby Championship','270559':'Top 14','3':'NRL'
 };
 
@@ -3365,7 +3368,6 @@ const LEAGUES={
   'Greece':      [{n:'Greek Super League',e:'⚽'}],
   'Saudi Arabia':[{n:'Saudi Pro League',e:'⚽'}],
   'Russia':      [{n:'Russian Premier League',e:'⚽'}],
-  'Canada':      [{n:'CFL',e:'🏈'}],
   'USA':         [{n:'NFL',e:'🏈'},{n:'NBA',e:'🏀'},{n:'WNBA',e:'🏀'},{n:'MLB',e:'⚾'},{n:'NHL',e:'🏒'},{n:'MLS',e:'⚽'}],
   'Australia':   [{n:'AFL',e:'🔴'},{n:'NRL',e:'🏉'},{n:'Big Bash League',e:'🏏'},{n:'A-League',e:'⚽'},{n:'Super Rugby Pacific',e:'🏉'},{n:'NBL',e:'🏀'}],
   'India':       [{n:'Indian Premier League',e:'🏏'},{n:'ISL Football',e:'⚽'}],
@@ -3449,7 +3451,6 @@ const TEAMS={
   'MLB':           ['Arizona Diamondbacks','Atlanta Braves','Baltimore Orioles','Boston Red Sox','Chicago Cubs','Chicago White Sox','Cincinnati Reds','Cleveland Guardians','Colorado Rockies','Detroit Tigers','Houston Astros','Kansas City Royals','Los Angeles Angels','Los Angeles Dodgers','Miami Marlins','Milwaukee Brewers','Minnesota Twins','New York Mets','New York Yankees','Oakland Athletics','Philadelphia Phillies','Pittsburgh Pirates','San Diego Padres','San Francisco Giants','Seattle Mariners','St. Louis Cardinals','Tampa Bay Rays','Texas Rangers','Toronto Blue Jays','Washington Nationals'],
   'NHL':           ['Anaheim Ducks','Boston Bruins','Buffalo Sabres','Calgary Flames','Carolina Hurricanes','Chicago Blackhawks','Colorado Avalanche','Columbus Blue Jackets','Dallas Stars','Detroit Red Wings','Edmonton Oilers','Florida Panthers','Los Angeles Kings','Minnesota Wild','Montreal Canadiens','Nashville Predators','New Jersey Devils','New York Islanders','New York Rangers','Ottawa Senators','Philadelphia Flyers','Pittsburgh Penguins','San Jose Sharks','Seattle Kraken','St. Louis Blues','Tampa Bay Lightning','Toronto Maple Leafs','Utah Hockey Club','Vancouver Canucks','Vegas Golden Knights','Washington Capitals','Winnipeg Jets'],
   'MLS':           ['Atlanta United','Austin FC','Charlotte FC','Chicago Fire','Colorado Rapids','Columbus Crew','D.C. United','FC Cincinnati','FC Dallas','Houston Dynamo','Inter Miami','LA Galaxy','LAFC','Minnesota United','Nashville SC','New England Revolution','New York City FC','New York Red Bulls','Orlando City','Philadelphia Union','Portland Timbers','Real Salt Lake','San Jose Earthquakes','Seattle Sounders','Sporting Kansas City','St. Louis City SC','Toronto FC','Vancouver Whitecaps'],
-  'CFL':           ['BC Lions','Calgary Stampeders','Edmonton Elks','Hamilton Tiger-Cats','Montreal Alouettes','Ottawa Redblacks','Saskatchewan Roughriders','Toronto Argonauts','Winnipeg Blue Bombers'],
   // Global
   'UEFA Champions League':['AC Milan','Arsenal','Atletico Madrid','Barcelona','Bayern Munich','Benfica','Borussia Dortmund','Chelsea','Inter Milan','Liverpool','Manchester City','Napoli','Paris Saint-Germain','Porto','RB Leipzig','Real Madrid'],
   'UEFA Europa League':   ['Ajax','Atalanta','Bayer Leverkusen','Feyenoord','Lazio','Liverpool','Manchester United','Roma','Sevilla','Sporting CP','Villarreal','West Ham United'],
@@ -3513,7 +3514,14 @@ function quickAddTeam(key) {
 }
 
 // Adaptive Team Halo System V1.1 — metadata-driven logo treatment (offline JSON).
-const TEAM_HALO_INDEX = { byName: {}, byEspnId: {} };
+let TEAM_HALO_CONFIG = null;
+const TEAM_HALO_INDEX = { byFavKey: {}, byName: {}, byEspnId: {} };
+const LEAGUE_HALO_FALLBACK = {
+  'NBA':'#F58426','WNBA':'#FA4D00','NBL':'#FF6600','NFL':'#013369','MLB':'#041E42','NHL':'#003E7E',
+  'MLS':'#062F87','EPL':'#38003C','La Liga':'#EE324E','Bundesliga':'#D20515','Serie A':'#008FD7',
+  'Ligue 1':'#091C3E','Championship':'#0044A9','AFL':'#E31837','NRL':'#00843D',
+  'IPL':'#19398A','Big Bash League':'#FF1744','Cricket':'#1B3A6B','URC':'#00693E','Top 14':'#003189'
+};
 
 function hexToRgb(hex) {
   const h = String(hex || '').replace('#', '');
@@ -3524,9 +3532,13 @@ function hexToRgb(hex) {
 }
 
 function indexTeamHaloConfig(data) {
+  TEAM_HALO_INDEX.byFavKey = {};
   TEAM_HALO_INDEX.byName = {};
   TEAM_HALO_INDEX.byEspnId = {};
   (data && data.teams || []).forEach(function(entry) {
+    if (entry.favKey) {
+      TEAM_HALO_INDEX.byFavKey[String(entry.favKey).toLowerCase()] = entry;
+    }
     (entry.names || []).forEach(function(name) {
       TEAM_HALO_INDEX.byName[String(name).toLowerCase()] = entry;
     });
@@ -3536,10 +3548,33 @@ function indexTeamHaloConfig(data) {
   });
 }
 
-function resolveTeamHalo(teamId, teamName) {
-  // Name first — ESPN ids can collide across leagues (e.g. NBA/MLB both use "4").
-  if (teamName && TEAM_HALO_INDEX.byName[String(teamName).toLowerCase()]) {
-    return TEAM_HALO_INDEX.byName[String(teamName).toLowerCase()];
+function teamLeagueHint(teamName) {
+  const n = String(teamName || '').toLowerCase();
+  if (!n) return '';
+  for (const league in TEAMS) {
+    if ((TEAMS[league] || []).some(function(t) { return String(t).toLowerCase() === n; })) {
+      return league;
+    }
+  }
+  return '';
+}
+
+function resolveTeamHalo(teamId, teamName, leagueKey) {
+  const leagueFull = (leagueKey && FEED_LEAGUE_NAME[leagueKey]) || leagueKey || '';
+  const nameLc = teamName ? String(teamName).toLowerCase() : '';
+  if (nameLc && leagueFull) {
+    const fk = nameLc + '|' + String(leagueFull).toLowerCase();
+    if (TEAM_HALO_INDEX.byFavKey[fk]) return TEAM_HALO_INDEX.byFavKey[fk];
+  }
+  // Feed codes like generic cricket (23694) omit league — match our roster league.
+  const hinted = teamLeagueHint(teamName);
+  if (nameLc && hinted) {
+    const fk2 = nameLc + '|' + String(hinted).toLowerCase();
+    if (TEAM_HALO_INDEX.byFavKey[fk2]) return TEAM_HALO_INDEX.byFavKey[fk2];
+  }
+  // Name next — ESPN ids can collide across leagues (e.g. NBA/MLB both use "4").
+  if (nameLc && TEAM_HALO_INDEX.byName[nameLc]) {
+    return TEAM_HALO_INDEX.byName[nameLc];
   }
   if (teamId && TEAM_HALO_INDEX.byEspnId[String(teamId)]) {
     return TEAM_HALO_INDEX.byEspnId[String(teamId)];
@@ -3547,21 +3582,39 @@ function resolveTeamHalo(teamId, teamName) {
   return null;
 }
 
-function teamHaloStyle(cfg) {
-  if (!cfg || !cfg.haloColor) return '';
-  const rgb = hexToRgb(cfg.haloColor);
-  if (!rgb) return '';
-  const strength = Math.min(0.12, Math.max(0, cfg.haloStrength == null ? 0.10 : cfg.haloStrength));
-  return '--halo-r:' + rgb.r + ';--halo-g:' + rgb.g + ';--halo-b:' + rgb.b + ';--halo-strength:' + strength;
+function leagueHaloFallback(leagueKey) {
+  const full = (leagueKey && FEED_LEAGUE_NAME[leagueKey]) || leagueKey || '';
+  return LEAGUE_HALO_FALLBACK[full] || LEAGUE_HALO_FALLBACK[leagueKey] || '#06f03c';
 }
 
-function teamHaloAttrs(cfg, probe) {
+function teamHaloStyle(cfg, leagueKey) {
+  const color = (cfg && cfg.haloColor) || leagueHaloFallback(leagueKey);
+  const rgb = hexToRgb(color);
+  if (!rgb) return '';
+  const def = (TEAM_HALO_CONFIG && TEAM_HALO_CONFIG.defaultHaloStrength != null) ? TEAM_HALO_CONFIG.defaultHaloStrength : 0.25;
+  const strength = Math.min(0.35, Math.max(0, cfg && cfg.haloStrength != null ? cfg.haloStrength : def));
+  let style = '--halo-r:' + rgb.r + ';--halo-g:' + rgb.g + ';--halo-b:' + rgb.b + ';--halo-strength:' + strength;
+  if (cfg && cfg.logoScale != null && cfg.logoScale !== 1) {
+    style += ';--logo-scale:' + cfg.logoScale;
+  }
+  return style;
+}
+
+function teamHaloAttrs(cfg, leagueKey, probe) {
   const attrs = [];
-  const style = teamHaloStyle(cfg);
+  const style = teamHaloStyle(cfg, leagueKey);
   if (style) attrs.push('style="' + style + '"');
   if (cfg && cfg.needsContrastLift) attrs.push('data-contrast-lift');
   else if (probe) attrs.push('data-halo-probe');
   return attrs.join(' ');
+}
+
+function upgradeLogoUrl(url) {
+  if (!url) return url;
+  return String(url)
+    .replace(/teamlogos\/([^/]+)\/500-dark\//, 'teamlogos/$1/500/')
+    .replace(/teamlogos\/([^/]+)\/\d+\//, 'teamlogos/$1/500/')
+    .replace(/teamlogos\/([^/]+)\/scoreboard\//, 'teamlogos/$1/500/');
 }
 
 function sampleLogoBrightness(img) {
@@ -3604,21 +3657,28 @@ function attachTeamHaloProbe(img) {
 function loadTeamHaloConfig() {
   return fetch('./team-halo-config.json')
     .then(function(r) { return r.ok ? r.json() : null; })
-    .then(function(data) { if (data) indexTeamHaloConfig(data); })
+    .then(function(data) {
+      if (data) {
+        TEAM_HALO_CONFIG = data;
+        indexTeamHaloConfig(data);
+      }
+    })
     .catch(function() {});
 }
 
-function logoImg(src, emoji, teamId, teamName, sizeClass) {
+function logoImg(src, emoji, teamId, teamName, sizeClass, leagueKey) {
   // No-crest fallback: show only the leading sport icon, not the whole league
   // label. Callers pass the league string (icon + name), so a logo-less team
   // would otherwise dump the league name into the tiny logo slot.
   const fallback = (emoji || '').split(' ')[0];
   const cls = 'team-logo-halo ' + (sizeClass || 't-logo');
-  const cfg = resolveTeamHalo(teamId, teamName);
-  if (!src) return '<div class="' + cls + '">' + fallback + '</div>';
-  const attrs = teamHaloAttrs(cfg, true);
+  const cfg = resolveTeamHalo(teamId, teamName, leagueKey);
+  const crest = (cfg && cfg.logoUrl) ? cfg.logoUrl : src;
+  if (!crest) return '<div class="' + cls + '">' + fallback + '</div>';
+  const attrs = teamHaloAttrs(cfg, leagueKey, true);
   const onload = 'attachTeamHaloProbe(this)';
-  const inner = '<img class="team-crest" src="' + escAttr(src) + '" alt="" onload="' + onload + '" onerror="this.style.display=\'none\';this.nextSibling.style.display=\'\'"><span style="display:none">' + fallback + '</span>';
+  const logoSrc = upgradeLogoUrl(crest);
+  const inner = '<img class="team-crest" src="' + escAttr(logoSrc) + '" alt="" onload="' + onload + '" onerror="this.style.display=\'none\';this.nextSibling.style.display=\'\'"><span style="display:none">' + fallback + '</span>';
   return '<div class="' + cls + '"' + (attrs ? ' ' + attrs : '') + '>' + inner + '</div>';
 }
 // Photo sport icons (exact balls from the brand image, backgrounds already transparent).
@@ -3664,8 +3724,8 @@ function buildLiveCard(m){
     <div class="card-meta"><span class="league-tag"><span class="sport-icon">${renderSportIcon(sico)}</span><span class="lg-badge">${ltxt}</span></span><span class="card-right">${flyScoreDebugHTML(m,'live')}${fly}<span class="live-badge"><span class="bdot"></span>LIVE ${m.timer}</span></span></div>
     <div class="card-body">
       <div class="card-teams">
-        <div class="team-row">${logoImg(m.homeLogo,m.league,m.homeId,m.home)}<div class="t-name">${displayTeamName(m.home)}</div>${teamQuickAddBtn(m.home,m)}</div>
-        <div class="team-row">${logoImg(m.awayLogo,m.league,m.awayId,m.away)}<div class="t-name">${displayTeamName(m.away)}</div>${teamQuickAddBtn(m.away,m)}</div>
+        <div class="team-row">${logoImg(m.homeLogo,m.league,m.homeId,m.home,'t-logo',m.leagueKey)}<div class="t-name">${displayTeamName(m.home)}</div>${teamQuickAddBtn(m.home,m)}</div>
+        <div class="team-row">${logoImg(m.awayLogo,m.league,m.awayId,m.away,'t-logo',m.leagueKey)}<div class="t-name">${displayTeamName(m.away)}</div>${teamQuickAddBtn(m.away,m)}</div>
       </div>
       <div class="scores-col"><div class="${sc} ${getFlyClass(m.id,'home')}" data-fk="${m.id}|h|s">${m.homeScore}</div><div class="${sc} ${getFlyClass(m.id,'away')}" data-fk="${m.id}|a|s">${m.awayScore}</div></div>
     </div>
@@ -3684,11 +3744,11 @@ function buildUpcomingCard(m){
     <div class="upcoming-body">
       <div class="up-teams">
         <div class="team-row">
-          <div class="row-top">${logoImg(m.homeLogo,m.league,m.homeId,m.home)}<div class="t-name">${displayTeamName(m.home)}</div>${teamQuickAddBtn(m.home,m)}</div>
+          <div class="row-top">${logoImg(m.homeLogo,m.league,m.homeId,m.home,'t-logo',m.leagueKey)}<div class="t-name">${displayTeamName(m.home)}</div>${teamQuickAddBtn(m.home,m)}</div>
           ${hForm}
         </div>
         <div class="team-row">
-          <div class="row-top">${logoImg(m.awayLogo,m.league,m.awayId,m.away)}<div class="t-name">${displayTeamName(m.away)}</div>${teamQuickAddBtn(m.away,m)}</div>
+          <div class="row-top">${logoImg(m.awayLogo,m.league,m.awayId,m.away,'t-logo',m.leagueKey)}<div class="t-name">${displayTeamName(m.away)}</div>${teamQuickAddBtn(m.away,m)}</div>
           ${aForm}
         </div>
       </div>
@@ -3720,8 +3780,8 @@ function buildResultCard(m){
     <div class="card-meta"><span class="league-tag"><span class="sport-icon">${renderSportIcon(sico)}</span><span class="lg-badge">${ltxt}</span></span><span class="card-right">${flyScoreDebugHTML(m,'result')}${flyRed}<span class="ft-badge">FT · ${m.date}</span></span></div>
     <div class="card-body">
       <div class="card-teams">
-        <div class="team-row">${logoImg(m.homeLogo,m.league,m.homeId,m.home)}<div class="t-name ${hw?'':'dim'}">${displayTeamName(m.home)}</div></div>
-        <div class="team-row">${logoImg(m.awayLogo,m.league,m.awayId,m.away)}<div class="t-name ${hw?'dim':''}">${displayTeamName(m.away)}</div></div>
+        <div class="team-row">${logoImg(m.homeLogo,m.league,m.homeId,m.home,'t-logo',m.leagueKey)}<div class="t-name ${hw?'':'dim'}">${displayTeamName(m.home)}</div></div>
+        <div class="team-row">${logoImg(m.awayLogo,m.league,m.awayId,m.away,'t-logo',m.leagueKey)}<div class="t-name ${hw?'dim':''}">${displayTeamName(m.away)}</div></div>
       </div>
       <div class="scores-col"><div class="${sc} ${hw?'':'dim'}">${m.homeScore}</div><div class="${sc} ${hw?'dim':''}">${m.awayScore}</div></div>
     </div>
@@ -4463,7 +4523,6 @@ const FLY_V1_REGISTRY = {
   'soccer|ita.2':                           { file: 'soccer-ita-2-flytime-v1.json',     threshold: 97, tag: 'SB' },
   'soccer|ksa.1':                           { file: 'soccer-ksa-1-flytime-v1.json',     threshold: 96, tag: 'KSA' },
   'soccer|rus.1':                           { file: 'soccer-rus-1-flytime-v1.json',     threshold: 94, tag: 'RUS' },
-  'football|cfl':                           { file: 'cfl-flytime-v1.json',              threshold: 85, tag: 'CFL' },
   'rugby|270557':                           { file: 'rugby-urc-flytime-v1.json',       threshold: 90, tag: 'URC' },
   'rugby|270559':                           { file: 'rugby-top14-flytime-v1.json',     threshold: 88, tag: 'T14' }
 };
@@ -4981,12 +5040,13 @@ function onbGetSuggestions(picked){
 }
 
 function onbStarterLogoHtml(favKey){
-  var logo=STARTER_PACK_LOGOS[favKey]||'';
   var item=onbEntryForKey(favKey);
+  var cfg=item?resolveTeamHalo('',item.name,item.league):null;
+  var logo=STARTER_PACK_LOGOS[favKey]||(cfg&&cfg.logoUrl)||'';
   var emoji=item?(item.emoji||item.leagueEmoji):'';
   var fallback=sportImg(emoji,18);
   if(logo){
-    return logoImg(logo, emoji, '', item ? item.name : '', 'onb-pick-logo');
+    return logoImg(logo, emoji, '', item ? item.name : '', 'onb-pick-logo', item ? item.league : '');
   }
   return '<div class="onb-pick-flag">'+fallback+'</div>';
 }

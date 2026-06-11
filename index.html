@@ -112,8 +112,8 @@
   .qa-btn:active{background:rgba(6,240,60,0.15);}
   .qa-btn-row{width:26px;height:26px;font-size:17px;}
   .qa-btn-static{pointer-events:none;opacity:.85;}
-  .t-logo{width:18px;height:18px;border-radius:50%;background:rgba(255,255,255,.10);display:flex;align-items:center;justify-content:center;font-size:11px;flex-shrink:0;}
-  .t-logo img{width:15px;height:15px;object-fit:contain;border-radius:2px;display:block;}
+  .t-logo{width:24px;height:24px;border-radius:6px;background:rgba(255,255,255,0.92);display:flex;align-items:center;justify-content:center;font-size:11px;flex-shrink:0;padding:2px;box-shadow:0 0 0 1px rgba(255,255,255,0.06);}
+  .t-logo img,.t-logo .team-crest{width:100%;height:100%;object-fit:contain;display:block;filter:contrast(1.1) saturate(1.08);}
   .t-name{font-size:14px;font-weight:600;letter-spacing:-.2px;text-transform:uppercase;flex:1;line-height:1.1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
   .t-name.dim{color:var(--text-3);}
   .scores-col{display:flex;flex-direction:column;align-items:flex-end;justify-content:space-around;min-width:42px;gap:14px;}
@@ -370,8 +370,7 @@
   }
   .flymode-overlay.active { display: block; }
 
-  /* 1 column, N rows where N = number of live matches (1..4).
-     Layout scales with live match count via data-count attribute. */
+  /* Live match count (1..8) drives grid formation via data-count. */
   .flymode-inner {
     position: absolute;
     top: 0; left: 0; right: 0;
@@ -389,29 +388,71 @@
   }
   .flymode-inner[data-count="1"] { grid-template-rows: 1fr; --rows: 1; }
   .flymode-inner[data-count="2"] { grid-template-rows: repeat(2, 1fr); --rows: 2; }
-  .flymode-inner[data-count="3"] { grid-template-rows: repeat(3, 1fr); --rows: 3; }
-  .flymode-inner[data-count="4"] { grid-template-rows: repeat(4, 1fr); --rows: 4; }
+  /* Three matches: stacked full-width boards so centre seams line up vertically. */
+  .flymode-inner[data-count="3"] {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3, 1fr);
+    --rows: 3;
+  }
+  .flymode-inner[data-count="3"] .flymode-card:nth-child(3) {
+    grid-column: auto;
+    border-left: none;
+  }
+  /* 4-8: two columns — left-column seams align at 25%, right at 75%. */
+  .flymode-inner[data-count="4"],
+  .flymode-inner[data-count="5"],
+  .flymode-inner[data-count="6"],
+  .flymode-inner[data-count="7"],
+  .flymode-inner[data-count="8"] {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .flymode-inner[data-count="4"] { grid-template-rows: repeat(2, 1fr); --rows: 2; }
+  .flymode-inner[data-count="5"],
+  .flymode-inner[data-count="6"] { grid-template-rows: repeat(3, 1fr); --rows: 3; }
+  .flymode-inner[data-count="7"],
+  .flymode-inner[data-count="8"] { grid-template-rows: repeat(4, 1fr); --rows: 4; }
+  .flymode-inner[data-count="4"] .flymode-card:nth-child(-n+2),
+  .flymode-inner[data-count="5"] .flymode-card:nth-child(-n+2),
+  .flymode-inner[data-count="6"] .flymode-card:nth-child(-n+2),
+  .flymode-inner[data-count="7"] .flymode-card:nth-child(-n+2),
+  .flymode-inner[data-count="8"] .flymode-card:nth-child(-n+2) { border-top: none; }
+  .flymode-inner[data-count="4"] .flymode-card:nth-child(even),
+  .flymode-inner[data-count="5"] .flymode-card:nth-child(even),
+  .flymode-inner[data-count="6"] .flymode-card:nth-child(even),
+  .flymode-inner[data-count="7"] .flymode-card:nth-child(even),
+  .flymode-inner[data-count="8"] .flymode-card:nth-child(even) { border-left: 1px solid var(--fly-sep); }
+  /* 5+ matches: tighter seam gutter and type so eight boards stay readable. */
+  .flymode-inner[data-count="5"],
+  .flymode-inner[data-count="6"] { --seam-gut: 34px; padding: 4px 6px; }
+  .flymode-inner[data-count="7"],
+  .flymode-inner[data-count="8"] { --seam-gut: 28px; padding: 3px 5px; }
+  .flymode-inner[data-count="5"] .flymode-half,
+  .flymode-inner[data-count="6"] .flymode-half { gap: 4px; padding: 5px 4px; }
+  .flymode-inner[data-count="7"] .flymode-half,
+  .flymode-inner[data-count="8"] .flymode-half { gap: 3px; padding: 4px 3px; }
+  .flymode-inner[data-count="5"] .flymode-team,
+  .flymode-inner[data-count="6"] .flymode-team { font-size: clamp(14px, 4.2vw, 26px); }
+  .flymode-inner[data-count="7"] .flymode-team,
+  .flymode-inner[data-count="8"] .flymode-team { font-size: clamp(11px, 3.2vw, 20px); letter-spacing: 1px; }
+  .flymode-inner[data-count="5"] .flymode-status,
+  .flymode-inner[data-count="6"] .flymode-status { padding: 5px 8px; border-radius: 8px; }
+  .flymode-inner[data-count="7"] .flymode-status,
+  .flymode-inner[data-count="8"] .flymode-status { padding: 3px 6px; border-radius: 7px; font-size: clamp(10px, calc((100vh - 96px) / var(--rows, 1) * 0.1), 16px); }
+  .flymode-inner[data-count="5"] .fm-markers .mk img,
+  .flymode-inner[data-count="6"] .fm-markers .mk img { height: 18px; }
+  .flymode-inner[data-count="7"] .fm-markers .mk img,
+  .flymode-inner[data-count="8"] .fm-markers .mk img { height: 14px; }
   .flymode-inner[data-count="0"] {
     grid-template-rows: 1fr;
     align-items: center;
     justify-items: center;
   }
-  /* Landscape: 2-column layout so matches sit side-by-side */
+  /* Landscape: two side-by-side for exactly two matches */
   @media (orientation: landscape) {
     .flymode-inner[data-count="2"] {
       grid-template-columns: repeat(2, 1fr);
       grid-template-rows: 1fr;
       --rows: 1;
-    }
-    .flymode-inner[data-count="3"],
-    .flymode-inner[data-count="4"] {
-      grid-template-columns: repeat(2, 1fr);
-      grid-template-rows: repeat(2, 1fr);
-      --rows: 2;
-    }
-    /* Three live games: bottom match spans full width so it is not a half-width orphan */
-    .flymode-inner[data-count="3"] .flymode-card:nth-child(3) {
-      grid-column: 1 / -1;
     }
   }
 
@@ -450,7 +491,7 @@
     transition: background-color 2.5s ease, border-color 2.5s ease;
   }
   /* The home half carries the seam line; the pill floats on top of it. */
-  .flymode-half.home { border-right: 1px solid rgba(255,255,255,0.12); padding-right: var(--seam-gut, 44px); }
+  .flymode-half.home { border-right: 1px solid rgba(255,255,255,0.2); padding-right: var(--seam-gut, 44px); }
   .flymode-half.away { padding-left: var(--seam-gut, 44px); }
 
   /* Dark state washes - low alpha so the board stays black-first. The class is
@@ -471,7 +512,7 @@
     font-size: clamp(18px, 5.5vw, 34px);
     font-weight: 800;
     letter-spacing: 1.5px;
-    color: rgba(255,255,255,0.55);
+    color: rgba(255,255,255,0.82);
     text-transform: uppercase;
     line-height: 1;
     white-space: nowrap;
@@ -494,7 +535,7 @@
     --len: 1;
     --half-vw: 40;
     --h-budget: 18vh;
-    font-size: clamp(40px, min(var(--h-budget), calc((var(--half-vw) * 1vw - var(--seam-gut, 0px) - 6px) * 1.3 / var(--len))), 300px);
+    font-size: clamp(28px, min(var(--h-budget), calc((var(--half-vw) * 1vw - var(--seam-gut, 0px) - 6px) * 1.3 / var(--len))), 300px);
     font-weight: 900;
     letter-spacing: -2px;
     line-height: 0.9;
@@ -532,6 +573,19 @@
   @media (orientation: portrait) {
     /* Side-by-side: each half is ~44vw wide; height shared across the live rows. */
     .flymode-score { --half-vw: 44; --h-budget: calc((100vh - 90px) / var(--rows, 1) * 0.62); }
+    /* 2-column grids (4-8): each half is ~22vw; scale height budget to row count. */
+    .flymode-inner[data-count="4"] .flymode-score,
+    .flymode-inner[data-count="5"] .flymode-score,
+    .flymode-inner[data-count="6"] .flymode-score,
+    .flymode-inner[data-count="7"] .flymode-score,
+    .flymode-inner[data-count="8"] .flymode-score {
+      --half-vw: 22;
+      --h-budget: calc((100vh - 90px) / var(--rows, 1) * 0.56);
+    }
+    .flymode-inner[data-count="7"] .flymode-score,
+    .flymode-inner[data-count="8"] .flymode-score {
+      --h-budget: calc((100vh - 90px) / var(--rows, 1) * 0.52);
+    }
     /* SINGLE match: stack the two tiles top/bottom (full width) for a hero number. */
     .flymode-inner[data-count="1"] { --seam-gut: 0px; }
     .flymode-inner[data-count="1"] .flymode-card { flex-direction: column; }
@@ -555,10 +609,27 @@
     .flymode-score { --half-vw: 21; --h-budget: calc((100vh - 80px) / var(--rows, 1) * 0.66); }
     /* SINGLE match fills the whole wide screen: each half is ~46vw, full height. */
     .flymode-inner[data-count="1"] .flymode-score { --half-vw: 46; --h-budget: calc((100vh - 110px) * 0.86); }
-    /* Match separators: a vertical line between the two columns so side-by-side
-       games read as separate boards. The top-row right card drops its row border. */
-    .flymode-card:nth-child(even) { border-left: 1px solid var(--fly-sep); }
-    .flymode-card:nth-child(2)    { border-top: none; }
+    /* Column dividers on 2-column grids (2 side-by-side, or 4-8). */
+    .flymode-inner[data-count="2"] .flymode-card:nth-child(even),
+    .flymode-inner[data-count="4"] .flymode-card:nth-child(even),
+    .flymode-inner[data-count="5"] .flymode-card:nth-child(even),
+    .flymode-inner[data-count="6"] .flymode-card:nth-child(even),
+    .flymode-inner[data-count="7"] .flymode-card:nth-child(even),
+    .flymode-inner[data-count="8"] .flymode-card:nth-child(even) { border-left: 1px solid var(--fly-sep); }
+    .flymode-inner[data-count="2"] .flymode-card:nth-child(2),
+    .flymode-inner[data-count="4"] .flymode-card:nth-child(-n+2),
+    .flymode-inner[data-count="5"] .flymode-card:nth-child(-n+2),
+    .flymode-inner[data-count="6"] .flymode-card:nth-child(-n+2),
+    .flymode-inner[data-count="7"] .flymode-card:nth-child(-n+2),
+    .flymode-inner[data-count="8"] .flymode-card:nth-child(-n+2) { border-top: none; }
+    .flymode-inner[data-count="5"],
+    .flymode-inner[data-count="6"] { --seam-gut: 30px; }
+    .flymode-inner[data-count="7"],
+    .flymode-inner[data-count="8"] { --seam-gut: 24px; }
+    .flymode-inner[data-count="7"] .flymode-score,
+    .flymode-inner[data-count="8"] .flymode-score {
+      --h-budget: calc((100vh - 80px) / var(--rows, 1) * 0.58);
+    }
   }
 
   /* Empty-state message when no live My Teams matches */
@@ -3155,7 +3226,7 @@ function logoImg(src, emoji) {
   // label. Callers pass the league string (icon + name), so a logo-less team
   // would otherwise dump the league name into the tiny logo slot.
   const fallback = (emoji || '').split(' ')[0];
-  if (src) return `<img src="${src}" alt="" onerror="this.style.display='none';this.nextSibling.style.display=''" style="width:20px;height:20px;object-fit:contain;border-radius:2px;"><span style="display:none">${fallback}</span>`;
+  if (src) return `<img class="team-crest" src="${src}" alt="" onerror="this.style.display='none';this.nextSibling.style.display=''"><span style="display:none">${fallback}</span>`;
   return fallback;
 }
 // Photo sport icons (exact balls from the brand image, backgrounds already transparent).
@@ -3491,6 +3562,8 @@ function abbrev(name) {
   return words.slice(0,3).map(w=>w[0]).join('').toUpperCase();
 }
 
+const FLYMODE_MAX = 8;
+
 function buildFlyModeGrid() {
   const favNames = favs.map(f=>f.name.toLowerCase());
   const noFavs   = favNames.length === 0;
@@ -3512,8 +3585,7 @@ function buildFlyModeGrid() {
     if (pa !== pb) return pb - pa;
     return (a.startMs || 0) - (b.startMs || 0);
   });
-  // Cap at 4
-  if (live.length > 4) live = live.slice(0, 4);
+  if (live.length > FLYMODE_MAX) live = live.slice(0, FLYMODE_MAX);
 
   const inner = document.getElementById('flymode-inner');
   const grid  = document.getElementById('flymode-grid');

@@ -1,1 +1,4 @@
 scorefly.db
+flytime-engine/data/
+flytime-engine/logs/
+scripts/__pycache__/

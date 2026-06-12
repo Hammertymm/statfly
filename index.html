@@ -112,29 +112,43 @@
   .qa-btn:active{background:rgba(6,240,60,0.15);}
   .qa-btn-row{width:26px;height:26px;font-size:17px;}
   .qa-btn-static{pointer-events:none;opacity:.85;}
-  /* Adaptive Team Halo System V2 — logo is the hero; micro-plate + team-colour glow */
+  /* Adaptive Team Halo System V2.1 — logo is the hero. Optical mass normalization,
+     brightness-tiered team-colour glow, no grey plates. Tier vars (brightness/contrast/
+     rim/strength) live in stylesheet so the runtime probe can retune by toggling data-*. */
   .team-logo-halo{
     position:relative;display:flex;align-items:center;justify-content:center;flex-shrink:0;
-    --halo-r:255;--halo-g:255;--halo-b:255;--halo-strength:0.25;--logo-scale:1;
+    /* colour + per-team scale are set inline; everything else is tier-driven below */
+    --halo-r:6;--halo-g:240;--halo-b:60;--logo-scale:1;
+    --halo-strength:0.14;--logo-inset:0.84;--logo-bright:1;--logo-contrast:1;
+    --logo-sat:1.05;--rim:0;--fly:1;
   }
-  .team-logo-halo.t-logo{width:28px;height:28px;font-size:12px;padding:3px;}
-  .team-logo-halo.onb-pick-logo{width:29px;height:29px;padding:3px;}
-  .team-logo-halo.onb-starter-logo{width:36px;height:36px;padding:4px;}
-  .team-logo-halo::before{
-    content:'';position:absolute;inset:0;border-radius:50%;pointer-events:none;z-index:0;
-    background:radial-gradient(circle,rgba(255,255,255,0.06) 0%,rgba(255,255,255,0.02) 55%,transparent 72%);
-  }
-  .team-logo-halo[data-contrast-lift]::before{
-    background:radial-gradient(circle,rgba(255,255,255,0.16) 0%,rgba(255,255,255,0.06) 55%,transparent 72%);
-  }
+  /* Size tokens — container is sacred; art scales inside via --logo-inset */
+  .team-logo-halo.t-logo-xs{width:24px;height:24px;font-size:11px;}
+  .team-logo-halo.t-logo{width:28px;height:28px;font-size:12px;}
+  .team-logo-halo.t-logo-md{width:36px;height:36px;font-size:14px;}
+  .team-logo-halo.t-logo-lg{width:44px;height:44px;font-size:16px;}
+  .team-logo-halo.t-logo-xl{width:56px;height:56px;font-size:20px;}
+  .team-logo-halo.onb-pick-logo{width:29px;height:29px;}
+  .team-logo-halo.onb-starter-logo{width:36px;height:36px;}
+  /* FlyMode crest — fluid to the grid cell */
+  .team-logo-halo.fm-logo{width:clamp(22px,17cqmin,58px);height:clamp(22px,17cqmin,58px);font-size:16px;}
   .team-logo-halo img.team-crest,.team-logo-halo .team-crest{
     position:relative;z-index:1;width:100%;height:100%;object-fit:contain;display:block;
-    transform:scale(var(--logo-scale));
+    transform:scale(calc(var(--logo-scale) * var(--logo-inset) * var(--fly)));
+    image-rendering:-webkit-optimize-contrast;
     filter:
-      brightness(1.06) saturate(1.14)
-      drop-shadow(0 0 10px rgba(var(--halo-r),var(--halo-g),var(--halo-b),calc(var(--halo-strength) * 0.9)))
-      drop-shadow(0 0 4px rgba(255,255,255,0.12));
+      brightness(var(--logo-bright)) contrast(var(--logo-contrast)) saturate(var(--logo-sat))
+      drop-shadow(0 0 calc(7px * var(--fly)) rgba(var(--halo-r),var(--halo-g),var(--halo-b),calc(var(--halo-strength) * var(--fly))))
+      drop-shadow(0 1px 2px rgba(0,0,0,0.45))
+      drop-shadow(0 0 1px rgba(255,255,255,var(--rim)));
   }
+  /* Dark logos: lift luminance/contrast, add a hairline white rim, stronger glow */
+  .team-logo-halo[data-contrast-lift]{--logo-bright:1.1;--logo-contrast:1.12;--rim:0.12;--halo-strength:0.22;}
+  .team-logo-halo[data-contrast-lift][data-near-black]{--logo-bright:1.06;--logo-contrast:1.1;--rim:0.18;--halo-strength:0.28;}
+  /* Bright/loud logos: clamp so they stop shouting next to thin marks */
+  .team-logo-halo[data-contrast-clamp]{--logo-bright:0.95;--logo-sat:1.02;--halo-strength:0.07;}
+  /* White-primary logos: gentle dim, team-colour glow, never a white rim */
+  .team-logo-halo[data-white-logo]{--logo-bright:0.93;--logo-sat:1.04;--rim:0;--halo-strength:0.12;}
   .t-name{font-size:14px;font-weight:600;letter-spacing:-.2px;text-transform:uppercase;flex:1;line-height:1.1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
   .t-name.dim{color:var(--text-3);}
   /* Each score lines up with the centre of its 28px team row (rows 7px apart):
@@ -254,9 +268,10 @@
   .tli:last-child{border-bottom:none;}
   .tli-flag{font-size:18px;width:24px;text-align:center;}
   .tli-sport{font-size:16px;width:20px;text-align:center;}
-  .tli-info{flex:1;}
-  .tli-name{font-size:14px;font-weight:600;}
-  .tli-lg{font-size:11px;color:var(--text-3);margin-top:1px;}
+  .tli-crest{flex-shrink:0;}
+  .tli-info{flex:1;min-width:0;}
+  .tli-name{font-size:14px;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+  .tli-lg{font-size:11px;color:var(--text-3);margin-top:2px;display:flex;align-items:center;gap:5px;}
   .tli-actions{display:flex;align-items:center;}
   .bell-btn{background:none;border:none;font-size:18px;cursor:pointer;padding:5px 6px;opacity:.3;transition:opacity .2s;border-radius:8px;}
   .bell-btn.on{opacity:1;background:rgba(6,240,60,.12);}
@@ -511,6 +526,26 @@
     max-width: 90%;
     transform: translate(-50%, -50%);
   }
+
+  /* FlyMode crest — shown on sparse grids (<=4 cards); the board slides down to
+     make room so the logo becomes part of the live moment. */
+  .flymode-logo {
+    position: absolute;
+    top: 17%;
+    transform: translate(-50%, -50%);
+    display: none;
+    z-index: 2;
+    pointer-events: none;
+  }
+  .flymode-logo.home { left: 25%; }
+  .flymode-logo.away { left: 75%; }
+  .flymode-inner.show-fm-logos .flymode-logo { display: block; }
+  .flymode-inner.show-fm-logos .flymode-team { top: 37%; }
+  .flymode-inner.show-fm-logos .flymode-score { top: 59%; }
+  .flymode-inner.show-fm-logos .flymode-status { top: 83%; }
+  /* FlyTime / overtime elevate the crests so they feel alive, no aggressive motion. */
+  .flymode-card.flytime .team-logo-halo,
+  .flymode-card.ot .team-logo-halo { --fly: 1.06; }
 
   .flymode-team {
     font-family: 'Overpass', 'Inter', monospace;
@@ -3386,11 +3421,38 @@ function quickAddTeam(key) {
 // Adaptive Team Halo System V1.1 — metadata-driven logo treatment (offline JSON).
 let TEAM_HALO_CONFIG = null;
 const TEAM_HALO_INDEX = { byFavKey: {}, byName: {}, byEspnId: {} };
+// Last-resort halo accent when a team's own colours are too dark to glow. Keyed by
+// the full league name (what leagueHaloFallback resolves to); a few abbreviations are
+// kept for callers that pass them. Covers every league present in team-halo-config.
 const LEAGUE_HALO_FALLBACK = {
-  'NBA':'#F58426','WNBA':'#FA4D00','NBL':'#FF6600','NFL':'#013369','MLB':'#041E42','NHL':'#003E7E',
-  'MLS':'#062F87','EPL':'#38003C','La Liga':'#EE324E','Bundesliga':'#D20515','Serie A':'#008FD7',
-  'Ligue 1':'#091C3E','Championship':'#0044A9','AFL':'#E31837','NRL':'#00843D',
-  'IPL':'#19398A','Big Bash League':'#FF1744','Cricket':'#1B3A6B','URC':'#00693E','Top 14':'#003189'
+  // North America
+  'NBA':'#1D428A','WNBA':'#FA4D00','NBL':'#FF6600','NFL':'#013369','MLB':'#041E42',
+  'NHL':'#003E7E','MLS':'#062F87','CFL':'#C8102E',
+  // England / Scotland
+  'Premier League':'#38003C','Championship':'#0044A9','League One':'#0046A8',
+  'League Two':'#0046A8','Women\u2019s Super League':'#38003C','Scottish Premiership':'#002D5B',
+  // Europe
+  'La Liga':'#EE324E','Bundesliga':'#D20515','Serie A':'#008FD7','Serie B':'#008FD7',
+  'Ligue 1':'#091C3E','Eredivisie':'#FF6200','Primeira Liga':'#006847',
+  'Belgian Pro League':'#E30613','Swiss Super League':'#D52B1E','Greek Super League':'#004C98',
+  'S\u00fcper Lig':'#E30A17','Russian Premier League':'#0039A6',
+  'UEFA Champions League':'#0A1E5E','UEFA Europa League':'#FF6900',
+  // Americas
+  'Brasileirao':'#009C3B','Copa do Brasil':'#009C3B','Copa Libertadores':'#1B7A3D',
+  'Liga MX':'#006847','Liga Profesional':'#75AADB',
+  // Asia / Middle East / Oceania soccer
+  'A-League':'#FF6A13','J1 League':'#D7000F','Chinese Super League':'#DE2910',
+  'Saudi Pro League':'#006C35','ISL Football':'#2A6EBB','PSL Football':'#007A33',
+  'League of Ireland':'#169B62',
+  // Aussie rules / rugby league / union
+  'AFL':'#E31837','NRL':'#00843D','Super Rugby Pacific':'#00693E',
+  'United Rugby Championship':'#00693E','Top 14':'#003189','Six Nations Rugby':'#1B3A6B',
+  // Cricket
+  'Indian Premier League':'#19398A','IPL':'#19398A','Big Bash League':'#FF1744',
+  'Pakistan Super League':'#1B7A3D','SA T20 Cricket':'#007A33',
+  'ICC Cricket (ODI)':'#1B3A6B','ICC Cricket (T20)':'#1B3A6B','Cricket':'#1B3A6B',
+  // legacy abbreviations
+  'EPL':'#38003C','URC':'#00693E'
 };
 
 function hexToRgb(hex) {
@@ -3457,13 +3519,35 @@ function leagueHaloFallback(leagueKey) {
   return LEAGUE_HALO_FALLBACK[full] || LEAGUE_HALO_FALLBACK[leagueKey] || '#06f03c';
 }
 
+function colorLum(rgb) {
+  return (0.2126 * rgb.r + 0.7152 * rgb.g + 0.0722 * rgb.b) / 255;
+}
+
+// Pick a halo colour that is actually visible as a glow. Black/near-black team
+// colours (Collingwood, Raiders, etc.) produce no glow on a dark UI, so we fall
+// back to the secondary colour, then the league accent, never to pure black.
+function resolveHaloColor(cfg, leagueKey) {
+  const candidates = [];
+  if (cfg) {
+    if (cfg.haloColor) candidates.push(cfg.haloColor);
+    if (cfg.secondaryColor) candidates.push(cfg.secondaryColor);
+    // The team's own league name is the most reliable accent key.
+    if (cfg.league && LEAGUE_HALO_FALLBACK[cfg.league]) candidates.push(LEAGUE_HALO_FALLBACK[cfg.league]);
+  }
+  candidates.push(leagueHaloFallback(leagueKey));
+  for (let i = 0; i < candidates.length; i++) {
+    const rgb = hexToRgb(candidates[i]);
+    if (rgb && colorLum(rgb) >= 0.12) return rgb;
+  }
+  return hexToRgb(leagueHaloFallback(leagueKey)) || { r: 6, g: 240, b: 60 };
+}
+
 function teamHaloStyle(cfg, leagueKey) {
-  const color = (cfg && cfg.haloColor) || leagueHaloFallback(leagueKey);
-  const rgb = hexToRgb(color);
+  const rgb = resolveHaloColor(cfg, leagueKey);
   if (!rgb) return '';
-  const def = (TEAM_HALO_CONFIG && TEAM_HALO_CONFIG.defaultHaloStrength != null) ? TEAM_HALO_CONFIG.defaultHaloStrength : 0.25;
-  const strength = Math.min(0.35, Math.max(0, cfg && cfg.haloStrength != null ? cfg.haloStrength : def));
-  let style = '--halo-r:' + rgb.r + ';--halo-g:' + rgb.g + ';--halo-b:' + rgb.b + ';--halo-strength:' + strength;
+  // Only colour + per-team optical scale are set inline. Brightness/contrast/rim/
+  // strength are tier-driven in CSS so the runtime probe can retune them live.
+  let style = '--halo-r:' + rgb.r + ';--halo-g:' + rgb.g + ';--halo-b:' + rgb.b;
   if (cfg && cfg.logoScale != null && cfg.logoScale !== 1) {
     style += ';--logo-scale:' + cfg.logoScale;
   }
@@ -3474,8 +3558,17 @@ function teamHaloAttrs(cfg, leagueKey, probe) {
   const attrs = [];
   const style = teamHaloStyle(cfg, leagueKey);
   if (style) attrs.push('style="' + style + '"');
-  if (cfg && cfg.needsContrastLift) attrs.push('data-contrast-lift');
-  else if (probe) attrs.push('data-halo-probe');
+  if (cfg) {
+    if (cfg.whiteLogo) attrs.push('data-white-logo');
+    else if (cfg.needsContrastClamp) attrs.push('data-contrast-clamp');
+    else if (cfg.needsContrastLift) {
+      attrs.push('data-contrast-lift');
+      if (cfg.nearBlack) attrs.push('data-near-black');
+    }
+  }
+  // Always probe on load: optical-weight normalization runs for every logo, and
+  // brightness tiering fills in for any team the config did not pre-classify.
+  if (probe) attrs.push('data-halo-probe');
   return attrs.join(' ');
 }
 
@@ -3487,34 +3580,83 @@ function upgradeLogoUrl(url) {
     .replace(/teamlogos\/([^/]+)\/scoreboard\//, 'teamlogos/$1/500/');
 }
 
-function sampleLogoBrightness(img) {
+// Single-pass sampler: average luminance + saturation over opaque pixels, plus the
+// "ink mass" (fraction of the asset square that is actually drawn) and bounding box,
+// which together drive optical-weight normalization.
+function sampleLogoStats(img) {
   try {
-    const w = 16, h = 16;
+    const n = 32;
     const canvas = document.createElement('canvas');
-    canvas.width = w;
-    canvas.height = h;
+    canvas.width = n;
+    canvas.height = n;
     const ctx = canvas.getContext('2d', { willReadFrequently: true });
-    if (!ctx) return 1;
-    ctx.drawImage(img, 0, 0, w, h);
-    const data = ctx.getImageData(0, 0, w, h).data;
-    let sum = 0, count = 0;
-    for (let i = 0; i < data.length; i += 4) {
-      if (data[i + 3] < 16) continue;
-      sum += (0.2126 * data[i] + 0.7152 * data[i + 1] + 0.0722 * data[i + 2]) / 255;
-      count++;
+    if (!ctx) return null;
+    ctx.drawImage(img, 0, 0, n, n);
+    const data = ctx.getImageData(0, 0, n, n).data;
+    let lum = 0, sat = 0, opaque = 0;
+    let minX = n, minY = n, maxX = 0, maxY = 0;
+    for (let y = 0; y < n; y++) {
+      for (let x = 0; x < n; x++) {
+        const i = (y * n + x) * 4;
+        if (data[i + 3] < 24) continue;
+        const r = data[i], g = data[i + 1], b = data[i + 2];
+        lum += (0.2126 * r + 0.7152 * g + 0.0722 * b) / 255;
+        const mx = Math.max(r, g, b), mn = Math.min(r, g, b);
+        sat += mx === 0 ? 0 : (mx - mn) / mx;
+        opaque++;
+        if (x < minX) minX = x; if (x > maxX) maxX = x;
+        if (y < minY) minY = y; if (y > maxY) maxY = y;
+      }
     }
-    return count ? sum / count : 1;
+    if (!opaque) return null;
+    const bw = (maxX - minX + 1) / n;
+    const bh = (maxY - minY + 1) / n;
+    const boxArea = Math.max(0.04, bw * bh);
+    return {
+      bright: lum / opaque,
+      sat: sat / opaque,
+      // mass relative to the logo's own bounding box: dense crest vs airy wordmark
+      mass: (opaque / (n * n)) / boxArea,
+      fill: Math.max(bw, bh)
+    };
   } catch (e) {
-    return 1;
+    return null;
   }
+}
+
+// Normalize optical weight by how much of the asset the crest's bounding box fills.
+// Padded/small marks (lots of transparent space) scale up; full-bleed marks scale
+// down, so every crest reads at the same size. Mirrors build_team_halo_config.py.
+function opticalScaleFor(stats) {
+  const TARGET_FILL = 0.80;
+  let scale = TARGET_FILL / Math.max(stats.fill, 0.45);
+  if (stats.fill > 0.92 && stats.mass > 0.70) scale *= 0.97;
+  return Math.round(Math.min(1.18, Math.max(0.90, scale)) * 100) / 100;
 }
 
 function probeTeamLogoContrast(img) {
   const wrap = img && img.closest('.team-logo-halo');
   if (!wrap || !wrap.hasAttribute('data-halo-probe')) return;
   wrap.removeAttribute('data-halo-probe');
-  if (wrap.hasAttribute('data-contrast-lift')) return;
-  if (sampleLogoBrightness(img) < 0.30) wrap.setAttribute('data-contrast-lift', '');
+  const stats = sampleLogoStats(img);
+  if (!stats) return;
+  // Optical weight normalization for any logo the config did not pre-scale.
+  if (!wrap.style.getPropertyValue('--logo-scale')) {
+    wrap.style.setProperty('--logo-scale', String(opticalScaleFor(stats)));
+  }
+  // Brightness tiering (skip if the config already classified this logo).
+  if (wrap.hasAttribute('data-contrast-lift') || wrap.hasAttribute('data-contrast-clamp')
+      || wrap.hasAttribute('data-white-logo')) return;
+  if (stats.bright < 0.20) {
+    wrap.setAttribute('data-contrast-lift', '');
+    wrap.setAttribute('data-near-black', '');
+  } else if (stats.bright < 0.34) {
+    wrap.setAttribute('data-contrast-lift', '');
+  } else if (stats.bright > 0.82 && stats.sat < 0.18) {
+    wrap.setAttribute('data-white-logo', '');
+  } else if (stats.bright > 0.72) {
+    wrap.setAttribute('data-contrast-clamp', '');
+  }
 }
 
 function attachTeamHaloProbe(img) {
@@ -3536,6 +3678,18 @@ function loadTeamHaloConfig() {
     .catch(function() {});
 }
 
+// Graceful logo degradation: local asset -> remote crest -> emoji/sport icon.
+function logoFallback(img) {
+  const alt = img.getAttribute('data-fallback');
+  if (alt) {
+    img.removeAttribute('data-fallback');
+    img.src = alt;
+    return;
+  }
+  img.style.display = 'none';
+  if (img.nextSibling) img.nextSibling.style.display = '';
+}
+
 function logoImg(src, emoji, teamId, teamName, sizeClass, leagueKey) {
   // No-crest fallback: show only the leading sport icon, not the whole league
   // label. Callers pass the league string (icon + name), so a logo-less team
@@ -3543,12 +3697,21 @@ function logoImg(src, emoji, teamId, teamName, sizeClass, leagueKey) {
   const fallback = (emoji || '').split(' ')[0];
   const cls = 'team-logo-halo ' + (sizeClass || 't-logo');
   const cfg = resolveTeamHalo(teamId, teamName, leagueKey);
-  const crest = (cfg && cfg.logoUrl) ? cfg.logoUrl : src;
-  if (!crest) return '<div class="' + cls + '">' + fallback + '</div>';
+  // Prefer a curated, sharpened local asset (built by scripts/optimize_logos.py)
+  // when one exists; otherwise use the remote ESPN crest.
+  const local = (cfg && cfg.localLogo) ? cfg.localLogo : '';
+  const local2x = (cfg && cfg.localLogo2x) ? cfg.localLogo2x : (local ? local.replace(/\.png$/, '@2x.png') : '');
+  const remote = upgradeLogoUrl((cfg && cfg.logoUrl) ? cfg.logoUrl : src);
+  const primary = local || remote;
+  if (!primary) return '<div class="' + cls + '">' + fallback + '</div>';
   const attrs = teamHaloAttrs(cfg, leagueKey, true);
-  const onload = 'attachTeamHaloProbe(this)';
-  const logoSrc = upgradeLogoUrl(crest);
-  const inner = '<img class="team-crest" src="' + escAttr(logoSrc) + '" alt="" onload="' + onload + '" onerror="this.style.display=\'none\';this.nextSibling.style.display=\'\'"><span style="display:none">' + fallback + '</span>';
+  // crossorigin lets the on-load probe read pixels for optical scaling + brightness
+  // tiering (ESPN's CDN sends Access-Control-Allow-Origin:*). If a future host lacks
+  // CORS the image still renders; the probe simply no-ops via its try/catch.
+  // A missing local asset degrades to the remote crest before the emoji.
+  const fb = (local && remote && remote !== local) ? ' data-fallback="' + escAttr(remote) + '"' : '';
+  const srcset = local ? ' srcset="' + escAttr(local) + ' 1x, ' + escAttr(local2x) + ' 2x"' : '';
+  const inner = '<img class="team-crest" crossorigin="anonymous" src="' + escAttr(primary) + '"' + srcset + fb + ' alt="" onload="attachTeamHaloProbe(this)" onerror="logoFallback(this)"><span style="display:none">' + fallback + '</span>';
   return '<div class="' + cls + '"' + (attrs ? ' ' + attrs : '') + '>' + inner + '</div>';
 }
 // Photo sport icons (exact balls from the brand image, backgrounds already transparent).
@@ -3844,9 +4007,8 @@ function renderFavs(){
   else{
   wrap.innerHTML=`<div class="team-list">${favs.map(f=>`
     <div class="tli">
-      <div class="tli-flag">${f.flag}</div>
-      <div class="tli-sport">${sportImg(f.leagueEmoji,18)}</div>
-      <div class="tli-info"><div class="tli-name">${f.name}</div><div class="tli-lg">${f.league}</div></div>
+      <div class="tli-crest">${logoImg('', f.leagueEmoji, '', f.name, 't-logo-lg', f.league)}</div>
+      <div class="tli-info"><div class="tli-name">${f.name}</div><div class="tli-lg">${f.flag} ${sportImg(f.leagueEmoji,13)} ${f.league}</div></div>
       <div class="tli-actions">
         <button class="bell-btn ${f.alert?'on':''}" onclick="toggleAlert('${f.key.replace(/'/g,"\\'")}')">🔔</button>
         <button class="del-btn" onclick="removeTeam('${f.key.replace(/'/g,"\\'")}')">🗑</button>
@@ -3948,6 +4110,9 @@ function buildFlyModeGrid() {
   const inner = document.getElementById('flymode-inner');
   const grid  = document.getElementById('flymode-grid');
   inner.setAttribute('data-count', String(live.length));
+  // Crests stay legible on sparse grids; on dense grids (5+) the cells are too
+  // small, so we fall back to team codes only to avoid clutter.
+  inner.classList.toggle('show-fm-logos', live.length > 0 && live.length <= 4);
 
   if (!live.length) {
     grid.innerHTML = '<div class="flymode-empty">No live matches</div>';
@@ -3970,6 +4135,8 @@ function buildFlyModeGrid() {
       + '<div class="flymode-card' + statusCls + '" style="--len:' + sLen + '">'
       +   markerBox
       +   '<div class="flymode-board">'
+      +     '<div class="flymode-logo home">' + logoImg(m.homeLogo, m.league, m.homeId, m.home, 'fm-logo', m.leagueKey) + '</div>'
+      +     '<div class="flymode-logo away">' + logoImg(m.awayLogo, m.league, m.awayId, m.away, 'fm-logo', m.leagueKey) + '</div>'
       +     '<div class="flymode-team home">' + homeCode + '</div>'
       +     '<div class="flymode-team away">' + awayCode + '</div>'
       +     '<div class="flymode-score home ' + hCls + '" data-fk="' + m.id + '|h|fms">' + m.homeScore + '</div>'
@@ -4108,8 +4275,11 @@ function renderSearchMatches(matches) {
           : `<button type="button" class="qa-btn qa-btn-row" onclick="gsrQuickAdd(event,${idx})" aria-label="Follow ${escAttr(item.name)}">+</button>`)
       : `<span class="gsr-badge-icon">${sportImg(item.emoji,16)}</span>`;
 
+    const lead = item.type === 'team'
+      ? logoImg('', item.emoji, '', item.name, 't-logo', item.league)
+      : `<div class="gsr-flag">${item.flag}</div>`;
     return `<div class="gsr-item" data-idx="${idx}" onclick="gsrTap(this)">
-      <div class="gsr-flag">${item.flag}</div>
+      ${lead}
       <div class="gsr-info">
         <div class="gsr-team">${item.name}</div>
         <div class="gsr-meta">${item.meta}</div>

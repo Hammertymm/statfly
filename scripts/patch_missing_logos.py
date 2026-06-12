@@ -116,6 +116,15 @@ MANUAL_LOGO_BY_FAVKEY: dict[str, tuple[str, str]] = {
         "122",
         "https://a.espncdn.com/i/teamlogos/soccer/500/122.png",
     ),
+    # Not on ESPN CDN — verified external crests for Phase 3 logo library.
+    "UCD|League of Ireland": (
+        "",
+        "https://static.wixstatic.com/media/6a4b8c_7a5686a48ff34bcb884d66a12d94cdc2~mv2.png",
+    ),
+    "Bayonne|Top 14": (
+        "25912",
+        "https://static.wikia.nocookie.net/logopedia/images/4/42/Logo_Aviron_bayonnais_rugby_2022.png/revision/latest/scale-to-width-down/500",
+    ),
 }
 
 

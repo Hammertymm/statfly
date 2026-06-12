@@ -1,6 +1,6 @@
 // ScoreFly service worker
 // Bump CACHE on every deploy so devices pick up the new files.
-const CACHE = 'scorefly-v124';
+const CACHE = 'scorefly-v127';
 
 // App shell + icons. Relative paths so it works under the /scorefly/ GitHub Pages path.
 const SHELL = [
@@ -101,6 +101,8 @@ self.addEventListener('activate', event => {
 // Fetch strategy:
 //   - ESPN / proxy / font requests: always go to the network (live data, never cache).
 //   - app shell + same-origin GETs: cache-first, fall back to network, then cache the result.
+//   - assets/logos/*.png (curated crest library): same cache-first path; populated on first
+//     view so install stays fast (812 PNGs are not precached in SHELL).
 self.addEventListener('fetch', event => {
   const req = event.request;
   if (req.method !== 'GET') return;

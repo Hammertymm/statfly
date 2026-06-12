@@ -148,6 +148,15 @@ def hex_color(val: str | None) -> str | None:
     return None
 
 
+def hex_lum(val: str | None) -> float:
+    h = hex_color(val)
+    if not h:
+        return 1.0
+    h = h.lstrip("#")
+    r, g, b = int(h[0:2], 16), int(h[2:4], 16), int(h[4:6], 16)
+    return brightness(r, g, b)
+
+
 def saturation(r: int, g: int, b: int) -> float:
     mx, mn = max(r, g, b) / 255.0, min(r, g, b) / 255.0
     if mx == 0:
@@ -159,16 +168,21 @@ def brightness(r: int, g: int, b: int) -> float:
     return (0.2126 * r + 0.7152 * g + 0.0722 * b) / 255.0
 
 
+# Optical-weight target: every crest's bounding box should occupy roughly this
+# fraction of the container. Padded/small marks scale up, full-bleed marks down.
+TARGET_FILL = 0.80
+
+
 def analyze_image(data: bytes) -> dict[str, Any]:
     img = Image.open(io.BytesIO(data)).convert("RGBA")
     w, h = img.size
     thumb = img.resize((64, 64), Image.Resampling.LANCZOS)
     px = thumb.load()
 
-    # Bounding box for logoScale
     xs, ys = [], []
     buckets: Counter[tuple[int, int, int]] = Counter()
     bright_sum, bright_n = 0.0, 0
+    sat_sum, opaque_n = 0.0, 0
 
     for y in range(64):
         for x in range(64):
@@ -177,9 +191,11 @@ def analyze_image(data: bytes) -> dict[str, Any]:
                 continue
             xs.append(x)
             ys.append(y)
+            opaque_n += 1
             br = brightness(r, g, b)
             bright_sum += br
             bright_n += 1
+            sat_sum += saturation(r, g, b)
             if br > 0.92 or br < 0.10:
                 continue
             if saturation(r, g, b) < 0.12:
@@ -188,12 +204,22 @@ def analyze_image(data: bytes) -> dict[str, Any]:
             buckets[(rq, gq, bq)] += 1
 
     fill_ratio = 1.0
+    box_area = 1.0
     if xs and ys and w and h:
         bw = (max(xs) - min(xs) + 1) / 64.0
         bh = (max(ys) - min(ys) + 1) / 64.0
         fill_ratio = max(bw, bh)
+        box_area = max(0.04, bw * bh)
 
-    logo_scale = round(min(1.25, max(0.85, 1.0 / max(fill_ratio, 0.55))), 2)
+    # Optical normalization is driven by how much of the asset canvas the crest's
+    # bounding box actually occupies. Logos with lots of transparent padding (e.g.
+    # Las Vegas Aces) get scaled up; logos that bleed to the edges get nudged down
+    # so nothing dominates. Ink mass only adds a tiny extra tame for dense crests.
+    mass = (opaque_n / (64.0 * 64.0)) / box_area
+    logo_scale = TARGET_FILL / max(fill_ratio, 0.45)
+    if fill_ratio > 0.92 and mass > 0.70:
+        logo_scale *= 0.97
+    logo_scale = round(min(1.18, max(0.90, logo_scale)), 2)
 
     dominant = None
     secondary = None
@@ -204,12 +230,22 @@ def analyze_image(data: bytes) -> dict[str, Any]:
             secondary = "#{:02X}{:02X}{:02X}".format(*(c * 16 + 8 for c in top[1][0]))
 
     avg_bright = bright_sum / bright_n if bright_n else 1.0
+    avg_sat = sat_sum / opaque_n if opaque_n else 0.0
+    needs_lift = avg_bright < 0.34
+    white_logo = avg_bright > 0.82 and avg_sat < 0.18
     return {
         "haloColor": dominant,
         "secondaryColor": secondary,
-        "needsContrastLift": avg_bright < 0.32,
+        "needsContrastLift": needs_lift,
+        "needsContrastClamp": (not needs_lift) and (not white_logo) and avg_bright > 0.72,
+        "whiteLogo": white_logo,
+        "nearBlack": avg_bright < 0.20,
         "logoScale": logo_scale,
         "avgBrightness": round(avg_bright, 3),
+        "avgSaturation": round(avg_sat, 3),
+        # Raw optical metrics for median-relative normalization across a team set.
+        "fillRatio": round(fill_ratio, 3),
+        "mass": round(mass, 3),
     }
 
 
@@ -419,16 +455,30 @@ def analyze_logo(url: str, espn_color: str | None, espn_alt: str | None) -> dict
             "haloColor": None,
             "secondaryColor": None,
             "needsContrastLift": False,
+            "needsContrastClamp": False,
+            "whiteLogo": False,
+            "nearBlack": False,
             "logoScale": 1.0,
             "avgBrightness": 1.0,
         }
-    halo = meta.get("haloColor") or hex_color(espn_color) or hex_color(espn_alt) or "#06F03C"
-    secondary = meta.get("secondaryColor") or hex_color(espn_alt) or hex_color(espn_color) or halo
+    dominant = meta.get("haloColor") or hex_color(espn_color) or hex_color(espn_alt) or "#06F03C"
+    secondary = meta.get("secondaryColor") or hex_color(espn_alt) or hex_color(espn_color) or dominant
+    # Halo must read as a glow on a dark UI: if the dominant colour is black/near
+    # black, prefer the secondary, then the ESPN accents, never pure black.
+    halo = dominant
+    if hex_lum(halo) < 0.12:
+        for alt in (secondary, hex_color(espn_alt), hex_color(espn_color)):
+            if alt and hex_lum(alt) >= 0.12:
+                halo = alt
+                break
     return {
         "haloColor": halo,
         "secondaryColor": secondary,
-        "dominantColor": halo,
+        "dominantColor": dominant,
         "needsContrastLift": bool(meta.get("needsContrastLift")),
+        "needsContrastClamp": bool(meta.get("needsContrastClamp")),
+        "whiteLogo": bool(meta.get("whiteLogo")),
+        "nearBlack": bool(meta.get("nearBlack")),
         "logoScale": meta.get("logoScale", 1.0),
         "avgBrightness": meta.get("avgBrightness", 1.0),
         "logoOk": bool(data),
@@ -470,6 +520,9 @@ def build_entry(
         "haloColor": visual["haloColor"],
         "haloStrength": HALO_STRENGTH,
         "needsContrastLift": visual["needsContrastLift"],
+        "needsContrastClamp": visual["needsContrastClamp"],
+        "whiteLogo": visual["whiteLogo"],
+        "nearBlack": visual["nearBlack"],
         "dominantColor": visual["dominantColor"],
         "secondaryColor": visual["secondaryColor"],
         "logoScale": visual["logoScale"],
@@ -504,22 +557,25 @@ def render_gallery(teams: list[dict[str, Any]]) -> str:
   .preview{{height:72px;display:flex;align-items:center;justify-content:center;margin-bottom:8px}}
   .team-logo-halo{{
     position:relative;display:flex;align-items:center;justify-content:center;
-    width:32px;height:32px;padding:3px;--logo-scale:1;
-  }}
-  .team-logo-halo::before{{
-    content:'';position:absolute;inset:0;border-radius:50%;pointer-events:none;z-index:0;
-    background:radial-gradient(circle,rgba(255,255,255,0.06) 0%,rgba(255,255,255,0.02) 55%,transparent 72%);
-  }}
-  .team-logo-halo[data-contrast-lift]::before{{
-    background:radial-gradient(circle,rgba(255,255,255,0.16) 0%,rgba(255,255,255,0.06) 55%,transparent 72%);
+    width:32px;height:32px;
+    --halo-r:6;--halo-g:240;--halo-b:60;--logo-scale:1;
+    --halo-strength:0.14;--logo-inset:0.84;--logo-bright:1;--logo-contrast:1;
+    --logo-sat:1.05;--rim:0;--fly:1;
   }}
   .team-logo-halo img{{
     position:relative;z-index:1;width:100%;height:100%;object-fit:contain;
-    transform:scale(var(--logo-scale));
-    filter:brightness(1.06) saturate(1.14)
-      drop-shadow(0 0 10px rgba(var(--halo-r),var(--halo-g),var(--halo-b),calc(var(--halo-strength)*0.9)))
-      drop-shadow(0 0 4px rgba(255,255,255,0.12));
+    transform:scale(calc(var(--logo-scale) * var(--logo-inset) * var(--fly)));
+    image-rendering:-webkit-optimize-contrast;
+    filter:
+      brightness(var(--logo-bright)) contrast(var(--logo-contrast)) saturate(var(--logo-sat))
+      drop-shadow(0 0 calc(7px * var(--fly)) rgba(var(--halo-r),var(--halo-g),var(--halo-b),calc(var(--halo-strength) * var(--fly))))
+      drop-shadow(0 1px 2px rgba(0,0,0,0.45))
+      drop-shadow(0 0 1px rgba(255,255,255,var(--rim)));
   }}
+  .team-logo-halo[data-contrast-lift]{{--logo-bright:1.1;--logo-contrast:1.12;--rim:0.12;--halo-strength:0.22;}}
+  .team-logo-halo[data-contrast-lift][data-near-black]{{--logo-bright:1.06;--logo-contrast:1.1;--rim:0.18;--halo-strength:0.28;}}
+  .team-logo-halo[data-contrast-clamp]{{--logo-bright:0.95;--logo-sat:1.02;--halo-strength:0.07;}}
+  .team-logo-halo[data-white-logo]{{--logo-bright:0.93;--logo-sat:1.04;--rim:0;--halo-strength:0.12;}}
   .name{{font-size:11px;font-weight:600;line-height:1.25;margin-bottom:2px}}
   .league{{font-size:10px;color:rgba(255,255,255,.45);margin-bottom:6px}}
   .meta{{font-size:9px;color:rgba(255,255,255,.35);line-height:1.45;word-break:break-all}}
@@ -530,7 +586,7 @@ def render_gallery(teams: list[dict[str, Any]]) -> str:
 </head>
 <body>
 <h1>ScoreFly Logo Gallery</h1>
-<p class="sub">{len(teams)} teams — halo V2 preview (32px, strength 0.25). Edit <code>logoScale</code> / <code>haloColor</code> / <code>haloStrength</code> inline, then export JSON for <code>team-halo-config.json</code>.</p>
+<p class="sub">{len(teams)} teams — Team Halo V2.1 preview (32px). Tiers (lift / clamp / white / near-black) and optical <code>logoScale</code> are auto-derived; edit <code>haloColor</code> / <code>logoScale</code> inline, then export JSON for <code>team-halo-config.json</code>.</p>
 <div class="toolbar">
   <input id="q" type="search" placeholder="Filter team or league…" oninput="render()">
   <select id="leagueFilter" onchange="render()"><option value="">All leagues</option></select>
@@ -555,14 +611,17 @@ function hexRgb(hex) {{
 
 function cardHtml(t, i) {{
   const [r,g,b] = hexRgb(t.haloColor);
-  const lift = t.needsContrastLift ? ' data-contrast-lift' : '';
+  let tier = '';
+  if (t.whiteLogo) tier = ' data-white-logo';
+  else if (t.needsContrastClamp) tier = ' data-contrast-clamp';
+  else if (t.needsContrastLift) tier = ' data-contrast-lift' + (t.nearBlack ? ' data-near-black' : '');
   const scale = t.logoScale != null && t.logoScale !== 1 ? ';--logo-scale:'+t.logoScale : '';
-  const style = '--halo-r:'+r+';--halo-g:'+g+';--halo-b:'+b+';--halo-strength:'+(t.haloStrength||0.25)+scale;
+  const style = '--halo-r:'+r+';--halo-g:'+g+';--halo-b:'+b+scale;
   const img = t.logoUrl
     ? '<img src="'+t.logoUrl+'" alt="" onerror="this.style.opacity=0.2">'
     : '<span style="opacity:.3;font-size:10px">no img</span>';
   return '<div class="card'+(t.logoMissing?' missing':'')+'" data-i="'+i+'">'+
-    '<div class="preview"><div class="team-logo-halo" style="'+style+'"'+lift+'>'+img+'</div></div>'+
+    '<div class="preview"><div class="team-logo-halo" style="'+style+'"'+tier+'>'+img+'</div></div>'+
     '<div class="name">'+t.names[0]+'</div><div class="league">'+t.league+'</div>'+
     '<div class="meta">favKey: '+t.favKey+'<br>'+
     'halo <input data-k="haloColor" data-i="'+i+'" value="'+t.haloColor+'" onchange="patch('+i+',this)">'+

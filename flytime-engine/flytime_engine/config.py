@@ -172,7 +172,7 @@ LEAGUES: list[LeagueConfig] = [
     LeagueConfig("cricket", "8044", "Big Bash League", None, None, None, 20, 8),
     LeagueConfig("cricket", "8048", "IPL", None, None, None, 20, 8),
     LeagueConfig("cricket", "23694", "Cricket", None, None, None, 20, 8),
-    LeagueConfig("basketball", "wnba", "WNBA", "WNBA", "wnba-flytime-v1.json", 70, 8, 6),
+    LeagueConfig("basketball", "wnba", "WNBA", "WNBA", "wnba-flytime-v1.json", 75, 8, 6),
     LeagueConfig("basketball", "nbl", "NBL", "NBL", "nbl-flytime-v1.json", 70, 8, 8,
                  season_windows=NBL_SEASON_WINDOWS),
     LeagueConfig("basketball", "mens-college-basketball", "NCAAM", "NCAAM",

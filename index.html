@@ -621,18 +621,18 @@
     text-align: center;
   }
 
-  /* brightness bar - full width, no exit button */
+  /* brightness bar - full width, no exit button; extra padding = tap dead zone */
   .flymode-brightness {
     position: absolute;
     bottom: 0; left: 0; right: 0;
-    height: 84px;
+    min-height: 104px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     gap: 6px;
     border-top: 1px solid #111;
     background: #000;
-    padding: 0 16px;
+    padding: 10px 16px 20px;
     touch-action: pan-x;
     transition: opacity 0.5s ease;
   }
@@ -657,7 +657,9 @@
     -webkit-appearance: none;
     appearance: none;
     width: 100%;
-    height: 50px;
+    height: 60px;
+    padding: 10px 0;
+    box-sizing: content-box;
     background: transparent;
     outline: none;
     cursor: pointer;
@@ -676,26 +678,26 @@
   }
   .flymode-brightness input[type=range]::-webkit-slider-thumb {
     -webkit-appearance: none;
-    width: 40px; height: 40px;
-    margin-top: -17px;
+    width: 60px; height: 60px;
+    margin-top: -27px;
     border-radius: 50%;
-    background-color: #000;
+    border: none;
+    background-color: transparent;
     background-image: url('knob.png');
     background-size: 40px 40px;
     background-repeat: no-repeat;
     background-position: center;
-    border: 2px solid rgba(255,255,255,0.85);
     cursor: pointer;
   }
   .flymode-brightness input[type=range]::-moz-range-thumb {
-    width: 40px; height: 40px;
+    width: 60px; height: 60px;
     border-radius: 50%;
-    background-color: #000;
+    border: none;
+    background-color: transparent;
     background-image: url('knob.png');
     background-size: 40px 40px;
     background-repeat: no-repeat;
     background-position: center;
-    border: 2px solid rgba(255,255,255,0.85);
     cursor: pointer;
   }
 
@@ -1116,12 +1118,13 @@ const dwarn = DEBUG ? console.warn.bind(console) : function(){};
 const derr  = DEBUG ? console.error.bind(console): function(){};
 
 // Polling cadence. One self-rescheduling loop (see pollTick / scheduleNextPoll).
-const FAST_POLL  = 12000;  // while games are live: refresh live scores every 12s
-const FLYTIME_POLL = 8000; // a live match is in FlyTime: refresh even faster
-const SOON_POLL  = 30000;  // nothing live yet but a match starts soon: check at 30s
-const SLOW_POLL  = 60000;  // nothing live: full sweep this often to catch kickoffs
-const RETRY_POLL = 8000;   // quick retry after a failed cycle
-const FULL_EVERY = 15;     // even while live, do a full sweep every ~15 fast cycles (~3 min)
+const FLYMODE_POLL = 1000;  // Fly Mode open: fastest practical refresh
+const FAST_POLL  = 4000;    // while games are live: refresh live scores every 4s
+const FLYTIME_POLL = 3000;  // a live match is in FlyTime: refresh even faster
+const SOON_POLL  = 30000;   // nothing live yet but a match starts soon: check at 30s
+const SLOW_POLL  = 60000;   // nothing live: full sweep this often to catch kickoffs
+const RETRY_POLL = 8000;    // quick retry after a failed cycle
+const FULL_EVERY = 15;      // even while live, do a full sweep every ~15 fast cycles
 
 // Date windows (in days). The "All" view stays lean; the leagues that contain a
 // followed team get a deeper window so "My Teams" can look further out.
@@ -2637,9 +2640,14 @@ function anyStartingSoon(){
   for (let i=0;i<ALL_UPCOMING.length;i++){ const s = ALL_UPCOMING[i].startMs; if (s && s>now && s<=soon) return true; }
   return false;
 }
+function isFlyModeActive() {
+  const o = document.getElementById('flymode-overlay');
+  return !!(o && o.classList.contains('active'));
+}
 function scheduleNextPoll() {
   let delay;
   if (lastPollFailed)            delay = RETRY_POLL;
+  else if (isFlyModeActive())    delay = FLYMODE_POLL;
   else if (anyFlyTimeLive())     delay = FLYTIME_POLL;
   else if (ALL_LIVE.length > 0)  delay = FAST_POLL;
   else if (anyStartingSoon())    delay = SOON_POLL;
@@ -4212,16 +4220,24 @@ function enterFlyMode() {
       navigator.wakeLock.request('screen').catch(()=>{});
     }
   } catch(e) {}
+  scheduleNextPoll();
 }
 
 function handleFlyModeTap(e) {
-  // Exit Fly Mode on tap anywhere - brightness bar has stopPropagation so won't trigger
+  // Ignore taps in the brightness dead zone (bar + 10px margin) so slider adjacency won't exit
+  const bright = document.getElementById('flymode-brightness');
+  if (bright) {
+    const r = bright.getBoundingClientRect();
+    const pad = 10;
+    if (e.clientY >= r.top - pad && e.clientX >= r.left - pad && e.clientX <= r.right + pad) return;
+  }
   exitFlyMode();
 }
 
 function exitFlyMode() {
   document.getElementById('flymode-overlay').classList.remove('active');
   if (brightnessFadeTimer) { clearTimeout(brightnessFadeTimer); brightnessFadeTimer = null; }
+  scheduleNextPoll();
 }
 
 // Reveal the brightness control, then fade it out 1s after the last adjustment.
@@ -4620,7 +4636,7 @@ const FLY_V1_REGISTRY = {
   'australian-football|afl':              { file: 'afl-flytime-v1.json',              threshold: 75, tag: 'FT',   nameMap: 'afl' },
   'football|nfl':                           { file: 'nfl-flytime-v1.json',              threshold: 95, tag: 'NFL' },
   'basketball|nba':                         { file: 'nba-flytime-v1.json',              threshold: 88, tag: 'NBA' },
-  'basketball|wnba':                        { file: 'wnba-flytime-v1.json',             threshold: 70, tag: 'WNBA' },
+  'basketball|wnba':                        { file: 'wnba-flytime-v1.json',             threshold: 75, tag: 'WNBA' },
   'basketball|nbl':                         { file: 'nbl-flytime-v1.json',              threshold: 70, tag: 'NBL' },
   'basketball|mens-college-basketball':     { file: 'ncaam-flytime-v1.json',            threshold: 97, tag: 'NCAAM' },
   'baseball|mlb':                           { file: 'mlb-flytime-v1.json',              threshold: 85, tag: 'MLB' },

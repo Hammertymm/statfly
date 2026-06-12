@@ -4380,8 +4380,8 @@ function fmImportanceScore(notes, seasonType){
 const flyV1Engines = {}; // keyed sportKey|leagueKey -> { idx, threshold, nameMap, tag }
 
 const FLY_V1_REGISTRY = {
-  'australian-football|afl':              { file: 'afl-flytime-v1.json',              threshold: 72, tag: 'FT',   nameMap: 'afl' },
-  'football|nfl':                           { file: 'nfl-flytime-v1.json',              threshold: 93, tag: 'NFL' },
+  'australian-football|afl':              { file: 'afl-flytime-v1.json',              threshold: 75, tag: 'FT',   nameMap: 'afl' },
+  'football|nfl':                           { file: 'nfl-flytime-v1.json',              threshold: 95, tag: 'NFL' },
   'basketball|nba':                         { file: 'nba-flytime-v1.json',              threshold: 88, tag: 'NBA' },
   'basketball|wnba':                        { file: 'wnba-flytime-v1.json',             threshold: 70, tag: 'WNBA' },
   'basketball|nbl':                         { file: 'nbl-flytime-v1.json',              threshold: 70, tag: 'NBL' },
@@ -4389,7 +4389,7 @@ const FLY_V1_REGISTRY = {
   'baseball|mlb':                           { file: 'mlb-flytime-v1.json',              threshold: 85, tag: 'MLB' },
   'hockey|nhl':                             { file: 'nhl-flytime-v1.json',              threshold: 78, tag: 'NHL' },
   'football|college-football':              { file: 'ncaaf-flytime-v1.json',            threshold: 96, tag: 'NCAAF' },
-  'football|cfl':                           { file: 'cfl-flytime-v1.json',              threshold: 85, tag: 'CFL' },
+  'football|cfl':                           { file: 'cfl-flytime-v1.json',              threshold: 70, tag: 'CFL' },
   'rugby-league|3':                         { file: 'nrl-flytime-v1.json',              threshold: 85, tag: 'NRL' },
   'soccer|usa.1':                           { file: 'soccer-usa-1-flytime-v1.json',     threshold: 96, tag: 'MLS' },
   'soccer|eng.1':                           { file: 'soccer-eng-1-flytime-v1.json',     threshold: 96, tag: 'EPL' },
@@ -4406,7 +4406,7 @@ const FLY_V1_REGISTRY = {
   'soccer|arg.1':                           { file: 'soccer-arg-1-flytime-v1.json',     threshold: 98, tag: 'ARG' },
   'soccer|mex.1':                           { file: 'soccer-mex-1-flytime-v1.json',     threshold: 90, tag: 'MX' },
   'soccer|aus.1':                           { file: 'soccer-aus-1-flytime-v1.json',     threshold: 85, tag: 'ALE' },
-  'soccer|irl.1':                           { file: 'soccer-irl-1-flytime-v1.json',     threshold: 90, tag: 'IRL' },
+  'soccer|irl.1':                           { file: 'soccer-irl-1-flytime-v1.json',     threshold: 80, tag: 'IRL' },
   'soccer|ind.1':                           { file: 'soccer-ind-1-flytime-v1.json',     threshold: 85, tag: 'ISL' },
   'soccer|rsa.1':                           { file: 'soccer-rsa-1-flytime-v1.json',     threshold: 95, tag: 'PSL' },
   'soccer|eng.w.1':                         { file: 'soccer-eng-w-1-flytime-v1.json',   threshold: 78, tag: 'WSL' },

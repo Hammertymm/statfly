@@ -10,6 +10,7 @@ Usage:
   python main.py blue-fly                      # Blue fly analysis
   python main.py backtest [--league NFL] [--formula v1]
   python main.py serve                         # Start always-on collection service
+  python main.py platform [--port 8787]        # Cloud platform (collector + dashboard)
   python main.py dashboard [--port 8787]       # Analytics dashboard
 """
 from __future__ import annotations
@@ -131,9 +132,18 @@ def cmd_serve(db: Database) -> None:
         service.stop()
 
 
-def cmd_dashboard(db: Database, port: int) -> None:
+def cmd_dashboard(db: Database, port: int, host: str = "127.0.0.1") -> None:
     from flytime_engine.dashboard import run_dashboard
-    run_dashboard(db, port=port)
+    run_dashboard(db, host=host, port=port)
+
+
+def cmd_platform(db: Database, port: int, host: str) -> None:
+    from flytime_engine.platform import FlyIntelligencePlatform
+    platform = FlyIntelligencePlatform(db, host=host, port=port)
+    try:
+        platform.start()
+    except KeyboardInterrupt:
+        platform.stop()
 
 
 def main():
@@ -162,6 +172,11 @@ def main():
 
     p_dash = sub.add_parser("dashboard", help="Analytics dashboard")
     p_dash.add_argument("--port", type=int, default=8787)
+    p_dash.add_argument("--host", default="127.0.0.1")
+
+    p_plat = sub.add_parser("platform", help="Fly Intelligence Platform")
+    p_plat.add_argument("--port", type=int, default=8787)
+    p_plat.add_argument("--host", default="0.0.0.0")
 
     args = parser.parse_args()
     db = Database(Path(args.db))
@@ -182,8 +197,10 @@ def main():
         cmd_backtest(db, getattr(args, "league", None), args.formula)
     elif args.command == "serve":
         cmd_serve(db)
+    elif args.command == "platform":
+        cmd_platform(db, args.port, args.host)
     elif args.command == "dashboard":
-        cmd_dashboard(db, args.port)
+        cmd_dashboard(db, args.port, getattr(args, "host", "127.0.0.1"))
 
 
 if __name__ == "__main__":

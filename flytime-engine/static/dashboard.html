@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fly Intelligence Platform</title>
+<style>
+:root {
+  --bg:#0a0e14; --surface:#121820; --card:#161f2e; --border:#243044;
+  --text:#e8edf5; --muted:#7a8ba3; --accent:#3d9eff;
+  --yellow:#ffd60a; --green:#06f03c; --blue:#0a84ff; --red:#ff453a;
+  --purple:#bf5af2;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:system-ui,-apple-system,sans-serif;background:var(--bg);color:var(--text);line-height:1.5;min-height:100vh}
+header{padding:1rem 1.5rem;border-bottom:1px solid var(--border);display:flex;flex-wrap:wrap;align-items:center;gap:1rem;position:sticky;top:0;background:var(--bg);z-index:10}
+header h1{font-size:1.25rem;font-weight:700}
+header .sub{color:var(--muted);font-size:.8rem}
+.status-pill{padding:.25rem .75rem;border-radius:999px;font-size:.75rem;font-weight:600;background:var(--surface);border:1px solid var(--border)}
+.status-pill.running{color:var(--green);border-color:var(--green)}
+.status-pill.stopped{color:var(--red)}
+nav{display:flex;gap:.5rem;margin-left:auto;flex-wrap:wrap}
+nav button{background:var(--surface);border:1px solid var(--border);color:var(--text);padding:.45rem 1rem;border-radius:6px;cursor:pointer;font-size:.85rem}
+nav button.active{background:var(--accent);border-color:var(--accent);color:#fff}
+main{padding:1.5rem;max-width:1400px;margin:0 auto}
+.panel{display:none}.panel.active{display:block}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1rem;margin-bottom:1.5rem}
+.card{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:1rem}
+.card h2{font-size:.9rem;color:var(--accent);margin-bottom:.75rem;font-weight:600}
+.stat{display:flex;justify-content:space-between;padding:.35rem 0;border-bottom:1px solid var(--border);font-size:.85rem}
+.stat:last-child{border:none}
+.val{font-weight:600}
+.y{color:var(--yellow)}.g{color:var(--green)}.b{color:var(--blue)}.r{color:var(--red)}
+table{width:100%;border-collapse:collapse;font-size:.8rem}
+th,td{text-align:left;padding:.45rem .6rem;border-bottom:1px solid var(--border)}
+th{color:var(--muted);font-weight:500;position:sticky;top:0;background:var(--card)}
+tr:hover td{background:rgba(61,158,255,.05)}
+.badge{display:inline-block;padding:.15rem .5rem;border-radius:4px;font-size:.7rem;font-weight:700;text-transform:uppercase}
+.badge.yellow{background:rgba(255,214,10,.15);color:var(--yellow)}
+.badge.green{background:rgba(6,240,60,.12);color:var(--green)}
+.badge.blue{background:rgba(10,132,255,.15);color:var(--blue)}
+.badge.red{background:rgba(255,69,58,.15);color:var(--red)}
+.badge.none{background:var(--surface);color:var(--muted)}
+.live-dot{width:8px;height:8px;border-radius:50%;background:var(--green);display:inline-block;animation:pulse 1.5s infinite;margin-right:.4rem}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
+.filters{display:flex;flex-wrap:wrap;gap:.75rem;margin-bottom:1rem;align-items:end}
+.filters label{font-size:.75rem;color:var(--muted);display:flex;flex-direction:column;gap:.25rem}
+.filters select,.filters input{background:var(--surface);border:1px solid var(--border);color:var(--text);padding:.4rem .6rem;border-radius:6px;font-size:.85rem}
+.btn{background:var(--accent);color:#fff;border:none;padding:.5rem 1rem;border-radius:6px;cursor:pointer;font-size:.85rem}
+.btn.secondary{background:var(--surface);border:1px solid var(--border);color:var(--text)}
+.chart-bar{display:flex;align-items:end;gap:3px;height:80px;margin-top:.5rem}
+.chart-bar span{flex:1;background:var(--accent);border-radius:2px 2px 0 0;min-height:2px;opacity:.8}
+.footer{margin-top:2rem;padding-top:1rem;border-top:1px solid var(--border);color:var(--muted);font-size:.75rem;text-align:center}
+.empty{color:var(--muted);padding:2rem;text-align:center;font-size:.9rem}
+@media(max-width:600px){header{flex-direction:column;align-items:flex-start}nav{margin-left:0}}
+</style>
+</head>
+<body>
+<header>
+  <div>
+    <h1>Fly Intelligence Platform</h1>
+    <div class="sub">24/7 live match monitoring &amp; FlyScore validation</div>
+  </div>
+  <span id="statusPill" class="status-pill">Loading...</span>
+  <nav>
+    <button class="tab active" data-tab="live">Live</button>
+    <button class="tab" data-tab="analytics">Analytics</button>
+    <button class="tab" data-tab="research">Research</button>
+  </nav>
+</header>
+
+<main>
+  <!-- LIVE -->
+  <section id="panel-live" class="panel active">
+    <div class="grid" id="liveStats"></div>
+    <div class="card" style="margin-bottom:1rem">
+      <h2>Matches in FlyTime Now</h2>
+      <div id="flytimeNow"></div>
+    </div>
+    <div class="card" style="margin-bottom:1rem">
+      <h2>All Tracked Matches</h2>
+      <div style="overflow-x:auto"><table id="liveTable"><thead><tr>
+        <th>Status</th><th>League</th><th>Match</th><th>Score</th><th>Period</th>
+        <th>FlyScore</th><th>Fly</th><th>Updated</th>
+      </tr></thead><tbody></tbody></table></div>
+    </div>
+    <div class="card">
+      <h2>Recent Fly Triggers</h2>
+      <div style="overflow-x:auto"><table id="eventsTable"><thead><tr>
+        <th>Time</th><th>Event</th><th>League</th><th>Match</th><th>Score</th><th>FlyScore</th>
+      </tr></thead><tbody></tbody></table></div>
+    </div>
+  </section>
+
+  <!-- ANALYTICS -->
+  <section id="panel-analytics" class="panel">
+    <div class="grid" id="analyticsStats"></div>
+    <div class="grid">
+      <div class="card"><h2>Fly Colour Performance</h2><div id="flyColors"></div></div>
+      <div class="card"><h2>Prediction Accuracy (v1)</h2><div id="accuracy"></div></div>
+    </div>
+    <div class="card" style="margin-bottom:1rem">
+      <h2>Sport Breakdown</h2>
+      <div style="overflow-x:auto"><table id="sportTable"><thead><tr>
+        <th>Sport</th><th>Matches</th><th>Yellow</th><th>Green</th><th>Blue</th><th>Red</th><th>Y→R %</th>
+      </tr></thead><tbody></tbody></table></div>
+    </div>
+    <div class="card" style="margin-bottom:1rem">
+      <h2>League Overview</h2>
+      <div style="overflow-x:auto"><table id="leagueTable"><thead><tr>
+        <th>League</th><th>Threshold</th><th>Recommended</th><th>Yellow</th><th>Red</th><th>Conv%</th>
+      </tr></thead><tbody></tbody></table></div>
+    </div>
+    <div class="card" style="margin-bottom:1rem">
+      <h2>Formula Rankings</h2><div id="formulaTable"></div>
+    </div>
+    <div class="card">
+      <h2>Intelligence Insights</h2><div id="insights"></div>
+    </div>
+  </section>
+
+  <!-- RESEARCH -->
+  <section id="panel-research" class="panel">
+    <div class="filters">
+      <label>League <select id="fLeague"><option value="">All</option></select></label>
+      <label>Sport <select id="fSport"><option value="">All</option></select></label>
+      <label>Status <select id="fStatus"><option value="">All</option><option value="finished">Finished</option><option value="live">Live</option><option value="upcoming">Upcoming</option></select></label>
+      <label>Yellow <select id="fYellow"><option value="">Any</option><option value="1">Yes</option><option value="0">No</option></select></label>
+      <label>Green <select id="fGreen"><option value="">Any</option><option value="1">Yes</option><option value="0">No</option></select></label>
+      <label>Formula <select id="fFormula"><option value="v1">v1</option><option value="v2">v2</option><option value="v3">v3</option><option value="experimental">experimental</option></select></label>
+      <button class="btn" onclick="runResearch()">Search</button>
+      <button class="btn secondary" onclick="exportCSV()">Export CSV</button>
+    </div>
+    <div class="card" style="margin-bottom:1rem">
+      <h2>Formula Comparison</h2><div id="formulaCompare"></div>
+    </div>
+    <div class="card">
+      <h2>Historical Results (<span id="researchCount">0</span>)</h2>
+      <div style="overflow-x:auto;max-height:500px;overflow-y:auto">
+        <table id="researchTable"><thead><tr>
+          <th>Date</th><th>League</th><th>Match</th><th>Score</th><th>FlyScore</th>
+          <th>Y</th><th>G</th><th>B</th><th>R</th><th>Hit</th><th>FP</th><th>FN</th>
+        </tr></thead><tbody></tbody></table>
+      </div>
+    </div>
+  </section>
+</main>
+
+<p class="footer">Auto-refreshes every 15s (Live) · <a href="/api/report" style="color:var(--accent)">JSON API</a></p>
+
+<script>
+const $ = id => document.getElementById(id);
+let researchData = [];
+
+document.querySelectorAll('.tab').forEach(btn => {
+  btn.onclick = () => {
+    document.querySelectorAll('.tab').forEach(b => b.classList.remove('active'));
+    document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
+    btn.classList.add('active');
+    $('panel-' + btn.dataset.tab).classList.add('active');
+  };
+});
+
+function badge(cls, text) {
+  return `<span class="badge ${cls}">${text}</span>`;
+}
+
+function flyBadge(c) {
+  const m = {yellow:'yellow',green:'green',blue:'blue',red:'red',none:'none'};
+  return badge(m[c]||'none', c==='none'?'—':c);
+}
+
+function fmtTime(iso) {
+  if (!iso) return '—';
+  try { return new Date(iso).toLocaleString(); } catch { return iso; }
+}
+
+function statCard(title, rows) {
+  return `<div class="card"><h2>${title}</h2>${rows.map(([k,v,c]) =>
+    `<div class="stat"><span>${k}</span><span class="val ${c||''}">${v}</span></div>`
+  ).join('')}</div>`;
+}
+
+async function loadLive() {
+  const [health, live, events] = await Promise.all([
+    fetch('/api/health').then(r=>r.json()),
+    fetch('/api/live').then(r=>r.json()),
+    fetch('/api/events?limit=30').then(r=>r.json()),
+  ]);
+
+  const st = health.status || 'unknown';
+  $('statusPill').textContent = st;
+  $('statusPill').className = 'status-pill ' + (st==='running'?'running':'stopped');
+
+  const mc = health.match_counts||{}, fc = health.fly_counts||{};
+  $('liveStats').innerHTML = [
+    statCard('Service', [
+      ['Status', st, st==='running'?'g':'r'],
+      ['Last poll', fmtTime(health.last_poll_at)],
+      ['Snapshots', (health.snapshot_count||{}).c||0],
+      ['Events', (health.event_count||{}).c||0],
+    ]),
+    statCard('Matches', [
+      ['Total', mc.total||0],
+      ['Live', mc.live||0, 'g'],
+      ['Upcoming', mc.upcoming||0],
+      ['Finished', mc.finished||0],
+    ]),
+    statCard('All-Time Flies', [
+      ['Yellow', fc.yellow||0, 'y'],
+      ['Green', fc.green||0, 'g'],
+      ['Blue', fc.blue||0, 'b'],
+      ['Red', fc.red||0, 'r'],
+    ]),
+  ].join('');
+
+  const inFly = live.filter(m => m.in_flytime);
+  $('flytimeNow').innerHTML = inFly.length ? inFly.map(m =>
+    `<div class="stat"><span><span class="live-dot"></span>${m.league}: ${m.away_team} @ ${m.home_team}</span>
+     <span class="g val">${m.score_display} · FlyScore ${m.flytime_score?.toFixed?.(0)??'—'}</span></div>`
+  ).join('') : '<div class="empty">No matches in FlyTime right now</div>';
+
+  $('liveTable').querySelector('tbody').innerHTML = live.length ? live.map(m =>
+    `<tr><td>${m.status==='live'?'<span class="live-dot"></span>Live':'Upcoming'}</td>
+     <td>${m.league}</td><td>${m.away_team} @ ${m.home_team}</td>
+     <td>${m.score_display}</td><td>${m.period??'—'} ${m.clock_raw||''}</td>
+     <td>${m.flytime_score?.toFixed?.(1)??'—'}</td>
+     <td>${flyBadge(m.fly_classification)}</td>
+     <td>${fmtTime(m.last_snapshot_at||m.scheduled_at)}</td></tr>`
+  ).join('') : '<tr><td colspan=8 class="empty">No live or upcoming matches tracked</td></tr>';
+
+  $('eventsTable').querySelector('tbody').innerHTML = events.length ? events.map(e =>
+    `<tr><td>${fmtTime(e.event_at)}</td><td>${e.event_type.replace(/_/g,' ')}</td>
+     <td>${e.league}</td><td>${e.away_team} @ ${e.home_team}</td>
+     <td>${e.home_score??'—'}-${e.away_score??'—'}</td>
+     <td>${e.flytime_score?.toFixed?.(1)??'—'}</td></tr>`
+  ).join('') : '<tr><td colspan=6 class="empty">No events yet — collector needs to run during live matches</td></tr>';
+}
+
+async function loadAnalytics() {
+  const [report, intel] = await Promise.all([
+    fetch('/api/report').then(r=>r.json()),
+    fetch('/api/intelligence').then(r=>r.json()),
+  ]);
+
+  const acc = intel.accuracy||{};
+  const fc = intel.fly_color_performance||{};
+  $('analyticsStats').innerHTML = [
+    statCard('Accuracy (v1)', [
+      ['Precision', (acc.precision_pct||0)+'%'],
+      ['Recall', (acc.recall_pct||0)+'%'],
+      ['F1 Score', (acc.f1_pct||0)+'%'],
+      ['False Positives', acc.false_positives||0, 'r'],
+    ]),
+    statCard('False Alarms & Misses', [
+      ['False Positives', acc.false_positives||0, 'r'],
+      ['False Negatives', acc.false_negatives||0, 'y'],
+      ['Hits', acc.hits||0, 'g'],
+      ['Total Evaluated', acc.total_matches||0],
+    ]),
+  ].join('');
+
+  const y=fc.yellow||{}, g=fc.green||{}, b=fc.blue||{}, r=fc.red||{};
+  $('flyColors').innerHTML = [
+    ['Yellow flies', y.count||0, 'y'],
+    ['Yellow → Red', (y.conversion_pct||0)+'%'],
+    ['False positives', y.false_positive_count||0, 'r'],
+    ['Green flies', g.count||0, 'g'],
+    ['Missed by yellow', g.missed_by_yellow||0],
+    ['Blue flies', b.count||0, 'b'],
+    ['Blue → Red', b.became_red||0],
+    ['Red flies', r.count||0, 'r'],
+  ].map(([k,v,c])=>`<div class="stat"><span>${k}</span><span class="val ${c||''}">${v}</span></div>`).join('');
+
+  $('accuracy').innerHTML = Object.entries(intel.accuracy_by_formula||{}).map(([fv,a]) =>
+    `<div class="stat"><span>${fv}</span><span>${a.precision_pct||0}% prec · ${a.recall_pct||0}% rec · ${a.total_matches||0} matches</span></div>`
+  ).join('') || '<div class="empty">Run backfill + live collection first</div>';
+
+  const sports = await fetch('/api/sports').then(r=>r.json());
+  $('sportTable').querySelector('tbody').innerHTML = sports.length ? sports.map(s =>
+    `<tr><td>${s.sport}</td><td>${s.total_matches}</td>
+     <td class="y">${s.yellow||0}</td><td class="g">${s.green||0}</td>
+     <td class="b">${s.blue||0}</td><td class="r">${s.red||0}</td>
+     <td>${s.yellow_to_red_pct||0}%</td></tr>`
+  ).join('') : '<tr><td colspan=7 class="empty">No finished matches yet</td></tr>';
+
+  const lo = report.league_overview||[];
+  $('leagueTable').querySelector('tbody').innerHTML = lo.slice(0,25).map(l =>
+    `<tr><td>${l.league||l.label}</td><td>${l.current_threshold??'—'}</td>
+     <td>${l.recommended_threshold??'—'}</td>
+     <td class="y">${l.yellow_flies??0}</td><td class="r">${l.red_flies??0}</td>
+     <td>${(l.conversion_pct??0).toFixed?.(1)??l.conversion_pct??0}%</td></tr>`
+  ).join('') || '<tr><td colspan=6 class="empty">Run analyze after backfill</td></tr>';
+
+  const fr = (report.formula_analysis||{}).formula_rankings||[];
+  $('formulaTable').innerHTML = fr.length ? `<table><tr><th>Version</th><th>Avg Conv%</th><th>Yellow</th><th>Leagues</th></tr>
+    ${fr.map(f=>`<tr><td>${f.formula_version}</td><td>${f.avg_conversion_pct}%</td><td>${f.total_yellow}</td><td>${f.leagues_tested}</td></tr>`).join('')}
+    </table>` : '<div class="empty">No formula data</div>';
+
+  const insights = [...(intel.pattern_insights||[]), ...(intel.formula_suggestions||[]).map(s=>({message:s.action+' — '+s.evidence,type:s.priority}))];
+  $('insights').innerHTML = insights.length ? insights.map(i =>
+    `<div class="stat"><span>${i.type||'insight'}</span><span>${i.message}</span></div>`
+  ).join('') : '<div class="empty">Insights appear after sufficient match data</div>';
+}
+
+async function loadFilters() {
+  const leagues = await fetch('/api/leagues').then(r=>r.json());
+  const sports = [...new Set(leagues.map(l=>l.sport).filter(Boolean))].sort();
+  $('fLeague').innerHTML = '<option value="">All</option>' + leagues.map(l =>
+    `<option value="${l.league||l.label}">${l.league||l.label}</option>`).join('');
+  $('fSport').innerHTML = '<option value="">All</option>' + sports.map(s =>
+    `<option value="${s}">${s}</option>`).join('');
+}
+
+async function runResearch() {
+  const params = new URLSearchParams();
+  if ($('fLeague').value) params.set('league', $('fLeague').value);
+  if ($('fSport').value) params.set('sport', $('fSport').value);
+  if ($('fStatus').value) params.set('status', $('fStatus').value);
+  if ($('fYellow').value) params.set('had_yellow', $('fYellow').value);
+  if ($('fGreen').value) params.set('had_green', $('fGreen').value);
+  params.set('formula', $('fFormula').value);
+  params.set('limit', '500');
+
+  researchData = await fetch('/api/research?'+params).then(r=>r.json());
+  $('researchCount').textContent = researchData.length;
+
+  $('researchTable').querySelector('tbody').innerHTML = researchData.map(r =>
+    `<tr><td>${fmtTime(r.finished_at||r.scheduled_at)}</td><td>${r.league}</td>
+     <td>${r.away_team} @ ${r.home_team}</td>
+     <td>${r.home_score??'—'}-${r.away_score??'—'}</td>
+     <td>${r.flytime_score?.toFixed?.(1)??'—'}</td>
+     <td>${r.had_yellow_fly?'✓':''}</td><td>${r.had_live_flytime?'✓':''}</td>
+     <td>${r.had_blue_fly?'✓':''}</td><td>${r.had_red_fly?'✓':''}</td>
+     <td class="g">${r.is_hit?'✓':''}</td><td class="r">${r.is_false_alarm?'✓':''}</td>
+     <td class="y">${r.is_miss?'✓':''}</td></tr>`
+  ).join('') || '<tr><td colspan=12 class="empty">No matches match filters</td></tr>';
+
+  const cmp = await fetch('/api/formulas/compare' + ($('fLeague').value ? '?league='+encodeURIComponent($('fLeague').value) : '')).then(r=>r.json());
+  $('formulaCompare').innerHTML = cmp.length ? `<table><tr><th>Formula</th><th>Total</th><th>Hits</th><th>FP</th><th>FN</th><th>Avg Score</th></tr>
+    ${cmp.map(f=>`<tr><td>${f.formula_version}</td><td>${f.total}</td><td class="g">${f.hits}</td>
+     <td class="r">${f.false_positives}</td><td class="y">${f.false_negatives}</td><td>${f.avg_score??'—'}</td></tr>`).join('')}
+    </table>` : '<div class="empty">No comparison data</div>';
+}
+
+function exportCSV() {
+  window.location.href = '/api/export?' + new URLSearchParams({
+    league: $('fLeague').value, sport: $('fSport').value,
+    status: $('fStatus').value, had_yellow: $('fYellow').value,
+    had_green: $('fGreen').value, formula: $('fFormula').value,
+  }).toString();
+}
+
+async function refresh() {
+  const active = document.querySelector('.tab.active')?.dataset.tab;
+  if (active === 'live') await loadLive();
+  else if (active === 'analytics') await loadAnalytics();
+}
+
+loadLive();
+loadFilters();
+runResearch();
+setInterval(refresh, 15000);
+</script>
+</body>
+</html>

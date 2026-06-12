@@ -1,0 +1,16 @@
+# Oracle Cloud deployment — bind-mount data dir for easy DB upload via SCP
+services:
+  fly-intelligence:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8787:8787"
+    volumes:
+      - /data/flytime:/data
+    environment:
+      - FLYTIME_DB_PATH=/data/flytime_engine.db
+      - HOST=0.0.0.0
+      - PORT=8787
+      - FEATURE_EXPORT_DIR=/data/exports
+    restart: unless-stopped

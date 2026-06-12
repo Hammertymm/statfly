@@ -10,6 +10,7 @@ from .config import (
     LEAGUES,
     POLL_FAST_SEC,
     POLL_FLYTIME_SEC,
+    POLL_FULL_SWEEP_EVERY,
     POLL_IDLE_SEC,
     LeagueConfig,
     get_season_windows,
@@ -237,6 +238,19 @@ class MatchCollector:
                 """INSERT INTO fly_events (match_id, fly_type, activated_at, flytime_score,
                    threshold, formula_version) VALUES (?, 'yellow', ?, ?, ?, ?)""",
                 (match_id, utcnow(), ft_result.score, ft_result.threshold, ft_result.formula_version),
+            )
+
+        # Green fly exit
+        if was_green and not is_green and m.status == "live":
+            self.db.log_event(
+                conn, match_id=match_id, event_type="green_fly_exit",
+                match_state="live", home_score=m.home_score, away_score=m.away_score,
+                period=m.period, clock_raw=m.clock_raw,
+            )
+            conn.execute(
+                """UPDATE fly_events SET deactivated_at=?
+                   WHERE match_id=? AND fly_type='green' AND deactivated_at IS NULL""",
+                (utcnow(), match_id),
             )
 
         # Green fly (live FlyTime)

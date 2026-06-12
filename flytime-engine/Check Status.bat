@@ -9,9 +9,9 @@ echo  ============================================
 echo.
 
 if exist "data\monitor.pid" (
-    echo  Monitor: RUNNING
+    echo  Platform: RUNNING  ^(PID in data\monitor.pid^)
 ) else (
-    echo  Monitor: NOT RUNNING  ^(double-click Start FlyTime.bat^)
+    echo  Platform: NOT RUNNING  ^(double-click Start FlyTime.bat^)
 )
 echo.
 

@@ -3,25 +3,27 @@ title FlyTime - Stopping...
 cd /d "%~dp0"
 
 echo.
-echo  Stopping FlyTime...
+echo  Local Fly Intelligence Platform is disabled.
+echo  It runs on Oracle Cloud — see oracle-cloud\README.md
+echo.
+echo  Cleaning up any leftover local processes...
 echo.
 
-REM Stop via saved process ID (cleanest method)
 if exist "data\monitor.pid" (
     for /f %%i in (data\monitor.pid) do (
         taskkill /PID %%i /F >nul 2>&1
-        if not errorlevel 1 echo  Monitor stopped.
     )
     del "data\monitor.pid" >nul 2>&1
-) else (
-    echo  No monitor PID file found - may already be stopped.
 )
 
-REM Close the named background windows if still open
+for /f "tokens=5" %%p in ('netstat -ano ^| findstr ":8787.*LISTENING"') do (
+    taskkill /PID %%p /F >nul 2>&1
+)
+
+taskkill /FI "WINDOWTITLE eq FlyTime Platform*" /F >nul 2>&1
 taskkill /FI "WINDOWTITLE eq FlyTime Monitor*" /F >nul 2>&1
 taskkill /FI "WINDOWTITLE eq FlyTime Dashboard*" /F >nul 2>&1
 
-echo.
-echo  FlyTime stopped. You can close this window.
+echo  Done.
 echo.
 pause

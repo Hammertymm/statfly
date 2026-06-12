@@ -1,6 +1,26 @@
-# FlyTime Data Engine
+# FlyTime Data Engine — Fly Intelligence Platform
 
-Standalone background service for continuous match data collection, threshold learning, Blue Fly analysis, and formula testing across all ScoreFly leagues.
+Standalone background service for **24/7 cloud match monitoring**, threshold learning, Blue Fly analysis, and formula testing across all ScoreFly leagues.
+
+## Fly Intelligence Platform (cloud)
+
+Run collector + dashboard + nightly analysis in one process:
+
+```bash
+cd scorefly/flytime-engine
+python main.py init
+python run_platform.py
+# → http://localhost:8787
+```
+
+Or with Docker (see [CLOUD-DEPLOY.md](./CLOUD-DEPLOY.md)):
+
+```bash
+cd scorefly
+docker compose up -d
+```
+
+## Quick Start (local)
 
 This engine is the **single source of truth** for FlyTime intelligence. The main ScoreFly PWA can eventually consume threshold recommendations from this service via its JSON API.
 
@@ -57,6 +77,7 @@ dashboard.py / main.py report
 | `backfill` | Import historical ESPN match data (incremental, no duplicates) |
 | `collect` | Single live poll cycle |
 | `serve` | Always-on collection service (12s/8s/60s adaptive polling) |
+| `platform` | Fly Intelligence Platform — collector + dashboard + nightly jobs |
 | `analyze` | Run threshold + formula evaluation |
 | `report` | Print analytics summary (`--export report.json`) |
 | `blue-fly` | Blue Fly behaviour analysis |
@@ -104,9 +125,16 @@ Mirrors `scorefly/index.html`:
 
 | Endpoint | Data |
 |----------|------|
-| `GET /` | HTML dashboard |
+| `GET /` | Fly Intelligence Platform HTML dashboard |
 | `GET /api/report` | Full analytics JSON |
 | `GET /api/health` | Service health |
+| `GET /api/live` | Live/upcoming matches with FlyScore |
+| `GET /api/flytime` | Matches currently in FlyTime |
+| `GET /api/events` | Recent fly triggers |
+| `GET /api/intelligence` | Accuracy, false positives/negatives, insights |
+| `GET /api/recommendations` | Per-league threshold recommendations |
+| `GET /api/research` | Filterable historical data |
+| `GET /api/export` | CSV download |
 | `GET /api/leagues` | League overview |
 | `GET /api/blue-fly` | Blue fly analysis |
 | `GET /api/formulas` | Formula rankings |
@@ -140,7 +168,9 @@ WantedBy=multi-user.target
 
 ## Integration with ScoreFly PWA
 
-Future: expose `GET /api/recommendations` for the PWA to fetch per-league thresholds. Today, thresholds are still in `index.html` `FLY_V1_REGISTRY` — apply engine recommendations manually or via a sync script.
+Fetch `GET /api/recommendations` from your cloud platform for per-league thresholds. Today, thresholds are still in `index.html` `FLY_V1_REGISTRY` — apply engine recommendations manually or via a sync script.
+
+See [CLOUD-DEPLOY.md](./CLOUD-DEPLOY.md) for full deployment guide.
 
 ## Notes
 

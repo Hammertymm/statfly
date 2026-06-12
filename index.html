@@ -551,16 +551,12 @@
     color: #4ade80;
     z-index: 4;
   }
-  /* Period colour coding from blueprint */
-  .flymode-status.period-q1,
-  .flymode-status.period-q4,
-  .flymode-status.period-active { color: #4ade80; border-color: #4ade80; }
-  .flymode-status.period-q3 { color: var(--onrun); border-color: var(--onrun); }
-  .flymode-status.period-q2,
-  .flymode-status.period-ht { color: var(--result); border-color: var(--result); }
+  /* Pill colour: green = live, orange = break, red = OT/extra time, grey = FT */
+  .flymode-status.period-live { color: #4ade80; border-color: #4ade80; }
+  .flymode-status.period-break { color: var(--onrun); border-color: var(--onrun); }
+  .flymode-status.period-ot,
+  .flymode-status.ot { color: var(--result); border-color: var(--result); }
   .flymode-status.period-ft { color: rgba(255,255,255,0.45); border-color: rgba(255,255,255,0.22); background: rgba(255,255,255,0.04); }
-  .flymode-status.ot      { color: var(--result); border-color: var(--result); }
-  .flymode-status.flytime { color: var(--live);   border-color: var(--live); }
 
   .flymode-inner[data-count="4"] .fm-markers,
   .flymode-inner[data-count="5"] .fm-markers,
@@ -1588,6 +1584,8 @@ function mapEspnEvent(event, feed) {
       clockSec: clockToSec(comp?.status?.displayClock),
       clockRaw: comp?.status?.displayClock || '',
       isOT:     detectOT(feed, comp),
+      statusName: comp?.status?.type?.name || '',
+      statusDetail: (comp?.status?.type?.shortDetail || '').toLowerCase(),
     };
     if (feed.sport === 'cricket') Object.assign(live, cricketChaseFields(comp));
     return live;
@@ -3889,17 +3887,39 @@ function abbrev(name) {
 
 const FLYMODE_MAX = 8;
 
-function flyModePeriodClass(timer, statusCls) {
-  if (statusCls.indexOf('ot') >= 0) return ' period-ot';
-  if (statusCls.indexOf('flytime') >= 0) return ' period-flytime';
-  const t = (timer || '').trim().toUpperCase();
-  if (t === 'FT' || t.indexOf('FT') === 0) return ' period-ft';
-  if (t === 'HT') return ' period-ht';
-  if (/\bQ1\b/.test(t) || /\bP1\b/.test(t) || /\bH1\b/.test(t) || /\bTOP 1\b/.test(t) || /\bBTM 1\b/.test(t) || /\bINN 1\b/.test(t)) return ' period-q1';
-  if (/\bQ2\b/.test(t) || /\bP2\b/.test(t)) return ' period-q2';
-  if (/\bQ3\b/.test(t) || /\bP3\b/.test(t)) return ' period-q3';
-  if (/\bQ4\b/.test(t) || /\bP4\b/.test(t) || /\bH2\b/.test(t) || /\bOT\b/.test(t)) return ' period-q4';
-  return ' period-active';
+function flyModePillClass(m, statusCls) {
+  const timer = (m.timer || '').trim();
+  const t = timer.toUpperCase();
+  const detail = (m.statusDetail || '').toLowerCase();
+  const statusName = m.statusName || '';
+
+  if (t === 'FT' || t.indexOf('FT') === 0 || statusName === 'STATUS_FINAL') return ' period-ft';
+
+  if (statusCls.indexOf(' ot') >= 0 || m.isOT || /\bOT\b/.test(t) || /\bET\b/.test(t)
+      || detail.indexOf('overtime') >= 0 || detail.indexOf('extra time') >= 0
+      || (detail.indexOf('extra') >= 0 && m.sportKey === 'soccer')
+      || detail.indexOf('shootout') >= 0 || detail.indexOf('penalt') >= 0) {
+    return ' period-ot';
+  }
+
+  if (t === 'HT' || statusName === 'STATUS_HALFTIME'
+      || /\bQT\b/.test(t) || /\b3QT\b/.test(t)
+      || statusName === 'STATUS_END_PERIOD'
+      || detail.indexOf('halftime') >= 0 || detail.indexOf('half time') >= 0
+      || detail.indexOf('quarter time') >= 0 || detail.indexOf('end of') >= 0
+      || detail.indexOf('intermission') >= 0
+      || detail.indexOf('end ') === 0) {
+    return ' period-break';
+  }
+
+  // Period label with no running clock = between-quarters break (field sports only).
+  const clockRunning = m.clockRaw && m.clockRaw !== '0:00' && (m.clockSec || 0) > 0;
+  if (m.sportKey !== 'soccer' && m.sportKey !== 'cricket'
+      && !clockRunning && /^(Q[1-4]|P[1-3]|H[12])\b/i.test(timer)) {
+    return ' period-break';
+  }
+
+  return ' period-live';
 }
 
 function buildFlyModeGrid() {
@@ -3938,7 +3958,7 @@ function buildFlyModeGrid() {
     const badge = (m.timer || '').trim();
     const mf = getMatchFly(m.id); // '' | 'flytime' | 'overtime'
     const statusCls = mf === 'overtime' ? ' ot' : (mf === 'flytime' ? ' flytime' : '');
-    const periodCls = flyModePeriodClass(badge, statusCls);
+    const periodCls = flyModePillClass(m, statusCls);
     const hCls = getFlyClass(m.id, 'home');
     const aCls = getFlyClass(m.id, 'away');
     const homeCode = m.homeShort || abbrev(m.home);

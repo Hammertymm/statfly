@@ -26,6 +26,29 @@
       "localLogo2x": "assets/logos/adelaide-united-a-league@2x.png"
     },
     {
+      "teamId": "auckland-fc-a-league",
+      "favKey": "Auckland FC|A-League",
+      "names": [
+        "Auckland FC"
+      ],
+      "league": "A-League",
+      "espnIds": [
+        "22344"
+      ],
+      "logoUrl": "https://a.espncdn.com/i/teamlogos/soccer/500/22344.png",
+      "haloColor": "#483828",
+      "haloStrength": 0.25,
+      "needsContrastLift": true,
+      "dominantColor": "#483828",
+      "secondaryColor": "#282818",
+      "logoScale": 0.9,
+      "needsContrastClamp": false,
+      "whiteLogo": false,
+      "nearBlack": true,
+      "localLogo": "assets/logos/auckland-fc-a-league.png",
+      "localLogo2x": "assets/logos/auckland-fc-a-league@2x.png"
+    },
+    {
       "teamId": "brisbane-roar-a-league",
       "favKey": "Brisbane Roar|A-League",
       "names": [
@@ -98,7 +121,8 @@
       "teamId": "melbourne-city-a-league",
       "favKey": "Melbourne City|A-League",
       "names": [
-        "Melbourne City"
+        "Melbourne City",
+        "Melbourne City FC"
       ],
       "league": "A-League",
       "espnIds": [
@@ -213,7 +237,8 @@
       "teamId": "wellington-phoenix-a-league",
       "favKey": "Wellington Phoenix|A-League",
       "names": [
-        "Wellington Phoenix"
+        "Wellington Phoenix",
+        "Wellington Phoenix FC"
       ],
       "league": "A-League",
       "espnIds": [
@@ -466,7 +491,8 @@
       "teamId": "greater-western-sydney-giants-afl",
       "favKey": "Greater Western Sydney Giants|AFL",
       "names": [
-        "Greater Western Sydney Giants"
+        "Greater Western Sydney Giants",
+        "GWS GIANTS"
       ],
       "league": "AFL",
       "espnIds": [
@@ -9388,7 +9414,8 @@
       "teamId": "new-york-red-bulls-mls",
       "favKey": "New York Red Bulls|MLS",
       "names": [
-        "New York Red Bulls"
+        "New York Red Bulls",
+        "Red Bull New York"
       ],
       "league": "MLS",
       "espnIds": [
@@ -9498,6 +9525,29 @@
       "nearBlack": false,
       "localLogo": "assets/logos/real-salt-lake-mls.png",
       "localLogo2x": "assets/logos/real-salt-lake-mls@2x.png"
+    },
+    {
+      "teamId": "san-diego-fc-mls",
+      "favKey": "San Diego FC|MLS",
+      "names": [
+        "San Diego FC"
+      ],
+      "league": "MLS",
+      "espnIds": [
+        "22529"
+      ],
+      "logoUrl": "https://a.espncdn.com/i/teamlogos/soccer/500/22529.png",
+      "haloColor": "#384858",
+      "haloStrength": 0.25,
+      "needsContrastLift": false,
+      "dominantColor": "#384858",
+      "secondaryColor": "#485858",
+      "logoScale": 0.9,
+      "needsContrastClamp": false,
+      "whiteLogo": false,
+      "nearBlack": false,
+      "localLogo": "assets/logos/san-diego-fc-mls.png",
+      "localLogo2x": "assets/logos/san-diego-fc-mls@2x.png"
     },
     {
       "teamId": "san-jose-earthquakes-mls",
@@ -9917,7 +9967,8 @@
       "teamId": "los-angeles-clippers-nba",
       "favKey": "Los Angeles Clippers|NBA",
       "names": [
-        "Los Angeles Clippers"
+        "Los Angeles Clippers",
+        "LA Clippers"
       ],
       "league": "NBA",
       "espnIds": [
@@ -11916,8 +11967,9 @@
     },
     {
       "teamId": "utah-hockey-club-nhl",
-      "favKey": "Utah Hockey Club|NHL",
+      "favKey": "Utah Mammoth|NHL",
       "names": [
+        "Utah Mammoth",
         "Utah Hockey Club"
       ],
       "league": "NHL",
@@ -18416,6 +18468,29 @@
       "localLogo2x": "assets/logos/phoenix-mercury-wnba@2x.png"
     },
     {
+      "teamId": "portland-fire-wnba",
+      "favKey": "Portland Fire|WNBA",
+      "names": [
+        "Portland Fire"
+      ],
+      "league": "WNBA",
+      "espnIds": [
+        "132052"
+      ],
+      "logoUrl": "https://a.espncdn.com/i/teamlogos/wnba/500/por.png",
+      "haloColor": "#E82898",
+      "haloStrength": 0.25,
+      "needsContrastLift": false,
+      "dominantColor": "#E82898",
+      "secondaryColor": "#F82898",
+      "logoScale": 0.9,
+      "needsContrastClamp": false,
+      "whiteLogo": false,
+      "nearBlack": false,
+      "localLogo": "assets/logos/portland-fire-wnba.png",
+      "localLogo2x": "assets/logos/portland-fire-wnba@2x.png"
+    },
+    {
       "teamId": "seattle-storm-wnba",
       "favKey": "Seattle Storm|WNBA",
       "names": [
@@ -18437,6 +18512,29 @@
       "nearBlack": false,
       "localLogo": "assets/logos/seattle-storm-wnba.png",
       "localLogo2x": "assets/logos/seattle-storm-wnba@2x.png"
+    },
+    {
+      "teamId": "toronto-tempo-wnba",
+      "favKey": "Toronto Tempo|WNBA",
+      "names": [
+        "Toronto Tempo"
+      ],
+      "league": "WNBA",
+      "espnIds": [
+        "131935"
+      ],
+      "logoUrl": "https://a.espncdn.com/i/teamlogos/wnba/500/tor.png",
+      "haloColor": "#481838",
+      "haloStrength": 0.25,
+      "needsContrastLift": true,
+      "dominantColor": "#481838",
+      "secondaryColor": "#482838",
+      "logoScale": 0.9,
+      "needsContrastClamp": false,
+      "whiteLogo": false,
+      "nearBlack": true,
+      "localLogo": "assets/logos/toronto-tempo-wnba.png",
+      "localLogo2x": "assets/logos/toronto-tempo-wnba@2x.png"
     },
     {
       "teamId": "washington-mystics-wnba",

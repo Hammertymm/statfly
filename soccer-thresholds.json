@@ -139,7 +139,7 @@
     "slug": "irl-1",
     "file": "soccer-irl-1-flytime-v1.json",
     "tag": "IRL",
-    "threshold": 80,
+    "threshold": 93,
     "games": 566,
     "teams": 14
   },

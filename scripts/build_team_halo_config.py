@@ -573,7 +573,7 @@ def render_gallery(teams: list[dict[str, Any]]) -> str:
       drop-shadow(0 0 1px rgba(255,255,255,var(--rim)));
   }}
   .team-logo-halo[data-contrast-lift]{{--logo-bright:1.1;--logo-contrast:1.12;--rim:0.12;--halo-strength:0.22;}}
-  .team-logo-halo[data-contrast-lift][data-near-black]{{--logo-bright:1.06;--logo-contrast:1.1;--rim:0.18;--halo-strength:0.28;}}
+  .team-logo-halo[data-contrast-lift][data-near-black]{{--logo-bright:1.24;--logo-contrast:1.16;--rim:0.22;--halo-strength:0.32;}}
   .team-logo-halo[data-contrast-clamp]{{--logo-bright:0.95;--logo-sat:1.02;--halo-strength:0.07;}}
   .team-logo-halo[data-white-logo]{{--logo-bright:0.93;--logo-sat:1.04;--rim:0;--halo-strength:0.12;}}
   .name{{font-size:11px;font-weight:600;line-height:1.25;margin-bottom:2px}}

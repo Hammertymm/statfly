@@ -152,7 +152,7 @@
   }
   /* Dark logos: lift luminance/contrast, add a hairline white rim, stronger glow */
   .team-logo-halo[data-contrast-lift]{--logo-bright:1.1;--logo-contrast:1.12;--rim:0.12;--halo-strength:0.22;}
-  .team-logo-halo[data-contrast-lift][data-near-black]{--logo-bright:1.06;--logo-contrast:1.1;--rim:0.18;--halo-strength:0.28;}
+  .team-logo-halo[data-contrast-lift][data-near-black]{--logo-bright:1.24;--logo-contrast:1.16;--rim:0.22;--halo-strength:0.32;}
   /* Bright/loud logos: clamp so they stop shouting next to thin marks */
   .team-logo-halo[data-contrast-clamp]{--logo-bright:0.95;--logo-sat:1.02;--halo-strength:0.07;}
   /* White-primary logos: gentle dim, team-colour glow, never a white rim */
@@ -3351,7 +3351,7 @@ const TEAMS={
   'AFL':           ['Adelaide Crows','Brisbane Lions','Carlton Blues','Collingwood Magpies','Essendon Bombers','Fremantle Dockers','Geelong Cats','Gold Coast Suns','Greater Western Sydney Giants','Hawthorn Hawks','Melbourne Demons','North Melbourne Kangaroos','Port Adelaide Power','Richmond Tigers','St Kilda Saints','Sydney Swans','West Coast Eagles','Western Bulldogs'],
   'NRL':           ['Brisbane Broncos','Canberra Raiders','Canterbury Bulldogs','Cronulla Sharks','Dolphins','Gold Coast Titans','Manly Sea Eagles','Melbourne Storm','New Zealand Warriors','Newcastle Knights','North Queensland Cowboys','Parramatta Eels','Penrith Panthers','South Sydney Rabbitohs','St George Illawarra Dragons','Sydney Roosters','Wests Tigers'],
   'Big Bash League':['Adelaide Strikers','Brisbane Heat','Hobart Hurricanes','Melbourne Renegades','Melbourne Stars','Perth Scorchers','Sydney Sixers','Sydney Thunder'],
-  'A-League':      ['Adelaide United','Brisbane Roar','Central Coast Mariners','Macarthur FC','Melbourne City','Melbourne Victory','Newcastle Jets','Perth Glory','Sydney FC','Wellington Phoenix','Western Sydney Wanderers','Western United'],
+  'A-League':      ['Adelaide United','Auckland FC','Brisbane Roar','Central Coast Mariners','Macarthur FC','Melbourne City','Melbourne Victory','Newcastle Jets','Perth Glory','Sydney FC','Wellington Phoenix','Western Sydney Wanderers','Western United'],
   'NBL':           ['Adelaide 36ers','Brisbane Bullets','Cairns Taipans','Illawarra Hawks','Melbourne United','New Zealand Breakers','Perth Wildcats','South East Melbourne Phoenix','Sydney Kings','Tasmania JackJumpers'],
   // India
   'Indian Premier League':['Chennai Super Kings','Delhi Capitals','Gujarat Titans','Kolkata Knight Riders','Lucknow Super Giants','Mumbai Indians','Punjab Kings','Rajasthan Royals','Royal Challengers Bengaluru','Sunrisers Hyderabad'],
@@ -3359,10 +3359,10 @@ const TEAMS={
   // USA
   'NFL':           ['Arizona Cardinals','Atlanta Falcons','Baltimore Ravens','Buffalo Bills','Carolina Panthers','Chicago Bears','Cincinnati Bengals','Cleveland Browns','Dallas Cowboys','Denver Broncos','Detroit Lions','Green Bay Packers','Houston Texans','Indianapolis Colts','Jacksonville Jaguars','Kansas City Chiefs','Las Vegas Raiders','Los Angeles Chargers','Los Angeles Rams','Miami Dolphins','Minnesota Vikings','New England Patriots','New Orleans Saints','New York Giants','New York Jets','Philadelphia Eagles','Pittsburgh Steelers','San Francisco 49ers','Seattle Seahawks','Tampa Bay Buccaneers','Tennessee Titans','Washington Commanders'],
   'NBA':           ['Atlanta Hawks','Boston Celtics','Brooklyn Nets','Charlotte Hornets','Chicago Bulls','Cleveland Cavaliers','Dallas Mavericks','Denver Nuggets','Detroit Pistons','Golden State Warriors','Houston Rockets','Indiana Pacers','Los Angeles Clippers','Los Angeles Lakers','Memphis Grizzlies','Miami Heat','Milwaukee Bucks','Minnesota Timberwolves','New Orleans Pelicans','New York Knicks','Oklahoma City Thunder','Orlando Magic','Philadelphia 76ers','Phoenix Suns','Portland Trail Blazers','Sacramento Kings','San Antonio Spurs','Toronto Raptors','Utah Jazz','Washington Wizards'],
-  'WNBA':          ['Atlanta Dream','Chicago Sky','Connecticut Sun','Dallas Wings','Golden State Valkyries','Indiana Fever','Las Vegas Aces','Los Angeles Sparks','Minnesota Lynx','New York Liberty','Phoenix Mercury','Seattle Storm','Washington Mystics'],
+  'WNBA':          ['Atlanta Dream','Chicago Sky','Connecticut Sun','Dallas Wings','Golden State Valkyries','Indiana Fever','Las Vegas Aces','Los Angeles Sparks','Minnesota Lynx','New York Liberty','Phoenix Mercury','Portland Fire','Seattle Storm','Toronto Tempo','Washington Mystics'],
   'MLB':           ['Arizona Diamondbacks','Atlanta Braves','Baltimore Orioles','Boston Red Sox','Chicago Cubs','Chicago White Sox','Cincinnati Reds','Cleveland Guardians','Colorado Rockies','Detroit Tigers','Houston Astros','Kansas City Royals','Los Angeles Angels','Los Angeles Dodgers','Miami Marlins','Milwaukee Brewers','Minnesota Twins','New York Mets','New York Yankees','Oakland Athletics','Philadelphia Phillies','Pittsburgh Pirates','San Diego Padres','San Francisco Giants','Seattle Mariners','St. Louis Cardinals','Tampa Bay Rays','Texas Rangers','Toronto Blue Jays','Washington Nationals'],
-  'NHL':           ['Anaheim Ducks','Boston Bruins','Buffalo Sabres','Calgary Flames','Carolina Hurricanes','Chicago Blackhawks','Colorado Avalanche','Columbus Blue Jackets','Dallas Stars','Detroit Red Wings','Edmonton Oilers','Florida Panthers','Los Angeles Kings','Minnesota Wild','Montreal Canadiens','Nashville Predators','New Jersey Devils','New York Islanders','New York Rangers','Ottawa Senators','Philadelphia Flyers','Pittsburgh Penguins','San Jose Sharks','Seattle Kraken','St. Louis Blues','Tampa Bay Lightning','Toronto Maple Leafs','Utah Hockey Club','Vancouver Canucks','Vegas Golden Knights','Washington Capitals','Winnipeg Jets'],
-  'MLS':           ['Atlanta United','Austin FC','Charlotte FC','Chicago Fire','Colorado Rapids','Columbus Crew','D.C. United','FC Cincinnati','FC Dallas','Houston Dynamo','Inter Miami','LA Galaxy','LAFC','Minnesota United','Nashville SC','New England Revolution','New York City FC','New York Red Bulls','Orlando City','Philadelphia Union','Portland Timbers','Real Salt Lake','San Jose Earthquakes','Seattle Sounders','Sporting Kansas City','St. Louis City SC','Toronto FC','Vancouver Whitecaps'],
+  'NHL':           ['Anaheim Ducks','Boston Bruins','Buffalo Sabres','Calgary Flames','Carolina Hurricanes','Chicago Blackhawks','Colorado Avalanche','Columbus Blue Jackets','Dallas Stars','Detroit Red Wings','Edmonton Oilers','Florida Panthers','Los Angeles Kings','Minnesota Wild','Montreal Canadiens','Nashville Predators','New Jersey Devils','New York Islanders','New York Rangers','Ottawa Senators','Philadelphia Flyers','Pittsburgh Penguins','San Jose Sharks','Seattle Kraken','St. Louis Blues','Tampa Bay Lightning','Toronto Maple Leafs','Utah Mammoth','Vancouver Canucks','Vegas Golden Knights','Washington Capitals','Winnipeg Jets'],
+  'MLS':           ['Atlanta United','Austin FC','Charlotte FC','Chicago Fire','Colorado Rapids','Columbus Crew','D.C. United','FC Cincinnati','FC Dallas','Houston Dynamo','Inter Miami','LA Galaxy','LAFC','Minnesota United','Nashville SC','New England Revolution','New York City FC','New York Red Bulls','Orlando City','Philadelphia Union','Portland Timbers','Real Salt Lake','San Diego FC','San Jose Earthquakes','Seattle Sounders','Sporting Kansas City','St. Louis City SC','Toronto FC','Vancouver Whitecaps'],
   'CFL':           ['BC Lions','Calgary Stampeders','Edmonton Elks','Hamilton Tiger-Cats','Montreal Alouettes','Ottawa Redblacks','Saskatchewan Roughriders','Toronto Argonauts','Winnipeg Blue Bombers'],
   // Global
   'UEFA Champions League':['AC Milan','Arsenal','Atletico Madrid','Barcelona','Bayern Munich','Benfica','Borussia Dortmund','Chelsea','Inter Milan','Liverpool','Manchester City','Napoli','Paris Saint-Germain','Porto','RB Leipzig','Real Madrid'],
@@ -3481,6 +3481,9 @@ function indexTeamHaloConfig(data) {
     }
     (entry.names || []).forEach(function(name) {
       TEAM_HALO_INDEX.byName[String(name).toLowerCase()] = entry;
+      if (entry.league) {
+        TEAM_HALO_INDEX.byFavKey[(name + '|' + entry.league).toLowerCase()] = entry;
+      }
     });
     (entry.espnIds || []).forEach(function(id) {
       TEAM_HALO_INDEX.byEspnId[String(id)] = entry;
@@ -3870,6 +3873,20 @@ function setResultsFilter(mode) {
   renderResults();
 }
 
+function favMatchNames() {
+  const names = [];
+  favs.forEach(function(fav) {
+    names.push(fav.name.toLowerCase());
+    const cfg = TEAM_HALO_INDEX.byFavKey[String(fav.key).toLowerCase()];
+    if (cfg && cfg.names) {
+      cfg.names.forEach(function(n) {
+        names.push(String(n).toLowerCase());
+      });
+    }
+  });
+  return names;
+}
+
 function teamMatch(m, favNames) {
   // Try exact match first, then partial contains match
   const h = m.home.toLowerCase();
@@ -3882,7 +3899,7 @@ function teamMatch(m, favNames) {
 }
 
 function renderHome(){
-  const favNames=favs.map(f=>f.name.toLowerCase());
+  const favNames=favMatchNames();
   const noFavs=favNames.length===0;
   const useMyTeams = feedFilter === 'my' && !noFavs;
   function mf(m){ return !useMyTeams || teamMatch(m, favNames); }
@@ -3918,7 +3935,7 @@ function renderHome(){
 
 function renderResults(){
   try{
-    const favNames=favs.map(f=>f.name.toLowerCase());
+    const favNames=favMatchNames();
     const noFavs=favNames.length===0;
     const useMyTeams = resultsFilter === 'my' && !noFavs;
     const resMaxMs = (useMyTeams ? WIN_MINE_BACK : WIN_ALL_BACK) * 24*60*60*1000;
@@ -4093,7 +4110,7 @@ function flyModePillClass(m, statusCls) {
 }
 
 function buildFlyModeGrid() {
-  const favNames = favs.map(f=>f.name.toLowerCase());
+  const favNames = favMatchNames();
   const noFavs   = favNames.length === 0;
   // Filter live matches to My Teams (or all if no favs set)
   let live = ALL_LIVE.filter(m => {
@@ -4203,6 +4220,19 @@ function setFlyModeBrightness(val) {
   bumpBrightnessControl();
 }
 
+// ESPN / broadcast display names that differ from the curated TEAMS roster string.
+// Each alias resolves to the same favKey as the canonical TEAMS entry.
+const TEAM_EXTRA_SEARCH_NAMES = {
+  'Los Angeles Clippers|NBA': ['LA Clippers'],
+  'New York Red Bulls|MLS': ['Red Bull New York'],
+  'Greater Western Sydney Giants|AFL': ['GWS GIANTS'],
+  'Utah Mammoth|NHL': ['Utah Hockey Club'],
+  'Melbourne City|A-League': ['Melbourne City FC'],
+  'Wellington Phoenix|A-League': ['Wellington Phoenix FC'],
+  'Oakland Athletics|MLB': ['Athletics'],
+  'Ottawa Redblacks|CFL': ['Ottawa Red Blacks'],
+};
+
 // - GLOBAL SEARCH (My Teams page) -
 // Build a flat searchable index from all LEAGUES + TEAMS
 function buildSearchIndex() {
@@ -4221,16 +4251,20 @@ function buildSearchIndex() {
       });
       // add every team in the league
       (TEAMS[league.n] || []).forEach(team => {
-        index.push({
+        const favKey = `${team}|${league.n}`;
+        const base = {
           type: 'team',
           country, flag,
-          name: team,
           league: league.n,
           emoji: league.e,
           meta: `${sportImg(league.e,14)} ${league.n} &middot; ${flag} ${country}`,
-          favKey: `${team}|${league.n}`,
+          favKey,
           countryFlag: flag,
           leagueEmoji: league.e
+        };
+        index.push(Object.assign({ name: team }, base));
+        (TEAM_EXTRA_SEARCH_NAMES[favKey] || []).forEach(function(alias) {
+          index.push(Object.assign({ name: alias }, base));
         });
       });
     });
@@ -4584,7 +4618,7 @@ const FLY_V1_REGISTRY = {
   'soccer|arg.1':                           { file: 'soccer-arg-1-flytime-v1.json',     threshold: 98, tag: 'ARG' },
   'soccer|mex.1':                           { file: 'soccer-mex-1-flytime-v1.json',     threshold: 90, tag: 'MX' },
   'soccer|aus.1':                           { file: 'soccer-aus-1-flytime-v1.json',     threshold: 85, tag: 'ALE' },
-  'soccer|irl.1':                           { file: 'soccer-irl-1-flytime-v1.json',     threshold: 80, tag: 'IRL' },
+  'soccer|irl.1':                           { file: 'soccer-irl-1-flytime-v1.json',     threshold: 93, tag: 'IRL' },
   'soccer|ind.1':                           { file: 'soccer-ind-1-flytime-v1.json',     threshold: 85, tag: 'ISL' },
   'soccer|rsa.1':                           { file: 'soccer-rsa-1-flytime-v1.json',     threshold: 95, tag: 'PSL' },
   'soccer|eng.w.1':                         { file: 'soccer-eng-w-1-flytime-v1.json',   threshold: 78, tag: 'WSL' },

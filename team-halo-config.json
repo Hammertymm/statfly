@@ -90,7 +90,7 @@
       "logoScale": 0.91,
       "needsContrastClamp": false,
       "whiteLogo": false,
-      "nearBlack": false,
+      "nearBlack": true,
       "localLogo": "assets/logos/central-coast-mariners-a-league.png",
       "localLogo2x": "assets/logos/central-coast-mariners-a-league@2x.png"
     },
@@ -370,7 +370,8 @@
       "whiteLogo": false,
       "nearBlack": true,
       "localLogo": "assets/logos/carlton-blues-afl.png",
-      "localLogo2x": "assets/logos/carlton-blues-afl@2x.png"
+      "localLogo2x": "assets/logos/carlton-blues-afl@2x.png",
+      "deepDark": true
     },
     {
       "teamId": "collingwood-magpies-afl",
@@ -1312,9 +1313,10 @@
       "logoScale": 0.98,
       "needsContrastClamp": false,
       "whiteLogo": false,
-      "nearBlack": false,
+      "nearBlack": true,
       "localLogo": "assets/logos/botafogo-brasileirao.png",
-      "localLogo2x": "assets/logos/botafogo-brasileirao@2x.png"
+      "localLogo2x": "assets/logos/botafogo-brasileirao@2x.png",
+      "deepDark": true
     },
     {
       "teamId": "bragantino-brasileirao",
@@ -2715,7 +2717,7 @@
       "logoScale": 0.93,
       "needsContrastClamp": false,
       "whiteLogo": false,
-      "nearBlack": false,
+      "nearBlack": true,
       "localLogo": "assets/logos/qingdao-hainiu-chinese-super-league.png",
       "localLogo2x": "assets/logos/qingdao-hainiu-chinese-super-league@2x.png"
     },
@@ -4142,7 +4144,7 @@
       "logoScale": 0.98,
       "needsContrastClamp": false,
       "whiteLogo": false,
-      "nearBlack": false,
+      "nearBlack": true,
       "localLogo": "assets/logos/west-indies-icc-cricket-odi.png",
       "localLogo2x": "assets/logos/west-indies-icc-cricket-odi@2x.png"
     },
@@ -4394,7 +4396,7 @@
       "logoScale": 0.98,
       "needsContrastClamp": false,
       "whiteLogo": false,
-      "nearBlack": false,
+      "nearBlack": true,
       "localLogo": "assets/logos/west-indies-icc-cricket-t20.png",
       "localLogo2x": "assets/logos/west-indies-icc-cricket-t20@2x.png"
     },
@@ -4670,9 +4672,10 @@
       "logoScale": 0.97,
       "needsContrastClamp": false,
       "whiteLogo": false,
-      "nearBlack": false,
+      "nearBlack": true,
       "localLogo": "assets/logos/odisha-fc-isl-football.png",
-      "localLogo2x": "assets/logos/odisha-fc-isl-football@2x.png"
+      "localLogo2x": "assets/logos/odisha-fc-isl-football@2x.png",
+      "deepDark": true
     },
     {
       "teamId": "punjab-fc-isl-football",
@@ -4741,7 +4744,8 @@
       "whiteLogo": false,
       "nearBlack": true,
       "localLogo": "assets/logos/delhi-capitals-indian-premier-league.png",
-      "localLogo2x": "assets/logos/delhi-capitals-indian-premier-league@2x.png"
+      "localLogo2x": "assets/logos/delhi-capitals-indian-premier-league@2x.png",
+      "deepDark": true
     },
     {
       "teamId": "gujarat-titans-indian-premier-league",
@@ -4810,7 +4814,8 @@
       "whiteLogo": false,
       "nearBlack": true,
       "localLogo": "assets/logos/lucknow-super-giants-indian-premier-league.png",
-      "localLogo2x": "assets/logos/lucknow-super-giants-indian-premier-league@2x.png"
+      "localLogo2x": "assets/logos/lucknow-super-giants-indian-premier-league@2x.png",
+      "deepDark": true
     },
     {
       "teamId": "mumbai-indians-indian-premier-league",
@@ -7290,9 +7295,10 @@
       "logoScale": 0.98,
       "needsContrastClamp": false,
       "whiteLogo": false,
-      "nearBlack": false,
+      "nearBlack": true,
       "localLogo": "assets/logos/fc-juarez-liga-mx.png",
-      "localLogo2x": "assets/logos/fc-juarez-liga-mx@2x.png"
+      "localLogo2x": "assets/logos/fc-juarez-liga-mx@2x.png",
+      "deepDark": true
     },
     {
       "teamId": "guadalajara-liga-mx",
@@ -7476,7 +7482,8 @@
       "whiteLogo": false,
       "nearBlack": true,
       "localLogo": "assets/logos/pumas-unam-liga-mx.png",
-      "localLogo2x": "assets/logos/pumas-unam-liga-mx@2x.png"
+      "localLogo2x": "assets/logos/pumas-unam-liga-mx@2x.png",
+      "deepDark": true
     },
     {
       "teamId": "queretaro-liga-mx",
@@ -8394,7 +8401,7 @@
       "logoScale": 0.85,
       "needsContrastClamp": false,
       "whiteLogo": false,
-      "nearBlack": false,
+      "nearBlack": true,
       "localLogo": "assets/logos/baltimore-orioles-mlb.png",
       "localLogo2x": "assets/logos/baltimore-orioles-mlb@2x.png"
     },
@@ -8417,7 +8424,7 @@
       "logoScale": 0.91,
       "needsContrastClamp": false,
       "whiteLogo": false,
-      "nearBlack": false,
+      "nearBlack": true,
       "localLogo": "assets/logos/boston-red-sox-mlb.png",
       "localLogo2x": "assets/logos/boston-red-sox-mlb@2x.png"
     },
@@ -8509,7 +8516,7 @@
       "logoScale": 0.91,
       "needsContrastClamp": false,
       "whiteLogo": false,
-      "nearBlack": false,
+      "nearBlack": true,
       "localLogo": "assets/logos/cleveland-guardians-mlb.png",
       "localLogo2x": "assets/logos/cleveland-guardians-mlb@2x.png"
     },
@@ -8532,9 +8539,10 @@
       "logoScale": 1.06,
       "needsContrastClamp": false,
       "whiteLogo": false,
-      "nearBlack": false,
+      "nearBlack": true,
       "localLogo": "assets/logos/colorado-rockies-mlb.png",
-      "localLogo2x": "assets/logos/colorado-rockies-mlb@2x.png"
+      "localLogo2x": "assets/logos/colorado-rockies-mlb@2x.png",
+      "deepDark": true
     },
     {
       "teamId": "detroit-tigers-mlb",
@@ -8764,7 +8772,8 @@
       "whiteLogo": false,
       "nearBlack": true,
       "localLogo": "assets/logos/new-york-yankees-mlb.png",
-      "localLogo2x": "assets/logos/new-york-yankees-mlb@2x.png"
+      "localLogo2x": "assets/logos/new-york-yankees-mlb@2x.png",
+      "deepDark": true
     },
     {
       "teamId": "oakland-athletics-mlb",
@@ -8856,7 +8865,8 @@
       "whiteLogo": false,
       "nearBlack": true,
       "localLogo": "assets/logos/san-diego-padres-mlb.png",
-      "localLogo2x": "assets/logos/san-diego-padres-mlb@2x.png"
+      "localLogo2x": "assets/logos/san-diego-padres-mlb@2x.png",
+      "deepDark": true
     },
     {
       "teamId": "san-francisco-giants-mlb",
@@ -8946,7 +8956,7 @@
       "logoScale": 1.1,
       "needsContrastClamp": false,
       "whiteLogo": false,
-      "nearBlack": false,
+      "nearBlack": true,
       "localLogo": "assets/logos/tampa-bay-rays-mlb.png",
       "localLogo2x": "assets/logos/tampa-bay-rays-mlb@2x.png"
     },
@@ -9017,7 +9027,8 @@
       "whiteLogo": false,
       "nearBlack": true,
       "localLogo": "assets/logos/washington-nationals-mlb.png",
-      "localLogo2x": "assets/logos/washington-nationals-mlb@2x.png"
+      "localLogo2x": "assets/logos/washington-nationals-mlb@2x.png",
+      "deepDark": true
     },
     {
       "teamId": "atlanta-united-mls",
@@ -9268,9 +9279,10 @@
       "logoScale": 0.99,
       "needsContrastClamp": false,
       "whiteLogo": false,
-      "nearBlack": false,
+      "nearBlack": true,
       "localLogo": "assets/logos/inter-miami-mls.png",
-      "localLogo2x": "assets/logos/inter-miami-mls@2x.png"
+      "localLogo2x": "assets/logos/inter-miami-mls@2x.png",
+      "deepDark": true
     },
     {
       "teamId": "la-galaxy-mls",
@@ -9522,9 +9534,10 @@
       "logoScale": 0.94,
       "needsContrastClamp": false,
       "whiteLogo": false,
-      "nearBlack": false,
+      "nearBlack": true,
       "localLogo": "assets/logos/real-salt-lake-mls.png",
-      "localLogo2x": "assets/logos/real-salt-lake-mls@2x.png"
+      "localLogo2x": "assets/logos/real-salt-lake-mls@2x.png",
+      "deepDark": true
     },
     {
       "teamId": "san-diego-fc-mls",
@@ -9568,9 +9581,10 @@
       "logoScale": 0.9,
       "needsContrastClamp": false,
       "whiteLogo": false,
-      "nearBlack": false,
+      "nearBlack": true,
       "localLogo": "assets/logos/san-jose-earthquakes-mls.png",
-      "localLogo2x": "assets/logos/san-jose-earthquakes-mls@2x.png"
+      "localLogo2x": "assets/logos/san-jose-earthquakes-mls@2x.png",
+      "deepDark": true
     },
     {
       "teamId": "seattle-sounders-mls",
@@ -10098,7 +10112,7 @@
       "logoScale": 0.88,
       "needsContrastClamp": false,
       "whiteLogo": false,
-      "nearBlack": false,
+      "nearBlack": true,
       "localLogo": "assets/logos/minnesota-timberwolves-nba.png",
       "localLogo2x": "assets/logos/minnesota-timberwolves-nba@2x.png"
     },
@@ -10811,9 +10825,10 @@
       "logoScale": 1.18,
       "needsContrastClamp": false,
       "whiteLogo": false,
-      "nearBlack": false,
+      "nearBlack": true,
       "localLogo": "assets/logos/dallas-cowboys-nfl.png",
-      "localLogo2x": "assets/logos/dallas-cowboys-nfl@2x.png"
+      "localLogo2x": "assets/logos/dallas-cowboys-nfl@2x.png",
+      "deepDark": true
     },
     {
       "teamId": "denver-broncos-nfl",
@@ -11158,7 +11173,8 @@
       "whiteLogo": false,
       "nearBlack": true,
       "localLogo": "assets/logos/new-york-giants-nfl.png",
-      "localLogo2x": "assets/logos/new-york-giants-nfl@2x.png"
+      "localLogo2x": "assets/logos/new-york-giants-nfl@2x.png",
+      "deepDark": true
     },
     {
       "teamId": "new-york-jets-nfl",
@@ -11940,7 +11956,8 @@
       "whiteLogo": false,
       "nearBlack": true,
       "localLogo": "assets/logos/tampa-bay-lightning-nhl.png",
-      "localLogo2x": "assets/logos/tampa-bay-lightning-nhl@2x.png"
+      "localLogo2x": "assets/logos/tampa-bay-lightning-nhl@2x.png",
+      "deepDark": true
     },
     {
       "teamId": "toronto-maple-leafs-nhl",
@@ -11961,9 +11978,10 @@
       "logoScale": 1.06,
       "needsContrastClamp": false,
       "whiteLogo": false,
-      "nearBlack": false,
+      "nearBlack": true,
       "localLogo": "assets/logos/toronto-maple-leafs-nhl.png",
-      "localLogo2x": "assets/logos/toronto-maple-leafs-nhl@2x.png"
+      "localLogo2x": "assets/logos/toronto-maple-leafs-nhl@2x.png",
+      "deepDark": true
     },
     {
       "teamId": "utah-hockey-club-nhl",
@@ -12008,9 +12026,10 @@
       "logoScale": 1.03,
       "needsContrastClamp": false,
       "whiteLogo": false,
-      "nearBlack": false,
+      "nearBlack": true,
       "localLogo": "assets/logos/vancouver-canucks-nhl.png",
-      "localLogo2x": "assets/logos/vancouver-canucks-nhl@2x.png"
+      "localLogo2x": "assets/logos/vancouver-canucks-nhl@2x.png",
+      "deepDark": true
     },
     {
       "teamId": "vegas-golden-knights-nhl",
@@ -12056,7 +12075,8 @@
       "whiteLogo": false,
       "nearBlack": true,
       "localLogo": "assets/logos/washington-capitals-nhl.png",
-      "localLogo2x": "assets/logos/washington-capitals-nhl@2x.png"
+      "localLogo2x": "assets/logos/washington-capitals-nhl@2x.png",
+      "deepDark": true
     },
     {
       "teamId": "winnipeg-jets-nhl",
@@ -12376,9 +12396,10 @@
       "logoScale": 1.16,
       "needsContrastClamp": false,
       "whiteLogo": false,
-      "nearBlack": false,
+      "nearBlack": true,
       "localLogo": "assets/logos/penrith-panthers-nrl.png",
-      "localLogo2x": "assets/logos/penrith-panthers-nrl@2x.png"
+      "localLogo2x": "assets/logos/penrith-panthers-nrl@2x.png",
+      "deepDark": true
     },
     {
       "teamId": "south-sydney-rabbitohs-nrl",
@@ -12539,7 +12560,8 @@
       "whiteLogo": false,
       "nearBlack": true,
       "localLogo": "assets/logos/cape-town-spurs-psl-football.png",
-      "localLogo2x": "assets/logos/cape-town-spurs-psl-football@2x.png"
+      "localLogo2x": "assets/logos/cape-town-spurs-psl-football@2x.png",
+      "deepDark": true
     },
     {
       "teamId": "kaizer-chiefs-psl-football",
@@ -12951,7 +12973,7 @@
       "logoScale": 0.92,
       "needsContrastClamp": false,
       "whiteLogo": false,
-      "nearBlack": false,
+      "nearBlack": true,
       "localLogo": "assets/logos/burnley-premier-league.png",
       "localLogo2x": "assets/logos/burnley-premier-league@2x.png"
     },
@@ -13229,7 +13251,8 @@
       "whiteLogo": false,
       "nearBlack": true,
       "localLogo": "assets/logos/tottenham-hotspur-premier-league.png",
-      "localLogo2x": "assets/logos/tottenham-hotspur-premier-league@2x.png"
+      "localLogo2x": "assets/logos/tottenham-hotspur-premier-league@2x.png",
+      "deepDark": true
     },
     {
       "teamId": "west-ham-united-premier-league",
@@ -14839,7 +14862,8 @@
       "whiteLogo": false,
       "nearBlack": true,
       "localLogo": "assets/logos/juventus-serie-a.png",
-      "localLogo2x": "assets/logos/juventus-serie-a@2x.png"
+      "localLogo2x": "assets/logos/juventus-serie-a@2x.png",
+      "deepDark": true
     },
     {
       "teamId": "lazio-serie-a",
@@ -14883,9 +14907,10 @@
       "logoScale": 1.02,
       "needsContrastClamp": false,
       "whiteLogo": false,
-      "nearBlack": false,
+      "nearBlack": true,
       "localLogo": "assets/logos/lecce-serie-a.png",
-      "localLogo2x": "assets/logos/lecce-serie-a@2x.png"
+      "localLogo2x": "assets/logos/lecce-serie-a@2x.png",
+      "deepDark": true
     },
     {
       "teamId": "monza-serie-a",
@@ -15044,7 +15069,7 @@
       "logoScale": 0.94,
       "needsContrastClamp": false,
       "whiteLogo": false,
-      "nearBlack": false,
+      "nearBlack": true,
       "localLogo": "assets/logos/udinese-serie-a.png",
       "localLogo2x": "assets/logos/udinese-serie-a@2x.png"
     },
@@ -15818,7 +15843,7 @@
       "logoScale": 0.98,
       "needsContrastClamp": false,
       "whiteLogo": false,
-      "nearBlack": false,
+      "nearBlack": true,
       "localLogo": "assets/logos/crusaders-super-rugby-pacific.png",
       "localLogo2x": "assets/logos/crusaders-super-rugby-pacific@2x.png"
     },
@@ -15841,7 +15866,7 @@
       "logoScale": 0.98,
       "needsContrastClamp": false,
       "whiteLogo": false,
-      "nearBlack": false,
+      "nearBlack": true,
       "localLogo": "assets/logos/crusaders-super-rugby-pacific.png",
       "localLogo2x": "assets/logos/crusaders-super-rugby-pacific@2x.png"
     },
@@ -16370,7 +16395,7 @@
       "logoScale": 0.98,
       "needsContrastClamp": false,
       "whiteLogo": false,
-      "nearBlack": false,
+      "nearBlack": true,
       "localLogo": "assets/logos/servette-swiss-super-league.png",
       "localLogo2x": "assets/logos/servette-swiss-super-league@2x.png"
     },
@@ -16692,7 +16717,7 @@
       "logoScale": 1.12,
       "needsContrastClamp": false,
       "whiteLogo": false,
-      "nearBlack": false,
+      "nearBlack": true,
       "localLogo": "assets/logos/hatayspor-super-lig.png",
       "localLogo2x": "assets/logos/hatayspor-super-lig@2x.png"
     },
@@ -17980,9 +18005,10 @@
       "logoScale": 0.93,
       "needsContrastClamp": false,
       "whiteLogo": false,
-      "nearBlack": false,
+      "nearBlack": true,
       "localLogo": "assets/logos/edinburgh-united-rugby-championship.png",
-      "localLogo2x": "assets/logos/edinburgh-united-rugby-championship@2x.png"
+      "localLogo2x": "assets/logos/edinburgh-united-rugby-championship@2x.png",
+      "deepDark": true
     },
     {
       "teamId": "glasgow-warriors-united-rugby-championship",
@@ -18141,9 +18167,10 @@
       "logoScale": 0.85,
       "needsContrastClamp": false,
       "whiteLogo": false,
-      "nearBlack": false,
+      "nearBlack": true,
       "localLogo": "assets/logos/sharks-united-rugby-championship.png",
-      "localLogo2x": "assets/logos/sharks-united-rugby-championship@2x.png"
+      "localLogo2x": "assets/logos/sharks-united-rugby-championship@2x.png",
+      "deepDark": true
     },
     {
       "teamId": "stormers-united-rugby-championship",
@@ -18785,9 +18812,10 @@
       "logoScale": 1.18,
       "needsContrastClamp": false,
       "whiteLogo": false,
-      "nearBlack": false,
+      "nearBlack": true,
       "localLogo": "assets/logos/tottenham-women-women-s-super-league.png",
-      "localLogo2x": "assets/logos/tottenham-women-women-s-super-league@2x.png"
+      "localLogo2x": "assets/logos/tottenham-women-women-s-super-league@2x.png",
+      "deepDark": true
     },
     {
       "teamId": "west-ham-women-women-s-super-league",

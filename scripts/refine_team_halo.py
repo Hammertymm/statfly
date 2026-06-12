@@ -145,7 +145,15 @@ def apply_meta(team: dict, meta: dict | None, scale: float | None) -> dict:
     team["needsContrastLift"] = bool(meta.get("needsContrastLift"))
     team["needsContrastClamp"] = bool(meta.get("needsContrastClamp"))
     team["whiteLogo"] = bool(meta.get("whiteLogo"))
-    team["nearBlack"] = bool(meta.get("nearBlack"))
+    dom_lum = hex_lum(team.get("dominantColor"))
+    sec_lum = hex_lum(team.get("secondaryColor"))
+    darkest = min(dom_lum, sec_lum)
+    near_black = bool(meta.get("nearBlack") or darkest < 0.15)
+    team["nearBlack"] = near_black
+    if near_black and (meta.get("deepDark") or darkest < 0.12):
+        team["deepDark"] = True
+    else:
+        team.pop("deepDark", None)
     if scale is not None:
         team["logoScale"] = scale
     return team

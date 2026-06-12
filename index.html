@@ -151,8 +151,9 @@
       drop-shadow(0 0 1px rgba(255,255,255,var(--rim)));
   }
   /* Dark logos: lift luminance/contrast, add a hairline white rim, stronger glow */
-  .team-logo-halo[data-contrast-lift]{--logo-bright:1.1;--logo-contrast:1.12;--rim:0.12;--halo-strength:0.22;}
-  .team-logo-halo[data-contrast-lift][data-near-black]{--logo-bright:1.24;--logo-contrast:1.16;--rim:0.22;--halo-strength:0.32;}
+  .team-logo-halo[data-contrast-lift]{--logo-bright:1.12;--logo-contrast:1.13;--rim:0.14;--halo-strength:0.24;}
+  .team-logo-halo[data-contrast-lift][data-near-black]{--logo-bright:1.36;--logo-contrast:1.18;--rim:0.26;--halo-strength:0.34;}
+  .team-logo-halo[data-contrast-lift][data-near-black][data-deep-dark]{--logo-bright:1.62;--logo-contrast:1.24;--rim:0.34;--halo-strength:0.40;--logo-sat:1.08;}
   /* Bright/loud logos: clamp so they stop shouting next to thin marks */
   .team-logo-halo[data-contrast-clamp]{--logo-bright:0.95;--logo-sat:1.02;--halo-strength:0.07;}
   /* White-primary logos: gentle dim, team-colour glow, never a white rim */
@@ -3534,6 +3535,22 @@ function colorLum(rgb) {
   return (0.2126 * rgb.r + 0.7152 * rgb.g + 0.0722 * rgb.b) / 255;
 }
 
+function brandColorLum(hex) {
+  const rgb = hexToRgb(hex);
+  return rgb ? colorLum(rgb) : 1;
+}
+
+// Three lift tiers: regular dark, near-black, and deep-dark navy/brown marks.
+function logoContrastTiers(cfg) {
+  if (!cfg || cfg.whiteLogo || cfg.needsContrastClamp || !cfg.needsContrastLift) {
+    return { lift: false, near: false, deep: false };
+  }
+  const darkest = Math.min(brandColorLum(cfg.dominantColor), brandColorLum(cfg.secondaryColor));
+  const near = !!(cfg.nearBlack || darkest < 0.15);
+  const deep = near && !!(cfg.deepDark || darkest < 0.12);
+  return { lift: true, near: near, deep: deep };
+}
+
 // Pick a halo colour that is actually visible as a glow. Black/near-black team
 // colours (Collingwood, Raiders, etc.) produce no glow on a dark UI, so we fall
 // back to the secondary colour, then the league accent, never to pure black.
@@ -3572,9 +3589,13 @@ function teamHaloAttrs(cfg, leagueKey, probe) {
   if (cfg) {
     if (cfg.whiteLogo) attrs.push('data-white-logo');
     else if (cfg.needsContrastClamp) attrs.push('data-contrast-clamp');
-    else if (cfg.needsContrastLift) {
-      attrs.push('data-contrast-lift');
-      if (cfg.nearBlack) attrs.push('data-near-black');
+    else {
+      const tiers = logoContrastTiers(cfg);
+      if (tiers.lift) {
+        attrs.push('data-contrast-lift');
+        if (tiers.near) attrs.push('data-near-black');
+        if (tiers.deep) attrs.push('data-deep-dark');
+      }
     }
   }
   // Always probe on load: optical-weight normalization runs for every logo, and
@@ -3658,7 +3679,11 @@ function probeTeamLogoContrast(img) {
   // Brightness tiering (skip if the config already classified this logo).
   if (wrap.hasAttribute('data-contrast-lift') || wrap.hasAttribute('data-contrast-clamp')
       || wrap.hasAttribute('data-white-logo')) return;
-  if (stats.bright < 0.20) {
+  if (stats.bright < 0.14) {
+    wrap.setAttribute('data-contrast-lift', '');
+    wrap.setAttribute('data-near-black', '');
+    wrap.setAttribute('data-deep-dark', '');
+  } else if (stats.bright < 0.20) {
     wrap.setAttribute('data-contrast-lift', '');
     wrap.setAttribute('data-near-black', '');
   } else if (stats.bright < 0.34) {

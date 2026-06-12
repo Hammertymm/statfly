@@ -240,6 +240,7 @@ def analyze_image(data: bytes) -> dict[str, Any]:
         "needsContrastClamp": (not needs_lift) and (not white_logo) and avg_bright > 0.72,
         "whiteLogo": white_logo,
         "nearBlack": avg_bright < 0.20,
+        "deepDark": avg_bright < 0.14,
         "logoScale": logo_scale,
         "avgBrightness": round(avg_bright, 3),
         "avgSaturation": round(avg_sat, 3),
@@ -458,6 +459,7 @@ def analyze_logo(url: str, espn_color: str | None, espn_alt: str | None) -> dict
             "needsContrastClamp": False,
             "whiteLogo": False,
             "nearBlack": False,
+            "deepDark": False,
             "logoScale": 1.0,
             "avgBrightness": 1.0,
         }
@@ -479,6 +481,7 @@ def analyze_logo(url: str, espn_color: str | None, espn_alt: str | None) -> dict
         "needsContrastClamp": bool(meta.get("needsContrastClamp")),
         "whiteLogo": bool(meta.get("whiteLogo")),
         "nearBlack": bool(meta.get("nearBlack")),
+        "deepDark": bool(meta.get("deepDark")),
         "logoScale": meta.get("logoScale", 1.0),
         "avgBrightness": meta.get("avgBrightness", 1.0),
         "logoOk": bool(data),
@@ -510,6 +513,12 @@ def build_entry(
             visual["haloColor"] = override["haloColor"]
             visual["dominantColor"] = override["haloColor"]
 
+    dom_lum = hex_lum(visual["dominantColor"])
+    sec_lum = hex_lum(visual["secondaryColor"])
+    darkest = min(dom_lum, sec_lum)
+    near_black = bool(visual["nearBlack"] or darkest < 0.15)
+    deep_dark = near_black and bool(visual.get("deepDark") or darkest < 0.12)
+
     entry = {
         "teamId": slugify(name, league),
         "favKey": fav_key,
@@ -522,7 +531,8 @@ def build_entry(
         "needsContrastLift": visual["needsContrastLift"],
         "needsContrastClamp": visual["needsContrastClamp"],
         "whiteLogo": visual["whiteLogo"],
-        "nearBlack": visual["nearBlack"],
+        "nearBlack": near_black,
+        "deepDark": deep_dark,
         "dominantColor": visual["dominantColor"],
         "secondaryColor": visual["secondaryColor"],
         "logoScale": visual["logoScale"],
@@ -572,8 +582,9 @@ def render_gallery(teams: list[dict[str, Any]]) -> str:
       drop-shadow(0 1px 2px rgba(0,0,0,0.45))
       drop-shadow(0 0 1px rgba(255,255,255,var(--rim)));
   }}
-  .team-logo-halo[data-contrast-lift]{{--logo-bright:1.1;--logo-contrast:1.12;--rim:0.12;--halo-strength:0.22;}}
-  .team-logo-halo[data-contrast-lift][data-near-black]{{--logo-bright:1.24;--logo-contrast:1.16;--rim:0.22;--halo-strength:0.32;}}
+  .team-logo-halo[data-contrast-lift]{{--logo-bright:1.12;--logo-contrast:1.13;--rim:0.14;--halo-strength:0.24;}}
+  .team-logo-halo[data-contrast-lift][data-near-black]{{--logo-bright:1.36;--logo-contrast:1.18;--rim:0.26;--halo-strength:0.34;}}
+  .team-logo-halo[data-contrast-lift][data-near-black][data-deep-dark]{{--logo-bright:1.62;--logo-contrast:1.24;--rim:0.34;--halo-strength:0.40;--logo-sat:1.08;}}
   .team-logo-halo[data-contrast-clamp]{{--logo-bright:0.95;--logo-sat:1.02;--halo-strength:0.07;}}
   .team-logo-halo[data-white-logo]{{--logo-bright:0.93;--logo-sat:1.04;--rim:0;--halo-strength:0.12;}}
   .name{{font-size:11px;font-weight:600;line-height:1.25;margin-bottom:2px}}
@@ -609,12 +620,27 @@ function hexRgb(hex) {{
   return [parseInt(h.slice(0,2),16), parseInt(h.slice(2,4),16), parseInt(h.slice(4,6),16)];
 }}
 
+function hexLum(hex) {{
+  const [r,g,b] = hexRgb(hex);
+  return (0.2126*r + 0.7152*g + 0.0722*b)/255;
+}}
+
+function contrastTier(t) {{
+  if (t.whiteLogo) return ' data-white-logo';
+  if (t.needsContrastClamp) return ' data-contrast-clamp';
+  if (!t.needsContrastLift) return '';
+  const darkest = Math.min(hexLum(t.dominantColor), hexLum(t.secondaryColor));
+  let tier = ' data-contrast-lift';
+  const near = t.nearBlack || darkest < 0.15;
+  const deep = near && (t.deepDark || darkest < 0.12);
+  if (near) tier += ' data-near-black';
+  if (deep) tier += ' data-deep-dark';
+  return tier;
+}}
+
 function cardHtml(t, i) {{
   const [r,g,b] = hexRgb(t.haloColor);
-  let tier = '';
-  if (t.whiteLogo) tier = ' data-white-logo';
-  else if (t.needsContrastClamp) tier = ' data-contrast-clamp';
-  else if (t.needsContrastLift) tier = ' data-contrast-lift' + (t.nearBlack ? ' data-near-black' : '');
+  const tier = contrastTier(t);
   const scale = t.logoScale != null && t.logoScale !== 1 ? ';--logo-scale:'+t.logoScale : '';
   const style = '--halo-r:'+r+';--halo-g:'+g+';--halo-b:'+b+scale;
   const img = t.logoUrl

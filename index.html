@@ -424,293 +424,152 @@
   }
   .flymode-overlay.active { display: block; }
 
-  /* Live match count (1..8) drives grid formation via data-count. */
+  /* Live match count (1..8) drives grid formation via data-count.
+     Portrait: 1→1×1, 2→1×2, 3→2×2, 4→2×2, 5→2×3, 6→2×3, 7-8→2×4
+     Landscape: 1→1×1, 2→2×1, 3→3×1, 4→2×2, 5→3×2, 6→3×2, 7-8→4×2 */
   .flymode-inner {
     position: absolute;
     top: 0; left: 0; right: 0;
     bottom: 84px;
-    padding: 6px 8px;
+    padding: 8px;
     display: grid;
-    grid-template-columns: 1fr;
-    grid-auto-rows: 1fr;
-    gap: 0;
+    gap: 8px;
     width: 100%;
     min-height: 0;
-    --status-h: 28px;
-    --fly-sep: rgba(255,255,255,0.25);
     transition: filter 0.1s;
   }
-  .flymode-inner[data-count="1"] { grid-template-rows: 1fr; --rows: 1; }
-  .flymode-inner[data-count="2"] { grid-template-rows: repeat(2, 1fr); --rows: 2; }
-  /* Two live games: keep scores inside each half so card borders stay clear. */
-  .flymode-inner[data-count="2"] .flymode-half { overflow: hidden; }
-  .flymode-inner[data-count="2"] .flymode-team { font-size: clamp(14px, 4vw, 28px); }
-  .flymode-inner[data-count="2"] .flymode-status { padding: 4px 8px; font-size: clamp(11px, calc((100vh - 96px) / var(--rows, 2) * 0.1), 20px); }
-  .flymode-inner[data-count="4"] .flymode-half { overflow: hidden; gap: 4px; padding: 6px 4px; }
-  .flymode-inner[data-count="4"] .flymode-team { font-size: clamp(11px, 3.2vw, 20px); letter-spacing: 1px; }
-  .flymode-inner[data-count="4"] .flymode-status { padding: 3px 7px; font-size: clamp(9px, calc((100vh - 96px) / var(--rows, 2) * 0.09), 16px); }
-  .flymode-inner[data-count="4"] .fm-markers { top: 4px; right: 5px; gap: 4px; }
-  .flymode-inner[data-count="4"] .fm-markers .mk img { height: 15px; }
-  /* Three matches: stacked full-width boards so centre seams line up vertically. */
-  .flymode-inner[data-count="3"] {
-    grid-template-columns: 1fr;
-    grid-template-rows: repeat(3, 1fr);
-    --rows: 3;
-  }
-  .flymode-inner[data-count="3"] .flymode-card:nth-child(3) {
-    grid-column: auto;
-    border-left: none;
-  }
-  /* 4-8: two columns — left-column seams align at 25%, right at 75%. */
-  .flymode-inner[data-count="4"],
-  .flymode-inner[data-count="5"],
-  .flymode-inner[data-count="6"],
-  .flymode-inner[data-count="7"],
-  .flymode-inner[data-count="8"] {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  .flymode-inner[data-count="4"] { grid-template-rows: repeat(2, 1fr); --rows: 2; }
-  .flymode-inner[data-count="5"],
-  .flymode-inner[data-count="6"] { grid-template-rows: repeat(3, 1fr); --rows: 3; }
-  .flymode-inner[data-count="7"],
-  .flymode-inner[data-count="8"] { grid-template-rows: repeat(4, 1fr); --rows: 4; }
-  .flymode-inner[data-count="4"] .flymode-card:nth-child(-n+2),
-  .flymode-inner[data-count="5"] .flymode-card:nth-child(-n+2),
-  .flymode-inner[data-count="6"] .flymode-card:nth-child(-n+2),
-  .flymode-inner[data-count="7"] .flymode-card:nth-child(-n+2),
-  .flymode-inner[data-count="8"] .flymode-card:nth-child(-n+2) { border-top: none; }
-  .flymode-inner[data-count="4"] .flymode-card:nth-child(even),
-  .flymode-inner[data-count="5"] .flymode-card:nth-child(even),
-  .flymode-inner[data-count="6"] .flymode-card:nth-child(even),
-  .flymode-inner[data-count="7"] .flymode-card:nth-child(even),
-  .flymode-inner[data-count="8"] .flymode-card:nth-child(even) { border-left: 1px solid var(--fly-sep); }
-  /* 5+ matches: tighter type so eight boards stay readable. */
-  .flymode-inner[data-count="5"],
-  .flymode-inner[data-count="6"] { padding: 4px 6px; }
-  .flymode-inner[data-count="7"],
-  .flymode-inner[data-count="8"] { --status-h: 22px; padding: 3px 5px; }
-  .flymode-inner[data-count="5"] .flymode-half,
-  .flymode-inner[data-count="6"] .flymode-half { gap: 4px; padding: 5px 4px; }
-  .flymode-inner[data-count="7"] .flymode-half,
-  .flymode-inner[data-count="8"] .flymode-half { gap: 3px; padding: 4px 3px; }
-  .flymode-inner[data-count="5"] .flymode-team,
-  .flymode-inner[data-count="6"] .flymode-team { font-size: clamp(14px, 4.2vw, 26px); }
-  .flymode-inner[data-count="7"] .flymode-team,
-  .flymode-inner[data-count="8"] .flymode-team { font-size: clamp(11px, 3.2vw, 20px); letter-spacing: 1px; }
-  .flymode-inner[data-count="5"] .flymode-status,
-  .flymode-inner[data-count="6"] .flymode-status { padding: 5px 8px; border-radius: 8px; }
-  .flymode-inner[data-count="7"] .flymode-status,
-  .flymode-inner[data-count="8"] .flymode-status { padding: 3px 6px; border-radius: 7px; font-size: clamp(10px, calc((100vh - 96px) / var(--rows, 1) * 0.1), 16px); }
-  .flymode-inner[data-count="5"] .fm-markers .mk img,
-  .flymode-inner[data-count="6"] .fm-markers .mk img { height: 18px; }
-  .flymode-inner[data-count="7"] .fm-markers .mk img,
-  .flymode-inner[data-count="8"] .fm-markers .mk img { height: 14px; }
   .flymode-inner[data-count="0"] {
+    grid-template-columns: 1fr;
     grid-template-rows: 1fr;
     align-items: center;
     justify-items: center;
   }
-  /* Landscape: two side-by-side for exactly two matches */
+  /* Portrait grids */
+  .flymode-inner[data-count="1"] { grid-template-columns: 1fr; grid-template-rows: 1fr; }
+  .flymode-inner[data-count="2"] { grid-template-columns: 1fr; grid-template-rows: repeat(2, 1fr); }
+  .flymode-inner[data-count="3"],
+  .flymode-inner[data-count="4"] { grid-template-columns: repeat(2, 1fr); grid-template-rows: repeat(2, 1fr); }
+  .flymode-inner[data-count="5"],
+  .flymode-inner[data-count="6"] { grid-template-columns: repeat(2, 1fr); grid-template-rows: repeat(3, 1fr); }
+  .flymode-inner[data-count="7"],
+  .flymode-inner[data-count="8"] { grid-template-columns: repeat(2, 1fr); grid-template-rows: repeat(4, 1fr); }
+  /* Landscape grids */
   @media (orientation: landscape) {
-    .flymode-inner[data-count="2"] {
-      grid-template-columns: repeat(2, 1fr);
-      grid-template-rows: 1fr;
-      --rows: 1;
-    }
+    .flymode-inner[data-count="2"] { grid-template-columns: repeat(2, 1fr); grid-template-rows: 1fr; }
+    .flymode-inner[data-count="3"] { grid-template-columns: repeat(3, 1fr); grid-template-rows: 1fr; }
+    .flymode-inner[data-count="4"] { grid-template-columns: repeat(2, 1fr); grid-template-rows: repeat(2, 1fr); }
+    .flymode-inner[data-count="5"],
+    .flymode-inner[data-count="6"] { grid-template-columns: repeat(3, 1fr); grid-template-rows: repeat(2, 1fr); }
+    .flymode-inner[data-count="7"],
+    .flymode-inner[data-count="8"] { grid-template-columns: repeat(4, 1fr); grid-template-rows: repeat(2, 1fr); }
   }
 
   .flymode-grid { display: contents; }
 
-  /* SPLIT TILES: two half-tiles for team code + score; period/clock pill sits
-     centred on the seam between the scores. */
+  /* Match card — dark tile with rounded border; internal % anchors from blueprint. */
   .flymode-card {
-    background: transparent;
-    border: none;
-    border-top: 1px solid var(--fly-sep);
-    display: flex;
-    flex-direction: column;
-    align-items: stretch;
-    padding: 0;
+    container-type: size;
+    background: var(--card);
+    border: 1px solid rgba(255,255,255,0.14);
+    border-radius: 10px;
     position: relative;
     overflow: hidden;
     min-width: 0;
     min-height: 0;
     height: 100%;
   }
-  /* No top border on first card (cleaner top edge) */
-  .flymode-card:first-child { border-top: none; }
+  .flymode-card.flytime { border-color: rgba(6,240,60,0.35); }
+  .flymode-card.ot      { border-color: rgba(255,69,58,0.35); }
 
   .flymode-board {
-    flex: 1 1 auto;
+    position: absolute;
+    inset: 0;
     min-height: 0;
-    position: relative;
-    display: flex;
-    flex-direction: row;
-    align-items: stretch;
   }
 
-  /* The two half-tiles. Each is a centred column: team code over score. */
-  .flymode-half {
-    flex: 1 1 0;
-    min-width: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 6px;
-    padding: 8px 6px;
+  /* Vertical anchors: teams 20%, scores 50%, timer 80%; horizontal 25% / 75% / 50%. */
+  .flymode-team,
+  .flymode-score,
+  .flymode-status {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    max-width: 44%;
     overflow: hidden;
-    transition: background-color 2.5s ease, border-color 2.5s ease;
+    text-overflow: ellipsis;
+    white-space: nowrap;
   }
-  .flymode-half.home { border-right: 1px solid rgba(255,255,255,0.2); }
-
-  /* Dark state washes - low alpha so the board stays black-first. The class is
-     the same one getFlyClass() already puts on the score, so wash and number
-     colour always agree. Neutral has no class, so no wash. */
-  .flymode-half.fs-warming  { background: rgba(255,214,10,0.07); }
-  .flymode-half.fs-onrun    { background: rgba(255,159,10,0.10); }
-  .flymode-half.fs-onfire   { background: rgba(255,69,58,0.12); }
-  .flymode-half.fs-cold     { background: rgba(64,156,255,0.10); }
-  .flymode-half.fs-comeback { background: rgba(191,90,242,0.12); }
-  .flymode-half.fs-flytime  { background: rgba(6,240,60,0.14); }
-  /* Brighten the seam line to match on the big match-level states. */
-  .flymode-card.flytime .flymode-half.home { border-right-color: rgba(6,240,60,0.35); }
-  .flymode-card.ot      .flymode-half.home { border-right-color: rgba(255,69,58,0.35); }
+  .flymode-team.home,
+  .flymode-score.home { left: 25%; }
+  .flymode-team.away,
+  .flymode-score.away { left: 75%; }
+  .flymode-team { top: 20%; }
+  .flymode-score { top: 50%; }
+  .flymode-status {
+    top: 80%;
+    left: 50%;
+    max-width: 90%;
+    transform: translate(-50%, -50%);
+  }
 
   .flymode-team {
     font-family: 'Overpass', 'Inter', monospace;
-    font-size: clamp(18px, 5.5vw, 34px);
+    font-size: clamp(9px, 11cqmin, 32px);
     font-weight: 800;
-    letter-spacing: 1.5px;
-    color: rgba(255,255,255,0.82);
+    letter-spacing: 1.2px;
+    color: rgba(255,255,255,0.88);
     text-transform: uppercase;
     line-height: 1;
-    white-space: nowrap;
-    max-width: 100%;
-    overflow: hidden;
-    text-overflow: ellipsis;
   }
-  /* Code picks up colour only on the dramatic match-level states. */
-  .flymode-card.flytime .flymode-team { color: rgba(6,240,60,0.85); }
-  .flymode-card.ot      .flymode-team { color: rgba(255,69,58,0.85); }
+  .flymode-card.flytime .flymode-team { color: rgba(6,240,60,0.9); }
+  .flymode-card.ot      .flymode-team { color: rgba(255,69,58,0.9); }
 
-  /* The hero number. Tabular figures so digits never shift as the score ticks.
-     Size = FILL THE CELL: grow to the height budget, shrink only if the digits
-     would overrun the half's width. --len (digit count) is set per match in JS;
-     each formation below sets --half-vw (the half's width, in vw) and --h-budget
-     (the vertical room). min() of the two budgets = biggest size that fits both. */
   .flymode-score {
     font-family: 'Overpass', 'Inter', monospace;
     font-variant-numeric: tabular-nums;
     --len: 1;
-    --half-vw: 40;
-    --h-budget: 18vh;
-    font-size: clamp(28px, min(var(--h-budget), calc((var(--half-vw) * 1vw - 10px) * 1.15 / var(--len))), 300px);
+    font-size: clamp(18px, min(38cqh, calc(34cqw / var(--len))), 280px);
     font-weight: 900;
     letter-spacing: -2px;
     line-height: 0.9;
     color: #ffffff;
     transition: color 2.5s ease;
-    text-align: center;
-    max-width: 100%;
   }
 
-  /* Status pill — single line, centred on the FULL card width (left/right auto
-     margins, so centring is not constrained to a 50%-offset shrink box), and
-     vertically at the exact midpoint between the score row's bottom edge and
-     the card's bottom edge. positionFlyPills() measures the rendered digits
-     after every grid build / resize and writes --pill-top per card; the 76%
-     default only covers the instant before the first measurement. */
   .flymode-status {
-    position: absolute;
-    left: 0;
-    right: 0;
-    margin-inline: auto;
-    width: max-content;
-    top: var(--pill-top, 76%);
-    transform: translateY(-50%);
     font-family: 'Overpass', 'Inter', monospace;
     font-variant-numeric: tabular-nums;
-    font-size: clamp(12px, calc((100vh - 96px) / var(--rows, 1) * 0.11), 22px);
+    font-size: clamp(8px, 7.5cqmin, 18px);
     font-weight: 800;
-    color: #ffffff;
     letter-spacing: 0.4px;
     text-transform: uppercase;
-    text-align: center;
     line-height: 1;
-    padding: 3px 8px;
-    border: 1px solid rgba(255,255,255,0.35);
-    border-radius: 8px;
-    background: #000;
-    white-space: nowrap;
+    padding: 4px 10px;
+    border: 1px solid #4ade80;
+    border-radius: 999px;
+    background: rgba(0,0,0,0.55);
+    color: #4ade80;
     z-index: 4;
   }
+  /* Period colour coding from blueprint */
+  .flymode-status.period-q1,
+  .flymode-status.period-q4,
+  .flymode-status.period-active { color: #4ade80; border-color: #4ade80; }
+  .flymode-status.period-q3 { color: var(--onrun); border-color: var(--onrun); }
+  .flymode-status.period-q2,
+  .flymode-status.period-ht { color: var(--result); border-color: var(--result); }
+  .flymode-status.period-ft { color: rgba(255,255,255,0.45); border-color: rgba(255,255,255,0.22); background: rgba(255,255,255,0.04); }
   .flymode-status.ot      { color: var(--result); border-color: var(--result); }
   .flymode-status.flytime { color: var(--live);   border-color: var(--live); }
 
-  /* PORTRAIT */
-  @media (orientation: portrait) {
-    /* Side-by-side: each half is ~44vw wide; height shared across the live rows. */
-    .flymode-score { --half-vw: 44; --h-budget: calc((100vh - 90px - var(--rows, 1) * var(--status-h, 34px)) / var(--rows, 1) * 0.62); }
-    .flymode-inner[data-count="2"] .flymode-score { --h-budget: calc((100vh - 90px - var(--rows, 2) * var(--status-h, 34px)) / var(--rows, 2) * 0.50); }
-    /* 2-column grids (4-8): each half is ~22vw; scale height budget to row count. */
-    .flymode-inner[data-count="4"] .flymode-score,
-    .flymode-inner[data-count="5"] .flymode-score,
-    .flymode-inner[data-count="6"] .flymode-score,
-    .flymode-inner[data-count="7"] .flymode-score,
-    .flymode-inner[data-count="8"] .flymode-score {
-      --half-vw: 22;
-      --h-budget: calc((100vh - 90px - var(--rows, 1) * var(--status-h, 34px)) / var(--rows, 1) * 0.54);
-    }
-    .flymode-inner[data-count="4"] .flymode-score { --h-budget: calc((100vh - 90px - var(--rows, 2) * var(--status-h, 34px)) / var(--rows, 2) * 0.46); }
-    .flymode-inner[data-count="7"] .flymode-score,
-    .flymode-inner[data-count="8"] .flymode-score {
-      --h-budget: calc((100vh - 90px - var(--rows, 1) * var(--status-h, 26px)) / var(--rows, 1) * 0.52);
-    }
-    /* SINGLE match: stack the two tiles top/bottom (full width) for a hero number. */
-    .flymode-inner[data-count="1"] .flymode-board { flex-direction: column; }
-    .flymode-inner[data-count="1"] .flymode-half {
-      flex: 1 1 50%;
-      min-height: 0;
-    }
-    .flymode-inner[data-count="1"] .flymode-half.home {
-      border-right: none;
-      border-bottom: 1px solid rgba(255,255,255,0.12);
-    }
-    .flymode-inner[data-count="1"] .flymode-card.flytime .flymode-half.home { border-bottom-color: rgba(6,240,60,0.35); }
-    .flymode-inner[data-count="1"] .flymode-card.ot      .flymode-half.home { border-bottom-color: rgba(255,69,58,0.35); }
-    .flymode-inner[data-count="1"] .flymode-score { --half-vw: 92; --h-budget: calc((100vh - 120px - var(--status-h, 34px)) / 2 * 0.72); }
-  }
-  /* LANDSCAPE */
-  @media (orientation: landscape) {
-    /* Multi (2+) is two columns, so each half is only ~21vw wide. */
-    .flymode-inner { padding: 4px 10px; }
-    .flymode-inner[data-count="1"] { padding: 6px 8px; }
-    .flymode-score { --half-vw: 20; --h-budget: calc((100vh - 80px - var(--rows, 1) * var(--status-h, 34px)) / var(--rows, 1) * 0.58); }
-    .flymode-inner[data-count="2"] .flymode-score { --half-vw: 16; --h-budget: calc((100vh - 80px - var(--status-h, 34px)) * 0.48); }
-    .flymode-inner[data-count="2"] .flymode-half.home { padding-left: 4px; }
-    .flymode-inner[data-count="2"] .flymode-half.away { padding-right: 4px; }
-    .flymode-inner[data-count="4"] .flymode-score { --half-vw: 15; --h-budget: calc((100vh - 80px - var(--rows, 2) * var(--status-h, 34px)) / var(--rows, 2) * 0.44); }
-    /* SINGLE match fills the whole wide screen: each half is ~46vw, full height. */
-    .flymode-inner[data-count="1"] .flymode-score { --half-vw: 46; --h-budget: calc((100vh - 110px - var(--status-h, 34px)) * 0.82); }
-    /* Column dividers on 2-column grids (2 side-by-side, or 4-8). */
-    .flymode-inner[data-count="2"] .flymode-card:nth-child(even),
-    .flymode-inner[data-count="4"] .flymode-card:nth-child(even),
-    .flymode-inner[data-count="5"] .flymode-card:nth-child(even),
-    .flymode-inner[data-count="6"] .flymode-card:nth-child(even),
-    .flymode-inner[data-count="7"] .flymode-card:nth-child(even),
-    .flymode-inner[data-count="8"] .flymode-card:nth-child(even) { border-left: 1px solid var(--fly-sep); }
-    .flymode-inner[data-count="2"] .flymode-card:nth-child(2),
-    .flymode-inner[data-count="4"] .flymode-card:nth-child(-n+2),
-    .flymode-inner[data-count="5"] .flymode-card:nth-child(-n+2),
-    .flymode-inner[data-count="6"] .flymode-card:nth-child(-n+2),
-    .flymode-inner[data-count="7"] .flymode-card:nth-child(-n+2),
-    .flymode-inner[data-count="8"] .flymode-card:nth-child(-n+2) { border-top: none; }
-    .flymode-inner[data-count="7"] .flymode-score,
-    .flymode-inner[data-count="8"] .flymode-score {
-      --h-budget: calc((100vh - 80px - var(--rows, 1) * var(--status-h, 26px)) / var(--rows, 1) * 0.56);
-    }
-  }
+  .flymode-inner[data-count="4"] .fm-markers,
+  .flymode-inner[data-count="5"] .fm-markers,
+  .flymode-inner[data-count="6"] .fm-markers { top: 4px; right: 5px; gap: 4px; }
+  .flymode-inner[data-count="4"] .fm-markers .mk img { height: 14px; }
+  .flymode-inner[data-count="5"] .fm-markers .mk img,
+  .flymode-inner[data-count="6"] .fm-markers .mk img { height: 16px; }
+  .flymode-inner[data-count="7"] .fm-markers .mk img,
+  .flymode-inner[data-count="8"] .fm-markers .mk img { height: 12px; }
 
   /* Empty-state message when no live My Teams matches */
   .flymode-empty {
@@ -4030,6 +3889,19 @@ function abbrev(name) {
 
 const FLYMODE_MAX = 8;
 
+function flyModePeriodClass(timer, statusCls) {
+  if (statusCls.indexOf('ot') >= 0) return ' period-ot';
+  if (statusCls.indexOf('flytime') >= 0) return ' period-flytime';
+  const t = (timer || '').trim().toUpperCase();
+  if (t === 'FT' || t.indexOf('FT') === 0) return ' period-ft';
+  if (t === 'HT') return ' period-ht';
+  if (/\bQ1\b/.test(t) || /\bP1\b/.test(t) || /\bH1\b/.test(t) || /\bTOP 1\b/.test(t) || /\bBTM 1\b/.test(t) || /\bINN 1\b/.test(t)) return ' period-q1';
+  if (/\bQ2\b/.test(t) || /\bP2\b/.test(t)) return ' period-q2';
+  if (/\bQ3\b/.test(t) || /\bP3\b/.test(t)) return ' period-q3';
+  if (/\bQ4\b/.test(t) || /\bP4\b/.test(t) || /\bH2\b/.test(t) || /\bOT\b/.test(t)) return ' period-q4';
+  return ' period-active';
+}
+
 function buildFlyModeGrid() {
   const favNames = favs.map(f=>f.name.toLowerCase());
   const noFavs   = favNames.length === 0;
@@ -4061,20 +3933,16 @@ function buildFlyModeGrid() {
     grid.innerHTML = '<div class="flymode-empty">No live matches</div>';
     return;
   }
-  // Split-tiles layout: two half-tiles for scores; the timer pill is centred
-  // on the full card width, halfway between the score row and the card bottom
-  // (exact position measured per card by positionFlyPills()).
+  // Blueprint layout: team codes at 20%/25|75%, scores at 50%, timer pill at 80%.
   grid.innerHTML = live.map(m => {
     const badge = (m.timer || '').trim();
     const mf = getMatchFly(m.id); // '' | 'flytime' | 'overtime'
     const statusCls = mf === 'overtime' ? ' ot' : (mf === 'flytime' ? ' flytime' : '');
-    // Per-side FlyState class drives BOTH the number colour and the tile wash.
+    const periodCls = flyModePeriodClass(badge, statusCls);
     const hCls = getFlyClass(m.id, 'home');
     const aCls = getFlyClass(m.id, 'away');
     const homeCode = m.homeShort || abbrev(m.home);
     const awayCode = m.awayShort || abbrev(m.away);
-    // Longest score (in characters) drives the number size so both sides match
-    // and a 3-digit score never overruns its half. Clamped to 1..4.
     const sLen = Math.min(4, Math.max(1, String(m.homeScore).length, String(m.awayScore).length));
     const markers = flyTimeIcon(m, 'live');
     const markerBox = markers ? ('<div class="fm-markers">' + markers + '</div>') : '';
@@ -4082,54 +3950,16 @@ function buildFlyModeGrid() {
       + '<div class="flymode-card' + statusCls + '" style="--len:' + sLen + '">'
       +   markerBox
       +   '<div class="flymode-board">'
-      +     '<div class="flymode-half home ' + hCls + '" data-fk="' + m.id + '|h|fmh">'
-      +       '<div class="flymode-team">' + homeCode + '</div>'
-      +       '<div class="flymode-score home ' + hCls + '" data-fk="' + m.id + '|h|fms">' + m.homeScore + '</div>'
-      +     '</div>'
-      +     '<div class="flymode-half away ' + aCls + '" data-fk="' + m.id + '|a|fmh">'
-      +       '<div class="flymode-team">' + awayCode + '</div>'
-      +       '<div class="flymode-score away ' + aCls + '" data-fk="' + m.id + '|a|fms">' + m.awayScore + '</div>'
-      +     '</div>'
-      +     '<div class="flymode-status' + statusCls + '">' + badge + '</div>'
+      +     '<div class="flymode-team home">' + homeCode + '</div>'
+      +     '<div class="flymode-team away">' + awayCode + '</div>'
+      +     '<div class="flymode-score home ' + hCls + '" data-fk="' + m.id + '|h|fms">' + m.homeScore + '</div>'
+      +     '<div class="flymode-score away ' + aCls + '" data-fk="' + m.id + '|a|fms">' + m.awayScore + '</div>'
+      +     '<div class="flymode-status' + statusCls + periodCls + '">' + badge + '</div>'
       +   '</div>'
       + '</div>';
   }).join('');
   flyCrossfade();
-  positionFlyPills();
 }
-
-// Timer pill placement: measure the rendered score digits and put the pill's
-// centre at the exact midpoint between the score row's bottom edge and the
-// card's bottom edge. Measured per card, so the rule holds identically in
-// every formation (1-8 boards), both orientations and any viewport size —
-// no fixed pixel offsets. Clamped so the pill never touches the digits or
-// spills past the card edge.
-function positionFlyPills() {
-  document.querySelectorAll('#flymode-grid .flymode-card').forEach(function(card) {
-    const board = card.querySelector('.flymode-board');
-    const pill  = card.querySelector('.flymode-status');
-    if (!board || !pill) return;
-    const b = board.getBoundingClientRect();
-    if (!b.height) return; // overlay hidden; CSS fallback applies until shown
-    let scoreBottom = b.top;
-    card.querySelectorAll('.flymode-score').forEach(function(s) {
-      const r = s.getBoundingClientRect();
-      if (r.bottom > scoreBottom) scoreBottom = r.bottom;
-    });
-    const half = pill.getBoundingClientRect().height / 2;
-    let mid = (scoreBottom + b.bottom) / 2;
-    mid = Math.max(mid, scoreBottom + half + 2);
-    mid = Math.min(mid, b.bottom - half - 2);
-    pill.style.setProperty('--pill-top', ((mid - b.top) / b.height * 100).toFixed(2) + '%');
-  });
-}
-
-// Re-measure on viewport changes while Fly Mode is open (rotation, resize,
-// browser chrome show/hide all change the card geometry).
-window.addEventListener('resize', function() {
-  const overlay = document.getElementById('flymode-overlay');
-  if (overlay && overlay.classList.contains('active')) positionFlyPills();
-});
 
 function enterFlyMode() {
   const slider = document.getElementById('flymode-bright');

@@ -1,0 +1,84 @@
+Searching 42 missing teams via ESPN
+Found 39 / 42
+
+FOUND  FC Köln  [Bundesliga]  -> FC Cologne (id 122, ger.1)
+       https://a.espncdn.com/i/teamlogos/soccer/500/122.png
+FOUND  Changchun Yatai  [Chinese Super League]  -> Changchun Yatai (id 8225, chn.1)
+       https://a.espncdn.com/i/teamlogos/soccer/500/8225.png
+FOUND  Meizhou Hakka  [Chinese Super League]  -> Meizhou Hakka (id 21507, chn.1)
+       https://a.espncdn.com/i/teamlogos/soccer/500/21507.png
+FOUND  Lamia  [Greek Super League]  -> Lamia (id 18814, gre.1.promotion.relegation)
+       https://a.espncdn.com/i/teamlogos/soccer/500/18814.png
+MISS   Hyderabad FC  [ISL Football]
+FOUND  Kolkata Knight Riders  [Indian Premier League]  -> Kolkata Knight Riders (id 335971, ?)
+       https://a.espncdn.com/i/teamlogos/cricket/500/335971.png
+FOUND  Mumbai Indians  [Indian Premier League]  -> Mumbai Indians (id 335978, ?)
+       https://a.espncdn.com/i/teamlogos/cricket/500/335978.png
+FOUND  Sunrisers Hyderabad  [Indian Premier League]  -> Sunrisers Hyderabad (id 628333, ?)
+       https://a.espncdn.com/i/teamlogos/cricket/500/628333.png
+FOUND  Albirex Niigata  [J1 League]  -> Albirex Niigata FC (id 8011, sgp.1)
+       https://a.espncdn.com/i/teamlogos/soccer/500/8011.png
+FOUND  Consadole Sapporo  [J1 League]  -> Consadole Sapporo (id 9249, jpn.1)
+       https://a.espncdn.com/i/teamlogos/soccer/500/9249.png
+FOUND  Sagan Tosu  [J1 League]  -> Sagan Tosu (id 6911, jpn.1)
+       https://a.espncdn.com/i/teamlogos/soccer/500/6911.png
+FOUND  Shonan Bellmare  [J1 League]  -> Shonan Bellmare (id 6902, jpn.1)
+       https://a.espncdn.com/i/teamlogos/soccer/500/6902.png
+FOUND  Yokohama FC  [J1 League]  -> Yokohama FC (id 7145, jpn.1)
+       https://a.espncdn.com/i/teamlogos/soccer/500/7145.png
+FOUND  Morecambe  [League Two]  -> Morecambe (id 278, eng.5)
+       https://a.espncdn.com/i/teamlogos/soccer/500/278.png
+MISS   UCD  [League of Ireland]
+FOUND  Mazatlán  [Liga MX]  -> Mazatlán FC (id 20702, mex.1)
+       https://a.espncdn.com/i/teamlogos/soccer/500/20702.png
+FOUND  Cape Town City  [PSL Football]  -> Cape Town City FC (id 7100, rsa.nedbank)
+       https://a.espncdn.com/i/teamlogos/soccer/500/7100.png
+FOUND  Lahore Qalandars  [Pakistan Super League]  -> Lahore Qalandars (id 953847, ?)
+       https://a.espncdn.com/i/teamlogos/cricket/500/953847.png
+FOUND  Multan Sultans  [Pakistan Super League]  -> Multan Sultans (id 1117814, ?)
+       https://a.espncdn.com/i/teamlogos/cricket/500/1117814.png
+FOUND  Peshawar Zalmi  [Pakistan Super League]  -> Peshawar Zalmi (id 953833, ?)
+       https://a.espncdn.com/i/teamlogos/cricket/500/953833.png
+FOUND  Quetta Gladiators  [Pakistan Super League]  -> Quetta Gladiators (id 953845, ?)
+       https://a.espncdn.com/i/teamlogos/cricket/500/953845.png
+FOUND  Boavista  [Primeira Liga]  -> Boavista S20 (id 18540, bra.saopaulo_youth_cup)
+       https://a.espncdn.com/i/teamlogos/soccer/500/18540.png
+FOUND  Chaves  [Primeira Liga]  -> GD Chaves (id 12705, por.taca.portugal)
+       https://a.espncdn.com/i/teamlogos/soccer/500/12705.png
+FOUND  Vizela  [Primeira Liga]  -> Vizela (id 20995, por.1.promotion.relegation)
+       https://a.espncdn.com/i/teamlogos/soccer/500/20995.png
+FOUND  Cape Cobras  [SA T20 Cricket]  -> Cape Cobras (id 3360, ?)
+       https://a.espncdn.com/i/teamlogos/cricket/500/3360.png
+FOUND  Abha  [Saudi Pro League]  -> Abha (id 21833, ksa.kings.cup)
+       https://a.espncdn.com/i/teamlogos/soccer/500/21833.png
+FOUND  Al Raed  [Saudi Pro League]  -> Al Raed (id 21834, ksa.kings.cup)
+       https://a.espncdn.com/i/teamlogos/soccer/500/21834.png
+FOUND  Hellas Verona  [Serie A]  -> Hellas Verona (id 119, ita.coppa_italia)
+       https://a.espncdn.com/i/teamlogos/soccer/500/119.png
+FOUND  Salernitana  [Serie A]  -> Salernitana (id 3240, ita.2)
+       https://a.espncdn.com/i/teamlogos/soccer/500/3240.png
+FOUND  Ascoli  [Serie B]  -> Ascoli (id 3346, ita.2)
+       https://a.espncdn.com/i/teamlogos/soccer/500/3346.png
+FOUND  Brescia  [Serie B]  -> Brescia (id 108, ita.2)
+       https://a.espncdn.com/i/teamlogos/soccer/500/108.png
+FOUND  Cosenza  [Serie B]  -> Cosenza (id 8683, ita.2)
+       https://a.espncdn.com/i/teamlogos/soccer/500/8683.png
+FOUND  FeralpiSalo  [Serie B]  -> FeralpiSalo (id 11140, ita.2)
+       https://a.espncdn.com/i/teamlogos/soccer/500/11140.png
+FOUND  Lecco  [Serie B]  -> Lecco (id 6009, ita.2)
+       https://a.espncdn.com/i/teamlogos/soccer/500/6009.png
+FOUND  Pisa  [Serie B]  -> Pisa (id 3956, ita.coppa_italia)
+       https://a.espncdn.com/i/teamlogos/soccer/500/3956.png
+FOUND  Ternana  [Serie B]  -> Ternana (id 3175, ita.coppa_italia)
+       https://a.espncdn.com/i/teamlogos/soccer/500/3175.png
+FOUND  Yverdon  [Swiss Super League]  -> Yverdon (id 21538, sui.1)
+       https://a.espncdn.com/i/teamlogos/soccer/500/21538.png
+FOUND  Adana Demirspor  [Süper Lig]  -> Adana Demirspor (id 20765, tur.1)
+       https://a.espncdn.com/i/teamlogos/soccer/500/20765.png
+FOUND  Hatayspor  [Süper Lig]  -> Hatayspor (id 20737, tur.1)
+       https://a.espncdn.com/i/teamlogos/soccer/500/20737.png
+FOUND  Pendikspor  [Süper Lig]  -> Pendikspor (id 9104, tur.1)
+       https://a.espncdn.com/i/teamlogos/soccer/500/9104.png
+FOUND  Sivasspor  [Süper Lig]  -> Sivasspor (id 3691, uefa.intertoto)
+       https://a.espncdn.com/i/teamlogos/soccer/500/3691.png
+MISS   Bayonne  [Top 14]

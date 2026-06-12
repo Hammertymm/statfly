@@ -1,0 +1,54 @@
+﻿python : Traceback (most recent call last):
+At C:\Users\jarro\AppData\Local\Temp\ps-script-577d2765-803d-4907-960f-a513099175f2.ps1:108 char:1
++ python -c "
++ ~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (Traceback (most recent call last)::String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+  File "<string>", line 8, in <module>
+    print(t['league']+'|'+t['names'][0])
+    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jarro\AppData\Local\Python\pythoncore-3.14-64\Lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode character '\u0131' in position 13: character maps to <undefined>
+missing 44
+Bundesliga|FC K÷ln
+Chinese Super League|Changchun Yatai
+Chinese Super League|Meizhou Hakka
+Greek Super League|Lamia
+ISL Football|Hyderabad FC
+Indian Premier League|Kolkata Knight Riders
+Indian Premier League|Mumbai Indians
+Indian Premier League|Sunrisers Hyderabad
+J1 League|Albirex Niigata
+J1 League|Consadole Sapporo
+J1 League|Sagan Tosu
+J1 League|Shonan Bellmare
+J1 League|Yokohama FC
+League Two|Morecambe
+League of Ireland|UCD
+Liga MX|Mazatlßn
+PSL Football|Cape Town City
+Pakistan Super League|Lahore Qalandars
+Pakistan Super League|Multan Sultans
+Pakistan Super League|Peshawar Zalmi
+Pakistan Super League|Quetta Gladiators
+Primeira Liga|Boavista
+Primeira Liga|Chaves
+Primeira Liga|Vizela
+SA T20 Cricket|Cape Cobras
+Saudi Pro League|Abha
+Saudi Pro League|Al Raed
+Serie A|Hellas Verona
+Serie A|Salernitana
+Serie B|Ascoli
+Serie B|Brescia
+Serie B|Cosenza
+Serie B|FeralpiSalo
+Serie B|Lecco
+Serie B|Pisa
+Serie B|Ternana
+Swiss Super League|Yverdon
+Sⁿper Lig|Adana Demirspor
+Sⁿper Lig|Hatayspor

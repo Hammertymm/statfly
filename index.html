@@ -873,7 +873,7 @@
 
   /* BOTTOM NAV */
   .bnav{position:fixed;bottom:0;left:50%;transform:translateX(-50%);width:100%;max-width:430px;background:rgba(0,0,0,.97);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);border-top:1px solid var(--sep);display:flex;padding:11px 0 26px;z-index:50;}
-  .nb{flex:1;display:flex;flex-direction:column;align-items:center;gap:4px;cursor:pointer;opacity:.4;transition:opacity .15s;padding:4px 0;}
+  .nb{flex:1;display:flex;flex-direction:column;align-items:center;gap:4px;cursor:pointer;opacity:.4;transition:opacity .15s;padding:4px 0;color:var(--text);}
   .nb.active{opacity:1;}
   .nb.active .nb-lbl{color:var(--live);}
   .nb.active .nb-icon{color:var(--live);}
@@ -1793,6 +1793,11 @@ const CRICKET_SEC_PER_OVER = 240;     // wall-clock fallback when overs data is 
 const FLY_REF_POLL_SEC = 60;           // reference interval for "one bigPlay burst"
 const FLY_STALE_POLL_SEC = 90;       // poll gap beyond normal cadence -> scrutinise
 const FLY_MIN_SPREAD_SEC = 20;       // never spread a burst over less than this
+// AFL/NRL clocks count UP (elapsed); US sports count DOWN. Must be defined before
+// FLY_PERIOD_CLOCK_SEC and FLY2 (object initialisers read these at parse time).
+const AFL_FLY_Q4_ELAPSED_SEC = 20 * 60;
+const NRL_HALF_CLOCK_SEC = 45 * 60;
+const NRL_FLY_HALF_ELAPSED_SEC = 35 * 60;
 // Game-clock seconds per period (countdown sports: length of period on the clock).
 const FLY_PERIOD_CLOCK_SEC = {
   basketball: 720, football: 900, hockey: 1200,
@@ -1917,13 +1922,6 @@ const FLY_RAMP_CB = [
 function flyHeatColour(mom)  { return mom < 12 ? '' : rampColour(FLY_RAMP_HEAT, mom); }
 function flyColdColour(sev)  { return rampColour(FLY_RAMP_COLD, sev); }
 function flyCbColour(mag)    { return rampColour(FLY_RAMP_CB, mag); }
-
-// AFL quarter clock COUNTS UP (elapsed time). FlyTime starts once Q4 clock passes
-// 20:00 (incl. time-on). NRL halves also COUNT UP (elapsed in the half). FlyTime
-// from ~35:00 elapsed in each half (final 10 min). US sports clocks count DOWN.
-const AFL_FLY_Q4_ELAPSED_SEC = 20 * 60;
-const NRL_HALF_CLOCK_SEC = 45 * 60;
-const NRL_FLY_HALF_ELAPSED_SEC = 35 * 60;
 
 // Cricket T20: chasing side needs <=20 runs with <=2 overs left.
 function isCricketFlyTime(m) {

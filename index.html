@@ -106,17 +106,23 @@
   .card-body{display:flex;align-items:stretch;padding:8px 14px 7px;gap:10px;}
   .card-teams{flex:1;display:flex;flex-direction:column;gap:7px;}
   .team-row{display:flex;align-items:center;gap:10px;}
-  /* Item 14: discreet per-team quick-add */
+  /* Item 14: per-team quick-add — 3D circle + embossed/glow plus (SVG) */
   .qa-btn{
-    flex-shrink:0;width:22px;height:22px;border-radius:50%;
-    border:1px solid rgba(6,240,60,0.5);background:transparent;color:var(--live);
-    font-size:15px;font-weight:700;line-height:1;padding:0;cursor:pointer;
-    font-family:inherit;display:inline-flex;align-items:center;justify-content:center;
+    flex-shrink:0;width:28px;height:28px;border-radius:50%;
+    border:none;background:transparent;padding:0;cursor:pointer;
+    display:inline-flex;align-items:center;justify-content:center;
     -webkit-tap-highlight-color:transparent;
+    transition:transform .12s ease;
   }
-  .qa-btn:active{background:rgba(6,240,60,0.15);}
-  .qa-btn-row{width:26px;height:26px;font-size:17px;}
-  .qa-btn-static{pointer-events:none;opacity:.85;}
+  .qa-btn:active{transform:scale(0.94);}
+  .qa-btn-row{width:32px;height:32px;}
+  .qa-btn-static{pointer-events:none;opacity:1;}
+  .qa-btn-svg{width:100%;height:100%;display:block;}
+  .qa-btn .qa-plus-on{display:none;}
+  .qa-btn:active .qa-plus-off,
+  .qa-btn.qa-btn-on .qa-plus-off{display:none;}
+  .qa-btn:active .qa-plus-on,
+  .qa-btn.qa-btn-on .qa-plus-on{display:block;}
   /* Adaptive Team Halo System V2.1 — logo is the hero. Optical mass normalization,
      brightness-tiered team-colour glow, no grey plates. Tier vars (brightness/contrast/
      rim/strength) live in stylesheet so the runtime probe can retune by toggling data-*. */
@@ -491,10 +497,6 @@
   .flymode-inner[data-count="8"] { grid-template-columns: repeat(2, 1fr); grid-template-rows: repeat(4, 1fr); }
   /* Landscape grids */
   @media (orientation: landscape) {
-    .flymode-inner[data-count="1"] { padding: 4px; bottom: 64px; }
-    .flymode-inner[data-count="1"] .flymode-score { font-size: clamp(48px, min(22cqh, 20vw), 220px); }
-    .flymode-inner[data-count="1"] .flymode-status { font-size: clamp(16px, 4vw, 36px); padding: 6px 16px; }
-    .flymode-inner[data-count="1"] .flymode-team { font-size: clamp(14px, 3vw, 40px); }
     .flymode-inner[data-count="2"] { grid-template-columns: repeat(2, 1fr); grid-template-rows: 1fr; }
     .flymode-inner[data-count="3"] { grid-template-columns: repeat(3, 1fr); grid-template-rows: 1fr; }
     .flymode-inner[data-count="4"] { grid-template-columns: repeat(2, 1fr); grid-template-rows: repeat(2, 1fr); }
@@ -617,6 +619,88 @@
   .flymode-status.period-ot,
   .flymode-status.ot { color: var(--result); border-color: var(--result); }
   .flymode-status.period-ft { color: rgba(255,255,255,0.45); border-color: rgba(255,255,255,0.22); background: rgba(255,255,255,0.04); }
+
+  /* Single-match FlyMode — score-first CSS Grid (count=1 only; multi-match unchanged). */
+  .flymode-inner[data-count="1"] {
+    padding: 4px;
+    gap: 0;
+    bottom: 76px;
+  }
+  .flymode-inner[data-count="1"] .flymode-card--solo {
+    border-radius: 6px;
+  }
+  .flymode-inner[data-count="1"] .flymode-board {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto 1fr auto;
+    position: relative;
+    inset: auto;
+    height: 100%;
+    min-height: 0;
+    padding: 6px 8px 4px;
+  }
+  .flymode-inner[data-count="1"] .flymode-identity {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 10px;
+    min-width: 0;
+  }
+  .flymode-inner[data-count="1"] .flymode-identity.home { grid-area: 1 / 1; }
+  .flymode-inner[data-count="1"] .flymode-identity.away { grid-area: 1 / 2; }
+  .flymode-inner[data-count="1"] .flymode-logo,
+  .flymode-inner[data-count="1"] .flymode-team,
+  .flymode-inner[data-count="1"] .flymode-score,
+  .flymode-inner[data-count="1"] .flymode-status {
+    position: static;
+    transform: none;
+    left: auto;
+    top: auto;
+    max-width: none;
+  }
+  .flymode-inner[data-count="1"] .flymode-logo {
+    display: block;
+    pointer-events: none;
+  }
+  .flymode-inner[data-count="1"] .team-logo-halo.fm-logo {
+    width: clamp(32px, 11cqmin, 64px);
+    height: clamp(32px, 11cqmin, 64px);
+    font-size: 14px;
+  }
+  .flymode-inner[data-count="1"] .flymode-team {
+    font-size: clamp(10px, 3.5cqmin, 20px);
+    letter-spacing: 1px;
+  }
+  .flymode-inner[data-count="1"] .flymode-score {
+    align-self: center;
+    justify-self: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: clamp(56px, min(52cqh, calc(44cqw / var(--len))), 320px);
+    line-height: 0.85;
+  }
+  .flymode-inner[data-count="1"] .flymode-score.home { grid-area: 2 / 1; }
+  .flymode-inner[data-count="1"] .flymode-score.away { grid-area: 2 / 2; }
+  .flymode-inner[data-count="1"] .flymode-status {
+    grid-area: 3 / 1 / 3 / 3;
+    justify-self: center;
+    align-self: end;
+    font-size: clamp(12px, 5cqmin, 28px);
+    padding: 6px 18px;
+    margin-top: 4px;
+  }
+  .flymode-inner[data-count="1"] .fm-markers .mk img { height: 18px; }
+  @media (orientation: landscape) {
+    .flymode-inner[data-count="1"] { padding: 2px; bottom: 56px; }
+    .flymode-inner[data-count="1"] .flymode-score {
+      font-size: clamp(64px, min(calc(72cqw / var(--len)), 38cqh), 300px);
+    }
+    .flymode-inner[data-count="1"] .flymode-status {
+      font-size: clamp(14px, 3.5vw, 32px);
+    }
+  }
 
   .flymode-inner[data-count="4"] .fm-markers,
   .flymode-inner[data-count="5"] .fm-markers,
@@ -4219,17 +4303,65 @@ function isTeamFollowed(name, league) {
 }
 
 // Item 14: discreet + on feed cards for teams not yet followed.
+// SVG quick-add button: off = embossed plus (default), on = neon green glow (:active / .qa-btn-on).
+function quickAddBtnSvg() {
+  var n = (quickAddBtnSvg._n = (quickAddBtnSvg._n || 0) + 1);
+  var p = 'qa' + n;
+  return '<svg class="qa-btn-svg" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">'
+    + '<defs>'
+    + '<radialGradient id="' + p + 'Face" cx="38%" cy="32%" r="68%">'
+    + '<stop offset="0%" stop-color="#2e2e32"/><stop offset="55%" stop-color="#18181c"/><stop offset="100%" stop-color="#08080a"/>'
+    + '</radialGradient>'
+    + '<linearGradient id="' + p + 'Rim" x1="0" y1="0" x2="0" y2="1">'
+    + '<stop offset="0%" stop-color="rgba(255,255,255,0.22)"/><stop offset="45%" stop-color="rgba(255,255,255,0.06)"/><stop offset="100%" stop-color="rgba(0,0,0,0.35)"/>'
+    + '</linearGradient>'
+    + '<filter id="' + p + 'Glow" x="-40%" y="-40%" width="180%" height="180%">'
+    + '<feGaussianBlur stdDeviation="1.4" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>'
+    + '</filter>'
+    + '</defs>'
+    + '<circle cx="20" cy="20" r="19" fill="url(#' + p + 'Face)"/>'
+    + '<circle cx="20" cy="20" r="19" fill="none" stroke="url(#' + p + 'Rim)" stroke-width="0.9"/>'
+    + '<g class="qa-plus-off">'
+    + '<rect x="11" y="17.2" width="18" height="5.6" rx="2.8" fill="#141418"/>'
+    + '<rect x="17.2" y="11" width="5.6" height="18" rx="2.8" fill="#141418"/>'
+    + '<rect x="11" y="17.2" width="18" height="5.6" rx="2.8" fill="none" stroke="rgba(255,255,255,0.07)" stroke-width="0.45"/>'
+    + '<rect x="17.2" y="11" width="5.6" height="18" rx="2.8" fill="none" stroke="rgba(255,255,255,0.07)" stroke-width="0.45"/>'
+    + '<rect x="11.3" y="16.9" width="18" height="2" rx="1" fill="rgba(255,255,255,0.04)"/>'
+    + '</g>'
+    + '<g class="qa-plus-on" filter="url(#' + p + 'Glow)">'
+    + '<rect x="11" y="17.2" width="18" height="5.6" rx="2.8" fill="#9eff1a"/>'
+    + '<rect x="17.2" y="11" width="5.6" height="18" rx="2.8" fill="#9eff1a"/>'
+    + '</g>'
+    + '</svg>';
+}
+
+function quickAddBtnHtml(opts) {
+  opts = opts || {};
+  var cls = 'qa-btn' + (opts.row ? ' qa-btn-row' : '') + (opts.static ? ' qa-btn-static' : '') + (opts.on ? ' qa-btn-on' : '');
+  var attrs = opts.attrs || '';
+  var inner = quickAddBtnSvg();
+  if (opts.static || opts.tag === 'span') {
+    return '<span class="' + cls + '"' + attrs + '>' + inner + '</span>';
+  }
+  return '<button type="button" class="' + cls + '"' + attrs + '>' + inner + '</button>';
+}
+
 function teamQuickAddBtn(teamName, m) {
   const league = m.sport;
   if (isTeamFollowed(teamName, league)) return '';
   const key = teamName + '|' + league;
-  return '<button type="button" class="qa-btn" data-fav-key="' + escAttr(key) + '" onclick="quickAddFromBtn(this,event)" aria-label="Follow team">+</button>';
+  return quickAddBtnHtml({
+    attrs: ' data-fav-key="' + escAttr(key) + '" onclick="quickAddFromBtn(this,event)" aria-label="Follow team"'
+  });
 }
 
 function quickAddFromBtn(btn, evt) {
   if (evt) { evt.stopPropagation(); evt.preventDefault(); }
   const key = btn.getAttribute('data-fav-key');
-  if (key) quickAddTeam(key);
+  if (key) {
+    btn.classList.add('qa-btn-on');
+    quickAddTeam(key);
+  }
 }
 
 function quickAddTeam(key) {
@@ -5010,10 +5142,11 @@ function buildFlyModeGrid() {
     grid.innerHTML = '<div class="flymode-empty">No live matches</div>';
     return;
   }
-  // Blueprint layout: team codes at 20%/25|75%, scores at 50%, timer pill at 80%.
+  // Single match: score-first grid with logo+abbrev stacked; multi-match keeps blueprint anchors.
+  const isSolo = live.length === 1;
   grid.innerHTML = live.map(m => {
     const badge = (m.timer || '').trim();
-    const mf = getMatchFly(m.id); // '' | 'flytime' | 'overtime'
+    const mf = getMatchFly(m.id);
     const statusCls = mf === 'overtime' ? ' ot' : (mf === 'flytime' ? ' flytime' : '');
     const periodCls = flyModePillClass(m, statusCls);
     const hCls = getFlyClass(m.id, 'home');
@@ -5025,12 +5158,33 @@ function buildFlyModeGrid() {
     const sLen = Math.min(4, Math.max(1, String(m.homeScore).length, String(m.awayScore).length));
     const markers = flyTimeIcon(m, 'live');
     const markerBox = markers ? ('<div class="fm-markers">' + markers + '</div>') : '';
+    const homeLogo = logoImg(m.homeLogo, m.league, m.homeId, m.home, 'fm-logo', m.leagueKey);
+    const awayLogo = logoImg(m.awayLogo, m.league, m.awayId, m.away, 'fm-logo', m.leagueKey);
+    if (isSolo) {
+      return ''
+        + '<div class="flymode-card flymode-card--solo' + statusCls + '" style="--len:' + sLen + '">'
+        +   markerBox
+        +   '<div class="flymode-board">'
+        +     '<div class="flymode-identity home">'
+        +       '<div class="flymode-logo">' + homeLogo + '</div>'
+        +       '<div class="flymode-team">' + homeCode + '</div>'
+        +     '</div>'
+        +     '<div class="flymode-identity away">'
+        +       '<div class="flymode-logo">' + awayLogo + '</div>'
+        +       '<div class="flymode-team">' + awayCode + '</div>'
+        +     '</div>'
+        +     '<div class="flymode-score home ' + hCls + '" style="' + hSty + '" data-fk="' + m.id + '|h|fms">' + m.homeScore + '</div>'
+        +     '<div class="flymode-score away ' + aCls + '" style="' + aSty + '" data-fk="' + m.id + '|a|fms">' + m.awayScore + '</div>'
+        +     '<div class="flymode-status' + statusCls + periodCls + '">' + badge + '</div>'
+        +   '</div>'
+        + '</div>';
+    }
     return ''
       + '<div class="flymode-card' + statusCls + '" style="--len:' + sLen + '">'
       +   markerBox
       +   '<div class="flymode-board">'
-      +     '<div class="flymode-logo home">' + logoImg(m.homeLogo, m.league, m.homeId, m.home, 'fm-logo', m.leagueKey) + '</div>'
-      +     '<div class="flymode-logo away">' + logoImg(m.awayLogo, m.league, m.awayId, m.away, 'fm-logo', m.leagueKey) + '</div>'
+      +     '<div class="flymode-logo home">' + homeLogo + '</div>'
+      +     '<div class="flymode-logo away">' + awayLogo + '</div>'
       +     '<div class="flymode-team home">' + homeCode + '</div>'
       +     '<div class="flymode-team away">' + awayCode + '</div>'
       +     '<div class="flymode-score home ' + hCls + '" style="' + hSty + '" data-fk="' + m.id + '|h|fms">' + m.homeScore + '</div>'
@@ -5222,7 +5376,7 @@ function renderSearchMatches(matches) {
     const badge = item.type === 'team'
       ? (alreadyAdded
           ? `<span class="gsr-added">&#10003; Added</span>`
-          : `<button type="button" class="qa-btn qa-btn-row" onclick="gsrQuickAdd(event,${idx})" aria-label="Follow ${escAttr(item.name)}">+</button>`)
+          : quickAddBtnHtml({ row: true, attrs: ' onclick="gsrQuickAdd(event,' + idx + ')" aria-label="Follow ' + escAttr(item.name) + '"' }))
       : `<span class="gsr-badge-icon">${sportImg(item.emoji,16)}</span>`;
 
     const lead = item.type === 'team'
@@ -6100,7 +6254,7 @@ function onbPickCardHtml(it, idx, source){
     badge+
     '<div class="onb-pick-info"><div class="onb-pick-name">'+it.name+'</div>'+
     '<div class="onb-pick-league">'+it.league+'</div></div>'+
-    (followed ? '<span class="gsr-added">&#10003; Added</span>' : '<span class="qa-btn qa-btn-static">+</span>')+
+    (followed ? '<span class="gsr-added">&#10003; Added</span>' : quickAddBtnHtml({ static: true }))+
     '</div>';
 }
 
@@ -6238,7 +6392,7 @@ function onbSearch(query){
   resultsDiv.innerHTML=matches.map(function(item,idx){
     var alreadyAdded=item.type==='team' && favs.some(function(f){return f.key===item.favKey;});
     var badge = item.type==='team'
-      ? (alreadyAdded ? '<span class="gsr-added">&#10003; Added</span>' : '<button type="button" class="qa-btn qa-btn-row" onclick="onbQuickAdd(event,'+idx+')" aria-label="Follow team">+</button>')
+      ? (alreadyAdded ? '<span class="gsr-added">&#10003; Added</span>' : quickAddBtnHtml({ row: true, attrs: ' onclick="onbQuickAdd(event,'+idx+')" aria-label="Follow team"' }))
       : '<span class="gsr-badge-icon">'+sportImg(item.emoji,16)+'</span>';
     return '<div class="gsr-item" data-idx="'+idx+'" onclick="onbTap(this)">'+
       '<div class="gsr-flag">'+item.flag+'</div>'+

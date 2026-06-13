@@ -1126,7 +1126,7 @@ const dwarn = DEBUG ? console.warn.bind(console) : function(){};
 const derr  = DEBUG ? console.error.bind(console): function(){};
 
 // Polling cadence. One self-rescheduling loop (see pollTick / scheduleNextPoll).
-const FLYMODE_POLL = 1000;  // Fly Mode open: fastest practical refresh
+const FLYMODE_POLL = 2000;  // Fly Mode open: fast refresh (still reads as live, ~half the work/battery of 1s)
 const FAST_POLL  = 4000;    // while games are live: refresh live scores every 4s
 const FLYTIME_POLL = 3000;  // a live match is in FlyTime: refresh even faster
 const SOON_POLL  = 30000;   // nothing live yet but a match starts soon: check at 30s
@@ -2010,6 +2010,7 @@ function matchHadFlyTime(id){ return Object.prototype.hasOwnProperty.call(flyTim
 
 // --- FlyTime predictor ledger (Item 6) ---
 // PRE-RELEASE: set DEBUG_FLY false before public release (hides card scores + Teams lab).
+// Lab still reachable in production via ?flylab=1 (persists in localStorage), see flyLabEnabled.
 const DEBUG_FLY = true;
 const DEBUG_FLYSCORES = DEBUG_FLY;
 // Fly naming (four coloured flies — same icon, different colours):
@@ -3103,10 +3104,19 @@ function flashScoreCell(matchId, side) {
 const SNAPSHOT_KEY = 'scorefly_snapshot_v1';
 const SNAPSHOT_TTL_MS = 6 * 60 * 60 * 1000;  // upcoming + results stay useful for 6h
 const SNAPSHOT_LIVE_MS = 15 * 60 * 1000;     // a "live" score is only trusted for 15 min
+// The snapshot only needs to be fresh enough for the NEXT launch, not every poll. Writing
+// it on the 1-4s live tier blocks the main thread with a synchronous JSON.stringify each
+// poll, so throttle to at most once per SNAPSHOT_MIN_INTERVAL_MS (the next poll after a
+// launch corrects anything stale anyway). First call always writes (lastSnapshotMs = 0).
+const SNAPSHOT_MIN_INTERVAL_MS = 20000;
+let lastSnapshotMs = 0;
 function saveSnapshot() {
+  const now = Date.now();
+  if (now - lastSnapshotMs < SNAPSHOT_MIN_INTERVAL_MS) return;
+  lastSnapshotMs = now;
   try {
     localStorage.setItem(SNAPSHOT_KEY, JSON.stringify({
-      ts: Date.now(),
+      ts: now,
       live: ALL_LIVE,
       upcoming: ALL_UPCOMING.slice(0, 250),
       results: ALL_RESULTS.slice(0, 300)
@@ -4345,11 +4355,20 @@ function opticalScaleFor(stats) {
   return Math.round(Math.min(1.18, Math.max(0.90, scale)) * 100) / 100;
 }
 
+// The pixel stats for a given logo URL never change, but cards are rebuilt every poll so
+// each recreated <img> would otherwise re-run the 32x32 canvas getImageData readback. Cache
+// the stats (success OR null) by source so the canvas runs at most once per logo per session.
+const _logoProbeCache = {};
 function probeTeamLogoContrast(img) {
   const wrap = img && img.closest('.team-logo-halo');
   if (!wrap || !wrap.hasAttribute('data-halo-probe')) return;
   wrap.removeAttribute('data-halo-probe');
-  const stats = sampleLogoStats(img);
+  const probeKey = img.currentSrc || img.src || '';
+  let stats = probeKey ? _logoProbeCache[probeKey] : undefined;
+  if (stats === undefined) {
+    stats = sampleLogoStats(img) || null;
+    if (probeKey) _logoProbeCache[probeKey] = stats;
+  }
   if (!stats) return;
   // Optical weight normalization for any logo the config did not pre-scale.
   if (!wrap.style.getPropertyValue('--logo-scale')) {
@@ -4837,8 +4856,9 @@ function buildFlyModeGrid() {
   // Filter live matches to My Teams (or all if no favs set)
   let live = ALL_LIVE.filter(m => {
     if (noFavs) return true;
-    const fav = favNames.includes(m.home.toLowerCase()) || favNames.includes(m.away.toLowerCase());
-    if (fav) return true;
+    // Use the same substring matcher as the Feed (teamMatch) so a followed team whose ESPN
+    // display name differs from the stored name appears on the big screen too, not just the Feed.
+    if (teamMatch(m, favNames)) return true;
     // Rec 2: when FlyTime ALL is on, also surface non-followed matches currently in FlyTime.
     if (flyTimeAll && getMatchFly(m.id) === 'flytime') return true;
     return false;

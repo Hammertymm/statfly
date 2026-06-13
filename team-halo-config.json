@@ -288,9 +288,9 @@
       ],
       "league": "A-League",
       "espnIds": [
-        "193"
+        "20086"
       ],
-      "logoUrl": "https://a.espncdn.com/i/teamlogos/soccer/500/193.png",
+      "logoUrl": "https://a.espncdn.com/i/teamlogos/soccer/500/20086.png",
       "haloColor": "#E81828",
       "haloStrength": 0.25,
       "needsContrastLift": true,
@@ -1256,9 +1256,9 @@
       ],
       "league": "Brasileirao",
       "espnIds": [
-        "1068"
+        "7632"
       ],
-      "logoUrl": "https://a.espncdn.com/i/teamlogos/soccer/500/1068.png",
+      "logoUrl": "https://a.espncdn.com/i/teamlogos/soccer/500/7632.png",
       "haloColor": "#282868",
       "haloStrength": 0.25,
       "needsContrastLift": false,
@@ -2568,9 +2568,9 @@
       ],
       "league": "Chinese Super League",
       "espnIds": [
-        "391"
+        "18199"
       ],
-      "logoUrl": "https://a.espncdn.com/i/teamlogos/soccer/500/391.png",
+      "logoUrl": "https://a.espncdn.com/i/teamlogos/soccer/500/18199.png",
       "haloColor": "#083888",
       "haloStrength": 0.25,
       "needsContrastLift": false,
@@ -2637,9 +2637,9 @@
       ],
       "league": "Chinese Super League",
       "espnIds": [
-        "3076"
+        "22537"
       ],
-      "logoUrl": "https://a.espncdn.com/i/teamlogos/soccer/500/3076.png",
+      "logoUrl": "https://a.espncdn.com/i/teamlogos/soccer/500/22537.png",
       "haloColor": "#E82828",
       "haloStrength": 0.25,
       "needsContrastLift": false,
@@ -2913,9 +2913,9 @@
       ],
       "league": "Copa Libertadores",
       "espnIds": [
-        "1068"
+        "7632"
       ],
-      "logoUrl": "https://a.espncdn.com/i/teamlogos/soccer/500/1068.png",
+      "logoUrl": "https://a.espncdn.com/i/teamlogos/soccer/500/7632.png",
       "haloColor": "#282868",
       "haloStrength": 0.25,
       "needsContrastLift": false,
@@ -3143,9 +3143,9 @@
       ],
       "league": "Copa do Brasil",
       "espnIds": [
-        "1068"
+        "7632"
       ],
-      "logoUrl": "https://a.espncdn.com/i/teamlogos/soccer/500/1068.png",
+      "logoUrl": "https://a.espncdn.com/i/teamlogos/soccer/500/7632.png",
       "haloColor": "#282868",
       "haloStrength": 0.25,
       "needsContrastLift": false,
@@ -4708,9 +4708,9 @@
       ],
       "league": "Indian Premier League",
       "espnIds": [
-        "23"
+        "335974"
       ],
-      "logoUrl": "https://a.espncdn.com/i/teamlogos/nba/500/sac.png",
+      "logoUrl": "https://a.espncdn.com/i/teamlogos/cricket/500/335974.png",
       "haloColor": "#682888",
       "haloStrength": 0.25,
       "needsContrastLift": false,
@@ -4731,9 +4731,9 @@
       ],
       "league": "Indian Premier League",
       "espnIds": [
-        "23"
+        "335975"
       ],
-      "logoUrl": "https://a.espncdn.com/i/teamlogos/nhl/500/wsh.png",
+      "logoUrl": "https://a.espncdn.com/i/teamlogos/cricket/500/335975.png",
       "haloColor": "#082848",
       "haloStrength": 0.25,
       "needsContrastLift": true,
@@ -4755,9 +4755,9 @@
       ],
       "league": "Indian Premier League",
       "espnIds": [
-        "10"
+        "1298769"
       ],
-      "logoUrl": "https://a.espncdn.com/i/teamlogos/nfl/500/ten.png",
+      "logoUrl": "https://a.espncdn.com/i/teamlogos/cricket/500/1298769.png",
       "haloColor": "#4898D8",
       "haloStrength": 0.25,
       "needsContrastLift": false,
@@ -4801,9 +4801,9 @@
       ],
       "league": "Indian Premier League",
       "espnIds": [
-        "19"
+        "1298768"
       ],
-      "logoUrl": "https://a.espncdn.com/i/teamlogos/nfl/500/nyg.png",
+      "logoUrl": "https://a.espncdn.com/i/teamlogos/cricket/500/1298768.png",
       "haloColor": "#082878",
       "haloStrength": 0.25,
       "needsContrastLift": true,
@@ -4848,9 +4848,9 @@
       ],
       "league": "Indian Premier League",
       "espnIds": [
-        "23"
+        "335973"
       ],
-      "logoUrl": "https://a.espncdn.com/i/teamlogos/nba/500/sac.png",
+      "logoUrl": "https://a.espncdn.com/i/teamlogos/cricket/500/335973.png",
       "haloColor": "#682888",
       "haloStrength": 0.25,
       "needsContrastLift": false,
@@ -4894,9 +4894,9 @@
       ],
       "league": "Indian Premier League",
       "espnIds": [
-        "18851"
+        "335970"
       ],
-      "logoUrl": "https://a.espncdn.com/i/teamlogos/soccer/500/18851.png",
+      "logoUrl": "https://a.espncdn.com/i/teamlogos/cricket/500/335970.png",
       "haloColor": "#284898",
       "haloStrength": 0.25,
       "needsContrastLift": false,
@@ -6619,9 +6619,9 @@
       ],
       "league": "League Two",
       "espnIds": [
-        "308"
+        "279"
       ],
-      "logoUrl": "https://a.espncdn.com/i/teamlogos/soccer/500/308.png",
+      "logoUrl": "https://a.espncdn.com/i/teamlogos/soccer/500/279.png",
       "haloColor": "#084898",
       "haloStrength": 0.25,
       "needsContrastLift": false,
@@ -6642,9 +6642,9 @@
       ],
       "league": "League Two",
       "espnIds": [
-        "308"
+        "282"
       ],
-      "logoUrl": "https://a.espncdn.com/i/teamlogos/soccer/500/308.png",
+      "logoUrl": "https://a.espncdn.com/i/teamlogos/soccer/500/282.png",
       "haloColor": "#084898",
       "haloStrength": 0.25,
       "needsContrastLift": false,
@@ -6872,9 +6872,9 @@
       ],
       "league": "League Two",
       "espnIds": [
-        "193"
+        "3231"
       ],
-      "logoUrl": "https://a.espncdn.com/i/teamlogos/soccer/500/193.png",
+      "logoUrl": "https://a.espncdn.com/i/teamlogos/soccer/500/3231.png",
       "haloColor": "#E81828",
       "haloStrength": 0.25,
       "needsContrastLift": true,
@@ -7953,9 +7953,9 @@
       ],
       "league": "Ligue 1",
       "espnIds": [
-        "25917"
+        "3171"
       ],
-      "logoUrl": "https://a.espncdn.com/i/teamlogos/rugby/teams/500/25917.png",
+      "logoUrl": "https://a.espncdn.com/i/teamlogos/soccer/500/3171.png",
       "haloColor": "#0848F8",
       "haloStrength": 0.25,
       "needsContrastLift": false,
@@ -8160,9 +8160,9 @@
       ],
       "league": "Ligue 1",
       "espnIds": [
-        "25918"
+        "274"
       ],
-      "logoUrl": "https://a.espncdn.com/i/teamlogos/rugby/teams/500/25918.png",
+      "logoUrl": "https://a.espncdn.com/i/teamlogos/soccer/500/274.png",
       "haloColor": "#082858",
       "haloStrength": 0.25,
       "needsContrastLift": false,
@@ -8854,19 +8854,19 @@
       "espnIds": [
         "25"
       ],
-      "logoUrl": "https://a.espncdn.com/i/teamlogos/mlb/500/sd.png",
+      "logoUrl": "https://a.espncdn.com/i/teamlogos/mlb/500-dark/sd.png",
       "haloColor": "#382818",
       "haloStrength": 0.25,
-      "needsContrastLift": true,
+      "needsContrastLift": false,
       "dominantColor": "#281818",
       "secondaryColor": "#382818",
       "logoScale": 0.95,
       "needsContrastClamp": false,
       "whiteLogo": false,
-      "nearBlack": true,
+      "nearBlack": false,
       "localLogo": "assets/logos/san-diego-padres-mlb.png",
       "localLogo2x": "assets/logos/san-diego-padres-mlb@2x.png",
-      "deepDark": true
+      "deepDark": false
     },
     {
       "teamId": "san-francisco-giants-mlb",
@@ -9986,18 +9986,18 @@
       ],
       "league": "NBA",
       "espnIds": [
-        "13"
+        "12"
       ],
-      "logoUrl": "https://a.espncdn.com/i/teamlogos/nba/500/lal.png",
-      "haloColor": "#F8B808",
+      "logoUrl": "https://a.espncdn.com/i/teamlogos/nba/500/lac.png",
+      "haloColor": "#1D428A",
       "haloStrength": 0.25,
-      "needsContrastLift": false,
-      "dominantColor": "#F8B808",
-      "secondaryColor": "#F8C808",
+      "needsContrastLift": true,
+      "dominantColor": "#1D428A",
+      "secondaryColor": "#C8102E",
       "logoScale": 0.97,
       "needsContrastClamp": false,
       "whiteLogo": false,
-      "nearBlack": false,
+      "nearBlack": true,
       "localLogo": "assets/logos/los-angeles-clippers-nba.png",
       "localLogo2x": "assets/logos/los-angeles-clippers-nba@2x.png"
     },
@@ -12547,9 +12547,9 @@
       ],
       "league": "PSL Football",
       "espnIds": [
-        "367"
+        "7075"
       ],
-      "logoUrl": "https://a.espncdn.com/i/teamlogos/soccer/500/367.png",
+      "logoUrl": "https://a.espncdn.com/i/teamlogos/soccer/500/7075.png",
       "haloColor": "#182858",
       "haloStrength": 0.25,
       "needsContrastLift": true,
@@ -12686,9 +12686,9 @@
       ],
       "league": "PSL Football",
       "espnIds": [
-        "193"
+        "7080"
       ],
-      "logoUrl": "https://a.espncdn.com/i/teamlogos/soccer/500/193.png",
+      "logoUrl": "https://a.espncdn.com/i/teamlogos/soccer/500/7080.png",
       "haloColor": "#E81828",
       "haloStrength": 0.25,
       "needsContrastLift": true,
@@ -12709,9 +12709,9 @@
       ],
       "league": "Pakistan Super League",
       "espnIds": [
-        "193"
+        "953843"
       ],
-      "logoUrl": "https://a.espncdn.com/i/teamlogos/soccer/500/193.png",
+      "logoUrl": "https://a.espncdn.com/i/teamlogos/cricket/500/953843.png",
       "haloColor": "#E81828",
       "haloStrength": 0.25,
       "needsContrastLift": true,
@@ -12732,9 +12732,9 @@
       ],
       "league": "Pakistan Super League",
       "espnIds": [
-        "23"
+        "953835"
       ],
-      "logoUrl": "https://a.espncdn.com/i/teamlogos/nba/500/sac.png",
+      "logoUrl": "https://a.espncdn.com/i/teamlogos/cricket/500/953835.png",
       "haloColor": "#682888",
       "haloStrength": 0.25,
       "needsContrastLift": false,
@@ -13561,9 +13561,9 @@
       ],
       "league": "Primeira Liga",
       "espnIds": [
-        "7"
+        "3719"
       ],
-      "logoUrl": "https://a.espncdn.com/i/teamlogos/afl/500/port.png",
+      "logoUrl": "https://a.espncdn.com/i/teamlogos/soccer/500/3719.png",
       "haloColor": "#0888A8",
       "haloStrength": 0.25,
       "needsContrastLift": false,
@@ -13929,9 +13929,9 @@
       ],
       "league": "SA T20 Cricket",
       "espnIds": [
-        "15"
+        "3199"
       ],
-      "logoUrl": "https://a.espncdn.com/i/teamlogos/nfl/500/mia.png",
+      "logoUrl": "https://a.espncdn.com/i/teamlogos/cricket/500/3199.png",
       "haloColor": "#088898",
       "haloStrength": 0.25,
       "needsContrastLift": false,
@@ -13954,7 +13954,7 @@
       "espnIds": [
         "289207"
       ],
-      "logoUrl": "https://a.espncdn.com/i/teamlogos/rugby/teams/500/289207.png",
+      "logoUrl": "",
       "haloColor": "#D82828",
       "haloStrength": 0.25,
       "needsContrastLift": false,
@@ -13963,9 +13963,7 @@
       "logoScale": 0.96,
       "needsContrastClamp": false,
       "whiteLogo": false,
-      "nearBlack": false,
-      "localLogo": "assets/logos/knights-sa-t20-cricket.png",
-      "localLogo2x": "assets/logos/knights-sa-t20-cricket@2x.png"
+      "nearBlack": false
     },
     {
       "teamId": "lions-sa-t20-cricket",
@@ -13977,7 +13975,7 @@
       "espnIds": [
         "391"
       ],
-      "logoUrl": "https://a.espncdn.com/i/teamlogos/soccer/500/391.png",
+      "logoUrl": "",
       "haloColor": "#083888",
       "haloStrength": 0.25,
       "needsContrastLift": false,
@@ -13986,9 +13984,7 @@
       "logoScale": 1.18,
       "needsContrastClamp": false,
       "whiteLogo": false,
-      "nearBlack": false,
-      "localLogo": "assets/logos/lions-sa-t20-cricket.png",
-      "localLogo2x": "assets/logos/lions-sa-t20-cricket@2x.png"
+      "nearBlack": false
     },
     {
       "teamId": "titans-sa-t20-cricket",
@@ -13998,9 +13994,9 @@
       ],
       "league": "SA T20 Cricket",
       "espnIds": [
-        "10"
+        "3340"
       ],
-      "logoUrl": "https://a.espncdn.com/i/teamlogos/nfl/500/ten.png",
+      "logoUrl": "https://a.espncdn.com/i/teamlogos/cricket/500/3340.png",
       "haloColor": "#4898D8",
       "haloStrength": 0.25,
       "needsContrastLift": false,
@@ -14023,7 +14019,7 @@
       "espnIds": [
         "9"
       ],
-      "logoUrl": "https://a.espncdn.com/i/teamlogos/nba/500/gs.png",
+      "logoUrl": "",
       "haloColor": "#084888",
       "haloStrength": 0.25,
       "needsContrastLift": false,
@@ -14032,9 +14028,7 @@
       "logoScale": 0.85,
       "needsContrastClamp": false,
       "whiteLogo": false,
-      "nearBlack": false,
-      "localLogo": "assets/logos/warriors-sa-t20-cricket.png",
-      "localLogo2x": "assets/logos/warriors-sa-t20-cricket@2x.png"
+      "nearBlack": false
     },
     {
       "teamId": "abha-saudi-pro-league",
@@ -15173,9 +15167,9 @@
       ],
       "league": "Serie B",
       "espnIds": [
-        "15"
+        "3943"
       ],
-      "logoUrl": "https://a.espncdn.com/i/teamlogos/afl/500/adel.png",
+      "logoUrl": "https://a.espncdn.com/i/teamlogos/soccer/500/3943.png",
       "haloColor": "#F8A818",
       "haloStrength": 0.25,
       "needsContrastLift": true,

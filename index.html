@@ -95,8 +95,8 @@
   .ptr-indicator.refreshing{height:36px;line-height:36px;color:var(--text-2);}
 
   .card-meta{display:flex;align-items:flex-start;justify-content:space-between;padding:8px 14px 0;}
-  .league-tag{display:flex;align-items:center;gap:8px;}
-  .lg-badge{display:inline-flex;align-items:center;background:#1b1e2c;color:#fff;font-size:11px;font-weight:700;letter-spacing:.4px;padding:4px 9px;border-radius:7px;text-transform:uppercase;line-height:1;}
+  .league-tag{display:flex;align-items:center;gap:8px;min-width:0;overflow:hidden;}
+  .lg-badge{display:inline-flex;align-items:center;background:#1b1e2c;color:#fff;font-size:11px;font-weight:700;letter-spacing:.4px;padding:4px 9px;border-radius:7px;text-transform:uppercase;line-height:1;white-space:nowrap;}
   .sport-icon{line-height:1;flex-shrink:0;display:inline-flex;align-items:center;}
   .live-badge{display:flex;align-items:center;gap:5px;background:rgba(6,240,60,.14);border:1px solid var(--live);color:var(--live);font-size:10px;font-weight:700;letter-spacing:.5px;padding:4px 9px;border-radius:8px;text-transform:uppercase;}
   .live-badge .bdot{width:6px;height:6px;border-radius:50%;background:var(--live);animation:pulse 1.2s infinite;}
@@ -226,7 +226,7 @@
   .result-facts{padding:6px 11px 10px;border-top:1px solid var(--sep);}
 
   /* FLYMATCH STAMP (top-right of feed cards, beside any badge) */
-  .card-right{display:flex;align-items:center;gap:6px;}
+  .card-right{display:flex;align-items:center;gap:6px;flex-shrink:0;}
   .mk{display:inline-flex;align-items:center;justify-content:center;flex:0 0 auto;}
   .mk img{display:block;height:20px;width:auto;}
   /* FlyMatch marker uses the circular SupaFly logo: clip square corners to a circle */
@@ -4451,21 +4451,54 @@ function renderSportIcon(e){return sportImg(e,18);}
 // Display-only short names for cards. Canonical m.home/m.away stay full so
 // follow-matching, Fly Mode codes, and saved favourites are
 // unaffected; only the visible card text is shortened.
+// Abbreviations for team names that overflow the single-line card slot (>23 chars).
+// Keyed by a normalised form (lowercase, accents/punctuation stripped) so ESPN
+// feed variants - e.g. "Borussia Monchengladbach" vs "Borussia Mönchengladbach",
+// "St. George" vs "St George" - all resolve to the same short label.
+const TEAM_SHORT_NAMES = {
+  'greater western sydney giants': 'GWS Giants',
+  'north queensland cowboys':      'NQ Cowboys',
+  'st george illawarra dragons':   'St George Dragons',
+  'north melbourne kangaroos':     'Nth Melb. Kangaroos',
+  'south east melbourne phoenix':  'SE Melb. Phoenix',
+  'royal challengers bengaluru':   'RC Bengaluru',
+  'zhejiang professional fc':      'Zhejiang Pro FC',
+  'western sydney wanderers':      'WS Wanderers',
+  'borussia monchengladbach':      "Bor. M'gladbach",
+  'saskatchewan roughriders':      'Sask. Roughriders',
+};
+function normShortKey(s){
+  return (s || '')
+    .normalize('NFD').replace(/[\u0300-\u036f]/g, '')
+    .toLowerCase().replace(/[^a-z0-9 ]/g, ' ').replace(/\s+/g, ' ').trim();
+}
 function displayTeamName(name){
-  switch(name){
-    case 'North Melbourne Kangaroos':     return 'Nth Melbourne Kangaroos';
-    case 'North Queensland Cowboys':      return 'NQ Cowboys';
-    case 'Greater Western Sydney Giants': return 'GWS Giants';
-    case 'St George Illawarra Dragons':   return 'St George Ill Dragons';
-  }
-  return name;
+  return TEAM_SHORT_NAMES[normShortKey(name)] || name;
+}
+
+// Abbreviations for league badge text so each badge stays on a single line and
+// never wraps to a second row. Display-only: feed.label / matching are untouched.
+const LEAGUE_SHORT_NAMES = {
+  'League of Ireland':      'Lg. of Ireland',
+  'Scottish Premiership':   'Scottish Prem',
+  'Russian Premier League': 'Russian PL',
+  'Chinese Super League':   'Chinese SL',
+  'Belgian Pro League':     'Belgian Pro',
+  'Swiss Super League':     'Swiss SL',
+  'Greek Super League':     'Greek SL',
+  'Saudi Pro League':       'Saudi PL',
+  'Liga Profesional':       'Liga Prof.',
+  'Big Bash League':        'Big Bash',
+};
+function displayLeagueName(label){
+  return LEAGUE_SHORT_NAMES[label] || label;
 }
 
 function buildLiveCard(m){
   const sc=m.sportKey==='cricket'?'sc cricket':'sc';
   const lparts=m.league.split(' ');
   const sico=lparts[0];
-  const ltxt=lparts.slice(1).join(' ');
+  const ltxt=displayLeagueName(lparts.slice(1).join(' '));
   const fly=flyTimeIcon(m,'live');
   const ftLocked=isFlyTimePinned(m)?' flytime-locked':'';
   return`<div class="card live${ftLocked}" data-match-id="${m.id}">
@@ -4487,7 +4520,7 @@ function buildUpcomingCard(m){
   const facts=(m.facts&&m.facts.length)?buildFacts(m.facts):'';
   const lparts=m.league.split(' ');
   const sico=lparts[0];
-  const ltxt=lparts.slice(1).join(' ');
+  const ltxt=displayLeagueName(lparts.slice(1).join(' '));
   return`<div class="card upcoming">
     <div class="card-meta"><span class="league-tag"><span class="sport-icon">${renderSportIcon(sico)}</span><span class="lg-badge">${ltxt}</span></span><span class="card-right">${flyScoreDebugHTML(m,'upcoming')}${flyTimeIcon(m,'upcoming')}</span></div>
     <div class="upcoming-body">
@@ -4507,7 +4540,7 @@ function buildResultCard(m){
   const facts=(m.facts&&m.facts.length)?buildFacts(m.facts):'';
   const lparts=m.league.split(' ');
   const sico=lparts[0];
-  const ltxt=lparts.slice(1).join(' ');
+  const ltxt=displayLeagueName(lparts.slice(1).join(' '));
   const flyRed=flyTimeIcon(m,'result');
   return`<div class="card result">
     <div class="card-meta"><span class="league-tag"><span class="sport-icon">${renderSportIcon(sico)}</span><span class="lg-badge">${ltxt}</span></span><span class="card-right">${flyScoreDebugHTML(m,'result')}${flyRed}<span class="ft-badge">FT · ${m.date}</span></span></div>
@@ -4864,6 +4897,33 @@ function buildFlyModeGrid() {
   flyCrossfade();
 }
 
+// Best-effort native fullscreen. On Android Chrome / desktop this removes the
+// system status bar (time, signal, wifi, battery) and browser chrome entirely -
+// the only reliable way for a web app to suppress that chrome, so FlyMode's
+// "make everything darker" intent is honoured where the platform allows. iOS
+// Safari/standalone ignore the Fullscreen API (documented limitation); there the
+// black-translucent status bar already sits over FlyMode's solid-black backdrop,
+// so only the OS-drawn glyphs remain lit, which no web API can dim.
+function requestFlyFullscreen() {
+  try {
+    const el = document.documentElement;
+    const req = el.requestFullscreen || el.webkitRequestFullscreen || el.msRequestFullscreen;
+    if (req && !document.fullscreenElement && !document.webkitFullscreenElement) {
+      const p = req.call(el, { navigationUI: 'hide' });
+      if (p && p.catch) p.catch(()=>{});
+    }
+  } catch(e) {}
+}
+function exitFlyFullscreen() {
+  try {
+    const ex = document.exitFullscreen || document.webkitExitFullscreen || document.msExitFullscreen;
+    if (ex && (document.fullscreenElement || document.webkitFullscreenElement)) {
+      const p = ex.call(document);
+      if (p && p.catch) p.catch(()=>{});
+    }
+  } catch(e) {}
+}
+
 function enterFlyMode() {
   const slider = document.getElementById('flymode-bright');
   const overlay = document.getElementById('flymode-overlay');
@@ -4873,6 +4933,7 @@ function enterFlyMode() {
   if (inner) inner.style.filter = 'brightness(100%)';
   buildFlyModeGrid();
   bumpBrightnessControl(); // show the slider on entry, then let it fade
+  requestFlyFullscreen();  // hide system chrome where supported (Android/desktop)
   try {
     if (navigator && navigator.wakeLock && typeof navigator.wakeLock.request === 'function') {
       navigator.wakeLock.request('screen').catch(()=>{});
@@ -4895,6 +4956,7 @@ function handleFlyModeTap(e) {
 function exitFlyMode() {
   document.getElementById('flymode-overlay').classList.remove('active');
   if (brightnessFadeTimer) { clearTimeout(brightnessFadeTimer); brightnessFadeTimer = null; }
+  exitFlyFullscreen();
   scheduleNextPoll();
 }
 
@@ -5043,9 +5105,9 @@ function gsrQuickAdd(evt, idx) {
   if (!item || item.type !== 'team') return;
   if (favs.some(f => f.key === item.favKey)) return;
   quickAddTeam(item.favKey);
-  document.getElementById('global-search').value = '';
-  document.getElementById('global-search-clear').classList.remove('visible');
-  renderSearchMatches(matches);
+  // Add then reset: clear the query and collapse the suggestion list so the
+  // remaining (now stale) options can't be tapped again. Returns to idle state.
+  clearGlobalSearch();
 }
 
 function gsrTap(el) {
@@ -5057,11 +5119,9 @@ function gsrTap(el) {
   const already = favs.some(f => f.key === item.favKey);
   if (already) return;
   quickAddTeam(item.favKey);
-  // Item 4: clear the search box after adding, but keep the results list visible
-  // so several teams can be added in a row.
-  document.getElementById('global-search').value = '';
-  document.getElementById('global-search-clear').classList.remove('visible');
-  renderSearchMatches(matches);
+  // Add then reset: instantly clear the query and collapse the results list so
+  // the leftover matches disappear, preventing accidental duplicate adds.
+  clearGlobalSearch();
 }
 
 function clearGlobalSearch() {

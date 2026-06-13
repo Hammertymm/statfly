@@ -28,15 +28,15 @@
     --text:#fff; --text-2:rgba(235,235,245,.8); --text-3:rgba(235,235,245,.4);
     --sep:rgba(255,255,255,.08); --blue:#0a84ff;
     --onrun:#ff9f0a; --comeback:#bf5af2; --cold:#409cff;
-    --sec-mt:12px; --sec-mb:7px;
+    --sec-mt:9px; --sec-mb:6px;
     --score-font:'D-DIN','Inter',-apple-system,BlinkMacSystemFont,sans-serif;
   }
   *{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
   html,body{background:var(--bg);color:var(--text);font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;max-width:430px;margin:0 auto;min-height:100vh;-webkit-font-smoothing:antialiased;overflow-x:hidden;}
 
   /* HEADER */
-  .header{position:sticky;top:0;z-index:50;background:rgba(0,0,0,.97);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);padding:14px 16px 0;}
-  .header-top{display:flex;align-items:flex-end;justify-content:space-between;padding-bottom:9px;}
+  .header{position:sticky;top:0;z-index:50;background:rgba(0,0,0,.97);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);padding:12px 16px 0;border-bottom:1px solid var(--sep);}
+  .header-top{display:flex;align-items:flex-end;justify-content:space-between;padding-bottom:8px;}
   .brand{display:flex;align-items:center;gap:8px;cursor:pointer;-webkit-tap-highlight-color:transparent;}
   .brand:active{opacity:.7;}
   .brand-mark{width:46px;height:46px;flex-shrink:0;display:block;border-radius:50%;}
@@ -56,12 +56,9 @@
   .global-live.visible{display:inline-flex;}
   .global-live:active{opacity:.75;}
   .global-live-dot{width:6px;height:6px;border-radius:50%;background:var(--live);animation:pulse 1.2s infinite;flex-shrink:0;}
-  .tabs{display:flex;border-bottom:1px solid var(--sep);}
-  .tab{flex:1;text-align:center;padding:9px 0 10px;font-size:14px;font-weight:600;color:var(--text-3);cursor:pointer;border-bottom:3px solid transparent;margin-bottom:-1px;transition:color .15s;}
-  .tab.active{color:var(--text);border-bottom-color:var(--live);font-weight:700;}
 
   /* PAGES */
-  .page{display:none;padding:8px 12px 100px;background:#000;}
+  .page{display:none;padding:6px 12px 116px;background:#000;}
   .page.active{display:block;animation:up .2s ease;}
   @keyframes up{from{opacity:0;transform:translateY(4px);}to{opacity:1;transform:translateY(0);}}
 
@@ -76,7 +73,7 @@
   @keyframes pulse{0%,100%{opacity:1;}50%{opacity:.3;}}
 
   /* CARDS */
-  .card{border-radius:8px;margin-bottom:9px;overflow:visible;border:1px solid transparent;background:#080808;transition:transform .12s,opacity .12s;}
+  .card{border-radius:8px;margin-bottom:7px;overflow:visible;border:1px solid transparent;background:#080808;transition:transform .12s,opacity .12s;}
   .card-inner{border-radius:16px;overflow:hidden;}
   .card.live{border-color:var(--live);}
   .card.upcoming{border-color:var(--upcoming);}
@@ -243,6 +240,10 @@
      yellow fly = upcoming prediction; green fly = live FlyTime; red fly = finished after FlyTime. */
   .ft-fly img{height:22px;width:22px;border-radius:50%;display:block;}
   .ft-fly .mk-fb{background:none;border:none;padding:0;height:auto;font-size:15px;}
+  /* FlyTime 2.0 "Likely" (predictive, pre-Confirmed): flashing green fly. The
+     Confirmed fly stays solid (locked in) and greens the whole card. */
+  .ft-fly.ft-likely img,.ft-fly.ft-likely .mk-fb{animation:flyLikelyFlash 1s ease-in-out infinite;}
+  @keyframes flyLikelyFlash{0%,100%{opacity:1;}50%{opacity:.18;}}
   /* Local testing: flyscore readout on cards. Set DEBUG_FLYSCORES false before production. */
   .fly-debug-pair{display:inline-flex;gap:5px;align-items:center;flex-wrap:wrap;justify-content:flex-end;}
   .fly-debug-score{font-size:10px;font-weight:700;color:rgba(255,255,255,.45);letter-spacing:.3px;font-variant-numeric:tabular-nums;white-space:nowrap;}
@@ -257,18 +258,9 @@
   .fm-markers .mk img{height:24px;}
 
   /* UPCOMING */
-  .upcoming-body{display:flex;align-items:stretch;padding:8px 14px 7px;}
-  .up-teams{flex:1;display:flex;flex-direction:column;gap:7px;}
+  .upcoming-body{display:flex;align-items:stretch;padding:7px 14px 7px;}
+  .up-teams{flex:1;display:flex;flex-direction:column;justify-content:center;gap:10px;}
   .up-time{display:flex;flex-direction:column;align-items:flex-end;justify-content:center;min-width:80px;padding-left:12px;border-left:1px solid var(--sep);gap:0;}
-
-  /* FORM STRIP - last 5 results, oldest left newest right */
-  .up-teams .team-row{flex-direction:column;align-items:flex-start;gap:4px;}
-  .up-teams .team-row .row-top{display:flex;align-items:center;gap:10px;width:100%;}
-  .form-strip{display:flex;gap:3px;padding-left:38px;}
-  .form-box{width:11px;height:11px;border-radius:3px;background:rgba(255,255,255,0.08);}
-  .form-box.w{background:var(--live);}
-  .form-box.d{background:var(--upcoming);}
-  .form-box.l{background:var(--result);}
   .countdown{font-size:20px;font-weight:800;color:var(--upcoming);letter-spacing:-.5px;line-height:1.1;text-align:right;}
   .kday{font-size:10px;color:var(--upcoming);font-weight:700;text-align:right;letter-spacing:.2px;text-transform:uppercase;margin-bottom:2px;}
   .ktod{font-size:11px;color:var(--text-3);font-weight:500;text-align:right;}
@@ -880,15 +872,15 @@
   .freshness.stale{color:var(--upcoming);}
 
   /* BOTTOM NAV */
-  .bnav{position:fixed;bottom:0;left:50%;transform:translateX(-50%);width:100%;max-width:430px;background:rgba(0,0,0,.97);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);border-top:1px solid var(--sep);display:flex;padding:8px 0 22px;z-index:50;}
-  .nb{flex:1;display:flex;flex-direction:column;align-items:center;gap:3px;cursor:pointer;opacity:.4;transition:opacity .15s;padding:3px 0;}
+  .bnav{position:fixed;bottom:0;left:50%;transform:translateX(-50%);width:100%;max-width:430px;background:rgba(0,0,0,.97);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);border-top:1px solid var(--sep);display:flex;padding:11px 0 26px;z-index:50;}
+  .nb{flex:1;display:flex;flex-direction:column;align-items:center;gap:4px;cursor:pointer;opacity:.4;transition:opacity .15s;padding:4px 0;}
   .nb.active{opacity:1;}
   .nb.active .nb-lbl{color:var(--live);}
   .nb.active .nb-icon{color:var(--live);}
-  .nb-icon{font-size:20px;}
-  .nb-lbl{font-size:11px;font-weight:600;letter-spacing:-.1px;}
+  .nb-icon{font-size:24px;}
+  .nb-lbl{font-size:13px;font-weight:600;letter-spacing:-.1px;}
   /* fly mode nav button */
-  .nb-flymode{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;cursor:pointer;opacity:.7;padding:0;transition:opacity .15s;margin-top:-8px;}
+  .nb-flymode{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;cursor:pointer;opacity:.7;padding:0;transition:opacity .15s;margin-top:-10px;}
   .nb-flymode:active{opacity:1;}
 </style>
 </head>
@@ -904,11 +896,6 @@
       </button>
       <div class="header-tagline">Scores Anywhere. <em>Simple.</em></div>
     </div>
-  </div>
-  <div class="tabs">
-    <div class="tab active" onclick="goTab('home',this,'nb-home')">Feed</div>
-    <div class="tab" onclick="goTab('results',this,'nb-results')">Results</div>
-    <div class="tab" onclick="goTab('settings',this,'nb-settings')">Teams</div>
   </div>
 </div>
 
@@ -1101,25 +1088,25 @@
 <div class="bnav">
   <div class="nb active" id="nb-home" onclick="goTab('home',null,'nb-home')">
     <div class="nb-icon">
-      <svg width="33" height="22" viewBox="0 0 35.60 24" fill="none" stroke="currentColor" stroke-width="4.32" stroke-linecap="round" stroke-linejoin="round"><g transform="translate(17.80,12.00) scale(0.4167)"><circle cx="0" cy="0" r="4"/><path d="M-14,-14 A20 20 0 0 0 -14 14"/><path d="M14,-14 A20 20 0 0 1 14 14"/><path d="M-28,-24 A34 34 0 0 0 -28 24"/><path d="M28,-24 A34 34 0 0 1 28 24"/></g></svg>
+      <svg width="40" height="26" viewBox="0 0 35.60 24" fill="none" stroke="currentColor" stroke-width="4.32" stroke-linecap="round" stroke-linejoin="round"><g transform="translate(17.80,12.00) scale(0.4167)"><circle cx="0" cy="0" r="4"/><path d="M-14,-14 A20 20 0 0 0 -14 14"/><path d="M14,-14 A20 20 0 0 1 14 14"/><path d="M-28,-24 A34 34 0 0 0 -28 24"/><path d="M28,-24 A34 34 0 0 1 28 24"/></g></svg>
     </div>
     <div class="nb-lbl">Feed</div>
   </div>
   <div class="nb" id="nb-results" onclick="goTab('results',null,'nb-results')">
     <div class="nb-icon">
-      <svg width="21" height="22" viewBox="0 0 23.31 24" fill="none" stroke="currentColor" stroke-width="5.22" stroke-linecap="round" stroke-linejoin="round"><g transform="translate(11.66,4.76) scale(0.3448)"><path d="M-18,-8 H18"/><path d="M-16,-8 C-16,12 -10,20 0,20 C10,20 16,12 16,-8"/><path d="M-16,-4 H-28 C-28,8 -22,12 -16,12"/><path d="M16,-4 H28 C28,8 22,12 16,12"/><path d="M0,20 V38"/><path d="M-10,38 H10"/><path d="M-14,50 H14"/><path d="M-10,38 L-14,50"/><path d="M10,38 L14,50"/></g></svg>
+      <svg width="25" height="26" viewBox="0 0 23.31 24" fill="none" stroke="currentColor" stroke-width="5.22" stroke-linecap="round" stroke-linejoin="round"><g transform="translate(11.66,4.76) scale(0.3448)"><path d="M-18,-8 H18"/><path d="M-16,-8 C-16,12 -10,20 0,20 C10,20 16,12 16,-8"/><path d="M-16,-4 H-28 C-28,8 -22,12 -16,12"/><path d="M16,-4 H28 C28,8 22,12 16,12"/><path d="M0,20 V38"/><path d="M-10,38 H10"/><path d="M-14,50 H14"/><path d="M-10,38 L-14,50"/><path d="M10,38 L14,50"/></g></svg>
     </div>
     <div class="nb-lbl">Results</div>
   </div>
   <div class="nb" id="nb-settings" onclick="goTab('settings',null,'nb-settings')">
     <div class="nb-icon">
-      <svg width="43" height="22" viewBox="0 0 46.96 24" fill="none" stroke="currentColor" stroke-width="4.86" stroke-linecap="round" stroke-linejoin="round"><g transform="translate(23.48,11.63) scale(0.3704)"><circle cx="0" cy="-12" r="14"/><path d="M-24,28 C-24,8 -12,0 0,0 C12,0 24,8 24,28"/><circle cx="-38" cy="2" r="8"/><circle cx="38" cy="2" r="8"/><path d="M-58,28 C-58,16 -50,10 -42,10 C-34,10 -28,14 -24,20"/><path d="M58,28 C58,16 50,10 42,10 C34,10 28,14 24,20"/></g></svg>
+      <svg width="52" height="26" viewBox="0 0 46.96 24" fill="none" stroke="currentColor" stroke-width="4.86" stroke-linecap="round" stroke-linejoin="round"><g transform="translate(23.48,11.63) scale(0.3704)"><circle cx="0" cy="-12" r="14"/><path d="M-24,28 C-24,8 -12,0 0,0 C12,0 24,8 24,28"/><circle cx="-38" cy="2" r="8"/><circle cx="38" cy="2" r="8"/><path d="M-58,28 C-58,16 -50,10 -42,10 C-34,10 -28,14 -24,20"/><path d="M58,28 C58,16 50,10 42,10 C34,10 28,14 24,20"/></g></svg>
     </div>
     <div class="nb-lbl">Teams</div>
   </div>
   <div class="nb-flymode" id="nb-flymode" onclick="enterFlyMode()">
     <img src="icon192.png" 
-      alt="Fly Mode" style="width:48px;height:48px;border-radius:50%;opacity:0.9;display:block;filter:drop-shadow(0 0 6px rgba(6,240,60,0.55));">
+      alt="Fly Mode" style="width:58px;height:58px;border-radius:50%;opacity:0.9;display:block;filter:drop-shadow(0 0 7px rgba(6,240,60,0.55));">
   </div>
 </div>
 
@@ -2106,6 +2093,177 @@ function ledgerAchieved(m){
   saveFlyLedger();
   if(typeof renderFlyDashboard === 'function') renderFlyDashboard();
 }
+
+// ============================================================================
+// FlyTime 2.0 — predictive "Likely" engine (early layer).
+// Confirmed FlyTime stays the proven isFlyTime()/pinned gate (greens the card,
+// locks the fly, red fly, alerts). This layer adds an EARLIER probabilistic
+// signal: a 0-100 FlyTime Index from lead safety + FlySense momentum + margin
+// closing-rate + pre-match rating, EMA-smoothed and gated with hysteresis +
+// sustain so it never flickers. Likely -> flashing green fly. Potential is
+// computed for shadow logging only (parked, not user-facing).
+// Full spec: _research/FlyTime-2.0/.
+// ----------------------------------------------------------------------------
+// Per-sport params. unit = points per "score"; exp = approx net margin-swing
+// capacity (in scores) over a full decisive window; enter/exit = Likely band.
+const FLY2 = {
+  basketball:            { fp:4, dsec:480,  unit:2.5, exp:3.6, enter:60, exit:52 },
+  football:              { fp:4, dsec:480,  unit:7,   exp:1.6, enter:60, exit:52 },
+  hockey:                { fp:3, dsec:600,  unit:1,   exp:1.4, enter:62, exit:54 },
+  rugby:                 { fp:2, dsec:600,  unit:6,   exp:1.5, enter:62, exit:54 },
+  'australian-football': { fp:4, dsec:1200, unit:6,   exp:3.0, enter:64, exit:56, countUp:true },
+  'rugby-league':        { fp:2, dsec:NRL_HALF_CLOCK_SEC, unit:6, exp:2.2, enter:60, exit:52, countUp:true },
+  soccer:                { fp:2, dsec:1200, unit:1,   exp:1.0, enter:62, exit:54, soccer:true, startMin:70 },
+  baseball:              { fp:8, dsec:1,    unit:1,   exp:2.0, enter:62, exit:54, baseball:true },
+};
+const FLY2_ALPHA = 0.4;          // EMA smoothing on the raw index
+const FLY2_SUSTAIN_MS = 16000;   // index must hold above 'enter' this long before Likely shows
+const FLY2_POTENTIAL = 48;       // internal-only Potential band (parked, logged)
+const FLY2_W = { base:0.50, mom:0.32, rate:0.10, ctx:0.08 };
+
+// Game-time remaining in the decisive window + whether we are inside it.
+function fly2Window(m){
+  const cfg = FLY2[m.sportKey];
+  if(!cfg) return null;
+  const p = m.period || 0;
+  const c = m.clockSec || 0;
+  if(cfg.baseball){
+    if(p < cfg.fp) return null;          // no outs feed: innings as coarse "time"
+    const inningsLeft = Math.max(0, 9 - p);
+    return { cfg, secLeft: inningsLeft, trf: Math.min(1, (inningsLeft + 0.5) / 2) };
+  }
+  if(cfg.soccer){
+    const minute = parseInt(m.clockRaw, 10) || (p >= 2 ? 46 : 0);
+    if(minute < cfg.startMin) return null;
+    const secLeft = Math.max(0, (90 - minute) * 60);
+    return { cfg, secLeft, trf: Math.min(1.2, secLeft / cfg.dsec) };
+  }
+  if(p < cfg.fp) return null;            // not yet in the final period / OT
+  let secLeft;
+  if(cfg.countUp){                       // AFL / NRL clocks count UP (elapsed)
+    const plen = (m.sportKey === 'rugby-league') ? NRL_HALF_CLOCK_SEC : 1200;
+    secLeft = Math.max(0, plen - c);
+  } else {                               // countdown clocks: remaining
+    secLeft = Math.max(0, c);
+  }
+  if(p > cfg.fp) secLeft = Math.max(0, c); // overtime
+  return { cfg, secLeft, trf: Math.min(1.2, secLeft / cfg.dsec) };
+}
+
+// 0..1 lead-safety DEFICIT: high when the lead is unsafe for the time remaining.
+function fly2BaseDeficit(margin, win){
+  const scoresToTie = margin / win.cfg.unit;
+  const scoresRemaining = Math.max(0.4, win.cfg.exp * Math.max(win.trf, 0.15));
+  const safety = scoresToTie / scoresRemaining;   // >= 1 ~ safe
+  return Math.max(0, Math.min(1, 1 - safety));
+}
+
+// 0..1 momentum pressure from FlySense: trailing side surging / leader collapsing.
+function fly2MomPressure(m, s){
+  if(!s) return 0;
+  const h = m.hInt || 0, a = m.aInt || 0;
+  const hMom = s.hMom || 0, aMom = s.aMom || 0;
+  if(h === a) return Math.min(1, Math.max(hMom, aMom) / 100 * 0.9 + 0.2); // tied & late
+  const homeTrail = h < a;
+  const trailMom = homeTrail ? hMom : aMom;
+  const leadMom  = homeTrail ? aMom : hMom;
+  const leadPeak = homeTrail ? (s.aPeak || 0) : (s.hPeak || 0);
+  const swing    = Math.max(0, (trailMom - leadMom) / 100);
+  const collapse = Math.max(0, (leadPeak - leadMom) / 100);
+  const trailState = homeTrail ? s.hState : s.aState;
+  const boost = (trailState === 'comeback' || trailState === 'onfire') ? 0.25 : 0;
+  return Math.min(1, 0.6 * swing + 0.3 * collapse + boost);
+}
+
+// 0..1 pre-match context prior from the yellow rating (0 if absent -> term drops).
+function fly2Ctx(m){
+  const r = m.flyMatchRating || 0;
+  if(!r) return 0;
+  return Math.max(0, Math.min(1, (r - 60) / 35));
+}
+
+// Unsmoothed FlyTime Index 0..100 + components. null if outside decisive window.
+function fly2RawIndex(m, s){
+  const win = fly2Window(m);
+  if(!win) return null;
+  const margin = Math.abs((m.hInt || 0) - (m.aInt || 0));
+  const base = fly2BaseDeficit(margin, win);
+  const mom  = fly2MomPressure(m, s);
+  const ctx  = fly2Ctx(m);
+
+  // Margin closing-rate (pts/min): >0 lead shrinking, <0 extending. 1-sample buffer.
+  let rate = 0, decay = 1;
+  if(s && s.ft2Margin != null && s.ft2MarginTs){
+    const dtMin = Math.max((Date.now() - s.ft2MarginTs) / 60000, 1/60);
+    const vel = (s.ft2Margin - margin) / dtMin;
+    rate = Math.max(0, Math.min(1, vel / (win.cfg.unit * 2)));
+    if(vel < 0) decay = Math.max(0.6, 1 + (vel / (win.cfg.unit * 2)) * 0.3);
+  }
+
+  const W = FLY2_W;
+  let raw = W.base * base + W.mom * mom + W.rate * rate + W.ctx * ctx;
+  raw *= decay;
+  return { idx: Math.max(0, Math.min(100, raw * 100)), base, mom, ctx, rate };
+}
+
+// Update per-match FlyTime Index + Likely stage. Called each poll AFTER
+// updateFlyState (so FlySense momentum is fresh).
+function updateFlyTime2(m){
+  const s = flyState[m.id];
+  if(!s) return;
+  const confirmed = isFlyTimePinned(m);
+  const margin = Math.abs((m.hInt || 0) - (m.aInt || 0));
+  const now = Date.now();
+  const r = fly2RawIndex(m, s);
+
+  if(!r){
+    s.ft2Index = s.ft2Index != null ? s.ft2Index * 0.5 : 0;
+    s.ft2Likely = false; s.ft2AboveSince = null;
+    s.ft2Stage = confirmed ? 'confirmed' : 'none';
+    s.ft2Margin = margin; s.ft2MarginTs = now;
+    return;
+  }
+
+  s.ft2Index = (s.ft2Index != null) ? (1 - FLY2_ALPHA) * s.ft2Index + FLY2_ALPHA * r.idx : r.idx;
+  const idx = s.ft2Index;
+  const cfg = FLY2[m.sportKey];
+
+  if(idx >= cfg.enter){ if(!s.ft2AboveSince) s.ft2AboveSince = now; }
+  else s.ft2AboveSince = null;
+
+  if(!s.ft2Likely){
+    if(s.ft2AboveSince && (now - s.ft2AboveSince) >= FLY2_SUSTAIN_MS) s.ft2Likely = true;
+  } else if(idx < cfg.exit){
+    s.ft2Likely = false;
+  }
+
+  s.ft2Stage = confirmed ? 'confirmed' : (s.ft2Likely ? 'likely' : (idx >= FLY2_POTENTIAL ? 'potential' : 'none'));
+  if(s.ft2Likely && !confirmed) ledgerLikely(m);
+
+  s.ft2Margin = margin; s.ft2MarginTs = now;
+}
+
+// True when the predictive engine says "Likely" but the match has not yet hit the
+// proven Confirmed gate -> drives the flashing green fly.
+function flyTimeLikely(m){
+  const s = m && flyState[m.id];
+  return !!(s && s.ft2Likely) && getMatchFly(m.id) !== 'flytime';
+}
+
+// Shadow log: stamp the first time a match reaches predictive "Likely" + when, so
+// lead-time vs the Confirmed gate (e.a / e.at) is measurable in the lab.
+function ledgerLikely(m){
+  if(!m || !m.id) return;
+  const e = flyLedger[m.id];
+  if(e){ if(e.l2) return; e.l2 = 1; e.l2t = Date.now(); }
+  else {
+    flyLedger[m.id] = { p:0, a:0, bf:0, fin:0, rf:0,
+      h:m.home||'', w:m.away||'', lg:m.league||'', sk:m.sportKey||'', lk:m.leagueKey||'',
+      r:m.flyMatchRating||0, eng:'ft2', thr:null, l2:1, l2t:Date.now(), t:Date.now() };
+  }
+  saveFlyLedger();
+}
+
 function isBlueFly(e){ return !!(e && (e.bf || (e.p && e.a))); }
 function flyLedgerStats(){
   let predicted=0, achieved=0, hit=0, blue=0, total=0;
@@ -2206,9 +2364,10 @@ function flyDashboardInputHealth(){
 }
 
 function flyDashboardLive(){
-  var greenNow = 0, predLive = 0, predLiveGreen = 0, yellowUp = 0, upTotal = (ALL_UPCOMING||[]).length;
+  var greenNow = 0, predLive = 0, predLiveGreen = 0, yellowUp = 0, likelyNow = 0, upTotal = (ALL_UPCOMING||[]).length;
   (ALL_LIVE || []).forEach(function(m){
     if(getMatchFly(m.id) === 'flytime' || isFlyTime(m)) greenNow++;
+    if(flyTimeLikely(m)) likelyNow++;
     var e = flyLedger[m.id];
     if(e && e.p){
       predLive++;
@@ -2216,7 +2375,7 @@ function flyDashboardLive(){
     }
   });
   (ALL_UPCOMING || []).forEach(function(m){ if(m.isFlyMatch) yellowUp++; });
-  return { liveTotal:(ALL_LIVE||[]).length, greenNow:greenNow, predLive:predLive, predLiveGreen:predLiveGreen, yellowUp:yellowUp, upTotal:upTotal };
+  return { liveTotal:(ALL_LIVE||[]).length, greenNow:greenNow, likelyNow:likelyNow, predLive:predLive, predLiveGreen:predLiveGreen, yellowUp:yellowUp, upTotal:upTotal };
 }
 
 function flyDashboardFinished(){
@@ -2305,6 +2464,7 @@ function renderFlyDashboard(){
   html += '<div class="fly-lab-grid">';
   html += '<div class="fly-lab-stat"><div class="fly-lab-num dim">' + live.liveTotal + '</div><div class="fly-lab-lbl">games live</div></div>';
   html += '<div class="fly-lab-stat"><div class="fly-lab-num">' + live.greenNow + '</div><div class="fly-lab-lbl">green now</div></div>';
+  html += '<div class="fly-lab-stat"><div class="fly-lab-num warn">' + live.likelyNow + '</div><div class="fly-lab-lbl">likely now (FT2)</div></div>';
   html += '<div class="fly-lab-stat"><div class="fly-lab-num warn">' + live.yellowUp + '</div><div class="fly-lab-lbl">yellow upcoming</div></div>';
   html += '</div>';
   if(live.predLive > 0){
@@ -2912,6 +3072,8 @@ function applyScoreFlashes(newLive) {
     lastScores[m.id] = { home: h, away: a };
     // Recompute FlyState (momentum, comeback, flytime, overtime) every poll
     updateFlyState(m);
+    // FlyTime 2.0 predictive layer: index + "Likely" stage (reads fresh FlySense)
+    updateFlyTime2(m);
   });
   // Prune state for matches no longer live
   Object.keys(lastScores).forEach(id => {
@@ -4321,9 +4483,10 @@ function buildLiveCard(m){
 }
 
 function buildUpcomingCard(m){
+  // Note: m.homeForm/m.awayForm are intentionally NOT rendered (form W/D/L boxes
+  // removed for density + philosophy). The form DATA pipeline is kept — it still
+  // feeds fmFormScore() in the FlyMatch (yellow) prediction. Visual layer only.
   const facts=(m.facts&&m.facts.length)?buildFacts(m.facts):'';
-  const hForm=buildFormStrip(m.homeForm);
-  const aForm=buildFormStrip(m.awayForm);
   const lparts=m.league.split(' ');
   const sico=lparts[0];
   const ltxt=lparts.slice(1).join(' ');
@@ -4331,29 +4494,13 @@ function buildUpcomingCard(m){
     <div class="card-meta"><span class="league-tag"><span class="sport-icon">${renderSportIcon(sico)}</span><span class="lg-badge">${ltxt}</span></span><span class="card-right">${flyScoreDebugHTML(m,'upcoming')}${flyTimeIcon(m,'upcoming')}</span></div>
     <div class="upcoming-body">
       <div class="up-teams">
-        <div class="team-row">
-          <div class="row-top">${logoImg(m.homeLogo,m.league,m.homeId,m.home,'t-logo',m.leagueKey)}<div class="t-name">${displayTeamName(m.home)}</div>${teamQuickAddBtn(m.home,m)}</div>
-          ${hForm}
-        </div>
-        <div class="team-row">
-          <div class="row-top">${logoImg(m.awayLogo,m.league,m.awayId,m.away,'t-logo',m.leagueKey)}<div class="t-name">${displayTeamName(m.away)}</div>${teamQuickAddBtn(m.away,m)}</div>
-          ${aForm}
-        </div>
+        <div class="team-row">${logoImg(m.homeLogo,m.league,m.homeId,m.home,'t-logo',m.leagueKey)}<div class="t-name">${displayTeamName(m.home)}</div>${teamQuickAddBtn(m.home,m)}</div>
+        <div class="team-row">${logoImg(m.awayLogo,m.league,m.awayId,m.away,'t-logo',m.leagueKey)}<div class="t-name">${displayTeamName(m.away)}</div>${teamQuickAddBtn(m.away,m)}</div>
       </div>
       <div class="up-time"><div class="kday">${m.day}</div><div class="countdown">${m.countdown}</div><div class="ktod">${m.time}</div></div>
     </div>
     ${facts?`<div class="result-facts">${facts}</div>`:''}
   </div>`;
-}
-
-// Build form strip from real results only. Renders nothing when there is no
-// data, so matches with no form show no blocks rather than greyed-out boxes.
-// Oldest left to newest right. form is array of 'w'|'d'|'l'.
-function buildFormStrip(form){
-  const f = (form || []).filter(r => r==='w' || r==='d' || r==='l');
-  if(!f.length) return '';
-  const boxes = f.map(r => `<div class="form-box ${r}"></div>`);
-  return`<div class="form-strip">${boxes.join('')}</div>`;
 }
 
 function buildResultCard(m){
@@ -5475,19 +5622,43 @@ function flyScoreDebugHTML(m, status) {
   }
 
   var score = parts.score;
-  if(score == null) return '<span class="fly-debug-score na">' + (parts.tag || '—') + ' —</span>';
-  var qual = parts.thr != null
-    ? (score >= parts.thr ? ' qual' : '')
-    : (m.isFlyMatch ? ' qual' : '');
-  return '<span class="fly-debug-score' + qual + '">' + parts.tag + ' ' + (Math.round(score * 10) / 10) + (parts.thr != null ? '/' + parts.thr : '') + '</span>';
+  var base;
+  if(score == null){
+    base = '<span class="fly-debug-score na">' + (parts.tag || '—') + ' —</span>';
+  } else {
+    var qual = parts.thr != null
+      ? (score >= parts.thr ? ' qual' : '')
+      : (m.isFlyMatch ? ' qual' : '');
+    base = '<span class="fly-debug-score' + qual + '">' + parts.tag + ' ' + (Math.round(score * 10) / 10) + (parts.thr != null ? '/' + parts.thr : '') + '</span>';
+  }
+  // Live cards also show the FlyTime 2.0 predictive index + stage (tuning readout).
+  if(status === 'live') base += fly2DebugHTML(m);
+  return base;
+}
+
+// FlyTime 2.0 live readout: "FT2 <index> <Stage>" per sport. Lab-only.
+function fly2DebugHTML(m){
+  var s = flyState[m.id];
+  if(!s || s.ft2Index == null) return '';
+  var stage = s.ft2Stage || 'none';
+  var cls = (stage === 'confirmed' || stage === 'likely') ? ' qual'
+          : (stage === 'potential' ? '' : ' na');
+  var lbl = stage === 'none' ? '' : ' ' + stage.charAt(0).toUpperCase() + stage.slice(1);
+  return '<span class="fly-debug-score' + cls + '">FT2 ' + Math.round(s.ft2Index) + lbl + '</span>';
 }
 
 // FlyTime flies: one coloured fly per card, fixed top-right. status: live | upcoming | result.
 //   yellow fly = upcoming prediction · green fly = live FlyTime · red fly = finished after FlyTime
 //   blue fly = diagnostic only (yellow then green); never rendered on cards
 function flyTimeIcon(m, status){
-  if(status === 'live' && getMatchFly(m.id) === 'flytime')
-    return markerHTML('ft-fly ft-green', 'fly-green.png', 'Green fly', '&#129712;');
+  if(status === 'live'){
+    // Confirmed: solid green fly (card also greens via .flytime-locked).
+    if(getMatchFly(m.id) === 'flytime')
+      return markerHTML('ft-fly ft-green', 'fly-green.png', 'Green fly', '&#129712;');
+    // Likely (predictive, earlier): same green fly, flashing, no card shade.
+    if(flyTimeLikely(m))
+      return markerHTML('ft-fly ft-green ft-likely', 'fly-green.png', 'FlyTime likely', '&#129712;');
+  }
   if(status === 'upcoming' && m.isFlyMatch)
     return markerHTML('ft-fly ft-yellow', 'fly-yellow.png', 'Yellow fly', '&#129712;');
   if(status === 'result' && matchHadFlyTime(m.id))

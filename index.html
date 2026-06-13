@@ -498,17 +498,35 @@
   /* Landscape grids */
   @media (orientation: landscape) {
     .flymode-inner[data-count="1"] { padding: 4px; bottom: 64px; }
-    .flymode-inner[data-count="1"] .flymode-score { font-size: clamp(58px, min(26.4cqh, 24vw), 264px); }
-    .flymode-inner[data-count="1"] .flymode-status { font-size: clamp(16px, 4vw, 36px); padding: 6px 16px; }
-    .flymode-inner[data-count="1"] .flymode-team { font-size: clamp(15px, 3.3vw, 44px); }
-    .flymode-inner[data-count="1"] .team-logo-halo.fm-logo {
-      width: clamp(24px, 18.7cqmin, 64px);
-      height: clamp(24px, 18.7cqmin, 64px);
-      font-size: 18px;
+    /* Score-first stack: logo / team / score as one tight vertical group per side. */
+    .flymode-inner[data-count="1"] .flymode-board {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: auto auto auto;
+      align-content: center;
+      justify-items: center;
+      row-gap: 6px;
+      padding-bottom: 16vh;
     }
-    .flymode-inner[data-count="1"].show-fm-logos .flymode-logo {
-      top: calc(37% - 10px - 0.5 * clamp(15px, 3.3vw, 44px));
-      transform: translate(-50%, -100%);
+    .flymode-inner[data-count="1"] .flymode-logo,
+    .flymode-inner[data-count="1"] .flymode-team,
+    .flymode-inner[data-count="1"] .flymode-score {
+      position: static; transform: none; left: auto; top: auto; max-width: none;
+    }
+    .flymode-inner[data-count="1"] .flymode-logo { display: block; }
+    .flymode-inner[data-count="1"] .flymode-logo.home  { grid-area: 1 / 1; }
+    .flymode-inner[data-count="1"] .flymode-logo.away  { grid-area: 1 / 2; }
+    .flymode-inner[data-count="1"] .flymode-team.home  { grid-area: 2 / 1; }
+    .flymode-inner[data-count="1"] .flymode-team.away  { grid-area: 2 / 2; }
+    .flymode-inner[data-count="1"] .flymode-score.home { grid-area: 3 / 1; }
+    .flymode-inner[data-count="1"] .flymode-score.away { grid-area: 3 / 2; }
+    .flymode-inner[data-count="1"] .flymode-score { font-size: clamp(70px, min(31.7cqh, 28.8vw), 317px); }
+    .flymode-inner[data-count="1"] .flymode-status { font-size: clamp(16px, 4vw, 36px); padding: 6px 16px; }
+    .flymode-inner[data-count="1"] .flymode-team { font-size: clamp(17px, 3.8vw, 51px); }
+    .flymode-inner[data-count="1"] .team-logo-halo.fm-logo {
+      width: clamp(28px, 21.5cqmin, 74px);
+      height: clamp(28px, 21.5cqmin, 74px);
+      font-size: 21px;
     }
     .flymode-inner[data-count="2"] { grid-template-columns: repeat(2, 1fr); grid-template-rows: 1fr; }
     .flymode-inner[data-count="3"] { grid-template-columns: repeat(3, 1fr); grid-template-rows: 1fr; }

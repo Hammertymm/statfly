@@ -78,11 +78,12 @@
   .card.live{border-color:var(--live);}
   .card.upcoming{border-color:var(--upcoming);}
   .card.result{border-color:var(--result);}
-  /* Live card that has entered FlyTime - electric green shade, locks until FT */
+  /* Live card that has entered FlyTime - subtle green tint + gentle pulse, locks
+     until the match completes. Card-level only; never touches the score colours. */
   .card.live.flytime-locked{
-    background:rgba(6,240,60,0.14);
+    background:rgba(6,240,60,0.12);
     border-color:var(--live);
-    box-shadow:inset 0 0 0 1px rgba(6,240,60,0.22);
+    animation:flyCardPulse 3.4s ease-in-out infinite;
   }
   .card.live:active,.card.upcoming:active{transform:scale(.977);opacity:.88;}
 
@@ -189,10 +190,13 @@
   .sc.fs-onfire,   .flymode-score.fs-onfire   { color: var(--result); }
   .sc.fs-cold,     .flymode-score.fs-cold     { color: var(--cold); }
   .sc.fs-comeback, .flymode-score.fs-comeback { color: var(--comeback); }
-  .sc.fs-flytime,  .flymode-score.fs-flytime  { color: var(--live); }
-  /* FlyTime is the headline moment - gentle pulse on the Fly Mode score so it feels alive */
-  .flymode-score.fs-flytime { animation: flyPulse 1.6s ease-in-out infinite; }
   @keyframes flyPulse { 0%,100%{opacity:1;} 50%{opacity:.72;} }
+  /* FlyTime is a CARD-level state only (green fly icon + green tint + gentle pulse).
+     It is visually independent from FlySense and never colours the score numbers. */
+  @keyframes flyCardPulse {
+    0%, 100% { box-shadow: inset 0 0 0 1px rgba(6,240,60,0.20); }
+    50%      { box-shadow: inset 0 0 0 1px rgba(6,240,60,0.36), 0 0 16px rgba(6,240,60,0.16); }
+  }
   /* FLYSENSE 2.0 EXTREMES - effects only at the top/bottom of the range, additive
      to colour (never the sole signal), one effect per cell, CSS-compositor only.
      Extreme On Fire (momentum 90-100): brightening pulse + warm glow = MORE energy. */
@@ -208,7 +212,8 @@
     text-shadow: 0 0 9px rgba(130,190,255,.30);
   }
   @media (prefers-reduced-motion: reduce) {
-    .sc.fs-xfire, .flymode-score.fs-xfire, .flymode-score.fs-flytime { animation: none; }
+    .sc.fs-xfire, .flymode-score.fs-xfire { animation: none; }
+    .card.live.flytime-locked, .flymode-card.flytime { animation: none; }
   }
   .timer-col{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;min-width:44px;padding-left:8px;border-left:1px solid var(--sep);}
   .timer-val{font-size:12px;font-weight:700;color:var(--live);text-align:center;line-height:1.3;letter-spacing:-.3px;}
@@ -551,7 +556,7 @@
     min-height: 0;
     height: 100%;
   }
-  .flymode-card.flytime { border-color: rgba(6,240,60,0.35); }
+  .flymode-card.flytime { border-color: rgba(6,240,60,0.35); background: rgba(6,240,60,0.07); animation: flyCardPulse 3.4s ease-in-out infinite; }
   .flymode-card.ot      { border-color: rgba(255,69,58,0.35); }
 
   .flymode-board {
@@ -3200,12 +3205,11 @@ function updateCricketFly(m, prev, matchState, now) {
   };
 }
 
-// Class for a score cell. Locked FlyTime forces both scores green (overrides side
-// state). Extreme states add an effect class on top of the state class.
-function getFlyClass(matchId, side, pinned) {
-  // FlyTime green wins whenever the card is in the green FlyTime state (pinned),
-  // so the score numbers turn green and stop following the FlySense gradient.
-  if (pinned || getMatchFly(matchId) === 'flytime') return 'fs-flytime';
+// Class for a score cell, driven entirely by FlySense side state. Extreme states
+// add an effect class on top of the state class. FlyTime never affects scores.
+function getFlyClass(matchId, side) {
+  // Scores are exclusively FlySense-driven. FlyTime is a card-level state only and
+  // must never colour the score numbers, so there is no FlyTime branch here.
   const s = flyState[matchId];
   if (!s) return '';
   const st = side === 'home' ? s.hState : s.aState;
@@ -3217,9 +3221,8 @@ function getFlyClass(matchId, side, pinned) {
 }
 
 // Inline style for a score cell: the FlySense 2.0 continuous gradient colour.
-// Empty during FlyTime (class colour wins) and for neutral cells.
-function getFlyStyle(matchId, side, pinned) {
-  if (pinned || getMatchFly(matchId) === 'flytime') return '';
+// Empty only for neutral cells. FlyTime does not influence score colour.
+function getFlyStyle(matchId, side) {
   const s = flyState[matchId];
   if (!s) return '';
   const col = side === 'home' ? s.hCol : s.aCol;
@@ -4746,8 +4749,7 @@ function buildLiveCard(m){
   const sico=lparts[0];
   const ltxt=displayLeagueName(lparts.slice(1).join(' '));
   const fly=flyTimeIcon(m,'live');
-  const fp=isFlyTimePinned(m);
-  const ftLocked=fp?' flytime-locked':'';
+  const ftLocked=isFlyTimePinned(m)?' flytime-locked':'';
   return`<div class="card live${ftLocked}" data-match-id="${m.id}">
     <div class="card-meta"><span class="league-tag"><span class="sport-icon">${renderSportIcon(sico)}</span><span class="lg-badge">${ltxt}</span></span><span class="card-right">${flyScoreDebugHTML(m,'live')}${fly}<span class="live-badge"><span class="bdot"></span>LIVE ${m.timer}</span></span></div>
     <div class="card-body">
@@ -4755,7 +4757,7 @@ function buildLiveCard(m){
         <div class="team-row">${logoImg(m.homeLogo,m.league,m.homeId,m.home,'t-logo',m.leagueKey)}<div class="t-name">${displayTeamName(m.home)}</div>${teamQuickAddBtn(m.home,m)}</div>
         <div class="team-row">${logoImg(m.awayLogo,m.league,m.awayId,m.away,'t-logo',m.leagueKey)}<div class="t-name">${displayTeamName(m.away)}</div>${teamQuickAddBtn(m.away,m)}</div>
       </div>
-      <div class="scores-col"><div class="${sc} ${getFlyClass(m.id,'home',fp)}" style="${getFlyStyle(m.id,'home',fp)}" data-fk="${m.id}|h|s">${m.homeScore}</div><div class="${sc} ${getFlyClass(m.id,'away',fp)}" style="${getFlyStyle(m.id,'away',fp)}" data-fk="${m.id}|a|s">${m.awayScore}</div></div>
+      <div class="scores-col"><div class="${sc} ${getFlyClass(m.id,'home')}" style="${getFlyStyle(m.id,'home')}" data-fk="${m.id}|h|s">${m.homeScore}</div><div class="${sc} ${getFlyClass(m.id,'away')}" style="${getFlyStyle(m.id,'away')}" data-fk="${m.id}|a|s">${m.awayScore}</div></div>
     </div>
   </div>`;
 }

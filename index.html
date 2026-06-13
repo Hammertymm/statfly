@@ -13,6 +13,16 @@
 <link rel="icon" href="icon192.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<!-- ESPN crest CDN: only used as the fallback for teams without a local asset, but
+     warming the connection removes DNS/TLS cost the first time one is needed. -->
+<link rel="preconnect" href="https://a.espncdn.com" crossorigin>
+<link rel="dns-prefetch" href="https://a.espncdn.com">
+<!-- Global Starter Pack crests: warm the cache so onboarding "Pick My Teams" is instant. -->
+<link rel="prefetch" as="image" href="assets/logos/liverpool-premier-league.webp">
+<link rel="prefetch" as="image" href="assets/logos/new-york-knicks-nba.webp">
+<link rel="prefetch" as="image" href="assets/logos/real-madrid-la-liga.webp">
+<link rel="prefetch" as="image" href="assets/logos/toronto-maple-leafs-nhl.webp">
+<link rel="prefetch" as="image" href="assets/logos/collingwood-magpies-afl.webp">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap">
 <style>
   @font-face {
@@ -4525,10 +4535,12 @@ function teamHaloAttrs(cfg, leagueKey, probe) {
 
 function upgradeLogoUrl(url) {
   if (!url) return url;
+  // Remote ESPN crests are only the fallback for teams without a local asset. 200px is
+  // retina-sharp for our 24-58px slots while ~3-6x lighter than ESPN's 500px default.
   return String(url)
-    .replace(/teamlogos\/([^/]+)\/500-dark\//, 'teamlogos/$1/500/')
-    .replace(/teamlogos\/([^/]+)\/\d+\//, 'teamlogos/$1/500/')
-    .replace(/teamlogos\/([^/]+)\/scoreboard\//, 'teamlogos/$1/500/');
+    .replace(/teamlogos\/([^/]+)\/500-dark\//, 'teamlogos/$1/200/')
+    .replace(/teamlogos\/([^/]+)\/\d+\//, 'teamlogos/$1/200/')
+    .replace(/teamlogos\/([^/]+)\/scoreboard\//, 'teamlogos/$1/200/');
 }
 
 // Single-pass sampler: average luminance + saturation over opaque pixels, plus the
@@ -4647,6 +4659,9 @@ function logoFallback(img) {
   const alt = img.getAttribute('data-fallback');
   if (alt) {
     img.removeAttribute('data-fallback');
+    // Drop the WebP srcset so the fallback src (PNG / remote) actually wins - otherwise
+    // a remaining srcset candidate keeps re-selecting the failed WebP.
+    img.removeAttribute('srcset');
     img.src = alt;
     return;
   }
@@ -4664,18 +4679,22 @@ function logoImg(src, emoji, teamId, teamName, sizeClass, leagueKey) {
   // Prefer a curated, sharpened local asset (built by scripts/optimize_logos.py)
   // when one exists; otherwise use the remote ESPN crest.
   const local = (cfg && cfg.localLogo) ? cfg.localLogo : '';
-  const local2x = (cfg && cfg.localLogo2x) ? cfg.localLogo2x : (local ? local.replace(/\.png$/, '@2x.png') : '');
+  const local2x = (cfg && cfg.localLogo2x) ? cfg.localLogo2x : (local ? local.replace(/\.webp$/, '@2x.webp') : '');
+  // Same-name PNG sits beside every local WebP as the fallback for the rare browser
+  // that cannot decode WebP (built by scripts/optimize_logos.py).
+  const localPng = local ? local.replace(/\.webp$/, '.png') : '';
   const remote = upgradeLogoUrl((cfg && cfg.logoUrl) ? cfg.logoUrl : src);
   const primary = local || remote;
   if (!primary) return '<div class="' + cls + '">' + fallback + '</div>';
   const attrs = teamHaloAttrs(cfg, leagueKey, true);
   // crossorigin lets the on-load probe read pixels for optical scaling + brightness
-  // tiering (ESPN's CDN sends Access-Control-Allow-Origin:*). If a future host lacks
-  // CORS the image still renders; the probe simply no-ops via its try/catch.
-  // A missing local asset degrades to the remote crest before the emoji.
-  const fb = (local && remote && remote !== local) ? ' data-fallback="' + escAttr(remote) + '"' : '';
+  // tiering (local assets are same-origin; ESPN's CDN sends Access-Control-Allow-Origin:*).
+  // decoding=async keeps crest decode off the main thread for smoother scrolling.
+  // Degrade chain: local WebP -> local PNG (no-WebP browsers); teams without a local
+  // asset use the remote crest. Either way a final onerror reveals the emoji span.
+  const fb = local ? (' data-fallback="' + escAttr(localPng) + '"') : '';
   const srcset = local ? ' srcset="' + escAttr(local) + ' 1x, ' + escAttr(local2x) + ' 2x"' : '';
-  const inner = '<img class="team-crest" crossorigin="anonymous" src="' + escAttr(primary) + '"' + srcset + fb + ' alt="" onload="attachTeamHaloProbe(this)" onerror="logoFallback(this)"><span style="display:none">' + fallback + '</span>';
+  const inner = '<img class="team-crest" crossorigin="anonymous" decoding="async" src="' + escAttr(primary) + '"' + srcset + fb + ' alt="" onload="attachTeamHaloProbe(this)" onerror="logoFallback(this)"><span style="display:none">' + fallback + '</span>';
   return '<div class="' + cls + '"' + (attrs ? ' ' + attrs : '') + '>' + inner + '</div>';
 }
 // Photo sport icons (exact balls from the brand image, backgrounds already transparent).
@@ -6091,15 +6110,6 @@ const GLOBAL_STARTER_PACK = [
   'Collingwood Magpies|AFL'
 ];
 
-// ESPN crest URLs for the starter-pack preview row (same teams as GLOBAL_STARTER_PACK).
-const STARTER_PACK_LOGOS = {
-  'Liverpool|Premier League':       'https://a.espncdn.com/i/teamlogos/soccer/500/364.png',
-  'New York Knicks|NBA':            'https://a.espncdn.com/i/teamlogos/nba/500/18.png',
-  'Real Madrid|La Liga':            'https://a.espncdn.com/i/teamlogos/soccer/500/86.png',
-  'Toronto Maple Leafs|NHL':        'https://a.espncdn.com/i/teamlogos/nhl/500/10.png',
-  'Collingwood Magpies|AFL':        'https://a.espncdn.com/i/teamlogos/afl/500/coll.png'
-};
-
 function onbStarterPreviewCardHtml(it){
   return '<div class="onb-pick-card">'+
     onbStarterLogoHtml(it.favKey)+
@@ -6179,14 +6189,15 @@ function onbGetSuggestions(picked){
 
 function onbStarterLogoHtml(favKey){
   var item=onbEntryForKey(favKey);
-  var cfg=item?resolveTeamHalo('',item.name,item.league):null;
-  var logo=STARTER_PACK_LOGOS[favKey]||(cfg&&cfg.logoUrl)||'';
-  var emoji=item?(item.emoji||item.leagueEmoji):'';
-  var fallback=sportImg(emoji,18);
-  if(logo){
-    return logoImg(logo, emoji, '', item ? item.name : '', 'onb-pick-logo', item ? item.league : '');
+  if(!item) return '<div class="onb-pick-flag">'+sportImg('',18)+'</div>';
+  var cfg=resolveTeamHalo('',item.name,item.league);
+  var emoji=item.emoji||item.leagueEmoji||'';
+  // Resolve through the halo config so the starter pack uses the same instant local
+  // WebP crests (with PNG fallback) as the rest of the app - no remote fetch on open.
+  if(cfg && (cfg.localLogo || cfg.logoUrl)){
+    return logoImg('', emoji, '', item.name, 'onb-pick-logo', item.league);
   }
-  return '<div class="onb-pick-flag">'+fallback+'</div>';
+  return '<div class="onb-pick-flag">'+sportImg(emoji,18)+'</div>';
 }
 
 function onbPickCardHtml(it, idx, source){
@@ -6487,6 +6498,24 @@ setTimeout(()=>{
   }
 },0);
 
+// After first paint, ask the SW to warm the crests for followed teams so they're
+// cache-instant on the next view/reload. Visible feed crests are already fetched on
+// render; this covers followed teams the user hasn't scrolled to yet. Best-effort.
+function warmFollowedLogos(){
+  try{
+    if(!(navigator.serviceWorker && navigator.serviceWorker.controller)) return;
+    var urls=[];
+    (favs||[]).forEach(function(f){
+      var cfg=resolveTeamHalo('', f && f.name, f && f.league);
+      if(cfg && cfg.localLogo){
+        urls.push(cfg.localLogo);
+        if(cfg.localLogo2x) urls.push(cfg.localLogo2x);
+      }
+    });
+    if(urls.length) navigator.serviceWorker.controller.postMessage({ type:'scorefly-prefetch-logos', urls:urls });
+  }catch(e){}
+}
+
 // Register service worker for PWA / offline support
 if ('serviceWorker' in navigator) {
   navigator.serviceWorker.addEventListener('message', function(e){
@@ -6496,6 +6525,7 @@ if ('serviceWorker' in navigator) {
     navigator.serviceWorker.register('sw.js')
       .then(() => dlog('ScoreFly: SW registered'))
       .catch(e => dlog('ScoreFly: SW failed', e));
+    setTimeout(warmFollowedLogos, 2500);
   });
 }
 </script>

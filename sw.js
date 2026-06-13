@@ -1,6 +1,6 @@
 // ScoreFly service worker
 // Bump CACHE on every deploy so devices pick up the new files.
-const CACHE = 'scorefly-v132';
+const CACHE = 'scorefly-v133';
 
 // App shell + icons. Relative paths so it works under the /scorefly/ GitHub Pages path.
 const SHELL = [
@@ -75,7 +75,19 @@ const SHELL = [
   './soccer-rus-1-flytime-v1.json',
   './rugby-urc-flytime-v1.json',
   './rugby-top14-flytime-v1.json',
-  './team-halo-config.json'
+  './team-halo-config.json',
+  // Global Starter Pack crests (base + retina WebP) so onboarding's "Pick My Teams"
+  // is instant and works offline on first run.
+  './assets/logos/liverpool-premier-league.webp',
+  './assets/logos/liverpool-premier-league@2x.webp',
+  './assets/logos/new-york-knicks-nba.webp',
+  './assets/logos/new-york-knicks-nba@2x.webp',
+  './assets/logos/real-madrid-la-liga.webp',
+  './assets/logos/real-madrid-la-liga@2x.webp',
+  './assets/logos/toronto-maple-leafs-nhl.webp',
+  './assets/logos/toronto-maple-leafs-nhl@2x.webp',
+  './assets/logos/collingwood-magpies-afl.webp',
+  './assets/logos/collingwood-magpies-afl@2x.webp'
 ];
 
 // Install: pre-cache the shell, then activate immediately.
@@ -102,8 +114,8 @@ self.addEventListener('activate', event => {
 // Fetch strategy:
 //   - ESPN / proxy / font requests: always go to the network (live data, never cache).
 //   - app shell + same-origin GETs: cache-first, fall back to network, then cache the result.
-//   - assets/logos/*.png (curated crest library): same cache-first path; populated on first
-//     view so install stays fast (812 PNGs are not precached in SHELL).
+//   - assets/logos/* (curated WebP crest library + PNG fallbacks): same cache-first path;
+//     populated on first view so install stays fast (the full library is not precached).
 self.addEventListener('fetch', event => {
   const req = event.request;
   if (req.method !== 'GET') return;
@@ -138,6 +150,29 @@ self.addEventListener('fetch', event => {
       }).catch(() => caches.match('./index.html'));
     })
   );
+});
+
+// Post-load warm-up: the app sends the crest URLs for followed + on-screen teams once
+// the first render settles. We fetch any that aren't cached yet so they're instant on
+// the next view / reload. Best-effort and rate-friendly (cache-first, ignores failures).
+self.addEventListener('message', event => {
+  const data = event.data || {};
+  if (data.type === 'scorefly-prefetch-logos' && Array.isArray(data.urls)) {
+    event.waitUntil(
+      caches.open(CACHE).then(cache =>
+        Promise.all(data.urls.map(u =>
+          cache.match(u).then(hit => {
+            if (hit) return;
+            return fetch(u).then(res => {
+              if (res && res.status === 200 && res.type === 'basic') {
+                return cache.put(u, res.clone());
+              }
+            }).catch(() => {});
+          })
+        ))
+      )
+    );
+  }
 });
 
 // FlyTime notification tap: focus an open ScoreFly window on the Feed tab, or launch one.

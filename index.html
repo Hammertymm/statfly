@@ -131,7 +131,7 @@
   .team-logo-halo.t-logo-xs{width:24px;height:24px;font-size:11px;}
   .team-logo-halo.t-logo{width:28px;height:28px;font-size:12px;}
   .team-logo-halo.t-logo-md{width:36px;height:36px;font-size:14px;}
-  .team-logo-halo.t-logo-lg{width:44px;height:44px;font-size:16px;}
+  .team-logo-halo.t-logo-lg{width:40px;height:40px;font-size:14px;}
   .team-logo-halo.t-logo-xl{width:56px;height:56px;font-size:20px;}
   .team-logo-halo.onb-pick-logo{width:29px;height:29px;}
   .team-logo-halo.onb-starter-logo{width:36px;height:36px;}
@@ -433,7 +433,7 @@
   .onb-starter-preview .onb-pick-card:active{background:var(--card);}
   .onb-starter-preview .onb-pick-name{font-size:13px;}
   .onb-starter-preview .onb-pick-league{font-size:10px;}
-  #onb-step-1 .onb-hero-caption{display:none;}
+  #onb-step-1 .onb-hero-caption{display:block;margin-top:8px;margin-bottom:12px;}
 
   /* -- COMPACT RESULTS TOGGLE -- */
 
@@ -491,6 +491,10 @@
   .flymode-inner[data-count="8"] { grid-template-columns: repeat(2, 1fr); grid-template-rows: repeat(4, 1fr); }
   /* Landscape grids */
   @media (orientation: landscape) {
+    .flymode-inner[data-count="1"] { padding: 4px; bottom: 64px; }
+    .flymode-inner[data-count="1"] .flymode-score { font-size: clamp(48px, min(22cqh, 20vw), 220px); }
+    .flymode-inner[data-count="1"] .flymode-status { font-size: clamp(16px, 4vw, 36px); padding: 6px 16px; }
+    .flymode-inner[data-count="1"] .flymode-team { font-size: clamp(14px, 3vw, 40px); }
     .flymode-inner[data-count="2"] { grid-template-columns: repeat(2, 1fr); grid-template-rows: 1fr; }
     .flymode-inner[data-count="3"] { grid-template-columns: repeat(3, 1fr); grid-template-rows: 1fr; }
     .flymode-inner[data-count="4"] { grid-template-columns: repeat(2, 1fr); grid-template-rows: repeat(2, 1fr); }
@@ -937,6 +941,7 @@
     <!-- Step 1: Welcome hero -->
     <div class="onb-step" id="onb-step-1">
       <img class="onb-hero" src="onboard-hero.png" alt="ScoreFly — We'll tell you when it matters">
+      <div class="onb-hero-caption">47 leagues · 20 countries · 746 teams</div>
       <button class="onb-btn onb-btn-primary onb-hero-btn" onclick="onbGoStep(2)">Choose My Teams</button>
     </div>
 
@@ -1126,13 +1131,13 @@ const dwarn = DEBUG ? console.warn.bind(console) : function(){};
 const derr  = DEBUG ? console.error.bind(console): function(){};
 
 // Polling cadence. One self-rescheduling loop (see pollTick / scheduleNextPoll).
-const FLYMODE_POLL = 2000;  // Fly Mode open: fast refresh (still reads as live, ~half the work/battery of 1s)
-const FAST_POLL  = 4000;    // while games are live: refresh live scores every 4s
-const FLYTIME_POLL = 3000;  // a live match is in FlyTime: refresh even faster
-const SOON_POLL  = 30000;   // nothing live yet but a match starts soon: check at 30s
+const FLYMODE_POLL = 1500;  // Fly Mode open: fast refresh
+const FAST_POLL  = 2500;    // while games are live: refresh live scores every 2.5s
+const FLYTIME_POLL = 2000;  // a live match is in FlyTime: refresh even faster
+const SOON_POLL  = 15000;   // nothing live yet but a match starts soon: check at 15s
 const SLOW_POLL  = 60000;   // nothing live: full sweep this often to catch kickoffs
 const RETRY_POLL = 8000;    // quick retry after a failed cycle
-const FULL_EVERY = 15;      // even while live, do a full sweep every ~15 fast cycles
+const FULL_EVERY = 8;       // even while live, do a full sweep every ~8 fast cycles (~20s)
 
 // Date windows (in days). The "All" view stays lean; the leagues that contain a
 // followed team get a deeper window so "My Teams" can look further out.
@@ -1354,12 +1359,49 @@ function pruneResultsOfLive(){
   }
 }
 
+// A match must never appear as both live and upcoming (fast lane skips upcoming).
+function pruneUpcomingOfLive(){
+  if(!ALL_UPCOMING.length || !ALL_LIVE.length) return;
+  const liveIds = new Set(ALL_LIVE.map(m => m.id));
+  for(let i = ALL_UPCOMING.length - 1; i >= 0; i--){
+    if(liveIds.has(ALL_UPCOMING[i].id)) ALL_UPCOMING.splice(i, 1);
+  }
+}
+
+// Quarter/half break labels for field sports (QT, HT, 3QT — never Q0).
+function periodBreakLabel(sport, label, period, shortDetail) {
+  const sd = (shortDetail || '').toLowerCase();
+  const isHalfSport = sport === 'rugby-league' || label === 'NRL' || label === 'NCAAM'
+    || (sport === 'rugby' && label !== 'AFL');
+  const isQuarterSport = !isHalfSport && (
+    sport === 'basketball' || sport === 'football' || sport === 'australian-football'
+    || ['NBA','WNBA','NFL','NCAAF','AFL'].indexOf(label) >= 0
+  );
+  if (isHalfSport) return 'HT';
+  if (isQuarterSport) {
+    if (sd.indexOf('3rd') >= 0 || sd.indexOf('third') >= 0) return '3QT';
+    if (sd.indexOf('2nd') >= 0 || sd.indexOf('second') >= 0 || sd.indexOf('half') >= 0) return 'HT';
+    if (sd.indexOf('1st') >= 0 || sd.indexOf('first') >= 0) return 'QT';
+    const p = period || 0;
+    if (p === 1) return 'QT';
+    if (p === 2) return 'HT';
+    if (p === 3) return '3QT';
+    if (p === 0) return 'QT';
+  }
+  return '';
+}
+
 function espnTimer(comp, label, sport) {
   const type  = comp?.status?.type?.name || '';
   const clock = comp?.status?.displayClock || '';
   const period= comp?.status?.period || 0;
+  const shortDetail = comp?.status?.type?.shortDetail || '';
   if (type === 'STATUS_HALFTIME') return 'HT';
   if (type === 'STATUS_FINAL')    return 'FT';
+  if (type === 'STATUS_END_PERIOD') {
+    const brk = periodBreakLabel(sport, label, period, shortDetail);
+    if (brk) return brk;
+  }
   if (type === 'STATUS_SCHEDULED') {
     const d = new Date(comp?.date || '');
     // Use browser's local timezone
@@ -1391,6 +1433,16 @@ function espnTimer(comp, label, sport) {
     rugby: p => p<=2?`H${p}`:`OT`,
   };
   const pl = (pLabel[label] || sportFb[sport])?.(period) || `${period}`;
+  // Period 0 between quarters — show break label, not Q0
+  if (period === 0 && sport !== 'soccer' && sport !== 'cricket') {
+    const brk = periodBreakLabel(sport, label, 0, shortDetail);
+    if (brk) return brk;
+  }
+  // Clocks like "0:00" at a period break — show break label for field sports
+  if ((!clock || clock === '0:00') && sport !== 'soccer' && sport !== 'cricket' && period > 0) {
+    const brk = periodBreakLabel(sport, label, period, shortDetail);
+    if (brk && type !== 'STATUS_IN_PROGRESS') return brk;
+  }
   // Clocks like "0:00" are meaningless (baseball, cricket) - show period only
   return (clock && clock !== '0:00') ? `${pl} ${clock}`.trim() : pl;
 }
@@ -2008,6 +2060,43 @@ function markFlyTimeMatch(id){
 }
 function matchHadFlyTime(id){ return Object.prototype.hasOwnProperty.call(flyTimeMatches, id); }
 
+// Confirmed FlyTime requires 2 consecutive in-clutch polls before pinning/reordering.
+const FLY_TIME_SUSTAIN_POLLS = 2;
+const flyTimeSustain = {};
+function confirmFlyTimeEntry(m) {
+  const id = m && m.id;
+  if (!id) return false;
+  if (!isFlyTime(m)) { flyTimeSustain[id] = 0; return false; }
+  flyTimeSustain[id] = (flyTimeSustain[id] || 0) + 1;
+  if (matchHadFlyTime(id) || flyTimeSustain[id] >= FLY_TIME_SUSTAIN_POLLS) {
+    markFlyTimeMatch(id);
+    ledgerAchieved(m);
+    return true;
+  }
+  return false;
+}
+
+// FlyMode chronological lock: order frozen at entry until matchHadFlyTime elevates a match.
+let flyModeChronoOrder = new Map();
+function captureFlyModeChronoOrder(matches) {
+  const sorted = (matches || []).slice().sort(function(a, b) {
+    return (a.startMs || 0) - (b.startMs || 0);
+  });
+  sorted.forEach(function(m, i) {
+    if (m && m.id && !flyModeChronoOrder.has(m.id)) flyModeChronoOrder.set(m.id, i);
+  });
+}
+function flyModeSortCompare(a, b) {
+  const aPin = matchHadFlyTime(a.id) && !isFlyTimeBlowout(a) ? 1 : 0;
+  const bPin = matchHadFlyTime(b.id) && !isFlyTimeBlowout(b) ? 1 : 0;
+  if (aPin !== bPin) return bPin - aPin;
+  if (aPin && bPin) return (a.startMs || 0) - (b.startMs || 0);
+  const ai = flyModeChronoOrder.has(a.id) ? flyModeChronoOrder.get(a.id) : 9999;
+  const bi = flyModeChronoOrder.has(b.id) ? flyModeChronoOrder.get(b.id) : 9999;
+  if (ai !== bi) return ai - bi;
+  return (a.startMs || 0) - (b.startMs || 0);
+}
+
 // --- FlyTime predictor ledger (Item 6) ---
 // PRE-RELEASE: set DEBUG_FLY false before public release (hides card scores + Teams lab).
 // Lab still reachable in production via ?flylab=1 (persists in localStorage), see flyLabEnabled.
@@ -2076,13 +2165,20 @@ function ledgerPredict(m){
   saveFlyLedger();
   if(typeof renderFlyDashboard === 'function') renderFlyDashboard();
 }
+// Backfill yellow prediction on first live sighting (covers late app open / async v1 load).
+function ledgerBackfillPredict(m) {
+  if (!m || !m.id || !m.isFlyMatch) return;
+  const e = flyLedger[m.id];
+  if (e && e.p) return;
+  ledgerPredict(m);
+}
 function ledgerAchieved(m){
   if(!m || !m.id) return;
   const e = flyLedger[m.id];
   if(e && e.a) return;
-  const wasYellow = !!(e && e.p);
+  const wasYellow = !!(e && e.p) || !!m.isFlyMatch;
   flyLedger[m.id] = {
-    p:wasYellow?1:0, a:1, bf:wasYellow?1:0, fin:(e&&e.fin)?1:0, rf:1,
+    p:wasYellow?1:0, a:1, bf:wasYellow?1:0, fin:(e&&e.fin)?1:0, rf:(e&&e.rf)?1:0,
     h:m.home||(e&&e.h)||'', w:m.away||(e&&e.w)||'', lg:m.league||(e&&e.lg)||'',
     sk:m.sportKey||(e&&e.sk)||'', lk:m.leagueKey||(e&&e.lk)||'',
     r:(e&&e.r)||m.flyMatchRating||0,
@@ -2363,18 +2459,19 @@ function flyDashboardInputHealth(){
 }
 
 function flyDashboardLive(){
-  var greenNow = 0, predLive = 0, predLiveGreen = 0, yellowUp = 0, likelyNow = 0, upTotal = (ALL_UPCOMING||[]).length;
+  var greenNow = 0, confirmedNow = 0, predLive = 0, predLiveGreen = 0, yellowUp = 0, likelyNow = 0, upTotal = (ALL_UPCOMING||[]).length;
   (ALL_LIVE || []).forEach(function(m){
     if(getMatchFly(m.id) === 'flytime' || isFlyTime(m)) greenNow++;
+    if(matchHadFlyTime(m.id)) confirmedNow++;
     if(flyTimeLikely(m)) likelyNow++;
     var e = flyLedger[m.id];
     if(e && e.p){
       predLive++;
-      if(e.a || matchHadFlyTime(m.id) || getMatchFly(m.id) === 'flytime') predLiveGreen++;
+      if(e.a || matchHadFlyTime(m.id)) predLiveGreen++;
     }
   });
   (ALL_UPCOMING || []).forEach(function(m){ if(m.isFlyMatch) yellowUp++; });
-  return { liveTotal:(ALL_LIVE||[]).length, greenNow:greenNow, likelyNow:likelyNow, predLive:predLive, predLiveGreen:predLiveGreen, yellowUp:yellowUp, upTotal:upTotal };
+  return { liveTotal:(ALL_LIVE||[]).length, greenNow:greenNow, confirmedNow:confirmedNow, likelyNow:likelyNow, predLive:predLive, predLiveGreen:predLiveGreen, yellowUp:yellowUp, upTotal:upTotal };
 }
 
 function flyDashboardFinished(){
@@ -2463,9 +2560,11 @@ function renderFlyDashboard(){
   html += '<div class="fly-lab-grid">';
   html += '<div class="fly-lab-stat"><div class="fly-lab-num dim">' + live.liveTotal + '</div><div class="fly-lab-lbl">games live</div></div>';
   html += '<div class="fly-lab-stat"><div class="fly-lab-num">' + live.greenNow + '</div><div class="fly-lab-lbl">green now</div></div>';
-  html += '<div class="fly-lab-stat"><div class="fly-lab-num warn">' + live.likelyNow + '</div><div class="fly-lab-lbl">likely now (FT2)</div></div>';
+  html += '<div class="fly-lab-stat"><div class="fly-lab-num">' + live.confirmedNow + '</div><div class="fly-lab-lbl">confirmed (pinned)</div></div>';
+  html += '<div class="fly-lab-stat"><div class="fly-lab-num warn">' + live.likelyNow + '</div><div class="fly-lab-lbl">likely only (FT2)</div></div>';
   html += '<div class="fly-lab-stat"><div class="fly-lab-num warn">' + live.yellowUp + '</div><div class="fly-lab-lbl">yellow upcoming</div></div>';
   html += '</div>';
+  html += '<div class="fly-lab-note">Blue fly = yellow then <strong>confirmed</strong> green (ledger a:1). Likely/flashing green alone does not count.</div>';
   if(live.predLive > 0){
     html += '<div class="fly-lab-note">Of ' + live.predLive + ' predicted-yellow now live, <strong>' + live.predLiveGreen + '</strong> have gone green.</div>';
   }
@@ -2625,6 +2724,7 @@ function seedFlyState(m, hNow, aNow, matchState, now) {
     aWk: isCkt ? cricketWicketsOf(m.awayScore) : null,
     period: m.period || 0, clockSec: m.clockSec || 0, clockRaw: m.clockRaw || '',
     hConf: 1, aConf: 1,
+    staleRecoveryPoll: false,
     match: matchState, ts: now,
   };
 }
@@ -2645,6 +2745,25 @@ function flyGameElapsedSec(m, prev) {
   const sport = m.sportKey;
   const p0 = prev.period || 0, p1 = m.period || 0;
   const c0 = prev.clockSec || 0, c1 = m.clockSec || 0;
+  const statusName = m.statusName || '';
+
+  // Period-break / intermission: credit elapsed game time (not zero).
+  if (statusName === 'STATUS_END_PERIOD' || statusName === 'STATUS_HALFTIME') {
+    if (sport === 'australian-football' || sport === 'rugby-league') {
+      const plen = sport === 'australian-football'
+        ? (FLY_PERIOD_CLOCK_SEC['australian-football'] || 1200) : NRL_HALF_CLOCK_SEC;
+      return Math.max(plen - c0, 180);
+    }
+    const plen = FLY_PERIOD_CLOCK_SEC[sport];
+    if (plen) return Math.max(c0 + (plen - c1), 180);
+    if (p1 > p0) return (p1 - p0) * 180;
+  }
+  // ESPN transitional period=0 between quarters
+  if (p1 === 0 && p0 > 0 && sport !== 'soccer' && sport !== 'cricket') {
+    const plen = FLY_PERIOD_CLOCK_SEC[sport]
+      || (sport === 'australian-football' ? 1200 : sport === 'rugby-league' ? NRL_HALF_CLOCK_SEC : 0);
+    if (plen) return Math.max(plen - c0, 180);
+  }
 
   if (sport === 'soccer') {
     const m0 = parseInt(prev.clockRaw, 10) || 0;
@@ -2687,8 +2806,9 @@ function flyGainAndConfidence(hDelta, aDelta, tune, pollDt, gameElapsed) {
   const totalDelta = hDelta + aDelta;
   let confidence = 1;
   let spreadDt = pollDt;
+  const isStale = pollDt >= FLY_STALE_POLL_SEC;
 
-  if (totalDelta > 0 && pollDt >= FLY_STALE_POLL_SEC) {
+  if (totalDelta > 0 && isStale) {
     if (gameElapsed != null && gameElapsed > 0) {
       const ratio = gameElapsed / pollDt;
       if (ratio < 0.25) {
@@ -2712,6 +2832,9 @@ function flyGainAndConfidence(hDelta, aDelta, tune, pollDt, gameElapsed) {
     spreadDt = Math.max(Math.min(pollDt, gameElapsed), FLY_MIN_SPREAD_SEC);
   }
 
+  // Both sides scored during a catch-up refresh — rarely a dual on-fire moment.
+  if (hDelta > 0 && aDelta > 0 && pollDt >= 60) confidence *= 0.5;
+
   spreadDt = Math.max(spreadDt, FLY_MIN_SPREAD_SEC);
 
   function sideGain(delta) {
@@ -2726,6 +2849,7 @@ function flyGainAndConfidence(hDelta, aDelta, tune, pollDt, gameElapsed) {
     aConf: confidence,
     spreadDt,
     gameElapsed,
+    isStale,
   };
 }
 
@@ -2741,7 +2865,8 @@ function updateFlyState(m) {
   // is reached it locks on until the match finishes or blows out (see FLY_BLOWOUT_MARGIN).
   // FlyTime beats OT when both apply (e.g. a tied MLB extra-inning game).
   const matchState = m.isOT && !isFlyTime(m) ? 'overtime' : (isFlyTimePinned(m) ? 'flytime' : '');
-  if(isFlyTime(m)){ markFlyTimeMatch(id); ledgerAchieved(m); }
+  confirmFlyTimeEntry(m);
+  ledgerBackfillPredict(m);
 
   if (!prev) {
     flyState[id] = seedFlyState(m, hNow, aNow, matchState, now);
@@ -2760,11 +2885,13 @@ function updateFlyState(m) {
   const hDelta = Math.max(0, hNow - prev.h);
   const aDelta = Math.max(0, aNow - prev.a);
 
-  // Wall-clock since last poll (decay clamp unchanged). Gain uses clock-validated spread.
+  // Wall-clock since last poll. Stale gaps use full pollDt for decay; normal polls cap at 120s.
   const pollDt = Math.max((now - (prev.ts || now)) / 1000, 0);
-  const dt = Math.min(pollDt, 120);
+  const isStalePoll = pollDt >= FLY_STALE_POLL_SEC;
+  const dt = isStalePoll ? Math.min(pollDt, 600) : Math.min(pollDt, 120);
   const gameElapsed = flyGameElapsedSec(m, prev);
   const gainPack = flyGainAndConfidence(hDelta, aDelta, tune, pollDt, gameElapsed);
+  const staleRecoveryPoll = isStalePoll && (hDelta > 0 || aDelta > 0);
   const hGain = gainPack.hGain;
   const aGain = gainPack.aGain;
 
@@ -2830,12 +2957,14 @@ function updateFlyState(m) {
     peak: hPeak, share: hShare, oppShare: aShare, lastScoreTs: hLastScoreTs,
     prevState: prev.hState, prevTier: prev.hTier, tune, now,
     confidence: gainPack.hConf,
+    staleRecovery: staleRecoveryPoll,
   });
   const aSide = resolveSide({
     mom: aMom, oppMom: hMom, deficit: hNow - aNow, maxDef: aMaxDef, defPeakTs: aDefPeakTs,
     peak: aPeak, share: aShare, oppShare: hShare, lastScoreTs: aLastScoreTs,
     prevState: prev.aState, prevTier: prev.aTier, tune, now,
     confidence: gainPack.aConf,
+    staleRecovery: staleRecoveryPoll,
   });
 
   flyState[id] = {
@@ -2848,6 +2977,7 @@ function updateFlyState(m) {
     hOv: null, aOv: null, hRR: 0, aRR: 0, hWk: null, aWk: null,
     period: m.period || 0, clockSec: m.clockSec || 0, clockRaw: m.clockRaw || '',
     hConf: gainPack.hConf, aConf: gainPack.aConf,
+    staleRecoveryPoll: false,
     match: matchState, ts: now,
   };
 }
@@ -2857,7 +2987,9 @@ function updateFlyState(m) {
 // colour, and an extreme flag ('' | 'fire' | 'cold') for the effect classes.
 function resolveSide(c) {
   const tune = c.tune;
-  const tier = momTier(c.mom, c.prevTier);
+  let tier = momTier(c.mom, c.prevTier);
+  // Stale-recovery grace: cap heat label for one poll after a long gap (blocks false dual-red).
+  if (c.staleRecovery && tier === 'onfire') tier = 'onrun';
 
   // Comeback (purple): was down by a real margin, has clawed back at least half,
   // is now roughly level (not a runaway lead), and still has positive momentum.
@@ -2886,7 +3018,7 @@ function resolveSide(c) {
   // clock validation restored confidence (see flyGainAndConfidence).
   if (tier) {
     const conf = c.confidence != null ? c.confidence : 1;
-    const x = (c.mom >= 90 && conf >= 0.55) ? 'fire' : '';
+    const x = (c.mom >= 90 && conf >= 0.55 && !c.staleRecovery) ? 'fire' : '';
     return { state: tier, tier, col: flyHeatColour(c.mom), x };
   }
 
@@ -3202,6 +3334,7 @@ async function loadLiveData() {
   ALL_LIVE.length=0;     ALL_LIVE.push(...espnLive);
   ALL_UPCOMING.length=0; ALL_UPCOMING.push(...espnUpcoming);
   ALL_RESULTS.length=0;  ALL_RESULTS.push(...espnResults);
+  pruneUpcomingOfLive();
   pruneResultsOfLive();
 
   // FlyMatch rating: computed once per fixture per refresh and cached on each
@@ -3273,6 +3406,7 @@ async function refreshLiveFeeds(feeds) {
   applyScoreFlashes(newLive);
   ALL_LIVE.length = 0; ALL_LIVE.push(...newLive);
   pruneResultsOfLive();
+  pruneUpcomingOfLive();
   runFlyMatchSweep();
 
   lastUpdateMs = Date.now(); lastPollFailed = false; renderFreshness();
@@ -3318,7 +3452,7 @@ function anyFlyTimeLive(){
 // True if an upcoming match starts within the next 30 minutes (mid tier when idle).
 function anyStartingSoon(){
   const now = Date.now(), soon = now + 30*60*1000;
-  for (let i=0;i<ALL_UPCOMING.length;i++){ const s = ALL_UPCOMING[i].startMs; if (s && s>now && s<=soon) return true; }
+  for (let i=0;i<ALL_UPCOMING.length;i++){ const s = ALL_UPCOMING[i].eventMs || ALL_UPCOMING[i].startMs; if (s && s>now && s<=soon) return true; }
   return false;
 }
 function isFlyModeActive() {
@@ -4656,12 +4790,9 @@ function renderHome(){
     lw.innerHTML=`<div class="empty-onboard"><div class="ei"><img src="icon192.png" alt="" style="width:56px;height:56px;border-radius:50%;object-fit:cover;display:inline-block"></div><strong>Welcome to ScoreFly</strong><br>Go to <strong>Teams</strong> to follow your teams and see live scores here. Or tap <strong>All</strong> to browse everything.</div>`;
     uw.innerHTML='';
   } else {
-    // FlyTime-locked live games pin to the top of the feed (no separate section).
-    liveFilt=liveFilt.slice().sort(function(a,b){
-      var pa=isFlyTimePinned(a)?1:0, pb=isFlyTimePinned(b)?1:0;
-      if(pa!==pb) return pb-pa;
-      return (a.startMs||0)-(b.startMs||0);
-    });
+    // FlyTime-confirmed games pin to top; pre-FlyTime order locked by flyModeSortCompare.
+    captureFlyModeChronoOrder(liveFilt);
+    liveFilt=liveFilt.slice().sort(flyModeSortCompare);
     lw.innerHTML=liveFilt.length?liveFilt.map(buildLiveCard).join(''):'';
     var _hasLive=liveFilt.length>0;
     var _lnl=document.getElementById('live-now-label'); if(_lnl) _lnl.style.display=_hasLive?'':'none';
@@ -4863,15 +4994,9 @@ function buildFlyModeGrid() {
     if (flyTimeAll && getMatchFly(m.id) === 'flytime') return true;
     return false;
   });
-  // Rec 3: a match that has entered FlyTime pins to the top and stays pinned until it
-  // completes (drops out of ALL_LIVE), even if FlyTime conditions later fluctuate.
-  // Within each group, earliest start first.
-  live = live.slice().sort((a, b) => {
-    const pa = isFlyTimePinned(a) ? 1 : 0;
-    const pb = isFlyTimePinned(b) ? 1 : 0;
-    if (pa !== pb) return pb - pa;
-    return (a.startMs || 0) - (b.startMs || 0);
-  });
+  // Rec 3: confirmed FlyTime (matchHadFlyTime) pins to top; pre-FlyTime order is locked.
+  captureFlyModeChronoOrder(live);
+  live = live.slice().sort(flyModeSortCompare);
   if (live.length > FLYMODE_MAX) live = live.slice(0, FLYMODE_MAX);
 
   const inner = document.getElementById('flymode-inner');
@@ -4951,6 +5076,7 @@ function enterFlyMode() {
   if (overlay) overlay.classList.add('active');
   const inner = document.getElementById('flymode-inner');
   if (inner) inner.style.filter = 'brightness(100%)';
+  flyModeChronoOrder = new Map();
   buildFlyModeGrid();
   bumpBrightnessControl(); // show the slider on entry, then let it fade
   requestFlyFullscreen();  // hide system chrome where supported (Android/desktop)
@@ -4975,6 +5101,7 @@ function handleFlyModeTap(e) {
 
 function exitFlyMode() {
   document.getElementById('flymode-overlay').classList.remove('active');
+  flyModeChronoOrder = new Map();
   if (brightnessFadeTimer) { clearTimeout(brightnessFadeTimer); brightnessFadeTimer = null; }
   exitFlyFullscreen();
   scheduleNextPoll();
@@ -5374,10 +5501,10 @@ const FLY_V1_REGISTRY = {
   'australian-football|afl':              { file: 'afl-flytime-v1.json',              threshold: 75, tag: 'FT',   nameMap: 'afl' },
   'football|nfl':                           { file: 'nfl-flytime-v1.json',              threshold: 95, tag: 'NFL' },
   'basketball|nba':                         { file: 'nba-flytime-v1.json',              threshold: 88, tag: 'NBA' },
-  'basketball|wnba':                        { file: 'wnba-flytime-v1.json',             threshold: 75, tag: 'WNBA' },
+  'basketball|wnba':                        { file: 'wnba-flytime-v1.json',             threshold: 83, tag: 'WNBA' },
   'basketball|nbl':                         { file: 'nbl-flytime-v1.json',              threshold: 70, tag: 'NBL' },
   'basketball|mens-college-basketball':     { file: 'ncaam-flytime-v1.json',            threshold: 97, tag: 'NCAAM' },
-  'baseball|mlb':                           { file: 'mlb-flytime-v1.json',              threshold: 85, tag: 'MLB' },
+  'baseball|mlb':                           { file: 'mlb-flytime-v1.json',              threshold: 80, tag: 'MLB' },
   'hockey|nhl':                             { file: 'nhl-flytime-v1.json',              threshold: 78, tag: 'NHL' },
   'football|college-football':              { file: 'ncaaf-flytime-v1.json',            threshold: 96, tag: 'NCAAF' },
   'football|cfl':                           { file: 'cfl-flytime-v1.json',              threshold: 70, tag: 'CFL' },

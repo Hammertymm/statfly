@@ -135,7 +135,7 @@ class LeagueConfig:
 LEAGUES: list[LeagueConfig] = [
     LeagueConfig("basketball", "nba", "NBA", "NBA", "nba-flytime-v1.json", 88, 8, 16),
     LeagueConfig("football", "nfl", "NFL", "NFL", "nfl-flytime-v1.json", 95, 8, 16),
-    LeagueConfig("baseball", "mlb", "MLB", "MLB", "mlb-flytime-v1.json", 85, 2, 16),
+    LeagueConfig("baseball", "mlb", "MLB", "MLB", "mlb-flytime-v1.json", 80, 2, 16),
     LeagueConfig("hockey", "nhl", "NHL", "NHL", "nhl-flytime-v1.json", 78, 1, 16),
     LeagueConfig("soccer", "usa.1", "MLS", "MLS", "soccer-usa-1-flytime-v1.json", 96, 1, 10),
     LeagueConfig("soccer", "eng.1", "EPL", "EPL", "soccer-eng-1-flytime-v1.json", 96, 1, 10),
@@ -174,7 +174,7 @@ LEAGUES: list[LeagueConfig] = [
     LeagueConfig("cricket", "8044", "Big Bash League", None, None, None, 20, 8),
     LeagueConfig("cricket", "8048", "IPL", None, None, None, 20, 8),
     LeagueConfig("cricket", "23694", "Cricket", None, None, None, 20, 8),
-    LeagueConfig("basketball", "wnba", "WNBA", "WNBA", "wnba-flytime-v1.json", 75, 8, 6),
+    LeagueConfig("basketball", "wnba", "WNBA", "WNBA", "wnba-flytime-v1.json", 83, 8, 6),
     LeagueConfig("basketball", "nbl", "NBL", "NBL", "nbl-flytime-v1.json", 70, 8, 8,
                  season_windows=NBL_SEASON_WINDOWS),
     LeagueConfig("basketball", "mens-college-basketball", "NCAAM", "NCAAM",

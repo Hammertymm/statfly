@@ -8,6 +8,7 @@ from typing import Optional
 
 from .config import (
     AFL_FLY_Q4_ELAPSED_SEC,
+    NRL_FLY_HALF_ELAPSED_SEC,
     FLYTIME_JSON_DIR,
     FORMULA_VERSIONS,
     LeagueConfig,
@@ -169,7 +170,13 @@ def is_flytime_live(match: ParsedMatch) -> bool:
         if p > 4:
             return True
         return p == 4 and c >= AFL_FLY_Q4_ELAPSED_SEC
-    if sport in ("rugby-league", "rugby"):
+    if sport == "rugby-league":
+        if margin > 12:
+            return False
+        if p > 2:
+            return True
+        return p >= 1 and p <= 2 and c >= NRL_FLY_HALF_ELAPSED_SEC
+    if sport == "rugby":
         return p >= 2 and c > 0 and c <= 600 and margin <= 12
     if sport == "soccer":
         minute = 0

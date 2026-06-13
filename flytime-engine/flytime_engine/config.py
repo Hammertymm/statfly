@@ -13,6 +13,8 @@ FLYTIME_JSON_DIR = ROOT
 DEFAULT_DB_PATH = Path(__file__).resolve().parent.parent / "data" / "flytime_engine.db"
 
 AFL_FLY_Q4_ELAPSED_SEC = 20 * 60
+NRL_HALF_CLOCK_SEC = 45 * 60
+NRL_FLY_HALF_ELAPSED_SEC = 35 * 60
 
 FLY_BLOWOUT_MARGIN = {
     "basketball": 16,

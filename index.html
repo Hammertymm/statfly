@@ -177,7 +177,10 @@
   }
   /* FLYSTATE - solid score fill colours. Solid (not glow) so the score stays
      readable when Fly Mode brightness is turned right down. Neutral = no class = white.
-     Applies to both feed cards (.sc) and Fly Mode (.flymode-score). */
+     Applies to both feed cards (.sc) and Fly Mode (.flymode-score).
+     FlySense 2.0: the exact colour is a continuous gradient set inline per cell
+     (getFlyStyle -> flyHeatColour / flyColdColour / flyCbColour). These class rules
+     remain as anchor fallbacks (no-JS / legend). */
   .sc.fs-warming,  .flymode-score.fs-warming  { color: var(--upcoming); }
   .sc.fs-onrun,    .flymode-score.fs-onrun    { color: var(--onrun); }
   .sc.fs-onfire,   .flymode-score.fs-onfire   { color: var(--result); }
@@ -187,6 +190,23 @@
   /* FlyTime is the headline moment - gentle pulse on the Fly Mode score so it feels alive */
   .flymode-score.fs-flytime { animation: flyPulse 1.6s ease-in-out infinite; }
   @keyframes flyPulse { 0%,100%{opacity:1;} 50%{opacity:.72;} }
+  /* FLYSENSE 2.0 EXTREMES - effects only at the top/bottom of the range, additive
+     to colour (never the sole signal), one effect per cell, CSS-compositor only.
+     Extreme On Fire (momentum 90-100): brightening pulse + warm glow = MORE energy. */
+  .sc.fs-xfire, .flymode-score.fs-xfire {
+    animation: flyFirePulse 1.4s ease-in-out infinite;
+    text-shadow: 0 0 10px rgba(255,69,58,.45);
+  }
+  @keyframes flyFirePulse { 0%,100%{filter:brightness(1);} 50%{filter:brightness(1.28);} }
+  /* Extreme Cold (collapse + drought + dominance): dim, desaturated, still, faint
+     frost glow = LESS energy. No motion - frozen. */
+  .sc.fs-xcold, .flymode-score.fs-xcold {
+    filter: saturate(.72) brightness(.86);
+    text-shadow: 0 0 9px rgba(130,190,255,.30);
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .sc.fs-xfire, .flymode-score.fs-xfire, .flymode-score.fs-flytime { animation: none; }
+  }
   .timer-col{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;min-width:44px;padding-left:8px;border-left:1px solid var(--sep);}
   .timer-val{font-size:12px;font-weight:700;color:var(--live);text-align:center;line-height:1.3;letter-spacing:-.3px;}
   .ft-col{display:flex;flex-direction:column;align-items:center;justify-content:center;min-width:44px;padding-left:8px;border-left:1px solid var(--sep);gap:2px;}
@@ -1073,6 +1093,7 @@
     <div class="fly-legend-row"><span class="fly-dot" style="background:var(--cold)"></span><span class="fly-legend-name">Gone cold</span><span class="fly-legend-desc">opponent has taken over</span></div>
     <div class="fly-legend-row"><span class="fly-dot" style="background:var(--comeback)"></span><span class="fly-legend-name">Comeback</span><span class="fly-legend-desc">clawing back a deficit</span></div>
     <div class="fly-legend-row"><span class="fly-dot" style="background:var(--live)"></span><span class="fly-legend-name">Fly Time</span><span class="fly-legend-desc">close and in the final stretch</span></div>
+    <div class="fly-legend-note">Colours brighten with intensity — the hotter the run, the more vivid the score.</div>
     <div class="fly-legend-note">A red match clock means the game has gone to overtime.</div>
   </div>
 </div>
@@ -1526,24 +1547,31 @@ function nrlTeam(name) {
 function cricketChaseFields(comp) {
   const reg = (comp.format && comp.format.regulation) || {};
   const maxOvers = reg.overs || null;
-  if (!maxOvers || maxOvers > 20) return {};
+  const out = {};
+  // FlySense run-rate engine inputs: format size (T20 vs ODI bar), which side is
+  // batting and their overs faced - captured for ALL formats, not just T20 chases.
+  if (maxOvers) out.cricketMaxOvers = maxOvers;
   const cs = comp.competitors || [];
   let chasing = null, target = null;
   cs.forEach(function(c) {
     const ls = (c.linescores || []).find(function(x) { return x.isBatting; });
-    if (ls) chasing = { runs: ls.runs || 0, overs: ls.overs || 0 };
+    if (ls) {
+      chasing = { runs: ls.runs || 0, overs: ls.overs || 0 };
+      out.cricketBatting = c.homeAway === 'home' ? 'home' : 'away';
+      out.cricketOvers = ls.overs || 0;
+    }
   });
-  if (!chasing) return {};
+  if (!chasing) return out;
   cs.forEach(function(c) {
     (c.linescores || []).forEach(function(x) {
       if (!x.isBatting && x.runs != null && !target) target = x.runs + 1;
     });
   });
-  if (target == null) return {};
-  return {
-    cricketRunsReq: target - chasing.runs,
-    cricketOversLeft: maxOvers - chasing.overs
-  };
+  // T20 FlyTime chase fields only (unchanged behaviour).
+  if (target == null || !maxOvers || maxOvers > 20) return out;
+  out.cricketRunsReq = target - chasing.runs;
+  out.cricketOversLeft = maxOvers - chasing.overs;
+  return out;
 }
 
 function mapEspnEvent(event, feed) {
@@ -1721,34 +1749,86 @@ function globalLiveTap() {
 // flyState:   per-match momentum + resolved FlyState for each side.
 const lastScores = {}; // id -> { home, away }
 
-// Per-sport tuning.
-//   bigPlay = points in one ~60s poll that signals a strong scoring burst.
-//   cbMin   = deficit (points) large enough to count as a real comeback.
+// Per-sport tuning (FlySense 2.0).
+//   bigPlay      = points in one ~60s poll that signals a strong scoring burst.
+//   cbMin        = deficit (points) large enough to count as a real comeback.
+//   halflife     = base momentum half-life in seconds: how long a score stays
+//                  "felt" if nothing else happens. Rare-event sports linger longer
+//                  (soccer goal ~90s) than constant-scoring sports (NBA ~40s).
+//   droughtNorm  = a scoreless gap (sec) that is NORMAL for the sport; the
+//                  absolute-drought cold trigger fires only well beyond this.
 const FLY_TUNING = {
-  basketball:            { bigPlay: 6, cbMin: 10 },
-  football:              { bigPlay: 7, cbMin: 11 },
-  hockey:                { bigPlay: 2, cbMin: 2  },
-  soccer:                { bigPlay: 1, cbMin: 2  },
-  baseball:              { bigPlay: 3, cbMin: 3  },
-  'australian-football': { bigPlay: 9, cbMin: 18 },
-  'rugby-league':         { bigPlay: 6, cbMin: 12 },
-  rugby:                  { bigPlay: 6, cbMin: 12 },
+  basketball:            { bigPlay: 6, cbMin: 10, halflife: 40, droughtNorm: 90   },
+  football:              { bigPlay: 7, cbMin: 11, halflife: 50, droughtNorm: 300  },
+  hockey:                { bigPlay: 2, cbMin: 2,  halflife: 70, droughtNorm: 480  },
+  soccer:                { bigPlay: 1, cbMin: 2,  halflife: 90, droughtNorm: 900  },
+  baseball:              { bigPlay: 3, cbMin: 3,  halflife: 75, droughtNorm: 720  },
+  'australian-football': { bigPlay: 9, cbMin: 18, halflife: 55, droughtNorm: 300  },
+  'rugby-league':         { bigPlay: 6, cbMin: 12, halflife: 55, droughtNorm: 360  },
+  rugby:                  { bigPlay: 6, cbMin: 12, halflife: 55, droughtNorm: 360  },
+  // Cricket momentum is RUN-RATE based (see updateCricketFly): the batting side's
+  // momentum tracks recent runs-per-over against the format's "on fire" rate
+  // (T20 10+/over, ODI 6+/over); the bowling side gains on wickets. bigPlay is a
+  // fallback only; cold/comeback states are disabled (innings scores make
+  // deficit-based logic meaningless mid-match).
+  cricket:                { bigPlay: 12, cbMin: 9999, halflife: 90, droughtNorm: 480 },
 };
 
 // Momentum decays each poll so a hot streak cools gradually instead of snapping off
 // the instant scoring pauses. This decay IS our anti-flicker / hysteresis.
 const MOM_GAIN  = 70;    // a full bigPlay burst adds about 70 points
-// Momentum now decays on a wall-clock half-life rather than a fixed per-poll
-// factor, so the colour fade is the same whatever the refresh rate. ~49s half-life
-// is roughly 3x the old per-poll decay; raise this to make colours linger longer.
-const MOM_HALFLIFE_SEC = 49;
+// Momentum decays on a wall-clock half-life rather than a fixed per-poll factor,
+// so the colour fade is the same whatever the refresh rate. The BASE half-life is
+// per-sport (FLY_TUNING.halflife; fallback below), then dynamically stretched:
+//   - persistence: an established multi-minute run cools up to 1.8x slower than
+//     a 20s flurry (responsive early, stable once real);
+//   - state: on-fire cools 1.3x slower once earned, warming 0.8x faster
+//     (an unconfirmed run shouldn't linger and mislead).
+const MOM_HALFLIFE_SEC = 49;          // fallback when a sport has no halflife entry
+const MOM_PERSIST_FULL_SEC = 300;     // run duration at which persistence bonus maxes out
+const MOM_PERSIST_MAX = 1.8;          // max half-life stretch from persistence
+const MOM_STATE_FACTOR = { onfire: 1.3, warming: 0.8 };
+// Richer scalar terms (FlySense 2.0 Part 2): acceleration makes a surge register
+// faster; the slow-decaying "ember" remembers a recent run so a side re-ignites
+// quicker on a second surge than from cold start.
+const MOM_ACCEL_BOOST = 0.5;          // max gain boost from positive acceleration
+const MOM_EMBER_BOOST = 0.3;          // max gain boost from recovery ember
+const MOM_EMBER_HALFLIFE_SEC = 300;   // ember memory half-life
+// Signal window for velocity/acceleration/suppression (trailing, seconds).
+const MOM_WINDOW_SEC = 180;
+// Cricket "on fire" run rates (runs per over). 50-over formats use the ODI bar.
+const CRICKET_FIRE_RR_T20 = 10;
+const CRICKET_FIRE_RR_ODI = 6;
+const CRICKET_WICKET_GAIN = 38;       // bowling-side momentum per wicket (2 quick = on fire)
+const CRICKET_SEC_PER_OVER = 240;     // wall-clock fallback when overs data is missing
+// Refresh / clock-gap validation (false-positive guard): spread score bursts over
+// elapsed GAME time (not just poll wall time) and lower confidence after stale polls.
+const FLY_REF_POLL_SEC = 60;           // reference interval for "one bigPlay burst"
+const FLY_STALE_POLL_SEC = 90;       // poll gap beyond normal cadence -> scrutinise
+const FLY_MIN_SPREAD_SEC = 20;       // never spread a burst over less than this
+// Game-clock seconds per period (countdown sports: length of period on the clock).
+const FLY_PERIOD_CLOCK_SEC = {
+  basketball: 720, football: 900, hockey: 1200,
+  'rugby-league': NRL_HALF_CLOCK_SEC, rugby: 2400,
+  'australian-football': 1200,
+};
 
 // flyState[id] = {
-//   h, a              last seen integer scores
-//   hMom, aMom        momentum 0-100 per side
-//   hMaxDef, aMaxDef  largest deficit each side has faced (for comeback)
-//   hState, aState    resolved side state ('' | warming | onrun | onfire | cold | comeback)
-//   match             match-level state ('' | 'flytime' | 'overtime')
+//   h, a                      last seen integer scores
+//   hMom, aMom                momentum 0-100 per side
+//   hMaxDef, aMaxDef          largest deficit each side has faced (for comeback)
+//   hDefPeakTs, aDefPeakTs    when that worst deficit was set (comeback speed)
+//   hRunStart, aRunStart      when the side's current run began (persistence)
+//   hEmber, aEmber            slow-decaying recovery memory (re-ignition boost)
+//   hPeak, aPeak              recent peak momentum (collapse detection)
+//   hLastScoreTs, aLastScoreTs  last time each side scored (drought)
+//   hTier, aTier              hysteretic heat label ('' | warming | onrun | onfire)
+//   hState, aState            resolved state ('' | warming | onrun | onfire | cold | comeback)
+//   hCol, aCol                continuous gradient colour for the score cell
+//   hX, aX                    extreme flag ('' | 'fire' | 'cold')
+//   hist                      trailing window of {ts, hD, aD} score deltas
+//   hOv, aOv, hRR, aRR, hWk, aWk  cricket: overs faced, run-rate EWMA, wickets lost
+//   match                     match-level state ('' | 'flytime' | 'overtime')
 // }
 const flyState = {};
 
@@ -1764,12 +1844,16 @@ function flyCrossfade(){
   for (var i = 0; i < els.length; i++) {
     var el = els[i];
     var key = el.getAttribute('data-fk');
-    var cur = (el.className.match(/fs-[a-z]+/) || [''])[0];
+    var cur = {
+      cls: (el.className.match(/fs-[a-z]+/) || [''])[0],
+      col: el.style.color || '',
+    };
     var prev = flyFadePrev[key];
-    if (prev !== undefined && prev !== cur) {
+    if (prev !== undefined && (prev.cls !== cur.cls || prev.col !== cur.col)) {
       el.style.transition = 'none';
-      if (cur) el.classList.remove(cur);
-      if (prev) el.classList.add(prev);
+      if (cur.cls) el.classList.remove(cur.cls);
+      if (prev.cls) el.classList.add(prev.cls);
+      el.style.color = prev.col;
       pending.push([el, prev, cur]);
     }
     flyFadePrev[key] = cur;
@@ -1779,22 +1863,80 @@ function flyCrossfade(){
     for (var j = 0; j < pending.length; j++) {
       var e = pending[j][0], p = pending[j][1], c = pending[j][2];
       e.style.transition = '';
-      if (p) e.classList.remove(p);
-      if (c) e.classList.add(c);
+      if (p.cls) e.classList.remove(p.cls);
+      if (c.cls) e.classList.add(c.cls);
+      e.style.color = c.col;
     }
   }
 }
 
-function momTier(mom) {
-  if (mom >= 68) return 'onfire';
-  if (mom >= 42) return 'onrun';
-  if (mom >= 20) return 'warming';
+// FlySense 2.0: tiers are soft label bands with hysteresis (enter high, exit low)
+// so the LABEL never chatters at a boundary. The displayed colour is continuous
+// (flyHeatColour) - these labels exist for semantics, effects and the legend.
+const MOM_BANDS = [
+  { tier: 'onfire',  enter: 70, exit: 64 },
+  { tier: 'onrun',   enter: 45, exit: 40 },
+  { tier: 'warming', enter: 20, exit: 16 },
+];
+function momTier(mom, prevTier) {
+  for (let i = 0; i < MOM_BANDS.length; i++) {
+    const b = MOM_BANDS[i];
+    // Sticky: if we already hold this band or higher, only drop below its exit.
+    const held = prevTier && MOM_BANDS.findIndex(x => x.tier === prevTier) <= i;
+    if (mom >= (held ? b.exit : b.enter)) return b.tier;
+  }
   return '';
 }
 
+// - FLYSENSE 2.0 CONTINUOUS COLOUR RAMPS -
+// Momentum 0-100 maps to a continuous colour instead of 4 hard buckets, so 67 vs 68
+// look almost identical and 43 vs 67 visibly differ (the inverse of the old cliffs).
+// Anchor stops reuse the existing brand palette; both hue AND luminance rise with
+// intensity so meaning survives colour blindness, glare and low brightness.
+function rampColour(stops, v) {
+  v = Math.max(stops[0][0], Math.min(stops[stops.length - 1][0], v));
+  let lo = stops[0], hi = stops[stops.length - 1];
+  for (let i = 0; i < stops.length - 1; i++) {
+    if (v >= stops[i][0] && v <= stops[i + 1][0]) { lo = stops[i]; hi = stops[i + 1]; break; }
+  }
+  const span = hi[0] - lo[0] || 1;
+  let t = (v - lo[0]) / span;
+  t = t * t * (3 - 2 * t);  // smoothstep - eases band edges
+  const r = Math.round(lo[1][0] + (hi[1][0] - lo[1][0]) * t);
+  const g = Math.round(lo[1][1] + (hi[1][1] - lo[1][1]) * t);
+  const b = Math.round(lo[1][2] + (hi[1][2] - lo[1][2]) * t);
+  return 'rgb(' + r + ',' + g + ',' + b + ')';
+}
+// Heat: white -> yellow (#ffd60a) -> orange (#ff9f0a) -> red (#ff453a) -> ember.
+const FLY_RAMP_HEAT = [
+  [12,  [255, 255, 255]],
+  [25,  [255, 214, 10]],
+  [48,  [255, 159, 10]],
+  [72,  [255, 69, 58]],
+  [100, [255, 42, 24]],
+];
+// Cold severity 0-1: pale blue -> brand blue (#409cff) -> deep frozen blue.
+const FLY_RAMP_COLD = [
+  [0, [158, 201, 255]],
+  [0.5, [64, 156, 255]],
+  [1, [36, 110, 228]],
+];
+// Comeback magnitude 0-1: soft purple -> brand purple (#bf5af2) -> vivid.
+const FLY_RAMP_CB = [
+  [0, [205, 150, 240]],
+  [0.5, [191, 90, 242]],
+  [1, [171, 52, 244]],
+];
+function flyHeatColour(mom)  { return mom < 12 ? '' : rampColour(FLY_RAMP_HEAT, mom); }
+function flyColdColour(sev)  { return rampColour(FLY_RAMP_COLD, sev); }
+function flyCbColour(mag)    { return rampColour(FLY_RAMP_CB, mag); }
+
 // AFL quarter clock COUNTS UP (elapsed time). FlyTime starts once Q4 clock passes
-// 20:00 (incl. time-on). Other US sports clocks count DOWN (time remaining).
+// 20:00 (incl. time-on). NRL halves also COUNT UP (elapsed in the half). FlyTime
+// from ~35:00 elapsed in each half (final 10 min). US sports clocks count DOWN.
 const AFL_FLY_Q4_ELAPSED_SEC = 20 * 60;
+const NRL_HALF_CLOCK_SEC = 45 * 60;
+const NRL_FLY_HALF_ELAPSED_SEC = 35 * 60;
 
 // Cricket T20: chasing side needs <=20 runs with <=2 overs left.
 function isCricketFlyTime(m) {
@@ -1818,7 +1960,11 @@ function isFlyTime(m) {
       if (p > 4) return true;  // OT: close margin only
       return p === 4 && c >= AFL_FLY_Q4_ELAPSED_SEC;
     case 'rugby-league':
-    case 'rugby':                return p >= 2 && c > 0 && c <= 600 && margin <= 12;
+      if (margin > 12) return false;
+      if (p > 2) return true;  // OT: close margin only
+      return p >= 1 && p <= 2 && c >= NRL_FLY_HALF_ELAPSED_SEC;
+    case 'rugby':
+      return p >= 2 && c > 0 && c <= 600 && margin <= 12;
     case 'soccer': {
       const minute = parseInt(m.clockRaw, 10) || 0;
       return minute >= 80 && margin <= 1;
@@ -2298,6 +2444,132 @@ function renderFlyDashboard(){
 
 function renderFlyLedger(){ renderFlyDashboard(); }
 
+// Seed a fresh per-match FlySense state (first sighting - no momentum yet).
+// Cricket baselines (wickets / overs) are recorded at seed time so the next poll's
+// deltas are real, not a false burst.
+function seedFlyState(m, hNow, aNow, matchState, now) {
+  const isCkt = m.sportKey === 'cricket';
+  return {
+    h: hNow, a: aNow, hMom: 0, aMom: 0,
+    hMaxDef: Math.max(0, aNow - hNow), aMaxDef: Math.max(0, hNow - aNow),
+    hDefPeakTs: now, aDefPeakTs: now,
+    hRunStart: null, aRunStart: null,
+    hEmber: 0, aEmber: 0, hPeak: 0, aPeak: 0,
+    hLastScoreTs: now, aLastScoreTs: now,
+    hTier: '', aTier: '',
+    hState: '', aState: '', hCol: '', aCol: '', hX: '', aX: '',
+    hist: [],
+    hOv: isCkt && m.cricketBatting === 'home' ? (m.cricketOvers ?? null) : null,
+    aOv: isCkt && m.cricketBatting === 'away' ? (m.cricketOvers ?? null) : null,
+    hRR: 0, aRR: 0,
+    hWk: isCkt ? cricketWicketsOf(m.homeScore) : null,
+    aWk: isCkt ? cricketWicketsOf(m.awayScore) : null,
+    period: m.period || 0, clockSec: m.clockSec || 0, clockRaw: m.clockRaw || '',
+    hConf: 1, aConf: 1,
+    match: matchState, ts: now,
+  };
+}
+
+// Effective decay half-life for one side (FlySense 2.0 dynamic decay):
+// per-sport base, stretched by run persistence, nudged by held state.
+function flyHalflife(tune, runStart, tier, now) {
+  const base = tune.halflife || MOM_HALFLIFE_SEC;
+  const persistNorm = runStart ? Math.min((now - runStart) / 1000 / MOM_PERSIST_FULL_SEC, 1) : 0;
+  const persist = 1 + (MOM_PERSIST_MAX - 1) * persistNorm;
+  return base * persist * (MOM_STATE_FACTOR[tier] || 1);
+}
+
+// Seconds of GAME time elapsed between two polls (null if clock data unusable).
+// Cross-references score jumps against clock progression to catch batched refreshes.
+function flyGameElapsedSec(m, prev) {
+  if (!m || !prev) return null;
+  const sport = m.sportKey;
+  const p0 = prev.period || 0, p1 = m.period || 0;
+  const c0 = prev.clockSec || 0, c1 = m.clockSec || 0;
+
+  if (sport === 'soccer') {
+    const m0 = parseInt(prev.clockRaw, 10) || 0;
+    const m1 = parseInt(m.clockRaw, 10) || 0;
+    if (m1 > m0) return (m1 - m0) * 60;
+    if (m1 === m0 && p1 > p0) return 45 * 60; // period advanced, minute reset
+    return null;
+  }
+  if (sport === 'baseball') {
+    if (p1 > p0) return (p1 - p0) * 180; // ~3 min of game time per inning (estimate)
+    return null;
+  }
+  if (sport === 'australian-football') {
+  // AFL quarter clock COUNTS UP (elapsed time).
+    const plen = FLY_PERIOD_CLOCK_SEC['australian-football'] || 1200;
+    if (p1 === p0 && c1 >= c0) return c1 - c0;
+    if (p1 > p0) return (plen - c0) + (p1 - p0 - 1) * plen + c1;
+    return null;
+  }
+  if (sport === 'rugby-league') {
+  // NRL half clock COUNTS UP (elapsed time in the half).
+    const plen = NRL_HALF_CLOCK_SEC;
+    if (p1 === p0 && c1 >= c0) return c1 - c0;
+    if (p1 > p0) return (plen - c0) + (p1 - p0 - 1) * plen + c1;
+    return null;
+  }
+  const plen = FLY_PERIOD_CLOCK_SEC[sport];
+  if (!plen) return null;
+  // Countdown clocks (basketball, football, hockey, rugby): remaining time decreases.
+  if (p1 === p0 && c0 >= c1 && c1 > 0) return c0 - c1;
+  if (p1 > p0) {
+    const span = p1 - p0;
+    return c0 + (span - 1) * plen + (plen - c1);
+  }
+  return null;
+}
+
+// Spread score bursts over elapsed time; flag stale/batched updates via confidence.
+function flyGainAndConfidence(hDelta, aDelta, tune, pollDt, gameElapsed) {
+  const totalDelta = hDelta + aDelta;
+  let confidence = 1;
+  let spreadDt = pollDt;
+
+  if (totalDelta > 0 && pollDt >= FLY_STALE_POLL_SEC) {
+    if (gameElapsed != null && gameElapsed > 0) {
+      const ratio = gameElapsed / pollDt;
+      if (ratio < 0.25) {
+        // Score jumped but the game clock barely moved — likely batched/stuck clock.
+        confidence = 0.35;
+        spreadDt = pollDt;
+      } else if (ratio < 0.55) {
+        confidence = 0.6;
+        spreadDt = Math.max(gameElapsed, pollDt * ratio);
+      } else {
+        // Clock advanced with the outage — spread over game time, not one instant.
+        spreadDt = gameElapsed;
+      }
+    } else {
+      // No trustworthy clock — spread over wall time, moderate confidence penalty.
+      confidence = 0.55;
+      spreadDt = pollDt;
+    }
+  } else if (gameElapsed != null && gameElapsed > 0 && totalDelta > 0) {
+    // Normal cadence: trust the tighter of poll gap vs game elapsed for spreading.
+    spreadDt = Math.max(Math.min(pollDt, gameElapsed), FLY_MIN_SPREAD_SEC);
+  }
+
+  spreadDt = Math.max(spreadDt, FLY_MIN_SPREAD_SEC);
+
+  function sideGain(delta) {
+    if (delta <= 0) return 0;
+    const burst = (delta / tune.bigPlay) / (spreadDt / FLY_REF_POLL_SEC);
+    return Math.min(burst, 1.6) * MOM_GAIN * confidence;
+  }
+  return {
+    hGain: sideGain(hDelta),
+    aGain: sideGain(aDelta),
+    hConf: confidence,
+    aConf: confidence,
+    spreadDt,
+    gameElapsed,
+  };
+}
+
 function updateFlyState(m) {
   const id   = m.id;
   const hNow = m.hInt || 0;
@@ -2313,12 +2585,7 @@ function updateFlyState(m) {
   if(isFlyTime(m)){ markFlyTimeMatch(id); ledgerAchieved(m); }
 
   if (!prev) {
-    // First sighting - seed state, no momentum yet.
-    flyState[id] = {
-      h: hNow, a: aNow, hMom: 0, aMom: 0,
-      hMaxDef: Math.max(0, aNow - hNow), aMaxDef: Math.max(0, hNow - aNow),
-      hState: '', aState: '', match: matchState, ts: now,
-    };
+    flyState[id] = seedFlyState(m, hNow, aNow, matchState, now);
     if (isFlyTime(m)) fireFlyTimeAlert(m);
     return;
   }
@@ -2328,55 +2595,299 @@ function updateFlyState(m) {
     fireFlyTimeAlert(m);
   }
 
+  // Cricket momentum is run-rate based - separate engine.
+  if (m.sportKey === 'cricket') { updateCricketFly(m, prev, matchState, now); return; }
+
   const hDelta = Math.max(0, hNow - prev.h);
   const aDelta = Math.max(0, aNow - prev.a);
 
-  // Decay last poll's momentum on a wall-clock half-life (independent of poll rate),
-  // then add this poll's burst (capped so it can't overshoot). A backgrounded tab can
-  // leave a long gap, so clamp the elapsed time to avoid one huge decay step.
-  const dt = Math.min(Math.max((now - (prev.ts || now)) / 1000, 0), 120);
-  const decay = Math.pow(0.5, dt / MOM_HALFLIFE_SEC);
-  let hMom = prev.hMom * decay + Math.min(hDelta / tune.bigPlay, 1.6) * MOM_GAIN;
-  let aMom = prev.aMom * decay + Math.min(aDelta / tune.bigPlay, 1.6) * MOM_GAIN;
+  // Wall-clock since last poll (decay clamp unchanged). Gain uses clock-validated spread.
+  const pollDt = Math.max((now - (prev.ts || now)) / 1000, 0);
+  const dt = Math.min(pollDt, 120);
+  const gameElapsed = flyGameElapsedSec(m, prev);
+  const gainPack = flyGainAndConfidence(hDelta, aDelta, tune, pollDt, gameElapsed);
+  const hGain = gainPack.hGain;
+  const aGain = gainPack.aGain;
+
+  // Trailing-window signals use spread-normalised pseudo-deltas (not raw batched jumps).
+  const hEffD = hGain > 0 ? (hGain / MOM_GAIN) * tune.bigPlay : 0;
+  const aEffD = aGain > 0 ? (aGain / MOM_GAIN) * tune.bigPlay : 0;
+  const hist = (prev.hist || []).filter(e => now - e.ts <= MOM_WINDOW_SEC * 1000);
+  hist.push({ ts: now, hD: hEffD, aD: aEffD });
+  const halfMs = MOM_WINDOW_SEC * 500;
+  let hSum = 0, aSum = 0, hRec = 0, aRec = 0, hPri = 0, aPri = 0;
+  for (let i = 0; i < hist.length; i++) {
+    const e = hist[i];
+    hSum += e.hD; aSum += e.aD;
+    if (now - e.ts <= halfMs) { hRec += e.hD; aRec += e.aD; }
+    else { hPri += e.hD; aPri += e.aD; }
+  }
+  // Acceleration: recent-half rate minus prior-half rate, normalised so one extra
+  // bigPlay-per-minute of speed-up = full boost.
+  const rateUnit = tune.bigPlay / 60;
+  const hAccel = Math.max(0, Math.min(1, ((hRec - hPri) / (MOM_WINDOW_SEC / 2)) / rateUnit));
+  const aAccel = Math.max(0, Math.min(1, ((aRec - aPri) / (MOM_WINDOW_SEC / 2)) / rateUnit));
+  // Suppression: my share of the window's total scoring (0.5 = even).
+  const tot = hSum + aSum;
+  const hShare = tot > 0 ? hSum / tot : 0.5;
+  const aShare = 1 - hShare;
+
+  // Dynamic per-side decay (per-sport base half-life, persistence + state modulated),
+  // then this poll's burst with acceleration + recovery-ember boosts (capped as before).
+  const hDecay = Math.pow(0.5, dt / flyHalflife(tune, prev.hRunStart, prev.hTier, now));
+  const aDecay = Math.pow(0.5, dt / flyHalflife(tune, prev.aRunStart, prev.aTier, now));
+  const hBoost = 1 + MOM_ACCEL_BOOST * hAccel + MOM_EMBER_BOOST * (prev.hEmber / 100);
+  const aBoost = 1 + MOM_ACCEL_BOOST * aAccel + MOM_EMBER_BOOST * (prev.aEmber / 100);
+  let hMom = prev.hMom * hDecay + hGain * hBoost;
+  let aMom = prev.aMom * aDecay + aGain * aBoost;
   hMom = Math.max(0, Math.min(100, hMom));
   aMom = Math.max(0, Math.min(100, aMom));
+  // Floor sweep: clear the last few dim points instead of leaving a perpetual tail.
+  if (hDelta === 0 && hMom < 5) hMom = Math.max(0, hMom - dt * 0.05);
+  if (aDelta === 0 && aMom < 5) aMom = Math.max(0, aMom - dt * 0.05);
 
-  // Track the worst deficit each side has been in (used to spot a real recovery).
+  // Recovery ember + recent peak: slow-decaying memories so a side re-ignites
+  // faster on a second surge, and a collapse from a recent high is detectable.
+  const memDecay = Math.pow(0.5, dt / MOM_EMBER_HALFLIFE_SEC);
+  const hEmber = Math.max(prev.hEmber * memDecay, hMom);
+  const aEmber = Math.max(prev.aEmber * memDecay, aMom);
+  const hPeak  = Math.max(prev.hPeak * memDecay, hMom);
+  const aPeak  = Math.max(prev.aPeak * memDecay, aMom);
+
+  // Persistence anchors: when did this side's current run begin? (with hysteresis)
+  const hRunStart = hMom >= 20 ? (prev.hRunStart || now) : (hMom < 16 ? null : prev.hRunStart);
+  const aRunStart = aMom >= 20 ? (prev.aRunStart || now) : (aMom < 16 ? null : prev.aRunStart);
+
+  // Drought + worst-deficit tracking (deficit peak timestamp feeds comeback speed).
+  const hLastScoreTs = hDelta > 0 ? now : prev.hLastScoreTs;
+  const aLastScoreTs = aDelta > 0 ? now : prev.aLastScoreTs;
   const hMaxDef = Math.max(prev.hMaxDef, aNow - hNow);
   const aMaxDef = Math.max(prev.aMaxDef, hNow - aNow);
+  const hDefPeakTs = hMaxDef > prev.hMaxDef ? now : prev.hDefPeakTs;
+  const aDefPeakTs = aMaxDef > prev.aMaxDef ? now : prev.aDefPeakTs;
+
+  const hSide = resolveSide({
+    mom: hMom, oppMom: aMom, deficit: aNow - hNow, maxDef: hMaxDef, defPeakTs: hDefPeakTs,
+    peak: hPeak, share: hShare, oppShare: aShare, lastScoreTs: hLastScoreTs,
+    prevState: prev.hState, prevTier: prev.hTier, tune, now,
+    confidence: gainPack.hConf,
+  });
+  const aSide = resolveSide({
+    mom: aMom, oppMom: hMom, deficit: hNow - aNow, maxDef: aMaxDef, defPeakTs: aDefPeakTs,
+    peak: aPeak, share: aShare, oppShare: hShare, lastScoreTs: aLastScoreTs,
+    prevState: prev.aState, prevTier: prev.aTier, tune, now,
+    confidence: gainPack.aConf,
+  });
 
   flyState[id] = {
-    h: hNow, a: aNow, hMom, aMom, hMaxDef, aMaxDef,
-    hState: resolveSide(hMom, aMom, aNow - hNow, hMaxDef, tune),
-    aState: resolveSide(aMom, hMom, hNow - aNow, aMaxDef, tune),
+    h: hNow, a: aNow, hMom, aMom, hMaxDef, aMaxDef, hDefPeakTs, aDefPeakTs,
+    hRunStart, aRunStart, hEmber, aEmber, hPeak, aPeak, hLastScoreTs, aLastScoreTs,
+    hTier: hSide.tier, aTier: aSide.tier,
+    hState: hSide.state, aState: aSide.state,
+    hCol: hSide.col, aCol: aSide.col, hX: hSide.x, aX: aSide.x,
+    hist,
+    hOv: null, aOv: null, hRR: 0, aRR: 0, hWk: null, aWk: null,
+    period: m.period || 0, clockSec: m.clockSec || 0, clockRaw: m.clockRaw || '',
+    hConf: gainPack.hConf, aConf: gainPack.aConf,
     match: matchState, ts: now,
   };
 }
 
-// Resolve one side. Priority: comeback > onfire > onrun > warming > cold > neutral.
-function resolveSide(myMom, oppMom, myDeficit, myMaxDef, tune) {
-  // Comeback (purple): was down by a real margin, has clawed back at least half of it,
-  // is now roughly level (not yet a runaway lead), and still has positive momentum.
-  if (myMaxDef >= tune.cbMin &&
-      (myMaxDef - myDeficit) >= myMaxDef * 0.5 &&
-      myDeficit <= tune.cbMin && myDeficit >= -tune.cbMin &&
-      myMom >= 20) {
-    return 'comeback';
+// Resolve one side. Priority: comeback > heat tiers > cold > neutral.
+// Returns { state, tier, col, x }: the soft-band label, the continuous gradient
+// colour, and an extreme flag ('' | 'fire' | 'cold') for the effect classes.
+function resolveSide(c) {
+  const tune = c.tune;
+  const tier = momTier(c.mom, c.prevTier);
+
+  // Comeback (purple): was down by a real margin, has clawed back at least half,
+  // is now roughly level (not a runaway lead), and still has positive momentum.
+  // Hysteresis: once in comeback, a one-poll momentum dip doesn't drop the purple.
+  const cbMomFloor = c.prevState === 'comeback' ? 14 : 20;
+  if (c.maxDef >= tune.cbMin &&
+      (c.maxDef - c.deficit) >= c.maxDef * 0.5 &&
+      c.deficit <= tune.cbMin && c.deficit >= -tune.cbMin &&
+      c.mom >= cbMomFloor) {
+    // Magnitude: deficit size (1x cbMin minor -> 4x+ historic), recovery fraction,
+    // recovery speed, and a bonus for being level or ahead.
+    const deficitScale = c.maxDef / tune.cbMin;
+    const recoveryFrac = (c.maxDef - c.deficit) / c.maxDef;
+    const recSec = Math.max((c.now - (c.defPeakTs || c.now)) / 1000, 1);
+    const speedTerm = Math.max(0, Math.min(1, 240 / recSec));  // full marks <=4 min
+    const mag = Math.max(0.15, Math.min(1,
+      0.30 * Math.max(0, Math.min(1, (deficitScale - 1) / 3)) +
+      0.35 * Math.max(0, Math.min(1, (recoveryFrac - 0.5) * 2)) +
+      0.20 * speedTerm +
+      0.15 * (c.deficit <= 0 ? 1 : 0)));
+    return { state: 'comeback', tier, col: flyCbColour(mag), x: '' };
   }
-  const tier = momTier(myMom);
-  if (tier) return tier;
-  // Gone cold (blue): I've stalled while my opponent is heating up.
-  if (myMom < 12 && oppMom >= 42) return 'cold';
-  return '';
+
+  // Heat: continuous gradient colour; the tier label is a soft hysteretic band.
+  // Fly protection: no extreme fire pulse after a stale/batched refresh unless
+  // clock validation restored confidence (see flyGainAndConfidence).
+  if (tier) {
+    const conf = c.confidence != null ? c.confidence : 1;
+    const x = (c.mom >= 90 && conf >= 0.55) ? 'fire' : '';
+    return { state: tier, tier, col: flyHeatColour(c.mom), x };
+  }
+
+  // Cold (blue): relative (stalled while opponent is hot, with exit hysteresis)
+  // OR absolute drought (no scoring for far longer than is normal for the sport,
+  // while behind and the opponent is at least ticking over).
+  const drought = (c.now - (c.lastScoreTs || c.now)) / 1000;
+  const wasCold = c.prevState === 'cold';
+  const relative = wasCold ? (c.mom < 16 && c.oppMom >= 36)
+                           : (c.mom < 12 && c.oppMom >= 42);
+  const absolute = drought > 2.5 * tune.droughtNorm && c.deficit > 0 && c.oppMom >= 25;
+  if (relative || absolute) {
+    // Severity: stall depth + opponent dominance (their heat x their scoring share)
+    // + drought duration + collapse from a recent high.
+    const stallDepth = Math.max(0, Math.min(1, 1 - c.mom / 12));
+    const oppDom = (c.oppMom / 100) * c.oppShare;
+    const droughtFactor = Math.max(0, Math.min(1, drought / (3 * tune.droughtNorm)));
+    const collapse = Math.max(0, Math.min(1, (c.peak - c.mom) / 100));
+    const sev = Math.max(0.1, Math.min(1,
+      0.35 * stallDepth + 0.30 * oppDom + 0.20 * droughtFactor + 0.15 * collapse));
+    // Extreme Cold needs all three elevated: frozen momentum, real drought, dominance.
+    const x = (c.mom <= 10 && sev >= 0.75 && droughtFactor >= 0.4) ? 'cold' : '';
+    return { state: 'cold', tier, col: flyColdColour(sev), x };
+  }
+  return { state: '', tier, col: '', x: '' };
 }
 
-// Class for a score cell. Locked FlyTime forces both scores green (overrides side state).
+// - CRICKET (run-rate engine) -
+// Batting side momentum tracks recent run rate against the format's "on fire" bar:
+// T20 10+/over, ODI (50-over) 6+/over maps to momentum 70 (= on-fire band entry).
+// Bowling side gains on wickets (two quick wickets = on fire). Cold/comeback are
+// disabled - innings-based scores make deficit logic meaningless mid-match.
+function cricketWicketsOf(scoreStr) {
+  const mm = String(scoreStr || '').match(/^\s*\d+\s*\/\s*(\d+)/);
+  return mm ? parseInt(mm[1], 10) : null;
+}
+function cricketOversToBalls(ov) {
+  if (ov == null) return null;
+  const whole = Math.floor(ov);
+  return whole * 6 + Math.min(Math.round((ov - whole) * 10), 5);
+}
+function updateCricketFly(m, prev, matchState, now) {
+  const id = m.id;
+  const hNow = m.hInt || 0, aNow = m.aInt || 0;
+  const tune = FLY_TUNING.cricket;
+  const pollDt = Math.max((now - (prev.ts || now)) / 1000, 0);
+  const dt = Math.min(pollDt, 120);
+  const fireRR = (m.cricketMaxOvers && m.cricketMaxOvers > 20) ? CRICKET_FIRE_RR_ODI : CRICKET_FIRE_RR_T20;
+  const decay = Math.pow(0.5, dt / (tune.halflife || MOM_HALFLIFE_SEC));
+
+  const hWk = cricketWicketsOf(m.homeScore);
+  const aWk = cricketWicketsOf(m.awayScore);
+  const bat = m.cricketBatting || null;  // 'home' | 'away' | null (innings break / no data)
+
+  function cricketStaleConf(side, delta, prevOv, nowOv) {
+    if (pollDt < FLY_STALE_POLL_SEC || delta <= 0 || bat !== side) return 1;
+    if (nowOv != null && prevOv != null) {
+      const b1 = cricketOversToBalls(prevOv), b2 = cricketOversToBalls(nowOv);
+      if (b1 != null && b2 != null && b2 >= b1) {
+        const od = (b2 - b1) / 6;
+        if (od >= 0.5) return 1;
+        if (od < 0.15) return 0.35; // runs jumped, overs barely moved — batched refresh
+        return 0.65;
+      }
+    }
+    return 0.55;
+  }
+
+  function sideUpdate(side) {
+    const me = side === 'home';
+    const delta = Math.max(0, (me ? hNow : aNow) - (me ? prev.h : prev.a));
+    const prevMom = me ? prev.hMom : prev.aMom;
+    const prevRR  = me ? prev.hRR : prev.aRR;
+    const prevOv  = me ? prev.hOv : prev.aOv;
+    // Wickets LOST by my opponent = wickets I have taken (bowling success).
+    const oppWkNow  = me ? aWk : hWk;
+    const oppWkPrev = me ? prev.aWk : prev.hWk;
+    const myWkNow   = me ? hWk : aWk;
+    const myWkPrev  = me ? prev.hWk : prev.aWk;
+
+    if (bat === side) {
+      // Batting: momentum from recent run rate (EWMA over ~2 overs).
+      let oversDelta = null;
+      if (m.cricketOvers != null && prevOv != null) {
+        const b1 = cricketOversToBalls(prevOv), b2 = cricketOversToBalls(m.cricketOvers);
+        if (b2 != null && b1 != null && b2 >= b1) oversDelta = (b2 - b1) / 6;
+      }
+      if (oversDelta == null) oversDelta = dt / CRICKET_SEC_PER_OVER;  // wall-clock fallback
+      let rr = prevRR;
+      if (oversDelta > 0) {
+        const rrInst = delta / Math.max(oversDelta, 0.05);
+        const alpha = Math.max(0.05, Math.min(1, oversDelta / 2));
+        rr = prevRR + (rrInst - prevRR) * alpha;
+      }
+      // A wicket falling stalls the innings' feel - knock the rate back.
+      if (myWkNow != null && myWkPrev != null && myWkNow > myWkPrev) rr *= 0.6;
+      rr = Math.max(0, rr);
+      let mom = Math.max(0, Math.min(100, (rr / fireRR) * 70));
+      const conf = cricketStaleConf(side, delta, prevOv, m.cricketOvers);
+      mom *= conf;
+      return { mom, rr, ov: m.cricketOvers != null ? m.cricketOvers : prevOv, conf };
+    }
+    // Bowling (or innings break): decay, plus a burst for each wicket taken.
+    const wkDelta = (oppWkNow != null && oppWkPrev != null) ? Math.max(0, oppWkNow - oppWkPrev) : 0;
+    let mom = Math.max(0, Math.min(100, prevMom * decay + wkDelta * CRICKET_WICKET_GAIN));
+    const conf = (pollDt >= FLY_STALE_POLL_SEC && wkDelta > 0) ? 0.7 : 1;
+    mom *= conf;
+    return { mom, rr: prevRR * decay, ov: prevOv, conf };
+  }
+
+  const hu = sideUpdate('home');
+  const au = sideUpdate('away');
+  const hTier = momTier(hu.mom, prev.hTier);
+  const aTier = momTier(au.mom, prev.aTier);
+
+  flyState[id] = {
+    h: hNow, a: aNow, hMom: hu.mom, aMom: au.mom,
+    hMaxDef: 0, aMaxDef: 0, hDefPeakTs: now, aDefPeakTs: now,
+    hRunStart: null, aRunStart: null,
+    hEmber: 0, aEmber: 0, hPeak: 0, aPeak: 0,
+    hLastScoreTs: now, aLastScoreTs: now,
+    hTier, aTier,
+    hState: hTier, aState: aTier,
+    hCol: flyHeatColour(hu.mom), aCol: flyHeatColour(au.mom),
+    hX: hu.mom >= 90 && hu.conf >= 0.55 ? 'fire' : '',
+    aX: au.mom >= 90 && au.conf >= 0.55 ? 'fire' : '',
+    hist: [],
+    hOv: bat === 'home' ? hu.ov : prev.hOv,
+    aOv: bat === 'away' ? au.ov : prev.aOv,
+    hRR: hu.rr, aRR: au.rr,
+    hWk: hWk != null ? hWk : prev.hWk,
+    aWk: aWk != null ? aWk : prev.aWk,
+    period: m.period || 0, clockSec: m.clockSec || 0, clockRaw: m.clockRaw || '',
+    hConf: hu.conf, aConf: au.conf,
+    match: matchState, ts: now,
+  };
+}
+
+// Class for a score cell. Locked FlyTime forces both scores green (overrides side
+// state). Extreme states add an effect class on top of the state class.
 function getFlyClass(matchId, side) {
   if (getMatchFly(matchId) === 'flytime') return 'fs-flytime';
   const s = flyState[matchId];
   if (!s) return '';
   const st = side === 'home' ? s.hState : s.aState;
-  return st ? 'fs-' + st : '';
+  const x  = side === 'home' ? s.hX : s.aX;
+  let cls = st ? 'fs-' + st : '';
+  if (x === 'fire') cls += ' fs-xfire';
+  else if (x === 'cold') cls += ' fs-xcold';
+  return cls.trim();
+}
+
+// Inline style for a score cell: the FlySense 2.0 continuous gradient colour.
+// Empty during FlyTime (class colour wins) and for neutral cells.
+function getFlyStyle(matchId, side) {
+  if (getMatchFly(matchId) === 'flytime') return '';
+  const s = flyState[matchId];
+  if (!s) return '';
+  const col = side === 'home' ? s.hCol : s.aCol;
+  return col ? 'color:' + col : '';
 }
 
 // Match-level state for Fly Mode badge and live fly ('flytime' | 'overtime' | '').
@@ -3804,7 +4315,7 @@ function buildLiveCard(m){
         <div class="team-row">${logoImg(m.homeLogo,m.league,m.homeId,m.home,'t-logo',m.leagueKey)}<div class="t-name">${displayTeamName(m.home)}</div>${teamQuickAddBtn(m.home,m)}</div>
         <div class="team-row">${logoImg(m.awayLogo,m.league,m.awayId,m.away,'t-logo',m.leagueKey)}<div class="t-name">${displayTeamName(m.away)}</div>${teamQuickAddBtn(m.away,m)}</div>
       </div>
-      <div class="scores-col"><div class="${sc} ${getFlyClass(m.id,'home')}" data-fk="${m.id}|h|s">${m.homeScore}</div><div class="${sc} ${getFlyClass(m.id,'away')}" data-fk="${m.id}|a|s">${m.awayScore}</div></div>
+      <div class="scores-col"><div class="${sc} ${getFlyClass(m.id,'home')}" style="${getFlyStyle(m.id,'home')}" data-fk="${m.id}|h|s">${m.homeScore}</div><div class="${sc} ${getFlyClass(m.id,'away')}" style="${getFlyStyle(m.id,'away')}" data-fk="${m.id}|a|s">${m.awayScore}</div></div>
     </div>
   </div>`;
 }
@@ -4184,6 +4695,8 @@ function buildFlyModeGrid() {
     const periodCls = flyModePillClass(m, statusCls);
     const hCls = getFlyClass(m.id, 'home');
     const aCls = getFlyClass(m.id, 'away');
+    const hSty = getFlyStyle(m.id, 'home');
+    const aSty = getFlyStyle(m.id, 'away');
     const homeCode = m.homeShort || abbrev(m.home);
     const awayCode = m.awayShort || abbrev(m.away);
     const sLen = Math.min(4, Math.max(1, String(m.homeScore).length, String(m.awayScore).length));
@@ -4197,8 +4710,8 @@ function buildFlyModeGrid() {
       +     '<div class="flymode-logo away">' + logoImg(m.awayLogo, m.league, m.awayId, m.away, 'fm-logo', m.leagueKey) + '</div>'
       +     '<div class="flymode-team home">' + homeCode + '</div>'
       +     '<div class="flymode-team away">' + awayCode + '</div>'
-      +     '<div class="flymode-score home ' + hCls + '" data-fk="' + m.id + '|h|fms">' + m.homeScore + '</div>'
-      +     '<div class="flymode-score away ' + aCls + '" data-fk="' + m.id + '|a|fms">' + m.awayScore + '</div>'
+      +     '<div class="flymode-score home ' + hCls + '" style="' + hSty + '" data-fk="' + m.id + '|h|fms">' + m.homeScore + '</div>'
+      +     '<div class="flymode-score away ' + aCls + '" style="' + aSty + '" data-fk="' + m.id + '|a|fms">' + m.awayScore + '</div>'
       +     '<div class="flymode-status' + statusCls + periodCls + '">' + badge + '</div>'
       +   '</div>'
       + '</div>';

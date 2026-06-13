@@ -9,6 +9,7 @@ from flytime_engine.espn import ParsedMatch
 from flytime_engine.flytime import is_flytime_live
 
 AFL_Q4_ELAPSED = 20 * 60
+NRL_FLY_HALF_ELAPSED = 35 * 60
 
 
 def m(sport: str, period: int = 0, clock_sec: int = 0, clock_raw: str = "",
@@ -53,9 +54,11 @@ TESTS = [
     ("AFL Q4 19:59 elapsed", m("australian-football", 4, AFL_Q4_ELAPSED - 1, home=80, away=70), False),
     ("AFL OT close", m("australian-football", 5, 0, home=90, away=88), True),
     ("AFL OT blowout", m("australian-football", 5, 0, home=100, away=80), False),
-    # Rugby
-    ("NRL H2 8:00 margin 6", m("rugby-league", 2, 480, home=18, away=12), True),
-    ("NRL H2 12:00 margin 6", m("rugby-league", 2, 720, home=18, away=12), False),
+    # NRL (half clock counts UP — FlyTime from ~35:00 elapsed in each half)
+    ("NRL H2 38:00 elapsed margin 6", m("rugby-league", 2, 38 * 60, home=18, away=12), True),
+    ("NRL H2 32:00 elapsed margin 6", m("rugby-league", 2, 32 * 60, home=18, away=12), False),
+    ("NRL H1 36:00 elapsed margin 6", m("rugby-league", 1, 36 * 60, home=10, away=6), True),
+    ("NRL H2 38:00 margin 14", m("rugby-league", 2, 38 * 60, home=20, away=6), False),
     # Soccer
     ("soccer 85' margin 0", m("soccer", 2, 0, clock_raw="85", home=1, away=1), True),
     ("soccer 79' margin 0", m("soccer", 2, 0, clock_raw="79", home=1, away=1), False),

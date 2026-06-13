@@ -606,6 +606,10 @@
       top: calc(37% - 10px - 0.5 * clamp(9px, 11cqmin, 32px));
       transform: translate(-50%, -100%);
     }
+    .flymode-inner[data-count="1"] .flymode-status {
+      font-size: clamp(16px, 15cqmin, 36px);
+      padding: 8px 20px;
+    }
   }
   /* FlyTime / overtime elevate the crests so they feel alive, no aggressive motion. */
   .flymode-card.flytime .team-logo-halo,
@@ -3198,8 +3202,10 @@ function updateCricketFly(m, prev, matchState, now) {
 
 // Class for a score cell. Locked FlyTime forces both scores green (overrides side
 // state). Extreme states add an effect class on top of the state class.
-function getFlyClass(matchId, side) {
-  if (getMatchFly(matchId) === 'flytime') return 'fs-flytime';
+function getFlyClass(matchId, side, pinned) {
+  // FlyTime green wins whenever the card is in the green FlyTime state (pinned),
+  // so the score numbers turn green and stop following the FlySense gradient.
+  if (pinned || getMatchFly(matchId) === 'flytime') return 'fs-flytime';
   const s = flyState[matchId];
   if (!s) return '';
   const st = side === 'home' ? s.hState : s.aState;
@@ -3212,8 +3218,8 @@ function getFlyClass(matchId, side) {
 
 // Inline style for a score cell: the FlySense 2.0 continuous gradient colour.
 // Empty during FlyTime (class colour wins) and for neutral cells.
-function getFlyStyle(matchId, side) {
-  if (getMatchFly(matchId) === 'flytime') return '';
+function getFlyStyle(matchId, side, pinned) {
+  if (pinned || getMatchFly(matchId) === 'flytime') return '';
   const s = flyState[matchId];
   if (!s) return '';
   const col = side === 'home' ? s.hCol : s.aCol;
@@ -4740,7 +4746,8 @@ function buildLiveCard(m){
   const sico=lparts[0];
   const ltxt=displayLeagueName(lparts.slice(1).join(' '));
   const fly=flyTimeIcon(m,'live');
-  const ftLocked=isFlyTimePinned(m)?' flytime-locked':'';
+  const fp=isFlyTimePinned(m);
+  const ftLocked=fp?' flytime-locked':'';
   return`<div class="card live${ftLocked}" data-match-id="${m.id}">
     <div class="card-meta"><span class="league-tag"><span class="sport-icon">${renderSportIcon(sico)}</span><span class="lg-badge">${ltxt}</span></span><span class="card-right">${flyScoreDebugHTML(m,'live')}${fly}<span class="live-badge"><span class="bdot"></span>LIVE ${m.timer}</span></span></div>
     <div class="card-body">
@@ -4748,7 +4755,7 @@ function buildLiveCard(m){
         <div class="team-row">${logoImg(m.homeLogo,m.league,m.homeId,m.home,'t-logo',m.leagueKey)}<div class="t-name">${displayTeamName(m.home)}</div>${teamQuickAddBtn(m.home,m)}</div>
         <div class="team-row">${logoImg(m.awayLogo,m.league,m.awayId,m.away,'t-logo',m.leagueKey)}<div class="t-name">${displayTeamName(m.away)}</div>${teamQuickAddBtn(m.away,m)}</div>
       </div>
-      <div class="scores-col"><div class="${sc} ${getFlyClass(m.id,'home')}" style="${getFlyStyle(m.id,'home')}" data-fk="${m.id}|h|s">${m.homeScore}</div><div class="${sc} ${getFlyClass(m.id,'away')}" style="${getFlyStyle(m.id,'away')}" data-fk="${m.id}|a|s">${m.awayScore}</div></div>
+      <div class="scores-col"><div class="${sc} ${getFlyClass(m.id,'home',fp)}" style="${getFlyStyle(m.id,'home',fp)}" data-fk="${m.id}|h|s">${m.homeScore}</div><div class="${sc} ${getFlyClass(m.id,'away',fp)}" style="${getFlyStyle(m.id,'away',fp)}" data-fk="${m.id}|a|s">${m.awayScore}</div></div>
     </div>
   </div>`;
 }
@@ -5588,7 +5595,7 @@ const FLY_V1_REGISTRY = {
   'australian-football|afl':              { file: 'afl-flytime-v1.json',              threshold: 75, tag: 'FT',   nameMap: 'afl' },
   'football|nfl':                           { file: 'nfl-flytime-v1.json',              threshold: 95, tag: 'NFL' },
   'basketball|nba':                         { file: 'nba-flytime-v1.json',              threshold: 88, tag: 'NBA' },
-  'basketball|wnba':                        { file: 'wnba-flytime-v1.json',             threshold: 83, tag: 'WNBA' },
+  'basketball|wnba':                        { file: 'wnba-flytime-v1.json',             threshold: 85, tag: 'WNBA' },
   'basketball|nbl':                         { file: 'nbl-flytime-v1.json',              threshold: 70, tag: 'NBL' },
   'basketball|mens-college-basketball':     { file: 'ncaam-flytime-v1.json',            threshold: 97, tag: 'NCAAM' },
   'baseball|mlb':                           { file: 'mlb-flytime-v1.json',              threshold: 80, tag: 'MLB' },

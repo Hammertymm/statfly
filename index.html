@@ -497,6 +497,10 @@
   .flymode-inner[data-count="8"] { grid-template-columns: repeat(2, 1fr); grid-template-rows: repeat(4, 1fr); }
   /* Landscape grids */
   @media (orientation: landscape) {
+    .flymode-inner[data-count="1"] { padding: 4px; bottom: 64px; }
+    .flymode-inner[data-count="1"] .flymode-score { font-size: clamp(48px, min(22cqh, 20vw), 220px); }
+    .flymode-inner[data-count="1"] .flymode-status { font-size: clamp(16px, 4vw, 36px); padding: 6px 16px; }
+    .flymode-inner[data-count="1"] .flymode-team { font-size: clamp(14px, 3vw, 40px); }
     .flymode-inner[data-count="2"] { grid-template-columns: repeat(2, 1fr); grid-template-rows: 1fr; }
     .flymode-inner[data-count="3"] { grid-template-columns: repeat(3, 1fr); grid-template-rows: 1fr; }
     .flymode-inner[data-count="4"] { grid-template-columns: repeat(2, 1fr); grid-template-rows: repeat(2, 1fr); }
@@ -570,6 +574,12 @@
   .flymode-inner.show-fm-logos .flymode-team { top: 37%; }
   .flymode-inner.show-fm-logos .flymode-score { top: 59%; }
   .flymode-inner.show-fm-logos .flymode-status { top: 83%; }
+  @media (orientation: portrait) {
+    .flymode-inner[data-count="1"].show-fm-logos .flymode-logo {
+      top: calc(37% - 10px - 0.5 * clamp(9px, 11cqmin, 32px));
+      transform: translate(-50%, -100%);
+    }
+  }
   /* FlyTime / overtime elevate the crests so they feel alive, no aggressive motion. */
   .flymode-card.flytime .team-logo-halo,
   .flymode-card.ot .team-logo-halo { --fly: 1.06; }
@@ -619,88 +629,6 @@
   .flymode-status.period-ot,
   .flymode-status.ot { color: var(--result); border-color: var(--result); }
   .flymode-status.period-ft { color: rgba(255,255,255,0.45); border-color: rgba(255,255,255,0.22); background: rgba(255,255,255,0.04); }
-
-  /* Single-match FlyMode — score-first CSS Grid (count=1 only; multi-match unchanged). */
-  .flymode-inner[data-count="1"] {
-    padding: 4px;
-    gap: 0;
-    bottom: 76px;
-  }
-  .flymode-inner[data-count="1"] .flymode-card--solo {
-    border-radius: 6px;
-  }
-  .flymode-inner[data-count="1"] .flymode-board {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: auto 1fr auto;
-    position: relative;
-    inset: auto;
-    height: 100%;
-    min-height: 0;
-    padding: 6px 8px 4px;
-  }
-  .flymode-inner[data-count="1"] .flymode-identity {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-end;
-    gap: 10px;
-    min-width: 0;
-  }
-  .flymode-inner[data-count="1"] .flymode-identity.home { grid-area: 1 / 1; }
-  .flymode-inner[data-count="1"] .flymode-identity.away { grid-area: 1 / 2; }
-  .flymode-inner[data-count="1"] .flymode-logo,
-  .flymode-inner[data-count="1"] .flymode-team,
-  .flymode-inner[data-count="1"] .flymode-score,
-  .flymode-inner[data-count="1"] .flymode-status {
-    position: static;
-    transform: none;
-    left: auto;
-    top: auto;
-    max-width: none;
-  }
-  .flymode-inner[data-count="1"] .flymode-logo {
-    display: block;
-    pointer-events: none;
-  }
-  .flymode-inner[data-count="1"] .team-logo-halo.fm-logo {
-    width: clamp(32px, 11cqmin, 64px);
-    height: clamp(32px, 11cqmin, 64px);
-    font-size: 14px;
-  }
-  .flymode-inner[data-count="1"] .flymode-team {
-    font-size: clamp(10px, 3.5cqmin, 20px);
-    letter-spacing: 1px;
-  }
-  .flymode-inner[data-count="1"] .flymode-score {
-    align-self: center;
-    justify-self: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: clamp(56px, min(52cqh, calc(44cqw / var(--len))), 320px);
-    line-height: 0.85;
-  }
-  .flymode-inner[data-count="1"] .flymode-score.home { grid-area: 2 / 1; }
-  .flymode-inner[data-count="1"] .flymode-score.away { grid-area: 2 / 2; }
-  .flymode-inner[data-count="1"] .flymode-status {
-    grid-area: 3 / 1 / 3 / 3;
-    justify-self: center;
-    align-self: end;
-    font-size: clamp(12px, 5cqmin, 28px);
-    padding: 6px 18px;
-    margin-top: 4px;
-  }
-  .flymode-inner[data-count="1"] .fm-markers .mk img { height: 18px; }
-  @media (orientation: landscape) {
-    .flymode-inner[data-count="1"] { padding: 2px; bottom: 56px; }
-    .flymode-inner[data-count="1"] .flymode-score {
-      font-size: clamp(64px, min(calc(72cqw / var(--len)), 38cqh), 300px);
-    }
-    .flymode-inner[data-count="1"] .flymode-status {
-      font-size: clamp(14px, 3.5vw, 32px);
-    }
-  }
 
   .flymode-inner[data-count="4"] .fm-markers,
   .flymode-inner[data-count="5"] .fm-markers,
@@ -5142,11 +5070,10 @@ function buildFlyModeGrid() {
     grid.innerHTML = '<div class="flymode-empty">No live matches</div>';
     return;
   }
-  // Single match: score-first grid with logo+abbrev stacked; multi-match keeps blueprint anchors.
-  const isSolo = live.length === 1;
+  // Blueprint layout: team codes at 20%/25|75%, scores at 50%, timer pill at 80%.
   grid.innerHTML = live.map(m => {
     const badge = (m.timer || '').trim();
-    const mf = getMatchFly(m.id);
+    const mf = getMatchFly(m.id); // '' | 'flytime' | 'overtime'
     const statusCls = mf === 'overtime' ? ' ot' : (mf === 'flytime' ? ' flytime' : '');
     const periodCls = flyModePillClass(m, statusCls);
     const hCls = getFlyClass(m.id, 'home');
@@ -5158,33 +5085,12 @@ function buildFlyModeGrid() {
     const sLen = Math.min(4, Math.max(1, String(m.homeScore).length, String(m.awayScore).length));
     const markers = flyTimeIcon(m, 'live');
     const markerBox = markers ? ('<div class="fm-markers">' + markers + '</div>') : '';
-    const homeLogo = logoImg(m.homeLogo, m.league, m.homeId, m.home, 'fm-logo', m.leagueKey);
-    const awayLogo = logoImg(m.awayLogo, m.league, m.awayId, m.away, 'fm-logo', m.leagueKey);
-    if (isSolo) {
-      return ''
-        + '<div class="flymode-card flymode-card--solo' + statusCls + '" style="--len:' + sLen + '">'
-        +   markerBox
-        +   '<div class="flymode-board">'
-        +     '<div class="flymode-identity home">'
-        +       '<div class="flymode-logo">' + homeLogo + '</div>'
-        +       '<div class="flymode-team">' + homeCode + '</div>'
-        +     '</div>'
-        +     '<div class="flymode-identity away">'
-        +       '<div class="flymode-logo">' + awayLogo + '</div>'
-        +       '<div class="flymode-team">' + awayCode + '</div>'
-        +     '</div>'
-        +     '<div class="flymode-score home ' + hCls + '" style="' + hSty + '" data-fk="' + m.id + '|h|fms">' + m.homeScore + '</div>'
-        +     '<div class="flymode-score away ' + aCls + '" style="' + aSty + '" data-fk="' + m.id + '|a|fms">' + m.awayScore + '</div>'
-        +     '<div class="flymode-status' + statusCls + periodCls + '">' + badge + '</div>'
-        +   '</div>'
-        + '</div>';
-    }
     return ''
       + '<div class="flymode-card' + statusCls + '" style="--len:' + sLen + '">'
       +   markerBox
       +   '<div class="flymode-board">'
-      +     '<div class="flymode-logo home">' + homeLogo + '</div>'
-      +     '<div class="flymode-logo away">' + awayLogo + '</div>'
+      +     '<div class="flymode-logo home">' + logoImg(m.homeLogo, m.league, m.homeId, m.home, 'fm-logo', m.leagueKey) + '</div>'
+      +     '<div class="flymode-logo away">' + logoImg(m.awayLogo, m.league, m.awayId, m.away, 'fm-logo', m.leagueKey) + '</div>'
       +     '<div class="flymode-team home">' + homeCode + '</div>'
       +     '<div class="flymode-team away">' + awayCode + '</div>'
       +     '<div class="flymode-score home ' + hCls + '" style="' + hSty + '" data-fk="' + m.id + '|h|fms">' + m.homeScore + '</div>'

@@ -2269,9 +2269,10 @@ const FLY2 = {
   soccer:                { fp:2, dsec:1200, unit:1,   exp:1.0, enter:62, exit:54, soccer:true, startMin:70 },
   baseball:              { fp:8, dsec:1,    unit:1,   exp:2.0, enter:62, exit:54, baseball:true },
 };
-const FLY2_ALPHA = 0.4;          // EMA smoothing on the raw index
-const FLY2_SUSTAIN_MS = 16000;   // index must hold above 'enter' this long before Likely shows
-const FLY2_POTENTIAL = 48;       // internal-only Potential band (parked, logged)
+const FLY2_ALPHA = 0.4;            // EMA smoothing on the raw index
+const FLY2_SUSTAIN_ON_MS = 4000;   // index must hold above 'enter' this long before Likely turns ON (fast, so the fly appears soon after a match enters Likely)
+const FLY2_SUSTAIN_OFF_MS = 16000; // ...and hold below 'exit' this long before Likely turns OFF (slow, so the fly does not flicker away)
+const FLY2_POTENTIAL = 48;         // internal-only Potential band (parked, logged)
 const FLY2_W = { base:0.50, mom:0.32, rate:0.10, ctx:0.08 };
 
 // Game-time remaining in the decisive window + whether we are inside it.
@@ -2371,7 +2372,7 @@ function updateFlyTime2(m){
 
   if(!r){
     s.ft2Index = s.ft2Index != null ? s.ft2Index * 0.5 : 0;
-    s.ft2Likely = false; s.ft2AboveSince = null;
+    s.ft2Likely = false; s.ft2AboveSince = null; s.ft2BelowSince = null;
     s.ft2Stage = confirmed ? 'confirmed' : 'none';
     s.ft2Margin = margin; s.ft2MarginTs = now;
     return;
@@ -2383,11 +2384,15 @@ function updateFlyTime2(m){
 
   if(idx >= cfg.enter){ if(!s.ft2AboveSince) s.ft2AboveSince = now; }
   else s.ft2AboveSince = null;
+  if(idx < cfg.exit){ if(!s.ft2BelowSince) s.ft2BelowSince = now; }
+  else s.ft2BelowSince = null;
 
   if(!s.ft2Likely){
-    if(s.ft2AboveSince && (now - s.ft2AboveSince) >= FLY2_SUSTAIN_MS) s.ft2Likely = true;
-  } else if(idx < cfg.exit){
-    s.ft2Likely = false;
+    // Turn ON fast: index held above 'enter' for the short ON sustain.
+    if(s.ft2AboveSince && (now - s.ft2AboveSince) >= FLY2_SUSTAIN_ON_MS) s.ft2Likely = true;
+  } else {
+    // Turn OFF slow: index held below 'exit' for the longer OFF sustain (anti-flicker).
+    if(s.ft2BelowSince && (now - s.ft2BelowSince) >= FLY2_SUSTAIN_OFF_MS) s.ft2Likely = false;
   }
 
   s.ft2Stage = confirmed ? 'confirmed' : (s.ft2Likely ? 'likely' : (idx >= FLY2_POTENTIAL ? 'potential' : 'none'));

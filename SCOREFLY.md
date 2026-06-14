@@ -4,7 +4,7 @@ Mobile-first sports scores app. Pure black UI, Apple-style typography, single se
 
 **Tagline:** Scores Anywhere. Simple.
 **Brand colour:** `#06f03c` (electric green; swapped from `#30d158` in the v69-v74 pixel-match pass)
-**Current file:** `index.html` (cache `scorefly-v132`)
+**Current file:** `index.html` (cache `scorefly-v133`)
 **Live URL:** [scorefly.app](https://scorefly.app) · [hammertymm.github.io/scorefly](https://hammertymm.github.io/scorefly)
 **Repo:** [github.com/Hammertymm/scorefly](https://github.com/Hammertymm/scorefly)
 
@@ -40,7 +40,7 @@ The `/mnt/project/` copy of `index.html` goes stale between sessions — the use
 
 ## What it does
 
-Follow favourite teams across 47 league feeds / 20 countries; see live scores, upcoming fixtures, and recent results in one feed (windows are view-dependent; see Request window). No login, no ads.
+Follow favourite teams across 48 league feeds / 25 countries (plus global competitions); see live scores, upcoming fixtures, and recent results in one feed (windows are view-dependent; see Request window). No login, no ads.
 
 |Tab    |Shows                                                                                                                                                                                                 |
 |-------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -115,7 +115,8 @@ Separate, self-contained system. It does NOT touch FlySense score colours or the
 
 A single coloured fly icon sits in the FIXED top-right slot of every card (and Fly Mode), across every sport/league/screen. Traffic light:
 
-- **Green** (`fly-green.png`) - live AND currently in Fly Time (`getMatchFly(id)==='flytime'`).
+- **Green** (`fly-green.png`) - live AND currently in Fly Time (`getMatchFly(id)==='flytime'`). Solid.
+- **Green, flashing** (same `fly-green.png` + `ft-likely`) - live AND the predictive FlyTime 2.0 engine says **Likely** but the proven Confirmed gate has not fired yet. Same icon, pulsing opacity; appears EARLIER than the solid green, then either firms into solid green (Confirmed) or turns off if the match drops back out of the Likely band. See "FlyTime 2.0" below.
 - **Yellow** (`fly-yellow.png`) - upcoming AND predicted to reach Fly Time (`m.isFlyMatch`).
 - **Red** (`fly-red.png`) - finished AND reached Fly Time while live (`matchHadFlyTime(id)`).
 - **Blue** (diagnostic only, FlyTime Lab) - yellow predicted, then reached FlyTime live (Y→G hit). Not shown on user-facing cards.
@@ -126,9 +127,22 @@ This REPLACED and retired: the green `FLYTIME` bottom banner (`flyTimeBannerHTML
 
 ### FlyTime Engine v1 (primary yellow-fly predictor, Jun 2026)
 
-For **45 of 47 feeds**, the yellow fly is driven by offline research tables (`*-flytime-v1.json`), keyed in `FLY_V1_REGISTRY`. Each league has a calibrated threshold (typically 65-98). Formula: `close*0.35 + form_balance*0.25 + margin_balance*0.25 + matchup*0.15`. Tables built from ESPN historical scoreboards via `scripts/build_flytime_v1.py` / `scripts/calibrate_flytime.py`. Cricket feeds use live `isFlyTime` rules only.
+For **45 of 48 feeds**, the yellow fly is driven by offline research tables (`*-flytime-v1.json`), keyed in `FLY_V1_REGISTRY`. Each league has a calibrated threshold (typically 65-98). Formula: `close*0.35 + form_balance*0.25 + margin_balance*0.25 + matchup*0.15`. Tables built from ESPN historical scoreboards via `scripts/build_flytime_v1.py` / `scripts/calibrate_flytime.py`. Cricket feeds use live `isFlyTime` rules only.
 
 Tune per-league thresholds using **FlyTime Lab** (`?flylab=1` once; persists as `scorefly_fly_lab`). The lab shows yellow/green/red/blue counts per league and suggests threshold adjustments.
+
+### FlyTime 2.0 - predictive "Likely" layer (the flashing green fly, v131)
+
+An EARLIER, probabilistic green signal that sits in front of the proven Confirmed gate. **Confirmed FlyTime is unchanged** (`isFlyTime`/pinned -> solid green fly, greens the card, red fly on Results, alerts). FlyTime 2.0 adds a 0-100 **FlyTime Index** per live match from four parts: lead-safety deficit (lead vs time left), FlySense momentum pressure (trailing side surging / leader collapsing), margin closing-rate, and the pre-match yellow rating. The index is EMA-smoothed (`FLY2_ALPHA`) and gated with hysteresis + a sustain so it never flickers.
+
+**Decision (this is the locked behaviour):** when a match crosses INTO the **Likely** band it shows the **flashing green fly**; if it drops back below the exit band the fly turns off again. So: enter Likely -> flash on; leave Likely -> flash off; reach Confirmed -> firms to solid green.
+
+- Per-sport bands in `FLY2[sportKey]` (`enter`/`exit` with hysteresis, plus `fp`/`dsec`/`unit`/`exp` window params; soccer/baseball/AFL/NRL have their own clock handling).
+- `FLY2_SUSTAIN_MS` (16s): the index must hold above `enter` this long before Likely shows - the deliberate anti-flicker delay (this is what "as soon as it enters Likely" means in practice; the band entry itself is debounced, not the fly render).
+- Functions: `fly2Window` / `fly2RawIndex` / `updateFlyTime2(m)` (called every poll right after `updateFlyState`, so it reads fresh FlySense), `flyTimeLikely(m)` (true when `ft2Likely` and not yet Confirmed -> drives the flashing fly in `flyTimeIcon`). State on `flyState[id]`: `ft2Index`, `ft2Likely`, `ft2AboveSince`, `ft2Stage` (`none`/`potential`/`likely`/`confirmed`).
+- A "Potential" band (`FLY2_POTENTIAL`) is computed for shadow logging only - parked, never user-facing.
+- Lab: `ledgerLikely` stamps the first time a match reaches Likely (`l2`/`l2t`) so lead-time vs the Confirmed gate is measurable; `fly2DebugHTML` shows "FT2 <index> <Stage>" on live cards when `DEBUG_FLY`/`?flylab=1`. Likely/flashing-green alone does NOT count as a confirmed green in ledger stats.
+- Full spec: `_research/FlyTime-2.0/`.
 
 ### Legacy FlyMatch predictor (`computeFlyMatch`) - cricket fallback
 
@@ -207,7 +221,7 @@ The hand-curated rivalry system was deleted entirely in v78 (JRod: “rare, just
 
 -----
 
-## Data layer (47 feeds, ESPN unofficial API)
+## Data layer (48 feeds, ESPN unofficial API)
 
 No API key. Fetched direct from the browser via rotating CORS proxies. **ESPN-only doctrine. No mock data.** `ALL_LIVE`, `ALL_UPCOMING`, `ALL_RESULTS` start empty.
 
@@ -225,14 +239,17 @@ Proxies: `corsproxy.io`, `allorigins`, `codetabs`, `thingproxy`, plus direct. `e
 
 ### Tiered polling (`pollTick` / `scheduleNextPoll`)
 
-Single self-rescheduling loop — no overlapping intervals.
+Single self-rescheduling loop — no overlapping intervals. `scheduleNextPoll` picks the delay by priority (first match wins):
 
-- `FAST_POLL` = 12s — live feeds only while games are active
-- `SLOW_POLL` = 60s — full sweep when nothing live
-- `RETRY_POLL` = 8s — quick retry after a failed cycle
-- `FULL_EVERY` = 15 fast cycles (~3 min) — full sweep even while live, to catch kickoffs/finishes
+- `RETRY_POLL` = 8s — after a failed cycle (highest priority)
+- `FLYMODE_POLL` = 1.5s — Fly Mode is open (fastest live refresh)
+- `FLYTIME_POLL` = 2s — a live match is currently in Fly Time
+- `FAST_POLL` = 2.5s — any game is live (live feeds only)
+- `SOON_POLL` = 15s — nothing live yet but a match starts soon
+- `SLOW_POLL` = 60s — nothing live: full sweep to catch kickoffs
+- `FULL_EVERY` = 8 fast cycles (~20s) — full sweep even while live, to catch kickoffs/finishes
 
-`visibilitychange` triggers immediate poll on returning to app.
+`visibilitychange` triggers immediate poll on returning to app. (`config.py` mirrors these names for the offline scripts only and may drift from the JS — the JS values above are authoritative.)
 
 ### Freshness signal
 
@@ -242,30 +259,40 @@ Single self-rescheduling loop — no overlapping intervals.
 
 `espnStatus(comp)` decides live / finished / upcoming. **v82 rewrote it to trust ESPN’s authoritative `status.type.state` (`pre` / `in` / `post`)** instead of matching a short allowlist of status NAMES and falling back to “start time has passed = finished”. The old logic caused two bugs: NRL games went straight to “finished” the moment they kicked off (their `STATUS_FIRST_HALF` / `STATUS_SECOND_HALF` names were not on the allowlist), and a game at tip-off briefly showed as both live and finished (a scheduled game whose start time had just passed was mis-stamped finished at 0-0). The name/time logic remains only as a fallback when `state` is missing. v82 also added `pruneResultsOfLive()` (called in both the full sweep and fast lane) so a match can never sit in `ALL_LIVE` and `ALL_RESULTS` at once.
 
-### Leagues (47 ESPN feeds, 20 countries in discovery)
+### Leagues (48 ESPN feeds, 25 countries + global)
 
-**England (3):** Premier League, Championship, Women’s Super League
+`ESPN_FEEDS` in `index.html` is authoritative; this list mirrors it. By country:
+
+**England (5):** Premier League, Championship, League One, League Two, Women’s Super League
 **Spain (1):** La Liga
 **Germany (1):** Bundesliga
-**Italy (1):** Serie A
-**France (1):** Ligue 1
+**Italy (2):** Serie A, Serie B
+**France (2):** Ligue 1, Top 14 (rugby union)
 **Netherlands (1):** Eredivisie
 **Portugal (1):** Primeira Liga
 **Scotland (1):** Scottish Premiership
 **Turkey (1):** Süper Lig
-**Brazil (2):** Brasileirao, Copa do Brasil
+**Belgium (1):** Belgian Pro League
+**Switzerland (1):** Swiss Super League
+**Greece (1):** Greek Super League
+**Russia (1):** Russian Premier League
+**Saudi Arabia (1):** Saudi Pro League
+**China (1):** Chinese Super League
+**Japan (1):** J1 League
+**Brazil (1):** Brasileirao
 **Argentina (1):** Liga Profesional
 **Mexico (1):** Liga MX
 **Ireland (1):** League of Ireland
-**South Africa (2):** PSL Football, SA T20 Cricket
-**Pakistan (1):** Pakistan Super League
-**India (2):** Indian Premier League, ISL Football
-**Australia (6):** AFL, NRL, A-League, Big Bash League, NBL, Super Rugby Pacific
-**New Zealand (1):** Super Rugby Pacific (shared with Australia)
-**USA (5):** NFL, NBA, MLB, NHL, MLS
-**Global (8):** UEFA Champions League, UEFA Europa League, Copa Libertadores, ATP Tennis, WTA Tennis, ICC Cricket ODI, ICC Cricket T20, Six Nations Rugby
+**India (2):** ISL Football, Indian Premier League (cricket)
+**South Africa (1):** PSL Football
+**Australia (5):** AFL, NRL, NBL, Big Bash League (cricket), A-League
+**USA (8):** NFL, NBA, MLB, NHL, MLS, WNBA, NCAAM (men’s college basketball), NCAAF (college football)
+**Canada (1):** CFL
+**Global / multi-nation (5):** UEFA Champions League, UEFA Europa League, Copa Libertadores, ICC Cricket (feed `23694`), United Rugby Championship
 
-**746 teams / players total** in the searchable follow list. See `ESPN_FEEDS` in `index.html` for the authoritative 47-feed list (US/CA 10, soccer 31, AFL, NRL, cricket 2, rugby union 2).
+**By sport:** soccer 32, basketball 4 (NBA, WNBA, NBL, NCAAM), American football 3 (NFL, NCAAF, CFL), cricket 3 (BBL, IPL, ICC), baseball 1 (MLB), hockey 1 (NHL), Australian football 1 (AFL), rugby union 2 (URC, Top 14), rugby league 1 (NRL) = **48**.
+
+The searchable follow list holds the teams/players for these feeds. See `ESPN_FEEDS` in `index.html` for the authoritative 48-feed list. (Tennis, Six Nations, Super Rugby Pacific, Copa do Brasil, Pakistan Super League and SA T20 appeared in earlier discovery notes but are NOT in the current feed set.)
 
 ### Confirmed NOT viable (do not retry)
 
@@ -341,7 +368,7 @@ Pure black `#000000` everywhere. No dark grey, no gradients.
 
 Repo files: `index.html`, `sw.js`, `manifest.json`, `icon192.png`, `icon512.png`, `icon-*.png` (per-sport fallback icons), `fly-green.png`, `fly-yellow.png`, `fly-red.png`, `knob.png` (brightness slider), `onboard-hero.png`, `onboard-notif.png`, `supafly-*.png`, `team-halo-config.json`, `*-flytime-v1.json` (45 league tables), `scripts/` (FlyTime build/calibration tools), `README.md`, `NOTES.md`, `SCOREFLY.md`, `VERSION HISTORY.md`, `CNAME`, `.nojekyll`.
 
-Steps: edit in GitHub web UI, commit, wait ~30s for Pages rebuild, refresh on phone. **Every deploy that touches HTML/CSS/JS/icons: bump `CACHE` in `sw.js` to a higher number.** Current: **`scorefly-v132`**. For an installed PWA, removing + re-adding the Home Screen icon forces a stale cache to clear.
+Steps: edit in GitHub web UI, commit, wait ~30s for Pages rebuild, refresh on phone. **Every deploy that touches HTML/CSS/JS/icons: bump `CACHE` in `sw.js` to a higher number.** Current: **`scorefly-v133`**. For an installed PWA, removing + re-adding the Home Screen icon forces a stale cache to clear.
 
 -----
 
@@ -419,7 +446,7 @@ Steps: edit in GitHub web UI, commit, wait ~30s for Pages rebuild, refresh on ph
 |Background                     |Pure black everywhere                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
 |Feed filter default            |All                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
 |Upcoming / results windows     |Two-tier (v48): All = 14 ahead / 7 back; My Teams = 30/30, fetched deep only for followed-team leagues                                                                                                                                                                                                                                                                                                                                                                                                                                            |
-|Polling                        |Tiered self-rescheduling loop: 12s fast lane (live feeds only), full sweep every ~3 min while live or 60s when idle                                                                                                                                                                                                                                                                                                                                                                                                                               |
+|Polling                        |Tiered self-rescheduling loop (priority order): 8s after a fail, 1.5s Fly Mode open, 2s a live match in Fly Time, 2.5s any game live, 15s starting soon, 60s idle; full sweep every ~8 fast cycles (~20s) while live                                                                                                                                                                                                                                                                                                                              |
 |Auto-retry                     |8s quick retry after a failed cycle                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
 |Proxy strategy                 |Try last-good proxy first, fall back to racing; remember winner                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
 |Freshness line                 |“Updated X ago / reconnecting” at top of Feed                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
@@ -449,7 +476,9 @@ Steps: edit in GitHub web UI, commit, wait ~30s for Pages rebuild, refresh on ph
 
 ## Version history
 
-**v132** (current) - Runtime audit quick wins (research basis: `_research/ScoreFly-Audit/`). (1) `FLYMODE_POLL` 1s -> 2s (still reads live, ~half Fly Mode poll cost). (2) `saveSnapshot` throttled to at most once per 20s (`SNAPSHOT_MIN_INTERVAL_MS`) so the live poll loop no longer blocks on a full JSON stringify every tick. (3) Logo contrast probe (`probeTeamLogoContrast` / `sampleLogoStats`) cached by image src for the session - canvas readback runs once per logo, not every card rebuild. (4) Fly Mode favourite filter uses `teamMatch` like the Feed (substring match), so followed teams with ESPN display-name drift still appear on the big screen. **`DEBUG_FLY` stays `true` for ongoing FlyTime/predictor testing** (lab + per-card flyscore overlay); flip to `false` only when explicitly stripping testing UI for release. `sw.js` -> v132.
+**v133** (current) - Logo library re-encoded to tiny WebP for instant crests. Doc pass: reconciled `SCOREFLY.md` to code (cache v133, feed count 47 -> **48**, real poll tiers, leagues list matched to `ESPN_FEEDS`) and **documented FlyTime 2.0 "Likely"** as the locked behaviour - the flashing green fly turns ON when a live match enters the predictive Likely band and OFF if it drops back out (engine shipped v131; no code change this pass, so cache stayed at the WebP bump). `sw.js` -> v133.
+**v132** - Runtime audit quick wins (research basis: `_research/ScoreFly-Audit/`). (1) `FLYMODE_POLL` 1s -> 2s (still reads live, ~half Fly Mode poll cost). (2) `saveSnapshot` throttled to at most once per 20s (`SNAPSHOT_MIN_INTERVAL_MS`) so the live poll loop no longer blocks on a full JSON stringify every tick. (3) Logo contrast probe (`probeTeamLogoContrast` / `sampleLogoStats`) cached by image src for the session - canvas readback runs once per logo, not every card rebuild. (4) Fly Mode favourite filter uses `teamMatch` like the Feed (substring match), so followed teams with ESPN display-name drift still appear on the big screen. **`DEBUG_FLY` stays `true` for ongoing FlyTime/predictor testing** (lab + per-card flyscore overlay); flip to `false` only when explicitly stripping testing UI for release. `sw.js` -> v132. *(Several follow-up commits shipped under the same v132 cache without a bump: stale-refresh false-positive fix + FlyMode ordering + live-refresh reliability, single-match Fly Mode layout tuning for score visibility, double-portrait solo timer, green FlyTime scores in solo, a raised WNBA FlyTime threshold, and a pass keeping FlySense colours and the FlyTime fly visually independent.)*
+**v131** - FlyTime 2.0 predictive "Likely" engine + feed density. Added the `FLY2` engine: a 0-100 FlyTime Index (lead safety + FlySense momentum + margin closing-rate + pre-match rating), EMA-smoothed with hysteresis + 16s sustain, surfacing an EARLIER **flashing green fly** when a live match is *Likely* to reach Fly Time (firms to solid green on Confirmed, off if it drops out). `updateFlyTime2`/`fly2RawIndex`/`flyTimeLikely`; lab readout `fly2DebugHTML` + `ledgerLikely`. Also: fixed a blank feed caused by NRL/AFL clock constants being read before definition; polished team/league labels, search UX and Fly Mode chrome; logo data-quality fixes. `sw.js` -> v131. (Behaviour documented in v133.)
 **v129** - FlySense 2.0 engine (research basis: `_research/FlySense-2.0/`). (1) Continuous gradient score colours: momentum now maps to a smooth heat ramp (white->yellow->orange->red->ember) set inline per cell via `getFlyStyle`; cold (severity-scaled blue) and comeback (magnitude-scaled purple) get their own intensity ramps; the old `fs-*` classes remain as anchors/semantic hooks and the 67-vs-68 threshold cliff is gone. (2) Soft hysteretic tier bands (onfire 70/64, onrun 45/40, warming 20/16) so labels never chatter. (3) Dynamic decay: per-sport base half-life in `FLY_TUNING` (NBA 40s ... soccer 90s) stretched up to 1.8x by run persistence, onfire cools 1.3x slower / warming 0.8x faster; sub-5 momentum sweeps to 0. (4) Richer scalar: acceleration boost (180s window, recent vs prior half) + slow-decaying recovery "ember" + drought/peak/suppression tracking. (5) Cold gains an absolute-drought trigger (`droughtNorm` per sport) and severity; comeback gains magnitude (deficit scale / recovery fraction / speed / level bonus) with exit hysteresis. (6) Extreme states: `fs-xfire` (mom >= 90, brightening pulse + warm glow) and `fs-xcold` (frozen + drought + dominance: dim/desaturate + frost glow); `prefers-reduced-motion` respected. (7) Cricket momentum is now RUN-RATE based (`updateCricketFly`): batting side on fire at 10+/over (T20) or 6+/over (ODI 50-over) = momentum 70; wicket knocks the rate back 40%; bowling side gains 38/wicket; cold/comeback disabled for cricket; `cricketChaseFields` now also exposes `cricketMaxOvers`/`cricketBatting`/`cricketOvers`. `flyCrossfade` extended to crossfade inline colours. Sanity sim: `scripts/sim_flysense2.py`; JS balance check: `scripts/check_js_balance.py`. `sw.js` -> v129.
 **v115** - NBL live feed (`basketball/nbl`) + `nbl-flytime-v1.json`; FlyTime Lab via `?flylab=1`; fly terminology (yellow/green/red/blue); `DEBUG_FLY = false`. `sw.js` -> v115.
 **v112** - 13 new ESPN leagues (J1, League One/Two, CSL, Belgian, Swiss, Greek, Serie B, Saudi, Russian, CFL, URC, Top 14) with FlyTime v1 tables.
